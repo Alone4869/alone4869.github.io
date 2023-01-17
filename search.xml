@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>git基本操作</title>
-    <url>/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.<br><img src="/.com//1.jpg"></p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#初始化仓库,在当前目录新建一个Git代码库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">#新建origin分支</span></span><br><span class="line">git branch origin</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加当前所有文件到缓存区</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment">#提交暂存区中的内容到本地仓库 -m:提交的信息</span></span><br><span class="line">git commit -m <span class="string">&quot;信息&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名&gt; &lt;本地分支名&gt;  &lt;远程分支名&gt;, -u 参数指定一个默认主机</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h3 id="git分支常用命令"><a href="#git分支常用命令" class="headerlink" title="git分支常用命令"></a>git分支常用命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#列出本地所有分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment">#新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#新建一个分支，并切换到该分支</span></span><br><span class="line">git checkout -b 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并指定分支到当前分支</span></span><br><span class="line">git merge 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除分支</span></span><br><span class="line">git branch -d 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除远程分支</span></span><br><span class="line">git push origin --delete 分支名</span><br><span class="line">git branch -dr 分支名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repo&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#克隆到指定的目录</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repo&gt; &lt;directory&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看当前配置有哪些远程仓库</span></span><br><span class="line">git remote</span><br><span class="line"></span><br><span class="line"><span class="comment">#加上 -v 参数，可以看到每个别名的实际链接地址</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span></span><br><span class="line">git remote add &lt;shortname&gt; &lt;repo&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#从远程仓库下载新分支与数据</span></span><br><span class="line">git fetch &lt;remote&gt; &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#从远端仓库提取数据并尝试合并到当前分支</span></span><br><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#显示当前的 git 配置信息</span></span><br><span class="line">git config --list</span><br><span class="line"></span><br><span class="line"><span class="comment">#编辑 git 配置文件:</span></span><br><span class="line">git config -e    <span class="comment"># 针对当前仓库 </span></span><br><span class="line">git config -e --global   <span class="comment"># 针对系统上所有仓库</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#设置提交代码时的用户信息</span></span><br><span class="line">git config --global user.name <span class="string">&quot;xxx&quot;</span></span><br><span class="line">git config --global user.email xxxxxxxx@yyyy.com</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo部署</title>
     <url>/2023/01/16/hexo%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
@@ -40,8 +21,27 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>hexo</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git基本操作</title>
+    <url>/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.<br><img src="/.com//git-command.jpg" alt="git-command"></p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#初始化仓库,在当前目录新建一个Git代码库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">#新建origin分支</span></span><br><span class="line">git branch origin</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加当前所有文件到缓存区</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment">#提交暂存区中的内容到本地仓库 -m:提交的信息</span></span><br><span class="line">git commit -m <span class="string">&quot;信息&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名&gt; &lt;本地分支名&gt;  &lt;远程分支名&gt;, -u 参数指定一个默认主机</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="git分支常用命令"><a href="#git分支常用命令" class="headerlink" title="git分支常用命令"></a>git分支常用命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#列出本地所有分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment">#新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#新建一个分支，并切换到该分支</span></span><br><span class="line">git checkout -b 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并指定分支到当前分支</span></span><br><span class="line">git merge 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除分支</span></span><br><span class="line">git branch -d 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除远程分支</span></span><br><span class="line">git push origin --delete 分支名</span><br><span class="line">git branch -dr 分支名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repo&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#克隆到指定的目录</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repo&gt; &lt;directory&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看当前配置有哪些远程仓库</span></span><br><span class="line">git remote</span><br><span class="line"></span><br><span class="line"><span class="comment">#加上 -v 参数，可以看到每个别名的实际链接地址</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span></span><br><span class="line">git remote add &lt;shortname&gt; &lt;repo&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#从远程仓库下载新分支与数据</span></span><br><span class="line">git fetch &lt;remote&gt; &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#从远端仓库提取数据并尝试合并到当前分支</span></span><br><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#显示当前的 git 配置信息</span></span><br><span class="line">git config --list</span><br><span class="line"></span><br><span class="line"><span class="comment">#编辑 git 配置文件:</span></span><br><span class="line">git config -e    <span class="comment"># 针对当前仓库 </span></span><br><span class="line">git config -e --global   <span class="comment"># 针对系统上所有仓库</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#设置提交代码时的用户信息</span></span><br><span class="line">git config --global user.name <span class="string">&quot;xxx&quot;</span></span><br><span class="line">git config --global user.email xxxxxxxx@yyyy.com</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>git</tag>
       </tags>
   </entry>
 </search>
