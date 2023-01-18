@@ -1,47 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>hexo部署</title>
-    <url>/2023/01/16/hexo%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p><a href="https://hexo.io/docs/writing.html">More</a></p>
-<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo server<br></code></pre></td></tr></table></figure>
-
-<p><a href="https://hexo.io/docs/server.html">More</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo generate<br></code></pre></td></tr></table></figure>
-
-<p><a href="https://hexo.io/docs/generating.html">More</a></p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p><a href="https://hexo.io/docs/one-command-deployment.html">More</a></p>
-<h3 id="脚本部署-运行-sh-deploy-sh"><a href="#脚本部署-运行-sh-deploy-sh" class="headerlink" title="脚本部署(运行 sh deploy.sh)"></a>脚本部署(运行 sh deploy.sh)</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">hexo clean<br><br>hexo generate<br><br>hexo deploy<br></code></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>git基本操作</title>
     <url>/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<p>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.<br><img src="https://s2.loli.net/2023/01/17/26vLbxy9Yzwk5XG.jpg" alt="git-command.jpg"></p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#初始化仓库,在当前目录新建一个Git代码库</span><br>git init<br><br><span class="hljs-comment">#新建origin分支</span><br>git branch origin<br><br><span class="hljs-comment">#添加当前所有文件到缓存区</span><br>git add .<br><br><span class="hljs-comment">#提交暂存区中的内容到本地仓库 -m:提交的信息</span><br>git commit -m <span class="hljs-string">&quot;信息&quot;</span><br><br><span class="hljs-comment">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名&gt; &lt;本地分支名&gt;  &lt;远程分支名&gt;, -u 参数指定一个默认主机</span><br>git push -u origin master<br></code></pre></td></tr></table></figure>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#初始化仓库,在当前目录新建一个Git代码库</span>
+<span class="token function">git</span> init
 
-<h3 id="git分支常用命令"><a href="#git分支常用命令" class="headerlink" title="git分支常用命令"></a>git分支常用命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#列出本地所有分支</span><br>git branch<br><br><span class="hljs-comment">#列出所有远程分支</span><br>git branch -r<br><br><span class="hljs-comment">#新建一个分支，但依然停留在当前分支</span><br>git branch 分支名<br><br><span class="hljs-comment">#新建一个分支，并切换到该分支</span><br>git checkout -b 分支名<br><br><span class="hljs-comment">#合并指定分支到当前分支</span><br>git merge 分支名<br><br><span class="hljs-comment">#删除分支</span><br>git branch -d 分支名<br><br><span class="hljs-comment">#删除远程分支</span><br>git push origin --delete 分支名<br>git branch -dr 分支名<br><br></code></pre></td></tr></table></figure>
+<span class="token comment" spellcheck="true">#新建origin分支</span>
+<span class="token function">git</span> branch origin
 
-<h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#克隆仓库</span><br>git <span class="hljs-built_in">clone</span> &lt;repo&gt;<br><br><span class="hljs-comment">#克隆到指定的目录</span><br>git <span class="hljs-built_in">clone</span> &lt;repo&gt; &lt;directory&gt;<br><br><span class="hljs-comment">#查看当前配置有哪些远程仓库</span><br>git remote<br><br><span class="hljs-comment">#加上 -v 参数，可以看到每个别名的实际链接地址</span><br>git remote -v<br><br><span class="hljs-comment"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span><br>git remote add &lt;shortname&gt; &lt;repo&gt;<br><br><span class="hljs-comment">#从远程仓库下载新分支与数据</span><br>git fetch &lt;remote&gt; &lt;branch&gt;<br><br><span class="hljs-comment">#从远端仓库提取数据并尝试合并到当前分支</span><br>git merge &lt;branch&gt;<br></code></pre></td></tr></table></figure>
+<span class="token comment" spellcheck="true">#添加当前所有文件到缓存区</span>
+<span class="token function">git</span> add <span class="token keyword">.</span>
 
-<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#显示当前的 git 配置信息</span><br>git config --list<br><br><span class="hljs-comment">#编辑 git 配置文件:</span><br>git config -e    <span class="hljs-comment"># 针对当前仓库 </span><br>git config -e --global   <span class="hljs-comment"># 针对系统上所有仓库</span><br><br><span class="hljs-comment">#设置提交代码时的用户信息</span><br>git config --global user.name <span class="hljs-string">&quot;xxx&quot;</span><br>git config --global user.email xxxxxxxx@yyyy.com<br></code></pre></td></tr></table></figure>]]></content>
+<span class="token comment" spellcheck="true">#提交暂存区中的内容到本地仓库 -m:提交的信息</span>
+<span class="token function">git</span> commit -m <span class="token string">"信息"</span>
+
+<span class="token comment" spellcheck="true">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名> &lt;本地分支名>  &lt;远程分支名>, -u 参数指定一个默认主机</span>
+<span class="token function">git</span> push -u origin master
+</code></pre>
+<h3 id="git分支常用命令"><a href="#git分支常用命令" class="headerlink" title="git分支常用命令"></a>git分支常用命令</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#列出本地所有分支</span>
+<span class="token function">git</span> branch
+
+<span class="token comment" spellcheck="true">#列出所有远程分支</span>
+<span class="token function">git</span> branch -r
+
+<span class="token comment" spellcheck="true">#新建一个分支，但依然停留在当前分支</span>
+<span class="token function">git</span> branch 分支名
+
+<span class="token comment" spellcheck="true">#新建一个分支，并切换到该分支</span>
+<span class="token function">git</span> checkout -b 分支名
+
+<span class="token comment" spellcheck="true">#合并指定分支到当前分支</span>
+<span class="token function">git</span> merge 分支名
+
+<span class="token comment" spellcheck="true">#删除分支</span>
+<span class="token function">git</span> branch -d 分支名
+
+<span class="token comment" spellcheck="true">#删除远程分支</span>
+<span class="token function">git</span> push origin --delete 分支名
+<span class="token function">git</span> branch -dr 分支名
+</code></pre>
+<h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#克隆仓库</span>
+<span class="token function">git</span> clone <span class="token operator">&lt;</span>repo<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#克隆到指定的目录</span>
+<span class="token function">git</span> clone <span class="token operator">&lt;</span>repo<span class="token operator">></span> <span class="token operator">&lt;</span>directory<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#查看当前配置有哪些远程仓库</span>
+<span class="token function">git</span> remote
+
+<span class="token comment" spellcheck="true">#加上 -v 参数，可以看到每个别名的实际链接地址</span>
+<span class="token function">git</span> remote -v
+
+<span class="token comment" spellcheck="true"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span>
+<span class="token function">git</span> remote add <span class="token operator">&lt;</span>shortname<span class="token operator">></span> <span class="token operator">&lt;</span>repo<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#从远程仓库下载新分支与数据</span>
+<span class="token function">git</span> fetch <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token operator">&lt;</span>branch<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#从远端仓库提取数据并尝试合并到当前分支</span>
+<span class="token function">git</span> merge <span class="token operator">&lt;</span>branch<span class="token operator">></span>
+</code></pre>
+<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#显示当前的 git 配置信息</span>
+<span class="token function">git</span> config --list
+
+<span class="token comment" spellcheck="true">#编辑 git 配置文件:</span>
+<span class="token function">git</span> config -e    <span class="token comment" spellcheck="true"># 针对当前仓库 </span>
+<span class="token function">git</span> config -e --global   <span class="token comment" spellcheck="true"># 针对系统上所有仓库</span>
+
+<span class="token comment" spellcheck="true">#设置提交代码时的用户信息</span>
+<span class="token function">git</span> config --global user.name <span class="token string">"xxx"</span>
+<span class="token function">git</span> config --global user.email xxxxxxxx@yyyy.com
+</code></pre>
+]]></content>
       <categories>
         <category>git</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>git</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo部署</title>
+    <url>/2023/01/16/hexo%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New Post"</span>
+</code></pre>
+<p><a href="https://hexo.io/docs/writing.html">More</a></p>
+<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><pre class=" language-bash"><code class="language-bash">hexo server
+</code></pre>
+<p><a href="https://hexo.io/docs/server.html">More</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre class=" language-bash"><code class="language-bash">hexo generate
+</code></pre>
+<p><a href="https://hexo.io/docs/generating.html">More</a></p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class=" language-bash"><code class="language-bash">hexo deploy
+</code></pre>
+<p><a href="https://hexo.io/docs/one-command-deployment.html">More</a></p>
+<h3 id="脚本部署-运行-sh-deploy-sh"><a href="#脚本部署-运行-sh-deploy-sh" class="headerlink" title="脚本部署(运行 sh deploy.sh)"></a>脚本部署(运行 sh deploy.sh)</h3><pre class=" language-bash"><code class="language-bash">hexo clean
+
+hexo generate
+
+hexo deploy
+</code></pre>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
