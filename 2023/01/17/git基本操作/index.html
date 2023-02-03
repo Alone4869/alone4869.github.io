@@ -374,14 +374,14 @@ git init
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    478
+                    542
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -405,14 +405,17 @@ git init
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#初始化仓库,在当前目录新建一个Git代码库</span>
 <span class="token function">git</span> init
 
-<span class="token comment" spellcheck="true">#新建origin分支</span>
-<span class="token function">git</span> branch origin
-
 <span class="token comment" spellcheck="true">#添加当前所有文件到缓存区</span>
 <span class="token function">git</span> add <span class="token keyword">.</span>
 
 <span class="token comment" spellcheck="true">#提交暂存区中的内容到本地仓库 -m:提交的信息</span>
 <span class="token function">git</span> commit -m <span class="token string">"信息"</span>
+
+<span class="token comment" spellcheck="true">#本地与远程仓库连接</span>
+<span class="token function">git</span> remote add origin <span class="token operator">&lt;</span>远程仓库链接<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#如果远程仓库创建了readme文件，可以先把远程仓库的项目pull下来</span>
+<span class="token function">git</span> pull origin master
 
 <span class="token comment" spellcheck="true">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名> &lt;本地分支名>  &lt;远程分支名>, -u 参数指定一个默认主机</span>
 <span class="token function">git</span> push -u origin master
@@ -428,6 +431,9 @@ git init
 
 <span class="token comment" spellcheck="true">#新建一个分支，并切换到该分支</span>
 <span class="token function">git</span> checkout -b 分支名
+
+<span class="token comment" spellcheck="true">#切换分支</span>
+<span class="token function">git</span> checkout 分支名
 
 <span class="token comment" spellcheck="true">#合并指定分支到当前分支</span>
 <span class="token function">git</span> merge 分支名
@@ -453,6 +459,9 @@ git init
 
 <span class="token comment" spellcheck="true"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span>
 <span class="token function">git</span> remote add <span class="token operator">&lt;</span>shortname<span class="token operator">></span> <span class="token operator">&lt;</span>repo<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#移除远程仓库关联</span>
+<span class="token function">git</span> remote <span class="token function">rm</span> <span class="token operator">&lt;</span>shortname<span class="token operator">></span>
 
 <span class="token comment" spellcheck="true">#从远程仓库下载新分支与数据</span>
 <span class="token function">git</span> fetch <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token operator">&lt;</span>branch<span class="token operator">></span>
@@ -910,7 +919,7 @@ git init
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">560</span>
+                        class="white-color">624</span>
             
             
             
