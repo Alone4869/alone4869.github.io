@@ -1,117 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>ping不通外网的解决方案(centos)</title>
-      <link href="/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/"/>
-      <url>/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/</url>
-      
-        <content type="html"><![CDATA[<p>ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题<br><img src="https://pic.imgdb.cn/item/63df62694757feff3312485e.png"></p><h3 id="1、修改配置文件添加DNS"><a href="#1、修改配置文件添加DNS" class="headerlink" title="1、修改配置文件添加DNS"></a>1、修改配置文件添加DNS</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#xxx为对应网卡</span><span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-xxx<span class="token comment" spellcheck="true">#添加DNS</span>DNS1<span class="token operator">=</span>114.114.114.114DNS2<span class="token operator">=</span>8.8.8.8</code></pre><h3 id="2、添加DNS服务器"><a href="#2、添加DNS服务器" class="headerlink" title="2、添加DNS服务器"></a>2、添加DNS服务器</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/resolv.conf<span class="token comment" spellcheck="true">#添加如下两行：</span>nameserver 8.8.8.8nameserver 8.8.4.4</code></pre><h3 id="3、重启网络"><a href="#3、重启网络" class="headerlink" title="3、重启网络"></a>3、重启网络</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> nmcli c reload<span class="token comment" spellcheck="true">#或</span>systemctl restart network<span class="token comment" spellcheck="true">#或</span><span class="token function">service</span> network restart</code></pre><h3 id="4、如果上述操作还是没有成功"><a href="#4、如果上述操作还是没有成功" class="headerlink" title="4、如果上述操作还是没有成功"></a>4、如果上述操作还是没有成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加默认网关</span><span class="token function">sudo</span> route add default gw 192.168.1.1<span class="token comment" spellcheck="true">#然后</span><span class="token function">sudo</span> nmcli c reload</code></pre><p>到此一般都没问题了😀</p>]]></content>
-      
-      
+<search>
+  <entry>
+    <title>git基本操作</title>
+    <url>/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.<br><img src="https://pic.imgdb.cn/item/63df62d34757feff33131295.jpg"></p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#初始化仓库,在当前目录新建一个Git代码库</span>
+<span class="token function">git</span> init
+
+<span class="token comment" spellcheck="true">#添加当前所有文件到缓存区</span>
+<span class="token function">git</span> add <span class="token keyword">.</span>
+
+<span class="token comment" spellcheck="true">#提交暂存区中的内容到本地仓库 -m:提交的信息</span>
+<span class="token function">git</span> commit -m <span class="token string">"信息"</span>
+
+<span class="token comment" spellcheck="true">#本地与远程仓库连接</span>
+<span class="token function">git</span> remote add origin <span class="token operator">&lt;</span>远程仓库链接<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#如果远程仓库创建了readme文件，可以先把远程仓库的项目pull下来</span>
+<span class="token function">git</span> pull origin master
+
+<span class="token comment" spellcheck="true">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名> &lt;本地分支名>  &lt;远程分支名>, -u 参数指定一个默认主机</span>
+<span class="token function">git</span> push -u origin master
+</code></pre>
+<h3 id="git分支常用命令"><a href="#git分支常用命令" class="headerlink" title="git分支常用命令"></a>git分支常用命令</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#列出本地所有分支</span>
+<span class="token function">git</span> branch
+
+<span class="token comment" spellcheck="true">#列出所有远程分支</span>
+<span class="token function">git</span> branch -r
+
+<span class="token comment" spellcheck="true">#新建一个分支，但依然停留在当前分支</span>
+<span class="token function">git</span> branch 分支名
+
+<span class="token comment" spellcheck="true">#新建一个分支，并切换到该分支</span>
+<span class="token function">git</span> checkout -b 分支名
+
+<span class="token comment" spellcheck="true">#切换分支</span>
+<span class="token function">git</span> checkout 分支名
+
+<span class="token comment" spellcheck="true">#合并指定分支到当前分支</span>
+<span class="token function">git</span> merge 分支名
+
+<span class="token comment" spellcheck="true">#删除分支</span>
+<span class="token function">git</span> branch -d 分支名
+
+<span class="token comment" spellcheck="true">#删除远程分支</span>
+<span class="token function">git</span> push origin --delete 分支名
+<span class="token function">git</span> branch -dr 分支名
+</code></pre>
+<h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#克隆仓库</span>
+<span class="token function">git</span> clone <span class="token operator">&lt;</span>repo<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#克隆到指定的目录</span>
+<span class="token function">git</span> clone <span class="token operator">&lt;</span>repo<span class="token operator">></span> <span class="token operator">&lt;</span>directory<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#查看当前配置有哪些远程仓库</span>
+<span class="token function">git</span> remote
+
+<span class="token comment" spellcheck="true">#加上 -v 参数，可以看到每个别名的实际链接地址</span>
+<span class="token function">git</span> remote -v
+
+<span class="token comment" spellcheck="true"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span>
+<span class="token function">git</span> remote add <span class="token operator">&lt;</span>shortname<span class="token operator">></span> <span class="token operator">&lt;</span>repo<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#移除远程仓库关联</span>
+<span class="token function">git</span> remote <span class="token function">rm</span> <span class="token operator">&lt;</span>shortname<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#从远程仓库下载新分支与数据</span>
+<span class="token function">git</span> fetch <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token operator">&lt;</span>branch<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#从远端仓库提取数据并尝试合并到当前分支</span>
+<span class="token function">git</span> merge <span class="token operator">&lt;</span>branch<span class="token operator">></span>
+</code></pre>
+<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#显示当前的 git 配置信息</span>
+<span class="token function">git</span> config --list
+
+<span class="token comment" spellcheck="true">#编辑 git 配置文件:</span>
+<span class="token function">git</span> config -e    <span class="token comment" spellcheck="true"># 针对当前仓库 </span>
+<span class="token function">git</span> config -e --global   <span class="token comment" spellcheck="true"># 针对系统上所有仓库</span>
+
+<span class="token comment" spellcheck="true">#设置提交代码时的用户信息</span>
+<span class="token function">git</span> config --global user.name <span class="token string">"xxx"</span>
+<span class="token function">git</span> config --global user.email xxxxxxxx@yyyy.com
+</code></pre>
+]]></content>
       <categories>
-          
-          <category> 网络 </category>
-          
+        <category>git</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> centos </tag>
-            
-            <tag> linux </tag>
-            
-            <tag> 网络 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>go语言从入门到放弃</title>
-      <link href="/2023/01/18/go%E8%AF%AD%E8%A8%80%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/"/>
-      <url>/2023/01/18/go%E8%AF%AD%E8%A8%80%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/</url>
-      
-        <content type="html"><![CDATA[<h3 id="第一个go程序"><a href="#第一个go程序" class="headerlink" title="第一个go程序"></a>第一个go程序</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main<span class="token keyword">import</span> <span class="token string">"fmt"</span><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span><span class="token punctuation">}</span></code></pre>]]></content>
-      
-      
+      <tags>
+        <tag>git</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo部署</title>
+    <url>/2023/01/17/hexo%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New Post"</span>
+</code></pre>
+<p><a href="https://hexo.io/docs/writing.html">More</a></p>
+<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><pre class=" language-bash"><code class="language-bash">hexo server
+</code></pre>
+<p><a href="https://hexo.io/docs/server.html">More</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre class=" language-bash"><code class="language-bash">hexo generate
+</code></pre>
+<p><a href="https://hexo.io/docs/generating.html">More</a></p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class=" language-bash"><code class="language-bash">hexo deploy
+</code></pre>
+<p><a href="https://hexo.io/docs/one-command-deployment.html">More</a></p>
+<h3 id="脚本部署-运行-sh-deploy-sh"><a href="#脚本部署-运行-sh-deploy-sh" class="headerlink" title="脚本部署(运行 sh deploy.sh)"></a>脚本部署(运行 sh deploy.sh)</h3><pre class=" language-bash"><code class="language-bash">hexo clean
+
+hexo generate
+
+hexo deploy
+</code></pre>
+]]></content>
       <categories>
-          
-          <category> go </category>
-          
+        <category>hexo</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> go </tag>
-            
-            <tag> 笔记 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>git基本操作</title>
-      <link href="/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
-      <url>/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-      
-        <content type="html"><![CDATA[<p>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.<br><img src="https://pic.imgdb.cn/item/63df62d34757feff33131295.jpg"></p><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#初始化仓库,在当前目录新建一个Git代码库</span><span class="token function">git</span> init<span class="token comment" spellcheck="true">#添加当前所有文件到缓存区</span><span class="token function">git</span> add <span class="token keyword">.</span><span class="token comment" spellcheck="true">#提交暂存区中的内容到本地仓库 -m:提交的信息</span><span class="token function">git</span> commit -m <span class="token string">"信息"</span><span class="token comment" spellcheck="true">#本地与远程仓库连接</span><span class="token function">git</span> remote add origin <span class="token operator">&lt;</span>远程仓库链接<span class="token operator">></span><span class="token comment" spellcheck="true">#如果远程仓库创建了readme文件，可以先把远程仓库的项目pull下来</span><span class="token function">git</span> pull origin master<span class="token comment" spellcheck="true">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名> &lt;本地分支名>  &lt;远程分支名>, -u 参数指定一个默认主机</span><span class="token function">git</span> push -u origin master</code></pre><h3 id="git分支常用命令"><a href="#git分支常用命令" class="headerlink" title="git分支常用命令"></a>git分支常用命令</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#列出本地所有分支</span><span class="token function">git</span> branch<span class="token comment" spellcheck="true">#列出所有远程分支</span><span class="token function">git</span> branch -r<span class="token comment" spellcheck="true">#新建一个分支，但依然停留在当前分支</span><span class="token function">git</span> branch 分支名<span class="token comment" spellcheck="true">#新建一个分支，并切换到该分支</span><span class="token function">git</span> checkout -b 分支名<span class="token comment" spellcheck="true">#切换分支</span><span class="token function">git</span> checkout 分支名<span class="token comment" spellcheck="true">#合并指定分支到当前分支</span><span class="token function">git</span> merge 分支名<span class="token comment" spellcheck="true">#删除分支</span><span class="token function">git</span> branch -d 分支名<span class="token comment" spellcheck="true">#删除远程分支</span><span class="token function">git</span> push origin --delete 分支名<span class="token function">git</span> branch -dr 分支名</code></pre><h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#克隆仓库</span><span class="token function">git</span> clone <span class="token operator">&lt;</span>repo<span class="token operator">></span><span class="token comment" spellcheck="true">#克隆到指定的目录</span><span class="token function">git</span> clone <span class="token operator">&lt;</span>repo<span class="token operator">></span> <span class="token operator">&lt;</span>directory<span class="token operator">></span><span class="token comment" spellcheck="true">#查看当前配置有哪些远程仓库</span><span class="token function">git</span> remote<span class="token comment" spellcheck="true">#加上 -v 参数，可以看到每个别名的实际链接地址</span><span class="token function">git</span> remote -v<span class="token comment" spellcheck="true"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span><span class="token function">git</span> remote add <span class="token operator">&lt;</span>shortname<span class="token operator">></span> <span class="token operator">&lt;</span>repo<span class="token operator">></span><span class="token comment" spellcheck="true">#移除远程仓库关联</span><span class="token function">git</span> remote <span class="token function">rm</span> <span class="token operator">&lt;</span>shortname<span class="token operator">></span><span class="token comment" spellcheck="true">#从远程仓库下载新分支与数据</span><span class="token function">git</span> fetch <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token operator">&lt;</span>branch<span class="token operator">></span><span class="token comment" spellcheck="true">#从远端仓库提取数据并尝试合并到当前分支</span><span class="token function">git</span> merge <span class="token operator">&lt;</span>branch<span class="token operator">></span></code></pre><h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#显示当前的 git 配置信息</span><span class="token function">git</span> config --list<span class="token comment" spellcheck="true">#编辑 git 配置文件:</span><span class="token function">git</span> config -e    <span class="token comment" spellcheck="true"># 针对当前仓库 </span><span class="token function">git</span> config -e --global   <span class="token comment" spellcheck="true"># 针对系统上所有仓库</span><span class="token comment" spellcheck="true">#设置提交代码时的用户信息</span><span class="token function">git</span> config --global user.name <span class="token string">"xxx"</span><span class="token function">git</span> config --global user.email xxxxxxxx@yyyy.com</code></pre>]]></content>
-      
-      
+      <tags>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>go语言从入门到放弃</title>
+    <url>/2023/01/18/go%E8%AF%AD%E8%A8%80%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/</url>
+    <content><![CDATA[<h3 id="第一个go程序"><a href="#第一个go程序" class="headerlink" title="第一个go程序"></a>第一个go程序</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+]]></content>
       <categories>
-          
-          <category> git </category>
-          
+        <category>go</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> git </tag>
-            
-            <tag> 教程 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hexo部署</title>
-      <link href="/2023/01/17/hexo%E9%83%A8%E7%BD%B2/"/>
-      <url>/2023/01/17/hexo%E9%83%A8%E7%BD%B2/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p><h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New Post"</span></code></pre><p><a href="https://hexo.io/docs/writing.html">More</a></p><h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><pre class=" language-bash"><code class="language-bash">hexo server</code></pre><p><a href="https://hexo.io/docs/server.html">More</a></p><h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre class=" language-bash"><code class="language-bash">hexo generate</code></pre><p><a href="https://hexo.io/docs/generating.html">More</a></p><h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class=" language-bash"><code class="language-bash">hexo deploy</code></pre><p><a href="https://hexo.io/docs/one-command-deployment.html">More</a></p><h3 id="脚本部署-运行-sh-deploy-sh"><a href="#脚本部署-运行-sh-deploy-sh" class="headerlink" title="脚本部署(运行 sh deploy.sh)"></a>脚本部署(运行 sh deploy.sh)</h3><pre class=" language-bash"><code class="language-bash">hexo cleanhexo generatehexo deploy</code></pre>]]></content>
-      
-      
+      <tags>
+        <tag>go</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ping不通外网的解决方案(centos)</title>
+    <url>/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/</url>
+    <content><![CDATA[<p>ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题<br><img src="https://pic.imgdb.cn/item/63df62694757feff3312485e.png"></p>
+<h3 id="1、修改配置文件添加DNS"><a href="#1、修改配置文件添加DNS" class="headerlink" title="1、修改配置文件添加DNS"></a>1、修改配置文件添加DNS</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#xxx为对应网卡</span>
+<span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-xxx
+
+<span class="token comment" spellcheck="true">#添加DNS</span>
+DNS1<span class="token operator">=</span>114.114.114.114
+DNS2<span class="token operator">=</span>8.8.8.8
+</code></pre>
+<h3 id="2、添加DNS服务器"><a href="#2、添加DNS服务器" class="headerlink" title="2、添加DNS服务器"></a>2、添加DNS服务器</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/resolv.conf
+
+<span class="token comment" spellcheck="true">#添加如下两行：</span>
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+</code></pre>
+<h3 id="3、重启网络"><a href="#3、重启网络" class="headerlink" title="3、重启网络"></a>3、重启网络</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> nmcli c reload
+
+<span class="token comment" spellcheck="true">#或</span>
+systemctl restart network
+
+<span class="token comment" spellcheck="true">#或</span>
+<span class="token function">service</span> network restart
+</code></pre>
+<h3 id="4、如果上述操作还是没有成功"><a href="#4、如果上述操作还是没有成功" class="headerlink" title="4、如果上述操作还是没有成功"></a>4、如果上述操作还是没有成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加默认网关</span>
+<span class="token function">sudo</span> route add default gw 192.168.1.1
+
+<span class="token comment" spellcheck="true">#然后</span>
+<span class="token function">sudo</span> nmcli c reload
+</code></pre>
+<p>到此一般都没问题了😀</p>
+]]></content>
       <categories>
-          
-          <category> hexo </category>
-          
+        <category>网络</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 教程 </tag>
-            
-            <tag> hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>centos</tag>
+        <tag>linux</tag>
+        <tag>网络</tag>
+      </tags>
+  </entry>
 </search>
