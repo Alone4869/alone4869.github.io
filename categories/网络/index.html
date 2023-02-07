@@ -54,6 +54,25 @@
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
+<!-- 一言API -->
+<!-- 现代写法，推荐 -->
+<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<!--End-->
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
 
 <body>
     <header class="navbar-fixed">
@@ -366,19 +385,19 @@
                 </a>
                 
                 
-                <a href="/categories/%E7%BD%91%E7%BB%9C/" title="网络: 1">
+                <a href="/categories/hexo/" title="hexo: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #D5F5E3;">网络
+                             chip-default "
+                            style="background-color: #D5F5E3;">hexo
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/hexo/" title="hexo: 1">
+                <a href="/categories/%E7%BD%91%E7%BB%9C/" title="网络: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #E8F8F5;">hexo
+                             chip-active "
+                            style="background-color: #E8F8F5;">网络
                         <span class="tag-length">1</span>
                     </span>
                 </a>

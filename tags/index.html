@@ -54,6 +54,25 @@
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
+<!-- 一言API -->
+<!-- 现代写法，推荐 -->
+<!-- 兼容低版本浏览器 (包括 IE)，可移除 -->
+<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+<!--End-->
+<script>
+  fetch('https://v1.hitokoto.cn')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto');
+      hitokoto.innerText = data.hitokoto + '——【' + data.from + '】';
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
 
 <body>
     <header class="navbar-fixed">
@@ -383,10 +402,19 @@
                 </a>
                 
                 
+                <a href="/tags/hexo/" title="hexo: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="hexo" style="background-color: #FEF9E7;">hexo
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/tags/centos/" title="centos: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="centos" style="background-color: #FEF9E7;">centos
+                            data-tagname="centos" style="background-color: #F8F9F9;">centos
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -395,7 +423,7 @@
                 <a href="/tags/linux/" title="linux: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="linux" style="background-color: #F8F9F9;">linux
+                            data-tagname="linux" style="background-color: #82E0AA;">linux
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -404,16 +432,7 @@
                 <a href="/tags/%E7%BD%91%E7%BB%9C/" title="网络: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="网络" style="background-color: #82E0AA;">网络
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/hexo/" title="hexo: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="hexo" style="background-color: #D7BDE2;">hexo
+                            data-tagname="网络" style="background-color: #D7BDE2;">网络
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -442,7 +461,7 @@
 <script type="text/javascript">
     
 
-    $('#tag-wordcloud').jQCloud([{"text":"git","weight":1,"link":"/tags/git/"},{"text":"教程","weight":2,"link":"/tags/教程/"},{"text":"go","weight":1,"link":"/tags/go/"},{"text":"笔记","weight":1,"link":"/tags/笔记/"},{"text":"centos","weight":1,"link":"/tags/centos/"},{"text":"linux","weight":1,"link":"/tags/linux/"},{"text":"网络","weight":1,"link":"/tags/网络/"},{"text":"hexo","weight":1,"link":"/tags/hexo/"}], {
+    $('#tag-wordcloud').jQCloud([{"text":"git","weight":1,"link":"/tags/git/"},{"text":"教程","weight":2,"link":"/tags/教程/"},{"text":"go","weight":1,"link":"/tags/go/"},{"text":"笔记","weight":1,"link":"/tags/笔记/"},{"text":"hexo","weight":1,"link":"/tags/hexo/"},{"text":"centos","weight":1,"link":"/tags/centos/"},{"text":"linux","weight":1,"link":"/tags/linux/"},{"text":"网络","weight":1,"link":"/tags/网络/"}], {
         autoResize: true
     });
 </script>
