@@ -1,6 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo部署</title>
+    <url>/2023/01/17/hexo%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New Post"</span>
+</code></pre>
+<p><a href="https://hexo.io/docs/writing.html">More</a></p>
+<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><pre class=" language-bash"><code class="language-bash">hexo server
+</code></pre>
+<p><a href="https://hexo.io/docs/server.html">More</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre class=" language-bash"><code class="language-bash">hexo generate
+</code></pre>
+<p><a href="https://hexo.io/docs/generating.html">More</a></p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class=" language-bash"><code class="language-bash">hexo deploy
+</code></pre>
+<p><a href="https://hexo.io/docs/one-command-deployment.html">More</a></p>
+<h3 id="脚本部署-运行-sh-deploy-sh"><a href="#脚本部署-运行-sh-deploy-sh" class="headerlink" title="脚本部署(运行 sh deploy.sh)"></a>脚本部署(运行 sh deploy.sh)</h3><pre class=" language-bash"><code class="language-bash">hexo clean
+
+hexo generate
+
+hexo deploy
+</code></pre>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ping不通外网的解决方案(centos)</title>
+    <url>/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/</url>
+    <content><![CDATA[<p>ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题<br><img src="https://pic.imgdb.cn/item/63df62694757feff3312485e.png"></p>
+<h3 id="1、修改配置文件添加DNS"><a href="#1、修改配置文件添加DNS" class="headerlink" title="1、修改配置文件添加DNS"></a>1、修改配置文件添加DNS</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#xxx为对应网卡</span>
+<span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-xxx
+
+<span class="token comment" spellcheck="true">#添加DNS</span>
+DNS1<span class="token operator">=</span>114.114.114.114
+DNS2<span class="token operator">=</span>8.8.8.8
+</code></pre>
+<h3 id="2、添加DNS服务器"><a href="#2、添加DNS服务器" class="headerlink" title="2、添加DNS服务器"></a>2、添加DNS服务器</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/resolv.conf
+
+<span class="token comment" spellcheck="true">#添加如下两行：</span>
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+</code></pre>
+<h3 id="3、重启网络"><a href="#3、重启网络" class="headerlink" title="3、重启网络"></a>3、重启网络</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> nmcli c reload
+
+<span class="token comment" spellcheck="true">#或</span>
+systemctl restart network
+
+<span class="token comment" spellcheck="true">#或</span>
+<span class="token function">service</span> network restart
+</code></pre>
+<h3 id="4、如果上述操作还是没有成功"><a href="#4、如果上述操作还是没有成功" class="headerlink" title="4、如果上述操作还是没有成功"></a>4、如果上述操作还是没有成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加默认网关</span>
+<span class="token function">sudo</span> route add default gw 192.168.1.1
+
+<span class="token comment" spellcheck="true">#然后</span>
+<span class="token function">sudo</span> nmcli c reload
+</code></pre>
+<p>到此一般都没问题了😀</p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>linux</tag>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>git基本操作</title>
     <url>/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<p>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.<br><img src="https://pic.imgdb.cn/item/63df62d34757feff33131295.jpg"></p>
@@ -87,8 +160,8 @@
         <category>git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>教程</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -108,79 +181,6 @@
       <tags>
         <tag>go</tag>
         <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo部署</title>
-    <url>/2023/01/17/hexo%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New Post"</span>
-</code></pre>
-<p><a href="https://hexo.io/docs/writing.html">More</a></p>
-<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><pre class=" language-bash"><code class="language-bash">hexo server
-</code></pre>
-<p><a href="https://hexo.io/docs/server.html">More</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre class=" language-bash"><code class="language-bash">hexo generate
-</code></pre>
-<p><a href="https://hexo.io/docs/generating.html">More</a></p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class=" language-bash"><code class="language-bash">hexo deploy
-</code></pre>
-<p><a href="https://hexo.io/docs/one-command-deployment.html">More</a></p>
-<h3 id="脚本部署-运行-sh-deploy-sh"><a href="#脚本部署-运行-sh-deploy-sh" class="headerlink" title="脚本部署(运行 sh deploy.sh)"></a>脚本部署(运行 sh deploy.sh)</h3><pre class=" language-bash"><code class="language-bash">hexo clean
-
-hexo generate
-
-hexo deploy
-</code></pre>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ping不通外网的解决方案(centos)</title>
-    <url>/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/</url>
-    <content><![CDATA[<p>ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题<br><img src="https://pic.imgdb.cn/item/63df62694757feff3312485e.png"></p>
-<h3 id="1、修改配置文件添加DNS"><a href="#1、修改配置文件添加DNS" class="headerlink" title="1、修改配置文件添加DNS"></a>1、修改配置文件添加DNS</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#xxx为对应网卡</span>
-<span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-xxx
-
-<span class="token comment" spellcheck="true">#添加DNS</span>
-DNS1<span class="token operator">=</span>114.114.114.114
-DNS2<span class="token operator">=</span>8.8.8.8
-</code></pre>
-<h3 id="2、添加DNS服务器"><a href="#2、添加DNS服务器" class="headerlink" title="2、添加DNS服务器"></a>2、添加DNS服务器</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/resolv.conf
-
-<span class="token comment" spellcheck="true">#添加如下两行：</span>
-nameserver 8.8.8.8
-nameserver 8.8.4.4
-</code></pre>
-<h3 id="3、重启网络"><a href="#3、重启网络" class="headerlink" title="3、重启网络"></a>3、重启网络</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> nmcli c reload
-
-<span class="token comment" spellcheck="true">#或</span>
-systemctl restart network
-
-<span class="token comment" spellcheck="true">#或</span>
-<span class="token function">service</span> network restart
-</code></pre>
-<h3 id="4、如果上述操作还是没有成功"><a href="#4、如果上述操作还是没有成功" class="headerlink" title="4、如果上述操作还是没有成功"></a>4、如果上述操作还是没有成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加默认网关</span>
-<span class="token function">sudo</span> route add default gw 192.168.1.1
-
-<span class="token comment" spellcheck="true">#然后</span>
-<span class="token function">sudo</span> nmcli c reload
-</code></pre>
-<p>到此一般都没问题了😀</p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>centos</tag>
-        <tag>linux</tag>
-        <tag>网络</tag>
       </tags>
   </entry>
 </search>
