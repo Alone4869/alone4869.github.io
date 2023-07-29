@@ -4,8 +4,17 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ping不通外网的解决方案(centos), Python, C#, C++, Go, Nodejs">
-    <meta name="description" content="ping不通外网">
+    <meta name="keywords" content="pve配置及常见问题处理, Python, C#, C++, Go, Nodejs">
+    <meta name="description" content="PVE服务器配置及常见问题处理0、常用命令#查看虚拟机列表
+qm list
+
+#pve重启
+reboot
+
+#查看集群资源状况
+pvesh get /cluster/resources
+
+#取得虚拟机当前状态 `pvesh get /nod">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +26,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ping不通外网的解决方案(centos) | 知否</title>
+    <title>pve配置及常见问题处理 | 知否</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     
 
@@ -322,12 +331,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ping不通外网的解决方案(centos)</h1>
+                    <h1 class="description center-align post-title">pve配置及常见问题处理</h1>
                 </div>
             </div>
         </div>
@@ -351,16 +360,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/centos/">
-                                <span class="chip bg-color">centos</span>
+                            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">教程</span>
                             </a>
                         
-                            <a href="/tags/linux/">
-                                <span class="chip bg-color">linux</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%BD%91%E7%BB%9C/">
-                                <span class="chip bg-color">网络</span>
+                            <a href="/tags/pve/">
+                                <span class="chip bg-color">pve</span>
                             </a>
                         
                     </div>
@@ -371,8 +376,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%BD%91%E7%BB%9C/" class="post-category">
-                                网络
+                            <a href="/categories/pve/" class="post-category">
+                                pve
                             </a>
                         
                     </div>
@@ -384,28 +389,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-05
+                    2023-07-29
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-05
+                    2023-07-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    149
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    6 分
                 </div>
                 
 
@@ -425,35 +430,178 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题<br><img src="https://pic.imgdb.cn/item/63df62694757feff3312485e.png"></p>
-<h3 id="1、修改配置文件添加DNS"><a href="#1、修改配置文件添加DNS" class="headerlink" title="1、修改配置文件添加DNS"></a>1、修改配置文件添加DNS</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#xxx为对应网卡</span>
-<span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-xxx
+                <h1 id="PVE服务器配置及常见问题处理"><a href="#PVE服务器配置及常见问题处理" class="headerlink" title="PVE服务器配置及常见问题处理"></a>PVE服务器配置及常见问题处理</h1><h2 id="0、常用命令"><a href="#0、常用命令" class="headerlink" title="0、常用命令"></a>0、常用命令</h2><pre class=" language-shell"><code class="language-shell">#查看虚拟机列表
+qm list
 
-<span class="token comment" spellcheck="true">#添加DNS</span>
-DNS1<span class="token operator">=</span>114.114.114.114
-DNS2<span class="token operator">=</span>8.8.8.8
+#pve重启
+reboot
+
+#查看集群资源状况
+pvesh get /cluster/resources
+
+#取得虚拟机当前状态 `pvesh get /nodes/<节点id>/qemu/<虚拟机id>/status/current`
+pvesh get /nodes/pve/qemu/103/status/current
+
+#关闭虚拟机 `pvesh create /nodes/<节点id>/qemu/<虚拟机id>/status/stop`
+pvesh create /nodes/pve/qemu/103/status/stop
+
+#启动虚拟机 `pvesh create /nodes/<节点id>/qemu/<虚拟机id>/status/start`
+pvesh create /nodes/pve/qemu/103/status/start
 </code></pre>
-<h3 id="2、添加DNS服务器"><a href="#2、添加DNS服务器" class="headerlink" title="2、添加DNS服务器"></a>2、添加DNS服务器</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/resolv.conf
-
-<span class="token comment" spellcheck="true">#添加如下两行：</span>
-nameserver 8.8.8.8
-nameserver 8.8.4.4
+<h2 id="1、新装配置"><a href="#1、新装配置" class="headerlink" title="1、新装配置"></a>1、新装配置</h2><p>取消订阅</p>
+<pre class=" language-shell"><code class="language-shell">sed -i "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
 </code></pre>
-<h3 id="3、重启网络"><a href="#3、重启网络" class="headerlink" title="3、重启网络"></a>3、重启网络</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> nmcli c reload
+<p>更换源</p>
+<pre class=" language-shell"><code class="language-shell">rm -rf /etc/apt/sources.list.d/pve-enterprise.list
 
-<span class="token comment" spellcheck="true">#或</span>
-systemctl restart network
+wget http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg
 
-<span class="token comment" spellcheck="true">#或</span>
-<span class="token function">service</span> network restart
+echo "deb http://download.proxmox.com/debian/pve buster pve-no-subscription" >/etc/apt/sources.list.d/pve-install-repo.list
+
+echo "deb http://mirrors.aliyun.com/debian/ buster main non-free contrib  
+deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib  
+deb http://mirrors.aliyun.com/debian-security buster/updates main  
+deb-src http://mirrors.aliyun.com/debian-security buster/updates main  
+deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib  
+deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib  
+deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib  
+deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib" >/etc/apt/sources.list
+
+apt update
 </code></pre>
-<h3 id="4、如果上述操作还是没有成功"><a href="#4、如果上述操作还是没有成功" class="headerlink" title="4、如果上述操作还是没有成功"></a>4、如果上述操作还是没有成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加默认网关</span>
-<span class="token function">sudo</span> route add default gw 192.168.1.1
-
-<span class="token comment" spellcheck="true">#然后</span>
-<span class="token function">sudo</span> nmcli c reload
+<p>更换LXC国内源</p>
+<pre class=" language-shell"><code class="language-shell">grep -rn "download.proxmox.com" /usr/share/perl5/PVE/\* #查找设定下载源的文件  
+sed -i.bak "s#http://download.proxmox.com/images#https://mirrors.ustc.edu.cn/proxmox/images#g" /usr/share/perl5/PVE/APLInfo.pm  
+wget -O /var/lib/pve-manager/apl-info/mirrors.ustc.edu.cn https://mirrors.ustc.edu.cn/proxmox/images/aplinfo-pve-6.dat
 </code></pre>
-<p>到此一般都没问题了😀</p>
+<p>安装时间同步服务  </p>
+<pre class=" language-shell"><code class="language-shell">apt-get install ntp -y
+</code></pre>
+<h2 id="2、虚拟机迁移时需要确认几个问题"><a href="#2、虚拟机迁移时需要确认几个问题" class="headerlink" title="2、虚拟机迁移时需要确认几个问题"></a>2、虚拟机迁移时需要确认几个问题</h2><ul>
+<li>先将虚拟机的磁盘 通过硬件 中的 迁移磁盘 移到共享磁盘中。  </li>
+<li>再用迁移，将服务迁移过去。  </li>
+<li>迁移时需确认硬件，目标服务器是否满足硬盘需求。不能满足的需要先调整。</li>
+</ul>
+<h2 id="3、硬盘空间调小"><a href="#3、硬盘空间调小" class="headerlink" title="3、硬盘空间调小"></a>3、硬盘空间调小</h2><h4 id="3-1调整虚拟机硬盘的大小"><a href="#3-1调整虚拟机硬盘的大小" class="headerlink" title="3.1调整虚拟机硬盘的大小"></a>3.1调整虚拟机硬盘的大小</h4><pre class=" language-shell"><code class="language-shell">#查看虚拟机硬盘信息
+fdisk -l
+#查看虚拟机硬盘路径
+lvdisplay
+#查看虚拟机硬盘大小  
+lvs  
+#调小虚拟机硬盘2G，备注：调整前先将系统内的硬盘调为未分配状态。  
+lvreduce -L -2G /dev/pve/vm-100-disk-0
+</code></pre>
+<h4 id="3-2增加-或减小-local-目录的大小即扩容"><a href="#3-2增加-或减小-local-目录的大小即扩容" class="headerlink" title="3.2增加 或减小 local 目录的大小即扩容"></a>3.2增加 或减小 local 目录的大小即扩容</h4><p>首先执行命令 <code>fdisk -l</code> ，查看&#x2F;dev&#x2F;mapper&#x2F;pve-root大小，显示内容大概如下面的：</p>
+<pre class=" language-shell"><code class="language-shell">Disk /dev/mapper/pve-root: 4.5 GiB, 4831838208 bytes, 9437184 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+</code></pre>
+<p>然后对 &#x2F;dev&#x2F;mapper&#x2F;pve-root 扩容，命令如下，即增加1G的空间.</p>
+<pre class=" language-shell"><code class="language-shell">lvextend -L +1G /dev/mapper/pve-root
+</code></pre>
+<p>执行后实际大小其实是还不会变化的,还需要下边的命令, 作用是执行上边的扩容操作  </p>
+<pre class=" language-shell"><code class="language-shell">resize2fs /dev/mapper/pve-root
+</code></pre>
+<h4 id="3-3如何要删除-local-vm-然后把所有的空间都移到-local下，那么如何操作。"><a href="#3-3如何要删除-local-vm-然后把所有的空间都移到-local下，那么如何操作。" class="headerlink" title="3.3如何要删除 local-vm 然后把所有的空间都移到 local下，那么如何操作。"></a>3.3如何要删除 local-vm 然后把所有的空间都移到 local下，那么如何操作。</h4><ul>
+<li>先移除local-lvm对应的逻辑卷pve&#x2F;data</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">lvremove pve/data
+</code></pre>
+<ul>
+<li>对local对应的逻辑卷&#x2F;dev&#x2F;mapper&#x2F;pve-root进行在线扩容</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">lvextend -l +100%FREE -r /dev/mapper/pve-root
+</code></pre>
+<ul>
+<li>执行后实际大小其实是还不会变化的,还需要下边的命令, 作用是执行上边的扩容操作</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">resize2fs /dev/mapper/pve-root
+</code></pre>
+<ul>
+<li><p>Web中依次展开数据中心-存储，编辑local-lvm，把local-lvm中对应节点移除即可。</p>
+</li>
+<li><p>还有在数据中心-存储，编辑local，内容下拉菜单中把所有的内容都选上，以便这个空间可以储存磁盘映像。</p>
+</li>
+</ul>
+<h2 id="4、开启PVE嵌套虚拟化功能"><a href="#4、开启PVE嵌套虚拟化功能" class="headerlink" title="4、开启PVE嵌套虚拟化功能"></a>4、开启PVE嵌套虚拟化功能</h2><p>通过命令检验嵌套虚拟化功能是否已被开启：</p>
+<pre class=" language-shell"><code class="language-shell">vim /sys/module/kvm\_intel/parameters/nested
+</code></pre>
+<p>开启内核支持：</p>
+<pre class=" language-shell"><code class="language-shell">modprobe -r kvm\_intel  
+modprobe kvm\_intel nested=1
+</code></pre>
+<p>现在再看看nested是否已开启：</p>
+<pre class=" language-shell"><code class="language-shell">cat /sys/module/kvm\_intel/parameters/nested
+Y
+</code></pre>
+<p>编辑配置文件：</p>
+<pre class=" language-shell"><code class="language-shell">echo "options kvm\_intel nested=1" >>/etc/modprobe.d/modprobe.conf
+</code></pre>
+<h2 id="5、查看和关闭虚拟机"><a href="#5、查看和关闭虚拟机" class="headerlink" title="5、查看和关闭虚拟机"></a>5、查看和关闭虚拟机</h2><pre class=" language-shell"><code class="language-shell">#列出所有虚拟机：
+qm list
+#关闭虚拟机：
+qm stop
+</code></pre>
+<h2 id="6、镜像转换"><a href="#6、镜像转换" class="headerlink" title="6、镜像转换"></a>6、镜像转换</h2><pre class=" language-shell"><code class="language-shell">qemu-img convert disk.qcow2 disk.vmdk
+</code></pre>
+<h2 id="7、迁移相关设置"><a href="#7、迁移相关设置" class="headerlink" title="7、迁移相关设置"></a>7、迁移相关设置</h2><p>PVE迁移的类型分加密（secure）或不加密（insecure）<br>secure迁移  </p>
+<blockquote>
+<p>优点：信息安全，加密迁移<br>缺点：非常耗费host主机的CPU资源，且迁移速度慢  </p>
+</blockquote>
+<p>insecure迁移  </p>
+<blockquote>
+<p>优点：迁移速度快，对host主机的资源消耗小<br>缺点：不是加密迁移，信息安全需要考虑  </p>
+</blockquote>
+<p>如果在网络完全自主可控的情况下，可以考虑insecure迁移</p>
+<p>迁移类型在配置文件中设置，web控制台无法设置<br>进入任意host节点—-shell  </p>
+<pre class=" language-shell"><code class="language-shell">root@m71:~# cat /etc/pve/datacenter.cfg
+keyboard: en-us
+migration: network=172.18.171.71/24,type=insecure
+type可以设置为 加密secure（默认）不加密insecure
+</code></pre>
+<h2 id="8、问题处理"><a href="#8、问题处理" class="headerlink" title="8、问题处理"></a>8、问题处理</h2><h4 id="8-1、迁移时提示认证失败时"><a href="#8-1、迁移时提示认证失败时" class="headerlink" title="8.1、迁移时提示认证失败时"></a>8.1、迁移时提示认证失败时</h4><blockquote>
+<p>Host key verification failed.</p>
+</blockquote>
+<p>在控制台运行如下  </p>
+<pre class=" language-shell"><code class="language-shell">/usr/bin/ssh -e none -o 'HostKeyAlias=pve1' root@192.168.3.241 /bin/true
+
+ssh 192.168.3.241
+</code></pre>
+<h4 id="8-2、PVE下qm-stop提示超时的解决办法"><a href="#8-2、PVE下qm-stop提示超时的解决办法" class="headerlink" title="8.2、PVE下qm stop提示超时的解决办法"></a>8.2、PVE下qm stop提示超时的解决办法</h4><blockquote>
+<p>TASK ERROR: can’t lock file ‘&#x2F;var&#x2F;lock&#x2F;qemu-server&#x2F;lock-108.conf’ - got timeout</p>
+</blockquote>
+<p>rm 该文件就可以了。</p>
+<ul>
+<li><p>先在shell里输入 <code>rm /var/lock/qemu-server/lock-108.conf</code> #108是你的虚拟机编号</p>
+</li>
+<li><p>再输入<code>qm stop 108</code> 就可以立即关闭你的108号虚拟机了</p>
+</li>
+</ul>
+<h4 id="8-3、虚拟机存放路径"><a href="#8-3、虚拟机存放路径" class="headerlink" title="8.3、虚拟机存放路径"></a>8.3、虚拟机存放路径</h4><blockquote>
+<p>iso存放路径： <code>/var/lib/vz/template/iso/</code></p>
+</blockquote>
+<blockquote>
+<p>备份路径： <code>/var/lib/vz/dump/文章地址https://www.yii666.com/blog/469212.html</code></p>
+</blockquote>
+<blockquote>
+<p>local 路径：<code>/var/lib/vz/images/</code></p>
+</blockquote>
+<blockquote>
+<p>local-vm 路径： <code>/dev/pve/</code></p>
+</blockquote>
+<blockquote>
+<p>虚拟机配置文件路径： <code>/etc/pve/</code></p>
+</blockquote>
+<blockquote>
+<p>集群中虚拟机配置文件路径： <code>/etc/pve/nodes/pve（pve为节点名称）/qemu-server/</code></p>
+</blockquote>
+<h4 id="8-4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。-命令为-swapoff-a-否则zfs会发生很怪异的事情"><a href="#8-4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。-命令为-swapoff-a-否则zfs会发生很怪异的事情" class="headerlink" title="8.4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。 命令为 swapoff -a ,否则zfs会发生很怪异的事情."></a>8.4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。 命令为 <code>swapoff -a</code> ,否则zfs会发生很怪异的事情.</h4><h4 id="8-5、虚拟机出现问题状态为unkonw的解决方法"><a href="#8-5、虚拟机出现问题状态为unkonw的解决方法" class="headerlink" title="8.5、虚拟机出现问题状态为unkonw的解决方法"></a>8.5、虚拟机出现问题状态为unkonw的解决方法</h4><pre class=" language-shell"><code class="language-shell">service rrdcached stop 
+
+rm -rf /var/lib/rrdcached/* 
+
+service rrdcached start
+</code></pre>
 
                 
             </div>
@@ -480,7 +628,7 @@ systemctl restart network
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://blog.coolweb.eu.org/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/">https://blog.coolweb.eu.org/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/</a>
+                    <a href="https://blog.coolweb.eu.org/2023/07/29/pve%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">https://blog.coolweb.eu.org/2023/07/29/pve%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -518,16 +666,12 @@ systemctl restart network
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/centos/">
-                                    <span class="chip bg-color">centos</span>
+                                <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">教程</span>
                                 </a>
                             
-                                <a href="/tags/linux/">
-                                    <span class="chip bg-color">linux</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%BD%91%E7%BB%9C/">
-                                    <span class="chip bg-color">网络</span>
+                                <a href="/tags/pve/">
+                                    <span class="chip bg-color">pve</span>
                                 </a>
                             
                         </div>
@@ -606,9 +750,10 @@ systemctl restart network
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/07/29/pve%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/">
                     <div class="card-image">
@@ -626,9 +771,9 @@ systemctl restart network
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-07-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-07-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -641,6 +786,7 @@ systemctl restart network
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -663,31 +809,31 @@ systemctl restart network
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/01/18/go%E8%AF%AD%E8%A8%80%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/">
+                <a href="/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="go语言从入门到放弃">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="ping不通外网的解决方案(centos)">
                         
-                        <span class="card-title">go语言从入门到放弃</span>
+                        <span class="card-title">ping不通外网的解决方案(centos)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            go笔记
+                            ping不通外网
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-01-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/go/" class="post-category">
-                                    go
+                            <a href="/categories/%E7%BD%91%E7%BB%9C/" class="post-category">
+                                    网络
                                 </a>
                             
                             
@@ -697,12 +843,16 @@ systemctl restart network
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/go/">
-                        <span class="chip bg-color">go</span>
+                    <a href="/tags/centos/">
+                        <span class="chip bg-color">centos</span>
                     </a>
                     
-                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
-                        <span class="chip bg-color">笔记</span>
+                    <a href="/tags/linux/">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                        <span class="chip bg-color">网络</span>
                     </a>
                     
                 </div>
