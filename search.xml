@@ -92,48 +92,6 @@
       </tags>
   </entry>
   <entry>
-    <title>ping不通外网的解决方案(centos)</title>
-    <url>/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/</url>
-    <content><![CDATA[<p>ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题<br><img src="https://pic.imgdb.cn/item/63df62694757feff3312485e.png"></p>
-<h3 id="1、修改配置文件添加DNS"><a href="#1、修改配置文件添加DNS" class="headerlink" title="1、修改配置文件添加DNS"></a>1、修改配置文件添加DNS</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#xxx为对应网卡</span>
-<span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-xxx
-
-<span class="token comment" spellcheck="true">#添加DNS</span>
-DNS1<span class="token operator">=</span>114.114.114.114
-DNS2<span class="token operator">=</span>8.8.8.8
-</code></pre>
-<h3 id="2、添加DNS服务器"><a href="#2、添加DNS服务器" class="headerlink" title="2、添加DNS服务器"></a>2、添加DNS服务器</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/resolv.conf
-
-<span class="token comment" spellcheck="true">#添加如下两行：</span>
-nameserver 8.8.8.8
-nameserver 8.8.4.4
-</code></pre>
-<h3 id="3、重启网络"><a href="#3、重启网络" class="headerlink" title="3、重启网络"></a>3、重启网络</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> nmcli c reload
-
-<span class="token comment" spellcheck="true">#或</span>
-systemctl restart network
-
-<span class="token comment" spellcheck="true">#或</span>
-<span class="token function">service</span> network restart
-</code></pre>
-<h3 id="4、如果上述操作还是没有成功"><a href="#4、如果上述操作还是没有成功" class="headerlink" title="4、如果上述操作还是没有成功"></a>4、如果上述操作还是没有成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加默认网关</span>
-<span class="token function">sudo</span> route add default gw 192.168.1.1
-
-<span class="token comment" spellcheck="true">#然后</span>
-<span class="token function">sudo</span> nmcli c reload
-</code></pre>
-<p>到此一般都没问题了😀</p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>centos</tag>
-        <tag>linux</tag>
-        <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>go语言从入门到放弃</title>
     <url>/2023/01/18/go%E8%AF%AD%E8%A8%80%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/</url>
     <content><![CDATA[<h3 id="第一个go程序"><a href="#第一个go程序" class="headerlink" title="第一个go程序"></a>第一个go程序</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
@@ -181,6 +139,48 @@ hexo deploy
       <tags>
         <tag>教程</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ping不通外网的解决方案(centos)</title>
+    <url>/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/</url>
+    <content><![CDATA[<p>ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题<br><img src="https://pic.imgdb.cn/item/63df62694757feff3312485e.png"></p>
+<h3 id="1、修改配置文件添加DNS"><a href="#1、修改配置文件添加DNS" class="headerlink" title="1、修改配置文件添加DNS"></a>1、修改配置文件添加DNS</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#xxx为对应网卡</span>
+<span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-xxx
+
+<span class="token comment" spellcheck="true">#添加DNS</span>
+DNS1<span class="token operator">=</span>114.114.114.114
+DNS2<span class="token operator">=</span>8.8.8.8
+</code></pre>
+<h3 id="2、添加DNS服务器"><a href="#2、添加DNS服务器" class="headerlink" title="2、添加DNS服务器"></a>2、添加DNS服务器</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/resolv.conf
+
+<span class="token comment" spellcheck="true">#添加如下两行：</span>
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+</code></pre>
+<h3 id="3、重启网络"><a href="#3、重启网络" class="headerlink" title="3、重启网络"></a>3、重启网络</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> nmcli c reload
+
+<span class="token comment" spellcheck="true">#或</span>
+systemctl restart network
+
+<span class="token comment" spellcheck="true">#或</span>
+<span class="token function">service</span> network restart
+</code></pre>
+<h3 id="4、如果上述操作还是没有成功"><a href="#4、如果上述操作还是没有成功" class="headerlink" title="4、如果上述操作还是没有成功"></a>4、如果上述操作还是没有成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加默认网关</span>
+<span class="token function">sudo</span> route add default gw 192.168.1.1
+
+<span class="token comment" spellcheck="true">#然后</span>
+<span class="token function">sudo</span> nmcli c reload
+</code></pre>
+<p>到此一般都没问题了😀</p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>linux</tag>
+        <tag>网络</tag>
       </tags>
   </entry>
   <entry>
@@ -370,7 +370,9 @@ service rrdcached start
   <entry>
     <title>多线程</title>
     <url>/2024/09/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[<h2 id="CPU寄存器"><a href="#CPU寄存器" class="headerlink" title="CPU寄存器"></a>CPU寄存器</h2><p>CPU寄存器是CPU内部用来存放数据的一些小型存储区域，暂时存放参与运算的数据和运算的结果以及一些CPU运行所需要的信息。</p>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h2 id="CPU寄存器"><a href="#CPU寄存器" class="headerlink" title="CPU寄存器"></a>CPU寄存器</h2><p>CPU寄存器是CPU内部用来存放数据的一些小型存储区域，暂时存放参与运算的数据和运算的结果以及一些CPU运行所需要的信息。</p>
 <h2 id="原生线程-x2F-托管线程"><a href="#原生线程-x2F-托管线程" class="headerlink" title="原生线程&#x2F;托管线程"></a>原生线程&#x2F;托管线程</h2><blockquote>
 <p>原生线程是操作系统管理的线程。CPU都有逻辑核心，每个核心都有多个寄存器，每一个逻辑核心都 会根据程序的寄存器从内存中去读取指令，单个逻辑核心在同一时间只能执行一段机器码，机器码就 是某个任务的处理内容，单个逻辑核心在同一时间只能执行一个线程，那么需要多个线程同时运行的 效果，就需要在这个逻辑核心上去轮流运行，并且每一个线程只能够运行一段很短的时间，然后就形 成了多线程的效果，其中轮流运行就是线程切换。</p>
 </blockquote>
