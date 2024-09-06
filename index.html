@@ -1,7 +1,292 @@
-extends includes/layout.pug
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>知否 - Hello World</title><meta name="author" content="Alone4869"><meta name="copyright" content="Alone4869"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="涉猎的主要编程语言为Python、C#、C++、Go、Nodejs等">
+<meta property="og:type" content="website">
+<meta property="og:title" content="知否">
+<meta property="og:url" content="https://blog.coolweb.eu.org/index.html">
+<meta property="og:site_name" content="知否">
+<meta property="og:description" content="涉猎的主要编程语言为Python、C#、C++、Go、Nodejs等">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
+<meta property="article:author" content="Alone4869">
+<meta property="article:tag" content="Python, C#, C++, Go, Nodejs">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://blog.coolweb.eu.org/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '知否',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-09-06 16:15:35'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
 
-block content
-  include ./includes/mixins/post-ui.pug
-  #recent-posts.recent-posts
-    +postUI
-    include includes/pagination.pug
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr class="custom-hr"/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="知否"><span class="site-name">知否</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">知否</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/05/dotNet%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" title="dotNet高级编程">dotNet高级编程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-05T04:22:32.000Z" title="发表于 2024-09-05 12:22:32">2024-09-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/C/">C#</a></span></div><div class="content">
+
+C#的数据结构Arraylist 自定义类型 类似py的list 存在装拆箱
+List 更安全的版本 创建前需要声明类型 不用装箱拆箱（上面这两者的区别可能会考）
+Hashtable 类似于dict 是哈希代码组织起来的键值和对的集合 
+
+Hashtable中key-value键值对均为object类型，所以在存储或检索值类型时通常发生装箱和拆箱的操作 默认的 Hashtable 允许单线程写入, 多线程读取, 对 Hashtable 进一步调用 Synchronized() 方法可以获得完全线程安全的类型。
+
+字典Dictionary 需要声明类型 HashTable不支持泛型，而Dictionary支持泛型。
+
+Dic是类型安全的，这有助于我们写出更健壮更具可读性的代码，而且省却我们强制转化的麻烦。当K或V是值类型时，其速度远远超过Hashtable。我认为应该始终使用Dictionary&lt;K, V&gt;，即使要用Hashtable了，也可以用Dictionary&lt;object, object&gt;来替代。
+
+HashSet 包含不重复项的无序列表
+Linked ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程">多线程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-05T03:13:54.000Z" title="发表于 2024-09-05 11:13:54">2024-09-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">多线程</a></span></div><div class="content">
+
+CPU寄存器CPU寄存器是CPU内部用来存放数据的一些小型存储区域，暂时存放参与运算的数据和运算的结果以及一些CPU运行所需要的信息。
+原生线程&#x2F;托管线程
+原生线程是操作系统管理的线程。CPU都有逻辑核心，每个核心都有多个寄存器，每一个逻辑核心都 会根据程序的寄存器从内存中去读取指令，单个逻辑核心在同一时间只能执行一段机器码，机器码就 是某个任务的处理内容，单个逻辑核心在同一时间只能执行一个线程，那么需要多个线程同时运行的 效果，就需要在这个逻辑核心上去轮流运行，并且每一个线程只能够运行一段很短的时间，然后就形 成了多线程的效果，其中轮流运行就是线程切换。
+
+
+托管线程是基于原生线程创建的线程模型，是由.NET管理的线程。一个托管线程只能运行一个原生线 程。
+
+
+主动切换&#x2F;被动切换&#x2F;上下文&#x2F;上下文切换&#x2F;线程调度&#x2F;栈空间
+主动切换是线程对应的任务主动要求暂停线程，比如说线程锁被其它线程获取了，这时候任务会主动 要求暂停线程，一直到锁释放才继续。如果读取文件时要等待磁盘的响应，那么这个任务也会要求去 暂停线程的运行。
+
+
+被动 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/09/05/hexo%E9%83%A8%E7%BD%B2/" title="hexo部署">hexo部署</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-09-05T03:00:28.192Z" title="发表于 2024-09-05 11:00:28">2024-09-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/hexo/">hexo</a></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. 
+快速开始创建新文章hexo new "My New Post"
+
+More
+启动本地服务hexo server
+
+More
+生成静态文件hexo generate
+
+More
+部署hexo deploy
+
+More
+脚本部署(运行 sh deploy.sh)hexo clean
+
+hexo generate
+
+hexo deploy
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/07/29/pve%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" title="pve配置及常见问题处理">pve配置及常见问题处理</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-07-29T14:23:08.000Z" title="发表于 2023-07-29 22:23:08">2023-07-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/pve/">pve</a></span></div><div class="content">PVE服务器配置及常见问题处理0、常用命令#查看虚拟机列表
+qm list
+
+#pve重启
+reboot
+
+#查看集群资源状况
+pvesh get /cluster/resources
+
+#取得虚拟机当前状态 `pvesh get /nodes//qemu//status/current`
+pvesh get /nodes/pve/qemu/103/status/current
+
+#关闭虚拟机 `pvesh create /nodes//qemu//status/stop`
+pvesh create /nodes/pve/qemu/103/status/stop
+
+#启动虚拟机 `pvesh create /nodes//qemu//status/start`
+pvesh create /nodes/pve/qemu/103/status/start
+
+1、新装配置取消订阅
+sed -i "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+
+更换源 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/" title="ping不通外网的解决方案(centos)">ping不通外网的解决方案(centos)</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-02-05T07:29:22.000Z" title="发表于 2023-02-05 15:29:22">2023-02-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/%E7%BD%91%E7%BB%9C/">网络</a></span></div><div class="content">ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题
+1、修改配置文件添加DNS#xxx为对应网卡
+vi /etc/sysconfig/network-scripts/ifcfg-xxx
+
+#添加DNS
+DNS1=114.114.114.114
+DNS2=8.8.8.8
+
+2、添加DNS服务器vi /etc/resolv.conf
+
+#添加如下两行：
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+3、重启网络sudo nmcli c reload
+
+#或
+systemctl restart network
+
+#或
+service network restart
+
+4、如果上述操作还是没有成功#添加默认网关
+sudo route add default gw 192.168.1.1
+
+#然后
+sudo nmcli c reload
+
+到此一般都没问题了😀
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/18/go%E8%AF%AD%E8%A8%80%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/" title="go语言从入门到放弃">go语言从入门到放弃</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-18T12:31:55.000Z" title="发表于 2023-01-18 20:31:55">2023-01-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/go/">go</a></span></div><div class="content">第一个go程序package main
+import "fmt"
+
+func main(){
+    fmt.Println("Hello World!")
+}
+
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" title="git基本操作">git基本操作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-17T06:05:17.000Z" title="发表于 2023-01-17 14:05:17">2023-01-17</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/git/">git</a></span></div><div class="content">Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.
+快速开始基本操作#初始化仓库,在当前目录新建一个Git代码库
+git init
+
+#添加当前所有文件到缓存区
+git add .
+
+#提交暂存区中的内容到本地仓库 -m:提交的信息
+git commit -m "信息"
+
+#本地与远程仓库连接
+git remote add origin &lt;远程仓库链接>
+
+#如果远程仓库创建了readme文件，可以先把远程仓库的项目pull下来
+git pull origin master
+
+#将本地的分支版本上传到远程并合并, git push &lt;远程主机名> &lt;本地分支名>  &lt;远程分支名>, -u 参数指定一个默认主机
+git push -u origin master
+
+git分支常用命令#列出本地所有分支
+git branch
+
+#列出所有远程分支
+git branch -r
+
+#新建一个分支，但依然停留在当前分支
+git branch 分支名
+
+#新建一个分支， ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Alone4869</div><div class="author-info__description">涉猎的主要编程语言为Python、C#、C++、Go、Nodejs等</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/05/dotNet%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" title="dotNet高级编程">dotNet高级编程</a><time datetime="2024-09-05T04:22:32.000Z" title="发表于 2024-09-05 12:22:32">2024-09-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" title="多线程">多线程</a><time datetime="2024-09-05T03:13:54.000Z" title="发表于 2024-09-05 11:13:54">2024-09-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/09/05/hexo%E9%83%A8%E7%BD%B2/" title="hexo部署">hexo部署</a><time datetime="2024-09-05T03:00:28.192Z" title="发表于 2024-09-05 11:00:28">2024-09-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/07/29/pve%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" title="pve配置及常见问题处理">pve配置及常见问题处理</a><time datetime="2023-07-29T14:23:08.000Z" title="发表于 2023-07-29 22:23:08">2023-07-29</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/" title="ping不通外网的解决方案(centos)">ping不通外网的解决方案(centos)</a><time datetime="2023-02-05T07:29:22.000Z" title="发表于 2023-02-05 15:29:22">2023-02-05</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/C/"><span class="card-category-list-name">C#</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/git/"><span class="card-category-list-name">git</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/go/"><span class="card-category-list-name">go</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/hexo/"><span class="card-category-list-name">hexo</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/pve/"><span class="card-category-list-name">pve</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"><span class="card-category-list-name">多线程</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/%E7%BD%91%E7%BB%9C/"><span class="card-category-list-name">网络</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/centos/" style="font-size: 1.1em; color: #999">centos</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 1.1em; color: #999">网络</a> <a href="/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/tags/%E6%95%99%E7%A8%8B/" style="font-size: 1.5em; color: #99a9bf">教程</a> <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" style="font-size: 1.1em; color: #999">多线程</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.1em; color: #999">笔记</a> <a href="/tags/pve/" style="font-size: 1.1em; color: #999">pve</a> <a href="/tags/linux/" style="font-size: 1.1em; color: #999">linux</a> <a href="/tags/C/" style="font-size: 1.3em; color: #99a1ac">C#</a> <a href="/tags/go/" style="font-size: 1.1em; color: #999">go</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/09/"><span class="card-archive-list-date">九月 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/07/"><span class="card-archive-list-date">七月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/02/"><span class="card-archive-list-date">二月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">2</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">7</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-09-06T08:15:35.283Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By Alone4869</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
