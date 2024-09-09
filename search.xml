@@ -392,6 +392,37 @@ public int MaxHealth1
       </tags>
   </entry>
   <entry>
+    <title>hexo部署</title>
+    <url>/2024/09/05/hexo%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New Post"</span>
+</code></pre>
+<p><a href="https://hexo.io/docs/writing.html">More</a></p>
+<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><pre class=" language-bash"><code class="language-bash">hexo server
+</code></pre>
+<p><a href="https://hexo.io/docs/server.html">More</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre class=" language-bash"><code class="language-bash">hexo generate
+</code></pre>
+<p><a href="https://hexo.io/docs/generating.html">More</a></p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class=" language-bash"><code class="language-bash">hexo deploy
+</code></pre>
+<p><a href="https://hexo.io/docs/one-command-deployment.html">More</a></p>
+<h3 id="脚本部署-运行-sh-deploy-sh"><a href="#脚本部署-运行-sh-deploy-sh" class="headerlink" title="脚本部署(运行 sh deploy.sh)"></a>脚本部署(运行 sh deploy.sh)</h3><pre class=" language-bash"><code class="language-bash">hexo clean
+
+hexo generate
+
+hexo deploy
+</code></pre>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ping不通外网的解决方案(centos)</title>
     <url>/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/</url>
     <content><![CDATA[<p>ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题<br><img src="https://pic.imgdb.cn/item/63df62694757feff3312485e.png"></p>
@@ -431,37 +462,6 @@ systemctl restart network
         <tag>centos</tag>
         <tag>linux</tag>
         <tag>网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo部署</title>
-    <url>/2024/09/05/hexo%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New Post"</span>
-</code></pre>
-<p><a href="https://hexo.io/docs/writing.html">More</a></p>
-<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><pre class=" language-bash"><code class="language-bash">hexo server
-</code></pre>
-<p><a href="https://hexo.io/docs/server.html">More</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre class=" language-bash"><code class="language-bash">hexo generate
-</code></pre>
-<p><a href="https://hexo.io/docs/generating.html">More</a></p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class=" language-bash"><code class="language-bash">hexo deploy
-</code></pre>
-<p><a href="https://hexo.io/docs/one-command-deployment.html">More</a></p>
-<h3 id="脚本部署-运行-sh-deploy-sh"><a href="#脚本部署-运行-sh-deploy-sh" class="headerlink" title="脚本部署(运行 sh deploy.sh)"></a>脚本部署(运行 sh deploy.sh)</h3><pre class=" language-bash"><code class="language-bash">hexo clean
-
-hexo generate
-
-hexo deploy
-</code></pre>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
