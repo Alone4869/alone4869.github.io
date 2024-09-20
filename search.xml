@@ -1,116 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>git基本操作</title>
-    <url>/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.<br><img src="https://pic.imgdb.cn/item/63df62d34757feff33131295.jpg"></p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#初始化仓库,在当前目录新建一个Git代码库</span>
-<span class="token function">git</span> init
-
-<span class="token comment" spellcheck="true">#添加当前所有文件到缓存区</span>
-<span class="token function">git</span> add <span class="token keyword">.</span>
-
-<span class="token comment" spellcheck="true">#提交暂存区中的内容到本地仓库 -m:提交的信息</span>
-<span class="token function">git</span> commit -m <span class="token string">"信息"</span>
-
-<span class="token comment" spellcheck="true">#本地与远程仓库连接</span>
-<span class="token function">git</span> remote add origin <span class="token operator">&lt;</span>远程仓库链接<span class="token operator">></span>
-
-<span class="token comment" spellcheck="true">#如果远程仓库创建了readme文件，可以先把远程仓库的项目pull下来</span>
-<span class="token function">git</span> pull origin master
-
-<span class="token comment" spellcheck="true">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名> &lt;本地分支名>  &lt;远程分支名>, -u 参数指定一个默认主机</span>
-<span class="token function">git</span> push -u origin master
-</code></pre>
-<h3 id="git分支常用命令"><a href="#git分支常用命令" class="headerlink" title="git分支常用命令"></a>git分支常用命令</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#列出本地所有分支</span>
-<span class="token function">git</span> branch
-
-<span class="token comment" spellcheck="true">#列出所有远程分支</span>
-<span class="token function">git</span> branch -r
-
-<span class="token comment" spellcheck="true">#新建一个分支，但依然停留在当前分支</span>
-<span class="token function">git</span> branch 分支名
-
-<span class="token comment" spellcheck="true">#新建一个分支，并切换到该分支</span>
-<span class="token function">git</span> checkout -b 分支名
-
-<span class="token comment" spellcheck="true">#切换分支</span>
-<span class="token function">git</span> checkout 分支名
-
-<span class="token comment" spellcheck="true">#合并指定分支到当前分支</span>
-<span class="token function">git</span> merge 分支名
-
-<span class="token comment" spellcheck="true">#删除分支</span>
-<span class="token function">git</span> branch -d 分支名
-
-<span class="token comment" spellcheck="true">#删除远程分支</span>
-<span class="token function">git</span> push origin --delete 分支名
-<span class="token function">git</span> branch -dr 分支名
-</code></pre>
-<h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#克隆仓库</span>
-<span class="token function">git</span> clone <span class="token operator">&lt;</span>repo<span class="token operator">></span>
-
-<span class="token comment" spellcheck="true">#克隆到指定的目录</span>
-<span class="token function">git</span> clone <span class="token operator">&lt;</span>repo<span class="token operator">></span> <span class="token operator">&lt;</span>directory<span class="token operator">></span>
-
-<span class="token comment" spellcheck="true">#查看当前配置有哪些远程仓库</span>
-<span class="token function">git</span> remote
-
-<span class="token comment" spellcheck="true">#加上 -v 参数，可以看到每个别名的实际链接地址</span>
-<span class="token function">git</span> remote -v
-
-<span class="token comment" spellcheck="true"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span>
-<span class="token function">git</span> remote add <span class="token operator">&lt;</span>shortname<span class="token operator">></span> <span class="token operator">&lt;</span>repo<span class="token operator">></span>
-
-<span class="token comment" spellcheck="true">#移除远程仓库关联</span>
-<span class="token function">git</span> remote <span class="token function">rm</span> <span class="token operator">&lt;</span>shortname<span class="token operator">></span>
-
-<span class="token comment" spellcheck="true">#从远程仓库下载新分支与数据</span>
-<span class="token function">git</span> fetch <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token operator">&lt;</span>branch<span class="token operator">></span>
-
-<span class="token comment" spellcheck="true">#从远端仓库提取数据并尝试合并到当前分支</span>
-<span class="token function">git</span> merge <span class="token operator">&lt;</span>branch<span class="token operator">></span>
-</code></pre>
-<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#显示当前的 git 配置信息</span>
-<span class="token function">git</span> config --list
-
-<span class="token comment" spellcheck="true">#编辑 git 配置文件:</span>
-<span class="token function">git</span> config -e    <span class="token comment" spellcheck="true"># 针对当前仓库 </span>
-<span class="token function">git</span> config -e --global   <span class="token comment" spellcheck="true"># 针对系统上所有仓库</span>
-
-<span class="token comment" spellcheck="true">#设置提交代码时的用户信息</span>
-<span class="token function">git</span> config --global user.name <span class="token string">"xxx"</span>
-<span class="token function">git</span> config --global user.email xxxxxxxx@yyyy.com
-</code></pre>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>go语言从入门到放弃</title>
-    <url>/2023/01/18/go%E8%AF%AD%E8%A8%80%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/</url>
-    <content><![CDATA[<h3 id="第一个go程序"><a href="#第一个go程序" class="headerlink" title="第一个go程序"></a>第一个go程序</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
-<span class="token keyword">import</span> <span class="token string">"fmt"</span>
-
-<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span>
-</code></pre>
-]]></content>
-      <categories>
-        <category>go</category>
-      </categories>
-      <tags>
-        <tag>go</tag>
-        <tag>笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>dotNet高级编程</title>
     <url>/2024/09/05/dotNet%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
@@ -392,6 +282,373 @@ public int MaxHealth1
       </tags>
   </entry>
   <entry>
+    <title>git基本操作</title>
+    <url>/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.<br><img src="https://pic.imgdb.cn/item/63df62d34757feff33131295.jpg"></p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#初始化仓库,在当前目录新建一个Git代码库</span>
+<span class="token function">git</span> init
+
+<span class="token comment" spellcheck="true">#添加当前所有文件到缓存区</span>
+<span class="token function">git</span> add <span class="token keyword">.</span>
+
+<span class="token comment" spellcheck="true">#提交暂存区中的内容到本地仓库 -m:提交的信息</span>
+<span class="token function">git</span> commit -m <span class="token string">"信息"</span>
+
+<span class="token comment" spellcheck="true">#本地与远程仓库连接</span>
+<span class="token function">git</span> remote add origin <span class="token operator">&lt;</span>远程仓库链接<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#如果远程仓库创建了readme文件，可以先把远程仓库的项目pull下来</span>
+<span class="token function">git</span> pull origin master
+
+<span class="token comment" spellcheck="true">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名> &lt;本地分支名>  &lt;远程分支名>, -u 参数指定一个默认主机</span>
+<span class="token function">git</span> push -u origin master
+</code></pre>
+<h3 id="git分支常用命令"><a href="#git分支常用命令" class="headerlink" title="git分支常用命令"></a>git分支常用命令</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#列出本地所有分支</span>
+<span class="token function">git</span> branch
+
+<span class="token comment" spellcheck="true">#列出所有远程分支</span>
+<span class="token function">git</span> branch -r
+
+<span class="token comment" spellcheck="true">#新建一个分支，但依然停留在当前分支</span>
+<span class="token function">git</span> branch 分支名
+
+<span class="token comment" spellcheck="true">#新建一个分支，并切换到该分支</span>
+<span class="token function">git</span> checkout -b 分支名
+
+<span class="token comment" spellcheck="true">#切换分支</span>
+<span class="token function">git</span> checkout 分支名
+
+<span class="token comment" spellcheck="true">#合并指定分支到当前分支</span>
+<span class="token function">git</span> merge 分支名
+
+<span class="token comment" spellcheck="true">#删除分支</span>
+<span class="token function">git</span> branch -d 分支名
+
+<span class="token comment" spellcheck="true">#删除远程分支</span>
+<span class="token function">git</span> push origin --delete 分支名
+<span class="token function">git</span> branch -dr 分支名
+</code></pre>
+<h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#克隆仓库</span>
+<span class="token function">git</span> clone <span class="token operator">&lt;</span>repo<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#克隆到指定的目录</span>
+<span class="token function">git</span> clone <span class="token operator">&lt;</span>repo<span class="token operator">></span> <span class="token operator">&lt;</span>directory<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#查看当前配置有哪些远程仓库</span>
+<span class="token function">git</span> remote
+
+<span class="token comment" spellcheck="true">#加上 -v 参数，可以看到每个别名的实际链接地址</span>
+<span class="token function">git</span> remote -v
+
+<span class="token comment" spellcheck="true"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span>
+<span class="token function">git</span> remote add <span class="token operator">&lt;</span>shortname<span class="token operator">></span> <span class="token operator">&lt;</span>repo<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#移除远程仓库关联</span>
+<span class="token function">git</span> remote <span class="token function">rm</span> <span class="token operator">&lt;</span>shortname<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#从远程仓库下载新分支与数据</span>
+<span class="token function">git</span> fetch <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token operator">&lt;</span>branch<span class="token operator">></span>
+
+<span class="token comment" spellcheck="true">#从远端仓库提取数据并尝试合并到当前分支</span>
+<span class="token function">git</span> merge <span class="token operator">&lt;</span>branch<span class="token operator">></span>
+</code></pre>
+<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#显示当前的 git 配置信息</span>
+<span class="token function">git</span> config --list
+
+<span class="token comment" spellcheck="true">#编辑 git 配置文件:</span>
+<span class="token function">git</span> config -e    <span class="token comment" spellcheck="true"># 针对当前仓库 </span>
+<span class="token function">git</span> config -e --global   <span class="token comment" spellcheck="true"># 针对系统上所有仓库</span>
+
+<span class="token comment" spellcheck="true">#设置提交代码时的用户信息</span>
+<span class="token function">git</span> config --global user.name <span class="token string">"xxx"</span>
+<span class="token function">git</span> config --global user.email xxxxxxxx@yyyy.com
+</code></pre>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>教程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>go语言从入门到放弃</title>
+    <url>/2023/01/18/go%E8%AF%AD%E8%A8%80%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E6%94%BE%E5%BC%83/</url>
+    <content><![CDATA[<h3 id="第一个go程序"><a href="#第一个go程序" class="headerlink" title="第一个go程序"></a>第一个go程序</h3><pre class=" language-go"><code class="language-go"><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token string">"fmt"</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">"Hello World!"</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre>
+]]></content>
+      <categories>
+        <category>go</category>
+      </categories>
+      <tags>
+        <tag>go</tag>
+        <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo部署</title>
+    <url>/2024/09/05/hexo%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New Post"</span>
+</code></pre>
+<p><a href="https://hexo.io/docs/writing.html">More</a></p>
+<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><pre class=" language-bash"><code class="language-bash">hexo server
+</code></pre>
+<p><a href="https://hexo.io/docs/server.html">More</a></p>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre class=" language-bash"><code class="language-bash">hexo generate
+</code></pre>
+<p><a href="https://hexo.io/docs/generating.html">More</a></p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class=" language-bash"><code class="language-bash">hexo deploy
+</code></pre>
+<p><a href="https://hexo.io/docs/one-command-deployment.html">More</a></p>
+<h3 id="脚本部署-运行-sh-deploy-sh"><a href="#脚本部署-运行-sh-deploy-sh" class="headerlink" title="脚本部署(运行 sh deploy.sh)"></a>脚本部署(运行 sh deploy.sh)</h3><pre class=" language-bash"><code class="language-bash">hexo clean
+
+hexo generate
+
+hexo deploy
+</code></pre>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ping不通外网的解决方案(centos)</title>
+    <url>/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/</url>
+    <content><![CDATA[<p>ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题<br><img src="https://pic.imgdb.cn/item/63df62694757feff3312485e.png"></p>
+<h3 id="1、修改配置文件添加DNS"><a href="#1、修改配置文件添加DNS" class="headerlink" title="1、修改配置文件添加DNS"></a>1、修改配置文件添加DNS</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#xxx为对应网卡</span>
+<span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-xxx
+
+<span class="token comment" spellcheck="true">#添加DNS</span>
+DNS1<span class="token operator">=</span>114.114.114.114
+DNS2<span class="token operator">=</span>8.8.8.8
+</code></pre>
+<h3 id="2、添加DNS服务器"><a href="#2、添加DNS服务器" class="headerlink" title="2、添加DNS服务器"></a>2、添加DNS服务器</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/resolv.conf
+
+<span class="token comment" spellcheck="true">#添加如下两行：</span>
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+</code></pre>
+<h3 id="3、重启网络"><a href="#3、重启网络" class="headerlink" title="3、重启网络"></a>3、重启网络</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> nmcli c reload
+
+<span class="token comment" spellcheck="true">#或</span>
+systemctl restart network
+
+<span class="token comment" spellcheck="true">#或</span>
+<span class="token function">service</span> network restart
+</code></pre>
+<h3 id="4、如果上述操作还是没有成功"><a href="#4、如果上述操作还是没有成功" class="headerlink" title="4、如果上述操作还是没有成功"></a>4、如果上述操作还是没有成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加默认网关</span>
+<span class="token function">sudo</span> route add default gw 192.168.1.1
+
+<span class="token comment" spellcheck="true">#然后</span>
+<span class="token function">sudo</span> nmcli c reload
+</code></pre>
+<p>到此一般都没问题了😀</p>
+]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>centos</tag>
+        <tag>linux</tag>
+        <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pve配置及常见问题处理</title>
+    <url>/2023/07/29/pve%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</url>
+    <content><![CDATA[<h1 id="PVE服务器配置及常见问题处理"><a href="#PVE服务器配置及常见问题处理" class="headerlink" title="PVE服务器配置及常见问题处理"></a>PVE服务器配置及常见问题处理</h1><h2 id="0、常用命令"><a href="#0、常用命令" class="headerlink" title="0、常用命令"></a>0、常用命令</h2><pre class=" language-shell"><code class="language-shell">#查看虚拟机列表
+qm list
+
+#pve重启
+reboot
+
+#查看集群资源状况
+pvesh get /cluster/resources
+
+#取得虚拟机当前状态 `pvesh get /nodes/<节点id>/qemu/<虚拟机id>/status/current`
+pvesh get /nodes/pve/qemu/103/status/current
+
+#关闭虚拟机 `pvesh create /nodes/<节点id>/qemu/<虚拟机id>/status/stop`
+pvesh create /nodes/pve/qemu/103/status/stop
+
+#启动虚拟机 `pvesh create /nodes/<节点id>/qemu/<虚拟机id>/status/start`
+pvesh create /nodes/pve/qemu/103/status/start
+</code></pre>
+<h2 id="1、新装配置"><a href="#1、新装配置" class="headerlink" title="1、新装配置"></a>1、新装配置</h2><p>取消订阅</p>
+<pre class=" language-shell"><code class="language-shell">sed -i "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+</code></pre>
+<p>更换源</p>
+<pre class=" language-shell"><code class="language-shell">rm -rf /etc/apt/sources.list.d/pve-enterprise.list
+
+wget http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg
+
+echo "deb http://download.proxmox.com/debian/pve buster pve-no-subscription" >/etc/apt/sources.list.d/pve-install-repo.list
+
+echo "deb http://mirrors.aliyun.com/debian/ buster main non-free contrib  
+deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib  
+deb http://mirrors.aliyun.com/debian-security buster/updates main  
+deb-src http://mirrors.aliyun.com/debian-security buster/updates main  
+deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib  
+deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib  
+deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib  
+deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib" >/etc/apt/sources.list
+
+apt update
+</code></pre>
+<p>更换LXC国内源</p>
+<pre class=" language-shell"><code class="language-shell">grep -rn "download.proxmox.com" /usr/share/perl5/PVE/\* #查找设定下载源的文件  
+sed -i.bak "s#http://download.proxmox.com/images#https://mirrors.ustc.edu.cn/proxmox/images#g" /usr/share/perl5/PVE/APLInfo.pm  
+wget -O /var/lib/pve-manager/apl-info/mirrors.ustc.edu.cn https://mirrors.ustc.edu.cn/proxmox/images/aplinfo-pve-6.dat
+</code></pre>
+<p>安装时间同步服务  </p>
+<pre class=" language-shell"><code class="language-shell">apt-get install ntp -y
+</code></pre>
+<h2 id="2、虚拟机迁移时需要确认几个问题"><a href="#2、虚拟机迁移时需要确认几个问题" class="headerlink" title="2、虚拟机迁移时需要确认几个问题"></a>2、虚拟机迁移时需要确认几个问题</h2><ul>
+<li>先将虚拟机的磁盘 通过硬件 中的 迁移磁盘 移到共享磁盘中。  </li>
+<li>再用迁移，将服务迁移过去。  </li>
+<li>迁移时需确认硬件，目标服务器是否满足硬盘需求。不能满足的需要先调整。</li>
+</ul>
+<h2 id="3、硬盘空间调小"><a href="#3、硬盘空间调小" class="headerlink" title="3、硬盘空间调小"></a>3、硬盘空间调小</h2><h4 id="3-1调整虚拟机硬盘的大小"><a href="#3-1调整虚拟机硬盘的大小" class="headerlink" title="3.1调整虚拟机硬盘的大小"></a>3.1调整虚拟机硬盘的大小</h4><pre class=" language-shell"><code class="language-shell">#查看虚拟机硬盘信息
+fdisk -l
+#查看虚拟机硬盘路径
+lvdisplay
+#查看虚拟机硬盘大小  
+lvs  
+#调小虚拟机硬盘2G，备注：调整前先将系统内的硬盘调为未分配状态。  
+lvreduce -L -2G /dev/pve/vm-100-disk-0
+</code></pre>
+<h4 id="3-2增加-或减小-local-目录的大小即扩容"><a href="#3-2增加-或减小-local-目录的大小即扩容" class="headerlink" title="3.2增加 或减小 local 目录的大小即扩容"></a>3.2增加 或减小 local 目录的大小即扩容</h4><p>首先执行命令 <code>fdisk -l</code> ，查看&#x2F;dev&#x2F;mapper&#x2F;pve-root大小，显示内容大概如下面的：</p>
+<pre class=" language-shell"><code class="language-shell">Disk /dev/mapper/pve-root: 4.5 GiB, 4831838208 bytes, 9437184 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+</code></pre>
+<p>然后对 &#x2F;dev&#x2F;mapper&#x2F;pve-root 扩容，命令如下，即增加1G的空间.</p>
+<pre class=" language-shell"><code class="language-shell">lvextend -L +1G /dev/mapper/pve-root
+</code></pre>
+<p>执行后实际大小其实是还不会变化的,还需要下边的命令, 作用是执行上边的扩容操作  </p>
+<pre class=" language-shell"><code class="language-shell">resize2fs /dev/mapper/pve-root
+</code></pre>
+<h4 id="3-3如何要删除-local-vm-然后把所有的空间都移到-local下，那么如何操作。"><a href="#3-3如何要删除-local-vm-然后把所有的空间都移到-local下，那么如何操作。" class="headerlink" title="3.3如何要删除 local-vm 然后把所有的空间都移到 local下，那么如何操作。"></a>3.3如何要删除 local-vm 然后把所有的空间都移到 local下，那么如何操作。</h4><ul>
+<li>先移除local-lvm对应的逻辑卷pve&#x2F;data</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">lvremove pve/data
+</code></pre>
+<ul>
+<li>对local对应的逻辑卷&#x2F;dev&#x2F;mapper&#x2F;pve-root进行在线扩容</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">lvextend -l +100%FREE -r /dev/mapper/pve-root
+</code></pre>
+<ul>
+<li>执行后实际大小其实是还不会变化的,还需要下边的命令, 作用是执行上边的扩容操作</li>
+</ul>
+<pre class=" language-shell"><code class="language-shell">resize2fs /dev/mapper/pve-root
+</code></pre>
+<ul>
+<li><p>Web中依次展开数据中心-存储，编辑local-lvm，把local-lvm中对应节点移除即可。</p>
+</li>
+<li><p>还有在数据中心-存储，编辑local，内容下拉菜单中把所有的内容都选上，以便这个空间可以储存磁盘映像。</p>
+</li>
+</ul>
+<h2 id="4、开启PVE嵌套虚拟化功能"><a href="#4、开启PVE嵌套虚拟化功能" class="headerlink" title="4、开启PVE嵌套虚拟化功能"></a>4、开启PVE嵌套虚拟化功能</h2><p>通过命令检验嵌套虚拟化功能是否已被开启：</p>
+<pre class=" language-shell"><code class="language-shell">vim /sys/module/kvm\_intel/parameters/nested
+</code></pre>
+<p>开启内核支持：</p>
+<pre class=" language-shell"><code class="language-shell">modprobe -r kvm\_intel  
+modprobe kvm\_intel nested=1
+</code></pre>
+<p>现在再看看nested是否已开启：</p>
+<pre class=" language-shell"><code class="language-shell">cat /sys/module/kvm\_intel/parameters/nested
+Y
+</code></pre>
+<p>编辑配置文件：</p>
+<pre class=" language-shell"><code class="language-shell">echo "options kvm\_intel nested=1" >>/etc/modprobe.d/modprobe.conf
+</code></pre>
+<h2 id="5、查看和关闭虚拟机"><a href="#5、查看和关闭虚拟机" class="headerlink" title="5、查看和关闭虚拟机"></a>5、查看和关闭虚拟机</h2><pre class=" language-shell"><code class="language-shell">#列出所有虚拟机：
+qm list
+#关闭虚拟机：
+qm stop
+</code></pre>
+<h2 id="6、镜像转换"><a href="#6、镜像转换" class="headerlink" title="6、镜像转换"></a>6、镜像转换</h2><pre class=" language-shell"><code class="language-shell">qemu-img convert disk.qcow2 disk.vmdk
+</code></pre>
+<h2 id="7、迁移相关设置"><a href="#7、迁移相关设置" class="headerlink" title="7、迁移相关设置"></a>7、迁移相关设置</h2><p>PVE迁移的类型分加密（secure）或不加密（insecure）<br>secure迁移  </p>
+<blockquote>
+<p>优点：信息安全，加密迁移<br>缺点：非常耗费host主机的CPU资源，且迁移速度慢  </p>
+</blockquote>
+<p>insecure迁移  </p>
+<blockquote>
+<p>优点：迁移速度快，对host主机的资源消耗小<br>缺点：不是加密迁移，信息安全需要考虑  </p>
+</blockquote>
+<p>如果在网络完全自主可控的情况下，可以考虑insecure迁移</p>
+<p>迁移类型在配置文件中设置，web控制台无法设置<br>进入任意host节点—-shell  </p>
+<pre class=" language-shell"><code class="language-shell">root@m71:~# cat /etc/pve/datacenter.cfg
+keyboard: en-us
+migration: network=172.18.171.71/24,type=insecure
+type可以设置为 加密secure（默认）不加密insecure
+</code></pre>
+<h2 id="8、问题处理"><a href="#8、问题处理" class="headerlink" title="8、问题处理"></a>8、问题处理</h2><h4 id="8-1、迁移时提示认证失败时"><a href="#8-1、迁移时提示认证失败时" class="headerlink" title="8.1、迁移时提示认证失败时"></a>8.1、迁移时提示认证失败时</h4><blockquote>
+<p>Host key verification failed.</p>
+</blockquote>
+<p>在控制台运行如下  </p>
+<pre class=" language-shell"><code class="language-shell">/usr/bin/ssh -e none -o 'HostKeyAlias=pve1' root@192.168.3.241 /bin/true
+
+ssh 192.168.3.241
+</code></pre>
+<h4 id="8-2、PVE下qm-stop提示超时的解决办法"><a href="#8-2、PVE下qm-stop提示超时的解决办法" class="headerlink" title="8.2、PVE下qm stop提示超时的解决办法"></a>8.2、PVE下qm stop提示超时的解决办法</h4><blockquote>
+<p>TASK ERROR: can’t lock file ‘&#x2F;var&#x2F;lock&#x2F;qemu-server&#x2F;lock-108.conf’ - got timeout</p>
+</blockquote>
+<p>rm 该文件就可以了。</p>
+<ul>
+<li><p>先在shell里输入 <code>rm /var/lock/qemu-server/lock-108.conf</code> #108是你的虚拟机编号</p>
+</li>
+<li><p>再输入<code>qm stop 108</code> 就可以立即关闭你的108号虚拟机了</p>
+</li>
+</ul>
+<h4 id="8-3、虚拟机存放路径"><a href="#8-3、虚拟机存放路径" class="headerlink" title="8.3、虚拟机存放路径"></a>8.3、虚拟机存放路径</h4><blockquote>
+<p>iso存放路径： <code>/var/lib/vz/template/iso/</code></p>
+</blockquote>
+<blockquote>
+<p>备份路径： <code>/var/lib/vz/dump/文章地址https://www.yii666.com/blog/469212.html</code></p>
+</blockquote>
+<blockquote>
+<p>local 路径：<code>/var/lib/vz/images/</code></p>
+</blockquote>
+<blockquote>
+<p>local-vm 路径： <code>/dev/pve/</code></p>
+</blockquote>
+<blockquote>
+<p>虚拟机配置文件路径： <code>/etc/pve/</code></p>
+</blockquote>
+<blockquote>
+<p>集群中虚拟机配置文件路径： <code>/etc/pve/nodes/pve（pve为节点名称）/qemu-server/</code></p>
+</blockquote>
+<h4 id="8-4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。-命令为-swapoff-a-否则zfs会发生很怪异的事情"><a href="#8-4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。-命令为-swapoff-a-否则zfs会发生很怪异的事情" class="headerlink" title="8.4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。 命令为 swapoff -a ,否则zfs会发生很怪异的事情."></a>8.4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。 命令为 <code>swapoff -a</code> ,否则zfs会发生很怪异的事情.</h4><h4 id="8-5、虚拟机出现问题状态为unkonw的解决方法"><a href="#8-5、虚拟机出现问题状态为unkonw的解决方法" class="headerlink" title="8.5、虚拟机出现问题状态为unkonw的解决方法"></a>8.5、虚拟机出现问题状态为unkonw的解决方法</h4><pre class=" language-shell"><code class="language-shell">service rrdcached stop 
+
+rm -rf /var/lib/rrdcached/* 
+
+service rrdcached start
+</code></pre>
+]]></content>
+      <categories>
+        <category>pve</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>pve</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多线程</title>
     <url>/2024/09/05/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer">
@@ -632,263 +889,6 @@ public int MaxHealth1
       <tags>
         <tag>C#</tag>
         <tag>多线程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo部署</title>
-    <url>/2024/09/05/hexo%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="创建新文章"><a href="#创建新文章" class="headerlink" title="创建新文章"></a>创建新文章</h3><pre class=" language-bash"><code class="language-bash">hexo new <span class="token string">"My New Post"</span>
-</code></pre>
-<p><a href="https://hexo.io/docs/writing.html">More</a></p>
-<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><pre class=" language-bash"><code class="language-bash">hexo server
-</code></pre>
-<p><a href="https://hexo.io/docs/server.html">More</a></p>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><pre class=" language-bash"><code class="language-bash">hexo generate
-</code></pre>
-<p><a href="https://hexo.io/docs/generating.html">More</a></p>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><pre class=" language-bash"><code class="language-bash">hexo deploy
-</code></pre>
-<p><a href="https://hexo.io/docs/one-command-deployment.html">More</a></p>
-<h3 id="脚本部署-运行-sh-deploy-sh"><a href="#脚本部署-运行-sh-deploy-sh" class="headerlink" title="脚本部署(运行 sh deploy.sh)"></a>脚本部署(运行 sh deploy.sh)</h3><pre class=" language-bash"><code class="language-bash">hexo clean
-
-hexo generate
-
-hexo deploy
-</code></pre>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>pve配置及常见问题处理</title>
-    <url>/2023/07/29/pve%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/</url>
-    <content><![CDATA[<h1 id="PVE服务器配置及常见问题处理"><a href="#PVE服务器配置及常见问题处理" class="headerlink" title="PVE服务器配置及常见问题处理"></a>PVE服务器配置及常见问题处理</h1><h2 id="0、常用命令"><a href="#0、常用命令" class="headerlink" title="0、常用命令"></a>0、常用命令</h2><pre class=" language-shell"><code class="language-shell">#查看虚拟机列表
-qm list
-
-#pve重启
-reboot
-
-#查看集群资源状况
-pvesh get /cluster/resources
-
-#取得虚拟机当前状态 `pvesh get /nodes/<节点id>/qemu/<虚拟机id>/status/current`
-pvesh get /nodes/pve/qemu/103/status/current
-
-#关闭虚拟机 `pvesh create /nodes/<节点id>/qemu/<虚拟机id>/status/stop`
-pvesh create /nodes/pve/qemu/103/status/stop
-
-#启动虚拟机 `pvesh create /nodes/<节点id>/qemu/<虚拟机id>/status/start`
-pvesh create /nodes/pve/qemu/103/status/start
-</code></pre>
-<h2 id="1、新装配置"><a href="#1、新装配置" class="headerlink" title="1、新装配置"></a>1、新装配置</h2><p>取消订阅</p>
-<pre class=" language-shell"><code class="language-shell">sed -i "s/data.status !== 'Active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
-</code></pre>
-<p>更换源</p>
-<pre class=" language-shell"><code class="language-shell">rm -rf /etc/apt/sources.list.d/pve-enterprise.list
-
-wget http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg
-
-echo "deb http://download.proxmox.com/debian/pve buster pve-no-subscription" >/etc/apt/sources.list.d/pve-install-repo.list
-
-echo "deb http://mirrors.aliyun.com/debian/ buster main non-free contrib  
-deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib  
-deb http://mirrors.aliyun.com/debian-security buster/updates main  
-deb-src http://mirrors.aliyun.com/debian-security buster/updates main  
-deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib  
-deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib  
-deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib  
-deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib" >/etc/apt/sources.list
-
-apt update
-</code></pre>
-<p>更换LXC国内源</p>
-<pre class=" language-shell"><code class="language-shell">grep -rn "download.proxmox.com" /usr/share/perl5/PVE/\* #查找设定下载源的文件  
-sed -i.bak "s#http://download.proxmox.com/images#https://mirrors.ustc.edu.cn/proxmox/images#g" /usr/share/perl5/PVE/APLInfo.pm  
-wget -O /var/lib/pve-manager/apl-info/mirrors.ustc.edu.cn https://mirrors.ustc.edu.cn/proxmox/images/aplinfo-pve-6.dat
-</code></pre>
-<p>安装时间同步服务  </p>
-<pre class=" language-shell"><code class="language-shell">apt-get install ntp -y
-</code></pre>
-<h2 id="2、虚拟机迁移时需要确认几个问题"><a href="#2、虚拟机迁移时需要确认几个问题" class="headerlink" title="2、虚拟机迁移时需要确认几个问题"></a>2、虚拟机迁移时需要确认几个问题</h2><ul>
-<li>先将虚拟机的磁盘 通过硬件 中的 迁移磁盘 移到共享磁盘中。  </li>
-<li>再用迁移，将服务迁移过去。  </li>
-<li>迁移时需确认硬件，目标服务器是否满足硬盘需求。不能满足的需要先调整。</li>
-</ul>
-<h2 id="3、硬盘空间调小"><a href="#3、硬盘空间调小" class="headerlink" title="3、硬盘空间调小"></a>3、硬盘空间调小</h2><h4 id="3-1调整虚拟机硬盘的大小"><a href="#3-1调整虚拟机硬盘的大小" class="headerlink" title="3.1调整虚拟机硬盘的大小"></a>3.1调整虚拟机硬盘的大小</h4><pre class=" language-shell"><code class="language-shell">#查看虚拟机硬盘信息
-fdisk -l
-#查看虚拟机硬盘路径
-lvdisplay
-#查看虚拟机硬盘大小  
-lvs  
-#调小虚拟机硬盘2G，备注：调整前先将系统内的硬盘调为未分配状态。  
-lvreduce -L -2G /dev/pve/vm-100-disk-0
-</code></pre>
-<h4 id="3-2增加-或减小-local-目录的大小即扩容"><a href="#3-2增加-或减小-local-目录的大小即扩容" class="headerlink" title="3.2增加 或减小 local 目录的大小即扩容"></a>3.2增加 或减小 local 目录的大小即扩容</h4><p>首先执行命令 <code>fdisk -l</code> ，查看&#x2F;dev&#x2F;mapper&#x2F;pve-root大小，显示内容大概如下面的：</p>
-<pre class=" language-shell"><code class="language-shell">Disk /dev/mapper/pve-root: 4.5 GiB, 4831838208 bytes, 9437184 sectors
-Units: sectors of 1 * 512 = 512 bytes
-Sector size (logical/physical): 512 bytes / 512 bytes
-I/O size (minimum/optimal): 512 bytes / 512 bytes
-</code></pre>
-<p>然后对 &#x2F;dev&#x2F;mapper&#x2F;pve-root 扩容，命令如下，即增加1G的空间.</p>
-<pre class=" language-shell"><code class="language-shell">lvextend -L +1G /dev/mapper/pve-root
-</code></pre>
-<p>执行后实际大小其实是还不会变化的,还需要下边的命令, 作用是执行上边的扩容操作  </p>
-<pre class=" language-shell"><code class="language-shell">resize2fs /dev/mapper/pve-root
-</code></pre>
-<h4 id="3-3如何要删除-local-vm-然后把所有的空间都移到-local下，那么如何操作。"><a href="#3-3如何要删除-local-vm-然后把所有的空间都移到-local下，那么如何操作。" class="headerlink" title="3.3如何要删除 local-vm 然后把所有的空间都移到 local下，那么如何操作。"></a>3.3如何要删除 local-vm 然后把所有的空间都移到 local下，那么如何操作。</h4><ul>
-<li>先移除local-lvm对应的逻辑卷pve&#x2F;data</li>
-</ul>
-<pre class=" language-shell"><code class="language-shell">lvremove pve/data
-</code></pre>
-<ul>
-<li>对local对应的逻辑卷&#x2F;dev&#x2F;mapper&#x2F;pve-root进行在线扩容</li>
-</ul>
-<pre class=" language-shell"><code class="language-shell">lvextend -l +100%FREE -r /dev/mapper/pve-root
-</code></pre>
-<ul>
-<li>执行后实际大小其实是还不会变化的,还需要下边的命令, 作用是执行上边的扩容操作</li>
-</ul>
-<pre class=" language-shell"><code class="language-shell">resize2fs /dev/mapper/pve-root
-</code></pre>
-<ul>
-<li><p>Web中依次展开数据中心-存储，编辑local-lvm，把local-lvm中对应节点移除即可。</p>
-</li>
-<li><p>还有在数据中心-存储，编辑local，内容下拉菜单中把所有的内容都选上，以便这个空间可以储存磁盘映像。</p>
-</li>
-</ul>
-<h2 id="4、开启PVE嵌套虚拟化功能"><a href="#4、开启PVE嵌套虚拟化功能" class="headerlink" title="4、开启PVE嵌套虚拟化功能"></a>4、开启PVE嵌套虚拟化功能</h2><p>通过命令检验嵌套虚拟化功能是否已被开启：</p>
-<pre class=" language-shell"><code class="language-shell">vim /sys/module/kvm\_intel/parameters/nested
-</code></pre>
-<p>开启内核支持：</p>
-<pre class=" language-shell"><code class="language-shell">modprobe -r kvm\_intel  
-modprobe kvm\_intel nested=1
-</code></pre>
-<p>现在再看看nested是否已开启：</p>
-<pre class=" language-shell"><code class="language-shell">cat /sys/module/kvm\_intel/parameters/nested
-Y
-</code></pre>
-<p>编辑配置文件：</p>
-<pre class=" language-shell"><code class="language-shell">echo "options kvm\_intel nested=1" >>/etc/modprobe.d/modprobe.conf
-</code></pre>
-<h2 id="5、查看和关闭虚拟机"><a href="#5、查看和关闭虚拟机" class="headerlink" title="5、查看和关闭虚拟机"></a>5、查看和关闭虚拟机</h2><pre class=" language-shell"><code class="language-shell">#列出所有虚拟机：
-qm list
-#关闭虚拟机：
-qm stop
-</code></pre>
-<h2 id="6、镜像转换"><a href="#6、镜像转换" class="headerlink" title="6、镜像转换"></a>6、镜像转换</h2><pre class=" language-shell"><code class="language-shell">qemu-img convert disk.qcow2 disk.vmdk
-</code></pre>
-<h2 id="7、迁移相关设置"><a href="#7、迁移相关设置" class="headerlink" title="7、迁移相关设置"></a>7、迁移相关设置</h2><p>PVE迁移的类型分加密（secure）或不加密（insecure）<br>secure迁移  </p>
-<blockquote>
-<p>优点：信息安全，加密迁移<br>缺点：非常耗费host主机的CPU资源，且迁移速度慢  </p>
-</blockquote>
-<p>insecure迁移  </p>
-<blockquote>
-<p>优点：迁移速度快，对host主机的资源消耗小<br>缺点：不是加密迁移，信息安全需要考虑  </p>
-</blockquote>
-<p>如果在网络完全自主可控的情况下，可以考虑insecure迁移</p>
-<p>迁移类型在配置文件中设置，web控制台无法设置<br>进入任意host节点—-shell  </p>
-<pre class=" language-shell"><code class="language-shell">root@m71:~# cat /etc/pve/datacenter.cfg
-keyboard: en-us
-migration: network=172.18.171.71/24,type=insecure
-type可以设置为 加密secure（默认）不加密insecure
-</code></pre>
-<h2 id="8、问题处理"><a href="#8、问题处理" class="headerlink" title="8、问题处理"></a>8、问题处理</h2><h4 id="8-1、迁移时提示认证失败时"><a href="#8-1、迁移时提示认证失败时" class="headerlink" title="8.1、迁移时提示认证失败时"></a>8.1、迁移时提示认证失败时</h4><blockquote>
-<p>Host key verification failed.</p>
-</blockquote>
-<p>在控制台运行如下  </p>
-<pre class=" language-shell"><code class="language-shell">/usr/bin/ssh -e none -o 'HostKeyAlias=pve1' root@192.168.3.241 /bin/true
-
-ssh 192.168.3.241
-</code></pre>
-<h4 id="8-2、PVE下qm-stop提示超时的解决办法"><a href="#8-2、PVE下qm-stop提示超时的解决办法" class="headerlink" title="8.2、PVE下qm stop提示超时的解决办法"></a>8.2、PVE下qm stop提示超时的解决办法</h4><blockquote>
-<p>TASK ERROR: can’t lock file ‘&#x2F;var&#x2F;lock&#x2F;qemu-server&#x2F;lock-108.conf’ - got timeout</p>
-</blockquote>
-<p>rm 该文件就可以了。</p>
-<ul>
-<li><p>先在shell里输入 <code>rm /var/lock/qemu-server/lock-108.conf</code> #108是你的虚拟机编号</p>
-</li>
-<li><p>再输入<code>qm stop 108</code> 就可以立即关闭你的108号虚拟机了</p>
-</li>
-</ul>
-<h4 id="8-3、虚拟机存放路径"><a href="#8-3、虚拟机存放路径" class="headerlink" title="8.3、虚拟机存放路径"></a>8.3、虚拟机存放路径</h4><blockquote>
-<p>iso存放路径： <code>/var/lib/vz/template/iso/</code></p>
-</blockquote>
-<blockquote>
-<p>备份路径： <code>/var/lib/vz/dump/文章地址https://www.yii666.com/blog/469212.html</code></p>
-</blockquote>
-<blockquote>
-<p>local 路径：<code>/var/lib/vz/images/</code></p>
-</blockquote>
-<blockquote>
-<p>local-vm 路径： <code>/dev/pve/</code></p>
-</blockquote>
-<blockquote>
-<p>虚拟机配置文件路径： <code>/etc/pve/</code></p>
-</blockquote>
-<blockquote>
-<p>集群中虚拟机配置文件路径： <code>/etc/pve/nodes/pve（pve为节点名称）/qemu-server/</code></p>
-</blockquote>
-<h4 id="8-4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。-命令为-swapoff-a-否则zfs会发生很怪异的事情"><a href="#8-4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。-命令为-swapoff-a-否则zfs会发生很怪异的事情" class="headerlink" title="8.4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。 命令为 swapoff -a ,否则zfs会发生很怪异的事情."></a>8.4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。 命令为 <code>swapoff -a</code> ,否则zfs会发生很怪异的事情.</h4><h4 id="8-5、虚拟机出现问题状态为unkonw的解决方法"><a href="#8-5、虚拟机出现问题状态为unkonw的解决方法" class="headerlink" title="8.5、虚拟机出现问题状态为unkonw的解决方法"></a>8.5、虚拟机出现问题状态为unkonw的解决方法</h4><pre class=" language-shell"><code class="language-shell">service rrdcached stop 
-
-rm -rf /var/lib/rrdcached/* 
-
-service rrdcached start
-</code></pre>
-]]></content>
-      <categories>
-        <category>pve</category>
-      </categories>
-      <tags>
-        <tag>教程</tag>
-        <tag>pve</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ping不通外网的解决方案(centos)</title>
-    <url>/2023/02/05/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88(centos)/</url>
-    <content><![CDATA[<p>ping 不通外网，绝大部分原因是由于dns服务器没有配置导致的问题<br><img src="https://pic.imgdb.cn/item/63df62694757feff3312485e.png"></p>
-<h3 id="1、修改配置文件添加DNS"><a href="#1、修改配置文件添加DNS" class="headerlink" title="1、修改配置文件添加DNS"></a>1、修改配置文件添加DNS</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#xxx为对应网卡</span>
-<span class="token function">vi</span> /etc/sysconfig/network-scripts/ifcfg-xxx
-
-<span class="token comment" spellcheck="true">#添加DNS</span>
-DNS1<span class="token operator">=</span>114.114.114.114
-DNS2<span class="token operator">=</span>8.8.8.8
-</code></pre>
-<h3 id="2、添加DNS服务器"><a href="#2、添加DNS服务器" class="headerlink" title="2、添加DNS服务器"></a>2、添加DNS服务器</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/resolv.conf
-
-<span class="token comment" spellcheck="true">#添加如下两行：</span>
-nameserver 8.8.8.8
-nameserver 8.8.4.4
-</code></pre>
-<h3 id="3、重启网络"><a href="#3、重启网络" class="headerlink" title="3、重启网络"></a>3、重启网络</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> nmcli c reload
-
-<span class="token comment" spellcheck="true">#或</span>
-systemctl restart network
-
-<span class="token comment" spellcheck="true">#或</span>
-<span class="token function">service</span> network restart
-</code></pre>
-<h3 id="4、如果上述操作还是没有成功"><a href="#4、如果上述操作还是没有成功" class="headerlink" title="4、如果上述操作还是没有成功"></a>4、如果上述操作还是没有成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#添加默认网关</span>
-<span class="token function">sudo</span> route add default gw 192.168.1.1
-
-<span class="token comment" spellcheck="true">#然后</span>
-<span class="token function">sudo</span> nmcli c reload
-</code></pre>
-<p>到此一般都没问题了😀</p>
-]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>centos</tag>
-        <tag>linux</tag>
-        <tag>网络</tag>
       </tags>
   </entry>
 </search>
