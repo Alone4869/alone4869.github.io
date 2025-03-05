@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>docker相关命令</title>
+    <url>/2024/10/11/docker%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+
+<h2 id="docker-compose命令"><a href="#docker-compose命令" class="headerlink" title="docker-compose命令"></a>docker-compose命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##以下面yml文件为例</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看容器状态相关</span></span><br><span class="line">docker-compose ps -a</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看容器日志</span></span><br><span class="line">docker-compose logs -f h5st</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">进入对应容器打开一个bash终端</span></span><br><span class="line">docker-compose exec mix bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">验证并显示docker-compose.yml文件的配置内容</span></span><br><span class="line">docker-compose config</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">拉取镜像</span></span><br><span class="line">docker-compose pull h5st</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">后台启动一个容器</span></span><br><span class="line">docker-compose up -d h5st</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">停止容器</span></span><br><span class="line">docker-compose stop h5st</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除容器</span></span><br><span class="line">docker-compose rm h5st</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看所有服务的镜像信息</span></span><br><span class="line">docker-compose images</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除镜像</span></span><br><span class="line">docker rmi [镜像id]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看镜像摘要值-sha256</span></span><br><span class="line">docker inspect [镜像id]</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="watchtower更新容器对应镜像"><a href="#watchtower更新容器对应镜像" class="headerlink" title="watchtower更新容器对应镜像"></a>watchtower更新容器对应镜像</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run --rm -v /var/run/docker.sock:/var/run/docker.sock yanyu.icu/containrrr/watchtower -c --run-once [容器名]</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>docker-compose.yml</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;2.7.6&#x27;</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">macnet:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">macvlan</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">nolan_pro:</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">nolan_pro</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nolanhzy/pro:latest</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./jdWskeyWeb:/app/Data</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">Prolic=xxxxxx</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">User=xxxxxx</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">Pwd=xxxxx</span></span><br><span class="line">    <span class="comment"># 设置容器的权限为root</span></span><br><span class="line">    <span class="attr">privileged:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">5016</span><span class="string">:5016</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="attr">macnet:</span></span><br><span class="line">        <span class="attr">ipv4_address:</span> <span class="number">192.168</span><span class="number">.31</span><span class="number">.37</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>docker</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VS2022旧版本.NETFramework安装</title>
     <url>/2024/10/16/VS2022%E6%97%A7%E7%89%88%E6%9C%AC-NETFramework%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<h2 id="VS2022旧版本-NETFramework安装"><a href="#VS2022旧版本-NETFramework安装" class="headerlink" title="VS2022旧版本.NETFramework安装"></a>VS2022旧版本.NETFramework安装</h2><ul>
@@ -156,58 +182,6 @@
       </tags>
   </entry>
   <entry>
-    <title>docker相关命令</title>
-    <url>/2024/10/11/docker%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-
-<h2 id="docker-compose命令"><a href="#docker-compose命令" class="headerlink" title="docker-compose命令"></a>docker-compose命令</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash"><span class="comment">##以下面yml文件为例</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看容器状态相关</span></span><br><span class="line">docker-compose ps -a</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看容器日志</span></span><br><span class="line">docker-compose logs -f h5st</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">进入对应容器打开一个bash终端</span></span><br><span class="line">docker-compose exec mix bash</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">验证并显示docker-compose.yml文件的配置内容</span></span><br><span class="line">docker-compose config</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">拉取镜像</span></span><br><span class="line">docker-compose pull h5st</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">后台启动一个容器</span></span><br><span class="line">docker-compose up -d h5st</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">停止容器</span></span><br><span class="line">docker-compose stop h5st</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除容器</span></span><br><span class="line">docker-compose rm h5st</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看所有服务的镜像信息</span></span><br><span class="line">docker-compose images</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">删除镜像</span></span><br><span class="line">docker rmi [镜像id]</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">查看镜像摘要值-sha256</span></span><br><span class="line">docker inspect [镜像id]</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="watchtower更新容器对应镜像"><a href="#watchtower更新容器对应镜像" class="headerlink" title="watchtower更新容器对应镜像"></a>watchtower更新容器对应镜像</h2><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run --rm -v /var/run/docker.sock:/var/run/docker.sock yanyu.icu/containrrr/watchtower -c --run-once [容器名]</span><br></pre></td></tr></table></figure>
-
-
-<ul>
-<li>docker-compose.yml</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&#x27;2.7.6&#x27;</span></span><br><span class="line"><span class="attr">networks:</span></span><br><span class="line">  <span class="attr">macnet:</span></span><br><span class="line">    <span class="attr">external:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">name:</span> <span class="string">macvlan</span></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">nolan_pro:</span></span><br><span class="line">    <span class="attr">container_name:</span> <span class="string">nolan_pro</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">nolanhzy/pro:latest</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./jdWskeyWeb:/app/Data</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">Prolic=xxxxxx</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">User=xxxxxx</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">Pwd=xxxxx</span></span><br><span class="line">    <span class="comment"># 设置容器的权限为root</span></span><br><span class="line">    <span class="attr">privileged:</span> <span class="literal">true</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">5016</span><span class="string">:5016</span></span><br><span class="line">    <span class="attr">networks:</span></span><br><span class="line">      <span class="attr">macnet:</span></span><br><span class="line">        <span class="attr">ipv4_address:</span> <span class="number">192.168</span><span class="number">.31</span><span class="number">.37</span></span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
-      <categories>
-        <category>docker</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>git基本操作</title>
-    <url>/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<p>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.<br><img src="https://pic.imgdb.cn/item/63df62d34757feff33131295.jpg"></p>
-<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#初始化仓库,在当前目录新建一个Git代码库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加当前所有文件到缓存区</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment">#提交暂存区中的内容到本地仓库 -m:提交的信息</span></span><br><span class="line">git commit -m <span class="string">&quot;信息&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#本地与远程仓库连接</span></span><br><span class="line">git remote add origin &lt;远程仓库链接&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#如果远程仓库创建了readme文件，可以先把远程仓库的项目pull下来</span></span><br><span class="line">git pull origin master</span><br><span class="line"></span><br><span class="line"><span class="comment">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名&gt; &lt;本地分支名&gt;  &lt;远程分支名&gt;, -u 参数指定一个默认主机</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<h3 id="git分支常用命令"><a href="#git分支常用命令" class="headerlink" title="git分支常用命令"></a>git分支常用命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#列出本地所有分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment">#新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#新建一个分支，并切换到该分支</span></span><br><span class="line">git checkout -b 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#切换分支</span></span><br><span class="line">git checkout 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并指定分支到当前分支</span></span><br><span class="line">git merge 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除分支</span></span><br><span class="line">git branch -d 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除远程分支</span></span><br><span class="line">git push origin --delete 分支名</span><br><span class="line">git branch -dr 分支名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repo&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#克隆到指定的目录</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repo&gt; &lt;directory&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看当前配置有哪些远程仓库</span></span><br><span class="line">git remote</span><br><span class="line"></span><br><span class="line"><span class="comment">#加上 -v 参数，可以看到每个别名的实际链接地址</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span></span><br><span class="line">git remote add &lt;shortname&gt; &lt;repo&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#移除远程仓库关联</span></span><br><span class="line">git remote <span class="built_in">rm</span> &lt;shortname&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#从远程仓库下载新分支与数据</span></span><br><span class="line">git fetch &lt;remote&gt; &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#从远端仓库提取数据并尝试合并到当前分支</span></span><br><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#显示当前的 git 配置信息</span></span><br><span class="line">git config --list</span><br><span class="line"></span><br><span class="line"><span class="comment">#编辑 git 配置文件:</span></span><br><span class="line">git config -e    <span class="comment"># 针对当前仓库 </span></span><br><span class="line">git config -e --global   <span class="comment"># 针对系统上所有仓库</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#设置提交代码时的用户信息</span></span><br><span class="line">git config --global user.name <span class="string">&quot;xxx&quot;</span></span><br><span class="line">git config --global user.email xxxxxxxx@yyyy.com</span><br></pre></td></tr></table></figure>
-
-<h3 id="从较旧的提交中提取代码"><a href="#从较旧的提交中提取代码" class="headerlink" title="从较旧的提交中提取代码"></a>从较旧的提交中提取代码</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看提交历史</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#切换到想要提取代码的较旧提交</span></span><br><span class="line">git checkput 提交<span class="built_in">id</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="将较旧提交应用到当前分支"><a href="#将较旧提交应用到当前分支" class="headerlink" title="将较旧提交应用到当前分支"></a>将较旧提交应用到当前分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看提交历史</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#将较旧提交应用到当前分支</span></span><br><span class="line">git cherry-pick 提交<span class="built_in">id</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="Git-Diff-使用示例"><a href="#Git-Diff-使用示例" class="headerlink" title="Git Diff 使用示例"></a>Git Diff 使用示例</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看工作树中未暂存的更改</span></span><br><span class="line">git diff</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看已暂存的更改</span></span><br><span class="line">git diff --cached</span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">git diff --staged</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看特定文件的更改</span></span><br><span class="line">git diff &lt;文件路径&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#比较两个提交之间的差异</span></span><br><span class="line">git diff 提交id1 提交id2</span><br><span class="line"></span><br><span class="line"><span class="comment">#显示统计信息</span></span><br><span class="line">git diff --<span class="built_in">stat</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>教程</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo部署</title>
     <url>/2024/10/11/hexo%E9%83%A8%E7%BD%B2/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. </p>
@@ -242,8 +216,8 @@
         <category>hexo</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>hexo</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
   <entry>
@@ -266,6 +240,32 @@
         <tag>centos</tag>
         <tag>linux</tag>
         <tag>网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git基本操作</title>
+    <url>/2023/01/17/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>Git 常用的是以下 6 个命令：git clone、git push、git add 、git commit、git checkout、git pull.<br><img src="https://pic.imgdb.cn/item/63df62d34757feff33131295.jpg"></p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#初始化仓库,在当前目录新建一个Git代码库</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">#添加当前所有文件到缓存区</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment">#提交暂存区中的内容到本地仓库 -m:提交的信息</span></span><br><span class="line">git commit -m <span class="string">&quot;信息&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#本地与远程仓库连接</span></span><br><span class="line">git remote add origin &lt;远程仓库链接&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#如果远程仓库创建了readme文件，可以先把远程仓库的项目pull下来</span></span><br><span class="line">git pull origin master</span><br><span class="line"></span><br><span class="line"><span class="comment">#将本地的分支版本上传到远程并合并, git push &lt;远程主机名&gt; &lt;本地分支名&gt;  &lt;远程分支名&gt;, -u 参数指定一个默认主机</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<h3 id="git分支常用命令"><a href="#git分支常用命令" class="headerlink" title="git分支常用命令"></a>git分支常用命令</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#列出本地所有分支</span></span><br><span class="line">git branch</span><br><span class="line"></span><br><span class="line"><span class="comment">#列出所有远程分支</span></span><br><span class="line">git branch -r</span><br><span class="line"></span><br><span class="line"><span class="comment">#新建一个分支，但依然停留在当前分支</span></span><br><span class="line">git branch 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#新建一个分支，并切换到该分支</span></span><br><span class="line">git checkout -b 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#切换分支</span></span><br><span class="line">git checkout 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#合并指定分支到当前分支</span></span><br><span class="line">git merge 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除分支</span></span><br><span class="line">git branch -d 分支名</span><br><span class="line"></span><br><span class="line"><span class="comment">#删除远程分支</span></span><br><span class="line">git push origin --delete 分支名</span><br><span class="line">git branch -dr 分支名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="远程仓库操作"><a href="#远程仓库操作" class="headerlink" title="远程仓库操作"></a>远程仓库操作</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#克隆仓库</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repo&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#克隆到指定的目录</span></span><br><span class="line">git <span class="built_in">clone</span> &lt;repo&gt; &lt;directory&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看当前配置有哪些远程仓库</span></span><br><span class="line">git remote</span><br><span class="line"></span><br><span class="line"><span class="comment">#加上 -v 参数，可以看到每个别名的实际链接地址</span></span><br><span class="line">git remote -v</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加远程仓库，shortname(在本地仓库中对远程仓库起的别名) url(远程仓库地址)</span></span><br><span class="line">git remote add &lt;shortname&gt; &lt;repo&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#移除远程仓库关联</span></span><br><span class="line">git remote <span class="built_in">rm</span> &lt;shortname&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#从远程仓库下载新分支与数据</span></span><br><span class="line">git fetch &lt;remote&gt; &lt;branch&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#从远端仓库提取数据并尝试合并到当前分支</span></span><br><span class="line">git merge &lt;branch&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="git配置"><a href="#git配置" class="headerlink" title="git配置"></a>git配置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#显示当前的 git 配置信息</span></span><br><span class="line">git config --list</span><br><span class="line"></span><br><span class="line"><span class="comment">#编辑 git 配置文件:</span></span><br><span class="line">git config -e    <span class="comment"># 针对当前仓库 </span></span><br><span class="line">git config -e --global   <span class="comment"># 针对系统上所有仓库</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#设置提交代码时的用户信息</span></span><br><span class="line">git config --global user.name <span class="string">&quot;xxx&quot;</span></span><br><span class="line">git config --global user.email xxxxxxxx@yyyy.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="从较旧的提交中提取代码"><a href="#从较旧的提交中提取代码" class="headerlink" title="从较旧的提交中提取代码"></a>从较旧的提交中提取代码</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看提交历史</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#切换到想要提取代码的较旧提交</span></span><br><span class="line">git checkput 提交<span class="built_in">id</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="将较旧提交应用到当前分支"><a href="#将较旧提交应用到当前分支" class="headerlink" title="将较旧提交应用到当前分支"></a>将较旧提交应用到当前分支</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看提交历史</span></span><br><span class="line">git <span class="built_in">log</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#将较旧提交应用到当前分支</span></span><br><span class="line">git cherry-pick 提交<span class="built_in">id</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Git-Diff-使用示例"><a href="#Git-Diff-使用示例" class="headerlink" title="Git Diff 使用示例"></a>Git Diff 使用示例</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#查看工作树中未暂存的更改</span></span><br><span class="line">git diff</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看已暂存的更改</span></span><br><span class="line">git diff --cached</span><br><span class="line"><span class="comment">#或者</span></span><br><span class="line">git diff --staged</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看特定文件的更改</span></span><br><span class="line">git diff &lt;文件路径&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">#比较两个提交之间的差异</span></span><br><span class="line">git diff 提交id1 提交id2</span><br><span class="line"></span><br><span class="line"><span class="comment">#显示统计信息</span></span><br><span class="line">git diff --<span class="built_in">stat</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>教程</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
@@ -449,6 +449,28 @@
       <tags>
         <tag>C#</tag>
         <tag>单例模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>理解WPF的MVVM模式</title>
+    <url>/2025/03/05/%E7%90%86%E8%A7%A3WPF%E7%9A%84MVVM%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer">
+
+<h2 id="MVVM模式的介绍"><a href="#MVVM模式的介绍" class="headerlink" title="MVVM模式的介绍"></a>MVVM模式的介绍</h2><p><strong>MVVM</strong>（Model-View-ViewModel）是一种设计模式，特别适用于WPF（Windows Presentation Foundation）等XAML-based的应用程序开发。MVVM模式主要包含三个部分：Model（模型）、View（视图）和ViewModel（视图模型）。</p>
+<ul>
+<li><strong>Model</strong>（模型）: 模型代表的是业务逻辑和数据。它包含了应用程序中用于处理的核心数据对象。模型通常包含业务规则、数据访问和存储逻辑。</li>
+<li><strong>View</strong>（视图）: 视图是用户看到和与之交互的界面。在WPF中，视图通常由XAML定义，并且包含各种用户界面元素，如按钮、文本框、列表等。</li>
+<li><strong>ViewModel</strong>（视图模型）: 视图模型是视图的抽象，它包含视图所需的所有数据和命令。视图模型通过实现INotifyPropertyChanged接口和使用ICommand对象，将视图的状态和行为抽象化，从而实现了视图和模型的解耦。</li>
+</ul>
+<p><em><strong>MVVM模式的主要优点是分离了视图和模型，使得视图和业务逻辑之间的依赖性降低，提高了代码的可维护性和可测试性。此外，通过数据绑定和命令绑定，MVVM模式可以减少大量的样板代码，使得代码更加简洁和易于理解。</strong></em></p>
+<p><img src="/.org//MVVM.png" alt="MVVM模式"></p>
+<p>参考自<a href="https://www.cnblogs.com/mingupupu/p/18218027">博客园</a></p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
       </tags>
   </entry>
   <entry>
@@ -692,28 +714,6 @@
       <tags>
         <tag>C#</tag>
         <tag>多线程</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>理解WPF的MVVM模式</title>
-    <url>/2025/03/05/%E7%90%86%E8%A7%A3WPF%E7%9A%84MVVM%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer">
-
-<h2 id="MVVM模式的介绍"><a href="#MVVM模式的介绍" class="headerlink" title="MVVM模式的介绍"></a>MVVM模式的介绍</h2><p><strong>MVVM</strong>（Model-View-ViewModel）是一种设计模式，特别适用于WPF（Windows Presentation Foundation）等XAML-based的应用程序开发。MVVM模式主要包含三个部分：Model（模型）、View（视图）和ViewModel（视图模型）。</p>
-<ul>
-<li><strong>Model</strong>（模型）: 模型代表的是业务逻辑和数据。它包含了应用程序中用于处理的核心数据对象。模型通常包含业务规则、数据访问和存储逻辑。</li>
-<li><strong>View</strong>（视图）: 视图是用户看到和与之交互的界面。在WPF中，视图通常由XAML定义，并且包含各种用户界面元素，如按钮、文本框、列表等。</li>
-<li><strong>ViewModel</strong>（视图模型）: 视图模型是视图的抽象，它包含视图所需的所有数据和命令。视图模型通过实现INotifyPropertyChanged接口和使用ICommand对象，将视图的状态和行为抽象化，从而实现了视图和模型的解耦。</li>
-</ul>
-<p><em><strong>MVVM模式的主要优点是分离了视图和模型，使得视图和业务逻辑之间的依赖性降低，提高了代码的可维护性和可测试性。此外，通过数据绑定和命令绑定，MVVM模式可以减少大量的样板代码，使得代码更加简洁和易于理解。</strong></em></p>
-<p><img src="/.org//MVVM.png" alt="MVVM模式"></p>
-<p>参考自<a href="https://www.cnblogs.com/mingupupu/p/18218027">博客园</a></p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
       </tags>
   </entry>
 </search>
