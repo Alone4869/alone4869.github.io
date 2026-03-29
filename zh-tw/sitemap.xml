@@ -5,8 +5,8 @@
     <loc>https://alone4869.github.io/zh-tw/categories/</loc>
     <xhtml:link
                 rel="alternate"
-                hreflang="en"
-                href="https://alone4869.github.io/en/categories/"
+                hreflang="zh-CN"
+                href="https://alone4869.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -15,8 +15,8 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-CN"
-                href="https://alone4869.github.io/categories/"
+                hreflang="en"
+                href="https://alone4869.github.io/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
@@ -27,6 +27,11 @@
     <loc>https://alone4869.github.io/zh-tw/tags/</loc>
     <xhtml:link
                 rel="alternate"
+                hreflang="zh-CN"
+                href="https://alone4869.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="en"
                 href="https://alone4869.github.io/en/tags/"
                 />
@@ -34,11 +39,6 @@
                 rel="alternate"
                 hreflang="ja"
                 href="https://alone4869.github.io/ja/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-CN"
-                href="https://alone4869.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"

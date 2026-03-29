@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MVVM on 知否</title>
+    <link>https://alone4869.github.io/tags/mvvm/</link>
+    <description>Recent content from 知否</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>alone4869@protonmail.com (Alone4869)</managingEditor>
+    <webMaster>alone4869@protonmail.com (Alone4869)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Wed, 05 Mar 2025 15:38:57 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://alone4869.github.io/tags/mvvm/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>理解WPF的MVVM模式</title>
+      <link>https://alone4869.github.io/post/%E7%90%86%E8%A7%A3wpf%E7%9A%84mvvm%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Wed, 05 Mar 2025 15:38:57 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E7%90%86%E8%A7%A3wpf%E7%9A%84mvvm%E6%A8%A1%E5%BC%8F/</guid>
+      <description>
+        <![CDATA[<h1>理解WPF的MVVM模式</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          介绍WPF中的MVVM设计模式，包括Model、View、ViewModel三部分的职责和交互，以及数据绑定和命令绑定的使用。
+        
+        <hr><p>本文2025-03-05首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2025-03-05</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+  </channel>
+</rss>

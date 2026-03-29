@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>WPF on 知否</title>
+    <link>https://alone4869.github.io/categories/wpf/</link>
+    <description>Recent content from 知否</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>alone4869@protonmail.com (Alone4869)</managingEditor>
+    <webMaster>alone4869@protonmail.com (Alone4869)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Wed, 18 Mar 2026 23:29:17 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://alone4869.github.io/categories/wpf/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>WPF中的注意点</title>
+      <link>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/</link>
+      <pubDate>Wed, 18 Mar 2026 23:29:17 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/</guid>
+      <description>
+        <![CDATA[<h1>WPF中的注意点</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          WPF开发中的一些注意点
+        
+        <hr><p>本文2026-03-18首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-18</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>依赖属性和附加属性</title>
+      <link>https://alone4869.github.io/post/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A7%E5%92%8C%E9%99%84%E5%8A%A0%E5%B1%9E%E6%80%A7/</link>
+      <pubDate>Mon, 09 Mar 2026 15:09:17 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A7%E5%92%8C%E9%99%84%E5%8A%A0%E5%B1%9E%E6%80%A7/</guid>
+      <description>
+        <![CDATA[<h1>依赖属性和附加属性</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          详解WPF中依赖属性和附加属性的区别，介绍注册方法、访问方式、XAML用法及典型使用场景。
+        
+        <hr><p>本文2026-03-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-09</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>WPF中的行为与触发器</title>
+      <link>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E8%A1%8C%E4%B8%BA%E4%B8%8E%E8%A7%A6%E5%8F%91%E5%99%A8/</link>
+      <pubDate>Mon, 09 Mar 2026 15:09:17 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E8%A1%8C%E4%B8%BA%E4%B8%8E%E8%A7%A6%E5%8F%91%E5%99%A8/</guid>
+      <description>
+        <![CDATA[<h1>WPF中的行为与触发器</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          详解WPF中Behavior行为与Trigger触发器的区别
+        
+        <hr><p>本文2026-03-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-09</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>理解WPF的MVVM模式</title>
+      <link>https://alone4869.github.io/post/%E7%90%86%E8%A7%A3wpf%E7%9A%84mvvm%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Wed, 05 Mar 2025 15:38:57 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E7%90%86%E8%A7%A3wpf%E7%9A%84mvvm%E6%A8%A1%E5%BC%8F/</guid>
+      <description>
+        <![CDATA[<h1>理解WPF的MVVM模式</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          介绍WPF中的MVVM设计模式，包括Model、View、ViewModel三部分的职责和交互，以及数据绑定和命令绑定的使用。
+        
+        <hr><p>本文2025-03-05首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2025-03-05</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+  </channel>
+</rss>

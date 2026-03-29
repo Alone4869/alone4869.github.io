@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 知否</title>
+    <link>https://alone4869.github.io/tags/git/</link>
+    <description>Recent content from 知否</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>alone4869@protonmail.com (Alone4869)</managingEditor>
+    <webMaster>alone4869@protonmail.com (Alone4869)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Tue, 17 Jan 2023 14:05:17 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://alone4869.github.io/tags/git/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>git基本操作</title>
+      <link>https://alone4869.github.io/post/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Tue, 17 Jan 2023 14:05:17 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/git%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</guid>
+      <description>
+        <![CDATA[<h1>git基本操作</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          Git常用操作教程
+        
+        <hr><p>本文2023-01-17首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2023-01-17</p>]]>
+      </description>
+      
+        <category>git</category>
+      
+    </item>
+    
+  </channel>
+</rss>

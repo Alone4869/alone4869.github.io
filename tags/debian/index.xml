@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Debian on 知否</title>
+    <link>https://alone4869.github.io/tags/debian/</link>
+    <description>Recent content from 知否</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>alone4869@protonmail.com (Alone4869)</managingEditor>
+    <webMaster>alone4869@protonmail.com (Alone4869)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Sun, 29 Mar 2026 18:19:33 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://alone4869.github.io/tags/debian/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>debian13的相关配置</title>
+      <link>https://alone4869.github.io/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 29 Mar 2026 18:19:33 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
+      <description>
+        <![CDATA[<h1>debian13的相关配置</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          debian13的一些重要配置
+        
+        <hr><p>本文2026-03-29首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-29</p>]]>
+      </description>
+      
+        <category>debian</category>
+      
+    </item>
+    
+  </channel>
+</rss>

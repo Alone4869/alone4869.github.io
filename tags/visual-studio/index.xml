@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Visual Studio on 知否</title>
+    <link>https://alone4869.github.io/tags/visual-studio/</link>
+    <description>Recent content from 知否</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>alone4869@protonmail.com (Alone4869)</managingEditor>
+    <webMaster>alone4869@protonmail.com (Alone4869)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Wed, 16 Oct 2024 11:45:40 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://alone4869.github.io/tags/visual-studio/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>VS2022旧版本.NETFramework安装</title>
+      <link>https://alone4869.github.io/post/vs2022%E6%97%A7%E7%89%88%E6%9C%AC-netframework%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 16 Oct 2024 11:45:40 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/vs2022%E6%97%A7%E7%89%88%E6%9C%AC-netframework%E5%AE%89%E8%A3%85/</guid>
+      <description>
+        <![CDATA[<h1>VS2022旧版本.NETFramework安装</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          解决VS2022无法下载旧版本.NETFramework的问题
+        
+        <hr><p>本文2024-10-16首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-10-16</p>]]>
+      </description>
+      
+        <category>C#</category>
+      
+    </item>
+    
+  </channel>
+</rss>

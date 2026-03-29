@@ -22,18 +22,20 @@
     
 
     <item>
-      <title>Debian13的相关配置</title>
+      <title>debian13的相关配置</title>
       <link>https://alone4869.github.io/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sun, 29 Mar 2026 18:19:33 &#43;0800</pubDate>
       <author>alone4869@protonmail.com (Alone4869)</author>
       <guid>https://alone4869.github.io/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
       <description>
-        <![CDATA[<h1>Debian13的相关配置</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        <![CDATA[<h1>debian13的相关配置</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          Debian13的一些重要配置
+          debian13的一些重要配置
         
         <hr><p>本文2026-03-29首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-29</p>]]>
       </description>
+      
+        <category>debian</category>
       
     </item>
     
@@ -48,10 +50,12 @@
       <description>
         <![CDATA[<h1>hexo部署</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          Hexo博客框架的部署教程，包括安装、新建网站、创建文章、启动服务、生成静态文件及部署到远程。
+          Hexo博客框架的部署教程
         
         <hr><p>本文2026-03-29首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-29</p>]]>
       </description>
+      
+        <category>hexo</category>
       
     </item>
     
@@ -66,10 +70,12 @@
       <description>
         <![CDATA[<h1>WPF中的注意点</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          WPF开发中的一些注意点，包括DataGrid自定义模板选中、RelativeSource绑定机制深度解析等。
+          WPF开发中的一些注意点
         
         <hr><p>本文2026-03-18首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-18</p>]]>
       </description>
+      
+        <category>WPF</category>
       
     </item>
     
@@ -89,6 +95,8 @@
         <hr><p>本文2026-03-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-09</p>]]>
       </description>
       
+        <category>WPF</category>
+      
     </item>
     
     
@@ -102,10 +110,12 @@
       <description>
         <![CDATA[<h1>WPF中的行为与触发器</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          详解WPF中Behavior行为与Trigger触发器的区别，包括使用场景、MVVM支持及自定义Behavior的实现方法。
+          详解WPF中Behavior行为与Trigger触发器的区别
         
         <hr><p>本文2026-03-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-09</p>]]>
       </description>
+      
+        <category>WPF</category>
       
     </item>
     
@@ -125,6 +135,8 @@
         <hr><p>本文2025-03-05首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2025-03-05</p>]]>
       </description>
       
+        <category>WPF</category>
+      
     </item>
     
     
@@ -138,10 +150,12 @@
       <description>
         <![CDATA[<h1>VS2022旧版本.NETFramework安装</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          解决VS2022无法下载旧版本.NETFramework的问题，通过NuGet下载Microsoft.NET.Framework.Reference.Assemblies包。
+          解决VS2022无法下载旧版本.NETFramework的问题
         
         <hr><p>本文2024-10-16首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-10-16</p>]]>
       </description>
+      
+        <category>C#</category>
       
     </item>
     
@@ -161,6 +175,8 @@
         <hr><p>本文2024-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-10-11</p>]]>
       </description>
       
+        <category>设计模式</category>
+      
     </item>
     
     
@@ -174,10 +190,12 @@
       <description>
         <![CDATA[<h1>docker相关命令</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          docker和docker-compose常用命令汇总，包括容器管理、日志查看、镜像操作等，以及watchtower自动更新容器配置。
+          docker和docker-compose常用命令汇总
         
         <hr><p>本文2024-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-10-11</p>]]>
       </description>
+      
+        <category>docker</category>
       
     </item>
     
@@ -196,6 +214,8 @@
         
         <hr><p>本文2024-09-05首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-09-05</p>]]>
       </description>
+      
+        <category>C#</category>
       
     </item>
     

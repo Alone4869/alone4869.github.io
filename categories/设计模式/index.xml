@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>设计模式 on 知否</title>
+    <link>https://alone4869.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+    <description>Recent content from 知否</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>alone4869@protonmail.com (Alone4869)</managingEditor>
+    <webMaster>alone4869@protonmail.com (Alone4869)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Fri, 11 Oct 2024 10:46:50 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://alone4869.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>单例模式</title>
+      <link>https://alone4869.github.io/post/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 11 Oct 2024 10:46:50 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>
+        <![CDATA[<h1>单例模式</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          介绍单例模式的多种实现方式，包括懒汉式、饿汉式、双重检查锁定等，以及线程安全问题和使用场景。
+        
+        <hr><p>本文2024-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-10-11</p>]]>
+      </description>
+      
+        <category>设计模式</category>
+      
+    </item>
+    
+  </channel>
+</rss>

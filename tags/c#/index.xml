@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>C# on 知否</title>
+    <link>https://alone4869.github.io/tags/c%23/</link>
+    <description>Recent content from 知否</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>alone4869@protonmail.com (Alone4869)</managingEditor>
+    <webMaster>alone4869@protonmail.com (Alone4869)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Wed, 18 Mar 2026 23:29:17 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://alone4869.github.io/tags/c%23/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>WPF中的注意点</title>
+      <link>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/</link>
+      <pubDate>Wed, 18 Mar 2026 23:29:17 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/</guid>
+      <description>
+        <![CDATA[<h1>WPF中的注意点</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          WPF开发中的一些注意点
+        
+        <hr><p>本文2026-03-18首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-18</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>依赖属性和附加属性</title>
+      <link>https://alone4869.github.io/post/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A7%E5%92%8C%E9%99%84%E5%8A%A0%E5%B1%9E%E6%80%A7/</link>
+      <pubDate>Mon, 09 Mar 2026 15:09:17 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A7%E5%92%8C%E9%99%84%E5%8A%A0%E5%B1%9E%E6%80%A7/</guid>
+      <description>
+        <![CDATA[<h1>依赖属性和附加属性</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          详解WPF中依赖属性和附加属性的区别，介绍注册方法、访问方式、XAML用法及典型使用场景。
+        
+        <hr><p>本文2026-03-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-09</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>WPF中的行为与触发器</title>
+      <link>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E8%A1%8C%E4%B8%BA%E4%B8%8E%E8%A7%A6%E5%8F%91%E5%99%A8/</link>
+      <pubDate>Mon, 09 Mar 2026 15:09:17 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E8%A1%8C%E4%B8%BA%E4%B8%8E%E8%A7%A6%E5%8F%91%E5%99%A8/</guid>
+      <description>
+        <![CDATA[<h1>WPF中的行为与触发器</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          详解WPF中Behavior行为与Trigger触发器的区别
+        
+        <hr><p>本文2026-03-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-09</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>理解WPF的MVVM模式</title>
+      <link>https://alone4869.github.io/post/%E7%90%86%E8%A7%A3wpf%E7%9A%84mvvm%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Wed, 05 Mar 2025 15:38:57 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E7%90%86%E8%A7%A3wpf%E7%9A%84mvvm%E6%A8%A1%E5%BC%8F/</guid>
+      <description>
+        <![CDATA[<h1>理解WPF的MVVM模式</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          介绍WPF中的MVVM设计模式，包括Model、View、ViewModel三部分的职责和交互，以及数据绑定和命令绑定的使用。
+        
+        <hr><p>本文2025-03-05首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2025-03-05</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>VS2022旧版本.NETFramework安装</title>
+      <link>https://alone4869.github.io/post/vs2022%E6%97%A7%E7%89%88%E6%9C%AC-netframework%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 16 Oct 2024 11:45:40 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/vs2022%E6%97%A7%E7%89%88%E6%9C%AC-netframework%E5%AE%89%E8%A3%85/</guid>
+      <description>
+        <![CDATA[<h1>VS2022旧版本.NETFramework安装</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          解决VS2022无法下载旧版本.NETFramework的问题
+        
+        <hr><p>本文2024-10-16首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-10-16</p>]]>
+      </description>
+      
+        <category>C#</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>单例模式</title>
+      <link>https://alone4869.github.io/post/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 11 Oct 2024 10:46:50 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>
+        <![CDATA[<h1>单例模式</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          介绍单例模式的多种实现方式，包括懒汉式、饿汉式、双重检查锁定等，以及线程安全问题和使用场景。
+        
+        <hr><p>本文2024-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-10-11</p>]]>
+      </description>
+      
+        <category>设计模式</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>dotNet高级编程</title>
+      <link>https://alone4869.github.io/post/dotnet%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Thu, 05 Sep 2024 12:22:32 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/dotnet%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</guid>
+      <description>
+        <![CDATA[<h1>dotNet高级编程</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          C#高级编程知识，包括数据结构、内存管理、委托与事件、协程、引用传递等核心概念详解。
+        
+        <hr><p>本文2024-09-05首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-09-05</p>]]>
+      </description>
+      
+        <category>C#</category>
+      
+    </item>
+    
+  </channel>
+</rss>
