@@ -1,0 +1,742 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  pve配置及常见问题处理 | Alone4869
+</title>
+<meta name="description" content="无量天尊"/><script>
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "true");
+</script><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://alone4869.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"English\",\"Locale\":\"\"},{\"Lang\":\"ja\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"日本語\",\"Locale\":\"\"},{\"Lang\":\"zh-cn\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"简体中文\",\"Locale\":\"zh-CN\"},{\"Lang\":\"zh-tw\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"繁體中文\",\"Locale\":\"\"}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="pve配置及常见问题处理 | Alone4869" />
+  <meta
+    property="og:description"
+    content="无量天尊"
+  />
+  <meta property="og:url" content="https://alone4869.github.io/post/pve%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86/" />
+  <meta
+    property="og:site_name"
+    content="知否"
+  />
+  <meta property="og:image" content="https://alone4869.github.io/images/banner.webp" />
+  <meta property="article:author" content="Alone4869" />
+  <meta property="article:published_time" content="2023-07-29T22:23:08&#43;08:00" />
+  <meta property="article:modified_time" content="2023-07-29T22:23:08&#43;08:00" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://alone4869.github.io/images/banner.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.8f5255d5a41db9f4c8349667e7ec6b3d8fb79b7dcc6304fe7d40a5b566fa224f.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages"><li data-value="en" role="option" aria-selected="false" >English</li><li data-value="ja" role="option" aria-selected="false" >日本語</li><li data-value="zh-cn" role="option" class="selected" aria-selected="true" >简体中文</li><li data-value="zh-tw" role="option" aria-selected="false" >繁體中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+          var expanded = selectSelected.getAttribute("aria-expanded") === "true";
+          selectSelected.setAttribute("aria-expanded", (!expanded).toString());
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+            selectSelected.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </nav></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="pve配置及常见问题处理"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">pve配置及常见问题处理</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0常用命令">0、常用命令</a></li>
+    <li><a href="#1新装配置">1、新装配置</a></li>
+    <li><a href="#2虚拟机迁移时需要确认几个问题">2、虚拟机迁移时需要确认几个问题</a></li>
+    <li><a href="#3硬盘空间调小">3、硬盘空间调小</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#4开启pve嵌套虚拟化功能">4、开启PVE嵌套虚拟化功能</a></li>
+    <li><a href="#5查看和关闭虚拟机">5、查看和关闭虚拟机</a></li>
+    <li><a href="#6镜像转换">6、镜像转换</a></li>
+    <li><a href="#7迁移相关设置">7、迁移相关设置</a></li>
+    <li><a href="#8问题处理">8、问题处理</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">13</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      0
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2023-07-29 22:23:08 &#43;0800 &#43;0800" itemprop="datePublished"
+      >2023-07-29</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2023-07-29</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="pve服务器配置及常见问题处理">
+<a class="header-anchor" href="#pve%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%85%8d%e7%bd%ae%e5%8f%8a%e5%b8%b8%e8%a7%81%e9%97%ae%e9%a2%98%e5%a4%84%e7%90%86"></a>
+PVE服务器配置及常见问题处理
+</h1><h2 id="0常用命令">
+<a class="header-anchor" href="#0%e5%b8%b8%e7%94%a8%e5%91%bd%e4%bb%a4"></a>
+0、常用命令
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#查看虚拟机列表</span>
+</span></span><span class="line"><span class="cl">qm list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#pve重启</span>
+</span></span><span class="line"><span class="cl">reboot
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#查看集群资源状况</span>
+</span></span><span class="line"><span class="cl">pvesh get /cluster/resources
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#取得虚拟机当前状态 `pvesh get /nodes/&lt;节点id&gt;/qemu/&lt;虚拟机id&gt;/status/current`</span>
+</span></span><span class="line"><span class="cl">pvesh get /nodes/pve/qemu/103/status/current
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#关闭虚拟机 `pvesh create /nodes/&lt;节点id&gt;/qemu/&lt;虚拟机id&gt;/status/stop`</span>
+</span></span><span class="line"><span class="cl">pvesh create /nodes/pve/qemu/103/status/stop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#启动虚拟机 `pvesh create /nodes/&lt;节点id&gt;/qemu/&lt;虚拟机id&gt;/status/start`</span>
+</span></span><span class="line"><span class="cl">pvesh create /nodes/pve/qemu/103/status/start
+</span></span></code></pre></div><h2 id="1新装配置">
+<a class="header-anchor" href="#1%e6%96%b0%e8%a3%85%e9%85%8d%e7%bd%ae"></a>
+1、新装配置
+</h2><p>取消订阅</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sed -i <span class="s2">&#34;s/data.status !== &#39;Active&#39;/false/g&#34;</span> /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js
+</span></span></code></pre></div><p>更换源</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">rm -rf /etc/apt/sources.list.d/pve-enterprise.list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">wget http://download.proxmox.com/debian/proxmox-ve-release-6.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-6.x.gpg
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;deb http://download.proxmox.com/debian/pve buster pve-no-subscription&#34;</span> &gt;/etc/apt/sources.list.d/pve-install-repo.list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;deb http://mirrors.aliyun.com/debian/ buster main non-free contrib  
+</span></span></span><span class="line"><span class="cl"><span class="s2">deb-src http://mirrors.aliyun.com/debian/ buster main non-free contrib  
+</span></span></span><span class="line"><span class="cl"><span class="s2">deb http://mirrors.aliyun.com/debian-security buster/updates main  
+</span></span></span><span class="line"><span class="cl"><span class="s2">deb-src http://mirrors.aliyun.com/debian-security buster/updates main  
+</span></span></span><span class="line"><span class="cl"><span class="s2">deb http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib  
+</span></span></span><span class="line"><span class="cl"><span class="s2">deb-src http://mirrors.aliyun.com/debian/ buster-updates main non-free contrib  
+</span></span></span><span class="line"><span class="cl"><span class="s2">deb http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib  
+</span></span></span><span class="line"><span class="cl"><span class="s2">deb-src http://mirrors.aliyun.com/debian/ buster-backports main non-free contrib&#34;</span> &gt;/etc/apt/sources.list
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">apt update
+</span></span></code></pre></div><p>更换LXC国内源</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">grep -rn <span class="s2">&#34;download.proxmox.com&#34;</span> /usr/share/perl5/PVE/<span class="se">\*</span> <span class="c1">#查找设定下载源的文件  </span>
+</span></span><span class="line"><span class="cl">sed -i.bak <span class="s2">&#34;s#http://download.proxmox.com/images#https://mirrors.ustc.edu.cn/proxmox/images#g&#34;</span> /usr/share/perl5/PVE/APLInfo.pm  
+</span></span><span class="line"><span class="cl">wget -O /var/lib/pve-manager/apl-info/mirrors.ustc.edu.cn https://mirrors.ustc.edu.cn/proxmox/images/aplinfo-pve-6.dat
+</span></span></code></pre></div><p>安装时间同步服务</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">apt-get install ntp -y
+</span></span></code></pre></div><h2 id="2虚拟机迁移时需要确认几个问题">
+<a class="header-anchor" href="#2%e8%99%9a%e6%8b%9f%e6%9c%ba%e8%bf%81%e7%a7%bb%e6%97%b6%e9%9c%80%e8%a6%81%e7%a1%ae%e8%ae%a4%e5%87%a0%e4%b8%aa%e9%97%ae%e9%a2%98"></a>
+2、虚拟机迁移时需要确认几个问题
+</h2><ul>
+<li>先将虚拟机的磁盘 通过硬件 中的 迁移磁盘 移到共享磁盘中。</li>
+<li>再用迁移，将服务迁移过去。</li>
+<li>迁移时需确认硬件，目标服务器是否满足硬盘需求。不能满足的需要先调整。</li>
+</ul>
+<h2 id="3硬盘空间调小">
+<a class="header-anchor" href="#3%e7%a1%ac%e7%9b%98%e7%a9%ba%e9%97%b4%e8%b0%83%e5%b0%8f"></a>
+3、硬盘空间调小
+</h2><h4 id="31调整虚拟机硬盘的大小">
+<a class="header-anchor" href="#31%e8%b0%83%e6%95%b4%e8%99%9a%e6%8b%9f%e6%9c%ba%e7%a1%ac%e7%9b%98%e7%9a%84%e5%a4%a7%e5%b0%8f"></a>
+3.1调整虚拟机硬盘的大小
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#查看虚拟机硬盘信息</span>
+</span></span><span class="line"><span class="cl">fdisk -l
+</span></span><span class="line"><span class="cl"><span class="c1">#查看虚拟机硬盘路径</span>
+</span></span><span class="line"><span class="cl">lvdisplay
+</span></span><span class="line"><span class="cl"><span class="c1">#查看虚拟机硬盘大小  </span>
+</span></span><span class="line"><span class="cl">lvs  
+</span></span><span class="line"><span class="cl"><span class="c1">#调小虚拟机硬盘2G，备注：调整前先将系统内的硬盘调为未分配状态。  </span>
+</span></span><span class="line"><span class="cl">lvreduce -L -2G /dev/pve/vm-100-disk-0
+</span></span></code></pre></div><h4 id="32增加-或减小-local-目录的大小即扩容">
+<a class="header-anchor" href="#32%e5%a2%9e%e5%8a%a0-%e6%88%96%e5%87%8f%e5%b0%8f-local-%e7%9b%ae%e5%bd%95%e7%9a%84%e5%a4%a7%e5%b0%8f%e5%8d%b3%e6%89%a9%e5%ae%b9"></a>
+3.2增加 或减小 local 目录的大小即扩容
+</h4><p>首先执行命令 <code>fdisk -l</code> ，查看/dev/mapper/pve-root大小，显示内容大概如下面的：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">Disk /dev/mapper/pve-root: 4.5 GiB, <span class="m">4831838208</span> bytes, <span class="m">9437184</span> sectors
+</span></span><span class="line"><span class="cl">Units: sectors of <span class="nv">1</span> <span class="o">=</span> <span class="m">512</span> bytes
+</span></span><span class="line"><span class="cl">Sector size <span class="o">(</span>logical/physical<span class="o">)</span>: 512/512 bytes
+</span></span><span class="line"><span class="cl">I/O size <span class="o">(</span>minimum/optimal<span class="o">)</span>: 512/512 bytes
+</span></span></code></pre></div><p>然后对 /dev/mapper/pve-root 扩容，命令如下，即增加1G的空间.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lvextend -L +1G /dev/mapper/pve-root
+</span></span></code></pre></div><p>执行后实际大小其实是还不会变化的,还需要下边的命令, 作用是执行上边的扩容操作</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">resize2fs /dev/mapper/pve-root
+</span></span></code></pre></div><h4 id="33如何要删除-local-vm-然后把所有的空间都移到-local下那么如何操作">
+<a class="header-anchor" href="#33%e5%a6%82%e4%bd%95%e8%a6%81%e5%88%a0%e9%99%a4-local-vm-%e7%84%b6%e5%90%8e%e6%8a%8a%e6%89%80%e6%9c%89%e7%9a%84%e7%a9%ba%e9%97%b4%e9%83%bd%e7%a7%bb%e5%88%b0-local%e4%b8%8b%e9%82%a3%e4%b9%88%e5%a6%82%e4%bd%95%e6%93%8d%e4%bd%9c"></a>
+3.3如何要删除 local-vm 然后把所有的空间都移到 local下，那么如何操作。
+</h4><ul>
+<li>先移除local-lvm对应的逻辑卷pve/data</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lvremove pve/data
+</span></span></code></pre></div><ul>
+<li>对local对应的逻辑卷/dev/mapper/pve-root进行在线扩容</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">lvextend -l +100%FREE -r /dev/mapper/pve-root
+</span></span></code></pre></div><ul>
+<li>执行后实际大小其实是还不会变化的,还需要下边的命令, 作用是执行上边的扩容操作</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">resize2fs /dev/mapper/pve-root
+</span></span></code></pre></div><ul>
+<li>
+<p>Web中依次展开数据中心-存储，编辑local-lvm，把local-lvm中对应节点移除即可。</p>
+</li>
+<li>
+<p>还有在数据中心-存储，编辑local，内容下拉菜单中把所有的内容都选上，以便这个空间可以储存磁盘映像。</p>
+</li>
+</ul>
+<h2 id="4开启pve嵌套虚拟化功能">
+<a class="header-anchor" href="#4%e5%bc%80%e5%90%afpve%e5%b5%8c%e5%a5%97%e8%99%9a%e6%8b%9f%e5%8c%96%e5%8a%9f%e8%83%bd"></a>
+4、开启PVE嵌套虚拟化功能
+</h2><p>通过命令检验嵌套虚拟化功能是否已被开启：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">vim /sys/module/kvm<span class="se">\_</span>intel/parameters/nested
+</span></span></code></pre></div><p>开启内核支持：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">modprobe -r kvm<span class="se">\_</span>intel  
+</span></span><span class="line"><span class="cl">modprobe kvm<span class="se">\_</span>intel <span class="nv">nested</span><span class="o">=</span><span class="m">1</span>
+</span></span></code></pre></div><p>现在再看看nested是否已开启：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">cat /sys/module/kvm<span class="se">\_</span>intel/parameters/nested
+</span></span><span class="line"><span class="cl">Y
+</span></span></code></pre></div><p>编辑配置文件：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">echo</span> <span class="s2">&#34;options kvm\_intel nested=1&#34;</span> &gt;&gt;/etc/modprobe.d/modprobe.conf
+</span></span></code></pre></div><h2 id="5查看和关闭虚拟机">
+<a class="header-anchor" href="#5%e6%9f%a5%e7%9c%8b%e5%92%8c%e5%85%b3%e9%97%ad%e8%99%9a%e6%8b%9f%e6%9c%ba"></a>
+5、查看和关闭虚拟机
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1">#列出所有虚拟机：</span>
+</span></span><span class="line"><span class="cl">qm list
+</span></span><span class="line"><span class="cl"><span class="c1">#关闭虚拟机：</span>
+</span></span><span class="line"><span class="cl">qm stop
+</span></span></code></pre></div><h2 id="6镜像转换">
+<a class="header-anchor" href="#6%e9%95%9c%e5%83%8f%e8%bd%ac%e6%8d%a2"></a>
+6、镜像转换
+</h2><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">qemu-img convert disk.qcow2 disk.vmdk
+</span></span></code></pre></div><h2 id="7迁移相关设置">
+<a class="header-anchor" href="#7%e8%bf%81%e7%a7%bb%e7%9b%b8%e5%85%b3%e8%ae%be%e7%bd%ae"></a>
+7、迁移相关设置
+</h2><p>PVE迁移的类型分加密（secure）或不加密（insecure）<br>
+secure迁移</p>
+<blockquote>
+<p>优点：信息安全，加密迁移<br>
+缺点：非常耗费host主机的CPU资源，且迁移速度慢</p>
+</blockquote>
+<p>insecure迁移</p>
+<blockquote>
+<p>优点：迁移速度快，对host主机的资源消耗小<br>
+缺点：不是加密迁移，信息安全需要考虑</p>
+</blockquote>
+<p>如果在网络完全自主可控的情况下，可以考虑insecure迁移</p>
+<p>迁移类型在配置文件中设置，web控制台无法设置<br>
+进入任意host节点&mdash;-shell</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">root@m71:~# cat /etc/pve/datacenter.cfg
+</span></span><span class="line"><span class="cl">keyboard: en-us
+</span></span><span class="line"><span class="cl">migration: <span class="nv">network</span><span class="o">=</span>172.18.171.71/24,type<span class="o">=</span>insecure
+</span></span><span class="line"><span class="cl">type可以设置为 加密secure（默认）不加密insecure
+</span></span></code></pre></div><h2 id="8问题处理">
+<a class="header-anchor" href="#8%e9%97%ae%e9%a2%98%e5%a4%84%e7%90%86"></a>
+8、问题处理
+</h2><h4 id="81迁移时提示认证失败时">
+<a class="header-anchor" href="#81%e8%bf%81%e7%a7%bb%e6%97%b6%e6%8f%90%e7%a4%ba%e8%ae%a4%e8%af%81%e5%a4%b1%e8%b4%a5%e6%97%b6"></a>
+8.1、迁移时提示认证失败时
+</h4><blockquote>
+<p>Host key verification failed.</p>
+</blockquote>
+<p>在控制台运行如下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">/usr/bin/ssh -e none -o <span class="s1">&#39;HostKeyAlias=pve1&#39;</span> root@192.168.3.241 /bin/true
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ssh 192.168.3.241
+</span></span></code></pre></div><h4 id="82pve下qm-stop提示超时的解决办法">
+<a class="header-anchor" href="#82pve%e4%b8%8bqm-stop%e6%8f%90%e7%a4%ba%e8%b6%85%e6%97%b6%e7%9a%84%e8%a7%a3%e5%86%b3%e5%8a%9e%e6%b3%95"></a>
+8.2、PVE下qm stop提示超时的解决办法
+</h4><blockquote>
+<p>TASK ERROR: can&rsquo;t lock file &lsquo;/var/lock/qemu-server/lock-108.conf&rsquo; - got timeout</p>
+</blockquote>
+<p>rm 该文件就可以了。</p>
+<ul>
+<li>
+<p>先在shell里输入 <code>rm /var/lock/qemu-server/lock-108.conf</code> #108是你的虚拟机编号</p>
+</li>
+<li>
+<p>再输入<code>qm stop 108</code> 就可以立即关闭你的108号虚拟机了</p>
+</li>
+</ul>
+<h4 id="83虚拟机存放路径">
+<a class="header-anchor" href="#83%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%ad%98%e6%94%be%e8%b7%af%e5%be%84"></a>
+8.3、虚拟机存放路径
+</h4><blockquote>
+<p>iso存放路径： <code>/var/lib/vz/template/iso/</code></p>
+</blockquote>
+<blockquote>
+<p>备份路径： <code>/var/lib/vz/dump/</code></p>
+</blockquote>
+<blockquote>
+<p>local 路径：<code>/var/lib/vz/images/</code></p>
+</blockquote>
+<blockquote>
+<p>local-vm 路径： <code>/dev/pve/</code></p>
+</blockquote>
+<blockquote>
+<p>虚拟机配置文件路径： <code>/etc/pve/</code></p>
+</blockquote>
+<blockquote>
+<p>集群中虚拟机配置文件路径： <code>/etc/pve/nodes/pve（pve为节点名称）/qemu-server/</code></p>
+</blockquote>
+<h4 id="84本机硬盘格式是lvm新加硬盘想使用zfs格式那么请一定要关闭swap-命令为-swapoff--a-否则zfs会发生很怪异的事情">
+<a class="header-anchor" href="#84%e6%9c%ac%e6%9c%ba%e7%a1%ac%e7%9b%98%e6%a0%bc%e5%bc%8f%e6%98%aflvm%e6%96%b0%e5%8a%a0%e7%a1%ac%e7%9b%98%e6%83%b3%e4%bd%bf%e7%94%a8zfs%e6%a0%bc%e5%bc%8f%e9%82%a3%e4%b9%88%e8%af%b7%e4%b8%80%e5%ae%9a%e8%a6%81%e5%85%b3%e9%97%adswap-%e5%91%bd%e4%bb%a4%e4%b8%ba-swapoff--a-%e5%90%a6%e5%88%99zfs%e4%bc%9a%e5%8f%91%e7%94%9f%e5%be%88%e6%80%aa%e5%bc%82%e7%9a%84%e4%ba%8b%e6%83%85"></a>
+8.4、本机硬盘格式是lvm，新加硬盘想使用zfs格式，那么请一定要关闭swap。 命令为 <code>swapoff -a</code> ,否则zfs会发生很怪异的事情.
+</h4><h4 id="85虚拟机出现问题状态为unkonw的解决方法">
+<a class="header-anchor" href="#85%e8%99%9a%e6%8b%9f%e6%9c%ba%e5%87%ba%e7%8e%b0%e9%97%ae%e9%a2%98%e7%8a%b6%e6%80%81%e4%b8%baunkonw%e7%9a%84%e8%a7%a3%e5%86%b3%e6%96%b9%e6%b3%95"></a>
+8.5、虚拟机出现问题状态为unkonw的解决方法
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">service rrdcached stop 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">rm -rf /var/lib/rrdcached/* 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">service rrdcached start
+</span></span></code></pre></div></div>
+    <footer class="article-footer"><ul class="article-category-list"></ul>
+<ul class="article-tag-list" itemprop="keywords"></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
+              data-sizes="auto"
+              alt="ping不通外网的解决方案(centos)"
+              class="lazyload"
+            /><a
+          href="/post/ping%E4%B8%8D%E9%80%9A%E5%A4%96%E7%BD%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88centos/"
+          aria-label="前一篇:ping不通外网的解决方案(centos)"
+          title="前一篇:ping不通外网的解决方案(centos)"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">ping不通外网的解决方案(centos)</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="https://d-sketon.top/img/_backwebp/bg1.webp"
+              data-sizes="auto"
+              alt="dotNet高级编程"
+              class="lazyload"
+            /><a
+          href="/post/dotnet%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/"
+          aria-label="后一篇:dotNet高级编程"
+          title="后一篇:dotNet高级编程"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">dotNet高级编程</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>Alone4869
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;14.3k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;00:35</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0常用命令">0、常用命令</a></li>
+    <li><a href="#1新装配置">1、新装配置</a></li>
+    <li><a href="#2虚拟机迁移时需要确认几个问题">2、虚拟机迁移时需要确认几个问题</a></li>
+    <li><a href="#3硬盘空间调小">3、硬盘空间调小</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#4开启pve嵌套虚拟化功能">4、开启PVE嵌套虚拟化功能</a></li>
+    <li><a href="#5查看和关闭虚拟机">5、查看和关闭虚拟机</a></li>
+    <li><a href="#6镜像转换">6、镜像转换</a></li>
+    <li><a href="#7迁移相关设置">7、迁移相关设置</a></li>
+    <li><a href="#8问题处理">8、问题处理</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">13</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      0
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">0</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "Alone4869",
+          title: "pve配置及常见问题处理",
+          url: "https:\/\/alone4869.github.io\/post\/pve%E9%85%8D%E7%BD%AE%E5%8F%8A%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E5%A4%84%E7%90%86\/",
+          description: "PVE服务器配置及常见问题处理，包括取消订阅、更换源、嵌套虚拟化、虚拟机迁移、硬盘空间调整等。",
+          cover: "https:\/\/alone4869.github.io\/images\/banner.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+        }
+        pswp()
+      </script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    
+    async
+    
+    
+    integrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>

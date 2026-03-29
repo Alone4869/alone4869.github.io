@@ -2,86 +2,70 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://example.org/post/hello/</loc>
-    <lastmod>2023-03-15T11:00:00-07:00</lastmod>
-  </url><url>
-    <loc>https://example.org/</loc>
-    <lastmod>2023-03-15T11:00:00-07:00</lastmod>
+    <loc>https://alone4869.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://example.org/ja/"
+                href="https://alone4869.github.io/ja/categories/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-cn"
-                href="https://example.org/zh-cn/"
+                hreflang="zh-CN"
+                href="https://alone4869.github.io/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="https://example.org/zh-tw/"
+                href="https://alone4869.github.io/zh-tw/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/"
+                href="https://alone4869.github.io/en/categories/"
                 />
   </url><url>
-    <loc>https://example.org/archives/</loc>
-    <lastmod>2022-07-26T21:46:25+08:00</lastmod>
-  </url><url>
-    <loc>https://example.org/post/</loc>
-    <lastmod>2022-07-26T21:46:25+08:00</lastmod>
-  </url><url>
-    <loc>https://example.org/about/</loc>
-    <lastmod>2022-06-09T20:12:52+08:00</lastmod>
-  </url><url>
-    <loc>https://example.org/friend/</loc>
-    <lastmod>2022-06-09T20:12:52+08:00</lastmod>
-  </url><url>
-    <loc>https://example.org/categories/</loc>
+    <loc>https://alone4869.github.io/en/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://example.org/ja/categories/"
+                href="https://alone4869.github.io/ja/tags/"
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-cn"
-                href="https://example.org/zh-cn/categories/"
+                hreflang="zh-CN"
+                href="https://alone4869.github.io/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="https://example.org/zh-tw/categories/"
+                href="https://alone4869.github.io/zh-tw/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/categories/"
+                href="https://alone4869.github.io/en/tags/"
                 />
   </url><url>
-    <loc>https://example.org/tags/</loc>
+    <loc>https://alone4869.github.io/en/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-CN"
+                href="https://alone4869.github.io/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://example.org/ja/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://example.org/zh-cn/tags/"
+                href="https://alone4869.github.io/ja/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-tw"
-                href="https://example.org/zh-tw/tags/"
+                href="https://alone4869.github.io/zh-tw/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://example.org/tags/"
+                href="https://alone4869.github.io/en/"
                 />
   </url>
 </urlset>

@@ -1,38 +1,200 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>https://example.org/post/</link>
-    <description>Recent content from My New Hugo Site</description>
+    <title>知否</title>
+    <link>https://alone4869.github.io/post/</link>
+    <description>Recent content from 知否</description>
     <generator>Hugo</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     
-    <managingEditor>xxx@example.com (D-Sketon)</managingEditor>
-    <webMaster>xxx@example.com (D-Sketon)</webMaster>
+    <managingEditor>alone4869@protonmail.com (Alone4869)</managingEditor>
+    <webMaster>alone4869@protonmail.com (Alone4869)</webMaster>
     
-    <copyright>All articles on this blog are licensed under the BY-NC-SA license agreement unless otherwise stated. Please indicate the source when reprinting!</copyright>
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Wed, 15 Mar 2023 11:00:00 -0700</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2026 18:19:33 +0800</lastBuildDate>
     
     
-    <atom:link href="https://example.org/post/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://alone4869.github.io/post/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
     
 
     <item>
-      <title>Hello World</title>
-      <link>https://example.org/post/hello/</link>
-      <pubDate>Wed, 15 Mar 2023 11:00:00 -0700</pubDate>
-      <author>xxx@example.com (D-Sketon)</author>
-      <guid>https://example.org/post/hello/</guid>
+      <title>Debian13的相关配置</title>
+      <link>https://alone4869.github.io/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 29 Mar 2026 18:19:33 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
       <description>
-        <![CDATA[<h1>Hello World</h1><p>Author: D-Sketon(xxx@example.com)</p>
+        <![CDATA[<h1>Debian13的相关配置</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          <p>💘 博麗 霊夢 💘</p>
+          Debian13的一些重要配置
         
-        <hr><p>Published on 2023-03-15 at <a href='https://example.org/'>My New Hugo Site</a>, last modified on 2023-03-15</p>]]>
+        <hr><p>本文2026-03-29首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-29</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>hexo部署</title>
+      <link>https://alone4869.github.io/post/hexo%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sun, 29 Mar 2026 03:00:00 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/hexo%E9%83%A8%E7%BD%B2/</guid>
+      <description>
+        <![CDATA[<h1>hexo部署</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          Hexo博客框架的部署教程，包括安装、新建网站、创建文章、启动服务、生成静态文件及部署到远程。
+        
+        <hr><p>本文2026-03-29首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-29</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>WPF中的注意点</title>
+      <link>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/</link>
+      <pubDate>Wed, 18 Mar 2026 23:29:17 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/</guid>
+      <description>
+        <![CDATA[<h1>WPF中的注意点</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          WPF开发中的一些注意点，包括DataGrid自定义模板选中、RelativeSource绑定机制深度解析等。
+        
+        <hr><p>本文2026-03-18首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-18</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>依赖属性和附加属性</title>
+      <link>https://alone4869.github.io/post/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A7%E5%92%8C%E9%99%84%E5%8A%A0%E5%B1%9E%E6%80%A7/</link>
+      <pubDate>Mon, 09 Mar 2026 15:09:17 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A7%E5%92%8C%E9%99%84%E5%8A%A0%E5%B1%9E%E6%80%A7/</guid>
+      <description>
+        <![CDATA[<h1>依赖属性和附加属性</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          详解WPF中依赖属性和附加属性的区别，介绍注册方法、访问方式、XAML用法及典型使用场景。
+        
+        <hr><p>本文2026-03-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-09</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>WPF中的行为与触发器</title>
+      <link>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E8%A1%8C%E4%B8%BA%E4%B8%8E%E8%A7%A6%E5%8F%91%E5%99%A8/</link>
+      <pubDate>Mon, 09 Mar 2026 15:09:17 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E8%A1%8C%E4%B8%BA%E4%B8%8E%E8%A7%A6%E5%8F%91%E5%99%A8/</guid>
+      <description>
+        <![CDATA[<h1>WPF中的行为与触发器</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          详解WPF中Behavior行为与Trigger触发器的区别，包括使用场景、MVVM支持及自定义Behavior的实现方法。
+        
+        <hr><p>本文2026-03-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-09</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>理解WPF的MVVM模式</title>
+      <link>https://alone4869.github.io/post/%E7%90%86%E8%A7%A3wpf%E7%9A%84mvvm%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Wed, 05 Mar 2025 15:38:57 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E7%90%86%E8%A7%A3wpf%E7%9A%84mvvm%E6%A8%A1%E5%BC%8F/</guid>
+      <description>
+        <![CDATA[<h1>理解WPF的MVVM模式</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          介绍WPF中的MVVM设计模式，包括Model、View、ViewModel三部分的职责和交互，以及数据绑定和命令绑定的使用。
+        
+        <hr><p>本文2025-03-05首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2025-03-05</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>VS2022旧版本.NETFramework安装</title>
+      <link>https://alone4869.github.io/post/vs2022%E6%97%A7%E7%89%88%E6%9C%AC-netframework%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Wed, 16 Oct 2024 11:45:40 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/vs2022%E6%97%A7%E7%89%88%E6%9C%AC-netframework%E5%AE%89%E8%A3%85/</guid>
+      <description>
+        <![CDATA[<h1>VS2022旧版本.NETFramework安装</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          解决VS2022无法下载旧版本.NETFramework的问题，通过NuGet下载Microsoft.NET.Framework.Reference.Assemblies包。
+        
+        <hr><p>本文2024-10-16首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-10-16</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>单例模式</title>
+      <link>https://alone4869.github.io/post/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Fri, 11 Oct 2024 10:46:50 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>
+        <![CDATA[<h1>单例模式</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          介绍单例模式的多种实现方式，包括懒汉式、饿汉式、双重检查锁定等，以及线程安全问题和使用场景。
+        
+        <hr><p>本文2024-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-10-11</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>docker相关命令</title>
+      <link>https://alone4869.github.io/post/docker%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 11 Oct 2024 10:08:08 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/docker%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</guid>
+      <description>
+        <![CDATA[<h1>docker相关命令</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          docker和docker-compose常用命令汇总，包括容器管理、日志查看、镜像操作等，以及watchtower自动更新容器配置。
+        
+        <hr><p>本文2024-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-10-11</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>dotNet高级编程</title>
+      <link>https://alone4869.github.io/post/dotnet%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Thu, 05 Sep 2024 12:22:32 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/dotnet%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</guid>
+      <description>
+        <![CDATA[<h1>dotNet高级编程</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          C#高级编程知识，包括数据结构、内存管理、委托与事件、协程、引用传递等核心概念详解。
+        
+        <hr><p>本文2024-09-05首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-09-05</p>]]>
       </description>
       
     </item>
