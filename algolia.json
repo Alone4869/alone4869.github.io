@@ -1,8 +1,14 @@
 [
   {
+    "objectID": "7abce8cb48196f5ef7880400c77ff00dd72e9a3e",
+    "permalink": "/post/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%BC%82%E4%BA%AE%E5%AE%9E%E7%94%A8%E7%BB%88%E7%AB%AF/",
+    "title": "如何打造漂亮实用终端","content": " 关系说明 Ghostty：终端窗口本身，是你看到的那个「应用程序」 Fish：你在终端里实际使用的 Shell，也就是命令交互层 Starship：显示在命令行前面的提示行（Prompt）引擎 Catppuccin：一套视觉主题设计语言，负责整体颜色风格 这四者的关系不是平行竞争，而是上下堆叠、彼此配合。它们真正的逻辑顺序应该这样理解：\nGhostty（终端窗口） └── Fish（Shell / 命令交互层） └── Starship（Prompt 显示层） └── Catppuccin（视觉风格 / 配色系统） Ghostty 是容器，Fish 是操作核心，Starship 是信息面板，Catppuccin 是美术系统。\nGhostty Ghostty 是一个现代终端模拟器（terminal emulator）。它负责提供你可以看见、输入、输出命令的窗口环境。\n开启终端窗口 显示文字 管理字体与字型渲染 应用主题背景颜色 处理光标、分页、窗口行为 Ghostty 的定位很像是「工作桌面」：你要先有桌子，后面才能摆上各种工具。\nFish Fish 是一个 Shell。当你在终端中输入命令，真正负责理解这些命令、执行它们、把结果回传给你的，不是 Ghostty，而是 Shell。\nFish 相较于 bash 或 zsh，最大的特色是：\n默认就有很好的自动补全 会根据历史命令给出建议 语法更直观 日常交互体验很流畅 你可以把 Fish 想成是「房间里真正和你对话的工作伙伴」。Ghostty 只是把房间打开，而 Fish 才是你进到房间后，真正开始交互的对象。\nStarship Starship 是一个 Prompt 引擎。所谓 Prompt，就是你在终端里每次输入命令之前，前面看到的那一行提示信息。\n~/project main ❯ Starship 不取代 Shell，也不取代终端模拟器。它只是接管 Prompt 显示层，让你的提示行显示：\n当前所在文件夹 当前 git branch 与状态 上一个命令执行时间 当前语言环境（Python、Node.js、Rust 等） 所以 Starship 很像是「驾驶座前方的仪表盘」。Fish 负责让车子真的能开，Starship 则负责把速度、油量、方向等信息显示在你面前。\nCatppuccin Catppuccin 不是 …","date": "2026-04-08 22:04:42",
+    "updated": "2026-04-08 22:04:42"
+  }, 
+  {
     "objectID": "08468deaa4577132ae82776e68054c16e17def74",
     "permalink": "/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/",
-    "title": "debian13的相关配置","content": " 1、配置远程SSH 步骤 1：修改 SSH 服务端配置 备份原配置文件（避免操作失误）： sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak 编辑 SSH 配置文件： sudo nano /etc/ssh/sshd_config 找到并修改以下参数： #允许root登录 PermitRootLogin yes #确保允许密码认证（如果禁用密码需同时修改）： PasswordAuthentication yes 保存并退出编辑器（Nano 快捷键：Ctrl+O 保存，Ctrl+X 退出）。 步骤 2：重启 SSH 服务 sudo systemctl restart ssh 步骤 3：验证配置 检查服务状态： sudo systemctl status ssh 确保服务处于 active (running) 状态。 测试远程 Root 登录（从另一台机器执行）： ssh root@your_server_ip 输入 Root 密码，确认能否成功登录。 2、配置静态ip 步骤 1：判断 debian 系统使用哪个网络管理工具 看 /etc/network 目录下是不是有 interfaces 文件\n步骤 2：获取网卡设备名称 使用命令 ip addr 查看网卡的名称，后面配置的时候需要用到\n步骤 3：配置静态 ip 编辑 /etc/network/interfaces 文件，根据自己需求录入静态 ip 参数即可\nallow-hotplug enp2s0 # 支持热插拔 auto enp2s0 # 开机自动启用eth0 iface enp2s0 inet static # 使用静态ip address 192.168.1.4 # ip地址 netmask 255.255.255.0 # 子网掩码 gateway 192.168.1.1 # 网关地址 dns-nameservers 192.168.1.1 # dns服务器 编辑后保存退出，然后重启网络服务\nsudo systemctl restart networking.service ","date": "2026-03-29 18:19:33",
+    "title": "debian13的相关配置","content": " 1、配置远程SSH 步骤 1：修改 SSH 服务端配置 备份原配置文件（避免操作失误）： sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak 编辑 SSH 配置文件： sudo nano /etc/ssh/sshd_config 找到并修改以下参数： #允许root登录 PermitRootLogin yes #确保允许密码认证（如果禁用密码需同时修改）： PasswordAuthentication yes 保存并退出编辑器（Nano 快捷键：Ctrl+O 保存，Ctrl+X 退出）。 步骤 2：重启 SSH 服务 sudo systemctl restart ssh 步骤 3：验证配置 检查服务状态： sudo systemctl status ssh 确保服务处于 active (running) 状态。 测试远程 Root 登录（从另一台机器执行）： ssh root@your_server_ip 输入 Root 密码，确认能否成功登录。 ","date": "2026-03-29 18:19:33",
     "updated": "2026-03-29 18:19:33"
   }, 
   {

@@ -196,7 +196,7 @@
     <li>
       <ul>
         <li><a href="#1配置远程ssh">1、配置远程SSH</a></li>
-        <li><a href="#2配置静态ip">2、配置静态ip</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -214,17 +214,17 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">13</div>
+    <div>文章</div><div class="sidebar-state-number">14</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
     <div class="sidebar-state-number">
-      9
+      10
     </div>
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">14</div>
+    <div class="sidebar-state-number">15</div>
   </a>
 </div>
 <div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
@@ -320,36 +320,10 @@
 <li>输入 Root 密码，确认能否成功登录。</li>
 </ul>
 <hr>
-<h3 id="2配置静态ip">
-<a class="header-anchor" href="#2%e9%85%8d%e7%bd%ae%e9%9d%99%e6%80%81ip"></a>
-2、配置静态ip
-</h3><h4 id="步骤-1判断-debian-系统使用哪个网络管理工具">
-<a class="header-anchor" href="#%e6%ad%a5%e9%aa%a4-1%e5%88%a4%e6%96%ad-debian-%e7%b3%bb%e7%bb%9f%e4%bd%bf%e7%94%a8%e5%93%aa%e4%b8%aa%e7%bd%91%e7%bb%9c%e7%ae%a1%e7%90%86%e5%b7%a5%e5%85%b7"></a>
-<strong>步骤 1：判断 debian 系统使用哪个网络管理工具</strong>
-</h4><p>看 <code>/etc/network</code> 目录下是不是有 <code>interfaces</code> 文件</p>
-<p><img src="/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/images/confirm-network-tool.png" alt=""></p>
-<hr>
-<h4 id="步骤-2获取网卡设备名称">
-<a class="header-anchor" href="#%e6%ad%a5%e9%aa%a4-2%e8%8e%b7%e5%8f%96%e7%bd%91%e5%8d%a1%e8%ae%be%e5%a4%87%e5%90%8d%e7%a7%b0"></a>
-<strong>步骤 2：获取网卡设备名称</strong>
-</h4><p>使用命令 <code>ip addr</code> 查看网卡的名称，后面配置的时候需要用到</p>
-<p><img src="/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/images/get-network-adapter.png" alt=""></p>
-<hr>
-<h4 id="步骤-3配置静态-ip">
-<a class="header-anchor" href="#%e6%ad%a5%e9%aa%a4-3%e9%85%8d%e7%bd%ae%e9%9d%99%e6%80%81-ip"></a>
-<strong>步骤 3：配置静态 ip</strong>
-</h4><p>编辑 <code>/etc/network/interfaces</code> 文件，根据自己需求录入静态 ip 参数即可</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">allow-hotplug enp2s0            <span class="c1"># 支持热插拔</span>
-</span></span><span class="line"><span class="cl">auto enp2s0                     <span class="c1"># 开机自动启用eth0</span>
-</span></span><span class="line"><span class="cl">iface enp2s0 inet static        <span class="c1"># 使用静态ip</span>
-</span></span><span class="line"><span class="cl">address 192.168.1.4             <span class="c1"># ip地址</span>
-</span></span><span class="line"><span class="cl">netmask 255.255.255.0           <span class="c1"># 子网掩码</span>
-</span></span><span class="line"><span class="cl">gateway 192.168.1.1             <span class="c1"># 网关地址</span>
-</span></span><span class="line"><span class="cl">dns-nameservers 192.168.1.1     <span class="c1"># dns服务器</span>
-</span></span></code></pre></div><p>编辑后保存退出，然后重启网络服务</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo systemctl restart networking.service
-</span></span></code></pre></div><hr>
-</div>
+<h3 id="">
+<a class="header-anchor" href="#"></a>
+
+</h3></div>
     <footer class="article-footer"><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
     <a
       class="article-category-link"
@@ -379,7 +353,7 @@
     aria-label="Article navigation"
     data-aos="fade-up"
   ><div class="article-nav-link-wrap left"><img
-              data-src="/images/cover4.webp"
+              data-src="/images/cover6.webp"
               data-sizes="auto"
               alt="hexo部署"
               class="lazyload"
@@ -390,6 +364,18 @@
         ></a>
         <div class="article-nav-caption">前一篇</div>
         <h3 class="article-nav-title">hexo部署</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="/images/cover2.webp"
+              data-sizes="auto"
+              alt="如何打造漂亮实用终端"
+              class="lazyload"
+            /><a
+          href="/post/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%BC%82%E4%BA%AE%E5%AE%9E%E7%94%A8%E7%BB%88%E7%AB%AF/"
+          aria-label="后一篇:如何打造漂亮实用终端"
+          title="后一篇:如何打造漂亮实用终端"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">如何打造漂亮实用终端</h3>
       </div></nav></article></section>
         </div><footer id="footer" aria-label="Site footer">
   <div style="width: 100%; overflow: hidden">
@@ -411,10 +397,10 @@
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;14.3k</span
+          >&nbsp;15.5k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;00:35</span>
+        <span class="icon-coffee">&nbsp;00:38</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -443,7 +429,7 @@
     <li>
       <ul>
         <li><a href="#1配置远程ssh">1、配置远程SSH</a></li>
-        <li><a href="#2配置静态ip">2、配置静态ip</a></li>
+        <li></li>
       </ul>
     </li>
   </ul>
@@ -461,17 +447,17 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">13</div>
+    <div>文章</div><div class="sidebar-state-number">14</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
     <div class="sidebar-state-number">
-      9
+      10
     </div>
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">14</div>
+    <div class="sidebar-state-number">15</div>
   </a>
 </div>
 <div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">

@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://alone4869.github.io/categories/</loc>
-    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
+    <lastmod>2026-04-08T22:04:42+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -25,20 +25,19 @@
                 href="https://alone4869.github.io/categories/"
                 />
   </url><url>
-    <loc>https://alone4869.github.io/categories/debian/</loc>
-    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
+    <loc>https://alone4869.github.io/categories/shell/</loc>
+    <lastmod>2026-04-08T22:04:42+08:00</lastmod>
   </url><url>
-    <loc>https://alone4869.github.io/tags/debian/</loc>
-    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
-  </url><url>
-    <loc>https://alone4869.github.io/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
-  </url><url>
-    <loc>https://alone4869.github.io/tags/linux/</loc>
-    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
+    <loc>https://alone4869.github.io/tags/shell/</loc>
+    <lastmod>2026-04-08T22:04:42+08:00</lastmod>
   </url><url>
     <loc>https://alone4869.github.io/tags/</loc>
-    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
+    <lastmod>2026-04-08T22:04:42+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://alone4869.github.io/zh-tw/tags/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -51,17 +50,23 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-tw"
-                href="https://alone4869.github.io/zh-tw/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="zh-CN"
                 href="https://alone4869.github.io/tags/"
                 />
   </url><url>
+    <loc>https://alone4869.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2026-04-08T22:04:42+08:00</lastmod>
+  </url><url>
+    <loc>https://alone4869.github.io/post/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%BC%82%E4%BA%AE%E5%AE%9E%E7%94%A8%E7%BB%88%E7%AB%AF/</loc>
+    <lastmod>2026-04-08T22:04:42+08:00</lastmod>
+  </url><url>
     <loc>https://alone4869.github.io/</loc>
-    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
+    <lastmod>2026-04-08T22:04:42+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-tw"
+                href="https://alone4869.github.io/zh-tw/"
+                />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -74,14 +79,21 @@
                 />
     <xhtml:link
                 rel="alternate"
-                hreflang="zh-tw"
-                href="https://alone4869.github.io/zh-tw/"
-                />
-    <xhtml:link
-                rel="alternate"
                 hreflang="zh-CN"
                 href="https://alone4869.github.io/"
                 />
+  </url><url>
+    <loc>https://alone4869.github.io/categories/debian/</loc>
+    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
+  </url><url>
+    <loc>https://alone4869.github.io/tags/debian/</loc>
+    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
+  </url><url>
+    <loc>https://alone4869.github.io/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
+  </url><url>
+    <loc>https://alone4869.github.io/tags/linux/</loc>
+    <lastmod>2026-03-29T18:19:33+08:00</lastmod>
   </url><url>
     <loc>https://alone4869.github.io/categories/hexo/</loc>
     <lastmod>2026-03-29T03:00:00+08:00</lastmod>
@@ -90,9 +102,6 @@
     <lastmod>2026-03-29T03:00:00+08:00</lastmod>
   </url><url>
     <loc>https://alone4869.github.io/post/hexo%E9%83%A8%E7%BD%B2/</loc>
-    <lastmod>2026-03-29T03:00:00+08:00</lastmod>
-  </url><url>
-    <loc>https://alone4869.github.io/tags/%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2026-03-29T03:00:00+08:00</lastmod>
   </url><url>
     <loc>https://alone4869.github.io/tags/c%23/</loc>
