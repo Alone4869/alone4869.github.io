@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Shell on 知否</title>
-    <link>https://alone4869.github.io/categories/shell/</link>
+    <title>工具 on 知否</title>
+    <link>https://alone4869.github.io/tags/%E5%B7%A5%E5%85%B7/</link>
     <description>Recent content from 知否</description>
     <generator>Hugo</generator>
     <language>zh-CN</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Thu, 09 Apr 2026 20:57:04 +0800</lastBuildDate>
     
     
-    <atom:link href="https://alone4869.github.io/categories/shell/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="https://alone4869.github.io/tags/%E5%B7%A5%E5%85%B7/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -33,26 +33,6 @@
           Shell中的一些工具推荐
         
         <hr><p>本文2026-04-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-04-09</p>]]>
-      </description>
-      
-        <category>shell</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>如何打造漂亮实用终端</title>
-      <link>https://alone4869.github.io/post/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%BC%82%E4%BA%AE%E5%AE%9E%E7%94%A8%E7%BB%88%E7%AB%AF/</link>
-      <pubDate>Wed, 08 Apr 2026 22:04:42 &#43;0800</pubDate>
-      <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%BC%82%E4%BA%AE%E5%AE%9E%E7%94%A8%E7%BB%88%E7%AB%AF/</guid>
-      <description>
-        <![CDATA[<h1>如何打造漂亮实用终端</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
-        
-          用 Ghostty × Fish × Starship × Catppuccin 的配置专属开发终端
-        
-        <hr><p>本文2026-04-08首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-04-08</p>]]>
       </description>
       
         <category>shell</category>

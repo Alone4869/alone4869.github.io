@@ -1,5 +1,11 @@
 [
   {
+    "objectID": "43ea2610026233ced42f26f9603e4de23825b8cc",
+    "permalink": "/post/shell%E4%B8%AD%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%88%E6%8E%A8%E8%8D%90/",
+    "title": "Shell中的工具推荐","content": " 介绍 组件 说明 Ghostty GPU 加速终端模拟器 Fish 或 Zsh Shell Starship 跨 Shell 提示符（Catppuccin Mocha 主题） MesloLGS NF Nerd Font，提供图标和 Powerline 字形 bat 带语法高亮和行号的 cat eza 带图标、git 状态、树形视图的 ls fd 更快更直观的 find ripgrep 比 grep 快几个数量级 fzf 模糊查找器（Ctrl+R / Ctrl+T / Alt+C） btop 漂亮的系统监控 zoxide 智能 cd，学习你的习惯 jq JSON 处理器 tldr 简化版 man 手册，附带示例 delta 带语法高亮的 git diff lazygit Git 终端 UI fnm 快速 Node 版本管理器（Rust 编写） Zellij 现代终端复用器 平台 macOS 完整支持，所有工具通过 Homebrew 安装 Ghostty 作为原生 macOS 应用安装 ","date": "2026-04-09 20:57:04",
+    "updated": "2026-04-09 20:57:04"
+  }, 
+  {
     "objectID": "7abce8cb48196f5ef7880400c77ff00dd72e9a3e",
     "permalink": "/post/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%BC%82%E4%BA%AE%E5%AE%9E%E7%94%A8%E7%BB%88%E7%AB%AF/",
     "title": "如何打造漂亮实用终端","content": " 关系说明 Ghostty：终端窗口本身，是你看到的那个「应用程序」 Fish：你在终端里实际使用的 Shell，也就是命令交互层 Starship：显示在命令行前面的提示行（Prompt）引擎 Catppuccin：一套视觉主题设计语言，负责整体颜色风格 这四者的关系不是平行竞争，而是上下堆叠、彼此配合。它们真正的逻辑顺序应该这样理解：\nGhostty（终端窗口） └── Fish（Shell / 命令交互层） └── Starship（Prompt 显示层） └── Catppuccin（视觉风格 / 配色系统） Ghostty 是容器，Fish 是操作核心，Starship 是信息面板，Catppuccin 是美术系统。\nGhostty Ghostty 是一个现代终端模拟器（terminal emulator）。它负责提供你可以看见、输入、输出命令的窗口环境。\n开启终端窗口 显示文字 管理字体与字型渲染 应用主题背景颜色 处理光标、分页、窗口行为 Ghostty 的定位很像是「工作桌面」：你要先有桌子，后面才能摆上各种工具。\nFish Fish 是一个 Shell。当你在终端中输入命令，真正负责理解这些命令、执行它们、把结果回传给你的，不是 Ghostty，而是 Shell。\nFish 相较于 bash 或 zsh，最大的特色是：\n默认就有很好的自动补全 会根据历史命令给出建议 语法更直观 日常交互体验很流畅 你可以把 Fish 想成是「房间里真正和你对话的工作伙伴」。Ghostty 只是把房间打开，而 Fish 才是你进到房间后，真正开始交互的对象。\nStarship Starship 是一个 Prompt 引擎。所谓 Prompt，就是你在终端里每次输入命令之前，前面看到的那一行提示信息。\n~/project main ❯ Starship 不取代 Shell，也不取代终端模拟器。它只是接管 Prompt 显示层，让你的提示行显示：\n当前所在文件夹 当前 git branch 与状态 上一个命令执行时间 当前语言环境（Python、Node.js、Rust 等） 所以 Starship 很像是「驾驶座前方的仪表盘」。Fish 负责让车子真的能开，Starship 则负责把速度、油量、方向等信息显示在你面前。\nCatppuccin Catppuccin 不是 …","date": "2026-04-08 22:04:42",
