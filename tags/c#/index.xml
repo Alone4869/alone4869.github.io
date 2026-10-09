@@ -12,12 +12,108 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Wed, 18 Mar 2026 23:29:17 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 09 Oct 2026 12:12:08 +0800</lastBuildDate>
     
     
     <atom:link href="https://alone4869.github.io/tags/c%23/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>C#基础（四）</title>
+      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%9B%9B/</link>
+      <pubDate>Fri, 09 Oct 2026 12:12:08 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%9B%9B/</guid>
+      <description>
+        <![CDATA[<h1>C#基础（四）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h2 id="一什么是内聚性和耦合性">
+<a class="header-anchor" href="#%e4%b8%80%e4%bb%80%e4%b9%88%e6%98%af%e5%86%85%e8%81%9a%e6%80%a7%e5%92%8c%e8%80%a6%e5%90%88%e6%80%a7"></a>
+一、什么是内聚性和耦合性
+</h2><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><p>**内聚性（Cohesion）<strong>和</strong>耦合性（Coupling）<strong>是衡量软件模块设计质量的两个核心指标，通常遵循</strong>“高内聚、低耦合”**的设计原则。</p>
+        
+        <hr><p>本文2026-10-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-09</p>]]>
+      </description>
+      
+        <category>C#</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>C#基础（三）</title>
+      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%89/</link>
+      <pubDate>Fri, 09 Oct 2026 01:07:55 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%89/</guid>
+      <description>
+        <![CDATA[<h1>C#基础（三）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h2 id="一gethashcode方法的用途什么是字典dictionary">
+<a class="header-anchor" href="#%e4%b8%80gethashcode%e6%96%b9%e6%b3%95%e7%9a%84%e7%94%a8%e9%80%94%e4%bb%80%e4%b9%88%e6%98%af%e5%ad%97%e5%85%b8dictionary"></a>
+一、<code>GetHashCode</code>方法的用途，什么是字典<code>Dictionary</code>
+</h2><p>在 C# 中，<code>GetHashCode()</code> 和 <code>Dictionary&lt;TKey, TValue&gt;</code> 是紧密相关的两个概念。理解它们对于编写高性能的查找逻辑至关重要。</p>
+        
+        <hr><p>本文2026-10-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-09</p>]]>
+      </description>
+      
+        <category>C#</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>C#基础（二）</title>
+      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%8C/</link>
+      <pubDate>Thu, 08 Oct 2026 20:04:55 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%8C/</guid>
+      <description>
+        <![CDATA[<h1>C#基础（二）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h2 id="一-什么是解构">
+<a class="header-anchor" href="#%e4%b8%80-%e4%bb%80%e4%b9%88%e6%98%af%e8%a7%a3%e6%9e%84"></a>
+一、 什么是解构
+</h2><p><strong>解构 (Deconstruction)</strong> 是 C# 7.0 引入的一项语法特性，它允许你将一个对象的多个属性或字段“拆解”并赋值给独立的局部变量。</p>
+<p>简单来说，就是把一个“包裹”里的东西一次性拿出来，分别放到不同的盒子里。</p>
+        
+        <hr><p>本文2026-10-08首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-08</p>]]>
+      </description>
+      
+        <category>C#</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>C#基础（一）</title>
+      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%80/</link>
+      <pubDate>Thu, 08 Oct 2026 16:06:35 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%80/</guid>
+      <description>
+        <![CDATA[<h1>C#基础（一）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h2 id="一-元组tuple和值元组valuetuple的区别">
+<a class="header-anchor" href="#%e4%b8%80-%e5%85%83%e7%bb%84tuple%e5%92%8c%e5%80%bc%e5%85%83%e7%bb%84valuetuple%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+一、 元组<code>Tuple</code>和值元组<code>ValueTuple</code>的区别
+</h2><p>在 C# 中，<code>Tuple</code>（元组）和 <code>ValueTuple</code>（值元组）虽然功能相似，但在底层实现、性能表现以及语法支持上有着本质的区别。</p>
+        
+        <hr><p>本文2026-10-08首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-08</p>]]>
+      </description>
+      
+        <category>C#</category>
+      
+    </item>
     
     
 
@@ -136,26 +232,6 @@
       </description>
       
         <category>设计模式</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>dotNet高级编程</title>
-      <link>https://alone4869.github.io/post/dotnet%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</link>
-      <pubDate>Thu, 05 Sep 2024 12:22:32 &#43;0800</pubDate>
-      <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/dotnet%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</guid>
-      <description>
-        <![CDATA[<h1>dotNet高级编程</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
-        
-          C#高级编程知识，包括数据结构、内存管理、委托与事件、协程、引用传递等核心概念详解。
-        
-        <hr><p>本文2024-09-05首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2024-09-05</p>]]>
-      </description>
-      
-        <category>C#</category>
       
     </item>
     

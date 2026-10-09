@@ -1,5 +1,29 @@
 [
   {
+    "objectID": "9bde90f9a4323355de1e51da4ae0700cd02bbdb3",
+    "permalink": "/post/c%23%E5%9F%BA%E7%A1%80%E5%9B%9B/",
+    "title": "C#基础（四）","content": " 一、什么是内聚性和耦合性 ✅面试简答（考场口述答案） **内聚性（Cohesion）和耦合性（Coupling）是衡量软件模块设计质量的两个核心指标，通常遵循“高内聚、低耦合”**的设计原则。\n内聚性：指一个模块内部各个元素（方法、属性）之间结合的紧密程度。高内聚意味着模块只负责单一、明确的功能，职责清晰。 耦合性：指不同模块之间相互依赖的程度。低耦合意味着模块之间联系松散，修改一个模块不会轻易影响其他模块。 目标是：让模块内部紧密相关，模块之间尽可能独立。\n📚深入解析 1. 内聚性（Cohesion）：从低到高 内聚性越高，模块的可维护性和复用性越好。常见的内聚类型（由低到高）：\n类型 描述 评价 偶然内聚 模块内的任务毫无逻辑联系，只是凑在一起 ❌ 极差 逻辑内聚 完成逻辑上相似但功能不同的任务（如一个类处理所有输入） ❌ 差 时间内聚 任务仅在时间上相关（如初始化模块，包含打开文件、连接DB等） ⚠️ 一般 过程内聚 任务按特定顺序执行，前一个输出是后一个输入 ⚠️ 一般 通信内聚 模块内所有操作都使用相同的数据 ✅ 良好 顺序内聚 模块内的处理元素相关，且必须依次执行 ✅ 良好 功能内聚 模块内所有元素共同完成一个单一功能 🏆 最佳 面试重点：现代开发追求的单一职责原则（SRP）本质上就是追求功能内聚。\n2. 耦合性（Coupling）：从高到低 耦合性越低，系统的灵活性和可测试性越强。常见的耦合类型（由高到低）：\n类型 描述 评价 内容耦合 一个模块直接修改另一个模块的内部数据 ❌ 极差 公共耦合 多个模块共享同一个全局变量 ❌ 差 外部耦合 模块依赖于外部环境格式（如硬编码的文件路径、协议） ⚠️ 一般 控制耦合 一个模块通过传递标志位来控制另一个模块的逻辑分支 ⚠️ 一般 标记耦合 模块间传递复杂的数据结构（如整个对象），但只用其中一部分 ⚠️ 一般 数据耦合 模块间仅通过参数传递基本数据或简单对象 ✅ 良好 非直接耦合 模块之间没有直接联系，通过消息队列或事件总线间接通信 🏆 最佳 面试重点：在 C#/.NET 中，我们通过依赖注入（DI）和面向接口编程将“控制耦合”或“内容耦合”转化为“数据耦合”或“非直接耦合”。\n3. C# 代码对比示例 ❌ 低内聚、高耦合（坏味道）\n// 一个类既负责计算工资，又负责保存数据库，还负责发送邮件 public …","date": "2026-10-09 12:12:08",
+    "updated": "2026-10-09 12:12:08"
+  }, 
+  {
+    "objectID": "35b1a5061403b0134586502ad1774f8eff2c96f0",
+    "permalink": "/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%89/",
+    "title": "C#基础（三）","content": " 一、GetHashCode方法的用途，什么是字典Dictionary 在 C# 中，GetHashCode() 和 Dictionary\u0026amp;lt;TKey, TValue\u0026amp;gt; 是紧密相关的两个概念。理解它们对于编写高性能的查找逻辑至关重要。\n1. GetHashCode() 的用途 GetHashCode() 是 System.Object 的一个虚方法，它返回一个 32 位有符号整数。它的核心作用是为对象生成一个“数字指纹”，以便在基于哈希的数据结构（如 Dictionary, HashSet）中快速定位对象。\n核心契约（必须遵守的规则）： 一致性：如果两个对象通过 Equals() 判断为相等，那么它们的 GetHashCode() 必须返回相同的值。 稳定性：在对象用于哈希集合期间，只要影响 Equals() 比较的字段没变，GetHashCode() 返回的值就不应改变。 非唯一性：不同的对象可以返回相同的哈希码（这称为“哈希冲突”），但好的算法应尽量减少这种情况。 ⚠️ 常见陷阱： 不要直接用 GetHashCode() 做唯一标识：因为它可能冲突。 可变对象的陷阱：如果你把一个对象放入 Dictionary 后，修改了该对象中参与计算哈希值的字段，你将永远无法再从字典中找到它（因为哈希值变了，去错了“桶”里找）。 2. Dictionary\u0026amp;lt;TKey, TValue\u0026amp;gt; 是什么？ Dictionary 是一个基于哈希表 (Hash Table) 实现的键值对集合。它允许你通过“键 (Key)”以接近 O(1) 的时间复杂度快速查找、添加或删除“值 (Value)”。\n底层工作原理（桶与链表）： 计算哈希：当你调用 dict[key] = value 时，字典会调用 key.GetHashCode()。 确定桶 (Bucket)：将哈希值对内部数组长度取模，确定数据应该存放在哪个“桶”里。 处理冲突：如果多个 Key 算出了同一个桶位置，它们会形成一个链表（或红黑树，取决于 .NET 版本和数据量）存在该桶中。 精确匹配：在桶内，字典会使用 key.Equals() 来逐个比对，找到真正的那个 Key。 var dict = new Dictionary\u0026amp;lt;string, int\u0026amp;gt;(); dict[\u0026amp;#34;Alice\u0026amp;#34;] …","date": "2026-10-09 01:07:55",
+    "updated": "2026-10-09 01:07:55"
+  }, 
+  {
+    "objectID": "64b0345b12c5e4687e1dbf5e6d6f41814c526568",
+    "permalink": "/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%8C/",
+    "title": "C#基础（二）","content": " 一、 什么是解构 解构 (Deconstruction) 是 C# 7.0 引入的一项语法特性，它允许你将一个对象的多个属性或字段“拆解”并赋值给独立的局部变量。\n简单来说，就是把一个“包裹”里的东西一次性拿出来，分别放到不同的盒子里。\n1. 核心语法 解构通常与 元组 (ValueTuple) 或实现了 Deconstruct 方法的自定义类配合使用。\nA. 元组的解构（最常见） // 定义一个元组 var person = (Name: \u0026amp;#34;Alice\u0026amp;#34;, Age: 30, City: \u0026amp;#34;Guangzhou\u0026amp;#34;); // ✅ 解构：将元组的值分别赋给三个独立变量 var (name, age, city) = person; Console.WriteLine(name); // 输出: Alice Console.WriteLine(age); // 输出: 30 B. 忽略不需要的值 如果你只关心其中一部分数据，可以使用 _（弃元）来忽略其他值：\n// 只想要名字和城市，忽略年龄 var (name, _, city) = person; 2. 自定义类的解构 你可以为自己的类（如 WPF 的 ViewModel 或银行对接的数据模型）添加解构支持。只需定义一个名为 Deconstruct 的方法，并使用 out 参数。\npublic class BankTransaction { public string TransactionId { get; } public decimal Amount { get; } public DateTime Date { get; } public BankTransaction(string id, decimal amount, DateTime date) { TransactionId = id; Amount = amount; Date = date; } // ✅ 定义解构方法 public void Deconstruct(out string id, out decimal amount) { id = TransactionId; out amount = Amount; } // 也可以重载 Deconstruct 以支持不同数量的返回值 public void …","date": "2026-10-08 20:04:55",
+    "updated": "2026-10-08 20:04:55"
+  }, 
+  {
+    "objectID": "a2f7b5035578124d578a49395d0e27cd6ddc7d29",
+    "permalink": "/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%80/",
+    "title": "C#基础（一）","content": " 一、 元组Tuple和值元组ValueTuple的区别 在 C# 中，Tuple（元组）和 ValueTuple（值元组）虽然功能相似，但在底层实现、性能表现以及语法支持上有着本质的区别。\n以下是详细的对比分析：\n1. 核心区别概览 特性 System.Tuple (引用类型) System.ValueTuple (值类型) 引入版本 .NET Framework 4.0 .NET Framework 4.7 / C# 7.0 类型本质 引用类型 (Class) 值类型 (Struct) 内存分配 堆 (Heap)，产生 GC 压力 栈 (Stack) 或内联分配，无 GC 压力 成员数量限制 最多 8 个 (超过需嵌套) 理论上无限制 (通常建议不超过 7-8 个) 成员命名 固定为 Item1, Item2\u0026amp;hellip; 支持自定义名称 (如 Name, Age) 可变性 不可变 (Immutable) 默认不可变，但结构体本身是值语义 解构支持 ❌ 不支持 ✅ 支持 (Deconstruction) 性能 较低 (涉及对象创建和垃圾回收) 极高 (轻量级，适合高频调用) 2. 详细技术解析 A. 内存与性能 (最重要的区别) Tuple: 是一个类。每次创建 new Tuple\u0026amp;lt;int, string\u0026amp;gt;(...) 都会在托管堆上分配内存。如果在一个循环中频繁创建元组，会触发频繁的垃圾回收 (GC)，影响性能。 ValueTuple: 是一个结构体。它通常在栈上分配，或者作为其他对象的一部分内联存储。它没有 GC 开销，因此在高性能场景（如游戏开发、高频数据处理）中是首选。 B. 语法与可读性 Tuple: 访问成员只能通过 Item1, Item2 等通用名称，代码可读性较差。 var t = new Tuple\u0026amp;lt;string, int\u0026amp;gt;(\u0026amp;#34;Alice\u0026amp;#34;, 30); Console.WriteLine(t.Item1); // 不知道 Item1 代表什么 ValueTuple: 结合 C# 7.0+ 的语法糖，可以定义有意义的字段名，并支持解构。 var vt = (Name: \u0026amp;#34;Alice\u0026amp;#34;, Age: 30); Console.WriteLine(vt.Name); // 清晰明了 // 解构赋 …","date": "2026-10-08 16:06:35",
+    "updated": "2026-10-08 16:06:35"
+  }, 
+  {
     "objectID": "43ea2610026233ced42f26f9603e4de23825b8cc",
     "permalink": "/post/shell%E4%B8%AD%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%88%E6%8E%A8%E8%8D%90/",
     "title": "Shell中的工具推荐","content": " 介绍 组件 说明 Ghostty GPU 加速终端模拟器 Fish 或 Zsh Shell Starship 跨 Shell 提示符（Catppuccin Mocha 主题） MesloLGS NF Nerd Font，提供图标和 Powerline 字形 bat 带语法高亮和行号的 cat eza 带图标、git 状态、树形视图的 ls fd 更快更直观的 find ripgrep 比 grep 快几个数量级 fzf 模糊查找器（Ctrl+R / Ctrl+T / Alt+C） btop 漂亮的系统监控 zoxide 智能 cd，学习你的习惯 jq JSON 处理器 tldr 简化版 man 手册，附带示例 delta 带语法高亮的 git diff lazygit Git 终端 UI fnm 快速 Node 版本管理器（Rust 编写） Zellij 现代终端复用器 平台 macOS 完整支持，所有工具通过 Homebrew 安装 Ghostty 作为原生 macOS 应用安装 ","date": "2026-04-09 20:57:04",

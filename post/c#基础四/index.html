@@ -1,0 +1,2273 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  C#基础（四） | Alone4869
+</title>
+<meta name="description" content="无量天尊"/><script>
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "true");
+</script><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://alone4869.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"English\",\"Locale\":\"\"},{\"Lang\":\"ja\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"日本語\",\"Locale\":\"\"},{\"Lang\":\"zh-cn\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"简体中文\",\"Locale\":\"zh-CN\"},{\"Lang\":\"zh-tw\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"繁體中文\",\"Locale\":\"\"}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="C#基础（四） | Alone4869" />
+  <meta
+    property="og:description"
+    content="无量天尊"
+  />
+  <meta property="og:url" content="https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%9B%9B/" />
+  <meta
+    property="og:site_name"
+    content="知否"
+  />
+  <meta property="og:image" content="https://alone4869.github.io/images/banner.webp" />
+  <meta property="article:author" content="Alone4869" />
+  <meta property="article:published_time" content="2026-10-09T12:12:08&#43;08:00" />
+  <meta property="article:modified_time" content="2026-10-09T12:12:08&#43;08:00" /><meta property="article:tag" content="C#" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://alone4869.github.io/images/banner.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.18b6dbee5e1b382f80c8c0cdf5f79d28d7139a30edcf474f45fab80da506432e.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages"><li data-value="en" role="option" aria-selected="false" >English</li><li data-value="ja" role="option" aria-selected="false" >日本語</li><li data-value="zh-cn" role="option" class="selected" aria-selected="true" >简体中文</li><li data-value="zh-tw" role="option" aria-selected="false" >繁體中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+          var expanded = selectSelected.getAttribute("aria-expanded") === "true";
+          selectSelected.setAttribute("aria-expanded", (!expanded).toString());
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+            selectSelected.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </nav><a href="https://github.com/alone4869/alone4869.github.io" class="triangle-badge" title="github" target="_blank" rel="noopener nofollow noreferrer">
+      <div class="icon icon-github triangle-badge-icon"></div>
+    </a></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="C#基础（四）"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">C#基础（四）</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一什么是内聚性和耦合性">一、什么是内聚性和耦合性</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#二什么是策略设计模式">二、什么是策略设计模式</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-1">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-1">📚深入解析</a></li>
+        <li><a href="#参考实现c代码">💡参考实现（C#代码）</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-1">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三什么是依赖注入设计模式">三、什么是依赖注入设计模式</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-2">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-2">📚深入解析</a></li>
+        <li><a href="#参考实现c代码-1">💡参考实现（C#代码）</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-2">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四什么是模板方法设计模式">四、什么是模板方法设计模式</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-3">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-3">📚深入解析</a></li>
+        <li><a href="#参考实现c代码-2">✍参考实现（C#代码）</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-3">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#五什么是装饰器设计模式">五、什么是装饰器设计模式</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-4">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-4">📚深入解析</a></li>
+        <li><a href="#参考实现c代码-3">💡参考实现（C#代码）</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-4">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#六什么是观察者设计模式">六、什么是观察者设计模式</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-5">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-5">📚深入解析</a></li>
+        <li><a href="#参考实现c代码-4">💡参考实现（C#代码）</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-5">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#七什么是控制反转">七、什么是控制反转</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-6">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-6">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-6">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#八什么是组合优于继承原则">八、什么是组合优于继承原则</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-7">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-7">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-7">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#九什么是模拟mocks">九、什么是模拟(Mocks)</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-8">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-8">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-8">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#十debug版本和release版本有什么区别">十、Debug版本和Release版本有什么区别</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-9">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-9">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-9">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">19</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">16</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-10-09 12:12:08 &#43;0800 &#43;0800" itemprop="datePublished"
+      >2026-10-09</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-10-09</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="一什么是内聚性和耦合性">
+<a class="header-anchor" href="#%e4%b8%80%e4%bb%80%e4%b9%88%e6%98%af%e5%86%85%e8%81%9a%e6%80%a7%e5%92%8c%e8%80%a6%e5%90%88%e6%80%a7"></a>
+一、什么是内聚性和耦合性
+</h2><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><p>**内聚性（Cohesion）<strong>和</strong>耦合性（Coupling）<strong>是衡量软件模块设计质量的两个核心指标，通常遵循</strong>“高内聚、低耦合”**的设计原则。</p>
+<ul>
+<li><strong>内聚性</strong>：指一个模块内部各个元素（方法、属性）之间结合的紧密程度。<strong>高内聚</strong>意味着模块只负责单一、明确的功能，职责清晰。</li>
+<li><strong>耦合性</strong>：指不同模块之间相互依赖的程度。<strong>低耦合</strong>意味着模块之间联系松散，修改一个模块不会轻易影响其他模块。</li>
+</ul>
+<p>目标是：<strong>让模块内部紧密相关，模块之间尽可能独立。</strong></p>
+<h3 id="深入解析">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90"></a>
+📚深入解析
+</h3><h4 id="1-内聚性cohesion从低到高">
+<a class="header-anchor" href="#1-%e5%86%85%e8%81%9a%e6%80%a7cohesion%e4%bb%8e%e4%bd%8e%e5%88%b0%e9%ab%98"></a>
+1. 内聚性（Cohesion）：从低到高
+</h4><p>内聚性越高，模块的可维护性和复用性越好。常见的内聚类型（由低到高）：</p>
+<table>
+	<thead>
+			<tr>
+					<th>类型</th>
+					<th>描述</th>
+					<th>评价</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>偶然内聚</strong></td>
+					<td>模块内的任务毫无逻辑联系，只是凑在一起</td>
+					<td>❌ 极差</td>
+			</tr>
+			<tr>
+					<td><strong>逻辑内聚</strong></td>
+					<td>完成逻辑上相似但功能不同的任务（如一个类处理所有输入）</td>
+					<td>❌ 差</td>
+			</tr>
+			<tr>
+					<td><strong>时间内聚</strong></td>
+					<td>任务仅在时间上相关（如初始化模块，包含打开文件、连接DB等）</td>
+					<td>⚠️ 一般</td>
+			</tr>
+			<tr>
+					<td><strong>过程内聚</strong></td>
+					<td>任务按特定顺序执行，前一个输出是后一个输入</td>
+					<td>⚠️ 一般</td>
+			</tr>
+			<tr>
+					<td><strong>通信内聚</strong></td>
+					<td>模块内所有操作都使用相同的数据</td>
+					<td>✅ 良好</td>
+			</tr>
+			<tr>
+					<td><strong>顺序内聚</strong></td>
+					<td>模块内的处理元素相关，且必须依次执行</td>
+					<td>✅ 良好</td>
+			</tr>
+			<tr>
+					<td><strong>功能内聚</strong></td>
+					<td>模块内所有元素共同完成一个单一功能</td>
+					<td>🏆 <strong>最佳</strong></td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p><strong>面试重点</strong>：现代开发追求的<strong>单一职责原则（SRP）<strong>本质上就是追求</strong>功能内聚</strong>。</p>
+</blockquote>
+<h4 id="2-耦合性coupling从高到低">
+<a class="header-anchor" href="#2-%e8%80%a6%e5%90%88%e6%80%a7coupling%e4%bb%8e%e9%ab%98%e5%88%b0%e4%bd%8e"></a>
+2. 耦合性（Coupling）：从高到低
+</h4><p>耦合性越低，系统的灵活性和可测试性越强。常见的耦合类型（由高到低）：</p>
+<table>
+	<thead>
+			<tr>
+					<th>类型</th>
+					<th>描述</th>
+					<th>评价</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>内容耦合</strong></td>
+					<td>一个模块直接修改另一个模块的内部数据</td>
+					<td>❌ 极差</td>
+			</tr>
+			<tr>
+					<td><strong>公共耦合</strong></td>
+					<td>多个模块共享同一个全局变量</td>
+					<td>❌ 差</td>
+			</tr>
+			<tr>
+					<td><strong>外部耦合</strong></td>
+					<td>模块依赖于外部环境格式（如硬编码的文件路径、协议）</td>
+					<td>⚠️ 一般</td>
+			</tr>
+			<tr>
+					<td><strong>控制耦合</strong></td>
+					<td>一个模块通过传递标志位来控制另一个模块的逻辑分支</td>
+					<td>⚠️ 一般</td>
+			</tr>
+			<tr>
+					<td><strong>标记耦合</strong></td>
+					<td>模块间传递复杂的数据结构（如整个对象），但只用其中一部分</td>
+					<td>⚠️ 一般</td>
+			</tr>
+			<tr>
+					<td><strong>数据耦合</strong></td>
+					<td>模块间仅通过参数传递基本数据或简单对象</td>
+					<td>✅ 良好</td>
+			</tr>
+			<tr>
+					<td><strong>非直接耦合</strong></td>
+					<td>模块之间没有直接联系，通过消息队列或事件总线间接通信</td>
+					<td>🏆 <strong>最佳</strong></td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p><strong>面试重点</strong>：在 C#/.NET 中，我们通过<strong>依赖注入（DI）<strong>和</strong>面向接口编程</strong>将“控制耦合”或“内容耦合”转化为“数据耦合”或“非直接耦合”。</p>
+</blockquote>
+<h4 id="3-c-代码对比示例">
+<a class="header-anchor" href="#3-c-%e4%bb%a3%e7%a0%81%e5%af%b9%e6%af%94%e7%a4%ba%e4%be%8b"></a>
+3. C# 代码对比示例
+</h4><p>❌ <strong>低内聚、高耦合（坏味道）</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 一个类既负责计算工资，又负责保存数据库，还负责发送邮件</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">EmployeeManager</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">ProcessPayroll</span><span class="p">(</span><span class="kt">int</span> <span class="n">employeeId</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 1. 计算逻辑（业务内聚）</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">salary</span> <span class="p">=</span> <span class="n">CalculateSalary</span><span class="p">(</span><span class="n">employeeId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// 2. 数据库操作（数据访问耦合）</span>
+</span></span><span class="line"><span class="cl">        <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">conn</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="s">&#34;...&#34;</span><span class="p">))</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">conn</span><span class="p">.</span><span class="n">Execute</span><span class="p">(</span><span class="s">&#34;UPDATE Salaries SET Amount = @s WHERE Id = @id&#34;</span><span class="p">,</span> <span class="k">new</span> <span class="p">{</span> <span class="n">s</span> <span class="p">=</span> <span class="n">salary</span><span class="p">,</span> <span class="n">id</span> <span class="p">=</span> <span class="n">employeeId</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// 3. 邮件发送（外部服务耦合）</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SmtpClient</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">client</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="s">&#34;hr@company.com&#34;</span><span class="p">,</span> <span class="s">&#34;employee@company.com&#34;</span><span class="p">,</span> <span class="s">&#34;Salary Slip&#34;</span><span class="p">,</span> <span class="s">$&#34;Your salary is {salary}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>✅ <strong>高内聚、低耦合（推荐）</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 1. 职责拆分：每个类只做一件事（高内聚）</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">SalaryCalculator</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">decimal</span> <span class="n">Calculate</span><span class="p">(</span><span class="kt">int</span> <span class="n">employeeId</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IPayrollRepository</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">UpdateSalary</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="kt">decimal</span> <span class="n">amount</span><span class="p">);</span> <span class="c1">// 依赖抽象，低耦合</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IEmailSender</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">SendSalarySlip</span><span class="p">(</span><span class="kt">string</span> <span class="n">email</span><span class="p">,</span> <span class="kt">decimal</span> <span class="n">amount</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2. 通过构造函数注入依赖（解耦）</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">PayrollService</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">SalaryCalculator</span> <span class="n">_calculator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IPayrollRepository</span> <span class="n">_repo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IEmailSender</span> <span class="n">_emailSender</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">PayrollService</span><span class="p">(</span><span class="n">SalaryCalculator</span> <span class="n">calculator</span><span class="p">,</span> <span class="n">IPayrollRepository</span> <span class="n">repo</span><span class="p">,</span> <span class="n">IEmailSender</span> <span class="n">emailSender</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_calculator</span> <span class="p">=</span> <span class="n">calculator</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_repo</span> <span class="p">=</span> <span class="n">repo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_emailSender</span> <span class="p">=</span> <span class="n">emailSender</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">ProcessPayroll</span><span class="p">(</span><span class="kt">int</span> <span class="n">employeeId</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">salary</span> <span class="p">=</span> <span class="n">_calculator</span><span class="p">.</span><span class="n">Calculate</span><span class="p">(</span><span class="n">employeeId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_repo</span><span class="p">.</span><span class="n">UpdateSalary</span><span class="p">(</span><span class="n">employeeId</span><span class="p">,</span> <span class="n">salary</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_emailSender</span><span class="p">.</span><span class="n">SendSalarySlip</span><span class="p">(</span><span class="n">GetEmail</span><span class="p">(</span><span class="n">employeeId</span><span class="p">),</span> <span class="n">salary</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="4-两者的辩证关系">
+<a class="header-anchor" href="#4-%e4%b8%a4%e8%80%85%e7%9a%84%e8%be%a9%e8%af%81%e5%85%b3%e7%b3%bb"></a>
+4. 两者的辩证关系
+</h4><ul>
+<li><strong>高内聚通常导致低耦合</strong>：当模块职责单一时，它对外部的需求就会减少，依赖自然变少。</li>
+<li><strong>过度解耦的陷阱</strong>：为了追求极致的低耦合，可能会引入过多的中间层、接口和抽象，导致系统复杂度上升（过度设计）。需要在<strong>简洁性</strong>和<strong>灵活性</strong>之间取得平衡。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>如何判断一个类的内聚性是否过高或过低？</strong></p>
+<ul>
+<li>考点：看类的方法是否操作同一组数据；看类名是否能用单一动词短语描述；看是否有“上帝类”（God Class）。</li>
+</ul>
+</li>
+<li>
+<p><strong>在微服务架构中，如何体现高内聚低耦合？</strong></p>
+<ul>
+<li>考点：服务边界划分（DDD 限界上下文）、数据库私有化、异步通信（MQ）替代同步调用。</li>
+</ul>
+</li>
+<li>
+<p><strong>如果两个模块必须紧密协作，如何实现低耦合？</strong></p>
+<ul>
+<li>考点：使用观察者模式（事件/委托）、中介者模式、或发布订阅机制，避免直接引用。</li>
+</ul>
+</li>
+<li>
+<p><strong>接口隔离原则（ISP）与内聚性有什么关系？</strong></p>
+<ul>
+<li>考点：ISP 要求客户端不应依赖它不需要的接口，这实际上是在强制提高接口的内聚性，避免“胖接口”。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="二什么是策略设计模式">
+<a class="header-anchor" href="#%e4%ba%8c%e4%bb%80%e4%b9%88%e6%98%af%e7%ad%96%e7%95%a5%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f"></a>
+二、什么是策略设计模式
+</h2><h3 id="面试简答考场口述答案-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-1"></a>
+✅面试简答（考场口述答案）
+</h3><p>策略模式是一种行为设计模式，它定义了一系列算法（策略），并将每个算法封装到独立的类中，使它们可以相互替换。客户端通过组合方式使用策略对象，而不是继承，从而在运行时动态切换算法。核心思想是&quot;将算法的使用与算法的实现分离&quot;。</p>
+<h3 id="深入解析-1">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-1"></a>
+📚深入解析
+</h3><p><strong>1. 核心组成</strong></p>
+<ul>
+<li><strong>Strategy（策略接口）</strong>：定义所有支持算法的公共接口</li>
+<li><strong>ConcreteStrategy（具体策略）</strong>：实现不同的算法逻辑</li>
+<li><strong>Context（上下文）</strong>：持有一个策略对象的引用，委托策略执行具体算法</li>
+</ul>
+<p><strong>2. 关键特点</strong></p>
+<ul>
+<li><strong>开闭原则</strong>：新增策略只需添加新类，无需修改现有代码</li>
+<li><strong>消除条件分支</strong>：避免大量 if-else 或 switch-case 判断</li>
+<li><strong>运行时切换</strong>：可以在程序运行时动态更换算法</li>
+<li><strong>组合优于继承</strong>：通过组合关系而非继承来实现多态</li>
+</ul>
+<p><strong>3. 适用场景</strong></p>
+<ul>
+<li>同一接口有多种实现，需要根据不同条件选择</li>
+<li>算法需要频繁扩展或修改</li>
+<li>类中存在大量条件语句判断使用哪种算法</li>
+</ul>
+<p><strong>4. C# 中的典型应用</strong></p>
+<ul>
+<li><code>IComparer&lt;T&gt;</code> 排序策略</li>
+<li>ASP.NET Core 中的认证策略（<code>IAuthorizationHandler</code>）</li>
+<li>支付系统中的多种支付方式</li>
+</ul>
+<h3 id="参考实现c代码">
+<a class="header-anchor" href="#%e5%8f%82%e8%80%83%e5%ae%9e%e7%8e%b0c%e4%bb%a3%e7%a0%81"></a>
+💡参考实现（C#代码）
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 1. 策略接口</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IPaymentStrategy</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Pay</span><span class="p">(</span><span class="kt">decimal</span> <span class="n">amount</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2. 具体策略 - 支付宝支付</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">AlipayStrategy</span> <span class="p">:</span> <span class="n">IPaymentStrategy</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Pay</span><span class="p">(</span><span class="kt">decimal</span> <span class="n">amount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;使用支付宝支付: ¥{amount}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 3. 具体策略 - 微信支付</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">WechatPayStrategy</span> <span class="p">:</span> <span class="n">IPaymentStrategy</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Pay</span><span class="p">(</span><span class="kt">decimal</span> <span class="n">amount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;使用微信支付: ¥{amount}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 4. 具体策略 - 信用卡支付</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">CreditCardStrategy</span> <span class="p">:</span> <span class="n">IPaymentStrategy</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Pay</span><span class="p">(</span><span class="kt">decimal</span> <span class="n">amount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;使用信用卡支付: ¥{amount}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 5. 上下文类</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">PaymentContext</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">IPaymentStrategy</span> <span class="n">_strategy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 构造函数注入策略</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">PaymentContext</span><span class="p">(</span><span class="n">IPaymentStrategy</span> <span class="n">strategy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_strategy</span> <span class="p">=</span> <span class="n">strategy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 运行时切换策略</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">SetStrategy</span><span class="p">(</span><span class="n">IPaymentStrategy</span> <span class="n">strategy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_strategy</span> <span class="p">=</span> <span class="n">strategy</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 执行支付</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">ExecutePayment</span><span class="p">(</span><span class="kt">decimal</span> <span class="n">amount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_strategy</span><span class="p">.</span><span class="n">Pay</span><span class="p">(</span><span class="n">amount</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 6. 使用示例</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">context</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PaymentContext</span><span class="p">(</span><span class="k">new</span> <span class="n">AlipayStrategy</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">context</span><span class="p">.</span><span class="n">ExecutePayment</span><span class="p">(</span><span class="m">100</span><span class="n">m</span><span class="p">);</span>  <span class="c1">// 输出: 使用支付宝支付: ¥100</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 运行时切换策略</span>
+</span></span><span class="line"><span class="cl">        <span class="n">context</span><span class="p">.</span><span class="n">SetStrategy</span><span class="p">(</span><span class="k">new</span> <span class="n">WechatPayStrategy</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">        <span class="n">context</span><span class="p">.</span><span class="n">ExecutePayment</span><span class="p">(</span><span class="m">200</span><span class="n">m</span><span class="p">);</span>  <span class="c1">// 输出: 使用微信支付: ¥200</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="面试延伸追问预判面试官后续提问-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-1"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>策略模式和工厂模式有什么区别？如何结合使用？</strong></p>
+<ul>
+<li>策略关注算法替换，工厂关注对象创建；常结合使用，用工厂根据条件创建具体策略对象</li>
+</ul>
+</li>
+<li>
+<p><strong>策略模式和状态模式很相似，区别是什么？</strong></p>
+<ul>
+<li>策略模式中各个策略独立无关联；状态模式中状态之间存在转换关系，且状态改变通常由内部触发</li>
+</ul>
+</li>
+<li>
+<p><strong>如果策略很多，每次都要手动创建和切换很麻烦，如何优化？</strong></p>
+<ul>
+<li>可以结合工厂模式 + 字典/容器管理策略映射，或通过依赖注入框架自动注入</li>
+</ul>
+</li>
+<li>
+<p><strong>策略模式的缺点是什么？</strong></p>
+<ul>
+<li>客户端必须了解不同策略的区别；策略类数量增多会增加系统复杂度</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="三什么是依赖注入设计模式">
+<a class="header-anchor" href="#%e4%b8%89%e4%bb%80%e4%b9%88%e6%98%af%e4%be%9d%e8%b5%96%e6%b3%a8%e5%85%a5%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f"></a>
+三、什么是依赖注入设计模式
+</h2><h3 id="面试简答考场口述答案-2">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-2"></a>
+✅面试简答（考场口述答案）
+</h3><p>依赖注入（Dependency Injection, DI）是一种实现<strong>控制反转（IoC）<strong>的设计模式。其核心思想是将对象的创建和依赖关系的管理从类内部转移到外部容器。类不再自己 <code>new</code> 依赖对象，而是通过构造函数、属性或方法参数“接收”依赖。这样做实现了</strong>解耦</strong>，提高了代码的可测试性和可维护性。在 .NET 中，它通常通过内置的 <code>IServiceCollection</code> 容器来实现。</p>
+<h3 id="深入解析-2">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-2"></a>
+📚深入解析
+</h3><p><strong>1. 核心概念区分</strong></p>
+<ul>
+<li><strong>控制反转 (IoC)</strong>：一种设计思想，指将控制权从程序代码转移到框架或容器。</li>
+<li><strong>依赖注入 (DI)</strong>：实现 IoC 的一种具体技术手段。</li>
+<li><strong>依赖倒置原则 (DIP)</strong>：面向对象设计原则之一，高层模块不应依赖低层模块，二者都应依赖抽象。DI 是遵循 DIP 的最佳实践。</li>
+</ul>
+<p><strong>2. 三种注入方式</strong></p>
+<ul>
+<li><strong>构造函数注入（推荐）</strong>：最常用，保证对象创建时依赖已就绪，适合强制依赖。</li>
+<li><strong>属性注入</strong>：适合可选依赖，但在 .NET Core 默认容器中支持较弱（需第三方库如 Autofac）。</li>
+<li><strong>方法注入</strong>：较少见，通常在特定方法调用时才需要该依赖时使用。</li>
+</ul>
+<p><strong>3. .NET Core 中的生命周期管理（高频考点）</strong>
+ASP.NET Core 内置容器支持三种生命周期：</p>
+<ul>
+<li><strong>Transient（瞬时）</strong>：每次请求服务时都创建新实例。</li>
+<li><strong>Scoped（作用域）</strong>：在一次 HTTP 请求（或一个 Scope）内共享同一个实例。</li>
+<li><strong>Singleton（单例）</strong>：在整个应用程序生命周期内只创建一次实例。</li>
+</ul>
+<p><strong>4. 为什么需要 DI？</strong></p>
+<ul>
+<li><strong>解耦</strong>：业务逻辑不关心依赖的具体实现，只关心接口。</li>
+<li><strong>可测试性</strong>：单元测试时可以轻松传入 Mock 对象替换真实依赖。</li>
+<li><strong>可维护性</strong>：修改依赖实现无需修改调用方代码。</li>
+</ul>
+<h3 id="参考实现c代码-1">
+<a class="header-anchor" href="#%e5%8f%82%e8%80%83%e5%ae%9e%e7%8e%b0c%e4%bb%a3%e7%a0%81-1"></a>
+💡参考实现（C#代码）
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 1. 定义抽象接口</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">ILogger</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Log</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2. 具体实现 A</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">FileLogger</span> <span class="p">:</span> <span class="n">ILogger</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Log</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;[File] {message}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 3. 具体实现 B</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">DatabaseLogger</span> <span class="p">:</span> <span class="n">ILogger</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Log</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;[DB] {message}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 4. 消费者类（通过构造函数注入依赖）</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">OrderService</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">ILogger</span> <span class="n">_logger</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 构造函数注入：明确声明依赖</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">OrderService</span><span class="p">(</span><span class="n">ILogger</span> <span class="n">logger</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_logger</span> <span class="p">=</span> <span class="n">logger</span> <span class="p">??</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentNullException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">logger</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">CreateOrder</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 业务逻辑</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_logger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&#34;订单创建成功&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 5. 在 ASP.NET Core Program.cs 中注册与使用</span>
+</span></span><span class="line"><span class="cl"><span class="cm">/*
+</span></span></span><span class="line"><span class="cl"><span class="cm">var builder = WebApplication.CreateBuilder(args);
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">// 注册服务：将接口映射到具体实现
+</span></span></span><span class="line"><span class="cl"><span class="cm">// 这里可以方便地切换实现，比如从 FileLogger 换成 DatabaseLogger
+</span></span></span><span class="line"><span class="cl"><span class="cm">builder.Services.AddScoped&lt;ILogger, FileLogger&gt;(); 
+</span></span></span><span class="line"><span class="cl"><span class="cm">builder.Services.AddScoped&lt;OrderService&gt;();
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">var app = builder.Build();
+</span></span></span><span class="line"><span class="cl"><span class="cm">*/</span>
+</span></span></code></pre></div><h3 id="面试延伸追问预判面试官后续提问-2">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-2"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>请详细解释 Transient、Scoped、Singleton 的区别及使用场景？</strong></p>
+<ul>
+<li><em>陷阱</em>：在 Singleton 中注入 Scoped 服务会导致“捕获依赖”问题（Scoped 变成事实上的 Singleton），可能引发内存泄漏或数据混乱。</li>
+</ul>
+</li>
+<li>
+<p><strong>什么是“捕获依赖”（Captive Dependency）？如何避免？</strong></p>
+<ul>
+<li>当长生命周期的服务（如 Singleton）依赖于短生命周期的服务（如 Scoped/Transient）时发生。避免方法：不要在 Singleton 中直接注入 Scoped，或使用 <code>IServiceScopeFactory</code> 手动创建 Scope。</li>
+</ul>
+</li>
+<li>
+<p><strong>除了微软内置容器，你还用过哪些第三方 DI 容器？它们有什么优势？</strong></p>
+<ul>
+<li>如 Autofac、DryIoc。优势通常包括：属性注入支持、更复杂的生命周期管理、程序集扫描自动注册、性能优化等。</li>
+</ul>
+</li>
+<li>
+<p><strong>如果构造函数中有多个参数，如何确定注入哪个实现？</strong></p>
+<ul>
+<li>可以通过 <code>[FromKeyedServices]</code> (.NET 8+) 或第三方容器的命名/键值注册来解决；或者使用工厂模式包装依赖。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="四什么是模板方法设计模式">
+<a class="header-anchor" href="#%e5%9b%9b%e4%bb%80%e4%b9%88%e6%98%af%e6%a8%a1%e6%9d%bf%e6%96%b9%e6%b3%95%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f"></a>
+四、什么是模板方法设计模式
+</h2><h3 id="面试简答考场口述答案-3">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-3"></a>
+✅面试简答（考场口述答案）
+</h3><p>模板方法模式是一种行为设计模式，它在父类中定义一个算法的<strong>骨架（流程）</strong>，而将一些具体的步骤延迟到子类去实现。这样可以在不改变算法整体结构的前提下，让子类重新定义或扩展某些特定步骤。其核心原则是“<strong>流程固定，细节可变</strong>”，通常通过抽象类和虚方法/钩子方法来实现。</p>
+<h3 id="深入解析-3">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-3"></a>
+📚深入解析
+</h3><p><strong>1. 核心组成</strong></p>
+<ul>
+<li><strong>AbstractClass（抽象类）</strong>：定义模板方法（通常是 <code>final</code> 或非虚的，防止被重写），以及若干抽象方法或虚方法作为待实现的步骤。</li>
+<li><strong>ConcreteClass（具体子类）</strong>：继承抽象类，实现或重写父类中的抽象/虚方法，提供具体业务逻辑。</li>
+</ul>
+<p><strong>2. 关键机制</strong></p>
+<ul>
+<li><strong>模板方法不可变</strong>：保证算法执行顺序和整体流程不被破坏。</li>
+<li><strong>钩子方法（Hook）</strong>：在抽象类中提供默认空实现或基础实现的虚方法，子类可以选择性地覆盖，用于在流程的关键点插入自定义行为。</li>
+<li><strong>好莱坞原则</strong>：“别调用我们，我们会调用你”。由父类控制流程并回调子类方法，而非子类主动调用父类。</li>
+</ul>
+<p><strong>3. 适用场景</strong></p>
+<ul>
+<li>多个子类有相同的业务流程，仅部分步骤不同。</li>
+<li>需要固化一套标准处理流程，同时允许局部定制。</li>
+<li>重构时将重复代码提取到父类，消除代码冗余。</li>
+</ul>
+<p><strong>4. C# / .NET 中的典型应用</strong></p>
+<ul>
+<li>ASP.NET Core 中间件管道（<code>IMiddleware</code> 的 <code>InvokeAsync</code> 流程）。</li>
+<li>EF Core 的数据库迁移生成器。</li>
+<li>单元测试框架（如 xUnit/NUnit 的 <code>[SetUp]</code>、<code>[Test]</code>、<code>[TearDown]</code> 生命周期）。</li>
+<li><code>Stream</code> 类的读写操作模板。</li>
+</ul>
+<h3 id="参考实现c代码-2">
+<a class="header-anchor" href="#%e5%8f%82%e8%80%83%e5%ae%9e%e7%8e%b0c%e4%bb%a3%e7%a0%81-2"></a>
+✍参考实现（C#代码）
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 1. 抽象类：定义算法骨架</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">DataProcessor</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 模板方法：定义固定流程，禁止子类重写</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Process</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ReadData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ParseData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ValidateData</span><span class="p">();</span>      <span class="c1">// 钩子方法，可选覆盖</span>
+</span></span><span class="line"><span class="cl">        <span class="n">SaveData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">OnComplete</span><span class="p">();</span>        <span class="c1">// 钩子方法，通知完成</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 必须由子类实现的抽象步骤</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">ReadData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">ParseData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">abstract</span> <span class="k">void</span> <span class="n">SaveData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 钩子方法：提供默认实现，子类可选择性覆盖</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="n">ValidateData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;  [默认] 数据校验通过&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 钩子方法：默认为空，子类按需实现</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="n">OnComplete</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2. 具体子类A：CSV文件处理</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">CsvDataProcessor</span> <span class="p">:</span> <span class="n">DataProcessor</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">ReadData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;  读取CSV文件...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">ParseData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;  解析CSV格式...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">SaveData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;  保存到数据库...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 覆盖了钩子方法，增加自定义校验</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">ValidateData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;  [CSV专用] 检查列数与表头匹配&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 3. 具体子类B：JSON数据处理</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">JsonDataProcessor</span> <span class="p">:</span> <span class="n">DataProcessor</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">ReadData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;  读取JSON文件...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">ParseData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;  反序列化JSON对象...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">SaveData</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;  写入NoSQL存储...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 未覆盖ValidateData，使用父类默认校验</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 覆盖了OnComplete钩子</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">OnComplete</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;  [JSON] 发送处理完成通知&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 4. 客户端调用</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DataProcessor</span> <span class="n">processor</span> <span class="p">=</span> <span class="k">new</span> <span class="n">CsvDataProcessor</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">processor</span><span class="p">.</span><span class="n">Process</span><span class="p">();</span> 
+</span></span><span class="line"><span class="cl">        <span class="c1">// 输出: 读取CSV → 解析CSV → CSV专用校验 → 保存DB</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;---&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="n">processor</span> <span class="p">=</span> <span class="k">new</span> <span class="n">JsonDataProcessor</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">processor</span><span class="p">.</span><span class="n">Process</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 输出: 读取JSON → 反序列化 → 默认校验 → 写NoSQL → 发送通知</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="面试延伸追问预判面试官后续提问-3">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-3"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>模板方法模式和策略模式有什么区别？</strong></p>
+<ul>
+<li>模板方法是<strong>继承</strong>关系，固定流程、变化步骤；策略模式是<strong>组合</strong>关系，整个算法可替换。模板方法强调“流程复用”，策略强调“算法互换”。</li>
+</ul>
+</li>
+<li>
+<p><strong>如果不想用继承，C# 中有没有替代方案实现类似效果？</strong></p>
+<ul>
+<li>可以使用<strong>委托/Func&lt;T&gt;</strong> 参数传入步骤逻辑，或使用<strong>管道模式（Pipeline）</strong> + 中间件链，这在 .NET Core 中更为常见且灵活。</li>
+</ul>
+</li>
+<li>
+<p><strong>模板方法模式中，如何防止子类意外修改执行顺序？</strong></p>
+<ul>
+<li>将模板方法声明为非虚方法（C# 中不加 <code>virtual</code>），或使用 <code>sealed</code> 关键字；在文档中明确标注该方法不应被重写。</li>
+</ul>
+</li>
+<li>
+<p><strong>这个模式有什么缺点？</strong></p>
+<ul>
+<li>依赖继承，层次加深后难以维护；子类必须遵循父类契约，灵活性不如组合；每增加一种变体就需要新建子类，可能导致类爆炸。</li>
+</ul>
+</li>
+<li>
+<p><strong>为什么模板方法通常要标记为 <code>sealed</code>？</strong></p>
+<ul>
+<li>防止子类意外重写整个流程导致算法骨架被破坏，确保只有预设的可变步骤能被定制。</li>
+</ul>
+</li>
+<li>
+<p><strong>模板方法的缺点是什么？如何缓解？</strong></p>
+<ul>
+<li>缺点：继承耦合度高、子类数量膨胀、难以跨层级复用。缓解方案：结合策略模式将可变步骤抽取为独立策略对象注入，或用组合代替部分继承。</li>
+</ul>
+</li>
+<li>
+<p><strong>钩子方法和抽象方法有什么区别？</strong></p>
+<ul>
+<li>抽象方法必须由子类实现；钩子方法有默认实现，子类可选择是否覆盖，用于控制流程中的可选分支。</li>
+</ul>
+</li>
+<li>
+<p><strong>在 ASP.NET Core 中哪些地方体现了模板方法模式？</strong></p>
+<ul>
+<li><code>BackgroundService.ExecuteAsync</code> 定义了启动→运行→停止的骨架；中间件的 <code>InvokeAsync</code> 调用链也是固定流程+可插拔处理逻辑的体现。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="五什么是装饰器设计模式">
+<a class="header-anchor" href="#%e4%ba%94%e4%bb%80%e4%b9%88%e6%98%af%e8%a3%85%e9%a5%b0%e5%99%a8%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f"></a>
+五、什么是装饰器设计模式
+</h2><h3 id="面试简答考场口述答案-4">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-4"></a>
+✅面试简答（考场口述答案）
+</h3><p>装饰器模式（Decorator Pattern）是一种结构型设计模式，它允许在不修改原有对象结构的情况下，动态地给对象添加新的功能。其核心思想是**“组合优于继承”**：通过创建一个包装类（Decorator），持有原对象的引用，并在调用原对象方法前后执行额外的逻辑。在 .NET 中，Stream 类族和 ASP.NET Core 的中间件管道是典型的装饰器模式应用。</p>
+<h3 id="深入解析-4">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-4"></a>
+📚深入解析
+</h3><p><strong>1. 核心组成</strong></p>
+<ul>
+<li><strong>Component（组件接口）</strong>：定义原始对象和装饰器共同实现的接口。</li>
+<li><strong>ConcreteComponent（具体组件）</strong>：被装饰的原始对象，实现基本功能。</li>
+<li><strong>Decorator（抽象装饰器）</strong>：实现 Component 接口，并持有一个 Component 类型的引用（即被装饰对象）。</li>
+<li><strong>ConcreteDecorator（具体装饰器）</strong>：具体的功能增强类，在调用被装饰对象的方法前后添加额外行为。</li>
+</ul>
+<p><strong>2. 关键特点</strong></p>
+<ul>
+<li><strong>动态扩展</strong>：可以在运行时灵活组合多个装饰器，比静态继承更灵活。</li>
+<li><strong>透明性</strong>：客户端面对的是统一的接口，无需关心对象是否被装饰。</li>
+<li><strong>递归嵌套</strong>：装饰器可以层层包裹，形成“俄罗斯套娃”结构。</li>
+<li><strong>避免类爆炸</strong>：如果使用继承来组合多种功能，会导致子类数量呈指数级增长（$2^n$），而装饰器只需 $n$ 个类。</li>
+</ul>
+<p><strong>3. 与代理模式（Proxy）的区别</strong></p>
+<ul>
+<li><strong>目的不同</strong>：装饰器旨在<strong>增强功能</strong>（如加日志、加密）；代理旨在<strong>控制访问</strong>（如权限校验、懒加载）。</li>
+<li><strong>生命周期</strong>：装饰器通常由客户端主动创建并组合；代理通常由框架或容器管理，对客户端透明。</li>
+</ul>
+<p><strong>4. .NET 中的典型应用</strong></p>
+<ul>
+<li><strong>System.IO.Stream</strong>：<code>FileStream</code> 是基础流，<code>BufferedStream</code>、<code>GZipStream</code>、<code>CryptoStream</code> 都是装饰器，可以层层包裹。</li>
+<li><strong>ASP.NET Core Middleware</strong>：每个中间件都可以看作是对 RequestDelegate 的装饰，形成处理管道。</li>
+</ul>
+<h3 id="参考实现c代码-3">
+<a class="header-anchor" href="#%e5%8f%82%e8%80%83%e5%ae%9e%e7%8e%b0c%e4%bb%a3%e7%a0%81-3"></a>
+💡参考实现（C#代码）
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 1. 组件接口</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">ICoffee</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="n">GetDescription</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">double</span> <span class="n">GetCost</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2. 具体组件：基础咖啡</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">SimpleCoffee</span> <span class="p">:</span> <span class="n">ICoffee</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">GetDescription</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="s">&#34;简易咖啡&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">double</span> <span class="n">GetCost</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="m">10.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 3. 抽象装饰器：实现接口并持有引用</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">CoffeeDecorator</span> <span class="p">:</span> <span class="n">ICoffee</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="k">readonly</span> <span class="n">ICoffee</span> <span class="n">_coffee</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">CoffeeDecorator</span><span class="p">(</span><span class="n">ICoffee</span> <span class="n">coffee</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_coffee</span> <span class="p">=</span> <span class="n">coffee</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">virtual</span> <span class="kt">string</span> <span class="n">GetDescription</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">_coffee</span><span class="p">.</span><span class="n">GetDescription</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">virtual</span> <span class="kt">double</span> <span class="n">GetCost</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">_coffee</span><span class="p">.</span><span class="n">GetCost</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 4. 具体装饰器A：加牛奶</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MilkDecorator</span> <span class="p">:</span> <span class="n">CoffeeDecorator</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">MilkDecorator</span><span class="p">(</span><span class="n">ICoffee</span> <span class="n">coffee</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">coffee</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="kt">string</span> <span class="n">GetDescription</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="s">$&#34;{_coffee.GetDescription()} + 牛奶&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="kt">double</span> <span class="n">GetCost</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">_coffee</span><span class="p">.</span><span class="n">GetCost</span><span class="p">()</span> <span class="p">+</span> <span class="m">2.5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 5. 具体装饰器B：加糖</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">SugarDecorator</span> <span class="p">:</span> <span class="n">CoffeeDecorator</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">SugarDecorator</span><span class="p">(</span><span class="n">ICoffee</span> <span class="n">coffee</span><span class="p">)</span> <span class="p">:</span> <span class="k">base</span><span class="p">(</span><span class="n">coffee</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="kt">string</span> <span class="n">GetDescription</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="s">$&#34;{_coffee.GetDescription()} + 糖&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="kt">double</span> <span class="n">GetCost</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">_coffee</span><span class="p">.</span><span class="n">GetCost</span><span class="p">()</span> <span class="p">+</span> <span class="m">1.0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 6. 使用示例</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 基础咖啡</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ICoffee</span> <span class="n">myCoffee</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SimpleCoffee</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;{myCoffee.GetDescription()}: ¥{myCoffee.GetCost()}&#34;</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">        <span class="c1">// 输出: 简易咖啡: ¥10</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 动态添加牛奶</span>
+</span></span><span class="line"><span class="cl">        <span class="n">myCoffee</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MilkDecorator</span><span class="p">(</span><span class="n">myCoffee</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;{myCoffee.GetDescription()}: ¥{myCoffee.GetCost()}&#34;</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">        <span class="c1">// 输出: 简易咖啡 + 牛奶: ¥12.5</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 再添加糖（层层包裹）</span>
+</span></span><span class="line"><span class="cl">        <span class="n">myCoffee</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SugarDecorator</span><span class="p">(</span><span class="n">myCoffee</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;{myCoffee.GetDescription()}: ¥{myCoffee.GetCost()}&#34;</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">        <span class="c1">// 输出: 简易咖啡 + 牛奶 + 糖: ¥13.5</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="面试延伸追问预判面试官后续提问-4">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-4"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>装饰器模式和继承有什么区别？为什么推荐用装饰器？</strong></p>
+<ul>
+<li>继承是静态的、编译期确定的，且只能单继承；装饰器是动态的、运行期组合的，支持多重叠加。当功能组合多样时，继承会导致类爆炸，而装饰器保持类数量线性增长。</li>
+</ul>
+</li>
+<li>
+<p><strong>在 ASP.NET Core 中，中间件是如何体现装饰器模式的？</strong></p>
+<ul>
+<li>每个中间件接收一个 <code>RequestDelegate next</code>，这其实就是下一个中间件（或被装饰的对象）。中间件在调用 <code>next()</code> 前后执行自己的逻辑，形成了链式装饰结构。</li>
+</ul>
+</li>
+<li>
+<p><strong>如果装饰器层级很深，性能会有影响吗？如何优化？</strong></p>
+<ul>
+<li>会有轻微的性能开销（多次虚方法调用）。优化方案：避免不必要的深层嵌套；对于高频调用的场景，可以考虑将常用的装饰组合预先生成一个新的具体类（静态组合）。</li>
+</ul>
+</li>
+<li>
+<p><strong>装饰器模式如何解决“接口污染”问题？</strong></p>
+<ul>
+<li>如果装饰器需要暴露原对象没有的新方法，就会破坏透明性。解决方案是：尽量只增强接口中已有的方法；如果必须新增功能，考虑使用适配器模式或重新设计接口。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="六什么是观察者设计模式">
+<a class="header-anchor" href="#%e5%85%ad%e4%bb%80%e4%b9%88%e6%98%af%e8%a7%82%e5%af%9f%e8%80%85%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f"></a>
+六、什么是观察者设计模式
+</h2><h3 id="面试简答考场口述答案-5">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-5"></a>
+✅面试简答（考场口述答案）
+</h3><p>观察者模式（Observer Pattern）是一种行为设计模式，定义了对象间的一种<strong>一对多</strong>的依赖关系。当一个对象（主题/Subject）的状态发生改变时，所有依赖于它的对象（观察者/Observer）都会得到通知并自动更新。核心思想是“解耦”：主题不需要知道观察者的具体实现，观察者也不需要知道主题的详细逻辑，二者通过接口或事件机制交互。在 C# 中，最典型的实现就是 <strong><code>event</code> 和 <code>delegate</code></strong>。</p>
+<h3 id="深入解析-5">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-5"></a>
+📚深入解析
+</h3><p><strong>1. 核心组成</strong></p>
+<ul>
+<li><strong>Subject（主题/被观察者）</strong>：维护一个观察者列表，提供注册、移除和通知观察者的方法。</li>
+<li><strong>Observer（观察者）</strong>：定义一个更新接口，当收到主题通知时执行相应逻辑。</li>
+<li><strong>ConcreteSubject（具体主题）</strong>：存储状态，状态变化时触发通知。</li>
+<li><strong>ConcreteObserver（具体观察者）</strong>：实现更新逻辑，订阅具体主题。</li>
+</ul>
+<p><strong>2. 关键特点</strong></p>
+<ul>
+<li><strong>松耦合</strong>：主题和观察者之间仅通过抽象接口交互，互不依赖具体类。</li>
+<li><strong>动态关联</strong>：可以在运行时随时添加或移除观察者。</li>
+<li><strong>广播通信</strong>：主题向所有注册的观察者发送通知，支持一对多传播。</li>
+</ul>
+<p><strong>3. C# 中的原生支持</strong></p>
+<ul>
+<li><strong><code>event</code> 关键字</strong>：C# 语言级别对观察者模式的封装，基于委托（Delegate）。</li>
+<li><strong><code>IObservable&lt;T&gt;</code> / <code>IObserver&lt;T&gt;</code></strong>：.NET 4.0 引入的反应式编程接口，用于处理数据流。</li>
+<li><strong>发布-订阅模式（Pub/Sub）</strong>：观察者模式的进阶版，通常引入消息代理（Broker）进一步解耦，如 RabbitMQ、Kafka。</li>
+</ul>
+<p><strong>4. 适用场景</strong></p>
+<ul>
+<li>当一个对象的改变需要同时改变其他对象，且不知道具体有多少对象需要改变时。</li>
+<li>跨模块通信，如 UI 控件状态变化通知业务逻辑，或业务数据变化通知 UI 刷新。</li>
+</ul>
+<h3 id="参考实现c代码-4">
+<a class="header-anchor" href="#%e5%8f%82%e8%80%83%e5%ae%9e%e7%8e%b0c%e4%bb%a3%e7%a0%81-4"></a>
+💡参考实现（C#代码）
+</h3><p>这里展示两种实现：一种是经典的接口实现，另一种是 C# 推荐的 <code>event</code> 实现。</p>
+<h4 id="方式一经典接口实现理解原理">
+<a class="header-anchor" href="#%e6%96%b9%e5%bc%8f%e4%b8%80%e7%bb%8f%e5%85%b8%e6%8e%a5%e5%8f%a3%e5%ae%9e%e7%8e%b0%e7%90%86%e8%a7%a3%e5%8e%9f%e7%90%86"></a>
+方式一：经典接口实现（理解原理）
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 1. 观察者接口</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IObserver</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Update</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2. 主题接口</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">ISubject</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Attach</span><span class="p">(</span><span class="n">IObserver</span> <span class="n">observer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Detach</span><span class="p">(</span><span class="n">IObserver</span> <span class="n">observer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Notify</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 3. 具体主题</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">NewsAgency</span> <span class="p">:</span> <span class="n">ISubject</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">IObserver</span><span class="p">&gt;</span> <span class="n">_observers</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">IObserver</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Attach</span><span class="p">(</span><span class="n">IObserver</span> <span class="n">observer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(!</span><span class="n">_observers</span><span class="p">.</span><span class="n">Contains</span><span class="p">(</span><span class="n">observer</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_observers</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">observer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Detach</span><span class="p">(</span><span class="n">IObserver</span> <span class="n">observer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_observers</span><span class="p">.</span><span class="n">Remove</span><span class="p">(</span><span class="n">observer</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Notify</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">observer</span> <span class="k">in</span> <span class="n">_observers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">observer</span><span class="p">.</span><span class="n">Update</span><span class="p">(</span><span class="n">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">PublishNews</span><span class="p">(</span><span class="kt">string</span> <span class="n">news</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;新闻社发布: {news}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Notify</span><span class="p">(</span><span class="n">news</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 4. 具体观察者</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Subscriber</span> <span class="p">:</span> <span class="n">IObserver</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Subscriber</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Update</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;{_name} 收到通知: {message}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="方式二c-event-实现实战推荐">
+<a class="header-anchor" href="#%e6%96%b9%e5%bc%8f%e4%ba%8cc-event-%e5%ae%9e%e7%8e%b0%e5%ae%9e%e6%88%98%e6%8e%a8%e8%8d%90"></a>
+方式二：C# Event 实现（实战推荐）
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 1. 定义事件参数</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">NewsEventArgs</span> <span class="p">:</span> <span class="n">EventArgs</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">Message</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">NewsEventArgs</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">Message</span> <span class="p">=</span> <span class="n">message</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2. 主题（发布者）</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">NewsPublisher</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 声明事件</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">event</span> <span class="n">EventHandler</span><span class="p">&lt;</span><span class="n">NewsEventArgs</span><span class="p">&gt;?</span> <span class="n">NewsPublished</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Publish</span><span class="p">(</span><span class="kt">string</span> <span class="n">news</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;发布新闻: {news}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 触发事件</span>
+</span></span><span class="line"><span class="cl">        <span class="n">NewsPublished</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">new</span> <span class="n">NewsEventArgs</span><span class="p">(</span><span class="n">news</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 3. 观察者（订阅者）</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">NewsSubscriber</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="n">_name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">NewsSubscriber</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_name</span> <span class="p">=</span> <span class="n">name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 订阅方法</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Subscribe</span><span class="p">(</span><span class="n">NewsPublisher</span> <span class="n">publisher</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">publisher</span><span class="p">.</span><span class="n">NewsPublished</span> <span class="p">+=</span> <span class="n">OnNewsReceived</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 取消订阅</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Unsubscribe</span><span class="p">(</span><span class="n">NewsPublisher</span> <span class="n">publisher</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">publisher</span><span class="p">.</span><span class="n">NewsPublished</span> <span class="p">-=</span> <span class="n">OnNewsReceived</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">OnNewsReceived</span><span class="p">(</span><span class="kt">object?</span> <span class="n">sender</span><span class="p">,</span> <span class="n">NewsEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;{_name} 收到最新新闻: {e.Message}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 4. 使用示例</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">publisher</span> <span class="p">=</span> <span class="k">new</span> <span class="n">NewsPublisher</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">subscriber1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">NewsSubscriber</span><span class="p">(</span><span class="s">&#34;用户A&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">subscriber2</span> <span class="p">=</span> <span class="k">new</span> <span class="n">NewsSubscriber</span><span class="p">(</span><span class="s">&#34;用户B&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 订阅</span>
+</span></span><span class="line"><span class="cl">        <span class="n">subscriber1</span><span class="p">.</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">publisher</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">subscriber2</span><span class="p">.</span><span class="n">Subscribe</span><span class="p">(</span><span class="n">publisher</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 发布</span>
+</span></span><span class="line"><span class="cl">        <span class="n">publisher</span><span class="p">.</span><span class="n">Publish</span><span class="p">(</span><span class="s">&#34;C# 12 正式发布！&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// 输出:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 发布新闻: C# 12 正式发布！</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 用户A 收到最新新闻: C# 12 正式发布！</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 用户B 收到最新新闻: C# 12 正式发布！</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="面试延伸追问预判面试官后续提问-5">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-5"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>观察者模式和发布-订阅模式有什么区别？</strong></p>
+<ul>
+<li><strong>观察者模式</strong>通常是同步的，主题直接调用观察者的方法，二者耦合度相对较高（主题知道观察者的接口）。</li>
+<li><strong>发布-订阅模式</strong>通常引入中间件（Message Broker），发布者和订阅者完全解耦，且通常是异步的，适用于分布式系统。</li>
+</ul>
+</li>
+<li>
+<p><strong>在 C# 中使用 <code>event</code> 有什么优势？</strong></p>
+<ul>
+<li><code>event</code> 基于委托，类型安全；</li>
+<li>封装性好：外部只能使用 <code>+=</code> 和 <code>-=</code> 进行订阅/取消订阅，不能直接触发事件（只有类内部可以触发），防止了外部误操作。</li>
+</ul>
+</li>
+<li>
+<p><strong>如果观察者执行耗时操作，会阻塞主题吗？如何解决？</strong></p>
+<ul>
+<li>是的，默认情况下是同步调用的，会阻塞。</li>
+<li>解决方案：在观察者内部使用异步逻辑（<code>async/await</code>），或者在主题中使用 <code>Task.Run</code> 并行触发通知（需注意异常处理和顺序问题）。</li>
+</ul>
+</li>
+<li>
+<p><strong>如何避免内存泄漏？</strong></p>
+<ul>
+<li>如果观察者生命周期短于主题，且未取消订阅，主题持有的引用会导致观察者无法被 GC 回收。</li>
+<li>解决：务必在观察者销毁时调用 <code>-=</code> 取消订阅，或使用弱引用（WeakReference）管理观察者列表。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="七什么是控制反转">
+<a class="header-anchor" href="#%e4%b8%83%e4%bb%80%e4%b9%88%e6%98%af%e6%8e%a7%e5%88%b6%e5%8f%8d%e8%bd%ac"></a>
+七、什么是控制反转
+</h2><h3 id="面试简答考场口述答案-6">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-6"></a>
+✅面试简答（考场口述答案）
+</h3><p>控制反转（Inversion of Control，IoC）是一种<strong>设计原则</strong>，核心思想是将对象的创建、依赖关系的管理从代码内部转移到外部容器或框架中。传统方式是由调用者主动创建依赖对象（&ldquo;正转&rdquo;），而IoC则是将控制权交给容器，由容器负责注入依赖（&ldquo;反转&rdquo;）。最常见的实现方式是<strong>依赖注入（DI）</strong>。</p>
+<h3 id="深入解析-6">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-6"></a>
+📚深入解析
+</h3><h4 id="1-什么是控制什么是反转">
+<a class="header-anchor" href="#1-%e4%bb%80%e4%b9%88%e6%98%af%e6%8e%a7%e5%88%b6%e4%bb%80%e4%b9%88%e6%98%af%e5%8f%8d%e8%bd%ac"></a>
+1. 什么是&quot;控制&quot;？什么是&quot;反转&quot;？
+</h4><ul>
+<li><strong>控制</strong>：指对对象生命周期、依赖关系的管理权</li>
+<li><strong>正转（传统方式）</strong>：类自己通过 <code>new</code> 关键字创建依赖对象
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">OrderService</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">PaymentGateway</span> <span class="n">_gateway</span> <span class="p">=</span> <span class="k">new</span> <span class="n">AlipayGateway</span><span class="p">();</span> <span class="c1">// 硬编码依赖</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li><strong>反转（IoC方式）</strong>：依赖对象由外部传入，类不再关心如何创建
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">OrderService</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IPaymentGateway</span> <span class="n">_gateway</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">OrderService</span><span class="p">(</span><span class="n">IPaymentGateway</span> <span class="n">gateway</span><span class="p">)</span> <span class="c1">// 依赖由外部注入</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_gateway</span> <span class="p">=</span> <span class="n">gateway</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="2-ioc的核心价值">
+<a class="header-anchor" href="#2-ioc%e7%9a%84%e6%a0%b8%e5%bf%83%e4%bb%b7%e5%80%bc"></a>
+2. IoC的核心价值
+</h4><table>
+	<thead>
+			<tr>
+					<th>维度</th>
+					<th>传统方式</th>
+					<th>IoC方式</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>耦合度</strong></td>
+					<td>高耦合，依赖具体实现</td>
+					<td>低耦合，依赖抽象接口</td>
+			</tr>
+			<tr>
+					<td><strong>可测试性</strong></td>
+					<td>难以Mock，单元测试困难</td>
+					<td>易于替换Mock，测试友好</td>
+			</tr>
+			<tr>
+					<td><strong>可扩展性</strong></td>
+					<td>修改依赖需改源码</td>
+					<td>只需更换注入的实现类</td>
+			</tr>
+			<tr>
+					<td><strong>维护性</strong></td>
+					<td>依赖关系分散在各处</td>
+					<td>依赖关系统一管理</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="3-ioc的常见实现方式">
+<a class="header-anchor" href="#3-ioc%e7%9a%84%e5%b8%b8%e8%a7%81%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f"></a>
+3. IoC的常见实现方式
+</h4><ol>
+<li>
+<p><strong>构造函数注入</strong>（最推荐）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">UserService</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IUserRepository</span> <span class="n">_repo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">UserService</span><span class="p">(</span><span class="n">IUserRepository</span> <span class="n">repo</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_repo</span> <span class="p">=</span> <span class="n">repo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>属性注入</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">UserService</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [Inject]</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">IUserRepository</span> <span class="n">Repository</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>方法注入</strong>（较少用）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Initialize</span><span class="p">(</span><span class="n">IUserRepository</span> <span class="n">repo</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_repo</span> <span class="p">=</span> <span class="n">repo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+</ol>
+<h4 id="4-aspnet-core中的ioc容器">
+<a class="header-anchor" href="#4-aspnet-core%e4%b8%ad%e7%9a%84ioc%e5%ae%b9%e5%99%a8"></a>
+4. ASP.NET Core中的IoC容器
+</h4><p>ASP.NET Core内置了轻量级DI容器，在<code>Program.cs</code>中注册服务：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 注册服务（三种生命周期）</span>
+</span></span><span class="line"><span class="cl"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddScoped</span><span class="p">&lt;</span><span class="n">IUserRepository</span><span class="p">,</span> <span class="n">UserRepository</span><span class="p">&gt;();</span>  <span class="c1">// 每次请求新建</span>
+</span></span><span class="line"><span class="cl"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddSingleton</span><span class="p">&lt;</span><span class="n">ICacheService</span><span class="p">,</span> <span class="n">RedisCache</span><span class="p">&gt;();</span>    <span class="c1">// 单例</span>
+</span></span><span class="line"><span class="cl"><span class="n">builder</span><span class="p">.</span><span class="n">Services</span><span class="p">.</span><span class="n">AddTransient</span><span class="p">&lt;</span><span class="n">IEmailSender</span><span class="p">,</span> <span class="n">SmtpEmailSender</span><span class="p">&gt;();</span> <span class="c1">// 每次使用新建</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 自动注入到控制器</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">UserController</span> <span class="p">:</span> <span class="n">ControllerBase</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IUserRepository</span> <span class="n">_repo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">UserController</span><span class="p">(</span><span class="n">IUserRepository</span> <span class="n">repo</span><span class="p">)</span> <span class="c1">// 框架自动注入</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_repo</span> <span class="p">=</span> <span class="n">repo</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="5-ioc-vs-di-的区别">
+<a class="header-anchor" href="#5-ioc-vs-di-%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+5. IoC vs DI 的区别
+</h4><ul>
+<li><strong>IoC（控制反转）</strong>：是一种设计思想/原则</li>
+<li><strong>DI（依赖注入）</strong>：是实现IoC的具体技术手段</li>
+<li>类比：IoC是&quot;把权力下放&quot;的理念，DI是&quot;通过构造函数传参&quot;的具体做法</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-6">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-6"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>IoC容器的工作原理是什么？它是如何解析依赖关系的？</strong></p>
+<ul>
+<li>考点：服务注册表、反射创建实例、依赖图解析</li>
+</ul>
+</li>
+<li>
+<p><strong>ASP.NET Core中三种服务生命周期（Transient/Scoped/Singleton）有什么区别？各自适用场景？</strong></p>
+<ul>
+<li>考点：内存管理、线程安全、数据库上下文的使用</li>
+</ul>
+</li>
+<li>
+<p><strong>循环依赖问题如何解决？</strong></p>
+<ul>
+<li>考点：构造器循环依赖、Lazy<!-- raw HTML omitted -->延迟加载、重新设计架构</li>
+</ul>
+</li>
+<li>
+<p><strong>除了依赖注入，还有哪些实现IoC的方式？</strong></p>
+<ul>
+<li>考点：服务定位器模式（Service Locator）、工厂模式</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="八什么是组合优于继承原则">
+<a class="header-anchor" href="#%e5%85%ab%e4%bb%80%e4%b9%88%e6%98%af%e7%bb%84%e5%90%88%e4%bc%98%e4%ba%8e%e7%bb%a7%e6%89%bf%e5%8e%9f%e5%88%99"></a>
+八、什么是组合优于继承原则
+</h2><h3 id="面试简答考场口述答案-7">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-7"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>组合优于继承</strong>（Composition over Inheritance）是面向对象设计的核心原则之一。它主张在复用代码时，优先使用<strong>组合</strong>（即在一个类中包含另一个类的实例）而不是<strong>继承</strong>（子类继承父类）。</p>
+<p>因为继承会导致类之间产生强耦合和脆弱的基类问题，而组合通过依赖抽象接口，具有更高的灵活性、更低耦合度，更符合“开闭原则”，便于扩展和维护。</p>
+<h3 id="深入解析-7">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-7"></a>
+📚深入解析
+</h3><h4 id="1-为什么继承有问题继承的痛点">
+<a class="header-anchor" href="#1-%e4%b8%ba%e4%bb%80%e4%b9%88%e7%bb%a7%e6%89%bf%e6%9c%89%e9%97%ae%e9%a2%98%e7%bb%a7%e6%89%bf%e7%9a%84%e7%97%9b%e7%82%b9"></a>
+1. 为什么继承有问题？（继承的痛点）
+</h4><p>虽然继承能实现代码复用，但存在以下严重缺陷：</p>
+<ul>
+<li><strong>破坏封装性</strong>：子类可以访问父类的 protected 成员，父类内部实现的改变可能意外破坏子类。</li>
+<li><strong>脆弱基类问题（Fragile Base Class）</strong>：修改父类可能导致所有子类行为异常，牵一发而动全身。</li>
+<li><strong>编译时耦合</strong>：继承关系在编译时就确定了，无法在运行时动态改变行为。</li>
+<li><strong>层次结构爆炸</strong>：为了复用不同功能，可能导致类层级过深或出现菱形继承问题。</li>
+<li><strong>单一职责违背</strong>：子类往往继承了父类所有方法，即使有些方法对子类无用。</li>
+</ul>
+<h4 id="2-什么是组合">
+<a class="header-anchor" href="#2-%e4%bb%80%e4%b9%88%e6%98%af%e7%bb%84%e5%90%88"></a>
+2. 什么是组合？
+</h4><p>组合是指一个类包含另一个类的对象作为其成员变量，通过调用该对象的方法来实现功能复用。</p>
+<ul>
+<li><strong>关系描述</strong>：&ldquo;Has-a&rdquo;（有一个） vs &ldquo;Is-a&rdquo;（是一个）</li>
+<li><strong>实现方式</strong>：通常结合<strong>接口</strong>或<strong>抽象类</strong>使用，依赖倒置。</li>
+</ul>
+<h4 id="3-代码对比示例">
+<a class="header-anchor" href="#3-%e4%bb%a3%e7%a0%81%e5%af%b9%e6%af%94%e7%a4%ba%e4%be%8b"></a>
+3. 代码对比示例
+</h4><p>❌ <strong>继承方式（不推荐）</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 假设我们要实现一个带日志功能的数据库操作类</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">DatabaseLogger</span> <span class="p">:</span> <span class="n">Database</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">Save</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;开始保存...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">base</span><span class="p">.</span><span class="n">Save</span><span class="p">();</span> <span class="c1">// 强依赖父类实现</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;保存完成&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 问题：如果Database类修改了Save的内部逻辑，DatabaseLogger可能出错</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 问题：如果想换一种日志方式，必须新建子类</span>
+</span></span></code></pre></div><p>✅ <strong>组合方式（推荐）</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">ILogger</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Log</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Database</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">ILogger</span> <span class="n">_logger</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 通过构造函数注入日志组件（组合）</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">Database</span><span class="p">(</span><span class="n">ILogger</span> <span class="n">logger</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_logger</span> <span class="p">=</span> <span class="n">logger</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Save</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_logger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&#34;开始保存...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 执行保存逻辑</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_logger</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">&#34;保存完成&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 使用时可以灵活替换日志实现</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">db</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Database</span><span class="p">(</span><span class="k">new</span> <span class="n">FileLogger</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">db2</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Database</span><span class="p">(</span><span class="k">new</span> <span class="n">ConsoleLogger</span><span class="p">());</span>
+</span></span></code></pre></div><h4 id="4-组合的优势">
+<a class="header-anchor" href="#4-%e7%bb%84%e5%90%88%e7%9a%84%e4%bc%98%e5%8a%bf"></a>
+4. 组合的优势
+</h4><table>
+	<thead>
+			<tr>
+					<th>维度</th>
+					<th>继承</th>
+					<th>组合</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>耦合度</strong></td>
+					<td>高耦合（白盒复用）</td>
+					<td>低耦合（黑盒复用）</td>
+			</tr>
+			<tr>
+					<td><strong>灵活性</strong></td>
+					<td>编译时确定，僵化</td>
+					<td>运行时可替换，灵活</td>
+			</tr>
+			<tr>
+					<td><strong>测试性</strong></td>
+					<td>难以隔离测试父类</td>
+					<td>易于Mock依赖对象</td>
+			</tr>
+			<tr>
+					<td><strong>扩展性</strong></td>
+					<td>需修改类层级</td>
+					<td>只需新增组件类</td>
+			</tr>
+			<tr>
+					<td><strong>职责清晰</strong></td>
+					<td>容易混杂</td>
+					<td>各司其职</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="5-什么时候可以用继承">
+<a class="header-anchor" href="#5-%e4%bb%80%e4%b9%88%e6%97%b6%e5%80%99%e5%8f%af%e4%bb%a5%e7%94%a8%e7%bb%a7%e6%89%bf"></a>
+5. 什么时候可以用继承？
+</h4><p>组合虽好，但继承并非完全无用，以下场景适合继承：</p>
+<ul>
+<li><strong>真正的&quot;is-a&quot;关系</strong>：如 <code>Dog</code> is a <code>Animal</code></li>
+<li><strong>框架扩展点</strong>：如 ASP.NET Core 中继承 <code>ControllerBase</code></li>
+<li><strong>模板方法模式</strong>：父类定义算法骨架，子类实现具体步骤</li>
+<li><strong>多态需求</strong>：需要统一接口处理不同类型对象</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-7">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-7"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>组合和聚合有什么区别？</strong></p>
+<ul>
+<li>考点：UML关系、生命周期绑定（组合是强拥有，聚合是弱拥有）</li>
+</ul>
+</li>
+<li>
+<p><strong>如何在C#中优雅地实现组合？是否一定要用接口？</strong></p>
+<ul>
+<li>考点：依赖注入、策略模式、装饰器模式的应用</li>
+</ul>
+</li>
+<li>
+<p><strong>如果一个类需要复用多个类的功能，组合会不会导致类变得很臃肿？</strong></p>
+<ul>
+<li>考点：外观模式（Facade）、中介者模式、合理拆分职责</li>
+</ul>
+</li>
+<li>
+<p><strong>请举例说明你在项目中如何用组合替代继承重构代码？</strong></p>
+<ul>
+<li>考点：实际工程经验、重构能力</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="九什么是模拟mocks">
+<a class="header-anchor" href="#%e4%b9%9d%e4%bb%80%e4%b9%88%e6%98%af%e6%a8%a1%e6%8b%9fmocks"></a>
+九、什么是模拟(Mocks)
+</h2><h3 id="面试简答考场口述答案-8">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-8"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>Mock（模拟对象）</strong> 是单元测试中的一种<strong>测试替身（Test Double）</strong>，用于替代真实的依赖对象（如数据库、网络服务、文件系统）。</p>
+<p>它的核心作用是：</p>
+<ol>
+<li><strong>隔离被测单元</strong>：确保测试只关注当前类的逻辑，不受外部环境影响。</li>
+<li><strong>控制行为</strong>：可以预设依赖对象的返回值或异常，覆盖各种边界情况。</li>
+<li><strong>验证交互</strong>：检查被测代码是否以预期的方式调用了依赖对象的方法（如调用次数、参数是否正确）。</li>
+</ol>
+<p>在 .NET 生态中，最常用的 Mock 框架是 <strong>Moq</strong>。</p>
+<h3 id="深入解析-8">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-8"></a>
+📚深入解析
+</h3><h4 id="1-为什么需要-mock">
+<a class="header-anchor" href="#1-%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81-mock"></a>
+1. 为什么需要 Mock？
+</h4><p>在真实开发中，许多依赖具有<strong>不确定性</strong>或<strong>副作用</strong>：</p>
+<ul>
+<li><strong>数据库</strong>：数据状态不可控，写入操作有副作用。</li>
+<li><strong>第三方 API</strong>：网络波动、速率限制、费用成本。</li>
+<li><strong>时间/随机数</strong>：结果不可复现。</li>
+</ul>
+<p>使用 Mock 可以将这些依赖替换为“听话”的假对象，使测试变得<strong>快速、稳定、可重复</strong>。</p>
+<h4 id="2-mock-vs-stub-vs-fake-的区别">
+<a class="header-anchor" href="#2-mock-vs-stub-vs-fake-%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+2. Mock vs Stub vs Fake 的区别
+</h4><p>面试官常混淆这几个概念，需清晰区分：</p>
+<table>
+	<thead>
+			<tr>
+					<th>类型</th>
+					<th>名称</th>
+					<th>核心目的</th>
+					<th>典型场景</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>Dummy</strong></td>
+					<td>哑对象</td>
+					<td>仅为了凑齐参数，无实际逻辑</td>
+					<td>传入一个空的 <code>ILogger</code></td>
+			</tr>
+			<tr>
+					<td><strong>Stub</strong></td>
+					<td>桩对象</td>
+					<td><strong>提供预设数据</strong>（Return Value）</td>
+					<td>模拟数据库返回特定用户列表</td>
+			</tr>
+			<tr>
+					<td><strong>Mock</strong></td>
+					<td>模拟对象</td>
+					<td><strong>验证交互行为</strong>（Verify Calls）</td>
+					<td>验证是否调用了 <code>SendEmail()</code></td>
+			</tr>
+			<tr>
+					<td><strong>Fake</strong></td>
+					<td>假对象</td>
+					<td>拥有简化但真实的逻辑实现</td>
+					<td>内存中的 <code>InMemoryDatabase</code></td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p><strong>记忆口诀</strong>：Stub 管“返回什么”，Mock 管“怎么调用”。</p>
+</blockquote>
+<h4 id="3-c-中-moq-框架的核心用法">
+<a class="header-anchor" href="#3-c-%e4%b8%ad-moq-%e6%a1%86%e6%9e%b6%e7%9a%84%e6%a0%b8%e5%bf%83%e7%94%a8%e6%b3%95"></a>
+3. C# 中 Moq 框架的核心用法
+</h4><p>Moq 是基于动态代理实现的，要求被 Mock 的类型必须是<strong>接口</strong>或<strong>虚方法（virtual）</strong>。</p>
+<p><strong>基本流程：Create -&gt; Setup -&gt; Verify</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Moq</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">Xunit</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 1. 定义接口</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IEmailService</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">void</span> <span class="n">Send</span><span class="p">(</span><span class="kt">string</span> <span class="n">to</span><span class="p">,</span> <span class="kt">string</span> <span class="n">subject</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">OrderProcessor</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">IEmailService</span> <span class="n">_emailService</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">OrderProcessor</span><span class="p">(</span><span class="n">IEmailService</span> <span class="n">emailService</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_emailService</span> <span class="p">=</span> <span class="n">emailService</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">ProcessOrder</span><span class="p">(</span><span class="kt">string</span> <span class="n">userEmail</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 业务逻辑...</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_emailService</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="n">userEmail</span><span class="p">,</span> <span class="s">&#34;Order Confirmed&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2. 编写单元测试</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">OrderProcessorTests</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [Fact]</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">ProcessOrder_ShouldSendEmail</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Arrange: 创建 Mock 对象</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">mockEmailService</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Mock</span><span class="p">&lt;</span><span class="n">IEmailService</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// Setup: 预设行为（可选，如果是void方法通常不需要Setup返回值）</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// mockEmailService.Setup(x =&gt; x.Send(It.IsAny&lt;string&gt;(), It.IsAny&lt;string&gt;()))</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">//     .Verifiable(); </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">processor</span> <span class="p">=</span> <span class="k">new</span> <span class="n">OrderProcessor</span><span class="p">(</span><span class="n">mockEmailService</span><span class="p">.</span><span class="n">Object</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Act: 执行被测方法</span>
+</span></span><span class="line"><span class="cl">        <span class="n">processor</span><span class="p">.</span><span class="n">ProcessOrder</span><span class="p">(</span><span class="s">&#34;test@example.com&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// Assert: 验证交互是否发生</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 验证 Send 方法是否被调用了一次，且参数匹配</span>
+</span></span><span class="line"><span class="cl">        <span class="n">mockEmailService</span><span class="p">.</span><span class="n">Verify</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">x</span> <span class="p">=&gt;</span> <span class="n">x</span><span class="p">.</span><span class="n">Send</span><span class="p">(</span><span class="s">&#34;test@example.com&#34;</span><span class="p">,</span> <span class="s">&#34;Order Confirmed&#34;</span><span class="p">),</span> 
+</span></span><span class="line"><span class="cl">            <span class="n">Times</span><span class="p">.</span><span class="n">Once</span>
+</span></span><span class="line"><span class="cl">        <span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="4-mock-的关键特性">
+<a class="header-anchor" href="#4-mock-%e7%9a%84%e5%85%b3%e9%94%ae%e7%89%b9%e6%80%a7"></a>
+4. Mock 的关键特性
+</h4><ul>
+<li><strong>It.IsAny<!-- raw HTML omitted -->()</strong>：匹配任意类型的参数，用于忽略不关心的参数。</li>
+<li><strong>It.Is<!-- raw HTML omitted -->(predicate)</strong>：通过 Lambda 表达式精确匹配参数条件。</li>
+<li><strong>Times.Once / Times.Exactly(n)</strong>：验证调用次数。</li>
+<li><strong>Throws<!-- raw HTML omitted -->()</strong>：模拟依赖抛出异常，测试被测代码的容错能力。</li>
+</ul>
+<h4 id="5-使用-mock-的注意事项">
+<a class="header-anchor" href="#5-%e4%bd%bf%e7%94%a8-mock-%e7%9a%84%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9"></a>
+5. 使用 Mock 的注意事项
+</h4><ul>
+<li><strong>不要 Mock 值对象</strong>：如 <code>string</code>, <code>int</code>, <code>DateTime</code>，直接 new 即可。</li>
+<li><strong>不要 Mock 你拥有的代码</strong>：如果依赖是你自己写的简单类，尽量用真实对象或 Fake，避免过度耦合测试实现细节。</li>
+<li><strong>Mock 只能针对接口或虚成员</strong>：C# 中密封类（sealed）或非虚方法无法被 Moq 直接 Mock（需借助 Microsoft.Fakes 或 JustMock 等重量级工具，但不推荐）。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-8">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-8"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>Moq 是如何实现 Mock 接口的？原理是什么？</strong></p>
+<ul>
+<li>考点：Castle DynamicProxy、运行时生成代理类、拦截方法调用。</li>
+</ul>
+</li>
+<li>
+<p><strong>如果我要测试的方法依赖的是一个具体类（非接口），且方法不是 virtual 的，怎么办？</strong></p>
+<ul>
+<li>考点：重构代码提取接口（最佳实践）、使用 Wrapper 模式、或使用重型隔离框架（如 Typemock Isolator，但通常建议重构）。</li>
+</ul>
+</li>
+<li>
+<p><strong>什么是“过度 Mock”（Over-Mocking）？有什么危害？</strong></p>
+<ul>
+<li>考点：测试与实现细节强耦合、重构困难、测试维护成本高。应优先测试行为而非内部协作细节。</li>
+</ul>
+</li>
+<li>
+<p><strong>在集成测试中还需要 Mock 吗？</strong></p>
+<ul>
+<li>考点：集成测试通常使用真实依赖或容器化环境（如 Testcontainers），Mock 主要用于单元测试。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="十debug版本和release版本有什么区别">
+<a class="header-anchor" href="#%e5%8d%81debug%e7%89%88%e6%9c%ac%e5%92%8crelease%e7%89%88%e6%9c%ac%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+十、Debug版本和Release版本有什么区别
+</h2><h3 id="面试简答考场口述答案-9">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-9"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>Debug</strong> 和 <strong>Release</strong> 是 .NET 项目两种不同的构建配置，核心区别在于<strong>优化策略</strong>和<strong>调试信息</strong>。</p>
+<ol>
+<li><strong>Debug 版</strong>：未开启代码优化，包含完整的 PDB 调试符号，定义了 <code>DEBUG</code> 常量。主要用于开发阶段，方便断点调试、查看变量，但运行速度较慢，体积较大。</li>
+<li><strong>Release 版</strong>：开启了 JIT 和 AOT 代码优化（如内联、循环展开），通常不包含或仅包含精简的调试信息，定义了 <code>RELEASE</code> 常量。主要用于生产环境，运行速度快，体积小，但难以进行源码级调试。</li>
+</ol>
+<h3 id="深入解析-9">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-9"></a>
+📚深入解析
+</h3><h4 id="1-核心差异对比表">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e5%b7%ae%e5%bc%82%e5%af%b9%e6%af%94%e8%a1%a8"></a>
+1. 核心差异对比表
+</h4><table>
+	<thead>
+			<tr>
+					<th>特性</th>
+					<th>Debug 配置</th>
+					<th>Release 配置</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><strong>代码优化 (Optimization)</strong></td>
+					<td>❌ 关闭 (Disable)</td>
+					<td>✅ 开启 (Enable)</td>
+			</tr>
+			<tr>
+					<td><strong>调试符号 (PDB)</strong></td>
+					<td>✅ 完整生成 (Full)</td>
+					<td>⚠️ 可选/精简 (Portable/Pdb-only)</td>
+			</tr>
+			<tr>
+					<td><strong>预处理器常量</strong></td>
+					<td><code>DEBUG</code>, <code>TRACE</code></td>
+					<td><code>TRACE</code> (默认无 DEBUG)</td>
+			</tr>
+			<tr>
+					<td><strong>JIT 编译器行为</strong></td>
+					<td>禁用 JIT 优化，保留局部变量</td>
+					<td>启用 JIT 优化，可能移除未使用变量</td>
+			</tr>
+			<tr>
+					<td><strong>性能</strong></td>
+					<td>较慢</td>
+					<td>较快</td>
+			</tr>
+			<tr>
+					<td><strong>文件大小</strong></td>
+					<td>较大</td>
+					<td>较小</td>
+			</tr>
+			<tr>
+					<td><strong>适用场景</strong></td>
+					<td>本地开发、单元测试</td>
+					<td>生产部署、压力测试</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="2-代码优化的具体表现面试官喜欢问的细节">
+<a class="header-anchor" href="#2-%e4%bb%a3%e7%a0%81%e4%bc%98%e5%8c%96%e7%9a%84%e5%85%b7%e4%bd%93%e8%a1%a8%e7%8e%b0%e9%9d%a2%e8%af%95%e5%ae%98%e5%96%9c%e6%ac%a2%e9%97%ae%e7%9a%84%e7%bb%86%e8%8a%82"></a>
+2. 代码优化的具体表现（面试官喜欢问的细节）
+</h4><p>在 Release 模式下，C# 编译器（Roslyn）和 JIT 编译器会执行以下优化：</p>
+<ul>
+<li><strong>方法内联 (Inlining)</strong>：将短小的方法体直接嵌入调用处，减少方法调用开销。</li>
+<li><strong>死代码消除 (Dead Code Elimination)</strong>：移除永远不会执行的代码或未使用的局部变量。</li>
+<li><strong>寄存器分配优化</strong>：更积极地将变量放入 CPU 寄存器而非内存。</li>
+<li><strong>循环优化</strong>：如循环展开（Loop Unrolling）。</li>
+</ul>
+<blockquote>
+<p><strong>⚠️ 坑点提示</strong>：由于优化，Release 模式下某些局部变量可能在调试时显示为“不可用”，或者代码执行顺序与源码不完全一致（重排序）。</p>
+</blockquote>
+<h4 id="3-预处理器指令的影响">
+<a class="header-anchor" href="#3-%e9%a2%84%e5%a4%84%e7%90%86%e5%99%a8%e6%8c%87%e4%bb%a4%e7%9a%84%e5%bd%b1%e5%93%8d"></a>
+3. 预处理器指令的影响
+</h4><p>C# 支持条件编译，利用 <code>#if DEBUG</code> 可以区分不同环境的逻辑：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">ProcessData</span><span class="p">()</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">#if</span> <span class="n">DEBUG</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;进入调试模式，记录详细日志&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 开发时特有的检查逻辑</span>
+</span></span><span class="line"><span class="cl">    <span class="n">System</span><span class="p">.</span><span class="n">Diagnostics</span><span class="p">.</span><span class="n">Debug</span><span class="p">.</span><span class="n">Assert</span><span class="p">(</span><span class="n">data</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">#endif</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 无论 Debug 还是 Release 都会执行</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DoHeavyWork</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="cp">#if</span> <span class="n">RELEASE</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 生产环境特有的逻辑，如性能监控上报</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Monitor</span><span class="p">.</span><span class="n">ReportPerformance</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="cp">#endif</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="4-pdb-program-database-文件的作用">
+<a class="header-anchor" href="#4-pdb-program-database-%e6%96%87%e4%bb%b6%e7%9a%84%e4%bd%9c%e7%94%a8"></a>
+4. PDB (Program Database) 文件的作用
+</h4><ul>
+<li><strong>Debug 版</strong>：PDB 文件包含源码行号、局部变量名等完整信息，支持“编辑并继续”（Edit and Continue）。</li>
+<li><strong>Release 版</strong>：
+<ul>
+<li>如果完全不带 PDB：发生异常时堆栈跟踪（Stack Trace）只显示方法名，没有行号。</li>
+<li>如果带 PDB（推荐生产环境做法）：可以定位到出错的行号，但无法查看局部变量的值，也不支持断点调试逻辑。</li>
+</ul>
+</li>
+</ul>
+<h4 id="5-aspnet-core-中的体现">
+<a class="header-anchor" href="#5-aspnet-core-%e4%b8%ad%e7%9a%84%e4%bd%93%e7%8e%b0"></a>
+5. ASP.NET Core 中的体现
+</h4><p>在 <code>appsettings.json</code> 中，通常通过环境变量 <code>ASPNETCORE_ENVIRONMENT</code> 来区分，但构建配置也会影响中间件的行为：</p>
+<ul>
+<li><strong>Debug</strong>: 启用开发者异常页面 (<code>UseDeveloperExceptionPage</code>)，显示详细错误堆栈。</li>
+<li><strong>Release</strong>: 启用全局异常处理中间件，返回通用错误页，隐藏敏感信息。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-9">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-9"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>为什么 Release 版本有时候比 Debug 版本难排查 Bug？</strong></p>
+<ul>
+<li>考点：代码优化导致变量被优化掉、指令重排序、多线程竞争条件在高速运行下更容易暴露（Heisenbug）。</li>
+</ul>
+</li>
+<li>
+<p><strong>如何在生产环境（Release）中进行调试？</strong></p>
+<ul>
+<li>考点：保留 PDB 文件、使用 Dump 文件分析（WinDbg/dotnet-dump）、远程调试（不推荐但可行）、增加结构化日志。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>TRACE</code> 常量和 <code>DEBUG</code> 常量有什么区别？</strong></p>
+<ul>
+<li>考点：<code>TRACE</code> 在 Debug 和 Release 中默认都定义，常用于生产环境的性能追踪或日志记录；<code>DEBUG</code> 仅在 Debug 模式下定义。</li>
+</ul>
+</li>
+<li>
+<p><strong>JIT 优化会对异步代码（async/await）产生什么影响吗？</strong></p>
+<ul>
+<li>考点：状态机生成的代码也会被优化，但 async 的状态转换逻辑复杂，过度优化可能导致堆栈跟踪断裂，理解状态机原理很重要。</li>
+</ul>
+</li>
+</ol>
+<hr>
+</div>
+    <footer class="article-footer"><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/c"
+      data-aos="zoom-in"
+      >C#</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/c"
+        rel="tag"
+        >C#</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="/images/cover1.webp"
+              data-sizes="auto"
+              alt="C#基础（三）"
+              class="lazyload"
+            /><a
+          href="/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%89/"
+          aria-label="前一篇:C#基础（三）"
+          title="前一篇:C#基础（三）"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">C#基础（三）</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>Alone4869
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;66.0k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;02:21</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一什么是内聚性和耦合性">一、什么是内聚性和耦合性</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#二什么是策略设计模式">二、什么是策略设计模式</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-1">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-1">📚深入解析</a></li>
+        <li><a href="#参考实现c代码">💡参考实现（C#代码）</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-1">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三什么是依赖注入设计模式">三、什么是依赖注入设计模式</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-2">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-2">📚深入解析</a></li>
+        <li><a href="#参考实现c代码-1">💡参考实现（C#代码）</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-2">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四什么是模板方法设计模式">四、什么是模板方法设计模式</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-3">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-3">📚深入解析</a></li>
+        <li><a href="#参考实现c代码-2">✍参考实现（C#代码）</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-3">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#五什么是装饰器设计模式">五、什么是装饰器设计模式</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-4">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-4">📚深入解析</a></li>
+        <li><a href="#参考实现c代码-3">💡参考实现（C#代码）</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-4">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#六什么是观察者设计模式">六、什么是观察者设计模式</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-5">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-5">📚深入解析</a></li>
+        <li><a href="#参考实现c代码-4">💡参考实现（C#代码）</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-5">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#七什么是控制反转">七、什么是控制反转</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-6">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-6">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-6">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#八什么是组合优于继承原则">八、什么是组合优于继承原则</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-7">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-7">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-7">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#九什么是模拟mocks">九、什么是模拟(Mocks)</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-8">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-8">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-8">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#十debug版本和release版本有什么区别">十、Debug版本和Release版本有什么区别</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-9">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-9">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-9">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">19</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">16</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/live2d-widgets@0.9.0/autoload.js"
+    defer
+    
+    
+    
+    integrity="sha384-poTN7wN/SqNhQqo3jdFeX20ikddWeFGkUkDEzsKjgH/ez8aQLn81oI0Cw6q5xNyB" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "Alone4869",
+          title: "C#基础（四）",
+          url: "https:\/\/alone4869.github.io\/post\/c%23%E5%9F%BA%E7%A1%80%E5%9B%9B\/",
+          description: " 一、什么是内聚性和耦合性 ✅面试简答（考场口述答案） **内聚性（Cohesion）和耦合性（Coupling）是衡量软件模块设计质量的两个核心指标，通常遵循“高内聚、低耦合”**的设计原则。\n",
+          cover: "https:\/\/alone4869.github.io\/images\/banner.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+        }
+        pswp()
+      </script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    
+    async
+    
+    
+    integrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>

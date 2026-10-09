@@ -1,0 +1,2011 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  C#基础（二） | Alone4869
+</title>
+<meta name="description" content="无量天尊"/><script>
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "true");
+</script><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://alone4869.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"English\",\"Locale\":\"\"},{\"Lang\":\"ja\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"日本語\",\"Locale\":\"\"},{\"Lang\":\"zh-cn\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"简体中文\",\"Locale\":\"zh-CN\"},{\"Lang\":\"zh-tw\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"繁體中文\",\"Locale\":\"\"}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="C#基础（二） | Alone4869" />
+  <meta
+    property="og:description"
+    content="无量天尊"
+  />
+  <meta property="og:url" content="https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%8C/" />
+  <meta
+    property="og:site_name"
+    content="知否"
+  />
+  <meta property="og:image" content="https://alone4869.github.io/images/banner.webp" />
+  <meta property="article:author" content="Alone4869" />
+  <meta property="article:published_time" content="2026-10-08T20:04:55&#43;08:00" />
+  <meta property="article:modified_time" content="2026-10-08T20:04:55&#43;08:00" /><meta property="article:tag" content="C#" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://alone4869.github.io/images/banner.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.18b6dbee5e1b382f80c8c0cdf5f79d28d7139a30edcf474f45fab80da506432e.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages"><li data-value="en" role="option" aria-selected="false" >English</li><li data-value="ja" role="option" aria-selected="false" >日本語</li><li data-value="zh-cn" role="option" class="selected" aria-selected="true" >简体中文</li><li data-value="zh-tw" role="option" aria-selected="false" >繁體中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+          var expanded = selectSelected.getAttribute("aria-expanded") === "true";
+          selectSelected.setAttribute("aria-expanded", (!expanded).toString());
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+            selectSelected.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </nav><a href="https://github.com/alone4869/alone4869.github.io" class="triangle-badge" title="github" target="_blank" rel="noopener nofollow noreferrer">
+      <div class="icon icon-github triangle-badge-icon"></div>
+    </a></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="C#基础（二）"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">C#基础（二）</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-什么是解构">一、 什么是解构</a>
+      <ul>
+        <li><a href="#1-核心语法">1. 核心语法</a></li>
+        <li><a href="#2-自定义类的解构">2. 自定义类的解构</a></li>
+        <li><a href="#3-解构-vs-模式匹配中的-is">3. 解构 vs 模式匹配中的 <code>is</code></a></li>
+        <li><a href="#4-架构师建议与应用场景">4. 架构师建议与应用场景</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#二-为什么catchexception几乎总是个坏主意throw和throw-ex有什么区别">二、 为什么<code>catch(Exception)</code>几乎总是个坏主意？<code>throw</code>和<code>throw ex</code>有什么区别？</a>
+      <ul>
+        <li><a href="#1-为什么-catch-exception-几乎总是个坏主意">1. 为什么 <code>catch (Exception)</code> 几乎总是个坏主意？</a></li>
+        <li><a href="#2-throw-vs-throw-ex-的核心区别">2. <code>throw</code> vs <code>throw ex</code> 的核心区别</a></li>
+        <li><a href="#3-何时-catch-exception-是合理的">3. 何时 <code>catch (Exception)</code> 是合理的？</a></li>
+        <li><a href="#-架构师的最佳实践建议">🏗️ 架构师的最佳实践建议</a></li>
+      </ul>
+    </li>
+    <li><a href="#三-typeof和gettype的区别">三、 <code>typeof</code>和<code>GetType</code>的区别</a>
+      <ul>
+        <li><a href="#1-核心区别概览">1. 核心区别概览</a></li>
+        <li><a href="#2-深度解析与代码示例">2. 深度解析与代码示例</a></li>
+        <li><a href="#3-为什么这个区别很重要">3. 为什么这个区别很重要？</a></li>
+        <li><a href="#4-架构师建议与陷阱">4. 架构师建议与陷阱</a></li>
+        <li><a href="#总结-1">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#四-什么是反射">四、 什么是反射</a>
+      <ul>
+        <li><a href="#1-核心能力反射能做什么">1. 核心能力：反射能做什么？</a></li>
+        <li><a href="#2-代码示例从静态到动态">2. 代码示例：从静态到动态</a></li>
+        <li><a href="#3-为什么在你的项目中需要反射">3. 为什么在你的项目中需要反射？</a></li>
+        <li><a href="#4-性能与架构师建议">4. 性能与架构师建议</a></li>
+        <li><a href="#总结-2">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#五-什么是特性">五、 什么是特性</a>
+      <ul>
+        <li><a href="#1-核心概念声明式编程">1. 核心概念：声明式编程</a></li>
+        <li><a href="#2-常见的内置特性">2. 常见的内置特性</a></li>
+        <li><a href="#3-自定义特性架构设计的利器">3. 自定义特性：架构设计的利器</a></li>
+        <li><a href="#4-现代-net-中的高级用法">4. 现代 .NET 中的高级用法</a></li>
+        <li><a href="#5-架构师建议">5. 架构师建议</a></li>
+        <li><a href="#总结-3">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#六-什么是序列化">六、 什么是序列化</a>
+      <ul>
+        <li><a href="#1-核心作用与应用场景">1. 核心作用与应用场景</a></li>
+        <li><a href="#2-net-中常见的序列化格式">2. .NET 中常见的序列化格式</a></li>
+        <li><a href="#3-代码示例现代-net-的最佳实践">3. 代码示例：现代 .NET 的最佳实践</a></li>
+        <li><a href="#4-架构师建议与避坑指南">4. 架构师建议与避坑指南</a></li>
+      </ul>
+    </li>
+    <li><a href="#七-什么是模式匹配">七、 什么是模式匹配</a>
+      <ul>
+        <li><a href="#1-核心演进从-switch-语句到-switch-表达式">1. 核心演进：从 <code>switch</code> 语句到 <code>switch</code> 表达式</a></li>
+        <li><a href="#2-高级模式解构与递归">2. 高级模式：解构与递归</a></li>
+        <li><a href="#3-架构师建议">3. 架构师建议</a></li>
+        <li><a href="#总结-4">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#八-checked和unchecked关键字的作用">八、 <code>checked</code>和<code>unchecked</code>关键字的作用</a>
+      <ul>
+        <li><a href="#1-核心区别">1. 核心区别</a></li>
+        <li><a href="#2-代码示例">2. 代码示例</a></li>
+        <li><a href="#3-项目级配置">3. 项目级配置</a></li>
+        <li><a href="#4-架构师建议与应用场景-1">4. 架构师建议与应用场景</a></li>
+        <li><a href="#总结-5">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#九-floatdouble和decimal的区别">九、 float/double和decimal的区别</a>
+      <ul>
+        <li><a href="#1-核心区别概览-1">1. 核心区别概览</a></li>
+        <li><a href="#2-深度原理解析为什么-double-会算错">2. 深度原理解析：为什么 <code>double</code> 会算错？</a></li>
+        <li><a href="#3-代码示例精度的陷阱">3. 代码示例：精度的陷阱</a></li>
+        <li><a href="#4-最佳实践建议">4. 最佳实践建议</a></li>
+        <li><a href="#总结-6">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#十-数组array列表list和arraylist的区别">十、 数组Array、列表List和ArrayList的区别</a>
+      <ul>
+        <li><a href="#1-核心区别概览-2">1. 核心区别概览</a></li>
+        <li><a href="#2-深度解析">2. 深度解析</a></li>
+        <li><a href="#3-性能对比为什么-arraylist-慢">3. 性能对比：为什么 <code>ArrayList</code> 慢？</a></li>
+        <li><a href="#4-架构师建议与最佳实践">4. 架构师建议与最佳实践</a></li>
+        <li><a href="#总结-7">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">19</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">16</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-10-08 20:04:55 &#43;0800 &#43;0800" itemprop="datePublished"
+      >2026-10-08</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-10-08</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="一-什么是解构">
+<a class="header-anchor" href="#%e4%b8%80-%e4%bb%80%e4%b9%88%e6%98%af%e8%a7%a3%e6%9e%84"></a>
+一、 什么是解构
+</h2><p><strong>解构 (Deconstruction)</strong> 是 C# 7.0 引入的一项语法特性，它允许你将一个对象的多个属性或字段“拆解”并赋值给独立的局部变量。</p>
+<p>简单来说，就是把一个“包裹”里的东西一次性拿出来，分别放到不同的盒子里。</p>
+<h3 id="1-核心语法">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e8%af%ad%e6%b3%95"></a>
+1. 核心语法
+</h3><p>解构通常与 <strong>元组 (ValueTuple)</strong> 或实现了 <code>Deconstruct</code> 方法的自定义类配合使用。</p>
+<h4 id="a-元组的解构最常见">
+<a class="header-anchor" href="#a-%e5%85%83%e7%bb%84%e7%9a%84%e8%a7%a3%e6%9e%84%e6%9c%80%e5%b8%b8%e8%a7%81"></a>
+A. 元组的解构（最常见）
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 定义一个元组</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">person</span> <span class="p">=</span> <span class="p">(</span><span class="n">Name</span><span class="p">:</span> <span class="s">&#34;Alice&#34;</span><span class="p">,</span> <span class="n">Age</span><span class="p">:</span> <span class="m">30</span><span class="p">,</span> <span class="n">City</span><span class="p">:</span> <span class="s">&#34;Guangzhou&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ✅ 解构：将元组的值分别赋给三个独立变量</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span> <span class="p">=</span> <span class="n">person</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">name</span><span class="p">);</span> <span class="c1">// 输出: Alice</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">age</span><span class="p">);</span>  <span class="c1">// 输出: 30</span>
+</span></span></code></pre></div><h4 id="b-忽略不需要的值">
+<a class="header-anchor" href="#b-%e5%bf%bd%e7%95%a5%e4%b8%8d%e9%9c%80%e8%a6%81%e7%9a%84%e5%80%bc"></a>
+B. 忽略不需要的值
+</h4><p>如果你只关心其中一部分数据，可以使用 <code>_</code>（弃元）来忽略其他值：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 只想要名字和城市，忽略年龄</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">city</span><span class="p">)</span> <span class="p">=</span> <span class="n">person</span><span class="p">;</span>
+</span></span></code></pre></div><h3 id="2-自定义类的解构">
+<a class="header-anchor" href="#2-%e8%87%aa%e5%ae%9a%e4%b9%89%e7%b1%bb%e7%9a%84%e8%a7%a3%e6%9e%84"></a>
+2. 自定义类的解构
+</h3><p>你可以为自己的类（如 WPF 的 ViewModel 或银行对接的数据模型）添加解构支持。只需定义一个名为 <code>Deconstruct</code> 的方法，并使用 <code>out</code> 参数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">BankTransaction</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">TransactionId</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">decimal</span> <span class="n">Amount</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">DateTime</span> <span class="n">Date</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">BankTransaction</span><span class="p">(</span><span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="kt">decimal</span> <span class="n">amount</span><span class="p">,</span> <span class="n">DateTime</span> <span class="n">date</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">TransactionId</span> <span class="p">=</span> <span class="n">id</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Amount</span> <span class="p">=</span> <span class="n">amount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Date</span> <span class="p">=</span> <span class="n">date</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ✅ 定义解构方法</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Deconstruct</span><span class="p">(</span><span class="k">out</span> <span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="k">out</span> <span class="kt">decimal</span> <span class="n">amount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">id</span> <span class="p">=</span> <span class="n">TransactionId</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">out</span> <span class="n">amount</span> <span class="p">=</span> <span class="n">Amount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 也可以重载 Deconstruct 以支持不同数量的返回值</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Deconstruct</span><span class="p">(</span><span class="k">out</span> <span class="kt">string</span> <span class="n">id</span><span class="p">,</span> <span class="k">out</span> <span class="kt">decimal</span> <span class="n">amount</span><span class="p">,</span> <span class="k">out</span> <span class="n">DateTime</span> <span class="n">date</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">id</span> <span class="p">=</span> <span class="n">TransactionId</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">amount</span> <span class="p">=</span> <span class="n">Amount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">date</span> <span class="p">=</span> <span class="n">Date</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>使用方式：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">tx</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BankTransaction</span><span class="p">(</span><span class="s">&#34;TX001&#34;</span><span class="p">,</span> <span class="m">100.5</span><span class="n">m</span><span class="p">,</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 自动调用 Deconstruct 方法</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">amount</span><span class="p">)</span> <span class="p">=</span> <span class="n">tx</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;ID: {id}, Amount: {amount}&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><h3 id="3-解构-vs-模式匹配中的-is">
+<a class="header-anchor" href="#3-%e8%a7%a3%e6%9e%84-vs-%e6%a8%a1%e5%bc%8f%e5%8c%b9%e9%85%8d%e4%b8%ad%e7%9a%84-is"></a>
+3. 解构 vs 模式匹配中的 <code>is</code>
+</h3><p>在 C# 8.0+ 中，解构经常与 <code>is</code> 关键字结合使用，用于安全地拆解对象：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">object</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BankTransaction</span><span class="p">(</span><span class="s">&#34;TX002&#34;</span><span class="p">,</span> <span class="m">200</span><span class="n">m</span><span class="p">,</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 如果 obj 是 BankTransaction，则解构并赋值给 id 和 amt</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="k">is</span> <span class="n">BankTransaction</span> <span class="p">(</span><span class="kt">var</span> <span class="n">id</span><span class="p">,</span> <span class="kt">var</span> <span class="n">amt</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Found transaction: {id}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="4-架构师建议与应用场景">
+<a class="header-anchor" href="#4-%e6%9e%b6%e6%9e%84%e5%b8%88%e5%bb%ba%e8%ae%ae%e4%b8%8e%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af"></a>
+4. 架构师建议与应用场景
+</h3><ol>
+<li>
+<p><strong>提高代码可读性</strong>：
+在处理返回多个值的方法时，解构比访问 <code>Item1</code>, <code>Item2</code> 或创建临时对象更直观。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 以前</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">GetCoordinates</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">x</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">Item1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">y</span> <span class="p">=</span> <span class="n">result</span><span class="p">.</span><span class="n">Item2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 现在</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="p">=</span> <span class="n">GetCoordinates</span><span class="p">();</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>WPF/MVVM 中的数据转换</strong>：
+在你的播放器应用中，如果有一个方法返回媒体的宽高比和分辨率，可以使用解构快速提取：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="p">(</span><span class="kt">int</span> <span class="n">Width</span><span class="p">,</span> <span class="kt">int</span> <span class="n">Height</span><span class="p">)</span> <span class="n">GetResolution</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="m">1920</span><span class="p">,</span> <span class="m">1080</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 使用时</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span> <span class="p">=</span> <span class="n">GetResolution</span><span class="p">();</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>注意性能</strong>：
+解构本身只是语法糖，编译后会变成普通的变量赋值，几乎没有性能损耗。但要注意，如果解构的对象非常大且包含大量引用类型，确保你不会因为持有这些局部变量而意外延长了大对象的生命周期。</p>
+</li>
+<li>
+<p><strong>不要过度解构</strong>：
+如果一个对象有 10 个属性，不要试图全部解构出来。解构最适合用于<strong>2-4 个核心属性</strong>的场景。如果变量太多，直接使用对象本身会更清晰。</p>
+</li>
+</ol>
+<h3 id="总结">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93"></a>
+总结
+</h3><p><strong>解构</strong>是让 C# 代码更简洁、更具函数式风格的利器。它让你从“操作对象”转变为“操作数据”，特别适合处理元组、坐标点、颜色值（R, G, B）等小型数据结构。在你的 .NET 开发中，善用解构能让你的逻辑表达更加行云流水。</p>
+<hr>
+<h2 id="二-为什么catchexception几乎总是个坏主意throw和throw-ex有什么区别">
+<a class="header-anchor" href="#%e4%ba%8c-%e4%b8%ba%e4%bb%80%e4%b9%88catchexception%e5%87%a0%e4%b9%8e%e6%80%bb%e6%98%af%e4%b8%aa%e5%9d%8f%e4%b8%bb%e6%84%8fthrow%e5%92%8cthrow-ex%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+二、 为什么<code>catch(Exception)</code>几乎总是个坏主意？<code>throw</code>和<code>throw ex</code>有什么区别？
+</h2><p>这是一个非常经典且至关重要的 C# 异常处理问题。作为高级架构师，我将从<strong>调试成本</strong>、<strong>堆栈跟踪完整性</strong>以及<strong>系统稳定性</strong>三个维度为你深度解析。</p>
+<h3 id="1-为什么-catch-exception-几乎总是个坏主意">
+<a class="header-anchor" href="#1-%e4%b8%ba%e4%bb%80%e4%b9%88-catch-exception-%e5%87%a0%e4%b9%8e%e6%80%bb%e6%98%af%e4%b8%aa%e5%9d%8f%e4%b8%bb%e6%84%8f"></a>
+1. 为什么 <code>catch (Exception)</code> 几乎总是个坏主意？
+</h3><p><code>catch (Exception ex)</code> 会捕获所有从 <code>System.Exception</code> 派生的异常，包括那些你根本无法处理、也不应该处理的严重错误。</p>
+<h4 id="-主要风险">
+<a class="header-anchor" href="#-%e4%b8%bb%e8%a6%81%e9%a3%8e%e9%99%a9"></a>
+⚠️ 主要风险：
+</h4><ol>
+<li>
+<p><strong>吞掉致命错误（Swallowing Critical Errors）</strong>：</p>
+<ul>
+<li>它会捕获 <code>OutOfMemoryException</code>、<code>StackOverflowException</code>（在某些情况下）、<code>ThreadAbortException</code> 等。</li>
+<li><strong>后果</strong>：程序可能已经处于不可恢复的状态，但你却假装无事发生，继续运行。这会导致后续产生更诡异、更难排查的 Bug（即“僵尸进程”现象）。</li>
+</ul>
+</li>
+<li>
+<p><strong>掩盖真正的 Bug</strong>：</p>
+<ul>
+<li>如果你捕获了 <code>NullReferenceException</code> 或 <code>IndexOutOfRangeException</code> 却不记录日志或不重新抛出，你就失去了修复代码逻辑错误的机会。</li>
+<li><strong>后果</strong>：用户在界面上看到一个空白页或错误的结果，而开发者在后台日志里什么都看不到。</li>
+</ul>
+</li>
+<li>
+<p><strong>破坏异常契约</strong>：</p>
+<ul>
+<li>调用者期望某些方法在特定条件下抛出异常。如果你把它们都吃了，调用者的逻辑就会出错。</li>
+</ul>
+</li>
+</ol>
+<h4 id="-正确的做法">
+<a class="header-anchor" href="#-%e6%ad%a3%e7%a1%ae%e7%9a%84%e5%81%9a%e6%b3%95"></a>
+✅ 正确的做法：
+</h4><ul>
+<li><strong>捕获具体的异常</strong>：只捕获你明确知道如何处理的异常（如 <code>IOException</code>, <code>SqlException</code>）。</li>
+<li><strong>如果必须捕获所有异常</strong>：通常是为了记录日志或全局兜底，但必须在 <code>catch</code> 块的最后<strong>重新抛出</strong>（使用 <code>throw;</code>），或者确保程序能安全退出。</li>
+</ul>
+<h3 id="2-throw-vs-throw-ex-的核心区别">
+<a class="header-anchor" href="#2-throw-vs-throw-ex-%e7%9a%84%e6%a0%b8%e5%bf%83%e5%8c%ba%e5%88%ab"></a>
+2. <code>throw</code> vs <code>throw ex</code> 的核心区别
+</h3><p>这是面试和实际开发中最容易踩坑的地方。它们的区别在于<strong>是否保留原始的堆栈跟踪信息（Stack Trace）</strong>。</p>
+<h4 id="a-throw-ex--错误做法">
+<a class="header-anchor" href="#a-throw-ex--%e9%94%99%e8%af%af%e5%81%9a%e6%b3%95"></a>
+A. <code>throw ex;</code> （❌ 错误做法）
+</h4><p>这会<strong>重置</strong>堆栈跟踪。新的堆栈将从 <code>throw ex;</code> 这一行开始。</p>
+<ul>
+<li><strong>后果</strong>：你丢失了异常最初发生的位置（原始行号和方法名）。在复杂的调用链中，你将无法定位真正的 Bug 源头。</li>
+</ul>
+<h4 id="b-throw--正确做法">
+<a class="header-anchor" href="#b-throw--%e6%ad%a3%e7%a1%ae%e5%81%9a%e6%b3%95"></a>
+B. <code>throw;</code> （✅ 正确做法）
+</h4><p>这会<strong>保留</strong>原始的堆栈跟踪。</p>
+<ul>
+<li><strong>后果</strong>：调试器能看到异常是从哪里最初抛出的，中间经过了哪些方法。</li>
+</ul>
+<h4 id="代码对比演示">
+<a class="header-anchor" href="#%e4%bb%a3%e7%a0%81%e5%af%b9%e6%af%94%e6%bc%94%e7%a4%ba"></a>
+代码对比演示：
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">MethodA</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">try</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">MethodB</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ❌ 错误：堆栈跟踪被重置，显示异常发生在 MethodA 的这一行</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// throw ex; </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// ✅ 正确：保留原始堆栈，显示异常发生在 MethodC</span>
+</span></span><span class="line"><span class="cl">        <span class="k">throw</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">MethodB</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">MethodC</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">MethodC</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">InvalidOperationException</span><span class="p">(</span><span class="s">&#34;Boom!&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><h3 id="3-何时-catch-exception-是合理的">
+<a class="header-anchor" href="#3-%e4%bd%95%e6%97%b6-catch-exception-%e6%98%af%e5%90%88%e7%90%86%e7%9a%84"></a>
+3. 何时 <code>catch (Exception)</code> 是合理的？
+</h3><p>虽然通常不推荐，但在以下<strong>边界场景</strong>中，捕获所有异常是必要的：</p>
+<ol>
+<li>
+<p><strong>顶层全局异常处理（Global Error Handling）</strong>：</p>
+<ul>
+<li>在 WPF 的 <code>Application.DispatcherUnhandledException</code>、WinForms 的 <code>Application.ThreadException</code> 或 ASP.NET Core 的中间件中。</li>
+<li><strong>目的</strong>：防止程序崩溃，记录完整的错误日志，并向用户展示友好的“出错了”提示，而不是直接闪退。</li>
+</ul>
+</li>
+<li>
+<p><strong>线程入口点（Thread Entry Points）</strong>：</p>
+<ul>
+<li>在 <code>Task.Run</code> 或 <code>Thread.Start</code> 的委托内部。</li>
+<li><strong>目的</strong>：防止未处理的异常导致整个应用程序域（AppDomain）或进程终止。</li>
+</ul>
+</li>
+<li>
+<p><strong>资源清理的最终保障（Finally Block 的替代）</strong>：</p>
+<ul>
+<li>虽然 <code>finally</code> 更好，但在某些极端情况下，你可能需要在 <code>catch</code> 中确保某些非托管资源被释放，然后再重新抛出。</li>
+</ul>
+</li>
+<li>
+<p><strong>第三方库的容错包装</strong>：</p>
+<ul>
+<li>当你调用一个极其不稳定且文档不全的第三方库时，可能会在其周围包裹一个 <code>try-catch (Exception)</code>，记录详细日志并返回一个默认值或错误码，以保证主流程不中断。</li>
+</ul>
+</li>
+</ol>
+<h3 id="-架构师的最佳实践建议">
+<a class="header-anchor" href="#-%e6%9e%b6%e6%9e%84%e5%b8%88%e7%9a%84%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5%e5%bb%ba%e8%ae%ae"></a>
+🏗️ 架构师的最佳实践建议
+</h3><ol>
+<li>
+<p><strong>遵循“具体优先”原则</strong>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">try</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 业务逻辑</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="n">SqlException</span> <span class="n">ex</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="n">Number</span> <span class="p">==</span> <span class="m">547</span><span class="p">)</span> <span class="c1">// 外键约束错误</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 处理特定的数据库错误</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="n">IOException</span> <span class="n">ex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 处理文件读写错误</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 不要在这里写 catch (Exception)，让它冒泡到上层</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>使用异常过滤器（Exception Filters, C# 6.0+）</strong>：
+使用 <code>when</code> 子句可以更精准地捕获，且不会干扰堆栈跟踪。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="n">WebException</span> <span class="n">ex</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="n">ex</span><span class="p">.</span><span class="n">Status</span> <span class="p">==</span> <span class="n">WebExceptionStatus</span><span class="p">.</span><span class="n">Timeout</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 仅处理超时，其他网络错误继续向上抛出</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>永远不要静默吞掉异常</strong>：
+如果你捕获了 <code>Exception</code>，至少要记录日志（Logging）。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_logger</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="s">&#34;发生未知错误&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span><span class="p">;</span> <span class="c1">// 记得重新抛出！</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>在 WPF/WinForms 中</strong>：
+利用框架提供的全局钩子来处理未捕获异常，而不是在每个按钮点击事件里都写 <code>catch (Exception)</code>。</p>
+</li>
+</ol>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong><code>throw;</code></strong> 是朋友，它帮你保留案发现场。</li>
+<li><strong><code>throw ex;</code></strong> 是敌人，它销毁了证据。</li>
+<li><strong><code>catch (Exception)</code></strong> 是核武器，只有在顶层防御或记录日志时才使用，且用完后务必谨慎处理（通常是重新抛出或终止程序）。</li>
+</ul>
+<hr>
+<h2 id="三-typeof和gettype的区别">
+<a class="header-anchor" href="#%e4%b8%89-typeof%e5%92%8cgettype%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+三、 <code>typeof</code>和<code>GetType</code>的区别
+</h2><p>在 C# 中，<code>typeof</code> 和 <code>GetType()</code> 都用于获取对象的 <code>System.Type</code> 信息，但它们的<strong>执行时机</strong>、<strong>操作对象</strong>以及<strong>底层机制</strong>完全不同。</p>
+<h3 id="1-核心区别概览">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e5%8c%ba%e5%88%ab%e6%a6%82%e8%a7%88"></a>
+1. 核心区别概览
+</h3><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left"><code>typeof</code></th>
+					<th style="text-align: left"><code>GetType()</code></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>操作对象</strong></td>
+					<td style="text-align: left"><strong>类型名称</strong> (如 <code>string</code>, <code>MyClass</code>)</td>
+					<td style="text-align: left"><strong>对象实例</strong> (如 <code>myObj</code>)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>执行时机</strong></td>
+					<td style="text-align: left"><strong>编译时</strong> (Compile-time)</td>
+					<td style="text-align: left"><strong>运行时</strong> (Run-time)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>参数要求</strong></td>
+					<td style="text-align: left">必须是一个已知的类型名</td>
+					<td style="text-align: left">必须是一个具体的对象引用</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>返回值</strong></td>
+					<td style="text-align: left"><code>System.Type</code></td>
+					<td style="text-align: left"><code>System.Type</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>多态支持</strong></td>
+					<td style="text-align: left">❌ 不支持（始终返回声明的类型）</td>
+					<td style="text-align: left">✅ 支持（返回对象的实际运行时类型）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>空值处理</strong></td>
+					<td style="text-align: left">N/A</td>
+					<td style="text-align: left">如果对象为 <code>null</code>，抛出 <code>NullReferenceException</code></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="2-深度解析与代码示例">
+<a class="header-anchor" href="#2-%e6%b7%b1%e5%ba%a6%e8%a7%a3%e6%9e%90%e4%b8%8e%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b"></a>
+2. 深度解析与代码示例
+</h3><h4 id="a-typeof编译时的类型查询">
+<a class="header-anchor" href="#a-typeof%e7%bc%96%e8%af%91%e6%97%b6%e7%9a%84%e7%b1%bb%e5%9e%8b%e6%9f%a5%e8%af%a2"></a>
+A. <code>typeof</code>：编译时的类型查询
+</h4><p><code>typeof</code> 是一个运算符，它在代码编译阶段就已经确定了要获取哪个类型的元数据。它不关心对象的具体内容，只关心“这个类叫什么”。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 无论 obj 里面装的是什么，typeof(string) 永远返回 String 的 Type 对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">Type</span> <span class="n">t</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 常用于泛型约束、反射初始化或属性标记</span>
+</span></span><span class="line"><span class="cl"><span class="na">[Obsolete(&#34;Use NewMethod instead&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">OldMethod</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 在泛型中非常有用</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">GenericMethod</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Type</span> <span class="n">type</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">T</span><span class="p">);</span> <span class="c1">// 在编译时确定 T 是什么</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="b-gettype运行时的动态探测">
+<a class="header-anchor" href="#b-gettype%e8%bf%90%e8%a1%8c%e6%97%b6%e7%9a%84%e5%8a%a8%e6%80%81%e6%8e%a2%e6%b5%8b"></a>
+B. <code>GetType()</code>：运行时的动态探测
+</h4><p><code>GetType()</code> 是 <code>System.Object</code> 的一个虚方法。它在程序运行时检查内存中该对象具体是哪个类的实例。它能识别出<strong>继承关系中的真实类型</strong>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">object</span> <span class="n">obj</span> <span class="p">=</span> <span class="s">&#34;Hello&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Type</span> <span class="n">t</span> <span class="p">=</span> <span class="n">obj</span><span class="p">.</span><span class="n">GetType</span><span class="p">();</span> <span class="c1">// 返回 System.String</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 多态场景下的关键区别</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Animal</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Dog</span> <span class="p">:</span> <span class="n">Animal</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Animal</span> <span class="n">myPet</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// typeof 看到的是声明类型</span>
+</span></span><span class="line"><span class="cl"><span class="n">Type</span> <span class="n">type1</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">Animal</span><span class="p">);</span> <span class="c1">// 结果是 Animal</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// GetType 看到的是实际类型</span>
+</span></span><span class="line"><span class="cl"><span class="n">Type</span> <span class="n">type2</span> <span class="p">=</span> <span class="n">myPet</span><span class="p">.</span><span class="n">GetType</span><span class="p">();</span> <span class="c1">// 结果是 Dog ✅</span>
+</span></span></code></pre></div><h3 id="3-为什么这个区别很重要">
+<a class="header-anchor" href="#3-%e4%b8%ba%e4%bb%80%e4%b9%88%e8%bf%99%e4%b8%aa%e5%8c%ba%e5%88%ab%e5%be%88%e9%87%8d%e8%a6%81"></a>
+3. 为什么这个区别很重要？
+</h3><h4 id="场景一反射-reflection">
+<a class="header-anchor" href="#%e5%9c%ba%e6%99%af%e4%b8%80%e5%8f%8d%e5%b0%84-reflection"></a>
+场景一：反射 (Reflection)
+</h4><p>如果你要通过反射创建一个对象，你需要知道确切的类型名称，这时用 <code>typeof</code> 或 <code>Type.GetType(&quot;namespace.ClassName&quot;)</code>。
+但如果你已经拿到了一个对象，想知道它到底是什么子类以便进行特殊处理，必须用 <code>GetType()</code>。</p>
+<h4 id="场景二wpfwinforms-控件遍历">
+<a class="header-anchor" href="#%e5%9c%ba%e6%99%af%e4%ba%8cwpfwinforms-%e6%8e%a7%e4%bb%b6%e9%81%8d%e5%8e%86"></a>
+场景二：WPF/WinForms 控件遍历
+</h4><p>在你的 WPF 播放器界面开发中，如果你想找到所有的 <code>Button</code> 控件：</p>
+<ul>
+<li>使用 <code>typeof(Button)</code> 可以定义搜索条件。</li>
+<li>但在遍历视觉树时，你需要对每个子元素调用 <code>child.GetType()</code> 来判断它是否真的是 <code>Button</code> 或者是继承自 <code>Button</code> 的自定义控件。</li>
+</ul>
+<h4 id="场景三性能考量">
+<a class="header-anchor" href="#%e5%9c%ba%e6%99%af%e4%b8%89%e6%80%a7%e8%83%bd%e8%80%83%e9%87%8f"></a>
+场景三：性能考量
+</h4><ul>
+<li><code>typeof</code> 非常快，因为编译器直接嵌入了元数据令牌。</li>
+<li><code>GetType()</code> 涉及虚方法调用和运行时查找，虽然也很快，但在极高频循环中略慢于 <code>typeof</code>。</li>
+</ul>
+<h3 id="4-架构师建议与陷阱">
+<a class="header-anchor" href="#4-%e6%9e%b6%e6%9e%84%e5%b8%88%e5%bb%ba%e8%ae%ae%e4%b8%8e%e9%99%b7%e9%98%b1"></a>
+4. 架构师建议与陷阱
+</h3><ol>
+<li>
+<p><strong>警惕 <code>null</code> 异常</strong>：
+调用 <code>obj.GetType()</code> 之前，务必确保 <code>obj</code> 不为 <code>null</code>。而 <code>typeof</code> 永远不会抛出空引用异常，因为它操作的是类型而非实例。</p>
+</li>
+<li>
+<p><strong>泛型中的差异</strong>：
+在泛型方法中，<code>typeof(T)</code> 获取的是泛型参数的类型，而 <code>obj.GetType()</code> 获取的是传入对象的实际类型。如果传入的是接口或基类，两者结果可能不同。</p>
+</li>
+<li>
+<p><strong>替代方案：模式匹配 (<code>is</code>)</strong>：
+在现代 C# (7.0+) 中，如果你只是想判断类型并转换，优先使用 <code>is</code> 关键字，它比 <code>GetType() == typeof(...)</code> 更简洁且支持多态：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 旧式写法</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">obj</span><span class="p">.</span><span class="n">GetType</span><span class="p">()</span> <span class="p">==</span> <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">))</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ✅ 推荐写法</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="k">is</span> <span class="kt">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong><code>typeof</code> 不能用于变量</strong>：
+你不能写 <code>typeof(myVariable)</code>，这会编译报错。<code>typeof</code> 后面必须跟一个静态的类型标识符。</p>
+</li>
+</ol>
+<h3 id="总结-1">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93-1"></a>
+总结
+</h3><ul>
+<li><strong>已知类型，查元数据</strong>：用 <code>typeof(MyClass)</code>。</li>
+<li><strong>未知实例，查真身</strong>：用 <code>myObj.GetType()</code>。</li>
+</ul>
+<hr>
+<h2 id="四-什么是反射">
+<a class="header-anchor" href="#%e5%9b%9b-%e4%bb%80%e4%b9%88%e6%98%af%e5%8f%8d%e5%b0%84"></a>
+四、 什么是反射
+</h2><p><strong>反射 (Reflection)</strong> 是 .NET 提供的一种机制，允许程序在<strong>运行时 (Run-time)</strong> 检查、发现和操作类型的元数据（Metadata）。</p>
+<p>简单来说，反射让代码能够“自省”：它可以查看一个类有哪些属性、方法、字段，甚至可以动态地创建对象、调用方法或修改私有成员，而无需在编译时知道这些类型的具体名称。</p>
+<h3 id="1-核心能力反射能做什么">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e8%83%bd%e5%8a%9b%e5%8f%8d%e5%b0%84%e8%83%bd%e5%81%9a%e4%bb%80%e4%b9%88"></a>
+1. 核心能力：反射能做什么？
+</h3><p>反射主要基于 <code>System.Type</code> 和 <code>System.Reflection</code> 命名空间，提供以下四大核心能力：</p>
+<ol>
+<li><strong>检查 (Inspect)</strong>：获取类型的详细信息（如类名、基类、实现的接口、属性列表等）。</li>
+<li><strong>实例化 (Instantiate)</strong>：根据类型名称字符串动态创建对象（<code>Activator.CreateInstance</code>）。</li>
+<li><strong>调用 (Invoke)</strong>：动态调用方法或访问属性，即使它们在编译时是未知的。</li>
+<li><strong>修改 (Modify)</strong>：绕过访问修饰符，读取或写入私有字段/属性（常用于单元测试或高级框架开发）。</li>
+</ol>
+<h3 id="2-代码示例从静态到动态">
+<a class="header-anchor" href="#2-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b%e4%bb%8e%e9%9d%99%e6%80%81%e5%88%b0%e5%8a%a8%e6%80%81"></a>
+2. 代码示例：从静态到动态
+</h3><h4 id="场景动态加载银行接口实现">
+<a class="header-anchor" href="#%e5%9c%ba%e6%99%af%e5%8a%a8%e6%80%81%e5%8a%a0%e8%bd%bd%e9%93%b6%e8%a1%8c%e6%8e%a5%e5%8f%a3%e5%ae%9e%e7%8e%b0"></a>
+场景：动态加载银行接口实现
+</h4><p>假设你有一个接口 <code>IBankService</code>，不同的银行有不同的实现类。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Reflection</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IBankService</span> <span class="p">{</span> <span class="k">void</span> <span class="n">Connect</span><span class="p">();</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">BankAService</span> <span class="p">:</span> <span class="n">IBankService</span> <span class="p">{</span> <span class="kd">public</span> <span class="k">void</span> <span class="n">Connect</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Connecting to Bank A&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">ReflectionDemo</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">DynamicLoad</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 1. 获取类型信息 (通过全限定名)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Type</span> <span class="n">type</span> <span class="p">=</span> <span class="n">Type</span><span class="p">.</span><span class="n">GetType</span><span class="p">(</span><span class="s">&#34;MyApp.BankAService&#34;</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">type</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 2. 动态创建实例</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">object</span> <span class="n">instance</span> <span class="p">=</span> <span class="n">Activator</span><span class="p">.</span><span class="n">CreateInstance</span><span class="p">(</span><span class="n">type</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            
+</span></span><span class="line"><span class="cl">            <span class="c1">// 3. 转换为接口（如果已知接口）或直接调用</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">instance</span> <span class="k">is</span> <span class="n">IBankService</span> <span class="n">service</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">service</span><span class="p">.</span><span class="n">Connect</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span> 
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// 4. 纯反射调用方法（如果连接口都不知道）</span>
+</span></span><span class="line"><span class="cl">                <span class="n">MethodInfo</span> <span class="n">method</span> <span class="p">=</span> <span class="n">type</span><span class="p">.</span><span class="n">GetMethod</span><span class="p">(</span><span class="s">&#34;Connect&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="n">method</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">instance</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="3-为什么在你的项目中需要反射">
+<a class="header-anchor" href="#3-%e4%b8%ba%e4%bb%80%e4%b9%88%e5%9c%a8%e4%bd%a0%e7%9a%84%e9%a1%b9%e7%9b%ae%e4%b8%ad%e9%9c%80%e8%a6%81%e5%8f%8d%e5%b0%84"></a>
+3. 为什么在你的项目中需要反射？
+</h3><p>结合你的开发背景，反射在以下场景至关重要：</p>
+<ol>
+<li>
+<p><strong>插件化架构</strong>：
+你可以定义一个标准的 <code>IPlayerPlugin</code> 接口。用户下载的第三方插件 DLL 放在特定文件夹中。程序启动时，使用反射扫描这些 DLL，找出所有实现了 <code>IPlayerPlugin</code> 的类并自动加载。这样无需重新编译主程序就能扩展功能。</p>
+</li>
+<li>
+<p><strong>ORM 与数据库映射</strong>：
+当你处理“分组、排序、批量更新”时，通用的数据库工具库通常使用反射来读取实体类的属性名，从而自动生成 SQL 语句（如 <code>SELECT * FROM Users WHERE Name = @Name</code>）。</p>
+</li>
+<li>
+<p><strong>序列化与反序列化</strong>：
+<code>Newtonsoft.Json</code> 或 <code>System.Text.Json</code> 底层大量使用反射来遍历对象的属性，将其转换为 JSON 字符串，或者从 JSON 还原为对象。</p>
+</li>
+<li>
+<p><strong>HSM/C++ 交互的自动化封装</strong>：
+如果你有一堆结构相似的 HSM 指令，可以编写一个通用方法，通过反射读取 C# 类的字段，自动将其转换为字节数组发送给硬件，减少重复的转换代码。</p>
+</li>
+</ol>
+<h3 id="4-性能与架构师建议">
+<a class="header-anchor" href="#4-%e6%80%a7%e8%83%bd%e4%b8%8e%e6%9e%b6%e6%9e%84%e5%b8%88%e5%bb%ba%e8%ae%ae"></a>
+4. 性能与架构师建议
+</h3><p>⚠️ <strong>反射的性能损耗</strong>：
+反射比直接调用慢得多（通常慢 10-100 倍），因为它涉及字符串匹配、安全检查和元数据查找。</p>
+<h4 id="-最佳实践">
+<a class="header-anchor" href="#-%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5"></a>
+💡 最佳实践：
+</h4><ol>
+<li><strong>缓存 <code>Type</code> 和 <code>MethodInfo</code></strong>：
+不要每次循环都调用 <code>GetType()</code> 或 <code>GetMethod()</code>。将这些元数据对象存储在静态字典中复用。</li>
+<li><strong>优先使用表达式树 (Expression Trees) 或委托缓存</strong>：
+如果需要高频动态调用，可以使用 <code>Expression.Compile()</code> 将反射调用编译为委托，性能接近原生调用。</li>
+<li><strong>使用 <code>System.Reflection.Emit</code> 或 Source Generators</strong>：
+在 .NET Core/5+ 中，对于高性能要求的场景（如 ORM），可以考虑使用 <strong>Source Generators</strong> 在编译时生成代码，彻底消除运行时的反射开销。</li>
+<li><strong>注意 AOT 兼容性</strong>：
+如果你计划将应用发布为 <strong>Native AOT</strong>（如为了提升启动速度或减小体积），反射会受到极大限制。在这种情况下，应尽量使用接口多态代替反射，或使用 <code>JsonSerializerContext</code> 等显式上下文。</li>
+</ol>
+<h3 id="总结-2">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93-2"></a>
+总结
+</h3><p><strong>反射</strong>是 .NET 框架灵活性的基石。它让你能够编写“通用”的代码来处理“未知”的类型。</p>
+<ul>
+<li><strong>何时用</strong>：框架开发、插件系统、通用工具库、调试工具。</li>
+<li><strong>何时不用</strong>：高频业务逻辑循环、对启动速度有极致要求的场景。</li>
+</ul>
+<hr>
+<h2 id="五-什么是特性">
+<a class="header-anchor" href="#%e4%ba%94-%e4%bb%80%e4%b9%88%e6%98%af%e7%89%b9%e6%80%a7"></a>
+五、 什么是特性
+</h2><p><strong>特性 (Attributes)</strong> 是 C# 中一种用于向代码元素（类、方法、属性等）添加<strong>元数据 (Metadata)</strong> 的声明性标签。</p>
+<p>你可以把特性想象成贴在代码上的“便利贴”或“标签”。它们本身不改变代码的逻辑执行流程，但可以被编译器、运行时环境（CLR）或通过<strong>反射</strong>在运行时读取，从而改变程序的行为。</p>
+<h3 id="1-核心概念声明式编程">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e6%a6%82%e5%bf%b5%e5%a3%b0%e6%98%8e%e5%bc%8f%e7%bc%96%e7%a8%8b"></a>
+1. 核心概念：声明式编程
+</h3><p>特性允许你以声明的方式表达意图，而不是通过命令式的代码逻辑。</p>
+<ul>
+<li><strong>语法</strong>：使用方括号 <code>[]</code> 包裹。</li>
+<li><strong>目标</strong>：可以应用于程序集、模块、类型、方法、参数、返回值等。</li>
+<li><strong>本质</strong>：特性本身也是一个继承自 <code>System.Attribute</code> 的类。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// [Obsolete] 是一个内置特性，告诉编译器这个方法已过时</span>
+</span></span><span class="line"><span class="cl"><span class="na">[Obsolete(&#34;请使用 NewMethod 代替&#34;, true)]</span> 
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">OldMethod</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// [Serializable] 标记该类可以被序列化</span>
+</span></span><span class="line"><span class="cl"><span class="na">[Serializable]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">User</span> <span class="p">{</span> <span class="kd">public</span> <span class="kt">string</span> <span class="n">Name</span><span class="p">;</span> <span class="p">}</span>
+</span></span></code></pre></div><h3 id="2-常见的内置特性">
+<a class="header-anchor" href="#2-%e5%b8%b8%e8%a7%81%e7%9a%84%e5%86%85%e7%bd%ae%e7%89%b9%e6%80%a7"></a>
+2. 常见的内置特性
+</h3><p>在你的 .NET 开发中，你可能已经经常用到它们：</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left">用途</th>
+					<th style="text-align: left">场景示例</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>[Obsolete]</code></td>
+					<td style="text-align: left">标记过时的成员</td>
+					<td style="text-align: left">提醒开发者迁移到新接口</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>[DllImport]</code></td>
+					<td style="text-align: left">调用非托管 DLL</td>
+					<td style="text-align: left">你的 HSM C++ 库交互 (<code>extern &quot;C&quot;</code>)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>[Serializable]</code></td>
+					<td style="text-align: left">支持序列化</td>
+					<td style="text-align: left">银行数据传输对象的持久化</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>[Conditional]</code></td>
+					<td style="text-align: left">条件编译</td>
+					<td style="text-align: left">仅在 Debug 模式下执行日志记录</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>[STAThread]</code></td>
+					<td style="text-align: left">单线程单元</td>
+					<td style="text-align: left">WPF/WinForms 程序的入口点 <code>Main</code> 方法</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="3-自定义特性架构设计的利器">
+<a class="header-anchor" href="#3-%e8%87%aa%e5%ae%9a%e4%b9%89%e7%89%b9%e6%80%a7%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1%e7%9a%84%e5%88%a9%e5%99%a8"></a>
+3. 自定义特性：架构设计的利器
+</h3><p>自定义特性是实现<strong>解耦</strong>和<strong>自动化框架</strong>的核心手段。</p>
+<h4 id="场景为你的银行对接程序设计一个自动注册特性">
+<a class="header-anchor" href="#%e5%9c%ba%e6%99%af%e4%b8%ba%e4%bd%a0%e7%9a%84%e9%93%b6%e8%a1%8c%e5%af%b9%e6%8e%a5%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1%e4%b8%80%e4%b8%aa%e8%87%aa%e5%8a%a8%e6%b3%a8%e5%86%8c%e7%89%b9%e6%80%a7"></a>
+场景：为你的银行对接程序设计一个“自动注册”特性
+</h4><p>假设你有多个银行服务类，你希望程序启动时自动发现并注册它们，而不需要手动写一堆 <code>if-else</code>。</p>
+<p><strong>第一步：定义特性</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="na">[AttributeTargets.Class, Inherited = false, AllowMultiple = false]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">sealed</span> <span class="k">class</span> <span class="nc">BankServiceAttribute</span> <span class="p">:</span> <span class="n">Attribute</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">BankCode</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">Description</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">BankServiceAttribute</span><span class="p">(</span><span class="kt">string</span> <span class="n">bankCode</span><span class="p">,</span> <span class="kt">string</span> <span class="n">description</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">BankCode</span> <span class="p">=</span> <span class="n">bankCode</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Description</span> <span class="p">=</span> <span class="n">description</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>第二步：应用特性</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="na">[BankService(&#34;ICBC&#34;, &#34;中国工商银行&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">ICBCService</span> <span class="p">:</span> <span class="n">IBankService</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="na">
+</span></span></span><span class="line"><span class="cl"><span class="na">[BankService(&#34;ABC&#34;, &#34;中国农业银行&#34;)]</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">ABCService</span> <span class="p">:</span> <span class="n">IBankService</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span></code></pre></div><p><strong>第三步：通过反射读取特性（框架层逻辑）</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">ServiceRegistry</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">RegisterAllServices</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">assembly</span> <span class="p">=</span> <span class="n">Assembly</span><span class="p">.</span><span class="n">GetExecutingAssembly</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">type</span> <span class="k">in</span> <span class="n">assembly</span><span class="p">.</span><span class="n">GetTypes</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 查找带有 BankServiceAttribute 的类</span>
+</span></span><span class="line"><span class="cl">            <span class="kt">var</span> <span class="n">attr</span> <span class="p">=</span> <span class="n">type</span><span class="p">.</span><span class="n">GetCustomAttribute</span><span class="p">&lt;</span><span class="n">BankServiceAttribute</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">attr</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;发现银行服务: {attr.BankCode} - {type.Name}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="c1">// 自动实例化并注册到容器中...</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="4-现代-net-中的高级用法">
+<a class="header-anchor" href="#4-%e7%8e%b0%e4%bb%a3-net-%e4%b8%ad%e7%9a%84%e9%ab%98%e7%ba%a7%e7%94%a8%e6%b3%95"></a>
+4. 现代 .NET 中的高级用法
+</h3><p>在 <strong>.NET Core / .NET 5+</strong> 以及你关注的 <strong>WPF/MVVM</strong> 开发中，特性扮演着更高级的角色：</p>
+<ol>
+<li>
+<p><strong>Source Generators (源生成器)</strong>：
+这是 C# 9.0+ 的革命性特性。编译器可以在编译阶段读取你的特性，并<strong>自动生成代码</strong>。</p>
+<ul>
+<li><strong>例子</strong>：<code>CommunityToolkit.Mvvm</code> 中的 <code>[ObservableProperty]</code>。你只需在字段上加这个特性，编译器就会自动为你生成完整的属性 getter/setter 和 <code>OnPropertyChanged</code> 通知代码。这既保留了特性的简洁，又消除了运行时的反射性能损耗。</li>
+</ul>
+</li>
+<li>
+<p><strong>依赖注入 (DI) 配置</strong>：
+在某些框架中，特性用于标记哪些类应该被注入容器，或者指定生命周期（Singleton/Scoped）。</p>
+</li>
+<li>
+<p><strong>API 控制器路由</strong>：
+在 ASP.NET Core 中，<code>[HttpGet]</code>, <code>[Route]</code> 等特性直接决定了 URL 如何映射到方法。</p>
+</li>
+</ol>
+<h3 id="5-架构师建议">
+<a class="header-anchor" href="#5-%e6%9e%b6%e6%9e%84%e5%b8%88%e5%bb%ba%e8%ae%ae"></a>
+5. 架构师建议
+</h3><ol>
+<li><strong>不要过度使用反射读取特性</strong>：
+如果在高频循环中通过反射读取特性，性能会很差。优先考虑在启动时一次性读取并缓存，或使用 <strong>Source Generators</strong>。</li>
+<li><strong>特性 vs 配置</strong>：
+<ul>
+<li>如果信息是<strong>静态的、与代码紧密绑定</strong>的（如：这个方法需要管理员权限），用<strong>特性</strong>。</li>
+<li>如果信息是<strong>动态的、经常变化</strong>的（如：数据库连接字符串、银行 IP 地址），用<strong>配置文件 (appsettings.json)</strong>。</li>
+</ul>
+</li>
+<li><strong>命名规范</strong>：
+自定义特性的类名通常以 <code>Attribute</code> 结尾（如 <code>LogAttribute</code>），但在使用时可以省略（如 <code>[Log]</code>）。</li>
+</ol>
+<h3 id="总结-3">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93-3"></a>
+总结
+</h3><p><strong>特性</strong>是 C# 的“元数据引擎”。</p>
+<ul>
+<li>对于<strong>编译器</strong>，它是指令（如 <code>Obsolete</code>）。</li>
+<li>对于<strong>运行时</strong>，它是行为开关（如 <code>DllImport</code>）。</li>
+<li>对于<strong>架构师</strong>，它是实现插件化、自动化代码生成和解耦设计的强大工具。</li>
+</ul>
+<hr>
+<h2 id="六-什么是序列化">
+<a class="header-anchor" href="#%e5%85%ad-%e4%bb%80%e4%b9%88%e6%98%af%e5%ba%8f%e5%88%97%e5%8c%96"></a>
+六、 什么是序列化
+</h2><p><strong>序列化 (Serialization)</strong> 是将对象的状态（数据）转换为可存储或可传输的格式（如字节流、JSON 字符串、XML）的过程。<strong>反序列化 (Deserialization)</strong> 则是其逆过程，即将这些格式还原为内存中的对象。</p>
+<p>简单来说，序列化就是给对象拍一张“快照”，以便把它存到硬盘、数据库，或者通过网络发送给 Jellyfin/Emby 服务器。</p>
+<h3 id="1-核心作用与应用场景">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e4%bd%9c%e7%94%a8%e4%b8%8e%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af"></a>
+1. 核心作用与应用场景
+</h3><p>在你的开发背景下，序列化无处不在：</p>
+<ul>
+<li><strong>网络通信 (API 交互)</strong>：
+<ul>
+<li>发送请求时，C# 对象会被序列化为 <strong>JSON</strong> 或 <strong>XML</strong> 发送到服务器。</li>
+<li>服务器返回的元数据也是 JSON，需要反序列化为 C# 对象才能在 UI 上显示。</li>
+</ul>
+</li>
+<li><strong>本地持久化 (保存配置)</strong>：
+<ul>
+<li>保存用户的播放进度、深色/浅色模式偏好、SMB 服务器地址等设置到本地文件。</li>
+</ul>
+</li>
+<li><strong>进程间通信 (IPC)</strong>：
+<ul>
+<li>如果你将 HSM 通信隔离到独立服务，两个进程之间传递复杂数据结构时就需要序列化。</li>
+</ul>
+</li>
+<li><strong>缓存</strong>：
+<ul>
+<li>将频繁查询的银行网点信息序列化后存入 Redis 或内存缓存，提高性能。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-net-中常见的序列化格式">
+<a class="header-anchor" href="#2-net-%e4%b8%ad%e5%b8%b8%e8%a7%81%e7%9a%84%e5%ba%8f%e5%88%97%e5%8c%96%e6%a0%bc%e5%bc%8f"></a>
+2. .NET 中常见的序列化格式
+</h3><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">格式</th>
+					<th style="text-align: left">特点</th>
+					<th style="text-align: left">适用场景</th>
+					<th style="text-align: left">推荐库</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>JSON</strong></td>
+					<td style="text-align: left">轻量、可读性强、跨平台</td>
+					<td style="text-align: left">Web API、配置文件、移动端通信</td>
+					<td style="text-align: left"><code>System.Text.Json</code> (内置), <code>Newtonsoft.Json</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>XML</strong></td>
+					<td style="text-align: left">结构严谨、支持命名空间</td>
+					<td style="text-align: left">传统银行接口、SOAP 协议、旧系统兼容</td>
+					<td style="text-align: left"><code>System.Xml.Serialization</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Binary</strong></td>
+					<td style="text-align: left">体积小、速度快、不可读</td>
+					<td style="text-align: left">内部高性能缓存、私有协议通信</td>
+					<td style="text-align: left"><code>System.Runtime.Serialization.Formatters.Binary</code> (已过时，慎用)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Protocol Buffers / MessagePack</strong></td>
+					<td style="text-align: left">极致性能、体积极小</td>
+					<td style="text-align: left">高频微服务通信、游戏后端</td>
+					<td style="text-align: left"><code>Google.Protobuf</code>, <code>MessagePack-CSharp</code></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="3-代码示例现代-net-的最佳实践">
+<a class="header-anchor" href="#3-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b%e7%8e%b0%e4%bb%a3-net-%e7%9a%84%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5"></a>
+3. 代码示例：现代 .NET 的最佳实践
+</h3><p>在 <strong>.NET Core / .NET 5+</strong> 中，微软官方推荐使用 <code>System.Text.Json</code>，因为它性能更高且无需额外安装包。</p>
+<h4 id="a-定义数据模型">
+<a class="header-anchor" href="#a-%e5%ae%9a%e4%b9%89%e6%95%b0%e6%8d%ae%e6%a8%a1%e5%9e%8b"></a>
+A. 定义数据模型
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Text.Json.Serialization</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MediaInfo</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 控制序列化时的字段名（例如 API 返回的是 snake_case）</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [JsonPropertyName(&#34;release_year&#34;)]</span> 
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">ReleaseYear</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 忽略该字段，不序列化</span>
+</span></span><span class="line"><span class="cl"><span class="na">    [JsonIgnore]</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">InternalCacheKey</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="b-序列化与反序列化">
+<a class="header-anchor" href="#b-%e5%ba%8f%e5%88%97%e5%8c%96%e4%b8%8e%e5%8f%8d%e5%ba%8f%e5%88%97%e5%8c%96"></a>
+B. 序列化与反序列化
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">System.Text.Json</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">media</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MediaInfo</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">Title</span> <span class="p">=</span> <span class="s">&#34;Inception&#34;</span><span class="p">,</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">ReleaseYear</span> <span class="p">=</span> <span class="m">2010</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">InternalCacheKey</span> <span class="p">=</span> <span class="s">&#34;temp_123&#34;</span> 
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 1. 序列化：对象 -&gt; JSON 字符串</span>
+</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="n">JsonSerializer</span><span class="p">.</span><span class="n">Serialize</span><span class="p">(</span><span class="n">media</span><span class="p">,</span> <span class="k">new</span> <span class="n">JsonSerializerOptions</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span> 
+</span></span><span class="line"><span class="cl">    <span class="n">WriteIndented</span> <span class="p">=</span> <span class="kc">true</span> <span class="c1">// 格式化输出，方便调试</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 输出: { &#34;Title&#34;: &#34;Inception&#34;, &#34;release_year&#34;: 2010 }</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2. 反序列化：JSON 字符串 -&gt; 对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">MediaInfo</span> <span class="n">restoredMedia</span> <span class="p">=</span> <span class="n">JsonSerializer</span><span class="p">.</span><span class="n">Deserialize</span><span class="p">&lt;</span><span class="n">MediaInfo</span><span class="p">&gt;(</span><span class="n">json</span><span class="p">);</span>
+</span></span></code></pre></div><h3 id="4-架构师建议与避坑指南">
+<a class="header-anchor" href="#4-%e6%9e%b6%e6%9e%84%e5%b8%88%e5%bb%ba%e8%ae%ae%e4%b8%8e%e9%81%bf%e5%9d%91%e6%8c%87%e5%8d%97"></a>
+4. 架构师建议与避坑指南
+</h3><h4 id="-1-循环引用-circular-references">
+<a class="header-anchor" href="#-1-%e5%be%aa%e7%8e%af%e5%bc%95%e7%94%a8-circular-references"></a>
+⚠️ 1. 循环引用 (Circular References)
+</h4><p>如果你的对象图中有循环引用（例如：<code>Order</code> 包含 <code>User</code>，<code>User</code> 又包含 <code>Order</code> 列表），序列化会陷入死循环并抛出异常。</p>
+<ul>
+<li><strong>解决</strong>：使用 <code>[JsonIgnore]</code> 断开循环，或在 <code>JsonSerializerOptions</code> 中设置 <code>ReferenceHandler = ReferenceHandler.Preserve</code>。</li>
+</ul>
+<h4 id="-2-性能优化">
+<a class="header-anchor" href="#-2-%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96"></a>
+⚠️ 2. 性能优化
+</h4><ul>
+<li><strong>避免频繁创建 <code>JsonSerializerOptions</code></strong>：这是一个重量级对象。建议将其定义为 <code>static readonly</code> 全局复用。</li>
+<li><strong>使用异步 API</strong>：在处理大文件或网络流时，使用 <code>SerializeAsync</code> 和 <code>DeserializeAsync</code>，避免阻塞主线程（这对 WPF UI 响应至关重要）。</li>
+</ul>
+<h4 id="-3-安全性">
+<a class="header-anchor" href="#-3-%e5%ae%89%e5%85%a8%e6%80%a7"></a>
+⚠️ 3. 安全性
+</h4><ul>
+<li><strong>不要反序列化不可信的数据</strong>：特别是使用 <code>Newtonsoft.Json</code> 的 <code>TypeNameHandling.All</code> 时，可能导致远程代码执行漏洞。始终优先使用强类型反序列化。</li>
+</ul>
+<h4 id="-4-版本兼容性">
+<a class="header-anchor" href="#-4-%e7%89%88%e6%9c%ac%e5%85%bc%e5%ae%b9%e6%80%a7"></a>
+⚠️ 4. 版本兼容性
+</h4><ul>
+<li>当你的 App 升级后，旧的配置文件可能缺少新字段。确保你的类属性有默认值，或使用 <code>[JsonProperty(DefaultValueHandling.Ignore)]</code> 来兼容旧数据。</li>
+</ul>
+<p><strong>总结</strong>：序列化是连接<strong>内存对象</strong>与<strong>外部世界</strong>（磁盘、网络、其他进程）的桥梁。在现代 .NET 开发中，掌握 <code>System.Text.Json</code> 的特性与配置，是构建高效、稳定应用的基本功。</p>
+<hr>
+<h2 id="七-什么是模式匹配">
+<a class="header-anchor" href="#%e4%b8%83-%e4%bb%80%e4%b9%88%e6%98%af%e6%a8%a1%e5%bc%8f%e5%8c%b9%e9%85%8d"></a>
+七、 什么是模式匹配
+</h2><p><strong>模式匹配 (Pattern Matching)</strong> 是 C# 7.0 引入并在后续版本（C# 8.0/9.0/10+）中不断强化的核心特性。它允许你根据对象的<strong>形状（Shape）</strong>、<strong>类型</strong>或<strong>值</strong>来提取数据并执行逻辑，而不仅仅是简单的相等比较。</p>
+<p>简单来说，模式匹配让 <code>if</code> 和 <code>switch</code> 语句变得更聪明、更简洁，它能同时完成“检查”和“赋值”两个动作。</p>
+<h3 id="1-核心演进从-switch-语句到-switch-表达式">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e6%bc%94%e8%bf%9b%e4%bb%8e-switch-%e8%af%ad%e5%8f%a5%e5%88%b0-switch-%e8%a1%a8%e8%be%be%e5%bc%8f"></a>
+1. 核心演进：从 <code>switch</code> 语句到 <code>switch</code> 表达式
+</h3><h4 id="a-类型模式-type-pattern---c-70">
+<a class="header-anchor" href="#a-%e7%b1%bb%e5%9e%8b%e6%a8%a1%e5%bc%8f-type-pattern---c-70"></a>
+A. 类型模式 (Type Pattern) - C# 7.0
+</h4><p>这是最基础的用法，常用于替代 <code>is</code> + 强转。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">object</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">GetSomeData</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 旧式写法</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="k">is</span> <span class="kt">string</span> <span class="n">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 在 switch 中使用</span>
+</span></span><span class="line"><span class="cl"><span class="k">switch</span> <span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="kt">int</span> <span class="n">i</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;它是整数: {i}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="kt">string</span> <span class="n">str</span> <span class="n">when</span> <span class="n">str</span><span class="p">.</span><span class="n">Length</span> <span class="p">&gt;</span> <span class="m">5</span><span class="p">:</span> <span class="c1">// 结合 when 子句进行过滤</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;长字符串: {str}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="kc">null</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;空值&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="b-switch-表达式-switch-expression---c-80">
+<a class="header-anchor" href="#b-switch-%e8%a1%a8%e8%be%be%e5%bc%8f-switch-expression---c-80"></a>
+B. Switch 表达式 (Switch Expression) - C# 8.0
+</h4><p>这是现代 C# 的标志性语法。它不是语句（Statement），而是<strong>表达式（Expression）</strong>，意味着它必须返回一个值。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">string</span> <span class="n">GetDescription</span><span class="p">(</span><span class="kt">object</span> <span class="n">shape</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">shape</span> <span class="k">switch</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Circle</span> <span class="n">c</span> <span class="p">=&gt;</span> <span class="s">$&#34;圆形，半径 {c.Radius}&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Rectangle</span> <span class="n">r</span> <span class="p">=&gt;</span> <span class="s">$&#34;矩形，面积 {r.Width * r.Height}&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kc">null</span> <span class="p">=&gt;</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentNullException</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">shape</span><span class="p">)),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_</span> <span class="p">=&gt;</span> <span class="s">&#34;未知形状&#34;</span> <span class="c1">// _ 是弃元，代表 default</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><p><em>注意：<code>switch</code> 表达式更简洁，且编译器会强制要求处理所有情况（ Exhaustiveness Check），减少了遗漏分支的 Bug。</em></p>
+<h3 id="2-高级模式解构与递归">
+<a class="header-anchor" href="#2-%e9%ab%98%e7%ba%a7%e6%a8%a1%e5%bc%8f%e8%a7%a3%e6%9e%84%e4%b8%8e%e9%80%92%e5%bd%92"></a>
+2. 高级模式：解构与递归
+</h3><h4 id="a-位置模式-positional-pattern---c-80">
+<a class="header-anchor" href="#a-%e4%bd%8d%e7%bd%ae%e6%a8%a1%e5%bc%8f-positional-pattern---c-80"></a>
+A. 位置模式 (Positional Pattern) - C# 8.0+
+</h4><p>配合<strong>解构 (Deconstruction)</strong>，可以直接匹配对象的内部属性。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">record</span> <span class="nc">Point</span><span class="p">(</span><span class="kt">int</span> <span class="n">X</span><span class="p">,</span> <span class="kt">int</span> <span class="n">Y</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">p</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Point</span><span class="p">(</span><span class="m">10</span><span class="p">,</span> <span class="m">20</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">p</span> <span class="k">switch</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s">&#34;原点&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="kt">var</span> <span class="n">x</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s">$&#34;X轴上的点: {x}&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="kt">var</span> <span class="n">y</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="s">$&#34;Y轴上的点: {y}&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">point</span> <span class="p">=&gt;</span> <span class="s">$&#34;普通点: ({point.X}, {point.Y})&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><h4 id="b-属性模式-property-pattern---c-80">
+<a class="header-anchor" href="#b-%e5%b1%9e%e6%80%a7%e6%a8%a1%e5%bc%8f-property-pattern---c-80"></a>
+B. 属性模式 (Property Pattern) - C# 8.0+
+</h4><p>直接通过属性名进行匹配，无需解构。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="n">person</span> <span class="k">switch</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="n">Age</span><span class="p">:</span> <span class="p">&lt;</span> <span class="m">18</span> <span class="p">}</span> <span class="p">=&gt;</span> <span class="s">&#34;未成年人&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> <span class="n">Age</span><span class="p">:</span> <span class="p">&gt;=</span> <span class="m">18</span><span class="p">,</span> <span class="n">Name</span><span class="p">:</span> <span class="s">&#34;Alice&#34;</span> <span class="p">}</span> <span class="p">=&gt;</span> <span class="s">&#34;成年用户 Alice&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_</span> <span class="p">=&gt;</span> <span class="s">&#34;其他用户&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><h4 id="c-关系模式-relational-pattern---c-90">
+<a class="header-anchor" href="#c-%e5%85%b3%e7%b3%bb%e6%a8%a1%e5%bc%8f-relational-pattern---c-90"></a>
+C. 关系模式 (Relational Pattern) - C# 9.0+
+</h4><p>直接使用 <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code> 进行比较。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">GetWaterState</span><span class="p">(</span><span class="kt">int</span> <span class="n">temp</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">temp</span> <span class="k">switch</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span> <span class="m">0</span> <span class="p">=&gt;</span> <span class="s">&#34;冰&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&gt;</span> <span class="m">100</span> <span class="p">=&gt;</span> <span class="s">&#34;蒸汽&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_</span> <span class="p">=&gt;</span> <span class="s">&#34;水&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">};</span>
+</span></span></code></pre></div><h4 id="d-逻辑模式-logical-patterns---c-90">
+<a class="header-anchor" href="#d-%e9%80%bb%e8%be%91%e6%a8%a1%e5%bc%8f-logical-patterns---c-90"></a>
+D. 逻辑模式 (Logical Patterns) - C# 9.0+
+</h4><p>使用 <code>and</code>, <code>or</code>, <code>not</code> 组合条件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="n">input</span> <span class="k">is</span> <span class="n">not</span> <span class="kc">null</span> <span class="n">and</span> <span class="p">(&gt;=</span> <span class="m">10</span> <span class="n">or</span> <span class="p">&lt;=</span> <span class="p">-</span><span class="m">10</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;数值较大且非空&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="3-架构师建议">
+<a class="header-anchor" href="#3-%e6%9e%b6%e6%9e%84%e5%b8%88%e5%bb%ba%e8%ae%ae"></a>
+3. 架构师建议
+</h3><ol>
+<li><strong>优先使用 <code>switch</code> 表达式</strong>：只要逻辑是“根据输入返回一个结果”，就用 <code>switch</code> 表达式代替传统的 <code>if-else</code> 链。它更符合函数式编程思想，且不可变（Immutable）。</li>
+<li><strong>利用 <code>record</code> 类型</strong>：模式匹配与 <code>record</code> 是天作之合。<code>record</code> 自动提供了解构支持和值语义，让位置模式变得非常自然。</li>
+<li><strong>注意性能</strong>：虽然现代 JIT 对模式匹配优化得很好，但在极高频循环中，复杂的嵌套模式匹配可能比简单的整数比较稍慢。不过在 UI 交互和业务逻辑层，这种差异可以忽略不计。</li>
+<li><strong>保持可读性</strong>：如果模式匹配的逻辑过于复杂（超过 5-6 个分支或嵌套过深），考虑将其重构为多态方法或策略模式。</li>
+</ol>
+<h3 id="总结-4">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93-4"></a>
+总结
+</h3><p><strong>模式匹配</strong>是 C# 从“面向对象”向“函数式”融合的重要体现。它让你的代码从“询问对象是什么”转变为“描述对象长什么样”。在你的 <strong>.NET Core</strong> 开发中，熟练掌握模式匹配能大幅减少样板代码，提升逻辑的表达能力。</p>
+<hr>
+<h2 id="八-checked和unchecked关键字的作用">
+<a class="header-anchor" href="#%e5%85%ab-checked%e5%92%8cunchecked%e5%85%b3%e9%94%ae%e5%ad%97%e7%9a%84%e4%bd%9c%e7%94%a8"></a>
+八、 <code>checked</code>和<code>unchecked</code>关键字的作用
+</h2><p>在 C# 中，<code>checked</code> 和 <code>unchecked</code> 关键字用于控制<strong>整数算术运算</strong>和<strong>类型转换</strong>时的**溢出检查（Overflow Checking）**行为。</p>
+<p>默认情况下，C# 的整数运算在运行时是 <strong>unchecked</strong> 的（即溢出时不抛异常，而是静默截断）。这两个关键字允许你在特定代码块或表达式中显式改变这一行为。</p>
+<h3 id="1-核心区别">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e5%8c%ba%e5%88%ab"></a>
+1. 核心区别
+</h3><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">关键字</th>
+					<th style="text-align: left">行为</th>
+					<th style="text-align: left">溢出时结果</th>
+					<th style="text-align: left">性能影响</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>checked</code></td>
+					<td style="text-align: left"><strong>启用</strong>溢出检查</td>
+					<td style="text-align: left">抛出 <code>System.OverflowException</code></td>
+					<td style="text-align: left">略慢（需额外 CPU 指令）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>unchecked</code></td>
+					<td style="text-align: left"><strong>禁用</strong>溢出检查</td>
+					<td style="text-align: left">静默截断（回绕/Wrap-around）</td>
+					<td style="text-align: left">快（默认行为）</td>
+			</tr>
+	</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>重要前提</strong>：这两个关键字<strong>仅对整数类型</strong>（<code>int</code>, <code>long</code>, <code>byte</code>, <code>sbyte</code>, <code>short</code>, <code>ushort</code>, <code>uint</code>, <code>ulong</code>）有效。对 <code>float</code>、<code>double</code>、<code>decimal</code> 无效（浮点数遵循 IEEE 754 标准，<code>decimal</code> 始终检查溢出）。</p>
+</blockquote>
+<h3 id="2-代码示例">
+<a class="header-anchor" href="#2-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b"></a>
+2. 代码示例
+</h3><h4 id="a-基本用法">
+<a class="header-anchor" href="#a-%e5%9f%ba%e6%9c%ac%e7%94%a8%e6%b3%95"></a>
+A. 基本用法
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">max</span> <span class="p">=</span> <span class="kt">int</span><span class="p">.</span><span class="n">MaxValue</span><span class="p">;</span> <span class="c1">// 2,147,483,647</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ❌ unchecked (默认): 静默溢出，结果为 -2147483648</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span> <span class="p">=</span> <span class="n">max</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ✅ checked: 抛出 OverflowException</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">b</span> <span class="p">=</span> <span class="k">checked</span><span class="p">(</span><span class="n">max</span> <span class="p">+</span> <span class="m">1</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="n">OverflowException</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;溢出被捕获！&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ✅ unchecked: 显式声明允许溢出（即使项目全局开启了 checked）</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">c</span> <span class="p">=</span> <span class="k">unchecked</span><span class="p">(</span><span class="n">max</span> <span class="p">+</span> <span class="m">1</span><span class="p">);</span> 
+</span></span></code></pre></div><h4 id="b-代码块语法">
+<a class="header-anchor" href="#b-%e4%bb%a3%e7%a0%81%e5%9d%97%e8%af%ad%e6%b3%95"></a>
+B. 代码块语法
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">checked</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">x</span> <span class="p">=</span> <span class="m">1000000</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="n">x</span> <span class="p">*</span> <span class="n">x</span><span class="p">;</span> <span class="c1">// 如果溢出，这里会抛异常</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">z</span> <span class="p">=</span> <span class="n">y</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span> <span class="c1">// 同样受 checked 保护</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="c-常量折叠的特殊性">
+<a class="header-anchor" href="#c-%e5%b8%b8%e9%87%8f%e6%8a%98%e5%8f%a0%e7%9a%84%e7%89%b9%e6%ae%8a%e6%80%a7"></a>
+C. 常量折叠的特殊性
+</h4><p>对于<strong>编译时常量</strong>，无论是否使用 <code>unchecked</code>，编译器都会在编译期检查溢出：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// ❌ 编译错误：Constant value &#39;2147483648&#39; cannot be converted to &#39;int&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// const int x = int.MaxValue + 1; </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ✅ 必须用 unchecked 才能让常量溢出通过编译</span>
+</span></span><span class="line"><span class="cl"><span class="kd">const</span> <span class="kt">int</span> <span class="n">y</span> <span class="p">=</span> <span class="k">unchecked</span><span class="p">(</span><span class="kt">int</span><span class="p">.</span><span class="n">MaxValue</span> <span class="p">+</span> <span class="m">1</span><span class="p">);</span> <span class="c1">// y = -2147483648</span>
+</span></span></code></pre></div><h3 id="3-项目级配置">
+<a class="header-anchor" href="#3-%e9%a1%b9%e7%9b%ae%e7%ba%a7%e9%85%8d%e7%bd%ae"></a>
+3. 项目级配置
+</h3><p>你不需要在每个表达式上手动加 <code>checked</code>。可以在项目文件中全局启用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!-- .csproj --&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;PropertyGroup&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;CheckForOverflowUnderflow&gt;</span>true<span class="nt">&lt;/CheckForOverflowUnderflow&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/PropertyGroup&gt;</span>
+</span></span></code></pre></div><p>开启后，项目中<strong>所有</strong>整数运算默认变为 <code>checked</code>。此时若某些算法确实需要溢出行为（如哈希计算），再用 <code>unchecked</code> 局部关闭。</p>
+<h3 id="4-架构师建议与应用场景-1">
+<a class="header-anchor" href="#4-%e6%9e%b6%e6%9e%84%e5%b8%88%e5%bb%ba%e8%ae%ae%e4%b8%8e%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af-1"></a>
+4. 架构师建议与应用场景
+</h3><h4 id="-何时使用-checked">
+<a class="header-anchor" href="#-%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8-checked"></a>
+✅ 何时使用 <code>checked</code>
+</h4><ol>
+<li><strong>金融/银行计算</strong>：涉及金额、余额、交易数量的整数运算<strong>必须</strong>使用 <code>checked</code>。静默溢出导致的资金错误是灾难性的。</li>
+<li><strong>数组索引/边界计算</strong>：防止因溢出产生负数索引导致越界访问。</li>
+<li><strong>数据校验与解析</strong>：解析外部输入（如 HSM 返回的字节流）转换为整数时，确保值在预期范围内。</li>
+<li><strong>Debug 构建</strong>：建议在 Debug 配置中全局开启 <code>CheckForOverflowUnderflow</code>，Release 中关闭以获取最佳性能。</li>
+</ol>
+<h4 id="-何时使用-unchecked">
+<a class="header-anchor" href="#-%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8-unchecked"></a>
+✅ 何时使用 <code>unchecked</code>
+</h4><ol>
+<li><strong>哈希算法 / 校验和</strong>：如 GetHashCode、CRC32、MD5 等算法天然依赖整数回绕特性。</li>
+<li><strong>加密/编码算法</strong>：许多底层位操作和编码逻辑依赖模 2^n 算术。</li>
+<li><strong>高性能数值计算</strong>：在确认不会溢出的热路径中，显式 <code>unchecked</code> 可消除 JIT 生成的溢出检查指令。</li>
+<li><strong>ID 生成器</strong>：某些环形 ID 分配策略有意利用溢出回绕。</li>
+</ol>
+<h4 id="-常见陷阱">
+<a class="header-anchor" href="#-%e5%b8%b8%e8%a7%81%e9%99%b7%e9%98%b1"></a>
+⚠️ 常见陷阱
+</h4><ul>
+<li><strong>不要用于浮点数</strong>：<code>checked(1.0 / 0.0)</code> 不会抛 <code>OverflowException</code>，而是返回 <code>Infinity</code>。浮点除零应通过 <code>double.IsInfinity()</code> 检查。</li>
+<li><strong><code>decimal</code> 始终检查</strong>：<code>decimal</code> 类型无论是否在 <code>unchecked</code> 块中，溢出都会抛异常。这是设计决策，因为 <code>decimal</code> 专为精确财务计算而生。</li>
+<li><strong>性能敏感代码要基准测试</strong>：<code>checked</code> 在现代 CPU 上的开销已很小，但在紧密循环中仍可能累积。使用 BenchmarkDotNet 验证实际影响。</li>
+</ul>
+<h3 id="总结-5">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93-5"></a>
+总结
+</h3><p><strong>原则</strong>：<strong>安全第一，性能第二</strong>。在业务逻辑中默认启用溢出检查，仅在算法明确要求或性能瓶颈处才使用 <code>unchecked</code>。</p>
+<hr>
+<h2 id="九-floatdouble和decimal的区别">
+<a class="header-anchor" href="#%e4%b9%9d-floatdouble%e5%92%8cdecimal%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+九、 float/double和decimal的区别
+</h2><p>在 C# 中，<code>float</code>、<code>double</code> 和 <code>decimal</code> 都是用于表示小数的数据类型，但它们的<strong>底层存储机制</strong>、<strong>精度</strong>以及<strong>适用场景</strong>有着天壤之别。</p>
+<h3 id="1-核心区别概览-1">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e5%8c%ba%e5%88%ab%e6%a6%82%e8%a7%88-1"></a>
+1. 核心区别概览
+</h3><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left"><code>float</code> (Single)</th>
+					<th style="text-align: left"><code>double</code> (Double)</th>
+					<th style="text-align: left"><code>decimal</code> (Decimal)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>位数</strong></td>
+					<td style="text-align: left">32 位</td>
+					<td style="text-align: left">64 位</td>
+					<td style="text-align: left">128 位</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>有效数字</strong></td>
+					<td style="text-align: left">~7 位</td>
+					<td style="text-align: left">~15-16 位</td>
+					<td style="text-align: left"><strong>28-29 位</strong></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>底层标准</strong></td>
+					<td style="text-align: left">IEEE 754 (二进制浮点)</td>
+					<td style="text-align: left">IEEE 754 (二进制浮点)</td>
+					<td style="text-align: left"><strong>十进制浮点</strong> (非 IEEE 754)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>精度误差</strong></td>
+					<td style="text-align: left">❌ 有 (如 0.1 + 0.2 != 0.3)</td>
+					<td style="text-align: left">❌ 有 (同上)</td>
+					<td style="text-align: left">✅ <strong>无</strong> (精确匹配人类直觉)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>取值范围</strong></td>
+					<td style="text-align: left">极大 ($\pm 1.5 \times 10^{-45}$ 到 $\pm 3.4 \times 10^{38}$)</td>
+					<td style="text-align: left">极大 ($\pm 5.0 \times 10^{-324}$ 到 $\pm 1.7 \times 10^{308}$)</td>
+					<td style="text-align: left">较小 ($\pm 1.0 \times 10^{-28}$ 到 $\pm 7.9 \times 10^{28}$)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>性能</strong></td>
+					<td style="text-align: left">⚡️ 最快 (硬件原生支持)</td>
+					<td style="text-align: left">⚡️ 快 (硬件原生支持)</td>
+					<td style="text-align: left">🐢 较慢 (软件模拟运算)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>后缀</strong></td>
+					<td style="text-align: left"><code>1.23f</code></td>
+					<td style="text-align: left"><code>1.23</code> (默认)</td>
+					<td style="text-align: left"><code>1.23m</code></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="2-深度原理解析为什么-double-会算错">
+<a class="header-anchor" href="#2-%e6%b7%b1%e5%ba%a6%e5%8e%9f%e7%90%86%e8%a7%a3%e6%9e%90%e4%b8%ba%e4%bb%80%e4%b9%88-double-%e4%bc%9a%e7%ae%97%e9%94%99"></a>
+2. 深度原理解析：为什么 <code>double</code> 会算错？
+</h3><h4 id="a-二进制-vs-十进制">
+<a class="header-anchor" href="#a-%e4%ba%8c%e8%bf%9b%e5%88%b6-vs-%e5%8d%81%e8%bf%9b%e5%88%b6"></a>
+A. 二进制 vs 十进制
+</h4><ul>
+<li><strong><code>float/double</code></strong>：计算机用二进制存储。就像十进制无法精确表示 $1/3$ (0.333&hellip;) 一样，二进制也无法精确表示 <strong>0.1</strong>。因此，<code>0.1 + 0.2</code> 在 <code>double</code> 中结果是 <code>0.30000000000000004</code>。</li>
+<li><strong><code>decimal</code></strong>：它是基于<strong>10的幂</strong>来存储的。它能精确表示 0.1、0.01 等人类常用的十进制小数。</li>
+</ul>
+<h4 id="b-性能差异">
+<a class="header-anchor" href="#b-%e6%80%a7%e8%83%bd%e5%b7%ae%e5%bc%82"></a>
+B. 性能差异
+</h4><ul>
+<li><code>float</code> 和 <code>double</code> 的运算由 CPU 的 FPU（浮点运算单元）直接处理，速度极快，适合图形渲染、物理模拟。</li>
+<li><code>decimal</code> 的运算由 .NET 运行时通过软件算法实现，速度比 <code>double</code> 慢约 10-20 倍，不适合高频循环计算。</li>
+</ul>
+<h3 id="3-代码示例精度的陷阱">
+<a class="header-anchor" href="#3-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b%e7%b2%be%e5%ba%a6%e7%9a%84%e9%99%b7%e9%98%b1"></a>
+3. 代码示例：精度的陷阱
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// ❌ double 的精度丢失</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">a</span> <span class="p">=</span> <span class="m">0.1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">double</span> <span class="n">b</span> <span class="p">=</span> <span class="m">0.2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">a</span> <span class="p">+</span> <span class="n">b</span> <span class="p">==</span> <span class="m">0.3</span><span class="p">);</span> <span class="c1">// 输出: False</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ✅ decimal 的精确计算</span>
+</span></span><span class="line"><span class="cl"><span class="kt">decimal</span> <span class="n">x</span> <span class="p">=</span> <span class="m">0.1</span><span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">decimal</span> <span class="n">y</span> <span class="p">=</span> <span class="m">0.2</span><span class="n">m</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">x</span> <span class="p">+</span> <span class="n">y</span> <span class="p">==</span> <span class="m">0.3</span><span class="n">m</span><span class="p">);</span> <span class="c1">// 输出: True</span>
+</span></span></code></pre></div><h3 id="4-最佳实践建议">
+<a class="header-anchor" href="#4-%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5%e5%bb%ba%e8%ae%ae"></a>
+4. 最佳实践建议
+</h3><ol>
+<li>
+<p><strong>默认规则</strong>：</p>
+<ul>
+<li><strong>钱、税、财务</strong> → <code>decimal</code></li>
+<li><strong>科学计算、图形、游戏、物理</strong> → <code>double</code> (首选) 或 <code>float</code> (内存敏感时)</li>
+<li><strong>计数器、索引</strong> → <code>int</code> / <code>long</code> (永远不要用浮点数做循环计数器)</li>
+</ul>
+</li>
+<li>
+<p><strong>比较浮点数</strong>：
+永远不要直接用 <code>==</code> 比较 <code>float/double</code>。应该使用“epsilon”容差比较：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">AreEqual</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">,</span> <span class="kt">double</span> <span class="n">epsilon</span> <span class="p">=</span> <span class="m">1e-9</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">a</span> <span class="p">-</span> <span class="n">b</span><span class="p">)</span> <span class="p">&lt;</span> <span class="n">epsilon</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>WPF 绑定注意事项</strong>：
+在 WPF 中，<code>TextBox</code> 绑定到 <code>decimal</code> 属性时，如果用户输入非法字符，可能会触发验证异常。建议使用 <code>UpdateSourceTrigger=PropertyChanged</code> 配合自定义验证逻辑。</p>
+</li>
+<li>
+<p><strong>序列化兼容性</strong>：
+<code>System.Text.Json</code> 默认将 <code>decimal</code> 序列化为数字。如果前端 JavaScript 处理大数精度有问题，可以考虑将其序列化为字符串（使用 <code>[JsonConverter(typeof(JsonStringDecimalConverter))]</code>）。</p>
+</li>
+</ol>
+<h3 id="总结-6">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93-6"></a>
+总结
+</h3><ul>
+<li><strong><code>decimal</code></strong> 是为了<strong>人</strong>设计的（精确、符合直觉），用于<strong>钱</strong>。</li>
+<li><strong><code>double/float</code></strong> 是为了<strong>机器</strong>设计的（快速、范围广），用于<strong>科学和图形</strong>。</li>
+</ul>
+<hr>
+<h2 id="十-数组array列表list和arraylist的区别">
+<a class="header-anchor" href="#%e5%8d%81-%e6%95%b0%e7%bb%84array%e5%88%97%e8%a1%a8list%e5%92%8carraylist%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+十、 数组Array、列表List和ArrayList的区别
+</h2><p>在 C# 中，<code>Array</code>、<code>List&lt;T&gt;</code> 和 <code>ArrayList</code> 都是用于存储数据集合的容器，但它们在<strong>类型安全性</strong>、<strong>性能</strong>以及<strong>灵活性</strong>上有着本质的区别。</p>
+<p>强烈建议在现代 .NET 开发中<strong>优先使用 <code>List&lt;T&gt;</code></strong>，尽量避免使用 <code>ArrayList</code>，并在特定高性能场景下考虑 <code>Array</code>。</p>
+<h3 id="1-核心区别概览-2">
+<a class="header-anchor" href="#1-%e6%a0%b8%e5%bf%83%e5%8c%ba%e5%88%ab%e6%a6%82%e8%a7%88-2"></a>
+1. 核心区别概览
+</h3><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left"><code>Array</code> (T[])</th>
+					<th style="text-align: left"><code>List&lt;T&gt;</code></th>
+					<th style="text-align: left"><code>ArrayList</code></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>引入版本</strong></td>
+					<td style="text-align: left">.NET Framework 1.0</td>
+					<td style="text-align: left">.NET Framework 2.0 (泛型)</td>
+					<td style="text-align: left">.NET Framework 1.0</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>类型安全</strong></td>
+					<td style="text-align: left">✅ 强类型</td>
+					<td style="text-align: left">✅ 强类型 (泛型)</td>
+					<td style="text-align: left">❌ 弱类型 (存储 object)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>大小固定</strong></td>
+					<td style="text-align: left">✅ 是 (创建后不可变)</td>
+					<td style="text-align: left">❌ 否 (动态扩容)</td>
+					<td style="text-align: left">❌ 否 (动态扩容)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>内存分配</strong></td>
+					<td style="text-align: left">连续内存，无额外开销</td>
+					<td style="text-align: left">连续内存 + 少量管理开销</td>
+					<td style="text-align: left">连续内存 + <strong>装箱/拆箱</strong>开销</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>性能</strong></td>
+					<td style="text-align: left">⚡️ 最快 (访问速度极快)</td>
+					<td style="text-align: left">⚡️ 很快 (接近 Array)</td>
+					<td style="text-align: left">🐢 较慢 (涉及类型转换)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>适用场景</strong></td>
+					<td style="text-align: left">长度已知且不变的数据</td>
+					<td style="text-align: left"><strong>绝大多数业务场景</strong></td>
+					<td style="text-align: left"><strong>遗留代码维护</strong> (新项目禁用)</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="2-深度解析">
+<a class="header-anchor" href="#2-%e6%b7%b1%e5%ba%a6%e8%a7%a3%e6%9e%90"></a>
+2. 深度解析
+</h3><h4 id="a-array-数组">
+<a class="header-anchor" href="#a-array-%e6%95%b0%e7%bb%84"></a>
+A. Array (数组)
+</h4><ul>
+<li><strong>本质</strong>：最基础的数据结构，内存中连续分配。</li>
+<li><strong>优点</strong>：访问速度最快（通过索引直接计算内存地址），内存占用最小。</li>
+<li><strong>缺点</strong>：长度固定。如果需要增加元素，必须创建一个新数组并复制旧数据（<code>Array.Resize</code>），开销极大。</li>
+<li><strong>示例</strong>：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">int</span><span class="p">[</span><span class="m">5</span><span class="p">];</span> <span class="c1">// 必须指定长度</span>
+</span></span><span class="line"><span class="cl"><span class="n">numbers</span><span class="p">[</span><span class="m">0</span><span class="p">]</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// numbers[5] = 20; // 报错：索引越界</span>
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="b-list-泛型列表">
+<a class="header-anchor" href="#b-list-%e6%b3%9b%e5%9e%8b%e5%88%97%e8%a1%a8"></a>
+B. List<!-- raw HTML omitted --> (泛型列表)
+</h4><ul>
+<li><strong>本质</strong>：对 <code>Array</code> 的封装。内部维护一个数组，当空间不足时自动创建一个更大的数组并迁移数据（通常扩容为原来的 2 倍）。</li>
+<li><strong>优点</strong>：
+<ul>
+<li><strong>动态大小</strong>：无需担心容量问题。</li>
+<li><strong>类型安全</strong>：编译器会检查类型，避免运行时错误。</li>
+<li><strong>丰富的 API</strong>：提供 <code>Add</code>, <code>Remove</code>, <code>Find</code>, <code>Sort</code>, <code>LINQ</code> 支持等。</li>
+</ul>
+</li>
+<li><strong>示例</strong>：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">names</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">names</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#34;Alice&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">names</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="s">&#34;Bob&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 自动扩容，无需手动管理</span>
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="c-arraylist-非泛型列表">
+<a class="header-anchor" href="#c-arraylist-%e9%9d%9e%e6%b3%9b%e5%9e%8b%e5%88%97%e8%a1%a8"></a>
+C. ArrayList (非泛型列表)
+</h4><ul>
+<li><strong>本质</strong>：<code>List&lt;T&gt;</code> 出现之前的产物。它内部存储的是 <code>object</code> 类型。</li>
+<li><strong>致命缺点</strong>：
+<ol>
+<li><strong>装箱与拆箱 (Boxing/Unboxing)</strong>：如果你存入 <code>int</code>，它会被包装成 <code>object</code>（装箱）；取出时又要转回 <code>int</code>（拆箱）。这在高频循环中会产生巨大的 GC 压力和性能损耗。</li>
+<li><strong>无类型安全</strong>：你可以往里面塞 <code>string</code>、<code>int</code> 和 <code>DateTime</code>，取出来时如果类型转换错误，会在<strong>运行时</strong>抛出异常，而不是编译时报错。</li>
+</ol>
+</li>
+<li><strong>现状</strong>：除非你在维护 20 年前的老代码，否则<strong>永远不要在新项目中使用 <code>ArrayList</code></strong>。</li>
+</ul>
+<h3 id="3-性能对比为什么-arraylist-慢">
+<a class="header-anchor" href="#3-%e6%80%a7%e8%83%bd%e5%af%b9%e6%af%94%e4%b8%ba%e4%bb%80%e4%b9%88-arraylist-%e6%85%a2"></a>
+3. 性能对比：为什么 <code>ArrayList</code> 慢？
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// ❌ ArrayList: 每次 Add 都会发生装箱</span>
+</span></span><span class="line"><span class="cl"><span class="n">ArrayList</span> <span class="n">list</span> <span class="p">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">10</span><span class="p">);</span> <span class="c1">// int -&gt; object (分配堆内存)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">val</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">list</span><span class="p">[</span><span class="m">0</span><span class="p">];</span> <span class="c1">// object -&gt; int (类型检查+取值)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ✅ List&lt;int&gt;: 直接在栈或连续堆内存中存储值</span>
+</span></span><span class="line"><span class="cl"><span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">list</span> <span class="p">=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;();</span>
+</span></span><span class="line"><span class="cl"><span class="n">list</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="m">10</span><span class="p">);</span> <span class="c1">// 直接存储二进制值</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">val</span> <span class="p">=</span> <span class="n">list</span><span class="p">[</span><span class="m">0</span><span class="p">];</span> <span class="c1">// 直接读取二进制值</span>
+</span></span></code></pre></div><h3 id="4-架构师建议与最佳实践">
+<a class="header-anchor" href="#4-%e6%9e%b6%e6%9e%84%e5%b8%88%e5%bb%ba%e8%ae%ae%e4%b8%8e%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5"></a>
+4. 架构师建议与最佳实践
+</h3><ol>
+<li>
+<p><strong>默认选择 <code>List&lt;T&gt;</code></strong>：
+在 95% 的业务场景（如存储用户列表、媒体文件元数据、银行网点信息）中，<code>List&lt;T&gt;</code> 是最平衡的选择。它兼顾了性能和灵活性。</p>
+</li>
+<li>
+<p><strong>何时使用 <code>Array</code></strong>：</p>
+<ul>
+<li>当你确切知道数据量且永远不会改变时（例如：一周七天的名称、RGB 颜色值）。</li>
+<li>在极高性能要求的数学计算或图形处理循环中。</li>
+<li>作为底层数据结构传递给某些特定的 API。</li>
+</ul>
+</li>
+<li>
+<p><strong>彻底弃用 <code>ArrayList</code></strong>：
+如果你在代码中看到 <code>ArrayList</code>，请将其重构为 <code>List&lt;object&gt;</code>（如果确实需要混合类型）或具体的 <code>List&lt;T&gt;</code>。</p>
+</li>
+<li>
+<p><strong>其他高性能替代方案</strong>：</p>
+<ul>
+<li><strong><code>Span&lt;T&gt;</code> / <code>Memory&lt;T&gt;</code></strong>：在 .NET Core/5+ 中，如果你需要在不分配新内存的情况下操作数组切片，使用 <code>Span&lt;T&gt;</code>。</li>
+<li><strong><code>ImmutableArray</code> / <code>ImmutableList</code></strong>：在多线程环境下，如果希望集合不可变以保证线程安全，可以使用 <code>System.Collections.Immutable</code> 命名空间下的类型。</li>
+</ul>
+</li>
+</ol>
+<h3 id="总结-7">
+<a class="header-anchor" href="#%e6%80%bb%e7%bb%93-7"></a>
+总结
+</h3><ul>
+<li><strong><code>Array</code></strong>：快但死板，适合固定数据。</li>
+<li><strong><code>List&lt;T&gt;</code></strong>：快且灵活，<strong>现代开发的首选</strong>。</li>
+<li><strong><code>ArrayList</code></strong>：慢且不安全，<strong>属于历史遗留产物</strong>。</li>
+</ul>
+<hr>
+</div>
+    <footer class="article-footer"><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/c"
+      data-aos="zoom-in"
+      >C#</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/c"
+        rel="tag"
+        >C#</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="/images/cover4.webp"
+              data-sizes="auto"
+              alt="C#基础（一）"
+              class="lazyload"
+            /><a
+          href="/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%80/"
+          aria-label="前一篇:C#基础（一）"
+          title="前一篇:C#基础（一）"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">C#基础（一）</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="/images/cover8.webp"
+              data-sizes="auto"
+              alt="C#基础（三）"
+              class="lazyload"
+            /><a
+          href="/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%89/"
+          aria-label="后一篇:C#基础（三）"
+          title="后一篇:C#基础（三）"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">C#基础（三）</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>Alone4869
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;66.0k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;02:21</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一-什么是解构">一、 什么是解构</a>
+      <ul>
+        <li><a href="#1-核心语法">1. 核心语法</a></li>
+        <li><a href="#2-自定义类的解构">2. 自定义类的解构</a></li>
+        <li><a href="#3-解构-vs-模式匹配中的-is">3. 解构 vs 模式匹配中的 <code>is</code></a></li>
+        <li><a href="#4-架构师建议与应用场景">4. 架构师建议与应用场景</a></li>
+        <li><a href="#总结">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#二-为什么catchexception几乎总是个坏主意throw和throw-ex有什么区别">二、 为什么<code>catch(Exception)</code>几乎总是个坏主意？<code>throw</code>和<code>throw ex</code>有什么区别？</a>
+      <ul>
+        <li><a href="#1-为什么-catch-exception-几乎总是个坏主意">1. 为什么 <code>catch (Exception)</code> 几乎总是个坏主意？</a></li>
+        <li><a href="#2-throw-vs-throw-ex-的核心区别">2. <code>throw</code> vs <code>throw ex</code> 的核心区别</a></li>
+        <li><a href="#3-何时-catch-exception-是合理的">3. 何时 <code>catch (Exception)</code> 是合理的？</a></li>
+        <li><a href="#-架构师的最佳实践建议">🏗️ 架构师的最佳实践建议</a></li>
+      </ul>
+    </li>
+    <li><a href="#三-typeof和gettype的区别">三、 <code>typeof</code>和<code>GetType</code>的区别</a>
+      <ul>
+        <li><a href="#1-核心区别概览">1. 核心区别概览</a></li>
+        <li><a href="#2-深度解析与代码示例">2. 深度解析与代码示例</a></li>
+        <li><a href="#3-为什么这个区别很重要">3. 为什么这个区别很重要？</a></li>
+        <li><a href="#4-架构师建议与陷阱">4. 架构师建议与陷阱</a></li>
+        <li><a href="#总结-1">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#四-什么是反射">四、 什么是反射</a>
+      <ul>
+        <li><a href="#1-核心能力反射能做什么">1. 核心能力：反射能做什么？</a></li>
+        <li><a href="#2-代码示例从静态到动态">2. 代码示例：从静态到动态</a></li>
+        <li><a href="#3-为什么在你的项目中需要反射">3. 为什么在你的项目中需要反射？</a></li>
+        <li><a href="#4-性能与架构师建议">4. 性能与架构师建议</a></li>
+        <li><a href="#总结-2">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#五-什么是特性">五、 什么是特性</a>
+      <ul>
+        <li><a href="#1-核心概念声明式编程">1. 核心概念：声明式编程</a></li>
+        <li><a href="#2-常见的内置特性">2. 常见的内置特性</a></li>
+        <li><a href="#3-自定义特性架构设计的利器">3. 自定义特性：架构设计的利器</a></li>
+        <li><a href="#4-现代-net-中的高级用法">4. 现代 .NET 中的高级用法</a></li>
+        <li><a href="#5-架构师建议">5. 架构师建议</a></li>
+        <li><a href="#总结-3">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#六-什么是序列化">六、 什么是序列化</a>
+      <ul>
+        <li><a href="#1-核心作用与应用场景">1. 核心作用与应用场景</a></li>
+        <li><a href="#2-net-中常见的序列化格式">2. .NET 中常见的序列化格式</a></li>
+        <li><a href="#3-代码示例现代-net-的最佳实践">3. 代码示例：现代 .NET 的最佳实践</a></li>
+        <li><a href="#4-架构师建议与避坑指南">4. 架构师建议与避坑指南</a></li>
+      </ul>
+    </li>
+    <li><a href="#七-什么是模式匹配">七、 什么是模式匹配</a>
+      <ul>
+        <li><a href="#1-核心演进从-switch-语句到-switch-表达式">1. 核心演进：从 <code>switch</code> 语句到 <code>switch</code> 表达式</a></li>
+        <li><a href="#2-高级模式解构与递归">2. 高级模式：解构与递归</a></li>
+        <li><a href="#3-架构师建议">3. 架构师建议</a></li>
+        <li><a href="#总结-4">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#八-checked和unchecked关键字的作用">八、 <code>checked</code>和<code>unchecked</code>关键字的作用</a>
+      <ul>
+        <li><a href="#1-核心区别">1. 核心区别</a></li>
+        <li><a href="#2-代码示例">2. 代码示例</a></li>
+        <li><a href="#3-项目级配置">3. 项目级配置</a></li>
+        <li><a href="#4-架构师建议与应用场景-1">4. 架构师建议与应用场景</a></li>
+        <li><a href="#总结-5">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#九-floatdouble和decimal的区别">九、 float/double和decimal的区别</a>
+      <ul>
+        <li><a href="#1-核心区别概览-1">1. 核心区别概览</a></li>
+        <li><a href="#2-深度原理解析为什么-double-会算错">2. 深度原理解析：为什么 <code>double</code> 会算错？</a></li>
+        <li><a href="#3-代码示例精度的陷阱">3. 代码示例：精度的陷阱</a></li>
+        <li><a href="#4-最佳实践建议">4. 最佳实践建议</a></li>
+        <li><a href="#总结-6">总结</a></li>
+      </ul>
+    </li>
+    <li><a href="#十-数组array列表list和arraylist的区别">十、 数组Array、列表List和ArrayList的区别</a>
+      <ul>
+        <li><a href="#1-核心区别概览-2">1. 核心区别概览</a></li>
+        <li><a href="#2-深度解析">2. 深度解析</a></li>
+        <li><a href="#3-性能对比为什么-arraylist-慢">3. 性能对比：为什么 <code>ArrayList</code> 慢？</a></li>
+        <li><a href="#4-架构师建议与最佳实践">4. 架构师建议与最佳实践</a></li>
+        <li><a href="#总结-7">总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">19</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">16</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/live2d-widgets@0.9.0/autoload.js"
+    defer
+    
+    
+    
+    integrity="sha384-poTN7wN/SqNhQqo3jdFeX20ikddWeFGkUkDEzsKjgH/ez8aQLn81oI0Cw6q5xNyB" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "Alone4869",
+          title: "C#基础（二）",
+          url: "https:\/\/alone4869.github.io\/post\/c%23%E5%9F%BA%E7%A1%80%E4%BA%8C\/",
+          description: " 一、 什么是解构 解构 (Deconstruction) 是 C# 7.0 引入的一项语法特性，它允许你将一个对象的多个属性或字段“拆解”并赋值给独立的局部变量。\n简单来说，就是把一个“包裹”里的东西一次性拿出来，分别放到不同的盒子里。\n",
+          cover: "https:\/\/alone4869.github.io\/images\/banner.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+        }
+        pswp()
+      </script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    
+    async
+    
+    
+    integrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>
