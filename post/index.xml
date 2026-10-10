@@ -12,7 +12,7 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Fri, 09 Oct 2026 12:12:08 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 01:07:48 +0800</lastBuildDate>
     
     
     <atom:link href="https://alone4869.github.io/post/index.xml" rel="self" type="application/rss&#43;xml" />
@@ -22,23 +22,223 @@
     
 
     <item>
-      <title>C#基础（四）</title>
-      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%9B%9B/</link>
-      <pubDate>Fri, 09 Oct 2026 12:12:08 &#43;0800</pubDate>
+      <title>WPF面试题参考（基础篇）</title>
+      <link>https://alone4869.github.io/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/</link>
+      <pubDate>Sun, 11 Oct 2026 01:07:48 &#43;0800</pubDate>
       <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%9B%9B/</guid>
+      <guid>https://alone4869.github.io/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/</guid>
       <description>
-        <![CDATA[<h1>C#基础（四）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        <![CDATA[<h1>WPF面试题参考（基础篇）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          <h2 id="一什么是内聚性和耦合性">
-<a class="header-anchor" href="#%e4%b8%80%e4%bb%80%e4%b9%88%e6%98%af%e5%86%85%e8%81%9a%e6%80%a7%e5%92%8c%e8%80%a6%e5%90%88%e6%80%a7"></a>
-一、什么是内聚性和耦合性
+          <h1 id="wpf-面试题参考基础篇">
+<a class="header-anchor" href="#wpf-%e9%9d%a2%e8%af%95%e9%a2%98%e5%8f%82%e8%80%83%e5%9f%ba%e7%a1%80%e7%af%87"></a>
+WPF 面试题参考（基础篇）
+</h1><h2 id="目录">
+<a class="header-anchor" href="#%e7%9b%ae%e5%bd%95"></a>
+目录
+</h2><ol>
+<li><a href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/#1%e5%80%bc%e7%b1%bb%e5%9e%8b%e4%b8%8e%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b">值类型与引用类型</a></li>
+<li><a href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/#2%e8%a3%85%e7%ae%b1%e4%b8%8e%e6%8b%86%e7%ae%b1">装箱与拆箱</a></li>
+<li><a href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/#3string-%e4%b8%8e%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%93%8d%e4%bd%9c">string 与字符串操作</a></li>
+<li><a href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/#4%e7%b1%bb%e4%b8%8e%e6%8e%a5%e5%8f%a3">类与接口</a></li>
+<li><a href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/#5%e5%b8%b8%e9%87%8f%e5%ad%97%e6%ae%b5%e5%b1%9e%e6%80%a7%e7%89%b9%e6%80%a7%e4%b8%8e%e5%a7%94%e6%89%98">常量、字段、属性、特性与委托</a></li>
+<li><a href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/#6gc-%e4%b8%8e%e5%86%85%e5%ad%98%e7%ae%a1%e7%90%86">GC 与内存管理</a></li>
+<li><a href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/#7%e5%a4%9a%e7%ba%bf%e7%a8%8b%e7%bc%96%e7%a8%8b%e4%b8%8e%e7%ba%bf%e7%a8%8b%e5%90%8c%e6%ad%a5">多线程编程与线程同步</a></li>
+<li><a href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/#8%e7%ba%bf%e7%a8%8b%e5%90%8c%e6%ad%a5">线程同步</a></li>
+<li><a href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/#9wpf">WPF</a></li>
+</ol>
+<hr>
+<h2 id="1值类型与引用类型">
+<a class="header-anchor" href="#1%e5%80%bc%e7%b1%bb%e5%9e%8b%e4%b8%8e%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b"></a>
+1、值类型与引用类型
+</h2><h3 id="11-值类型和引用类型的区别">
+<a class="header-anchor" href="#11-%e5%80%bc%e7%b1%bb%e5%9e%8b%e5%92%8c%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+1.1 值类型和引用类型的区别？
+</h3><p>值类型包括简单类型、结构体类型和枚举类型，引用类型包括自定义类、数组、接口、委托等。</p>
+        
+        <hr><p>本文2026-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-11</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>C#面试准备（转载）</title>
+      <link>https://alone4869.github.io/post/c%23%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E8%BD%AC%E8%BD%BD/</link>
+      <pubDate>Sun, 11 Oct 2026 00:53:10 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/c%23%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E8%BD%AC%E8%BD%BD/</guid>
+      <description>
+        <![CDATA[<h1>C#面试准备（转载）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h1 id="c-面试-wpf-net-面试准备">
+<a class="header-anchor" href="#c-%e9%9d%a2%e8%af%95-wpf-net-%e9%9d%a2%e8%af%95%e5%87%86%e5%a4%87"></a>
+C# 面试 wpf .net 面试准备
+</h1><blockquote>
+<p>原文：<a href="https://www.cnblogs.com/jiajianchengchu/p/18134167">C# 面试 wpf .net 面试准备 - 博客园</a>
+作者：m4st</p>
+</blockquote>
+<hr>
+<h1 id="杂项">
+<a class="header-anchor" href="#%e6%9d%82%e9%a1%b9"></a>
+杂项
+</h1><h2 id="介绍下自己时间一分半以内">
+<a class="header-anchor" href="#%e4%bb%8b%e7%bb%8d%e4%b8%8b%e8%87%aa%e5%b7%b1%e6%97%b6%e9%97%b4%e4%b8%80%e5%88%86%e5%8d%8a%e4%bb%a5%e5%86%85"></a>
+介绍下自己（时间一分半以内）
+</h2><p>提炼自身优点：</p>
+<ul>
+<li>优势、亮点、基本情况言简意赅、语言精炼，控制时间</li>
+<li>和应聘岗位相关的经历（和招聘要求相关）</li>
+<li>为什么能够胜任岗位</li>
+<li>为什么要应聘该岗位～求职动机</li>
+</ul>
+<p>不能只介绍学校和专业，注意：<strong>重点介绍满足岗位要求的三个优势和亮点</strong>、<strong>表现出对岗位的理解和自己清晰的职业规划</strong>、<strong>表示愿意长期从事这个岗位</strong>。</p>
+        
+        <hr><p>本文2026-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-11</p>]]>
+      </description>
+      
+        <category>C#</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>WPF面试题 2</title>
+      <link>https://alone4869.github.io/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98-2/</link>
+      <pubDate>Sun, 11 Oct 2026 00:46:30 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98-2/</guid>
+      <description>
+        <![CDATA[<h1>WPF面试题 2</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h1 id="c-winform-和-wpf-中级面试题整理">
+<a class="header-anchor" href="#c-winform-%e5%92%8c-wpf-%e4%b8%ad%e7%ba%a7%e9%9d%a2%e8%af%95%e9%a2%98%e6%95%b4%e7%90%86"></a>
+C# WinForm 和 WPF 中级面试题整理
+</h1><h2 id="1是否使用过委托一般在何时使用委托">
+<a class="header-anchor" href="#1%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%a7%94%e6%89%98%e4%b8%80%e8%88%ac%e5%9c%a8%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8%e5%a7%94%e6%89%98"></a>
+1、是否使用过委托，一般在何时使用委托
+</h2><p>委托传递的参数是一个方法，委托是给调用者使用的，在调用者不知道什么时候会使用的情况会使用委托，所以调用者需要提前订阅它然后执行自己的代码，当委托对象有了订阅者的触发消息后就会通知调用者。</p>
+        
+        <hr><p>本文2026-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-11</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>WPF面试题 1</title>
+      <link>https://alone4869.github.io/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98-1/</link>
+      <pubDate>Sat, 10 Oct 2026 23:54:19 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98-1/</guid>
+      <description>
+        <![CDATA[<h1>WPF面试题 1</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h3 id="1-wpf-是什么">
+<a class="header-anchor" href="#1-wpf-%e6%98%af%e4%bb%80%e4%b9%88"></a>
+1. WPF 是什么？
+</h3><p><strong>答：</strong></p>
+<p>WPF 全称是 Windows Presentation Foundation，是微软推出的桌面 UI 框架。</p>
+<p>它基于 <code>.NET</code>，使用 <code>XAML</code> 描述界面，使用 C# 编写逻辑。</p>
+<p>WPF 的特点：</p>
+<ul>
+<li>支持数据绑定</li>
+<li>支持样式和模板</li>
+<li>支持动画</li>
+<li>支持 MVVM 架构</li>
+<li>UI 表现力比 WinForms 更强</li>
+</ul>
+<h3 id="2-wpf-和-winforms-有什么区别">
+<a class="header-anchor" href="#2-wpf-%e5%92%8c-winforms-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+2. WPF 和 WinForms 有什么区别？
+</h3><p><strong>答：</strong></p>
+        
+        <hr><p>本文2026-10-10首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-10</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>WPF面试核心70题</title>
+      <link>https://alone4869.github.io/post/wpf%E9%9D%A2%E8%AF%95%E6%A0%B8%E5%BF%8370%E9%A2%98/</link>
+      <pubDate>Sat, 10 Oct 2026 23:34:53 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/wpf%E9%9D%A2%E8%AF%95%E6%A0%B8%E5%BF%8370%E9%A2%98/</guid>
+      <description>
+        <![CDATA[<h1>WPF面试核心70题</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h2 id="wpf-面试核心-70-题">
+<a class="header-anchor" href="#wpf-%e9%9d%a2%e8%af%95%e6%a0%b8%e5%bf%83-70-%e9%a2%98"></a>
+WPF 面试核心 70 题
+</h2><h3 id="1什么是-wpfwindows-presentation-foundation它和传统-winforms-有什么区别">
+<a class="header-anchor" href="#1%e4%bb%80%e4%b9%88%e6%98%af-wpfwindows-presentation-foundation%e5%ae%83%e5%92%8c%e4%bc%a0%e7%bb%9f-winforms-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+1）什么是 WPF（Windows Presentation Foundation），它和传统 WinForms 有什么区别？
+</h3><p><strong>答案</strong>：
+WPF 是一套使用 XAML 和.NET 语言构建功能丰富桌面应用的 UI 框架。它基于 DirectX 矢量渲染引擎，支持高清图形、自适应布局、高级动画、硬件加速。
+WinForms 基于 GDI/GDI + 光栅绘图，现代 UI 能力薄弱。WPF 引入模板、样式、命令、完善的数据绑定，实现 UI 与业务逻辑分离。</p>
+        
+        <hr><p>本文2026-10-10首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-10</p>]]>
+      </description>
+      
+        <category>WPF</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>设计模式</title>
+      <link>https://alone4869.github.io/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sat, 10 Oct 2026 19:32:01 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
+      <description>
+        <![CDATA[<h1>设计模式</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h2 id="1什么是单例设计模式">
+<a class="header-anchor" href="#1%e4%bb%80%e4%b9%88%e6%98%af%e5%8d%95%e4%be%8b%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f"></a>
+1、什么是单例设计模式
 </h2><h3 id="面试简答考场口述答案">
 <a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
 ✅面试简答（考场口述答案）
-</h3><p>**内聚性（Cohesion）<strong>和</strong>耦合性（Coupling）<strong>是衡量软件模块设计质量的两个核心指标，通常遵循</strong>“高内聚、低耦合”**的设计原则。</p>
+</h3><p>单例模式保证一个类在整个应用程序生命周期中<strong>只有一个实例</strong>，并提供全局访问点。核心要点：私有构造函数、静态实例字段、线程安全的初始化方式。</p>
         
-        <hr><p>本文2026-10-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-09</p>]]>
+        <hr><p>本文2026-10-10首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-10</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>C#基础（八）</title>
+      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%85%AB/</link>
+      <pubDate>Sat, 10 Oct 2026 18:29:21 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%85%AB/</guid>
+      <description>
+        <![CDATA[<h1>C#基础（八）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h2 id="一虚方法和抽象方法的区别是什么">
+<a class="header-anchor" href="#%e4%b8%80%e8%99%9a%e6%96%b9%e6%b3%95%e5%92%8c%e6%8a%bd%e8%b1%a1%e6%96%b9%e6%b3%95%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"></a>
+一、虚方法和抽象方法的区别是什么
+</h2><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>虚方法（Virtual Method）<strong>和</strong>抽象方法（Abstract Method）<strong>都支持多态，但核心区别在于</strong>是否有默认实现</strong>以及<strong>对子类的强制力</strong>：</p>
+        
+        <hr><p>本文2026-10-10首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-10</p>]]>
       </description>
       
         <category>C#</category>
@@ -48,20 +248,89 @@
     
 
     <item>
-      <title>C#基础（三）</title>
-      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%89/</link>
-      <pubDate>Fri, 09 Oct 2026 01:07:55 &#43;0800</pubDate>
+      <title>C#基础（七）</title>
+      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%83/</link>
+      <pubDate>Sat, 10 Oct 2026 17:18:56 &#43;0800</pubDate>
       <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%89/</guid>
+      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%83/</guid>
       <description>
-        <![CDATA[<h1>C#基础（三）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        <![CDATA[<h1>C#基础（七）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          <h2 id="一gethashcode方法的用途什么是字典dictionary">
-<a class="header-anchor" href="#%e4%b8%80gethashcode%e6%96%b9%e6%b3%95%e7%9a%84%e7%94%a8%e9%80%94%e4%bb%80%e4%b9%88%e6%98%af%e5%ad%97%e5%85%b8dictionary"></a>
-一、<code>GetHashCode</code>方法的用途，什么是字典<code>Dictionary</code>
-</h2><p>在 C# 中，<code>GetHashCode()</code> 和 <code>Dictionary&lt;TKey, TValue&gt;</code> 是紧密相关的两个概念。理解它们对于编写高性能的查找逻辑至关重要。</p>
+          <h2 id="一等值运算符-和-equals方法有什么区别">
+<a class="header-anchor" href="#%e4%b8%80%e7%ad%89%e5%80%bc%e8%bf%90%e7%ae%97%e7%ac%a6-%e5%92%8c-equals%e6%96%b9%e6%b3%95%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+一、等值运算符(==) 和 Equals方法有什么区别
+</h2><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><p><code>==</code> 和 <code>Equals()</code> 的核心区别在于<strong>比较的机制</strong>和<strong>多态性</strong>：</p>
+<ol>
+<li><strong><code>==</code> (运算符)</strong>：
+<ul>
+<li>默认情况下，对于<strong>引用类型</strong>比较的是<strong>内存地址</strong>（引用是否相同）；对于<strong>值类型</strong>比较的是<strong>内容</strong>（逐位比较）。</li>
+<li>它是<strong>静态绑定</strong>的，编译时根据变量的声明类型决定调用哪个重载，不具备运行时多态性。</li>
+</ul>
+</li>
+<li><strong><code>Equals()</code> (方法)</strong>：
+<ul>
+<li>是 <code>System.Object</code> 的虚方法，默认行为与 <code>==</code> 类似（引用类型比地址，值类型比内容）。</li>
+<li>它是<strong>动态绑定</strong>的，支持<strong>运行时多态</strong>。子类可以重写 <code>Equals</code> 来定义“逻辑相等”（即内容相同即为相等，即使不是同一个对象）。</li>
+</ul>
+</li>
+<li><strong>特例</strong>：<code>string</code> 类型重写了 <code>==</code> 和 <code>Equals</code>，因此两者都用于比较字符串的<strong>内容</strong>。</li>
+</ol>
+<h3 id="深入解析">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90"></a>
+📚深入解析
+</h3><h4 id="1-行为对比表">
+<a class="header-anchor" href="#1-%e8%a1%8c%e4%b8%ba%e5%af%b9%e6%af%94%e8%a1%a8"></a>
+1. 行为对比表
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left"><code>==</code> 运算符</th>
+					<th style="text-align: left"><code>Equals()</code> 方法</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>绑定方式</strong></td>
+					<td style="text-align: left">静态绑定 (编译时确定)</td>
+					<td style="text-align: left">动态绑定 (运行时确定，虚方法)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>引用类型默认</strong></td>
+					<td style="text-align: left">比较引用地址 (Reference Equality)</td>
+					<td style="text-align: left">比较引用地址 (除非被重写)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>值类型默认</strong></td>
+					<td style="text-align: left">比较内容 (Value Equality)</td>
+					<td style="text-align: left">比较内容 (通过反射或逐位比较)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>可重载/重写</strong></td>
+					<td style="text-align: left">可以重载 (<code>operator ==</code>)</td>
+					<td style="text-align: left">可以重写 (<code>override</code>)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Null 处理</strong></td>
+					<td style="text-align: left"><code>null == null</code> 返回 <code>true</code></td>
+					<td style="text-align: left"><code>obj.Equals(null)</code> 抛出异常 (需先判空)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>String 类型</strong></td>
+					<td style="text-align: left">比较内容</td>
+					<td style="text-align: left">比较内容</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="2-引用类型的陷阱静态绑定-vs-动态绑定">
+<a class="header-anchor" href="#2-%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b%e7%9a%84%e9%99%b7%e9%98%b1%e9%9d%99%e6%80%81%e7%bb%91%e5%ae%9a-vs-%e5%8a%a8%e6%80%81%e7%bb%91%e5%ae%9a"></a>
+2. 引用类型的陷阱：静态绑定 vs 动态绑定
+</h4><p>这是面试官最喜欢考的代码题。</p>
         
-        <hr><p>本文2026-10-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-09</p>]]>
+        <hr><p>本文2026-10-10首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-10</p>]]>
       </description>
       
         <category>C#</category>
@@ -71,21 +340,160 @@
     
 
     <item>
-      <title>C#基础（二）</title>
-      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%8C/</link>
-      <pubDate>Thu, 08 Oct 2026 20:04:55 &#43;0800</pubDate>
+      <title>C#基础（六）</title>
+      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%85%AD/</link>
+      <pubDate>Sat, 10 Oct 2026 16:12:08 &#43;0800</pubDate>
       <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%8C/</guid>
+      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%85%AD/</guid>
       <description>
-        <![CDATA[<h1>C#基础（二）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        <![CDATA[<h1>C#基础（六）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          <h2 id="一-什么是解构">
-<a class="header-anchor" href="#%e4%b8%80-%e4%bb%80%e4%b9%88%e6%98%af%e8%a7%a3%e6%9e%84"></a>
-一、 什么是解构
-</h2><p><strong>解构 (Deconstruction)</strong> 是 C# 7.0 引入的一项语法特性，它允许你将一个对象的多个属性或字段“拆解”并赋值给独立的局部变量。</p>
-<p>简单来说，就是把一个“包裹”里的东西一次性拿出来，分别放到不同的盒子里。</p>
+          <h2 id="一类和结构体的区别是什么">
+<a class="header-anchor" href="#%e4%b8%80%e7%b1%bb%e5%92%8c%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"></a>
+一、类和结构体的区别是什么
+</h2><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><p>核心区别在于<strong>类型系统分类</strong>和<strong>内存模型</strong>：</p>
+<ol>
+<li><strong>类型本质</strong>：<code>class</code> 是<strong>引用类型</strong>，<code>struct</code> 是<strong>值类型</strong>。</li>
+<li><strong>内存分配</strong>：类实例分配在**堆（Heap）<strong>上，变量存引用；结构体通常分配在</strong>栈（Stack）**上（作为局部变量时）或内联在包含它的对象中，变量直接存数据。</li>
+<li><strong>赋值语义</strong>：类赋值是<strong>拷贝引用</strong>（浅拷贝），修改一个会影响另一个；结构体赋值是<strong>拷贝整个数据</strong>（深拷贝），互不影响。</li>
+<li><strong>继承性</strong>：类支持继承和多态；结构体<strong>不能继承</strong>其他类或结构体（但可实现接口）。</li>
+<li><strong>默认构造</strong>：类可以没有无参构造函数；结构体<strong>始终有一个隐式的无参构造函数</strong>（将所有字段初始化为零值），且在 C# 10 之前不能自定义无参构造。</li>
+</ol>
+<h3 id="深入解析">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90"></a>
+📚深入解析
+</h3><h4 id="1-详细对比表">
+<a class="header-anchor" href="#1-%e8%af%a6%e7%bb%86%e5%af%b9%e6%af%94%e8%a1%a8"></a>
+1. 详细对比表
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left">Class (类)</th>
+					<th style="text-align: left">Struct (结构体)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>类型</strong></td>
+					<td style="text-align: left">引用类型</td>
+					<td style="text-align: left">值类型</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>内存位置</strong></td>
+					<td style="text-align: left">堆 (Heap)</td>
+					<td style="text-align: left">栈 (Stack) / 内联</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>赋值行为</strong></td>
+					<td style="text-align: left">拷贝地址</td>
+					<td style="text-align: left">拷贝数据</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>继承</strong></td>
+					<td style="text-align: left">支持单继承</td>
+					<td style="text-align: left">不支持继承 (sealed)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>接口</strong></td>
+					<td style="text-align: left">可实现</td>
+					<td style="text-align: left">可实现</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>null 值</strong></td>
+					<td style="text-align: left">可以为 null</td>
+					<td style="text-align: left">不能为 null (除非 Nullable<!-- raw HTML omitted -->)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>析构函数</strong></td>
+					<td style="text-align: left">支持 (~ClassName)</td>
+					<td style="text-align: left"><strong>不支持</strong></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>字段初始化</strong></td>
+					<td style="text-align: left">可在声明时初始化</td>
+					<td style="text-align: left">C# 10+ 支持，旧版受限</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>性能特征</strong></td>
+					<td style="text-align: left">GC 管理，有分配开销</td>
+					<td style="text-align: left">无 GC 压力，拷贝开销随大小增加</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="2-关键陷阱与注意事项">
+<a class="header-anchor" href="#2-%e5%85%b3%e9%94%ae%e9%99%b7%e9%98%b1%e4%b8%8e%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9"></a>
+2. 关键陷阱与注意事项
+</h4><ul>
+<li><strong>可变结构体是万恶之源</strong>：由于结构体是值拷贝，如果你修改了一个从属性返回的结构体字段（如 <code>myObj.Point.X = 10;</code>），你修改的只是副本，原对象不会改变。这会导致极其隐蔽的 Bug。<strong>最佳实践：结构体应设计为不可变（Immutable）。</strong></li>
+<li><strong>装箱/拆箱开销</strong>：当结构体被当作 <code>object</code>、接口类型或调用未重写的虚方法（如 <code>ToString()</code>）时，会发生装箱。频繁装箱会抵消结构体的性能优势。</li>
+<li><strong>大小限制</strong>：微软官方建议结构体大小控制在 <strong>16 字节以内</strong>。过大的结构体在赋值、传参时的拷贝成本可能超过堆分配的开销，此时应改用 class。</li>
+<li><strong>this 的安全性</strong>：在结构体方法中，<code>this</code> 是一个值而非引用。为了防止意外修改，C# 引入了 <code>readonly struct</code> 和 <code>in</code> 参数修饰符。</li>
+</ul>
+<h4 id="3-代码示例赋值差异">
+<a class="header-anchor" href="#3-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b%e8%b5%8b%e5%80%bc%e5%b7%ae%e5%bc%82"></a>
+3. 代码示例：赋值差异
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// === Class 演示 ===</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">PersonClass</span> <span class="p">{</span> <span class="kd">public</span> <span class="kt">string</span> <span class="n">Name</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">p1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PersonClass</span> <span class="p">{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Alice&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">p2</span> <span class="p">=</span> <span class="n">p1</span><span class="p">;</span>      <span class="c1">// 拷贝引用</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Bob&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span> <span class="c1">// 输出: Bob (p1 也被修改了)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// === Struct 演示 ===</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">PointStruct</span> <span class="p">{</span> <span class="kd">public</span> <span class="kt">int</span> <span class="n">X</span><span class="p">;</span> <span class="kd">public</span> <span class="kt">int</span> <span class="n">Y</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">s1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointStruct</span> <span class="p">{</span> <span class="n">X</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">Y</span> <span class="p">=</span> <span class="m">2</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">s2</span> <span class="p">=</span> <span class="n">s1</span><span class="p">;</span>      <span class="c1">// 拷贝整个数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">s2</span><span class="p">.</span><span class="n">X</span> <span class="p">=</span> <span class="m">99</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="n">X</span><span class="p">);</span> <span class="c1">// 输出: 1 (s1 不受影响)</span>
+</span></span></code></pre></div><h4 id="4-何时使用-struct">
+<a class="header-anchor" href="#4-%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8-struct"></a>
+4. 何时使用 Struct？
+</h4><ul>
+<li>✅ 表示一个<strong>单一的值</strong>（如坐标 <code>Point</code>、颜色 <code>Color</code>、金额 <code>Money</code>）。</li>
+<li>✅ 数据量小（&lt; 16 bytes）且生命周期短。</li>
+<li>✅ 需要高性能、避免 GC 压力的场景（如图形渲染、高频交易）。</li>
+<li>✅ 与外部非托管代码交互（Interop）。</li>
+<li>❌ 不要用来建模业务实体（Entity），不要用可变结构体。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>什么是 <code>readonly struct</code>？它解决了什么问题？</strong>
+<ul>
+<li><em>考点</em>：防止结构体被意外修改；允许编译器对 <code>in</code> 参数传递进行优化（避免防御性拷贝）；保证线程安全。</li>
+</ul>
+</li>
+<li><strong><code>ref struct</code> 是什么？和普通 struct 有什么区别？</strong>
+<ul>
+<li><em>考点</em>：<code>ref struct</code> 只能存在于栈上，不能被装箱、不能作为泛型参数、不能存储在堆上（如类字段、数组元素）。典型代表：<code>Span&lt;T&gt;</code>, <code>ReadOnlySpan&lt;T&gt;</code>。用于极致性能和安全内存访问。</li>
+</ul>
+</li>
+<li><strong>结构体可以实现接口吗？实现接口时有什么需要注意的？</strong>
+<ul>
+<li><em>考点</em>：可以实现。但如果将结构体赋值给接口变量，会发生<strong>装箱</strong>。为避免装箱，应在泛型约束中使用 <code>where T : IMyInterface</code>，这样 JIT 会生成针对该结构体的特化代码，直接在栈上调用接口方法。</li>
+</ul>
+</li>
+<li><strong>C# 10 对结构体做了哪些改进？</strong>
+<ul>
+<li><em>考点</em>：允许自定义无参构造函数；允许在声明时初始化字段/属性；支持 <code>record struct</code>（不可变结构体的简洁语法）。这些改进让结构体更易用、更安全。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="二什么是分部类">
+<a class="header-anchor" href="#%e4%ba%8c%e4%bb%80%e4%b9%88%e6%98%af%e5%88%86%e9%83%a8%e7%b1%bb"></a>
+二、什么是分部类
+</h2><h3 id="面试简答考场口述答案-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-1"></a>
+✅面试简答（考场口述答案）
+</h3><p>**分部类（Partial Class）**允许将一个类、结构体或接口的定义拆分到多个文件中。在编译时，C# 编译器会将这些部分合并成一个完整的类型。</p>
         
-        <hr><p>本文2026-10-08首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-08</p>]]>
+        <hr><p>本文2026-10-10首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-10</p>]]>
       </description>
       
         <category>C#</category>
@@ -95,143 +503,26 @@
     
 
     <item>
-      <title>C#基础（一）</title>
-      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%80/</link>
-      <pubDate>Thu, 08 Oct 2026 16:06:35 &#43;0800</pubDate>
+      <title>C#基础（五）</title>
+      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%94/</link>
+      <pubDate>Sat, 10 Oct 2026 00:06:26 &#43;0800</pubDate>
       <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%80/</guid>
+      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%94/</guid>
       <description>
-        <![CDATA[<h1>C#基础（一）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        <![CDATA[<h1>C#基础（五）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          <h2 id="一-元组tuple和值元组valuetuple的区别">
-<a class="header-anchor" href="#%e4%b8%80-%e5%85%83%e7%bb%84tuple%e5%92%8c%e5%80%bc%e5%85%83%e7%bb%84valuetuple%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
-一、 元组<code>Tuple</code>和值元组<code>ValueTuple</code>的区别
-</h2><p>在 C# 中，<code>Tuple</code>（元组）和 <code>ValueTuple</code>（值元组）虽然功能相似，但在底层实现、性能表现以及语法支持上有着本质的区别。</p>
+          <h2 id="一什么是可空引用类型">
+<a class="header-anchor" href="#%e4%b8%80%e4%bb%80%e4%b9%88%e6%98%af%e5%8f%af%e7%a9%ba%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b"></a>
+一、什么是可空引用类型
+</h2><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>可空引用类型（Nullable Reference Types, NRT）</strong> 是 C# 8.0 引入的一项编译时特性，旨在从代码层面减少 <code>NullReferenceException</code>。</p>
         
-        <hr><p>本文2026-10-08首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-08</p>]]>
+        <hr><p>本文2026-10-10首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-10</p>]]>
       </description>
       
         <category>C#</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>Shell中的工具推荐</title>
-      <link>https://alone4869.github.io/post/shell%E4%B8%AD%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%88%E6%8E%A8%E8%8D%90/</link>
-      <pubDate>Thu, 09 Apr 2026 20:57:04 &#43;0800</pubDate>
-      <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/shell%E4%B8%AD%E7%9A%84%E5%B7%A5%E5%85%B7%E6%A0%88%E6%8E%A8%E8%8D%90/</guid>
-      <description>
-        <![CDATA[<h1>Shell中的工具推荐</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
-        
-          Shell中的一些工具推荐
-        
-        <hr><p>本文2026-04-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-04-09</p>]]>
-      </description>
-      
-        <category>shell</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>如何打造漂亮实用终端</title>
-      <link>https://alone4869.github.io/post/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%BC%82%E4%BA%AE%E5%AE%9E%E7%94%A8%E7%BB%88%E7%AB%AF/</link>
-      <pubDate>Wed, 08 Apr 2026 22:04:42 &#43;0800</pubDate>
-      <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0%E6%BC%82%E4%BA%AE%E5%AE%9E%E7%94%A8%E7%BB%88%E7%AB%AF/</guid>
-      <description>
-        <![CDATA[<h1>如何打造漂亮实用终端</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
-        
-          用 Ghostty × Fish × Starship × Catppuccin 的配置专属开发终端
-        
-        <hr><p>本文2026-04-08首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-04-08</p>]]>
-      </description>
-      
-        <category>shell</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>debian13的相关配置</title>
-      <link>https://alone4869.github.io/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Sun, 29 Mar 2026 18:19:33 &#43;0800</pubDate>
-      <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/debian13%E7%9A%84%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/</guid>
-      <description>
-        <![CDATA[<h1>debian13的相关配置</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
-        
-          debian13的一些重要配置
-        
-        <hr><p>本文2026-03-29首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-29</p>]]>
-      </description>
-      
-        <category>debian</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>hexo部署</title>
-      <link>https://alone4869.github.io/post/hexo%E9%83%A8%E7%BD%B2/</link>
-      <pubDate>Sun, 29 Mar 2026 03:00:00 &#43;0800</pubDate>
-      <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/hexo%E9%83%A8%E7%BD%B2/</guid>
-      <description>
-        <![CDATA[<h1>hexo部署</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
-        
-          Hexo博客框架的部署教程
-        
-        <hr><p>本文2026-03-29首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-29</p>]]>
-      </description>
-      
-        <category>hexo</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>WPF中的注意点</title>
-      <link>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/</link>
-      <pubDate>Wed, 18 Mar 2026 23:29:17 &#43;0800</pubDate>
-      <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/wpf%E4%B8%AD%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/</guid>
-      <description>
-        <![CDATA[<h1>WPF中的注意点</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
-        
-          WPF开发中的一些注意点
-        
-        <hr><p>本文2026-03-18首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-18</p>]]>
-      </description>
-      
-        <category>WPF</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>依赖属性和附加属性</title>
-      <link>https://alone4869.github.io/post/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A7%E5%92%8C%E9%99%84%E5%8A%A0%E5%B1%9E%E6%80%A7/</link>
-      <pubDate>Mon, 09 Mar 2026 15:09:17 &#43;0800</pubDate>
-      <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/%E4%BE%9D%E8%B5%96%E5%B1%9E%E6%80%A7%E5%92%8C%E9%99%84%E5%8A%A0%E5%B1%9E%E6%80%A7/</guid>
-      <description>
-        <![CDATA[<h1>依赖属性和附加属性</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
-        
-          详解WPF中依赖属性和附加属性的区别，介绍注册方法、访问方式、XAML用法及典型使用场景。
-        
-        <hr><p>本文2026-03-09首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-03-09</p>]]>
-      </description>
-      
-        <category>WPF</category>
       
     </item>
     

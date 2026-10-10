@@ -1,0 +1,1392 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  C#基础（八） | Alone4869
+</title>
+<meta name="description" content="无量天尊"/><script>
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "true");
+</script><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://alone4869.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"English\",\"Locale\":\"\"},{\"Lang\":\"ja\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"日本語\",\"Locale\":\"\"},{\"Lang\":\"zh-cn\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"简体中文\",\"Locale\":\"zh-CN\"},{\"Lang\":\"zh-tw\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"繁體中文\",\"Locale\":\"\"}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="C#基础（八） | Alone4869" />
+  <meta
+    property="og:description"
+    content="无量天尊"
+  />
+  <meta property="og:url" content="https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%85%AB/" />
+  <meta
+    property="og:site_name"
+    content="知否"
+  />
+  <meta property="og:image" content="https://alone4869.github.io/images/banner.webp" />
+  <meta property="article:author" content="Alone4869" />
+  <meta property="article:published_time" content="2026-10-10T18:29:21&#43;08:00" />
+  <meta property="article:modified_time" content="2026-10-10T18:29:21&#43;08:00" /><meta property="article:tag" content="C#" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://alone4869.github.io/images/banner.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.18b6dbee5e1b382f80c8c0cdf5f79d28d7139a30edcf474f45fab80da506432e.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages"><li data-value="en" role="option" aria-selected="false" >English</li><li data-value="ja" role="option" aria-selected="false" >日本語</li><li data-value="zh-cn" role="option" class="selected" aria-selected="true" >简体中文</li><li data-value="zh-tw" role="option" aria-selected="false" >繁體中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+          var expanded = selectSelected.getAttribute("aria-expanded") === "true";
+          selectSelected.setAttribute("aria-expanded", (!expanded).toString());
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+            selectSelected.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </nav><a href="https://github.com/alone4869/alone4869.github.io" class="triangle-badge" title="github" target="_blank" rel="noopener nofollow noreferrer">
+      <div class="icon icon-github triangle-badge-icon"></div>
+    </a></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="C#基础（八）"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">C#基础（八）</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一虚方法和抽象方法的区别是什么">一、虚方法和抽象方法的区别是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#二什么是方法重载">二、什么是方法重载</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-1">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-1">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-1">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三方法重写和方法隐藏的区别是什么">三、方法重写和方法隐藏的区别是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-2">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-2">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-2">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四c-是否支持多重继承">四、C# 是否支持多重继承</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-3">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-3">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-3">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#五为什么使用goto关键字被认为是不良实践">五、为什么使用goto关键字被认为是不良实践</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-4">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-4">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-4">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#六solid中的solid分别是什么">六、SOLID中的S、O、L、I、D分别是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-5">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析与-c-示例">📚深入解析与 C# 示例</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-5">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">29</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">17</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-10-10 18:29:21 &#43;0800 &#43;0800" itemprop="datePublished"
+      >2026-10-10</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-10-10</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="一虚方法和抽象方法的区别是什么">
+<a class="header-anchor" href="#%e4%b8%80%e8%99%9a%e6%96%b9%e6%b3%95%e5%92%8c%e6%8a%bd%e8%b1%a1%e6%96%b9%e6%b3%95%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"></a>
+一、虚方法和抽象方法的区别是什么
+</h2><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>虚方法（Virtual Method）<strong>和</strong>抽象方法（Abstract Method）<strong>都支持多态，但核心区别在于</strong>是否有默认实现</strong>以及<strong>对子类的强制力</strong>：</p>
+<ol>
+<li><strong>实现体</strong>：
+<ul>
+<li><strong>虚方法</strong>：<strong>有</strong>具体的方法体（实现逻辑）。子类可以选择重写（<code>override</code>），也可以直接继承使用基类的默认逻辑。</li>
+<li><strong>抽象方法</strong>：<strong>没有</strong>方法体（只有签名）。子类<strong>必须</strong>重写（<code>override</code>）该方法，否则子类也必须声明为抽象类。</li>
+</ul>
+</li>
+<li><strong>所属类</strong>：
+<ul>
+<li><strong>虚方法</strong>：可以存在于普通类或抽象类中。</li>
+<li><strong>抽象方法</strong>：只能存在于<strong>抽象类</strong>（<code>abstract class</code>）中。</li>
+</ul>
+</li>
+<li><strong>设计意图</strong>：
+<ul>
+<li><strong>虚方法</strong>：提供“默认行为”，允许子类按需扩展或修改（Template Method 模式常用）。</li>
+<li><strong>抽象方法</strong>：定义“强制契约”，要求所有子类必须具备某种能力，但具体实现由子类决定。</li>
+</ul>
+</li>
+</ol>
+<h3 id="深入解析">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90"></a>
+📚深入解析
+</h3><h4 id="1-语法与行为对比">
+<a class="header-anchor" href="#1-%e8%af%ad%e6%b3%95%e4%b8%8e%e8%a1%8c%e4%b8%ba%e5%af%b9%e6%af%94"></a>
+1. 语法与行为对比
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left">虚方法 (<code>virtual</code>)</th>
+					<th style="text-align: left">抽象方法 (<code>abstract</code>)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>关键字</strong></td>
+					<td style="text-align: left"><code>virtual</code></td>
+					<td style="text-align: left"><code>abstract</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>方法体</strong></td>
+					<td style="text-align: left">✅ 必须有 <code>{ ... }</code></td>
+					<td style="text-align: left">❌ 不能有 <code>{ ... }</code>，以分号结尾</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>子类义务</strong></td>
+					<td style="text-align: left">可选重写 (<code>override</code>)</td>
+					<td style="text-align: left"><strong>必须</strong>重写 (<code>override</code>)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>所在类</strong></td>
+					<td style="text-align: left">普通类 或 抽象类</td>
+					<td style="text-align: left">仅限 <strong>抽象类</strong></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>访问修饰符</strong></td>
+					<td style="text-align: left">可以是 private (无意义), protected, public 等</td>
+					<td style="text-align: left">不能是 private (因为子类必须能访问并重写)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>性能</strong></td>
+					<td style="text-align: left">虚调用开销 (V-Table)</td>
+					<td style="text-align: left">虚调用开销 (V-Table)，无额外差异</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="2-代码示例">
+<a class="header-anchor" href="#2-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b"></a>
+2. 代码示例
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 抽象类</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">abstract</span> <span class="k">class</span> <span class="nc">Shape</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 1. 抽象方法：强制子类实现计算面积的逻辑</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kt">double</span> <span class="n">CalculateArea</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 2. 虚方法：提供默认的显示逻辑，子类可以选择不重写</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="n">DisplayInfo</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;This is a shape with area: {CalculateArea()}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">Shape</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">double</span> <span class="n">Radius</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ✅ 必须实现抽象方法</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="kt">double</span> <span class="n">CalculateArea</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">*</span> <span class="n">Radius</span> <span class="p">*</span> <span class="n">Radius</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ⭕ 可选：如果不重写，直接继承 Shape 的 DisplayInfo</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 如果想自定义显示方式，可以重写：</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">DisplayInfo</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Circle Area: {CalculateArea()}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="3-底层原理">
+<a class="header-anchor" href="#3-%e5%ba%95%e5%b1%82%e5%8e%9f%e7%90%86"></a>
+3. 底层原理
+</h4><ul>
+<li><strong>相同点</strong>：在 IL（中间语言）层面，两者都被标记为 <code>virtual</code>。这意味着它们在运行时都通过**虚方法表（V-Table）**进行动态绑定。</li>
+<li><strong>不同点</strong>：抽象方法在元数据中被标记为 <code>abstract</code>，编译器会强制检查继承链，确保非抽象子类提供了实现。如果子类漏掉了抽象方法的重写，编译直接报错。</li>
+</ul>
+<h4 id="4-设计模式中的应用">
+<a class="header-anchor" href="#4-%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f%e4%b8%ad%e7%9a%84%e5%ba%94%e7%94%a8"></a>
+4. 设计模式中的应用
+</h4><ul>
+<li><strong>模板方法模式（Template Method）</strong>：通常结合使用。
+<ul>
+<li>基类定义一个算法骨架（普通方法或虚方法）。</li>
+<li>其中的某些步骤定义为<strong>抽象方法</strong>（强制子类实现核心差异）。</li>
+<li>另一些步骤定义为<strong>虚方法</strong>（提供默认钩子，子类可选覆盖）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>抽象方法可以是 <code>private</code> 吗？</strong>
+<ul>
+<li><em>考点</em>：<strong>不可以</strong>。因为抽象方法的目的是让子类重写，<code>private</code> 成员对子类不可见，这会导致逻辑矛盾。编译器会报错。</li>
+</ul>
+</li>
+<li><strong>虚方法可以是 <code>private</code> 吗？</strong>
+<ul>
+<li><em>考点</em>：语法上可以，但<strong>没有意义</strong>。因为 <code>private</code> 方法不能在类外部访问，子类也无法看到它，自然无法 <code>override</code>。所以 <code>private virtual</code> 实际上退化成了普通的 <code>private</code> 方法。</li>
+</ul>
+</li>
+<li><strong>如果基类有一个虚方法，子类重写了它，孙类还能再重写吗？</strong>
+<ul>
+<li><em>考点</em>：可以。只要子类使用了 <code>override</code>，该方法在孙类眼中依然是一个虚方法，可以继续被 <code>override</code>。如果子类使用 <code>new</code> 隐藏了该方法，则断开了多态链，孙类无法再基于基类引用实现多态。</li>
+</ul>
+</li>
+<li><strong>接口中的方法默认是抽象的吗？</strong>
+<ul>
+<li><em>考点</em>：在 C# 8.0 之前，接口方法隐式是 <code>public abstract</code> 的（不能有实现）。C# 8.0+ 引入了默认接口实现，此时接口方法可以有身体，但它不再是传统意义上的“抽象方法”，而更像是一种带有默认行为的虚方法（但不能包含状态）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="二什么是方法重载">
+<a class="header-anchor" href="#%e4%ba%8c%e4%bb%80%e4%b9%88%e6%98%af%e6%96%b9%e6%b3%95%e9%87%8d%e8%bd%bd"></a>
+二、什么是方法重载
+</h2><h3 id="面试简答考场口述答案-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-1"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>方法重载（Method Overloading）<strong>是指在同一个类中，定义多个</strong>名称相同</strong>但<strong>参数列表不同</strong>的方法。</p>
+<ul>
+<li><strong>核心规则</strong>：
+<ol>
+<li><strong>方法名必须相同</strong>。</li>
+<li><strong>参数列表必须不同</strong>：参数的个数、类型或顺序至少有一项不同。</li>
+<li><strong>返回值类型可以不同</strong>，但不能仅靠返回值不同来区分重载。</li>
+</ol>
+</li>
+<li><strong>本质</strong>：属于<strong>编译时多态</strong>（静态多态）。编译器在编译阶段根据调用时传入的参数类型和数量，确定具体调用哪个方法。</li>
+<li><strong>目的</strong>：提供统一的接口名称，简化调用者的记忆负担，提高代码可读性（例如 <code>Console.WriteLine</code> 可以打印 int, string, double 等）。</li>
+</ul>
+<h3 id="深入解析-1">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-1"></a>
+📚深入解析
+</h3><h4 id="1-合法的重载示例">
+<a class="header-anchor" href="#1-%e5%90%88%e6%b3%95%e7%9a%84%e9%87%8d%e8%bd%bd%e7%a4%ba%e4%be%8b"></a>
+1. 合法的重载示例
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Calculator</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 1. 参数个数不同</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">c</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span> <span class="p">+</span> <span class="n">c</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 2. 参数类型不同</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">double</span> <span class="n">Add</span><span class="p">(</span><span class="kt">double</span> <span class="n">a</span><span class="p">,</span> <span class="kt">double</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 3. 参数顺序不同（通常不建议，易混淆）</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Process</span><span class="p">(</span><span class="kt">string</span> <span class="n">name</span><span class="p">,</span> <span class="kt">int</span> <span class="n">id</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Process</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">,</span> <span class="kt">string</span> <span class="n">name</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="2-非法的重载编译错误">
+<a class="header-anchor" href="#2-%e9%9d%9e%e6%b3%95%e7%9a%84%e9%87%8d%e8%bd%bd%e7%bc%96%e8%af%91%e9%94%99%e8%af%af"></a>
+2. 非法的重载（编译错误）
+</h4><ul>
+<li>
+<p><strong>仅返回值不同</strong>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">int</span> <span class="n">GetId</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="m">1</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">string</span> <span class="n">GetId</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&#34;1&#34;</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// ❌ CS0111: 已经定义了具有相同参数类型的成员</span>
+</span></span></code></pre></div><p><em>原因</em>：调用 <code>GetId()</code> 时，编译器无法确定你想要哪个结果，除非你显式指定接收变量的类型，但这不符合 C# 的解析规则。</p>
+</li>
+<li>
+<p><strong>仅参数名称不同</strong>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Show</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Show</span><span class="p">(</span><span class="kt">int</span> <span class="n">count</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span> <span class="c1">// ❌ 参数名不影响签名</span>
+</span></span></code></pre></div></li>
+<li>
+<p><strong>仅 ref/out 修饰符不同</strong>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Test</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Test</span><span class="p">(</span><span class="k">ref</span> <span class="kt">int</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="p">}</span> <span class="c1">// ❌ CS0663: &#39;ref&#39; 和 &#39;out&#39; 不能用于区分重载</span>
+</span></span></code></pre></div><p><em>注意</em>：虽然 <code>ref</code> 和 <code>out</code> 本身不能区分，但如果一个有 <code>ref</code> 另一个没有，且类型不同，是可以的。但单纯 <code>ref int</code> vs <code>int</code> 是不行的，因为它们在元数据签名中被视为相同。<em>(更正：实际上 <code>ref</code> 和 <code>out</code> 在签名中是有区别的，但 C# 规范规定不能仅凭 <code>ref</code>/<code>out</code> 或 <code>params</code> 来区分重载，除非结合其他差异。最典型的禁止是：<code>void M(int a)</code> 和 <code>void M(ref int a)</code> 是不能共存的)</em>。</p>
+</li>
+</ul>
+<h4 id="3-编译器如何解析重载">
+<a class="header-anchor" href="#3-%e7%bc%96%e8%af%91%e5%99%a8%e5%a6%82%e4%bd%95%e8%a7%a3%e6%9e%90%e9%87%8d%e8%bd%bd"></a>
+3. 编译器如何解析重载？
+</h4><p>当你调用一个重载方法时，C# 编译器遵循以下优先级：</p>
+<ol>
+<li><strong>精确匹配</strong>：寻找参数类型完全一致的方法。</li>
+<li><strong>隐式转换匹配</strong>：如果没有精确匹配，寻找可以通过隐式转换（如 <code>int</code> -&gt; <code>long</code>，<code>int</code> -&gt; <code>double</code>）匹配的方法。</li>
+<li><strong>装箱匹配</strong>：如果还没找到，考虑将值类型装箱为 <code>object</code> 或接口。</li>
+<li><strong>Params 匹配</strong>：最后考虑带有 <code>params</code> 数组的方法。</li>
+</ol>
+<p><strong>陷阱</strong>：如果有多个方法都可以通过隐式转换匹配，编译器可能会报“歧义调用”错误（CS0121）。</p>
+<h4 id="4-重载-vs-重写overriding">
+<a class="header-anchor" href="#4-%e9%87%8d%e8%bd%bd-vs-%e9%87%8d%e5%86%99overriding"></a>
+4. 重载 vs 重写（Overriding）
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left">重载 (Overloading)</th>
+					<th style="text-align: left">重写 (Overriding)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>范围</strong></td>
+					<td style="text-align: left">同一个类内部</td>
+					<td style="text-align: left">基类与子类之间</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>多态类型</strong></td>
+					<td style="text-align: left">编译时多态（静态）</td>
+					<td style="text-align: left">运行时多态（动态）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>方法名</strong></td>
+					<td style="text-align: left">必须相同</td>
+					<td style="text-align: left">必须相同</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>参数列表</strong></td>
+					<td style="text-align: left"><strong>必须不同</strong></td>
+					<td style="text-align: left"><strong>必须相同</strong></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>返回值</strong></td>
+					<td style="text-align: left">可以不同</td>
+					<td style="text-align: left">必须相同（或协变返回类型）</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>关键字</strong></td>
+					<td style="text-align: left">无特殊关键字</td>
+					<td style="text-align: left"><code>virtual</code>, <code>override</code></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="面试延伸追问预判面试官后续提问-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-1"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>构造函数可以重载吗？</strong>
+<ul>
+<li><em>考点</em>：<strong>可以</strong>。这是最常见的重载场景。通过提供不同参数的构造函数，方便调用者以不同方式初始化对象（如默认构造、全参构造、拷贝构造）。</li>
+</ul>
+</li>
+<li><strong>为什么 C# 不允许仅通过返回值类型来区分重载？</strong>
+<ul>
+<li><em>考点</em>：因为在很多情况下，调用者会忽略返回值（如 <code>obj.Method();</code>）。如果此时有两个同名同参但返回值不同的方法，编译器无法判断该调用哪一个。此外，这也增加了语言解析的复杂性。</li>
+</ul>
+</li>
+<li><strong>泛型方法可以重载吗？</strong>
+<ul>
+<li><em>考点</em>：可以。例如 <code>void Do&lt;T&gt;(T item)</code> 和 <code>void Do(int item)</code> 是合法的重载。编译器会根据类型推断优先匹配非泛型版本（如果存在精确匹配）。</li>
+</ul>
+</li>
+<li><strong>什么是“隐藏”（Hiding）？它和重载有什么区别？</strong>
+<ul>
+<li><em>考点</em>：隐藏发生在父子类之间，子类定义了与基类同名同参的方法（使用 <code>new</code> 关键字）。重载发生在同类内部，参数列表不同。隐藏是静态绑定，重载也是静态绑定，但应用场景完全不同。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="三方法重写和方法隐藏的区别是什么">
+<a class="header-anchor" href="#%e4%b8%89%e6%96%b9%e6%b3%95%e9%87%8d%e5%86%99%e5%92%8c%e6%96%b9%e6%b3%95%e9%9a%90%e8%97%8f%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"></a>
+三、方法重写和方法隐藏的区别是什么
+</h2><h3 id="面试简答考场口述答案-2">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-2"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>方法重写（Overriding）<strong>和</strong>方法隐藏（Hiding/Shadowing）<strong>都涉及子类定义与基类同名的方法，但核心区别在于</strong>多态性</strong>和<strong>绑定机制</strong>：</p>
+<ol>
+<li><strong>多态性</strong>：
+<ul>
+<li><strong>重写 (<code>override</code>)</strong>：支持<strong>运行时多态</strong>。通过基类引用调用方法时，会根据对象的<strong>实际类型</strong>执行子类的方法。</li>
+<li><strong>隐藏 (<code>new</code>)</strong>：<strong>不支持</strong>多态。通过基类引用调用方法时，始终执行<strong>基类</strong>的方法；只有通过子类引用调用时，才执行子类的方法。</li>
+</ul>
+</li>
+<li><strong>关键字与前提</strong>：
+<ul>
+<li><strong>重写</strong>：基类方法必须标记为 <code>virtual</code>、<code>abstract</code> 或 <code>override</code>；子类使用 <code>override</code>。</li>
+<li><strong>隐藏</strong>：基类方法可以是任何非虚方法；子类使用 <code>new</code>（如果不写，编译器会报警告，建议显式加上）。</li>
+</ul>
+</li>
+<li><strong>绑定时间</strong>：
+<ul>
+<li><strong>重写</strong>：<strong>动态绑定</strong>（运行时决定）。</li>
+<li><strong>隐藏</strong>：<strong>静态绑定</strong>（编译时根据变量声明类型决定）。</li>
+</ul>
+</li>
+</ol>
+<h3 id="深入解析-2">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-2"></a>
+📚深入解析
+</h3><h4 id="1-代码对比示例">
+<a class="header-anchor" href="#1-%e4%bb%a3%e7%a0%81%e5%af%b9%e6%af%94%e7%a4%ba%e4%be%8b"></a>
+1. 代码对比示例
+</h4><p>这是面试中最经典的考点，请务必理解输出结果的原因。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Base</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="n">ShowVirtual</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Base Virtual&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">ShowNormal</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Base Normal&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Derived</span> <span class="p">:</span> <span class="n">Base</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 1. 重写：替换基类的虚方法实现</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">ShowVirtual</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Derived Override&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 2. 隐藏：定义一个新的同名方法，切断与基类的联系</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">new</span> <span class="k">void</span> <span class="n">ShowNormal</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Derived New&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 测试代码</span>
+</span></span><span class="line"><span class="cl"><span class="n">Base</span> <span class="n">b</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Derived</span><span class="p">();</span> <span class="c1">// 基类引用指向子类对象</span>
+</span></span><span class="line"><span class="cl"><span class="n">Derived</span> <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Derived</span><span class="p">();</span> <span class="c1">// 子类引用指向子类对象</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// === 重写行为 (多态) ===</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">.</span><span class="n">ShowVirtual</span><span class="p">();</span> <span class="c1">// 输出: &#34;Derived Override&#34; (看实际对象类型)</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="p">.</span><span class="n">ShowVirtual</span><span class="p">();</span> <span class="c1">// 输出: &#34;Derived Override&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// === 隐藏行为 (非多态) ===</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">.</span><span class="n">ShowNormal</span><span class="p">();</span>  <span class="c1">// 输出: &#34;Base Normal&#34;   (看变量声明类型 Base)</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="p">.</span><span class="n">ShowNormal</span><span class="p">();</span>  <span class="c1">// 输出: &#34;Derived New&#34;    (看变量声明类型 Derived)</span>
+</span></span></code></pre></div><h4 id="2-底层原理v-table-vs-静态解析">
+<a class="header-anchor" href="#2-%e5%ba%95%e5%b1%82%e5%8e%9f%e7%90%86v-table-vs-%e9%9d%99%e6%80%81%e8%a7%a3%e6%9e%90"></a>
+2. 底层原理：V-Table vs 静态解析
+</h4><ul>
+<li>
+<p><strong>重写 (<code>override</code>)</strong>：</p>
+<ul>
+<li>基类和子类的虚方法表（V-Table）中，该方法的槽位指向的是<strong>同一个最终实现</strong>（即子类的方法）。</li>
+<li>无论你把对象转换成什么基类接口，只要调用的是虚方法，CLR 都会去 V-Table 里找最新的那个地址。</li>
+</ul>
+</li>
+<li>
+<p><strong>隐藏 (<code>new</code>)</strong>：</p>
+<ul>
+<li>这在内存中是两个完全独立的方法。</li>
+<li>编译器在编译 <code>b.ShowNormal()</code> 时，发现 <code>b</code> 的类型是 <code>Base</code>，于是直接生成调用 <code>Base.ShowNormal()</code> 的指令。它根本不在乎 <code>b</code> 实际上是不是 <code>Derived</code> 对象。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-为什么需要隐藏">
+<a class="header-anchor" href="#3-%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81%e9%9a%90%e8%97%8f"></a>
+3. 为什么需要“隐藏”？
+</h4><p>既然隐藏破坏了多态，为什么 C# 还允许它？主要为了<strong>版本控制兼容性</strong>：</p>
+<ul>
+<li><strong>场景</strong>：你发布了一个库 <code>Library v1.0</code>，里面有个类 <code>MyClass</code> 没有 <code>Process()</code> 方法。用户继承 <code>MyClass</code> 写了自己的 <code>Process()</code>。</li>
+<li><strong>升级</strong>：你在 <code>Library v2.0</code> 中给 <code>MyClass</code> 添加了一个新的 <code>Process()</code> 方法。</li>
+<li><strong>问题</strong>：如果没有“隐藏”机制，用户的子类会因为突然多出一个同名方法而报错或行为不可控。</li>
+<li><strong>解决</strong>：C# 允许用户的子类方法自动“隐藏”基类的新方法（虽然会报警告），保证用户的代码在升级库后依然能编译通过，且保持原有逻辑不变。</li>
+</ul>
+<h4 id="4-最佳实践">
+<a class="header-anchor" href="#4-%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5"></a>
+4. 最佳实践
+</h4><ul>
+<li><strong>优先使用重写</strong>：在设计框架或基类时，如果希望子类能改变行为，务必将方法设为 <code>virtual</code>。</li>
+<li><strong>谨慎使用隐藏</strong>：除非是为了处理第三方库的版本冲突，否则不要主动使用 <code>new</code> 来隐藏基类成员。这会使得代码逻辑变得晦涩难懂，违背面向对象的多态初衷。</li>
+<li><strong>消除警告</strong>：如果你确实需要隐藏，请显式加上 <code>new</code> 关键字，告诉编译器“我是故意的”，从而消除 CS0108 警告。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-2">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-2"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>如果基类方法是 <code>private</code>，子类能重写或隐藏它吗？</strong>
+<ul>
+<li><em>考点</em>：
+<ul>
+<li><strong>不能重写</strong>：<code>private</code> 方法对子类不可见，无法 <code>override</code>。</li>
+<li><strong>可以隐藏</strong>：子类可以定义一个同名的 <code>public</code> 方法，但这只是巧合的名字相同，两者没有任何关系，不属于严格意义上的“隐藏基类成员”，因为基类成员压根不在作用域内。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong><code>override</code> 可以改变方法的访问修饰符吗？</strong>
+<ul>
+<li><em>考点</em>：<strong>不可以</strong>。重写方法必须保持与基类虚方法相同的访问级别（如基类是 <code>public virtual</code>，子类必须是 <code>public override</code>）。</li>
+</ul>
+</li>
+<li><strong>什么是“协变返回类型”（Covariant Return Types）？C# 支持吗？</strong>
+<ul>
+<li><em>考点</em>：指子类重写方法时，返回值类型可以是基类方法返回值类型的子类。C# 5.0+ 开始支持这一特性（主要针对泛型接口和委托，以及后来的记录类型等），但在普通类方法重写中，通常要求返回类型严格一致或使用兼容的类型。</li>
+</ul>
+</li>
+<li><strong>如果在构造函数中调用虚方法，会发生什么？</strong>
+<ul>
+<li><em>考点</em>：这是一个经典陷阱。在基类构造函数中调用虚方法时，如果该方法被子类重写了，<strong>会调用子类的重写版本</strong>。但此时子类的字段可能还未初始化，导致空指针异常或逻辑错误。因此，<strong>严禁在构造函数中调用虚方法</strong>。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="四c-是否支持多重继承">
+<a class="header-anchor" href="#%e5%9b%9bc-%e6%98%af%e5%90%a6%e6%94%af%e6%8c%81%e5%a4%9a%e9%87%8d%e7%bb%a7%e6%89%bf"></a>
+四、C# 是否支持多重继承
+</h2><h3 id="面试简答考场口述答案-3">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-3"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>C# 不支持类的多重继承，但支持接口的多重实现。</strong></p>
+<ul>
+<li><strong>类（Class）</strong>：只能继承<strong>一个</strong>基类（单继承）。这是为了避免“菱形继承问题”（Diamond Problem）带来的状态冲突和内存布局复杂性。</li>
+<li><strong>接口（Interface）</strong>：可以实现<strong>多个</strong>接口。因为接口只定义行为契约，不包含实例字段（状态），所以不存在内存布局冲突。</li>
+<li><strong>替代方案</strong>：如果需要复用多个类的功能，应使用<strong>组合（Composition）</strong>、<strong>接口 + 默认实现（C# 8.0+）<strong>或</strong>Mixin 模式</strong>。</li>
+</ul>
+<h3 id="深入解析-3">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-3"></a>
+📚深入解析
+</h3><h4 id="1-为什么禁止类的多重继承">
+<a class="header-anchor" href="#1-%e4%b8%ba%e4%bb%80%e4%b9%88%e7%a6%81%e6%ad%a2%e7%b1%bb%e7%9a%84%e5%a4%9a%e9%87%8d%e7%bb%a7%e6%89%bf"></a>
+1. 为什么禁止类的多重继承？
+</h4><p>核心原因是<strong>菱形继承问题（Diamond Problem）</strong>：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">      A
+</span></span><span class="line"><span class="cl">     / \
+</span></span><span class="line"><span class="cl">    B   C
+</span></span><span class="line"><span class="cl">     \ /
+</span></span><span class="line"><span class="cl">      D
+</span></span></code></pre></div><p>如果 <code>B</code> 和 <code>C</code> 都继承自 <code>A</code>，且都重写了 <code>A.Method()</code>，那么当 <code>D</code> 继承 <code>B</code> 和 <code>C</code> 时：</p>
+<ul>
+<li><code>D</code> 应该调用哪个版本的 <code>Method()</code>？</li>
+<li><code>A</code> 中的字段应该在 <code>D</code> 的内存中存在一份还是两份？</li>
+</ul>
+<p>C++ 通过虚继承等复杂机制解决了这个问题，但代价是语法复杂、性能开销大。C# 设计者认为这种复杂性得不偿失，因此选择了<strong>单继承 + 多接口</strong>的模型，既保证了安全性，又提供了足够的灵活性。</p>
+<h4 id="2-接口多重实现的安全性">
+<a class="header-anchor" href="#2-%e6%8e%a5%e5%8f%a3%e5%a4%9a%e9%87%8d%e5%ae%9e%e7%8e%b0%e7%9a%84%e5%ae%89%e5%85%a8%e6%80%a7"></a>
+2. 接口多重实现的安全性
+</h4><p>接口不包含实例字段（C# 8.0+ 的静态字段除外），只包含方法签名。因此：</p>
+<ul>
+<li>没有状态冲突：多个接口不会争夺同一块内存。</li>
+<li>没有构造函数链问题：接口没有构造函数。</li>
+<li>编译器可以简单地合并多个接口的方法分发表。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IFlyable</span> <span class="p">{</span> <span class="k">void</span> <span class="n">Fly</span><span class="p">();</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">ISwimmable</span> <span class="p">{</span> <span class="k">void</span> <span class="n">Swim</span><span class="p">();</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ✅ 合法：同时具备飞行和游泳能力</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Duck</span> <span class="p">:</span> <span class="n">Animal</span><span class="p">,</span> <span class="n">IFlyable</span><span class="p">,</span> <span class="n">ISwimmable</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Fly</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Swim</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="3-c-80-默认接口实现的局限">
+<a class="header-anchor" href="#3-c-80-%e9%bb%98%e8%ae%a4%e6%8e%a5%e5%8f%a3%e5%ae%9e%e7%8e%b0%e7%9a%84%e5%b1%80%e9%99%90"></a>
+3. C# 8.0+ 默认接口实现的局限
+</h4><p>虽然 C# 8.0 允许接口包含方法体（Default Interface Methods），但它<strong>依然不能拥有实例字段</strong>。这意味着：</p>
+<ul>
+<li>默认实现不能依赖对象状态。</li>
+<li>它不是真正的“多重继承”，而是一种“带默认行为的契约”。</li>
+<li>如果两个接口有同名默认方法且类未显式实现，会产生歧义，必须通过显式接口实现来解决。</li>
+</ul>
+<h4 id="4-如何实现类似多重继承的效果">
+<a class="header-anchor" href="#4-%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e7%b1%bb%e4%bc%bc%e5%a4%9a%e9%87%8d%e7%bb%a7%e6%89%bf%e7%9a%84%e6%95%88%e6%9e%9c"></a>
+4. 如何实现类似多重继承的效果？
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">方案</th>
+					<th style="text-align: left">适用场景</th>
+					<th style="text-align: left">示例</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>组合 (Composition)</strong></td>
+					<td style="text-align: left">需要复用多个类的完整功能</td>
+					<td style="text-align: left"><code>class Car { Engine engine; Wheel[] wheels; }</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>接口 + 扩展方法</strong></td>
+					<td style="text-align: left">为多个不相关类添加相同行为</td>
+					<td style="text-align: left"><code>static void Log(this ILogger logger, ...)</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Mixin 模式</strong></td>
+					<td style="text-align: left">模拟多重继承的行为组合</td>
+					<td style="text-align: left">通过接口 + 默认实现 + 辅助类实现</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Source Generators</strong></td>
+					<td style="text-align: left">编译时代码生成，自动注入 boilerplate 代码</td>
+					<td style="text-align: left">.NET 6+ 高性能场景</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="面试延伸追问预判面试官后续提问-3">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-3"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>什么是菱形继承问题？C++ 是如何解决的？</strong>
+<ul>
+<li><em>考点</em>：对比语言设计哲学。C++ 使用虚继承（<code>virtual inheritance</code>）确保基类子对象只存在一份，但这增加了对象大小和构造复杂度。C# 直接规避了这个问题。</li>
+</ul>
+</li>
+<li><strong>如果一个类实现了两个接口，且这两个接口有同名的默认方法，会发生什么？</strong>
+<ul>
+<li><em>考点</em>：编译器会报错（CS8705），要求类必须显式实现该方法以消除歧义。这证明了默认接口实现并非无缝的多重继承。</li>
+</ul>
+</li>
+<li><strong>为什么 C# 选择“组合优于继承”作为设计原则？</strong>
+<ul>
+<li><em>考点</em>：继承导致强耦合，基类修改可能破坏所有子类（脆弱基类问题）。组合通过委托实现功能复用，更灵活、更易测试、更符合开闭原则。</li>
+</ul>
+</li>
+<li><strong>抽象类可以实现接口吗？如果可以，它必须实现接口的所有成员吗？</strong>
+<ul>
+<li><em>考点</em>：可以。抽象类可以选择性地实现接口成员，未实现的成员会自动成为抽象类的抽象成员，由具体子类负责实现。这提供了一种“部分实现接口”的模板机制。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="五为什么使用goto关键字被认为是不良实践">
+<a class="header-anchor" href="#%e4%ba%94%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bd%bf%e7%94%a8goto%e5%85%b3%e9%94%ae%e5%ad%97%e8%a2%ab%e8%ae%a4%e4%b8%ba%e6%98%af%e4%b8%8d%e8%89%af%e5%ae%9e%e8%b7%b5"></a>
+五、为什么使用goto关键字被认为是不良实践
+</h2><h3 id="面试简答考场口述答案-4">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-4"></a>
+✅面试简答（考场口述答案）
+</h3><p>在 C# 和现代软件开发中，<code>goto</code> 被认为是不佳实践，主要原因是它破坏了<strong>结构化编程</strong>的原则，导致代码出现“面条式代码”（Spaghetti Code）。</p>
+<ol>
+<li><strong>可读性差</strong>：<code>goto</code> 允许程序流随意跳转，使得逻辑执行顺序变得非线性且难以追踪，增加了阅读和维护代码的难度。</li>
+<li><strong>维护困难</strong>：随着代码量增加，随意的跳转会引入复杂的依赖关系，修改一处逻辑可能导致意想不到的副作用，极易引入 Bug。</li>
+<li><strong>有更好的替代方案</strong>：C# 提供了丰富的结构化控制流语句（如 <code>if-else</code>, <code>for</code>, <code>while</code>, <code>break</code>, <code>continue</code>, <code>return</code>, <code>try-catch</code>），这些语句能更清晰、更安全地表达相同的逻辑。</li>
+</ol>
+<p><strong>例外情况</strong>：在极少数性能极度敏感的场景或深层嵌套循环退出时，部分开发者可能会谨慎使用 <code>goto</code>，但这通常被视为一种“妥协”而非推荐做法。</p>
+<h3 id="深入解析-4">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-4"></a>
+📚深入解析
+</h3><h4 id="1-历史背景与结构化编程">
+<a class="header-anchor" href="#1-%e5%8e%86%e5%8f%b2%e8%83%8c%e6%99%af%e4%b8%8e%e7%bb%93%e6%9e%84%e5%8c%96%e7%bc%96%e7%a8%8b"></a>
+1. 历史背景与结构化编程
+</h4><ul>
+<li><strong>Dijkstra 的批评</strong>：1968年，计算机科学家 Edsger Dijkstra 发表了著名论文《Go To Statement Considered Harmful》，指出 <code>goto</code> 会导致程序逻辑混乱，难以进行形式化验证和调试。</li>
+<li><strong>结构化编程</strong>：现代编程语言（包括 C#）都遵循结构化编程范式，强调使用顺序、选择（分支）和循环这三种基本结构来构建程序。<code>goto</code> 打破了这种清晰的层次结构。</li>
+</ul>
+<h4 id="2-c-中-goto-的具体危害">
+<a class="header-anchor" href="#2-c-%e4%b8%ad-goto-%e7%9a%84%e5%85%b7%e4%bd%93%e5%8d%b1%e5%ae%b3"></a>
+2. C# 中 <code>goto</code> 的具体危害
+</h4><ul>
+<li><strong>破坏局部推理</strong>：在阅读一段代码时，如果存在 <code>goto</code>，你无法仅通过当前作用域确定下一步执行哪里，必须全局搜索标签（Label）。</li>
+<li><strong>绕过初始化</strong>：虽然 C# 编译器会阻止 <code>goto</code> 跳过变量初始化，但在复杂逻辑中，它仍可能绕过某些预期的清理逻辑或状态更新。</li>
+<li><strong>干扰异常处理</strong>：<code>goto</code> 不能跳出 <code>try</code> 块进入 <code>catch</code> 或 <code>finally</code> 块，也不能从 <code>catch</code> 块外跳入。这种限制虽然保护了安全性，但也说明了它与 C# 核心机制的不兼容性。</li>
+</ul>
+<h4 id="3-常见的替代方案">
+<a class="header-anchor" href="#3-%e5%b8%b8%e8%a7%81%e7%9a%84%e6%9b%bf%e4%bb%a3%e6%96%b9%e6%a1%88"></a>
+3. 常见的替代方案
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left"><code>goto</code> 场景</th>
+					<th style="text-align: left">推荐的替代方案</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>跳出多层循环</strong></td>
+					<td style="text-align: left">提取方法（Extract Method），使用 <code>return</code>；或使用标志位配合 <code>break</code>。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>错误处理/跳转</strong></td>
+					<td style="text-align: left">使用 <code>try-catch-finally</code> 进行异常处理。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>状态机切换</strong></td>
+					<td style="text-align: left">使用 <code>switch-case</code> 或状态模式（State Pattern）。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>重复代码块</strong></td>
+					<td style="text-align: left">提取为私有方法，通过方法调用来复用逻辑。</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="4-c-中-goto-的合法但受限的使用场景">
+<a class="header-anchor" href="#4-c-%e4%b8%ad-goto-%e7%9a%84%e5%90%88%e6%b3%95%e4%bd%86%e5%8f%97%e9%99%90%e7%9a%84%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af"></a>
+4. C# 中 <code>goto</code> 的合法但受限的使用场景
+</h4><p>尽管不推荐，但 C# 依然保留了 <code>goto</code>，主要用于：</p>
+<ul>
+<li><strong>Switch 穿透</strong>：在 <code>switch</code> 语句中，从一个 case 跳转到另一个 case（<code>goto case label;</code>）或默认情况（<code>goto default;</code>）。这是 C# 明确支持且相对安全的用法。</li>
+<li><strong>深层嵌套退出</strong>：在极其复杂的算法或生成的代码中，有时用 <code>goto</code> 退出多层嵌套比设置多个标志位更直观（但仍建议优先重构代码）。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 相对可接受的 goto 用法：switch 穿透</span>
+</span></span><span class="line"><span class="cl"><span class="k">switch</span> <span class="p">(</span><span class="k">value</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="m">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DoSomething</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">goto</span> <span class="k">case</span> <span class="m">2</span><span class="p">;</span> <span class="c1">// 明确跳转到 case 2</span>
+</span></span><span class="line"><span class="cl">    <span class="k">case</span> <span class="m">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">DoSomethingElse</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="面试延伸追问预判面试官后续提问-4">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-4"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>如果在深层嵌套循环中需要立即退出，除了 <code>goto</code> 还有什么优雅的方法？</strong>
+<ul>
+<li><em>考点</em>：
+<ol>
+<li><strong>提取方法</strong>：将嵌套循环封装成一个独立的方法，使用 <code>return</code> 直接退出。这是最推荐的重构方式。</li>
+<li><strong>标志位</strong>：设置一个 <code>bool shouldExit</code> 变量，在内层循环修改它，外层循环检查它并 <code>break</code>。</li>
+<li><strong>异常</strong>：极端情况下抛出自定义异常（不推荐用于流程控制，性能开销大且语义不符）。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>C# 编译器对 <code>goto</code> 有哪些限制？</strong>
+<ul>
+<li><em>考点</em>：
+<ol>
+<li>不能跳出类、方法或属性。</li>
+<li>不能跳进 <code>try</code> 块的内部（除非从同一 <code>try</code> 块的另一处跳入）。</li>
+<li>不能跳过变量的初始化（编译器会报错 CS0165）。</li>
+<li>标签必须在当前方法内可见。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>为什么 C 语言中 <code>goto</code> 的使用比 C# 中更常见？</strong>
+<ul>
+<li><em>考点</em>：C 语言缺乏异常处理机制和完善的资源管理（如 RAII），在错误处理和资源清理时，<code>goto</code> 常被用作一种集中清理资源的模式（如 Linux 内核代码）。而 C# 有 <code>try-finally</code> 和 <code>using</code>，完全不需要这种模式。</li>
+</ul>
+</li>
+<li><strong>什么是“面条式代码”（Spaghetti Code）？</strong>
+<ul>
+<li><em>考点</em>：指控制流复杂、混乱、难以理解的代码，通常由过度使用 <code>goto</code> 或缺乏模块化设计导致。它是软件维护的噩梦。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="六solid中的solid分别是什么">
+<a class="header-anchor" href="#%e5%85%adsolid%e4%b8%ad%e7%9a%84solid%e5%88%86%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"></a>
+六、SOLID中的S、O、L、I、D分别是什么
+</h2><h3 id="面试简答考场口述答案-5">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-5"></a>
+✅面试简答（考场口述答案）
+</h3><p>SOLID 是面向对象设计的五大核心原则：</p>
+<ol>
+<li><strong>S (Single Responsibility)</strong>：单一职责，一个类只负责一项职责。</li>
+<li><strong>O (Open/Closed)</strong>：开闭原则，对扩展开放，对修改关闭。</li>
+<li><strong>L (Liskov Substitution)</strong>：里氏替换，子类必须能替换父类而不改变程序正确性。</li>
+<li><strong>I (Interface Segregation)</strong>：接口隔离，客户端不应依赖它不需要的接口。</li>
+<li><strong>D (Dependency Inversion)</strong>：依赖倒置，高层模块不应依赖低层模块，二者都应依赖抽象。</li>
+</ol>
+<h3 id="深入解析与-c-示例">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90%e4%b8%8e-c-%e7%a4%ba%e4%be%8b"></a>
+📚深入解析与 C# 示例
+</h3><h4 id="1-s---单一职责原则-srp">
+<a class="header-anchor" href="#1-s---%e5%8d%95%e4%b8%80%e8%81%8c%e8%b4%a3%e5%8e%9f%e5%88%99-srp"></a>
+1. S - 单一职责原则 (SRP)
+</h4><p><strong>定义</strong>：一个类应该只有一个引起它变化的原因。
+<strong>反例</strong>：一个 <code>UserService</code> 既负责用户数据校验，又负责发送注册邮件，还负责写日志。
+<strong>正例</strong>：拆分为 <code>UserValidator</code>、<code>EmailService</code>、<code>Logger</code>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// ❌ 违反 SRP</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">UserService</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Register</span><span class="p">(</span><span class="kt">string</span> <span class="n">email</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* 校验逻辑 */</span> <span class="cm">/* 发邮件逻辑 */</span> <span class="cm">/* 存库逻辑 */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ✅ 符合 SRP</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">UserValidator</span> <span class="p">{</span> <span class="kd">public</span> <span class="kt">bool</span> <span class="n">IsValid</span><span class="p">(</span><span class="kt">string</span> <span class="n">email</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">...;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">EmailService</span> <span class="p">{</span> <span class="kd">public</span> <span class="k">void</span> <span class="n">SendWelcomeEmail</span><span class="p">(</span><span class="kt">string</span> <span class="n">email</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">...;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">UserRepository</span> <span class="p">{</span> <span class="kd">public</span> <span class="k">void</span> <span class="n">Save</span><span class="p">(</span><span class="n">User</span> <span class="n">user</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">...;</span> <span class="p">}</span>
+</span></span></code></pre></div><h4 id="2-o---开闭原则-ocp">
+<a class="header-anchor" href="#2-o---%e5%bc%80%e9%97%ad%e5%8e%9f%e5%88%99-ocp"></a>
+2. O - 开闭原则 (OCP)
+</h4><p><strong>定义</strong>：软件实体应当对扩展开放，对修改关闭。
+<strong>场景</strong>：计算不同形状的面积。
+<strong>反例</strong>：在 <code>AreaCalculator</code> 中使用 <code>if (shape is Circle) ... else if (shape is Rectangle)</code>。新增三角形需修改该类。
+<strong>正例</strong>：定义 <code>IShape</code> 接口，每个形状实现自己的 <code>GetArea()</code>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IShape</span> <span class="p">{</span> <span class="kt">double</span> <span class="n">GetArea</span><span class="p">();</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Circle</span> <span class="p">:</span> <span class="n">IShape</span> <span class="p">{</span> <span class="kd">public</span> <span class="kt">double</span> <span class="n">GetArea</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">Math</span><span class="p">.</span><span class="n">PI</span> <span class="p">*</span> <span class="n">R</span> <span class="p">*</span> <span class="n">R</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">:</span> <span class="n">IShape</span> <span class="p">{</span> <span class="kd">public</span> <span class="kt">double</span> <span class="n">GetArea</span><span class="p">()</span> <span class="p">=&gt;</span> <span class="n">W</span> <span class="p">*</span> <span class="n">H</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 新增 Triangle 只需新建类，无需修改 AreaCalculator</span>
+</span></span></code></pre></div><h4 id="3-l---里氏替换原则-lsp">
+<a class="header-anchor" href="#3-l---%e9%87%8c%e6%b0%8f%e6%9b%bf%e6%8d%a2%e5%8e%9f%e5%88%99-lsp"></a>
+3. L - 里氏替换原则 (LSP)
+</h4><p><strong>定义</strong>：子类对象能够替换程序中父类对象出现的任何地方，并且保证原来程序的逻辑行为不变。
+<strong>经典反例</strong>：正方形继承矩形。矩形有 <code>SetWidth</code> 和 <code>SetHeight</code>，但正方形设置宽时高也要变，替换后会破坏原有逻辑。
+<strong>正例</strong>：正方形和矩形都继承自更抽象的 <code>Shape</code>，而不是互相继承。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// ❌ 违反 LSP</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Rectangle</span> <span class="p">{</span> <span class="kd">public</span> <span class="k">virtual</span> <span class="kt">int</span> <span class="n">Width</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="kd">public</span> <span class="k">virtual</span> <span class="kt">int</span> <span class="n">Height</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Square</span> <span class="p">:</span> <span class="n">Rectangle</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span> 
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">override</span> <span class="kt">int</span> <span class="n">Width</span> <span class="p">{</span> <span class="k">set</span> <span class="p">{</span> <span class="k">base</span><span class="p">.</span><span class="n">Width</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="k">base</span><span class="p">.</span><span class="n">Height</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="p">}</span> <span class="p">}</span> 
+</span></span><span class="line"><span class="cl">    <span class="c1">// 如果客户端调用 rect.Height = 5; rect.Width = 10; 期望面积是50，但 Square 会导致面积变成100</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="4-i---接口隔离原则-isp">
+<a class="header-anchor" href="#4-i---%e6%8e%a5%e5%8f%a3%e9%9a%94%e7%a6%bb%e5%8e%9f%e5%88%99-isp"></a>
+4. I - 接口隔离原则 (ISP)
+</h4><p><strong>定义</strong>：客户端不应该依赖它不需要的接口。
+<strong>场景</strong>：多功能打印机。
+<strong>反例</strong>：定义一个大接口 <code>IMachine</code> 包含 <code>Print</code>, <code>Scan</code>, <code>Fax</code>。普通打印机不需要 <code>Fax</code>，但被迫实现。
+<strong>正例</strong>：拆分为 <code>IPrinter</code>, <code>IScanner</code>, <code>IFax</code>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// ✅ 符合 ISP</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IPrinter</span> <span class="p">{</span> <span class="k">void</span> <span class="n">Print</span><span class="p">();</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IScanner</span> <span class="p">{</span> <span class="k">void</span> <span class="n">Scan</span><span class="p">();</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">SimplePrinter</span> <span class="p">:</span> <span class="n">IPrinter</span> <span class="p">{</span> <span class="kd">public</span> <span class="k">void</span> <span class="n">Print</span><span class="p">()</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> <span class="p">}</span> <span class="c1">// 不需要实现 Scan</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MultiFunctionDevice</span> <span class="p">:</span> <span class="n">IPrinter</span><span class="p">,</span> <span class="n">IScanner</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span></code></pre></div><h4 id="5-d---依赖倒置原则-dip">
+<a class="header-anchor" href="#5-d---%e4%be%9d%e8%b5%96%e5%80%92%e7%bd%ae%e5%8e%9f%e5%88%99-dip"></a>
+5. D - 依赖倒置原则 (DIP)
+</h4><p><strong>定义</strong>：高层模块不应该依赖低层模块，两者都应该依赖其抽象；抽象不应该依赖细节，细节应该依赖抽象。
+<strong>场景</strong>：订单服务调用通知服务。
+<strong>反例</strong>：<code>OrderService</code> 内部直接 <code>new EmailNotifier()</code>。
+<strong>正例</strong>：<code>OrderService</code> 依赖 <code>INotifier</code> 接口，通过构造函数注入具体实现。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">INotifier</span> <span class="p">{</span> <span class="k">void</span> <span class="n">Send</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">EmailNotifier</span> <span class="p">:</span> <span class="n">INotifier</span> <span class="p">{</span> <span class="kd">public</span> <span class="k">void</span> <span class="n">Send</span><span class="p">(</span><span class="kt">string</span> <span class="n">msg</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">...;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">OrderService</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">INotifier</span> <span class="n">_notifier</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">OrderService</span><span class="p">(</span><span class="n">INotifier</span> <span class="n">notifier</span><span class="p">)</span> <span class="c1">// 依赖抽象</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_notifier</span> <span class="p">=</span> <span class="n">notifier</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="面试延伸追问预判面试官后续提问-5">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-5"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>这五个原则中，你认为哪个最重要？为什么？</strong></p>
+<blockquote>
+<p>没有绝对的最重要，但<strong>依赖倒置 (DIP)</strong> 和 <strong>开闭原则 (OCP)</strong> 在现代架构（如微服务、插件化系统）中尤为关键，因为它们直接决定了系统的可维护性和可扩展性。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>里氏替换原则 (LSP) 违反时，通常会出现什么症状？</strong></p>
+<blockquote>
+<p>子类中抛出 <code>NotSupportedException</code>；子类重写方法时做了额外的类型检查；或者子类重写了父类方法但改变了其行为语义（如父类是加法，子类变成减法）。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>接口隔离原则 (ISP) 在 C# 中如何具体落地？</strong></p>
+<blockquote>
+<ol>
+<li>定义小接口；2. 使用<strong>默认接口方法</strong>（C# 8.0+）提供可选实现；3. 使用<strong>适配器模式</strong>将大接口适配为小接口供特定客户端使用。</li>
+</ol>
+</blockquote>
+</li>
+<li>
+<p><strong>依赖倒置 (DIP) 和控制反转 (IoC) 是什么关系？</strong></p>
+<blockquote>
+<p><strong>DIP 是设计原则</strong>，指导我们要依赖抽象；<strong>IoC 是设计模式/技术手段</strong>，用于实现 DIP（如通过 DI 容器将具体实现注入给抽象）。DIP 是思想，IoC 是工具。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>在实际项目中，如何平衡 SOLID 原则和开发效率？</strong></p>
+<blockquote>
+<p>不要过度设计。对于简单且变动小的模块，可以直接编写；对于核心业务、易变模块，严格遵循 SOLID。通常 SRP 和 DIP 是最容易落地且收益最高的。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>里氏替换原则（LSP）在 C# 中如何通过代码约束来保证？</strong></p>
+<blockquote>
+<p>尽量使用 <code>abstract</code> 类或接口定义契约；避免在子类中抛出父类未声明的异常；避免在子类中加强前置条件或减弱后置条件。</p>
+</blockquote>
+</li>
+<li>
+<p><strong>接口隔离原则（ISP）在 C# 8.0+ 有了默认接口方法后，是否还重要？</strong></p>
+<blockquote>
+<p>依然重要。虽然默认方法减少了实现负担，但从语义上讲，将不相关的功能拆分到不同接口仍有助于保持接口的内聚性和清晰度，方便 Mock 测试。</p>
+</blockquote>
+</li>
+</ol>
+</div>
+    <footer class="article-footer"><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/c"
+      data-aos="zoom-in"
+      >C#</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/c"
+        rel="tag"
+        >C#</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="/images/cover4.webp"
+              data-sizes="auto"
+              alt="C#基础（七）"
+              class="lazyload"
+            /><a
+          href="/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%83/"
+          aria-label="前一篇:C#基础（七）"
+          title="前一篇:C#基础（七）"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">C#基础（七）</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="/images/cover7.webp"
+              data-sizes="auto"
+              alt="设计模式"
+              class="lazyload"
+            /><a
+          href="/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"
+          aria-label="后一篇:设计模式"
+          title="后一篇:设计模式"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">设计模式</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>Alone4869
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;189.1k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;06:32</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一虚方法和抽象方法的区别是什么">一、虚方法和抽象方法的区别是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#二什么是方法重载">二、什么是方法重载</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-1">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-1">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-1">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三方法重写和方法隐藏的区别是什么">三、方法重写和方法隐藏的区别是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-2">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-2">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-2">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四c-是否支持多重继承">四、C# 是否支持多重继承</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-3">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-3">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-3">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#五为什么使用goto关键字被认为是不良实践">五、为什么使用goto关键字被认为是不良实践</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-4">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-4">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-4">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#六solid中的solid分别是什么">六、SOLID中的S、O、L、I、D分别是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-5">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析与-c-示例">📚深入解析与 C# 示例</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-5">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">29</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">17</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/live2d-widgets@0.9.0/autoload.js"
+    defer
+    
+    
+    
+    integrity="sha384-poTN7wN/SqNhQqo3jdFeX20ikddWeFGkUkDEzsKjgH/ez8aQLn81oI0Cw6q5xNyB" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "Alone4869",
+          title: "C#基础（八）",
+          url: "https:\/\/alone4869.github.io\/post\/c%23%E5%9F%BA%E7%A1%80%E5%85%AB\/",
+          description: " 一、虚方法和抽象方法的区别是什么 ✅面试简答（考场口述答案） 虚方法（Virtual Method）和抽象方法（Abstract Method）都支持多态，但核心区别在于是否有默认实现以及对子类的强制力：\n",
+          cover: "https:\/\/alone4869.github.io\/images\/banner.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+        }
+        pswp()
+      </script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    
+    async
+    
+    
+    integrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>

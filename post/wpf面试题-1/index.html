@@ -1,0 +1,1007 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  WPF面试题 1 | Alone4869
+</title>
+<meta name="description" content="无量天尊"/><script>
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "true");
+</script><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://alone4869.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"English\",\"Locale\":\"\"},{\"Lang\":\"ja\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"日本語\",\"Locale\":\"\"},{\"Lang\":\"zh-cn\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"简体中文\",\"Locale\":\"zh-CN\"},{\"Lang\":\"zh-tw\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"繁體中文\",\"Locale\":\"\"}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="WPF面试题 1 | Alone4869" />
+  <meta
+    property="og:description"
+    content="无量天尊"
+  />
+  <meta property="og:url" content="https://alone4869.github.io/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98-1/" />
+  <meta
+    property="og:site_name"
+    content="知否"
+  />
+  <meta property="og:image" content="https://alone4869.github.io/images/banner.webp" />
+  <meta property="article:author" content="Alone4869" />
+  <meta property="article:published_time" content="2026-10-10T23:54:19&#43;08:00" />
+  <meta property="article:modified_time" content="2026-10-10T23:54:19&#43;08:00" /><meta property="article:tag" content="C#, WPF" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://alone4869.github.io/images/banner.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.18b6dbee5e1b382f80c8c0cdf5f79d28d7139a30edcf474f45fab80da506432e.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages"><li data-value="en" role="option" aria-selected="false" >English</li><li data-value="ja" role="option" aria-selected="false" >日本語</li><li data-value="zh-cn" role="option" class="selected" aria-selected="true" >简体中文</li><li data-value="zh-tw" role="option" aria-selected="false" >繁體中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+          var expanded = selectSelected.getAttribute("aria-expanded") === "true";
+          selectSelected.setAttribute("aria-expanded", (!expanded).toString());
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+            selectSelected.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </nav><a href="https://github.com/alone4869/alone4869.github.io" class="triangle-badge" title="github" target="_blank" rel="noopener nofollow noreferrer">
+      <div class="icon icon-github triangle-badge-icon"></div>
+    </a></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="WPF面试题 1"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">WPF面试题 1</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-wpf-是什么">1. WPF 是什么？</a></li>
+        <li><a href="#2-wpf-和-winforms-有什么区别">2. WPF 和 WinForms 有什么区别？</a></li>
+        <li><a href="#3-xaml-是什么">3. XAML 是什么？</a></li>
+        <li><a href="#4-wpf-中什么是数据绑定">4. WPF 中什么是数据绑定？</a></li>
+        <li><a href="#5-wpf-中-datacontext-是什么">5. WPF 中 <code>DataContext</code> 是什么？</a></li>
+        <li><a href="#6-什么是-mvvm">6. 什么是 MVVM？</a></li>
+        <li><a href="#7-inotifypropertychanged-有什么作用">7. <code>INotifyPropertyChanged</code> 有什么作用？</a></li>
+        <li><a href="#8-wpf-中-command-是什么">8. WPF 中 Command 是什么？</a></li>
+        <li><a href="#9-icommand-包含哪些成员">9. <code>ICommand</code> 包含哪些成员？</a></li>
+        <li><a href="#10-什么是依赖属性">10. 什么是依赖属性？</a></li>
+        <li><a href="#11-普通属性和依赖属性有什么区别">11. 普通属性和依赖属性有什么区别？</a></li>
+        <li><a href="#12-wpf-中资源-resource-是什么">12. WPF 中资源 Resource 是什么？</a></li>
+        <li><a href="#13-staticresource-和-dynamicresource-有什么区别">13. <code>StaticResource</code> 和 <code>DynamicResource</code> 有什么区别？</a></li>
+        <li><a href="#14-style-和-template-有什么区别">14. Style 和 Template 有什么区别？</a></li>
+        <li><a href="#15-controltemplate-和-datatemplate-有什么区别">15. <code>ControlTemplate</code> 和 <code>DataTemplate</code> 有什么区别？</a></li>
+        <li><a href="#16-wpf-布局容器有哪些">16. WPF 布局容器有哪些？</a></li>
+        <li><a href="#17-wpf-中如何避免界面卡死">17. WPF 中如何避免界面卡死？</a></li>
+        <li><a href="#18-wpf-中-dispatcher-是什么">18. WPF 中 Dispatcher 是什么？</a></li>
+        <li><a href="#19-observablecollectiont-有什么作用">19. <code>ObservableCollection&lt;T&gt;</code> 有什么作用？</a></li>
+        <li><a href="#20-wpf-中-datagrid-数据很多时怎么优化">20. WPF 中 DataGrid 数据很多时怎么优化？</a></li>
+        <li><a href="#21-wpf-事件和-command-怎么选择">21. WPF 事件和 Command 怎么选择？</a></li>
+        <li><a href="#22-wpf-中-binding-失败怎么排查">22. WPF 中 Binding 失败怎么排查？</a></li>
+        <li><a href="#23-usercontrol-和-customcontrol-有什么区别">23. <code>UserControl</code> 和 <code>CustomControl</code> 有什么区别？</a></li>
+        <li><a href="#24-wpf-中路由事件是什么">24. WPF 中路由事件是什么？</a></li>
+        <li><a href="#25-wpf-中常见的性能问题有哪些">25. WPF 中常见的性能问题有哪些？</a></li>
+        <li><a href="#26-wpf-面试项目怎么说">26. WPF 面试项目怎么说？</a></li>
+        <li><a href="#高频考点总结">高频考点总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">29</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">17</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-10-10 23:54:19 &#43;0800 &#43;0800" itemprop="datePublished"
+      >2026-10-10</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-10-10</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h3 id="1-wpf-是什么">
+<a class="header-anchor" href="#1-wpf-%e6%98%af%e4%bb%80%e4%b9%88"></a>
+1. WPF 是什么？
+</h3><p><strong>答：</strong></p>
+<p>WPF 全称是 Windows Presentation Foundation，是微软推出的桌面 UI 框架。</p>
+<p>它基于 <code>.NET</code>，使用 <code>XAML</code> 描述界面，使用 C# 编写逻辑。</p>
+<p>WPF 的特点：</p>
+<ul>
+<li>支持数据绑定</li>
+<li>支持样式和模板</li>
+<li>支持动画</li>
+<li>支持 MVVM 架构</li>
+<li>UI 表现力比 WinForms 更强</li>
+</ul>
+<h3 id="2-wpf-和-winforms-有什么区别">
+<a class="header-anchor" href="#2-wpf-%e5%92%8c-winforms-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+2. WPF 和 WinForms 有什么区别？
+</h3><p><strong>答：</strong></p>
+<p>WinForms 是传统控件式开发，简单直接，适合快速做管理系统。</p>
+<p>WPF 使用 XAML 描述 UI，支持数据绑定、样式、模板、动画，更适合复杂界面。</p>
+<p>主要区别：</p>
+<ul>
+<li>WinForms 更简单，上手快</li>
+<li>WPF UI 更灵活，界面表现更强</li>
+<li>WPF 更适合 MVVM</li>
+<li>WPF 支持强大的数据绑定</li>
+<li>WPF 控件可以通过模板完全自定义外观</li>
+</ul>
+<h3 id="3-xaml-是什么">
+<a class="header-anchor" href="#3-xaml-%e6%98%af%e4%bb%80%e4%b9%88"></a>
+3. XAML 是什么？
+</h3><p><strong>答：</strong></p>
+<p>XAML 是一种声明式 XML 语言，用来描述 WPF 的界面。</p>
+<p>例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;Button</span> <span class="na">Content=</span><span class="s">&#34;保存&#34;</span> <span class="na">Width=</span><span class="s">&#34;100&#34;</span> <span class="na">Height=</span><span class="s">&#34;30&#34;</span> <span class="nt">/&gt;</span>
+</span></span></code></pre></div><p>它的作用是把界面结构和后台逻辑分离。</p>
+<p>通常：</p>
+<ul>
+<li>XAML 写界面</li>
+<li>C# 写业务逻辑</li>
+</ul>
+<h3 id="4-wpf-中什么是数据绑定">
+<a class="header-anchor" href="#4-wpf-%e4%b8%ad%e4%bb%80%e4%b9%88%e6%98%af%e6%95%b0%e6%8d%ae%e7%bb%91%e5%ae%9a"></a>
+4. WPF 中什么是数据绑定？
+</h3><p><strong>答：</strong></p>
+<p>数据绑定是 UI 控件和数据对象之间的自动同步机制。</p>
+<p>例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;TextBox</span> <span class="na">Text=</span><span class="s">&#34;{Binding UserName}&#34;</span> <span class="nt">/&gt;</span>
+</span></span></code></pre></div><p>如果 <code>UserName</code> 变化，界面可以自动更新。</p>
+<p>常见绑定模式：</p>
+<ul>
+<li><code>OneWay</code>：数据源到界面</li>
+<li><code>TwoWay</code>：界面和数据源双向同步</li>
+<li><code>OneTime</code>：只绑定一次</li>
+<li><code>OneWayToSource</code>：界面到数据源</li>
+</ul>
+<h3 id="5-wpf-中-datacontext-是什么">
+<a class="header-anchor" href="#5-wpf-%e4%b8%ad-datacontext-%e6%98%af%e4%bb%80%e4%b9%88"></a>
+5. WPF 中 <code>DataContext</code> 是什么？
+</h3><p><strong>答：</strong></p>
+<p><code>DataContext</code> 是绑定的数据上下文。</p>
+<p>比如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">this</span><span class="p">.</span><span class="n">DataContext</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MainViewModel</span><span class="p">();</span>
+</span></span></code></pre></div><p>XAML 中的绑定：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;TextBox</span> <span class="na">Text=</span><span class="s">&#34;{Binding UserName}&#34;</span> <span class="nt">/&gt;</span>
+</span></span></code></pre></div><p>会从当前控件的 <code>DataContext</code> 中查找 <code>UserName</code> 属性。</p>
+<p><code>DataContext</code> 会沿着控件树向下继承，子控件默认可以使用父控件的 <code>DataContext</code>。</p>
+<h3 id="6-什么是-mvvm">
+<a class="header-anchor" href="#6-%e4%bb%80%e4%b9%88%e6%98%af-mvvm"></a>
+6. 什么是 MVVM？
+</h3><p><strong>答：</strong></p>
+<p>MVVM 是 WPF 常用架构模式。</p>
+<ul>
+<li><code>Model</code>：数据模型</li>
+<li><code>View</code>：界面</li>
+<li><code>ViewModel</code>：界面数据和业务逻辑</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>界面和逻辑分离</li>
+<li>方便维护</li>
+<li>方便单元测试</li>
+<li>减少后台代码</li>
+<li>更适合复杂桌面项目</li>
+</ul>
+<h3 id="7-inotifypropertychanged-有什么作用">
+<a class="header-anchor" href="#7-inotifypropertychanged-%e6%9c%89%e4%bb%80%e4%b9%88%e4%bd%9c%e7%94%a8"></a>
+7. <code>INotifyPropertyChanged</code> 有什么作用？
+</h3><p><strong>答：</strong></p>
+<p><code>INotifyPropertyChanged</code> 用来通知界面属性发生变化。</p>
+<p>如果 ViewModel 中属性变化后要让 UI 自动刷新，就需要实现它。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MainViewModel</span> <span class="p">:</span> <span class="n">INotifyPropertyChanged</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">string</span> <span class="n">_userName</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">UserName</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">get</span> <span class="p">=&gt;</span> <span class="n">_userName</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">set</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">_userName</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="n">PropertyChanged</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">new</span> <span class="n">PropertyChangedEventArgs</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">UserName</span><span class="p">)));</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">event</span> <span class="n">PropertyChangedEventHandler</span> <span class="n">PropertyChanged</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="8-wpf-中-command-是什么">
+<a class="header-anchor" href="#8-wpf-%e4%b8%ad-command-%e6%98%af%e4%bb%80%e4%b9%88"></a>
+8. WPF 中 Command 是什么？
+</h3><p><strong>答：</strong></p>
+<p>Command 用来把按钮点击等操作绑定到 ViewModel，代替传统事件。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;Button</span> <span class="na">Content=</span><span class="s">&#34;保存&#34;</span> <span class="na">Command=</span><span class="s">&#34;{Binding SaveCommand}&#34;</span> <span class="nt">/&gt;</span>
+</span></span></code></pre></div><p>优点：</p>
+<ul>
+<li>符合 MVVM</li>
+<li>减少后台事件代码</li>
+<li>方便测试</li>
+<li>可以通过 <code>CanExecute</code> 控制按钮是否可用</li>
+</ul>
+<h3 id="9-icommand-包含哪些成员">
+<a class="header-anchor" href="#9-icommand-%e5%8c%85%e5%90%ab%e5%93%aa%e4%ba%9b%e6%88%90%e5%91%98"></a>
+9. <code>ICommand</code> 包含哪些成员？
+</h3><p><strong>答：</strong></p>
+<p><code>ICommand</code> 包含：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">CanExecute</span><span class="p">(</span><span class="kt">object</span> <span class="n">parameter</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">void</span> <span class="n">Execute</span><span class="p">(</span><span class="kt">object</span> <span class="n">parameter</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">event</span> <span class="n">EventHandler</span> <span class="n">CanExecuteChanged</span><span class="p">;</span>
+</span></span></code></pre></div><p>含义：</p>
+<ul>
+<li><code>Execute</code>：真正执行的逻辑</li>
+<li><code>CanExecute</code>：判断命令是否可以执行</li>
+<li><code>CanExecuteChanged</code>：通知界面重新判断按钮是否可用</li>
+</ul>
+<h3 id="10-什么是依赖属性">
+<a class="header-anchor" href="#10-%e4%bb%80%e4%b9%88%e6%98%af%e4%be%9d%e8%b5%96%e5%b1%9e%e6%80%a7"></a>
+10. 什么是依赖属性？
+</h3><p><strong>答：</strong></p>
+<p>依赖属性是 WPF 特有的属性系统。</p>
+<p>它支持：</p>
+<ul>
+<li>数据绑定</li>
+<li>样式</li>
+<li>动画</li>
+<li>默认值</li>
+<li>属性变化通知</li>
+<li>属性值继承</li>
+</ul>
+<p>常用于自定义控件。</p>
+<p>示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">readonly</span> <span class="n">DependencyProperty</span> <span class="n">TitleProperty</span> <span class="p">=</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DependencyProperty</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s">&#34;Title&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="k">typeof</span><span class="p">(</span><span class="n">MyControl</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="n">PropertyMetadata</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">string</span> <span class="n">Title</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">get</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">GetValue</span><span class="p">(</span><span class="n">TitleProperty</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">set</span> <span class="p">=&gt;</span> <span class="n">SetValue</span><span class="p">(</span><span class="n">TitleProperty</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="11-普通属性和依赖属性有什么区别">
+<a class="header-anchor" href="#11-%e6%99%ae%e9%80%9a%e5%b1%9e%e6%80%a7%e5%92%8c%e4%be%9d%e8%b5%96%e5%b1%9e%e6%80%a7%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+11. 普通属性和依赖属性有什么区别？
+</h3><p><strong>答：</strong></p>
+<p>普通属性只是 C# 属性。</p>
+<p>依赖属性由 WPF 属性系统管理。</p>
+<p>区别：</p>
+<ul>
+<li>依赖属性支持 Binding</li>
+<li>依赖属性支持 Style</li>
+<li>依赖属性支持 Animation</li>
+<li>依赖属性支持默认值和变化回调</li>
+<li>普通属性更简单，适合普通业务对象</li>
+</ul>
+<p>ViewModel 一般用普通属性 + <code>INotifyPropertyChanged</code>。</p>
+<p>自定义控件一般用依赖属性。</p>
+<h3 id="12-wpf-中资源-resource-是什么">
+<a class="header-anchor" href="#12-wpf-%e4%b8%ad%e8%b5%84%e6%ba%90-resource-%e6%98%af%e4%bb%80%e4%b9%88"></a>
+12. WPF 中资源 Resource 是什么？
+</h3><p><strong>答：</strong></p>
+<p>Resource 是 WPF 中可复用的对象，比如颜色、样式、模板、数据源等。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;Window.Resources&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;SolidColorBrush</span> <span class="na">x:Key=</span><span class="s">&#34;MainBrush&#34;</span> <span class="na">Color=</span><span class="s">&#34;Blue&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/Window.Resources&gt;</span>
+</span></span></code></pre></div><p>使用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;Button</span> <span class="na">Background=</span><span class="s">&#34;{StaticResource MainBrush}&#34;</span> <span class="nt">/&gt;</span>
+</span></span></code></pre></div><p>资源可以定义在：</p>
+<ul>
+<li>控件级别</li>
+<li>Window 级别</li>
+<li>Application 级别</li>
+<li>ResourceDictionary 文件中</li>
+</ul>
+<h3 id="13-staticresource-和-dynamicresource-有什么区别">
+<a class="header-anchor" href="#13-staticresource-%e5%92%8c-dynamicresource-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+13. <code>StaticResource</code> 和 <code>DynamicResource</code> 有什么区别？
+</h3><p><strong>答：</strong></p>
+<p><code>StaticResource</code> 在加载时查找资源，性能更好，适合不变化的资源。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">Background=&#34;{StaticResource MainBrush}&#34;
+</span></span></code></pre></div><p><code>DynamicResource</code> 在运行时动态查找资源，资源变化时界面可以更新。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl">Background=&#34;{DynamicResource MainBrush}&#34;
+</span></span></code></pre></div><p>比如运行时切换主题时，可以使用 <code>DynamicResource</code>。</p>
+<h3 id="14-style-和-template-有什么区别">
+<a class="header-anchor" href="#14-style-%e5%92%8c-template-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+14. Style 和 Template 有什么区别？
+</h3><p><strong>答：</strong></p>
+<p><code>Style</code> 用来设置控件属性，比如颜色、字体、边距。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;Style</span> <span class="na">TargetType=</span><span class="s">&#34;Button&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Setter</span> <span class="na">Property=</span><span class="s">&#34;Foreground&#34;</span> <span class="na">Value=</span><span class="s">&#34;White&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/Style&gt;</span>
+</span></span></code></pre></div><p><code>Template</code> 用来定义控件的结构和外观。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;ControlTemplate</span> <span class="na">TargetType=</span><span class="s">&#34;Button&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Border</span> <span class="na">Background=</span><span class="s">&#34;Blue&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;ContentPresenter</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/Border&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/ControlTemplate&gt;</span>
+</span></span></code></pre></div><p>简单说：</p>
+<ul>
+<li>Style 改属性</li>
+<li>Template 改控件长什么样</li>
+</ul>
+<h3 id="15-controltemplate-和-datatemplate-有什么区别">
+<a class="header-anchor" href="#15-controltemplate-%e5%92%8c-datatemplate-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+15. <code>ControlTemplate</code> 和 <code>DataTemplate</code> 有什么区别？
+</h3><p><strong>答：</strong></p>
+<p><code>ControlTemplate</code> 定义控件本身的外观结构。</p>
+<p>比如改变 Button 的外观。</p>
+<p><code>DataTemplate</code> 定义数据对象显示成什么样。</p>
+<p>比如 ListBox 中每一项怎么显示。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;DataTemplate&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;StackPanel&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&#34;{Binding Name}&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;TextBlock</span> <span class="na">Text=</span><span class="s">&#34;{Binding Age}&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/StackPanel&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/DataTemplate&gt;</span>
+</span></span></code></pre></div><h3 id="16-wpf-布局容器有哪些">
+<a class="header-anchor" href="#16-wpf-%e5%b8%83%e5%b1%80%e5%ae%b9%e5%99%a8%e6%9c%89%e5%93%aa%e4%ba%9b"></a>
+16. WPF 布局容器有哪些？
+</h3><p><strong>答：</strong></p>
+<p>常见布局容器：</p>
+<ul>
+<li><code>Grid</code>：表格布局，最常用</li>
+<li><code>StackPanel</code>：横向或纵向排列</li>
+<li><code>DockPanel</code>：停靠布局</li>
+<li><code>WrapPanel</code>：自动换行排列</li>
+<li><code>Canvas</code>：绝对定位</li>
+</ul>
+<p>面试可以说：</p>
+<p>实际开发中我最常用 Grid 和 StackPanel，复杂界面用 Grid，简单排列用 StackPanel。</p>
+<h3 id="17-wpf-中如何避免界面卡死">
+<a class="header-anchor" href="#17-wpf-%e4%b8%ad%e5%a6%82%e4%bd%95%e9%81%bf%e5%85%8d%e7%95%8c%e9%9d%a2%e5%8d%a1%e6%ad%bb"></a>
+17. WPF 中如何避免界面卡死？
+</h3><p><strong>答：</strong></p>
+<p>不要在 UI 线程执行耗时操作。</p>
+<p>比如：</p>
+<ul>
+<li>数据库查询</li>
+<li>网络请求</li>
+<li>大文件读写</li>
+<li>大量数据计算</li>
+</ul>
+<p>应该使用异步：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="kd">async</span> <span class="k">void</span> <span class="n">Button_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">RoutedEventArgs</span> <span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">var</span> <span class="n">data</span> <span class="p">=</span> <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">LoadData</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">    <span class="n">MyList</span><span class="p">.</span><span class="n">ItemsSource</span> <span class="p">=</span> <span class="n">data</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>如果后台线程要更新 UI，需要切回 UI 线程：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">Dispatcher</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">TextBlock</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">&#34;加载完成&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><h3 id="18-wpf-中-dispatcher-是什么">
+<a class="header-anchor" href="#18-wpf-%e4%b8%ad-dispatcher-%e6%98%af%e4%bb%80%e4%b9%88"></a>
+18. WPF 中 Dispatcher 是什么？
+</h3><p><strong>答：</strong></p>
+<p><code>Dispatcher</code> 是 WPF UI 线程的消息调度器。</p>
+<p>WPF 控件只能在创建它的 UI 线程访问。</p>
+<p>后台线程如果要更新 UI，需要使用：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">Dispatcher</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;完成&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><p>或：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">await</span> <span class="n">Dispatcher</span><span class="p">.</span><span class="n">InvokeAsync</span><span class="p">(()</span> <span class="p">=&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">label</span><span class="p">.</span><span class="n">Content</span> <span class="p">=</span> <span class="s">&#34;完成&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></div><h3 id="19-observablecollectiont-有什么作用">
+<a class="header-anchor" href="#19-observablecollectiont-%e6%9c%89%e4%bb%80%e4%b9%88%e4%bd%9c%e7%94%a8"></a>
+19. <code>ObservableCollection&lt;T&gt;</code> 有什么作用？
+</h3><p><strong>答：</strong></p>
+<p><code>ObservableCollection&lt;T&gt;</code> 是支持集合变化通知的集合。</p>
+<p>当添加、删除元素时，绑定的 UI 可以自动刷新。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">ObservableCollection</span><span class="p">&lt;</span><span class="n">User</span><span class="p">&gt;</span> <span class="n">Users</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span></code></pre></div><p>常用于：</p>
+<ul>
+<li><code>ListBox</code></li>
+<li><code>DataGrid</code></li>
+<li><code>ComboBox</code></li>
+</ul>
+<p>注意：</p>
+<p><code>ObservableCollection&lt;T&gt;</code> 通知的是集合增删变化，不是集合中某个对象属性变化。对象属性变化仍然需要实现 <code>INotifyPropertyChanged</code>。</p>
+<h3 id="20-wpf-中-datagrid-数据很多时怎么优化">
+<a class="header-anchor" href="#20-wpf-%e4%b8%ad-datagrid-%e6%95%b0%e6%8d%ae%e5%be%88%e5%a4%9a%e6%97%b6%e6%80%8e%e4%b9%88%e4%bc%98%e5%8c%96"></a>
+20. WPF 中 DataGrid 数据很多时怎么优化？
+</h3><p><strong>答：</strong></p>
+<p>优化方式：</p>
+<ul>
+<li>分页加载数据</li>
+<li>开启行虚拟化</li>
+<li>开启列虚拟化</li>
+<li>减少复杂模板</li>
+<li>避免一次性加载全部数据</li>
+<li>数据库查询加索引</li>
+<li>后台异步加载</li>
+</ul>
+<p>示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;DataGrid</span> <span class="na">EnableRowVirtualization=</span><span class="s">&#34;True&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="na">EnableColumnVirtualization=</span><span class="s">&#34;True&#34;</span>
+</span></span><span class="line"><span class="cl">          <span class="na">VirtualizingPanel.IsVirtualizing=</span><span class="s">&#34;True&#34;</span> <span class="nt">/&gt;</span>
+</span></span></code></pre></div><h3 id="21-wpf-事件和-command-怎么选择">
+<a class="header-anchor" href="#21-wpf-%e4%ba%8b%e4%bb%b6%e5%92%8c-command-%e6%80%8e%e4%b9%88%e9%80%89%e6%8b%a9"></a>
+21. WPF 事件和 Command 怎么选择？
+</h3><p><strong>答：</strong></p>
+<p>简单界面或和 UI 强相关的逻辑，可以用事件。</p>
+<p>比如窗口加载、鼠标移动、控件动画。</p>
+<p>业务操作更推荐 Command。</p>
+<p>比如：</p>
+<ul>
+<li>保存</li>
+<li>删除</li>
+<li>查询</li>
+<li>登录</li>
+<li>提交</li>
+</ul>
+<p>面试可以说：</p>
+<p>如果使用 MVVM，我会优先用 Command 处理业务操作，减少 View 后台代码。</p>
+<h3 id="22-wpf-中-binding-失败怎么排查">
+<a class="header-anchor" href="#22-wpf-%e4%b8%ad-binding-%e5%a4%b1%e8%b4%a5%e6%80%8e%e4%b9%88%e6%8e%92%e6%9f%a5"></a>
+22. WPF 中 Binding 失败怎么排查？
+</h3><p><strong>答：</strong></p>
+<p>常见排查方向：</p>
+<ul>
+<li><code>DataContext</code> 是否设置正确</li>
+<li>属性名是否写错</li>
+<li>属性是否是 <code>public</code></li>
+<li>是否实现 <code>INotifyPropertyChanged</code></li>
+<li>绑定路径是否正确</li>
+<li>输出窗口是否有 Binding 错误</li>
+<li>集合是否使用 <code>ObservableCollection&lt;T&gt;</code></li>
+</ul>
+<h3 id="23-usercontrol-和-customcontrol-有什么区别">
+<a class="header-anchor" href="#23-usercontrol-%e5%92%8c-customcontrol-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+23. <code>UserControl</code> 和 <code>CustomControl</code> 有什么区别？
+</h3><p><strong>答：</strong></p>
+<p><code>UserControl</code> 是把多个已有控件组合成一个控件，开发简单。</p>
+<p><code>CustomControl</code> 是自定义控件，通常配合 <code>ControlTemplate</code>，可定制性更强。</p>
+<p>区别：</p>
+<ul>
+<li><code>UserControl</code> 适合业务控件组合</li>
+<li><code>CustomControl</code> 适合通用控件库</li>
+<li><code>CustomControl</code> 更适合支持样式和模板</li>
+<li><code>UserControl</code> 开发更快</li>
+</ul>
+<h3 id="24-wpf-中路由事件是什么">
+<a class="header-anchor" href="#24-wpf-%e4%b8%ad%e8%b7%af%e7%94%b1%e4%ba%8b%e4%bb%b6%e6%98%af%e4%bb%80%e4%b9%88"></a>
+24. WPF 中路由事件是什么？
+</h3><p><strong>答：</strong></p>
+<p>路由事件不是只在当前控件处理，而是可以沿控件树传播。</p>
+<p>常见有三种：</p>
+<ul>
+<li>冒泡事件：从子控件向父控件传播</li>
+<li>隧道事件：从父控件向子控件传播，通常以 <code>Preview</code> 开头</li>
+<li>直接事件：只在当前控件触发</li>
+</ul>
+<p>比如 Button 点击事件可以向上冒泡到父容器。</p>
+<h3 id="25-wpf-中常见的性能问题有哪些">
+<a class="header-anchor" href="#25-wpf-%e4%b8%ad%e5%b8%b8%e8%a7%81%e7%9a%84%e6%80%a7%e8%83%bd%e9%97%ae%e9%a2%98%e6%9c%89%e5%93%aa%e4%ba%9b"></a>
+25. WPF 中常见的性能问题有哪些？
+</h3><p><strong>答：</strong></p>
+<p>常见问题：</p>
+<ul>
+<li>UI 线程执行耗时任务</li>
+<li>一次性加载大量数据</li>
+<li>DataGrid 未开启虚拟化</li>
+<li>绑定过多或绑定路径复杂</li>
+<li>控件层级太深</li>
+<li>复杂动画过多</li>
+<li>图片资源过大</li>
+<li>频繁刷新 UI</li>
+</ul>
+<p>优化思路：</p>
+<ul>
+<li>异步加载</li>
+<li>分页</li>
+<li>虚拟化</li>
+<li>简化模板</li>
+<li>减少不必要绑定</li>
+<li>图片压缩</li>
+<li>用日志或性能工具定位瓶颈</li>
+</ul>
+<h3 id="26-wpf-面试项目怎么说">
+<a class="header-anchor" href="#26-wpf-%e9%9d%a2%e8%af%95%e9%a1%b9%e7%9b%ae%e6%80%8e%e4%b9%88%e8%af%b4"></a>
+26. WPF 面试项目怎么说？
+</h3><p><strong>答：</strong></p>
+<p>可以这样回答：</p>
+<p>我做过 WPF 桌面管理系统，界面使用 XAML 编写，采用 MVVM 思路，把界面展示和业务逻辑分开。</p>
+<p>ViewModel 中通过 <code>INotifyPropertyChanged</code> 通知界面刷新，列表数据使用 <code>ObservableCollection&lt;T&gt;</code>，按钮操作使用 <code>ICommand</code>。</p>
+<p>项目中遇到过界面卡顿问题，我把数据库查询和文件处理放到后台线程，用 <code>async/await</code> 优化，同时对 DataGrid 做分页和虚拟化，提高了界面响应速度。</p>
+<p>对异常问题，我会记录日志，包括异常信息、堆栈、操作用户和关键参数，方便后续排查。</p>
+<hr>
+<h3 id="高频考点总结">
+<a class="header-anchor" href="#%e9%ab%98%e9%a2%91%e8%80%83%e7%82%b9%e6%80%bb%e7%bb%93"></a>
+高频考点总结
+</h3><p>你可以优先背这几个高频点：</p>
+<p><code>XAML</code>、<code>DataContext</code>、<code>Binding</code>、<code>INotifyPropertyChanged</code>、<code>ObservableCollection</code>、<code>ICommand</code>、<code>MVVM</code>、<code>DependencyProperty</code>、<code>Dispatcher</code>、<code>DataTemplate</code>、<code>ControlTemplate</code>、<code>StaticResource/DynamicResource</code>、<code>DataGrid 虚拟化</code>。</p>
+<p><a href="https://jishuzhan.net/article/2061237801412276226">本文是转载文章，点击看原文</a></p>
+</div>
+    <footer class="article-footer"><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/wpf"
+      data-aos="zoom-in"
+      >WPF</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/c"
+        rel="tag"
+        >C#</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/wpf"
+        rel="tag"
+        >WPF</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="/images/cover4.webp"
+              data-sizes="auto"
+              alt="WPF面试核心70题"
+              class="lazyload"
+            /><a
+          href="/post/wpf%E9%9D%A2%E8%AF%95%E6%A0%B8%E5%BF%8370%E9%A2%98/"
+          aria-label="前一篇:WPF面试核心70题"
+          title="前一篇:WPF面试核心70题"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">WPF面试核心70题</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="/images/cover8.webp"
+              data-sizes="auto"
+              alt="WPF面试题 2"
+              class="lazyload"
+            /><a
+          href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98-2/"
+          aria-label="后一篇:WPF面试题 2"
+          title="后一篇:WPF面试题 2"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">WPF面试题 2</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>Alone4869
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;189.1k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;06:32</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-wpf-是什么">1. WPF 是什么？</a></li>
+        <li><a href="#2-wpf-和-winforms-有什么区别">2. WPF 和 WinForms 有什么区别？</a></li>
+        <li><a href="#3-xaml-是什么">3. XAML 是什么？</a></li>
+        <li><a href="#4-wpf-中什么是数据绑定">4. WPF 中什么是数据绑定？</a></li>
+        <li><a href="#5-wpf-中-datacontext-是什么">5. WPF 中 <code>DataContext</code> 是什么？</a></li>
+        <li><a href="#6-什么是-mvvm">6. 什么是 MVVM？</a></li>
+        <li><a href="#7-inotifypropertychanged-有什么作用">7. <code>INotifyPropertyChanged</code> 有什么作用？</a></li>
+        <li><a href="#8-wpf-中-command-是什么">8. WPF 中 Command 是什么？</a></li>
+        <li><a href="#9-icommand-包含哪些成员">9. <code>ICommand</code> 包含哪些成员？</a></li>
+        <li><a href="#10-什么是依赖属性">10. 什么是依赖属性？</a></li>
+        <li><a href="#11-普通属性和依赖属性有什么区别">11. 普通属性和依赖属性有什么区别？</a></li>
+        <li><a href="#12-wpf-中资源-resource-是什么">12. WPF 中资源 Resource 是什么？</a></li>
+        <li><a href="#13-staticresource-和-dynamicresource-有什么区别">13. <code>StaticResource</code> 和 <code>DynamicResource</code> 有什么区别？</a></li>
+        <li><a href="#14-style-和-template-有什么区别">14. Style 和 Template 有什么区别？</a></li>
+        <li><a href="#15-controltemplate-和-datatemplate-有什么区别">15. <code>ControlTemplate</code> 和 <code>DataTemplate</code> 有什么区别？</a></li>
+        <li><a href="#16-wpf-布局容器有哪些">16. WPF 布局容器有哪些？</a></li>
+        <li><a href="#17-wpf-中如何避免界面卡死">17. WPF 中如何避免界面卡死？</a></li>
+        <li><a href="#18-wpf-中-dispatcher-是什么">18. WPF 中 Dispatcher 是什么？</a></li>
+        <li><a href="#19-observablecollectiont-有什么作用">19. <code>ObservableCollection&lt;T&gt;</code> 有什么作用？</a></li>
+        <li><a href="#20-wpf-中-datagrid-数据很多时怎么优化">20. WPF 中 DataGrid 数据很多时怎么优化？</a></li>
+        <li><a href="#21-wpf-事件和-command-怎么选择">21. WPF 事件和 Command 怎么选择？</a></li>
+        <li><a href="#22-wpf-中-binding-失败怎么排查">22. WPF 中 Binding 失败怎么排查？</a></li>
+        <li><a href="#23-usercontrol-和-customcontrol-有什么区别">23. <code>UserControl</code> 和 <code>CustomControl</code> 有什么区别？</a></li>
+        <li><a href="#24-wpf-中路由事件是什么">24. WPF 中路由事件是什么？</a></li>
+        <li><a href="#25-wpf-中常见的性能问题有哪些">25. WPF 中常见的性能问题有哪些？</a></li>
+        <li><a href="#26-wpf-面试项目怎么说">26. WPF 面试项目怎么说？</a></li>
+        <li><a href="#高频考点总结">高频考点总结</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">29</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">17</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/live2d-widgets@0.9.0/autoload.js"
+    defer
+    
+    
+    
+    integrity="sha384-poTN7wN/SqNhQqo3jdFeX20ikddWeFGkUkDEzsKjgH/ez8aQLn81oI0Cw6q5xNyB" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "Alone4869",
+          title: "WPF面试题 1",
+          url: "https:\/\/alone4869.github.io\/post\/wpf%E9%9D%A2%E8%AF%95%E9%A2%98-1\/",
+          description: " 1. WPF 是什么？ 答：\nWPF 全称是 Windows Presentation Foundation，是微软推出的桌面 UI 框架。\n它基于 .NET，使用 XAML 描述界面，使用 C# 编写逻辑。\nWPF 的特点：\n支持数据绑定 支持样式和模板 支持动画 支持 MVVM 架构 UI 表现力比 WinForms 更强 2. WPF 和 WinForms 有什么区别？ 答：\n",
+          cover: "https:\/\/alone4869.github.io\/images\/banner.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+        }
+        pswp()
+      </script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    
+    async
+    
+    
+    integrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>

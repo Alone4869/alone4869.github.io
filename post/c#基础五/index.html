@@ -1,0 +1,1857 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  C#基础（五） | Alone4869
+</title>
+<meta name="description" content="无量天尊"/><script>
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "true");
+</script><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://alone4869.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"English\",\"Locale\":\"\"},{\"Lang\":\"ja\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"日本語\",\"Locale\":\"\"},{\"Lang\":\"zh-cn\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"简体中文\",\"Locale\":\"zh-CN\"},{\"Lang\":\"zh-tw\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"繁體中文\",\"Locale\":\"\"}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="C#基础（五） | Alone4869" />
+  <meta
+    property="og:description"
+    content="无量天尊"
+  />
+  <meta property="og:url" content="https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%94/" />
+  <meta
+    property="og:site_name"
+    content="知否"
+  />
+  <meta property="og:image" content="https://alone4869.github.io/images/banner.webp" />
+  <meta property="article:author" content="Alone4869" />
+  <meta property="article:published_time" content="2026-10-10T00:06:26&#43;08:00" />
+  <meta property="article:modified_time" content="2026-10-10T00:06:26&#43;08:00" /><meta property="article:tag" content="C#" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://alone4869.github.io/images/banner.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.18b6dbee5e1b382f80c8c0cdf5f79d28d7139a30edcf474f45fab80da506432e.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages"><li data-value="en" role="option" aria-selected="false" >English</li><li data-value="ja" role="option" aria-selected="false" >日本語</li><li data-value="zh-cn" role="option" class="selected" aria-selected="true" >简体中文</li><li data-value="zh-tw" role="option" aria-selected="false" >繁體中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+          var expanded = selectSelected.getAttribute("aria-expanded") === "true";
+          selectSelected.setAttribute("aria-expanded", (!expanded).toString());
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+            selectSelected.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </nav><a href="https://github.com/alone4869/alone4869.github.io" class="triangle-badge" title="github" target="_blank" rel="noopener nofollow noreferrer">
+      <div class="icon icon-github triangle-badge-icon"></div>
+    </a></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="C#基础（五）"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">C#基础（五）</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一什么是可空引用类型">一、什么是可空引用类型</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#二什么是cilclrclicts">二、什么是CIL、CLR、CLI、CTS</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-1">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-1">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-1">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三c和net的区别是什么">三、C#和.NET的区别是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-2">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-2">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-2">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四值类型和引用类型有什么区别">四、值类型和引用类型有什么区别</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-3">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-3">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-3">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#五什么是装箱boxing和拆箱unboxing">五、什么是装箱（Boxing）和拆箱（Unboxing）</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-4">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-4">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-4">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#六三种主要的错误类型是什么">六、三种主要的错误类型是什么</a>
+      <ul>
+        <li><a href="#面试延伸追问">💡面试延伸追问</a></li>
+      </ul>
+    </li>
+    <li><a href="#七c-中如何处理异常">七、C# 中如何处理异常</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-5">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-5">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-5">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#八c中有哪些访问修饰符">八、C#中有哪些访问修饰符</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-6">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-6">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-6">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#九sealed修饰符的作用是什么">九、sealed修饰符的作用是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-7">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-7">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-7">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#十params关键字的作用是什么">十、params关键字的作用是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-8">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-8">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-8">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">29</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">17</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-10-10 00:06:26 &#43;0800 &#43;0800" itemprop="datePublished"
+      >2026-10-10</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-10-10</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="一什么是可空引用类型">
+<a class="header-anchor" href="#%e4%b8%80%e4%bb%80%e4%b9%88%e6%98%af%e5%8f%af%e7%a9%ba%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b"></a>
+一、什么是可空引用类型
+</h2><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>可空引用类型（Nullable Reference Types, NRT）</strong> 是 C# 8.0 引入的一项编译时特性，旨在从代码层面减少 <code>NullReferenceException</code>。</p>
+<p>它的核心机制是将引用类型分为两类：</p>
+<ol>
+<li><strong>非空引用类型</strong>（如 <code>string</code>）：编译器假定它永远不会为 null，如果赋值为 null 或可能为 null 的值，会发出警告。</li>
+<li><strong>可空引用类型</strong>（如 <code>string?</code>）：显式声明该变量可以为 null，访问其成员前必须进行 null 检查。</li>
+</ol>
+<p>注意：这只是一个<strong>静态分析工具</strong>，运行时 CLR 并不区分两者，不会阻止你给 <code>string</code> 赋值 null，但会在编译阶段通过警告提示潜在风险。</p>
+<h3 id="深入解析">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90"></a>
+📚深入解析
+</h3><h4 id="1-为什么需要-nrt">
+<a class="header-anchor" href="#1-%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81-nrt"></a>
+1. 为什么需要 NRT？
+</h4><p>在 C# 8.0 之前，所有的引用类型都可以为 null，导致了著名的“十亿美元错误”（Tony Hoare 语）。开发者经常忘记检查 null，导致生产环境抛出 <code>NullReferenceException</code>。NRT 通过编译器的静态分析，强制开发者思考“这个值是否可能为空”。</p>
+<h4 id="2-如何启用">
+<a class="header-anchor" href="#2-%e5%a6%82%e4%bd%95%e5%90%af%e7%94%a8"></a>
+2. 如何启用？
+</h4><p>在项目文件 <code>.csproj</code> 中配置：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;PropertyGroup&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Nullable&gt;</span>enable<span class="nt">&lt;/Nullable&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/PropertyGroup&gt;</span>
+</span></span></code></pre></div><p>或者在文件顶部使用指令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="cp">#nullable</span> <span class="n">enable</span>
+</span></span></code></pre></div><h4 id="3-核心语法与行为">
+<a class="header-anchor" href="#3-%e6%a0%b8%e5%bf%83%e8%af%ad%e6%b3%95%e4%b8%8e%e8%a1%8c%e4%b8%ba"></a>
+3. 核心语法与行为
+</h4><table>
+	<thead>
+			<tr>
+					<th>类型声明</th>
+					<th>含义</th>
+					<th>编译器行为</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>string s</code></td>
+					<td>非空引用</td>
+					<td>赋值为 null 时报警告；作为参数传递时假定不为 null</td>
+			</tr>
+			<tr>
+					<td><code>string? s</code></td>
+					<td>可空引用</td>
+					<td>允许赋值为 null；访问成员前需检查 null，否则报警告</td>
+			</tr>
+			<tr>
+					<td><code>T</code> (泛型)</td>
+					<td>取决于上下文</td>
+					<td>若未约束，默认为可空；若约束 <code>where T : notnull</code> 则不可空</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="4-代码示例">
+<a class="header-anchor" href="#4-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b"></a>
+4. 代码示例
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="cp">#nullable</span> <span class="n">enable</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">UserService</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">GetUserName</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ❌ 警告：返回可能为 null 的表达式，但返回类型是非空 string</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// return FindUser(id)?.Name; </span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// ✅ 正确做法：处理 null 情况</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">var</span> <span class="n">user</span> <span class="p">=</span> <span class="n">FindUser</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">user</span><span class="p">?.</span><span class="n">Name</span> <span class="p">??</span> <span class="s">&#34;Unknown&#34;</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">PrintName</span><span class="p">(</span><span class="kt">string?</span> <span class="n">name</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// ❌ 警告：&#39;name&#39; 可能为 null</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// Console.WriteLine(name.Length); </span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// ✅ 正确做法：先检查</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">name</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">name</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// 或者使用 null 合并运算符</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">name</span><span class="p">?.</span><span class="n">Length</span> <span class="p">??</span> <span class="m">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">User</span><span class="p">?</span> <span class="n">FindUser</span><span class="p">(</span><span class="kt">int</span> <span class="n">id</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 模拟数据库查询，可能返回 null</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">User</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="p">=</span> <span class="s">&#34;&#34;</span><span class="p">;</span> <span class="c1">// 初始化以避免警告</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="5-关键特性空状态静态分析">
+<a class="header-anchor" href="#5-%e5%85%b3%e9%94%ae%e7%89%b9%e6%80%a7%e7%a9%ba%e7%8a%b6%e6%80%81%e9%9d%99%e6%80%81%e5%88%86%e6%9e%90"></a>
+5. 关键特性：空状态静态分析
+</h4><p>编译器会跟踪变量的“空状态”（Null State）：</p>
+<ul>
+<li><strong>NotNull</strong>：确定不为 null。</li>
+<li><strong>MaybeNull</strong>：可能为 null。</li>
+<li><strong>NotNullWhen</strong>：通过方法属性标注，告诉编译器某个参数在方法返回 true 时不为 null。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 告诉编译器：如果返回 true，则 name 一定不为 null</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="kt">bool</span> <span class="n">TryGetName</span><span class="p">(</span><span class="kt">object?</span> <span class="n">obj</span><span class="p">,</span> <span class="p">[</span><span class="n">NotNullWhen</span><span class="p">(</span><span class="kc">true</span><span class="p">)]</span> <span class="k">out</span> <span class="kt">string?</span> <span class="n">name</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="k">is</span> <span class="n">User</span> <span class="n">user</span> <span class="p">&amp;&amp;</span> <span class="n">user</span><span class="p">.</span><span class="n">Name</span> <span class="p">!=</span> <span class="kc">null</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">name</span> <span class="p">=</span> <span class="n">user</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span> <span class="p">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="6-常见警告及消除方法">
+<a class="header-anchor" href="#6-%e5%b8%b8%e8%a7%81%e8%ad%a6%e5%91%8a%e5%8f%8a%e6%b6%88%e9%99%a4%e6%96%b9%e6%b3%95"></a>
+6. 常见警告及消除方法
+</h4><ul>
+<li><strong>CS8600</strong>: 将 null 字面量或可能的 null 值转换为非空类型。</li>
+<li><strong>CS8602</strong>: 解引用可能为 null 的引用。</li>
+<li><strong>CS8618</strong>: 非空字段未在构造函数中初始化。
+<ul>
+<li><strong>解决方法</strong>：使用默认值初始化、使用 <code>!</code> 抑制符（谨慎使用）、或使用 <code>[Required]</code> 特性。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>⚠️ 关于 <code>!</code> 抑制符</strong>：<code>name!.Length</code> 告诉编译器“我保证这里不为 null，别报错了”。滥用会导致 NRT 失效，应仅在确实比编译器更了解上下文时使用。</p>
+</blockquote>
+<h3 id="面试延伸追问预判面试官后续提问">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>
+<p><strong>NRT 是运行时检查吗？如果我给非空 string 赋值 null，程序会崩溃吗？</strong></p>
+<ul>
+<li>考点：NRT 仅是编译时静态分析，运行时 CLR 不感知。赋值 null 不会立即崩溃，但在后续解引用时会抛出 <code>NullReferenceException</code>。</li>
+</ul>
+</li>
+<li>
+<p><strong>如何处理第三方库没有开启 NRT 的情况？</strong></p>
+<ul>
+<li>考点：第三方库的类型可能被编译器视为“ oblivious ”（模糊状态），既不完全可信也不完全报错。可以通过封装、适配器模式或手动添加 null 检查来处理。</li>
+</ul>
+</li>
+<li>
+<p><strong>泛型中的 <code>where T : class</code> 和 <code>where T : notnull</code> 有什么区别？</strong></p>
+<ul>
+<li>考点：<code>class</code> 允许 nullable 引用类型（如 <code>string?</code>），而 <code>notnull</code> 禁止任何 null 值（包括可空引用类型和可空值类型），约束更严格。</li>
+</ul>
+</li>
+<li>
+<p><strong>在 ASP.NET Core 控制器中，如何优雅地处理模型绑定的 null 值？</strong></p>
+<ul>
+<li>考点：结合 <code>[BindRequired]</code>、数据注解验证（Data Annotations）、以及全局异常处理中间件。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="二什么是cilclrclicts">
+<a class="header-anchor" href="#%e4%ba%8c%e4%bb%80%e4%b9%88%e6%98%afcilclrclicts"></a>
+二、什么是CIL、CLR、CLI、CTS
+</h2><h3 id="面试简答考场口述答案-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-1"></a>
+✅面试简答（考场口述答案）
+</h3><p>这四个概念是 .NET 平台的核心架构组成部分，它们之间的关系可以概括为：</p>
+<ul>
+<li><strong>CLI (Common Language Infrastructure)</strong>：通用语言基础结构。它是 ECMA/ISO 的<strong>国际标准规范</strong>，定义了 .NET 平台的整体架构和运行环境标准。</li>
+<li><strong>CLR (Common Language Runtime)</strong>：公共语言运行时。它是微软对 CLI 标准的<strong>具体实现</strong>，负责代码的执行、内存管理（GC）、异常处理、线程调度等。</li>
+<li><strong>CIL (Common Intermediate Language)</strong>：通用中间语言（旧称 MSIL）。C# 等高级语言编译后生成的<strong>中间代码</strong>，不是机器码，由 CLR 在运行时通过 JIT 编译器转换为本地机器码。</li>
+<li><strong>CTS (Common Type System)</strong>：通用类型系统。它定义了所有 .NET 语言必须遵循的<strong>数据类型规范</strong>，确保不同语言（如 C# 和 VB.NET）编写的代码可以互相调用（互操作性）。</li>
+</ul>
+<p><strong>一句话总结：</strong> CLI 是标准，CLR 是实现，CIL 是中间代码，CTS 是类型规范。</p>
+<h3 id="深入解析-1">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-1"></a>
+📚深入解析
+</h3><p>为了更清晰地理解，我们可以从 .NET 程序的编译和执行流程来看这四个概念的作用：</p>
+<h4 id="1-cli-common-language-infrastructure---标准规范">
+<a class="header-anchor" href="#1-cli-common-language-infrastructure---%e6%a0%87%e5%87%86%e8%a7%84%e8%8c%83"></a>
+1. CLI (Common Language Infrastructure) - 标准规范
+</h4><ul>
+<li><strong>性质</strong>：它不是一个软件，而是一份文档/标准（ECMA-335）。</li>
+<li><strong>作用</strong>：它规定了如何构建一个跨语言的执行环境。任何厂商（如微软、Mono、Unity）只要遵循 CLI 标准，就可以开发自己的 .NET 运行时。</li>
+<li><strong>包含内容</strong>：CLI 标准中包含了 CTS、CLS（公共语言规范）、VES（虚拟执行系统，即运行时引擎）和元数据规范。</li>
+</ul>
+<h4 id="2-cts-common-type-system---类型统一">
+<a class="header-anchor" href="#2-cts-common-type-system---%e7%b1%bb%e5%9e%8b%e7%bb%9f%e4%b8%80"></a>
+2. CTS (Common Type System) - 类型统一
+</h4><ul>
+<li><strong>问题背景</strong>：C# 有 <code>int</code>，VB.NET 有 <code>Integer</code>，C++ 有 <code>int32</code>。如果没有统一标准，不同语言写的 DLL 无法互相识别类型。</li>
+<li><strong>作用</strong>：CTS 定义了在运行时环境中支持的数据类型和操作。
+<ul>
+<li>例如：CTS 规定所有整数最终都映射为 <code>System.Int32</code>。</li>
+<li>它定义了值类型（Value Types）和引用类型（Reference Types）的行为。</li>
+</ul>
+</li>
+<li><strong>价值</strong>：实现了<strong>跨语言集成</strong>。你用 C# 写的一个类库，可以被 VB.NET 或 F# 直接引用，因为它们的类型在底层是一致的。</li>
+</ul>
+<h4 id="3-cil-common-intermediate-language---中间代码">
+<a class="header-anchor" href="#3-cil-common-intermediate-language---%e4%b8%ad%e9%97%b4%e4%bb%a3%e7%a0%81"></a>
+3. CIL (Common Intermediate Language) - 中间代码
+</h4><ul>
+<li><strong>编译过程</strong>：当你编译 C# 代码时，编译器（Roslyn）不会直接生成 CPU 能执行的机器码（如 x86/x64 指令），而是生成 CIL 代码。</li>
+<li><strong>特点</strong>：
+<ul>
+<li><strong>平台无关性</strong>：CIL 不依赖具体的 CPU 架构。</li>
+<li><strong>包含元数据</strong>：CIL 程序集（.dll/.exe）中不仅包含指令，还包含完整的类型信息（元数据），这使得反射（Reflection）成为可能。</li>
+</ul>
+</li>
+<li><strong>执行</strong>：当程序运行时，CLR 中的 <strong>JIT (Just-In-Time) 编译器</strong> 会将 CIL 动态编译成当前机器的本地机器码。</li>
+</ul>
+<h4 id="4-clr-common-language-runtime---运行时引擎">
+<a class="header-anchor" href="#4-clr-common-language-runtime---%e8%bf%90%e8%a1%8c%e6%97%b6%e5%bc%95%e6%93%8e"></a>
+4. CLR (Common Language Runtime) - 运行时引擎
+</h4><ul>
+<li><strong>地位</strong>：它是 .NET 应用程序的“操作系统”，是微软对 CLI 中 VES（虚拟执行系统）的具体实现。</li>
+<li><strong>核心职责</strong>：
+<ol>
+<li><strong>加载代码</strong>：加载程序集和 CIL 代码。</li>
+<li><strong>JIT 编译</strong>：将 CIL 转为本地机器码。</li>
+<li><strong>内存管理</strong>：负责对象的分配和垃圾回收（GC）。</li>
+<li><strong>安全性检查</strong>：验证代码类型安全（Type Safety）。</li>
+<li><strong>异常处理与线程管理</strong>。</li>
+</ol>
+</li>
+</ul>
+<h4 id="关系图解">
+<a class="header-anchor" href="#%e5%85%b3%e7%b3%bb%e5%9b%be%e8%a7%a3"></a>
+关系图解
+</h4><pre class="mermaid">
+  graph TD
+    A[C#/VB.NET/F#源码] -->|编译| B[CIL+元数据]
+    B -->|输出| H[程序集 dll/exe]
+    H -->|加载| C[CLR运行时]
+
+    D[CLI标准规范] -.->|定义架构| C
+    D -.->|定义类型系统| E[CTS]
+    E -.->|约束IL| B
+
+    C -->|JIT编译| F[本地机器码]
+    F --> G[CPU执行]
+</pre><h3 id="面试延伸追问预判面试官后续提问-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-1"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>CIL 和机器码有什么区别？为什么 .NET 要先编译成 CIL 而不是直接编译成机器码？</strong>
+<ul>
+<li><em>考点</em>：跨平台能力、JIT 优化、启动速度 vs 运行速度的权衡。</li>
+</ul>
+</li>
+<li><strong>CTS 和 CLS (Common Language Specification) 有什么区别？</strong>
+<ul>
+<li><em>考点</em>：CTS 是底层所有类型的集合，CLS 是 CTS 的子集，是所有 .NET 语言都必须支持的最小功能集，以确保最大的互操作性。</li>
+</ul>
+</li>
+<li><strong>.NET Core / .NET 5+ 中还有 CLR 吗？</strong>
+<ul>
+<li><em>考点</em>：术语的变化。在 .NET Core 中，运行时通常被称为 &ldquo;CoreCLR&rdquo;，但架构理念依然遵循 CLI 标准。面试官可能在考察你对新旧 .NET 架构演变的了解。</li>
+</ul>
+</li>
+<li><strong>JIT 编译的过程是怎样的？什么是 NGen (Native Image Generator) 或 R2R (Ready to Run)？</strong>
+<ul>
+<li><em>考点</em>：性能优化。JIT 是在运行时编译，NGen/R2R 是提前编译部分 CIL 为机器码以减少启动时间。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="三c和net的区别是什么">
+<a class="header-anchor" href="#%e4%b8%89c%e5%92%8cnet%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"></a>
+三、C#和.NET的区别是什么
+</h2><h3 id="面试简答考场口述答案-2">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-2"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>C# 是编程语言，.NET 是开发平台（运行时环境/框架）。</strong></p>
+<ul>
+<li><strong>C#</strong>：是一种强类型、面向对象的<strong>编程语言</strong>，由微软设计，遵循 ECMA 标准。它负责编写逻辑代码，最终被编译成中间语言（CIL）。</li>
+<li><strong>.NET</strong>：是一个免费的、跨平台的<strong>开发者平台</strong>，包含类库（BCL/FCL）、运行时（CLR/CoreCLR）和工具链。它负责执行 C# 编译后的代码，提供内存管理、IO、网络等基础能力。</li>
+</ul>
+<p><strong>类比</strong>：C# 就像“英语”，而 .NET 就像“使用英语交流的社会环境和规则”。你可以用英语（C#）在 .NET 环境下写作，也可以用其他语言（如 F#、VB.NET）在这个环境下写作。</p>
+<h3 id="深入解析-2">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-2"></a>
+📚深入解析
+</h3><p>很多初学者容易混淆这两个概念，因为它们在微软生态中绑定得非常紧密。我们可以从以下几个维度区分：</p>
+<h4 id="1-本质不同">
+<a class="header-anchor" href="#1-%e6%9c%ac%e8%b4%a8%e4%b8%8d%e5%90%8c"></a>
+1. 本质不同
+</h4><ul>
+<li><strong>C# (Language)</strong>：
+<ul>
+<li>属于<strong>语法层</strong>。</li>
+<li>定义了变量怎么声明、循环怎么写、类怎么继承、异步怎么用 (<code>async/await</code>)。</li>
+<li>编译器叫 <strong>Roslyn</strong>，它将 <code>.cs</code> 文件编译成 <code>.dll</code> 或 <code>.exe</code>（包含 CIL 和元数据）。</li>
+</ul>
+</li>
+<li><strong>.NET (Platform/Framework)</strong>：
+<ul>
+<li>属于<strong>运行层和库层</strong>。</li>
+<li>提供了 <code>System.String</code>, <code>System.Console</code>, <code>List&lt;T&gt;</code> 等成千上万个现成的类。</li>
+<li>提供了 <strong>CLR</strong> (Common Language Runtime) 来加载代码、进行 JIT 编译、垃圾回收 (GC)。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-多对一关系">
+<a class="header-anchor" href="#2-%e5%a4%9a%e5%af%b9%e4%b8%80%e5%85%b3%e7%b3%bb"></a>
+2. 多对一关系
+</h4><ul>
+<li><strong>.NET 支持多种语言</strong>：虽然 C# 是最主流的，但 .NET 平台同样完美支持 <strong>F#</strong> (函数式)、<strong>VB.NET</strong>、<strong>C++/CLI</strong> 等。这些语言编写的代码可以互相引用，因为它们都遵循 .NET 的 <strong>CTS (通用类型系统)</strong>。</li>
+<li><strong>C# 也可以脱离传统 .NET Framework</strong>：虽然少见，但理论上 C# 编译器可以生成针对其他运行时的代码（如 Unity 的 IL2CPP，或者早期的 Mono），但在现代后端开发中，C# 几乎总是与 .NET (Core/5/6/7/8) 绑定出现。</li>
+</ul>
+<h4 id="3-版本迭代独立">
+<a class="header-anchor" href="#3-%e7%89%88%e6%9c%ac%e8%bf%ad%e4%bb%a3%e7%8b%ac%e7%ab%8b"></a>
+3. 版本迭代独立
+</h4><ul>
+<li><strong>C# 版本</strong>：C# 1.0, 2.0 &hellip; 10.0, 11.0, 12.0。新特性如 <code>record</code>, <code>pattern matching</code>, <code>nullable reference types</code> 是语言层面的升级。</li>
+<li><strong>.NET 版本</strong>：.NET Framework 4.8, .NET Core 3.1, .NET 5, 6, 7, 8, 9。新特性如 <code>Minimal API</code>, <code>Performance improvements in GC</code>, <code>HTTP/3 support</code> 是平台和运行时层面的升级。</li>
+<li><em>注意</em>：通常新的 .NET 版本会支持最新的 C# 版本，但它们是分别发布的。</li>
+</ul>
+<h4 id="4-历史演变-net-framework-vs-net-core-vs-net-5">
+<a class="header-anchor" href="#4-%e5%8e%86%e5%8f%b2%e6%bc%94%e5%8f%98-net-framework-vs-net-core-vs-net-5"></a>
+4. 历史演变 (.NET Framework vs .NET Core vs .NET 5+)
+</h4><ul>
+<li><strong>.NET Framework</strong>：仅限 Windows，闭源（部分开源），重量级。</li>
+<li><strong>.NET Core</strong>：跨平台（Windows/Linux/macOS），开源，轻量级，高性能。</li>
+<li><strong>.NET 5/6/7/8&hellip;</strong>：微软统一了平台，去掉了 &ldquo;Core&rdquo; 后缀，简称 &ldquo;.NET&rdquo;。这是目前面试中默认的 &ldquo;.NET&rdquo; 含义。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-2">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-2"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>既然 .NET 支持多种语言，为什么企业大多选择 C#？</strong>
+<ul>
+<li><em>考点</em>：生态丰富度、语法简洁性、社区支持、Visual Studio 的完美集成、就业市场主流。</li>
+</ul>
+</li>
+<li><strong>.NET Framework 和 .NET Core (现在的 .NET 5+) 有什么核心区别？</strong>
+<ul>
+<li><em>考点</em>：跨平台能力、性能差异（Core 更快）、微服务支持、部署方式（Framework 依赖安装，Core 可独立部署）。</li>
+</ul>
+</li>
+<li><strong>C# 代码是如何在 .NET 平台上运行起来的？请简述流程。</strong>
+<ul>
+<li><em>考点</em>：源码 -&gt; Roslyn 编译器 -&gt; CIL (中间语言) + 元数据 -&gt; 程序集 (Assembly) -&gt; CLR 加载 -&gt; JIT 编译为机器码 -&gt; CPU 执行。</li>
+</ul>
+</li>
+<li><strong>什么是 BCL (Base Class Library) 和 FCL (Framework Class Library)？</strong>
+<ul>
+<li><em>考点</em>：BCL 是 .NET 最核心的基础类库（如 <code>System</code>, <code>System.IO</code>），所有 .NET 应用都必须依赖；FCL 是更上层的扩展库（如 <code>ASP.NET Core</code>, <code>WPF</code>, <code>EF Core</code>），按需引用。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="四值类型和引用类型有什么区别">
+<a class="header-anchor" href="#%e5%9b%9b%e5%80%bc%e7%b1%bb%e5%9e%8b%e5%92%8c%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+四、值类型和引用类型有什么区别
+</h2><h3 id="面试简答考场口述答案-3">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-3"></a>
+✅面试简答（考场口述答案）
+</h3><p>核心区别在于<strong>内存分配位置</strong>和<strong>数据访问方式</strong>：</p>
+<ol>
+<li><strong>内存位置</strong>：
+<ul>
+<li><strong>值类型</strong>（如 <code>int</code>, <code>struct</code>）通常分配在**栈（Stack）**上（作为局部变量时），或者内联存储在引用类型的内部。</li>
+<li><strong>引用类型</strong>（如 <code>class</code>, <code>interface</code>, <code>delegate</code>）的对象实例分配在<strong>堆（Heap）<strong>上，栈中只存储指向堆内存的</strong>地址（引用）</strong>。</li>
+</ul>
+</li>
+<li><strong>赋值行为</strong>：
+<ul>
+<li><strong>值类型</strong>赋值是<strong>拷贝数据</strong>。修改副本不影响原值。</li>
+<li><strong>引用类型</strong>赋值是<strong>拷贝地址</strong>。多个变量指向同一块堆内存，修改其中一个会影响其他所有指向该对象的变量。</li>
+</ul>
+</li>
+<li><strong>生命周期管理</strong>：
+<ul>
+<li>值类型随作用域结束自动释放（出栈）。</li>
+<li>引用类型由 <strong>GC（垃圾回收器）</strong> 负责回收。</li>
+</ul>
+</li>
+</ol>
+<h3 id="深入解析-3">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-3"></a>
+📚深入解析
+</h3><h4 id="1-常见类型分类">
+<a class="header-anchor" href="#1-%e5%b8%b8%e8%a7%81%e7%b1%bb%e5%9e%8b%e5%88%86%e7%b1%bb"></a>
+1. 常见类型分类
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left">值类型 (Value Types)</th>
+					<th style="text-align: left">引用类型 (Reference Types)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>关键字</strong></td>
+					<td style="text-align: left"><code>struct</code>, <code>enum</code></td>
+					<td style="text-align: left"><code>class</code>, <code>interface</code>, <code>delegate</code>, <code>record</code> (引用型)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>内置类型</strong></td>
+					<td style="text-align: left"><code>int</code>, <code>float</code>, <code>bool</code>, <code>char</code>, <code>decimal</code>, <code>DateTime</code>, <code>Guid</code></td>
+					<td style="text-align: left"><code>string</code>, <code>object</code>, <code>dynamic</code>, <code>array[]</code>, <code>List&lt;T&gt;</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>默认值</strong></td>
+					<td style="text-align: left">0, false, null (nullable)</td>
+					<td style="text-align: left"><code>null</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>继承性</strong></td>
+					<td style="text-align: left">隐式继承自 <code>System.ValueType</code>，不能被继承</td>
+					<td style="text-align: left">可继承其他类（单继承），实现接口</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>空值处理</strong></td>
+					<td style="text-align: left">不能为 null（除非使用 <code>Nullable&lt;T&gt;</code> / <code>int?</code>）</td>
+					<td style="text-align: left">可以为 <code>null</code></td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="2-内存布局详解关键点">
+<a class="header-anchor" href="#2-%e5%86%85%e5%ad%98%e5%b8%83%e5%b1%80%e8%af%a6%e8%a7%a3%e5%85%b3%e9%94%ae%e7%82%b9"></a>
+2. 内存布局详解（关键点）
+</h4><ul>
+<li><strong>栈（Stack）</strong>：线程私有，内存连续，分配和释放速度极快（只需移动指针）。适合存储生命周期短、大小固定的数据。</li>
+<li><strong>堆（Heap）</strong>：进程共享，内存不连续，分配较慢，需要 GC 维护。适合存储大型对象或生命周期不确定的对象。</li>
+</ul>
+<p><strong>注意陷阱</strong>：</p>
+<ul>
+<li><strong>引用类型中的值类型字段</strong>：如果一个 <code>class</code> 里有一个 <code>int</code> 字段，这个 <code>int</code> 是存储在<strong>堆</strong>上的，因为它属于该对象的一部分。</li>
+<li><strong>值类型中的引用类型字段</strong>：如果一个 <code>struct</code> 里有一个 <code>string</code> 字段，<code>struct</code> 本身可能在栈上，但 <code>string</code> 的内容依然在<strong>堆</strong>上，<code>struct</code> 里只存了那个字符串的地址。</li>
+</ul>
+<h4 id="3-赋值与传递机制示例">
+<a class="header-anchor" href="#3-%e8%b5%8b%e5%80%bc%e4%b8%8e%e4%bc%a0%e9%80%92%e6%9c%ba%e5%88%b6%e7%a4%ba%e4%be%8b"></a>
+3. 赋值与传递机制示例
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 值类型演示</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">a</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">b</span> <span class="p">=</span> <span class="n">a</span><span class="p">;</span> <span class="c1">// 拷贝数值：b = 10</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="p">=</span> <span class="m">20</span><span class="p">;</span>    <span class="c1">// 修改 b</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="c1">// 输出 10 (a 不受影响)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 引用类型演示</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">obj1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MyClass</span> <span class="p">{</span> <span class="n">Id</span> <span class="p">=</span> <span class="m">1</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">obj2</span> <span class="p">=</span> <span class="n">obj1</span><span class="p">;</span> <span class="c1">// 拷贝地址：obj2 指向 obj1 同一块堆内存</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj2</span><span class="p">.</span><span class="n">Id</span> <span class="p">=</span> <span class="m">2</span><span class="p">;</span>     <span class="c1">// 修改堆内存中的数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">obj1</span><span class="p">.</span><span class="n">Id</span><span class="p">);</span> <span class="c1">// 输出 2 (obj1 也变了)</span>
+</span></span></code></pre></div><h4 id="4-性能考量">
+<a class="header-anchor" href="#4-%e6%80%a7%e8%83%bd%e8%80%83%e9%87%8f"></a>
+4. 性能考量
+</h4><ul>
+<li><strong>值类型</strong>：由于分配在栈上且无需 GC，通常性能更高，缓存友好（Cache Friendly）。适合小型数据结构（如坐标点 <code>Point</code>）。</li>
+<li><strong>引用类型</strong>：涉及堆分配和 GC 压力。频繁创建小型引用类型对象会导致 GC 频繁触发，影响性能。这也是为什么 C# 9 引入了 <code>record struct</code> 以及推荐在高性能场景使用 <code>struct</code> 的原因。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-3">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-3"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>String 是值类型还是引用类型？为什么它表现得像值类型？</strong>
+<ul>
+<li><em>考点</em>：<code>string</code> 是引用类型，但具有<strong>不可变性（Immutability）</strong>。每次修改字符串都会生成新对象，所以看起来像值拷贝。此外，字符串驻留池（Intern Pool）也是常考点。</li>
+</ul>
+</li>
+<li><strong>什么是装箱（Boxing）和拆箱（Unboxing）？对性能有什么影响？</strong>
+<ul>
+<li><em>考点</em>：将值类型转换为 <code>object</code> 或接口类型时发生装箱（堆分配+拷贝）；反之则为拆箱。频繁装箱拆箱会导致 GC 压力和 CPU 开销，应尽量避免（如使用泛型集合 <code>List&lt;int&gt;</code> 而非 <code>ArrayList</code>）。</li>
+</ul>
+</li>
+<li><strong>Struct 和 Class 除了内存分布外，还有哪些主要区别？</strong>
+<ul>
+<li><em>考点</em>：Struct 不能有显式的无参构造函数，不能被继承，可以实现接口，支持析构函数吗？（不支持）。</li>
+</ul>
+</li>
+<li><strong>在什么情况下应该使用 Struct 而不是 Class？</strong>
+<ul>
+<li><em>考点</em>：当数据结构简单、大小较小（建议小于 16 字节）、生命周期短、不需要继承、且需要高性能避免 GC 压力时。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="五什么是装箱boxing和拆箱unboxing">
+<a class="header-anchor" href="#%e4%ba%94%e4%bb%80%e4%b9%88%e6%98%af%e8%a3%85%e7%ae%b1boxing%e5%92%8c%e6%8b%86%e7%ae%b1unboxing"></a>
+五、什么是装箱（Boxing）和拆箱（Unboxing）
+</h2><h3 id="面试简答考场口述答案-4">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-4"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>装箱（Boxing）<strong>是将</strong>值类型</strong>转换为<strong>引用类型</strong>（<code>object</code> 或接口）的过程；<strong>拆箱（Unboxing）<strong>是将</strong>引用类型</strong>显式转换回<strong>值类型</strong>的过程。</p>
+<ul>
+<li><strong>装箱</strong>：在堆上分配内存，将值类型的副本拷贝到堆中，并返回该对象的引用。</li>
+<li><strong>拆箱</strong>：检查对象实例是否是给定的值类型，如果是，则将堆中的值拷贝回栈上的值类型变量。</li>
+<li><strong>核心影响</strong>：两者都涉及<strong>内存分配</strong>和<strong>数据拷贝</strong>，频繁操作会增加 <strong>GC（垃圾回收）</strong> 压力并降低性能，应在高性能场景中尽量避免。</li>
+</ul>
+<h3 id="深入解析-4">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-4"></a>
+📚深入解析
+</h3><h4 id="1-底层原理与内存变化">
+<a class="header-anchor" href="#1-%e5%ba%95%e5%b1%82%e5%8e%9f%e7%90%86%e4%b8%8e%e5%86%85%e5%ad%98%e5%8f%98%e5%8c%96"></a>
+1. 底层原理与内存变化
+</h4><p>C# 的类型系统统一了所有类型（都继承自 <code>System.Object</code>），但值类型和引用类型的存储方式不同。为了让值类型能像引用类型一样被处理（例如存入 <code>ArrayList</code> 或传给接收 <code>object</code> 参数的方法），CLR 必须进行“包装”。</p>
+<ul>
+<li>
+<p><strong>装箱过程 (Boxing)</strong>：</p>
+<ol>
+<li>在托管堆（Heap）中分配一个新的对象内存空间。</li>
+<li>该空间包含两部分：类型对象指针、同步块索引（引用类型头信息）以及<strong>值类型的数据副本</strong>。</li>
+<li>将栈上的值拷贝到堆中。</li>
+<li>返回堆中对象的地址（引用）。</li>
+</ol>
+</li>
+<li>
+<p><strong>拆箱过程 (Unboxing)</strong>：</p>
+<ol>
+<li>检查对象实例是否确实是由该值类型装箱而来的（类型检查）。</li>
+<li>获取堆中对象的值部分。</li>
+<li>将值从堆拷贝回栈上的值类型变量中。</li>
+</ol>
+</li>
+</ul>
+<h4 id="2-代码示例">
+<a class="header-anchor" href="#2-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b"></a>
+2. 代码示例
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">123</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 1. 装箱 (Boxing)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 隐式转换：int -&gt; object</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 发生：堆分配 + 内存拷贝</span>
+</span></span><span class="line"><span class="cl"><span class="kt">object</span> <span class="n">o</span> <span class="p">=</span> <span class="n">i</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 2. 拆箱 (Unboxing)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 显式转换：object -&gt; int</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 发生：类型检查 + 内存拷贝</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">o</span><span class="p">;</span> 
+</span></span></code></pre></div><h4 id="3-常见的隐性装箱陷阱">
+<a class="header-anchor" href="#3-%e5%b8%b8%e8%a7%81%e7%9a%84%e9%9a%90%e6%80%a7%e8%a3%85%e7%ae%b1%e9%99%b7%e9%98%b1"></a>
+3. 常见的隐性装箱陷阱
+</h4><p>面试官通常更关注你是否有意识去避免<strong>隐性装箱</strong>，因为显式装箱很容易被发现。</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">场景</th>
+					<th style="text-align: left">说明</th>
+					<th style="text-align: left">优化方案</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>非泛型集合</strong></td>
+					<td style="text-align: left"><code>ArrayList list = new ArrayList(); list.Add(10);</code> <!-- raw HTML omitted --> <code>Add</code> 参数是 <code>object</code>，导致装箱。</td>
+					<td style="text-align: left">使用泛型集合 <code>List&lt;int&gt;</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>字符串拼接</strong></td>
+					<td style="text-align: left"><code>string s = &quot;Value: &quot; + 10;</code> <!-- raw HTML omitted --> 编译器通常会调用 <code>ToString()</code>，但如果手动调用 <code>string.Format</code> 或旧式拼接可能触发。</td>
+					<td style="text-align: left">使用插值字符串 <code>$&quot;Value: {10}&quot;</code> 或 <code>StringBuilder</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>虚方法调用</strong></td>
+					<td style="text-align: left">值类型调用继承自 <code>System.ValueType</code> 的虚方法（如 <code>Equals</code>, <code>GetHashCode</code>, <code>ToString</code>）时，如果未被重写，可能触发装箱。</td>
+					<td style="text-align: left">为 struct 重写这些方法</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>接口转换</strong></td>
+					<td style="text-align: left"><code>struct MyStruct : IMyInterface {}</code> <!-- raw HTML omitted --> <code>IMyInterface iface = myStruct;</code> <!-- raw HTML omitted --> 将 struct 赋值给接口变量会触发装箱。</td>
+					<td style="text-align: left">尽量让 struct 不实现接口，或在泛型约束中处理</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="4-性能影响">
+<a class="header-anchor" href="#4-%e6%80%a7%e8%83%bd%e5%bd%b1%e5%93%8d"></a>
+4. 性能影响
+</h4><ol>
+<li><strong>CPU 开销</strong>：内存拷贝和类型检查需要 CPU 周期。</li>
+<li><strong>GC 压力</strong>：每次装箱都会在堆上产生一个临时对象。如果在一个循环中频繁装箱，会产生大量短期存活的对象，导致 Gen 0 GC 频繁触发，甚至引发暂停，严重影响吞吐量。</li>
+</ol>
+<h3 id="面试延伸追问预判面试官后续提问-4">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-4"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>如何检测代码中是否存在装箱操作？</strong>
+<ul>
+<li><em>考点</em>：使用 Visual Studio 的性能分析器（Performance Profiler）、ILSpy 查看生成的 IL 代码（查找 <code>box</code> 和 <code>unbox</code> 指令），或使用静态分析工具。</li>
+</ul>
+</li>
+<li><strong>泛型（Generics）是如何解决装箱问题的？</strong>
+<ul>
+<li><em>考点</em>：泛型在 JIT 编译时会生成特定类型的代码（如 <code>List&lt;int&gt;</code> 直接存储 int 数组），避免了转换为 <code>object</code>，从而消除了装箱/拆箱开销。这是泛型相比 <code>ArrayList</code> 的核心优势之一。</li>
+</ul>
+</li>
+<li><strong><code>string</code> 是引用类型，那 <code>string</code> 和 <code>int</code> 拼接时会发生装箱吗？</strong>
+<ul>
+<li><em>考点</em>：不会。编译器会将 <code>int</code> 转换为 <code>string</code>（调用 <code>ToString()</code>），然后进行引用类型的字符串拼接。虽然 <code>ToString()</code> 内部可能有逻辑，但这不属于“装箱”定义中的值转引用对象过程。</li>
+</ul>
+</li>
+<li><strong>对于高性能要求的场景，除了使用泛型，还有什么手段避免装箱？</strong>
+<ul>
+<li><em>考点</em>：使用 <code>Span&lt;T&gt;</code>, <code>Memory&lt;T&gt;</code>，使用 <code>ref struct</code>，或者使用 <code>IEquatable&lt;T&gt;</code> 接口替代默认的 <code>Equals(object)</code> 以避免值类型比较时的装箱。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="六三种主要的错误类型是什么">
+<a class="header-anchor" href="#%e5%85%ad%e4%b8%89%e7%a7%8d%e4%b8%bb%e8%a6%81%e7%9a%84%e9%94%99%e8%af%af%e7%b1%bb%e5%9e%8b%e6%98%af%e4%bb%80%e4%b9%88"></a>
+六、三种主要的错误类型是什么
+</h2><p>1、语法错误</p>
+<p>2、运行时错误</p>
+<p>3、逻辑错误</p>
+<h3 id="面试延伸追问">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae"></a>
+💡面试延伸追问
+</h3><ol>
+<li>
+<p><strong>单元测试能保护我们免受哪种类型的错误？</strong></p>
+<ul>
+<li>运行时错误和逻辑错误</li>
+</ul>
+</li>
+<li>
+<p><strong>C#处理运行时错误的机制是什么？</strong></p>
+<ul>
+<li>异常</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="七c-中如何处理异常">
+<a class="header-anchor" href="#%e4%b8%83c-%e4%b8%ad%e5%a6%82%e4%bd%95%e5%a4%84%e7%90%86%e5%bc%82%e5%b8%b8"></a>
+七、C# 中如何处理异常
+</h2><h3 id="面试简答考场口述答案-5">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-5"></a>
+✅面试简答（考场口述答案）
+</h3><p>C# 使用 <code>try-catch-finally</code> 结构进行异常处理：</p>
+<ol>
+<li><strong>try</strong>：包裹可能抛出异常的代码。</li>
+<li><strong>catch</strong>：捕获并处理特定类型的异常，建议按从具体到通用的顺序排列。</li>
+<li><strong>finally</strong>：无论是否发生异常都会执行，通常用于释放资源（如关闭连接、文件流）。</li>
+<li><strong>throw</strong>：用于重新抛出异常。建议使用 <code>throw;</code> 保留原始堆栈信息，避免使用 <code>throw ex;</code> 重置堆栈。</li>
+<li><strong>最佳实践</strong>：只捕获你能够处理的异常，不要吞掉异常（空的 catch），在 ASP.NET Core 中通常结合全局中间件统一处理未捕获异常。</li>
+</ol>
+<h3 id="深入解析-5">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-5"></a>
+📚深入解析
+</h3><h4 id="1-基本语法结构">
+<a class="header-anchor" href="#1-%e5%9f%ba%e6%9c%ac%e8%af%ad%e6%b3%95%e7%bb%93%e6%9e%84"></a>
+1. 基本语法结构
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">try</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 可能出错的代码</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">result</span> <span class="p">=</span> <span class="m">10</span> <span class="p">/</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="n">DivideByZeroException</span> <span class="n">ex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 捕获特定异常</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;除数不能为零: {ex.Message}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 捕获所有其他异常（必须放在最后）</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;发生未知错误: {ex.Message}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">finally</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 无论如何都会执行，用于清理资源</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;清理工作完成。&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="2-throw-vs-throw-ex-高频考点">
+<a class="header-anchor" href="#2-throw-vs-throw-ex-%e9%ab%98%e9%a2%91%e8%80%83%e7%82%b9"></a>
+2. <code>throw</code> vs <code>throw ex</code> （高频考点）
+</h4><ul>
+<li><strong><code>throw;</code></strong>：重新抛出当前捕获的异常。<strong>优点</strong>：保留原始的堆栈跟踪（Stack Trace），方便定位最初出错的位置。</li>
+<li><strong><code>throw ex;</code></strong>：抛出一个新的异常对象。<strong>缺点</strong>：堆栈跟踪会被重置，指向当前 <code>catch</code> 块的位置，丢失了原始出错点的信息，不利于调试。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 记录日志</span>
+</span></span><span class="line"><span class="cl">    <span class="n">_logger</span><span class="p">.</span><span class="n">LogError</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="s">&#34;Error occurred&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// ✅ 推荐：保留原始堆栈</span>
+</span></span><span class="line"><span class="cl">    <span class="k">throw</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// ❌ 不推荐：重置堆栈</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// throw ex; </span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="3-异常过滤器exception-filters---c-6">
+<a class="header-anchor" href="#3-%e5%bc%82%e5%b8%b8%e8%bf%87%e6%bb%a4%e5%99%a8exception-filters---c-6"></a>
+3. 异常过滤器（Exception Filters - C# 6+）
+</h4><p>可以在 <code>catch</code> 后面添加 <code>when</code> 子句，根据条件决定是否捕获异常。这比在 catch 块内部再写 if 判断更高效且逻辑更清晰。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">try</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ...</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span> <span class="n">when</span> <span class="p">(</span><span class="n">ex</span> <span class="k">is</span> <span class="n">IOException</span> <span class="p">&amp;&amp;</span> <span class="n">IsNetworkError</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 仅当是 IO 异常且为网络错误时捕获</span>
+</span></span><span class="line"><span class="cl">    <span class="n">RetryOperation</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="4-资源管理using-语句">
+<a class="header-anchor" href="#4-%e8%b5%84%e6%ba%90%e7%ae%a1%e7%90%86using-%e8%af%ad%e5%8f%a5"></a>
+4. 资源管理：<code>using</code> 语句
+</h4><p>对于实现了 <code>IDisposable</code> 接口的对象（如文件流、数据库连接），使用 <code>using</code> 可以确保即使发生异常，资源也能被正确释放。它本质上是 <code>try-finally</code> 的语法糖。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// C# 8.0+ using 声明</span>
+</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="nn">var</span> <span class="n">stream</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FileStream</span><span class="p">(</span><span class="s">&#34;test.txt&#34;</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Open</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 代码块结束时自动调用 stream.Dispose()</span>
+</span></span></code></pre></div><h4 id="5-aspnet-core-中的全局异常处理">
+<a class="header-anchor" href="#5-aspnet-core-%e4%b8%ad%e7%9a%84%e5%85%a8%e5%b1%80%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86"></a>
+5. ASP.NET Core 中的全局异常处理
+</h4><p>在后端开发中，不建议在每个 Controller 方法里写 try-catch。通常采用以下策略：</p>
+<ul>
+<li><strong>异常中间件（Exception Handling Middleware）</strong>：在 <code>Program.cs</code> 中配置，捕获所有未处理的异常，返回统一的 JSON 错误格式。</li>
+<li><strong>过滤器（Filters）</strong>：实现 <code>IExceptionFilter</code> 接口。</li>
+<li><strong>Problem Details</strong>：遵循 RFC 7807 标准，提供标准化的错误响应。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-5">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-5"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>什么是异常的性能开销？为什么不能用异常来控制流程？</strong>
+<ul>
+<li><em>考点</em>：抛出异常时，CLR 需要暂停执行，搜索 catch 块，收集堆栈信息，这个过程非常昂贵（比布尔返回值慢几个数量级）。因此，应使用 <code>int.TryParse</code> 而非 <code>try { int.Parse() } catch</code> 来处理用户输入。</li>
+</ul>
+</li>
+<li><strong><code>Finalize</code>（析构函数）和 <code>Dispose</code> 有什么区别？</strong>
+<ul>
+<li><em>考点</em>：<code>Dispose</code> 是确定性释放（手动或 using 调用），用于释放非托管资源；<code>Finalize</code> 是非确定性释放（由 GC 调用），性能开销大，应尽量避免依赖它。</li>
+</ul>
+</li>
+<li><strong>如何设计一个自定义异常类？</strong>
+<ul>
+<li><em>考点</em>：继承自 <code>Exception</code>（或更具体的 <code>ApplicationException</code> 已废弃，直接继承 <code>Exception</code>），建议提供至少三个构造函数（无参、带消息、带消息和内层异常），并标记 <code>[Serializable]</code>。</li>
+</ul>
+</li>
+<li><strong>在 async/await 异步方法中，异常是如何捕获的？</strong>
+<ul>
+<li><em>考点</em>：异步方法中的异常会被捕获并存储在返回的 <code>Task</code> 对象中。只有当你对 Task 进行 <code>await</code> 时，异常才会被重新抛出到当前的同步上下文。如果忘记 await，异常可能会被静默吞掉（取决于配置）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="八c中有哪些访问修饰符">
+<a class="header-anchor" href="#%e5%85%abc%e4%b8%ad%e6%9c%89%e5%93%aa%e4%ba%9b%e8%ae%bf%e9%97%ae%e4%bf%ae%e9%a5%b0%e7%ac%a6"></a>
+八、C#中有哪些访问修饰符
+</h2><h3 id="面试简答考场口述答案-6">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-6"></a>
+✅面试简答（考场口述答案）
+</h3><p>C# 主要有 <strong>5 种</strong>访问修饰符，用于控制类、方法、字段等成员的可访问性：</p>
+<ol>
+<li><strong><code>public</code></strong>：公开。任何代码都可以访问，无限制。</li>
+<li><strong><code>private</code></strong>：私有。只有<strong>同一个类或结构体</strong>内部可以访问。这是默认的类成员访问级别。</li>
+<li><strong><code>protected</code></strong>：受保护。只有<strong>同一个类</strong>及其**派生类（子类）**可以访问。</li>
+<li><strong><code>internal</code></strong>：内部。只有<strong>同一个程序集（Assembly，即 .dll 或 .exe）<strong>内的代码可以访问。这是默认的</strong>类</strong>访问级别。</li>
+<li><strong><code>protected internal</code></strong>：受保护或内部。同一程序集内的任何代码，<strong>或者</strong>不同程序集中的派生类都可以访问。（注意是“或”的关系）。</li>
+</ol>
+<p><em>补充：C# 7.2 引入了 <strong><code>private protected</code></strong>，仅限同一程序集内的派生类访问。</em></p>
+<h3 id="深入解析-6">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-6"></a>
+📚深入解析
+</h3><h4 id="1-访问权限对比表">
+<a class="header-anchor" href="#1-%e8%ae%bf%e9%97%ae%e6%9d%83%e9%99%90%e5%af%b9%e6%af%94%e8%a1%a8"></a>
+1. 访问权限对比表
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">修饰符</th>
+					<th style="text-align: center">同一类</th>
+					<th style="text-align: center">同程序集 (Assembly)</th>
+					<th style="text-align: center">派生类 (不同程序集)</th>
+					<th style="text-align: center">任何代码</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>private</code></td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">❌</td>
+					<td style="text-align: center">❌</td>
+					<td style="text-align: center">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>internal</code></td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">❌</td>
+					<td style="text-align: center">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>protected</code></td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">❌</td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>protected internal</code></td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>private protected</code></td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">❌</td>
+					<td style="text-align: center">✅ (仅同程序集)</td>
+					<td style="text-align: center">❌</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>public</code></td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">✅</td>
+					<td style="text-align: center">✅</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="2-关键概念辨析">
+<a class="header-anchor" href="#2-%e5%85%b3%e9%94%ae%e6%a6%82%e5%bf%b5%e8%be%a8%e6%9e%90"></a>
+2. 关键概念辨析
+</h4><ul>
+<li><strong>默认访问级别</strong>：
+<ul>
+<li>命名空间级别的**类（Class）**的默认级别是 <code>internal</code>，对于嵌套类的默认级别是<code>private</code>。如果你不写修饰符，其他项目（程序集）无法引用该类。</li>
+<li>**类成员（字段、方法）**的默认级别是 <code>private</code>。这符合封装原则，防止外部随意修改内部状态。</li>
+</ul>
+</li>
+<li><strong><code>protected internal</code> 的逻辑</strong>：
+<ul>
+<li>它是 <code>protected</code> <strong>OR</strong> <code>internal</code>。</li>
+<li>场景：你想让同一个库里的所有类都能用这个方法，同时也想让继承了这个库的其他项目里的子类也能重写或使用这个方法。</li>
+</ul>
+</li>
+<li><strong><code>private protected</code> 的逻辑</strong>：
+<ul>
+<li>它是 <code>private</code> <strong>AND</strong> <code>protected</code>（且限制在同程序集）。</li>
+<li>场景：非常严格的限制，只允许“自家兄弟”（同程序集）里的“后代”（子类）访问。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-常见应用场景">
+<a class="header-anchor" href="#3-%e5%b8%b8%e8%a7%81%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af"></a>
+3. 常见应用场景
+</h4><ul>
+<li><strong><code>public</code></strong>：API 接口、对外暴露的服务方法、DTO 模型。</li>
+<li><strong><code>private</code></strong>：内部辅助方法、私有字段（配合 Property 使用）。</li>
+<li><strong><code>internal</code></strong>：库内部的工具类、不希望被外部项目直接调用的实现细节。</li>
+<li><strong><code>protected</code></strong>：基类中希望子类重写的方法（如 <code>virtual void Process()</code>）或共享的状态。</li>
+</ul>
+<h4 id="4-代码示例-1">
+<a class="header-anchor" href="#4-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b-1"></a>
+4. 代码示例
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// Assembly A</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">BaseClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">int</span> <span class="n">_id</span><span class="p">;</span> <span class="c1">// 仅 BaseClass 可用</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">internal</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// Assembly A 内可用</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kt">int</span> <span class="n">Age</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span> <span class="c1">// BaseClass 及子类可用</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="kd">internal</span> <span class="k">void</span> <span class="n">Show</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span> <span class="c1">// Assembly A 内可用 OR 任何地方的子类可用</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">DerivedClass</span> <span class="p">:</span> <span class="n">BaseClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Test</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// _id = 1; // Error: private</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Test&#34;</span><span class="p">;</span> <span class="c1">// OK: internal (同程序集)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="n">Age</span> <span class="p">=</span> <span class="m">10</span><span class="p">;</span> <span class="c1">// OK: protected (子类)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">this</span><span class="p">.</span><span class="n">Show</span><span class="p">();</span> <span class="c1">// OK: protected internal</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="面试延伸追问预判面试官后续提问-6">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-6"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong><code>internal</code> 和 <code>public</code> 在微服务或类库设计中如何选择？</strong>
+<ul>
+<li><em>考点</em>：最小权限原则。只暴露必要的 API 为 <code>public</code>，将内部实现细节标记为 <code>internal</code>，这样可以随时重构内部代码而不破坏外部依赖，提高库的稳定性。</li>
+</ul>
+</li>
+<li><strong>什么是友元程序集（InternalsVisibleTo）？</strong>
+<ul>
+<li><em>考点</em>：如果希望另一个特定的程序集（如单元测试项目）能访问当前程序集的 <code>internal</code> 成员，可以在 <code>AssemblyInfo.cs</code> 或 <code>.csproj</code> 中使用 <code>[assembly: InternalsVisibleTo(&quot;MyTestProject&quot;)]</code>。这在编写单元测试时非常有用。</li>
+</ul>
+</li>
+<li><strong>接口（Interface）中的成员可以有访问修饰符吗？</strong>
+<ul>
+<li><em>考点</em>：在 C# 8.0 之前，接口成员隐式为 <code>public</code>，不能加修饰符。C# 8.0 引入了默认接口实现，允许接口成员有实现体，但访问级别依然受到严格限制（通常仍视为公开契约的一部分，但可以有 <code>private</code> 辅助方法在接口内部复用）。</li>
+</ul>
+</li>
+<li><strong>为什么字段通常设为 <code>private</code>，而通过 <code>Property</code> 暴露？</strong>
+<ul>
+<li><em>考点</em>：封装。Property 可以在 <code>get/set</code> 中加入逻辑验证、通知机制（如 INotifyPropertyChanged）或懒加载，而直接暴露 <code>public</code> 字段则失去了这些控制权。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="九sealed修饰符的作用是什么">
+<a class="header-anchor" href="#%e4%b9%9dsealed%e4%bf%ae%e9%a5%b0%e7%ac%a6%e7%9a%84%e4%bd%9c%e7%94%a8%e6%98%af%e4%bb%80%e4%b9%88"></a>
+九、sealed修饰符的作用是什么
+</h2><h3 id="面试简答考场口述答案-7">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-7"></a>
+✅面试简答（考场口述答案）
+</h3><p><code>sealed</code> 修饰符主要有两个作用：</p>
+<ol>
+<li><strong>密封类</strong>：当修饰<strong>类</strong>时，表示该类<strong>不能被继承</strong>。任何尝试继承该类的操作都会导致编译错误。</li>
+<li><strong>密封方法/属性</strong>：当修饰<strong>重写的方法或属性</strong>（<code>override</code>）时，表示该方法在派生类中<strong>不能再被进一步重写</strong>。</li>
+</ol>
+<p><strong>核心目的</strong>：限制继承层次，保护设计意图，防止子类破坏基类的逻辑完整性，同时在某些情况下能帮助 JIT 编译器进行性能优化（去虚拟化）。</p>
+<h3 id="深入解析-7">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-7"></a>
+📚深入解析
+</h3><h4 id="1-密封类-sealed-class">
+<a class="header-anchor" href="#1-%e5%af%86%e5%b0%81%e7%b1%bb-sealed-class"></a>
+1. 密封类 (Sealed Class)
+</h4><ul>
+<li><strong>语法</strong>：<code>public sealed class MyClass { }</code></li>
+<li><strong>特点</strong>：
+<ul>
+<li>不能有子类。</li>
+<li>通常用于工具类、静态类（隐式密封）或为了安全/性能考虑不希望被扩展的类。</li>
+<li><strong>经典案例</strong>：C# 中的 <code>string</code> 类就是 <code>sealed</code> 的。这是为了保证字符串的不可变性（Immutability）和安全性，防止有人通过继承篡改字符串的行为。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-密封成员-sealed-member">
+<a class="header-anchor" href="#2-%e5%af%86%e5%b0%81%e6%88%90%e5%91%98-sealed-member"></a>
+2. 密封成员 (Sealed Member)
+</h4><ul>
+<li><strong>语法</strong>：必须与 <code>override</code> 连用，即 <code>public sealed override void Method() { }</code></li>
+<li><strong>场景</strong>：
+<ul>
+<li>基类定义了一个虚方法 <code>virtual</code>。</li>
+<li>中间层子类重写了该方法 <code>override</code>，并认为自己的实现已经是最终版本，不希望后续的子类再修改这个逻辑。</li>
+<li>此时使用 <code>sealed override</code> 锁定该方法。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Base</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">virtual</span> <span class="k">void</span> <span class="n">DoWork</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Base&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Middle</span> <span class="p">:</span> <span class="n">Base</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 重写并密封，后续子类无法再重写 DoWork</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">sealed</span> <span class="kd">override</span> <span class="k">void</span> <span class="n">DoWork</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Middle&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Derived</span> <span class="p">:</span> <span class="n">Middle</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ❌ 编译错误：Cannot override inherited member &#39;Middle.DoWork()&#39; because it is sealed</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// public override void DoWork() { } </span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="3-性能优化jit-去虚拟化">
+<a class="header-anchor" href="#3-%e6%80%a7%e8%83%bd%e4%bc%98%e5%8c%96jit-%e5%8e%bb%e8%99%9a%e6%8b%9f%e5%8c%96"></a>
+3. 性能优化（JIT 去虚拟化）
+</h4><ul>
+<li><strong>原理</strong>：调用虚方法（Virtual Method）时，CLR 需要通过虚方法表（V-Table）查找实际要执行的方法地址，这比直接调用非虚方法稍慢。</li>
+<li><strong>优化</strong>：如果一个类是 <code>sealed</code> 的，或者一个虚方法被 <code>sealed</code> 了，JIT 编译器在编译机器码时就能确定该方法不可能再有其他重写版本。因此，它可以<strong>直接调用</strong>该方法的具体实现，跳过 V-Table 查找过程。这种优化称为“去虚拟化”（De-virtualization）。</li>
+<li><strong>注意</strong>：在现代 .NET (Core/5+) 中，JIT 非常智能，即使没有 <code>sealed</code>，它也能通过内联缓存（Inline Caching）等技术优化很多虚调用，但显式使用 <code>sealed</code> 依然是一个明确的性能提示。</li>
+</ul>
+<h4 id="4-为什么-string-是-sealed-的">
+<a class="header-anchor" href="#4-%e4%b8%ba%e4%bb%80%e4%b9%88-string-%e6%98%af-sealed-%e7%9a%84"></a>
+4. 为什么 <code>string</code> 是 sealed 的？
+</h4><ol>
+<li><strong>安全性</strong>：字符串常用于存储敏感信息（如密码、SQL 连接串）。如果允许继承，恶意代码可能创建一个伪装成 <code>string</code> 的子类，篡改其行为。</li>
+<li><strong>不可变性</strong>：<code>string</code> 的核心契约是不可变。如果允许继承，子类可能会引入可变状态，破坏哈希码的一致性（Hash Code Consistency），导致在 <code>Dictionary</code> 或 <code>HashSet</code> 中出现严重 Bug。</li>
+<li><strong>字符串驻留池（Intern Pool）</strong>：CLR 内部对字符串有优化机制，密封类更容易被运行时特殊处理。</li>
+</ol>
+<h3 id="面试延伸追问预判面试官后续提问-7">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-7"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>抽象类（Abstract Class）可以是 sealed 的吗？</strong>
+<ul>
+<li><em>考点</em>：<strong>不可以</strong>。<code>abstract</code> 意味着必须被继承才能实现，而 <code>sealed</code> 意味着禁止继承，两者语义冲突。</li>
+</ul>
+</li>
+<li><strong>结构体（Struct）可以是 sealed 的吗？</strong>
+<ul>
+<li><em>考点</em>：结构体<strong>隐式</strong>就是密封的。因为 struct 是值类型，不支持继承（只能实现接口），所以你不能给 struct 加 <code>sealed</code> 关键字，但它本质上具有 sealed 的特性。</li>
+</ul>
+</li>
+<li><strong>在设计模式或框架开发中，什么时候应该主动使用 sealed？</strong>
+<ul>
+<li><em>考点</em>：当你设计一个类库，且确定某个类的逻辑是完整的、不需要也不希望用户通过继承来扩展时。例如：DTO 对象、实体类（Entity）、工具帮助类。这符合“组合优于继承”的原则，减少耦合。</li>
+</ul>
+</li>
+<li><strong><code>static</code> 类和 <code>sealed</code> 类有什么区别？</strong>
+<ul>
+<li><em>考点</em>：<code>static</code> 类隐式是 <code>sealed</code> 且 <code>abstract</code> 的。它不能实例化，也不能被继承，所有成员必须是静态的。而普通的 <code>sealed</code> 类可以实例化，只是不能被继承。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="十params关键字的作用是什么">
+<a class="header-anchor" href="#%e5%8d%81params%e5%85%b3%e9%94%ae%e5%ad%97%e7%9a%84%e4%bd%9c%e7%94%a8%e6%98%af%e4%bb%80%e4%b9%88"></a>
+十、params关键字的作用是什么
+</h2><h3 id="面试简答考场口述答案-8">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-8"></a>
+✅面试简答（考场口述答案）
+</h3><p><code>params</code> 关键字用于声明<strong>可变数量的参数</strong>。它允许调用者在调用方法时，传入任意数量（包括零个）的指定类型参数，而无需显式创建数组。</p>
+<ul>
+<li><strong>底层实现</strong>：编译器在编译时会将这些分散的参数自动打包成一个<strong>数组</strong>传递给方法。</li>
+<li><strong>限制</strong>：一个方法只能有一个 <code>params</code> 参数，且它必须是参数列表中的<strong>最后一个</strong>参数。</li>
+<li><strong>常见场景</strong>：<code>string.Format</code>, <code>Console.WriteLine</code>, <code>Path.Combine</code> 等。</li>
+</ul>
+<h3 id="深入解析-8">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-8"></a>
+📚深入解析
+</h3><h4 id="1-语法与使用示例">
+<a class="header-anchor" href="#1-%e8%af%ad%e6%b3%95%e4%b8%8e%e4%bd%bf%e7%94%a8%e7%a4%ba%e4%be%8b"></a>
+1. 语法与使用示例
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MathHelper</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 定义一个可以接收任意个数 int 的方法</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">Sum</span><span class="p">(</span><span class="k">params</span> <span class="kt">int</span><span class="p">[]</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">numbers</span> <span class="p">==</span> <span class="kc">null</span> <span class="p">||</span> <span class="n">numbers</span><span class="p">.</span><span class="n">Length</span> <span class="p">==</span> <span class="m">0</span><span class="p">)</span> <span class="k">return</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">total</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">num</span> <span class="k">in</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">total</span> <span class="p">+=</span> <span class="n">num</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">total</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 调用方式 1：直接传多个参数（语法糖，编译器会自动创建数组）</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">result1</span> <span class="p">=</span> <span class="n">MathHelper</span><span class="p">.</span><span class="n">Sum</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">3</span><span class="p">,</span> <span class="m">4</span><span class="p">,</span> <span class="m">5</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 调用方式 2：直接传数组（完全合法）</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span><span class="p">[]</span> <span class="n">arr</span> <span class="p">=</span> <span class="p">{</span> <span class="m">10</span><span class="p">,</span> <span class="m">20</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">result2</span> <span class="p">=</span> <span class="n">MathHelper</span><span class="p">.</span><span class="n">Sum</span><span class="p">(</span><span class="n">arr</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 调用方式 3：不传参数（numbers 为一个长度为 0 的空数组，而非 null）</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">result3</span> <span class="p">=</span> <span class="n">MathHelper</span><span class="p">.</span><span class="n">Sum</span><span class="p">();</span> 
+</span></span></code></pre></div><h4 id="2-编译原理il-层面">
+<a class="header-anchor" href="#2-%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86il-%e5%b1%82%e9%9d%a2"></a>
+2. 编译原理（IL 层面）
+</h4><p>当你写 <code>Sum(1, 2, 3)</code> 时，C# 编译器（Roslyn）会在生成的 IL（中间语言）中将其转换为：</p>
+<ol>
+<li>创建一个 <code>int[3]</code> 数组。</li>
+<li>将 1, 2, 3 填入数组。</li>
+<li>调用 <code>Sum(int[])</code> 方法。</li>
+</ol>
+<p>这意味着：<strong><code>params</code> 只是编译器的语法糖，运行时并没有特殊的“可变参数”机制，本质上还是数组传递。</strong></p>
+<h4 id="3-关键规则与陷阱">
+<a class="header-anchor" href="#3-%e5%85%b3%e9%94%ae%e8%a7%84%e5%88%99%e4%b8%8e%e9%99%b7%e9%98%b1"></a>
+3. 关键规则与陷阱
+</h4><ul>
+<li><strong>位置限制</strong>：<code>params</code> 必须是最后一个参数。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// ✅ 正确</span>
+</span></span><span class="line"><span class="cl"><span class="k">void</span> <span class="n">Log</span><span class="p">(</span><span class="kt">string</span> <span class="n">level</span><span class="p">,</span> <span class="k">params</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">messages</span><span class="p">)</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// ❌ 错误：CS0231 A parameter array must be the last parameter in a formal parameter list</span>
+</span></span><span class="line"><span class="cl"><span class="k">void</span> <span class="n">Log</span><span class="p">(</span><span class="k">params</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">messages</span><span class="p">,</span> <span class="kt">string</span> <span class="n">level</span><span class="p">)</span> <span class="p">{}</span>
+</span></span></code></pre></div></li>
+<li><strong>唯一性</strong>：一个方法签名中只能有一个 <code>params</code> 参数。</li>
+<li><strong>优先级</strong>：如果存在重载方法，编译器会优先匹配<strong>非 params</strong> 的精确匹配版本。只有当没有精确匹配时，才会考虑 <code>params</code> 版本。
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">void</span> <span class="n">Print</span><span class="p">(</span><span class="kt">string</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>       <span class="c1">// 优先匹配这个</span>
+</span></span><span class="line"><span class="cl"><span class="k">void</span> <span class="n">Print</span><span class="p">(</span><span class="k">params</span> <span class="kt">string</span><span class="p">[]</span> <span class="n">args</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Print</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">);</span> <span class="c1">// 调用第一个</span>
+</span></span><span class="line"><span class="cl"><span class="n">Print</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">,</span> <span class="s">&#34;World&#34;</span><span class="p">);</span> <span class="c1">// 调用第二个</span>
+</span></span></code></pre></div></li>
+<li><strong>空调用行为</strong>：如果调用时不给 <code>params</code> 传任何值（如 <code>Sum()</code>），方法内部接收到的数组是一个<strong>长度为 0 的空数组</strong> (<code>new int[0]</code>)，而不是 <code>null</code>。因此通常不需要判空，但判长是好的习惯。</li>
+</ul>
+<h4 id="4-性能考量-1">
+<a class="header-anchor" href="#4-%e6%80%a7%e8%83%bd%e8%80%83%e9%87%8f-1"></a>
+4. 性能考量
+</h4><p>由于每次调用 <code>params</code> 方法（除非直接传已有数组）都会在堆上分配一个新的数组对象：</p>
+<ul>
+<li><strong>高频调用场景</strong>：如果在紧密循环中频繁调用带 <code>params</code> 的方法，会产生大量的短期数组对象，增加 <strong>GC（垃圾回收）</strong> 压力。</li>
+<li><strong>优化建议</strong>：在高性能敏感代码中，可以考虑提供接受 <code>Span&lt;T&gt;</code> 或 <code>ArraySegment&lt;T&gt;</code> 的重载，或者直接使用数组/集合作为参数，避免隐式分配。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-8">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-8"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong><code>params object[]</code> 有什么特殊之处？为什么不建议在高性能场景使用？</strong>
+<ul>
+<li><em>考点</em>：<code>params object[]</code> 会导致严重的**装箱（Boxing）**问题。如果你传 <code>Sum(1, 2)</code>，每个 int 都会被装箱成 object，产生额外的堆分配和拷贝开销。这是 .NET 早期 API 设计的历史遗留问题，现代 API 倾向于使用泛型或 <code>Span&lt;T&gt;</code>。</li>
+</ul>
+</li>
+<li><strong>如果我想设计一个方法，既支持单个元素，又支持多个元素，该如何设计重载？</strong>
+<ul>
+<li><em>考点</em>：考察重载解析优先级。通常提供一个单参数方法和一个 <code>params</code> 数组方法。编译器会根据参数数量自动选择最匹配的重载。</li>
+</ul>
+</li>
+<li><strong>C# 12 引入了 <code>params Span&lt;T&gt;</code> 和 <code>params ReadOnlySpan&lt;T&gt;</code>，这解决了什么问题？</strong>
+<ul>
+<li><em>考点</em>：这是最新的性能优化特性。允许调用者传入栈分配的 <code>stackalloc</code> 数组或切片，完全避免了堆内存分配（Zero-allocation），极大地提升了高性能场景下的表现。</li>
+</ul>
+</li>
+<li><strong><code>params</code> 参数可以是 <code>null</code> 吗？</strong>
+<ul>
+<li><em>考点</em>：如果你显式传递 <code>null</code>（如 <code>Sum(null)</code>），那么方法内部接收到的就是 <code>null</code>，而不是空数组。这会引发 <code>NullReferenceException</code>。所以最佳实践是在方法内部同时检查 <code>null</code> 和 <code>Length</code>。</li>
+</ul>
+</li>
+</ol>
+</div>
+    <footer class="article-footer"><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/c"
+      data-aos="zoom-in"
+      >C#</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/c"
+        rel="tag"
+        >C#</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="/images/cover1.webp"
+              data-sizes="auto"
+              alt="C#基础（四）"
+              class="lazyload"
+            /><a
+          href="/post/c%23%E5%9F%BA%E7%A1%80%E5%9B%9B/"
+          aria-label="前一篇:C#基础（四）"
+          title="前一篇:C#基础（四）"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">C#基础（四）</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="/images/cover3.webp"
+              data-sizes="auto"
+              alt="C#基础（六）"
+              class="lazyload"
+            /><a
+          href="/post/c%23%E5%9F%BA%E7%A1%80%E5%85%AD/"
+          aria-label="后一篇:C#基础（六）"
+          title="后一篇:C#基础（六）"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">C#基础（六）</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>Alone4869
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;189.1k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;06:32</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一什么是可空引用类型">一、什么是可空引用类型</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#二什么是cilclrclicts">二、什么是CIL、CLR、CLI、CTS</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-1">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-1">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-1">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三c和net的区别是什么">三、C#和.NET的区别是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-2">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-2">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-2">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四值类型和引用类型有什么区别">四、值类型和引用类型有什么区别</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-3">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-3">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-3">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#五什么是装箱boxing和拆箱unboxing">五、什么是装箱（Boxing）和拆箱（Unboxing）</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-4">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-4">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-4">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#六三种主要的错误类型是什么">六、三种主要的错误类型是什么</a>
+      <ul>
+        <li><a href="#面试延伸追问">💡面试延伸追问</a></li>
+      </ul>
+    </li>
+    <li><a href="#七c-中如何处理异常">七、C# 中如何处理异常</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-5">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-5">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-5">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#八c中有哪些访问修饰符">八、C#中有哪些访问修饰符</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-6">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-6">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-6">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#九sealed修饰符的作用是什么">九、sealed修饰符的作用是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-7">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-7">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-7">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#十params关键字的作用是什么">十、params关键字的作用是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-8">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-8">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-8">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">29</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">17</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/live2d-widgets@0.9.0/autoload.js"
+    defer
+    
+    
+    
+    integrity="sha384-poTN7wN/SqNhQqo3jdFeX20ikddWeFGkUkDEzsKjgH/ez8aQLn81oI0Cw6q5xNyB" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "Alone4869",
+          title: "C#基础（五）",
+          url: "https:\/\/alone4869.github.io\/post\/c%23%E5%9F%BA%E7%A1%80%E4%BA%94\/",
+          description: " 一、什么是可空引用类型 ✅面试简答（考场口述答案） 可空引用类型（Nullable Reference Types, NRT） 是 C# 8.0 引入的一项编译时特性，旨在从代码层面减少 NullReferenceException。\n",
+          cover: "https:\/\/alone4869.github.io\/images\/banner.webp",
+        };
+      </script><script
+    src="https://npm.webcache.cn/mermaid@11.12.0/dist/mermaid.min.js"
+    
+    
+    data-pjax
+    
+    integrity="sha384-o&#43;g/BxPwhi0C3RK7oQBxQuNimeafQ3GE/ST4iT2BxVI4Wzt60SH4pq9iXVYujjaS" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/dompurify@3.2.6/dist/purify.min.js"
+    
+    
+    data-pjax
+    
+    integrity="sha384-JEyTNhjM6R1ElGoJns4U2Ln4ofPcqzSsynQkmEc/KGy6336qAZl70tDLufbkla&#43;3" crossorigin="anonymous"></script><script data-pjax>
+        if (window.mermaid) {
+          
+          const elementCode = '.mermaid'
+          const processElements = (callback) => {
+            const els = _$$(elementCode);
+            if (!els.length) return Promise.resolve();
+            
+            return new Promise((resolve, reject) => {
+              try {
+                els.forEach(callback);
+                resolve();
+              } catch (error) {
+                reject(error);
+              }
+            });
+          };
+          const saveOriginalData = () => processElements(el => {
+            if (!el.getAttribute('data-original-code')) {
+              el.setAttribute('data-original-code', el.innerHTML);
+            }
+          });
+
+          const resetProcessed = () => processElements(el => {
+            const originalCode = el.getAttribute('data-original-code');
+            if (originalCode) {
+              el.removeAttribute('data-processed');
+              el.innerHTML = DOMPurify.sanitize(originalCode);
+            }
+          });
+          const loadMermaid = async (theme) => {
+            window.mermaid.initialize({theme, startOnLoad: false})
+            await window.mermaid.run({querySelector: elementCode, suppressErrors: true})
+            if (window.svgPanZoom) {
+              window.__panZoomList?.forEach(panZoom => {try {panZoom.destroy()} catch {}});
+              window.__panZoomList = [];
+              _$$('.mermaid > svg').forEach(el => {
+                const bbox = el.getBBox();
+                el.setAttribute('height', Math.max(bbox.height, 80));
+                window.__panZoomList.push(window.svgPanZoom(el, {
+                  zoomEnabled: true,
+                  controlIconsEnabled: true,
+                  fit: true,
+                  center: true
+                }));
+              });
+              if (window.__resizeMermaidSvg) {
+                window.removeEventListener('resize', window.__resizeMermaidSvg);
+              }
+              window.__resizeMermaidSvg = () => {
+                try {
+                  window.__panZoomList.forEach(panZoom => {
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                  });
+                } catch {
+                  window.removeEventListener('resize', window.__resizeMermaidSvg);
+                  window.__panZoomList = [];
+                }
+              }
+              window.addEventListener('resize', window.__resizeMermaidSvg);
+            }
+          }
+          const initMermaid = async (theme) => {
+            try {
+              await saveOriginalData();
+              await resetProcessed();
+              await loadMermaid(theme);
+            } catch (error) {
+              console.error(error);
+            }
+          };
+          
+          document.body.addEventListener('reimu:theme-set', (e) => {
+            const isDark = e.detail.isDark;
+            initMermaid(isDark ? 'dark' : 'default');
+          });
+
+          const mode = localStorage.getItem('dark_mode');
+          if (mode === 'auto') {
+            const osMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+            initMermaid(osMode ? 'dark' : 'default');
+          } else {
+            initMermaid(mode === 'true' ? 'dark' : 'default');
+          }
+        }
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+        }
+        pswp()
+      </script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    
+    async
+    
+    
+    integrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>

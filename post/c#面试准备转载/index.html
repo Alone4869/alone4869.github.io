@@ -1,0 +1,1705 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  C#面试准备（转载） | Alone4869
+</title>
+<meta name="description" content="无量天尊"/><script>
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "true");
+</script><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://alone4869.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"English\",\"Locale\":\"\"},{\"Lang\":\"ja\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"日本語\",\"Locale\":\"\"},{\"Lang\":\"zh-cn\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"简体中文\",\"Locale\":\"zh-CN\"},{\"Lang\":\"zh-tw\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"繁體中文\",\"Locale\":\"\"}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="C#面试准备（转载） | Alone4869" />
+  <meta
+    property="og:description"
+    content="无量天尊"
+  />
+  <meta property="og:url" content="https://alone4869.github.io/post/c%23%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E8%BD%AC%E8%BD%BD/" />
+  <meta
+    property="og:site_name"
+    content="知否"
+  />
+  <meta property="og:image" content="https://alone4869.github.io/images/banner.webp" />
+  <meta property="article:author" content="Alone4869" />
+  <meta property="article:published_time" content="2026-10-11T00:53:10&#43;08:00" />
+  <meta property="article:modified_time" content="2026-10-11T00:53:10&#43;08:00" /><meta property="article:tag" content="C#, WPF, .NET" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://alone4869.github.io/images/banner.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.18b6dbee5e1b382f80c8c0cdf5f79d28d7139a30edcf474f45fab80da506432e.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages"><li data-value="en" role="option" aria-selected="false" >English</li><li data-value="ja" role="option" aria-selected="false" >日本語</li><li data-value="zh-cn" role="option" class="selected" aria-selected="true" >简体中文</li><li data-value="zh-tw" role="option" aria-selected="false" >繁體中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+          var expanded = selectSelected.getAttribute("aria-expanded") === "true";
+          selectSelected.setAttribute("aria-expanded", (!expanded).toString());
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+            selectSelected.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </nav><a href="https://github.com/alone4869/alone4869.github.io" class="triangle-badge" title="github" target="_blank" rel="noopener nofollow noreferrer">
+      <div class="icon icon-github triangle-badge-icon"></div>
+    </a></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="C#面试准备（转载）"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">C#面试准备（转载）</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#介绍下自己时间一分半以内">介绍下自己（时间一分半以内）</a></li>
+    <li><a href="#你觉得你有什么缺点--优点">你觉得你有什么缺点 / 优点</a></li>
+    <li><a href="#有无读研动机">有无读研动机？</a></li>
+    <li><a href="#过往项目-学到了什么-发挥怎么的作用">过往项目？/ 学到了什么？/ 发挥怎么的作用？</a></li>
+    <li><a href="#谈谈你对这个职位的理解">谈谈你对这个职位的理解</a></li>
+    <li><a href="#熟悉工控软件时序数据高并发处理">熟悉工控软件？时序数据，高并发处理？</a></li>
+    <li><a href="#plcdcsscada工业控制行业了解">PLC，DCS，SCADA，工业控制行业了解？</a></li>
+    <li><a href="#对我们公司的了解有多少">对我们公司的了解有多少？</a></li>
+    <li><a href="#大学期间有没有基于兴趣做一些技术上的研究">大学期间有没有基于兴趣做一些技术上的研究？</a></li>
+    <li><a href="#如果给我一个需求我会如何着手去实现如何搜索需求的技术如何解决技术难点">如果给我一个需求，我会如何着手去实现（如何搜索需求的技术，如何解决技术难点）</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是面向对象编程">什么是面向对象编程？</a></li>
+    <li><a href="#using-语法的作用">using 语法的作用</a></li>
+    <li><a href="#解释封装继承多态以及在-c-中的作用">解释封装继承多态，以及在 C# 中的作用</a></li>
+    <li><a href="#clsctsclr">CLS、CTS、CLR？</a></li>
+    <li><a href="#c-中-privateprotectedpublicinternal-修饰符的访问权限">C# 中 private、protected、public、internal 修饰符的访问权限</a></li>
+    <li><a href="#c-中有哪几种数据类型分别都有哪些区别有哪些">C# 中有哪几种数据类型？分别都有哪些？区别有哪些？</a></li>
+    <li><a href="#ref-out-什么区别作用">REF OUT 什么区别，作用</a></li>
+    <li><a href="#重写重载的区别">重写重载的区别</a></li>
+    <li><a href="#stringstringbufferstringbuilder-之间区别">String、StringBuffer、StringBuilder 之间区别</a></li>
+    <li><a href="#集合-ilist-接口与-list-的区别是什么">集合 IList 接口与 List 的区别是什么?</a></li>
+    <li><a href="#异常">异常</a></li>
+    <li><a href="#泛型---主要约束次要约束">泛型 - 主要约束，次要约束？</a></li>
+    <li><a href="#委托">委托</a></li>
+    <li><a href="#拓展方法">拓展方法</a></li>
+    <li><a href="#介绍-lambdalinq">介绍 LAMBDA、LINQ</a></li>
+    <li><a href="#有-50-万个-int-类型的数字现在需要判断一下里面是否存在重复的数字请你简单说一下思路">有 50 万个 int 类型的数字，现在需要判断一下里面是否存在重复的数字，请你简单说一下思路</a></li>
+    <li><a href="#efcoreorm-框架">EFCORE&ndash;ORM 框架</a></li>
+    <li><a href="#委托和事件">委托和事件</a></li>
+    <li><a href="#控制反转">控制反转</a></li>
+    <li><a href="#多线程---背后的机制thread-task">多线程 - 背后的机制（Thread-Task）</a></li>
+    <li><a href="#锁---死锁">锁 - 死锁</a></li>
+    <li><a href="#客户端与设备通讯机制上位机">客户端与设备通讯机制（上位机）</a></li>
+    <li><a href="#asyncawaittask">async，await，task</a></li>
+    <li><a href="#net-体系架构">.NET 体系架构</a></li>
+    <li><a href="#net-常用库">.NET 常用库</a></li>
+    <li><a href="#解释-c-和-net-之间的关系">解释 C# 和 .NET 之间的关系</a></li>
+    <li><a href="#adonet">ADO.NET</a></li>
+    <li><a href="#笔试基础问题">笔试基础问题！！！</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是依赖项属性">什么是依赖项属性</a></li>
+    <li><a href="#什么是双向绑定">什么是双向绑定</a></li>
+    <li><a href="#什么是响应式">什么是响应式</a></li>
+    <li><a href="#什么是样式">什么是样式</a></li>
+    <li><a href="#为什么选择-c-wpf-开发">为什么选择 C# wpf 开发</a></li>
+    <li><a href="#xaml">XAML</a></li>
+    <li><a href="#自定义控件回答时可延伸至三方控件库-handycontrol">自定义控件（回答时可延伸至三方控件库 HandyControl）</a></li>
+    <li><a href="#cs-架构开发模式">C/S 架构开发模式</a></li>
+    <li><a href="#wpf-客户端软件开发流程至打包部署">WPF 客户端软件开发流程（至打包部署）</a></li>
+    <li><a href="#什么是-ddd">什么是 DDD</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#你了解的数据库优化有哪些">你了解的数据库优化有哪些？</a></li>
+    <li><a href="#第一范式第二范式第三范式">第一范式，第二范式，第三范式</a></li>
+    <li><a href="#数据库注入攻击如何避免">数据库注入攻击，如何避免</a></li>
+    <li><a href="#优化索引存储过程触发器">优化，索引，存储过程，触发器</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是-mvvm">什么是 MVVM？</a></li>
+    <li><a href="#mvvm-的本质是什么">MVVM 的本质是什么？</a></li>
+    <li><a href="#实现-mvvm-的框架用过那些">实现 mvvm 的框架用过那些？</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是-webapi谈谈你对-webapi-的理解">什么是 WebAPI？谈谈你对 WebAPI 的理解</a></li>
+    <li><a href="#什么是依赖注入">什么是依赖注入？</a></li>
+    <li><a href="#什么是容器有哪些容器">什么是容器？有哪些容器？</a></li>
+    <li><a href="#中间件技术">中间件技术</a></li>
+    <li><a href="#什么是-restful-api如何在-c-中创建一个-restful-服务">什么是 RESTful API？如何在 C# 中创建一个 RESTful 服务？</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是-mvc-架构谈谈你对-mvc-的理解">什么是 MVC 架构？谈谈你对 MVC 的理解</a></li>
+    <li><a href="#为什么用-mvc">为什么用 MVC</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#tcpudp">TCP，UDP</a></li>
+    <li><a href="#modbus">ModBUS</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#常见算法">常见算法</a>
+      <ul>
+        <li><a href="#两个以上排序算法">两个以上排序算法</a></li>
+      </ul>
+    </li>
+    <li><a href="#算法题">算法题</a>
+      <ul>
+        <li><a href="#力扣-42-接雨水">力扣 42 接雨水</a></li>
+        <li><a href="#判断两棵树是否相等树类中实现-compare-方法">判断两棵树是否相等（树类中实现 compare 方法）</a></li>
+        <li><a href="#1000-瓶水找毒药经典题">1000 瓶水找毒药（经典题）</a></li>
+        <li><a href="#木板切割问题动态规划">木板切割问题（动态规划）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">29</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">17</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-10-11 00:53:10 &#43;0800 &#43;0800" itemprop="datePublished"
+      >2026-10-11</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-10-11</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="c-面试-wpf-net-面试准备">
+<a class="header-anchor" href="#c-%e9%9d%a2%e8%af%95-wpf-net-%e9%9d%a2%e8%af%95%e5%87%86%e5%a4%87"></a>
+C# 面试 wpf .net 面试准备
+</h1><blockquote>
+<p>原文：<a href="https://www.cnblogs.com/jiajianchengchu/p/18134167">C# 面试 wpf .net 面试准备 - 博客园</a>
+作者：m4st</p>
+</blockquote>
+<hr>
+<h1 id="杂项">
+<a class="header-anchor" href="#%e6%9d%82%e9%a1%b9"></a>
+杂项
+</h1><h2 id="介绍下自己时间一分半以内">
+<a class="header-anchor" href="#%e4%bb%8b%e7%bb%8d%e4%b8%8b%e8%87%aa%e5%b7%b1%e6%97%b6%e9%97%b4%e4%b8%80%e5%88%86%e5%8d%8a%e4%bb%a5%e5%86%85"></a>
+介绍下自己（时间一分半以内）
+</h2><p>提炼自身优点：</p>
+<ul>
+<li>优势、亮点、基本情况言简意赅、语言精炼，控制时间</li>
+<li>和应聘岗位相关的经历（和招聘要求相关）</li>
+<li>为什么能够胜任岗位</li>
+<li>为什么要应聘该岗位～求职动机</li>
+</ul>
+<p>不能只介绍学校和专业，注意：<strong>重点介绍满足岗位要求的三个优势和亮点</strong>、<strong>表现出对岗位的理解和自己清晰的职业规划</strong>、<strong>表示愿意长期从事这个岗位</strong>。</p>
+<p>示范：</p>
+<blockquote>
+<p>面试官，下午好，我叫，来自、、、、、学院。这一次呢，我应聘的是网络研发的工作。从事网络相关的工作呢？是我一直的梦想。为此呢？在研究生阶段呢？我很早就结合岗位的要求进行了准备包，包括对各种协议的熟悉，常用算法的实践等，在两年的时间里面呢？我也重点选择了网络相关的课题，进行了研究，希望能够加入公司从事网络相关的这个工作。谢谢。</p>
+</blockquote>
+<blockquote>
+<p>领导您好，我叫，来自、、、、、学院，我面试的岗位是上位机开发，从事软件开发相关的工作是我一直以来的愿望，为此从大学开始就关注行业技术风向，我也是重点选择了 .net 相关的技术栈进行学习，包括 C#、wpf、webapi，进行了重点研究。在之前的工作经历中，我也学到了关于软件开发的模式 MVVM，和串口之类的协议。当时是通过 wpf 开发的程序与嵌入式设备进行通信。希望能够加入贵公司从事软件开发这个工作。</p>
+</blockquote>
+<h2 id="你觉得你有什么缺点--优点">
+<a class="header-anchor" href="#%e4%bd%a0%e8%a7%89%e5%be%97%e4%bd%a0%e6%9c%89%e4%bb%80%e4%b9%88%e7%bc%ba%e7%82%b9--%e4%bc%98%e7%82%b9"></a>
+你觉得你有什么缺点 / 优点
+</h2><p><strong>优点：</strong></p>
+<ul>
+<li>注重时间管理，善于归纳总结，做事有条理：期末考试时朋友们总是喜欢借我的笔记复习。做一件事情，我会反推这件事情需要怎么做，一步步反推到当前的时间节点，从而明确应该怎么做，每个阶段应该达成怎样的目标。</li>
+<li>我的求知欲比较强，有好奇心，从小就喜欢把东西拆开看个究竟，但是能不能装回去就是个未知数了，为此没少挨揍。现在到大学里也特别喜欢钻研技术，对我来说，钻研技术既是学习也是乐趣。</li>
+<li>行动力强，我是一个做事全力以赴的人，或者说是一个比较拼命的人，一旦确定了一个目标，就会用上自己的全部力量，直到成功。为了尽早调通程序，可以一晚上不睡觉靠红牛撑着。备考四级时，由于课业压力大，却还是每天坚持听力，刷单词，做真题，最后高分通过。为了今天和您们这场面试，从接到面试通知那天就开始准备做功课。</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>我的公开演讲能力有些差，但不至于差到话都说不明白的地步，在公共场合讲话的时候我会感到紧张，不过谈论我熟悉的领域我会比较放松。所以当我需要做公开发言的时候，我必须要准备得很充分。</li>
+<li>我对工业控制和 plc 领域还不是很了解，尽管做了功课，但是纸上得来终觉浅，和实际的开发需求还是有差距，不过 C# 编码部分都是相通的，重要的是业务逻辑的学习，我相信自己能快速上手。</li>
+<li>不太好意思拒绝别人的求助，有时自己的工作还没有完成，别人来求助，看见别人需要帮忙的情景，我总是不太好意思拒绝。</li>
+</ul>
+<h2 id="有无读研动机">
+<a class="header-anchor" href="#%e6%9c%89%e6%97%a0%e8%af%bb%e7%a0%94%e5%8a%a8%e6%9c%ba"></a>
+有无读研动机？
+</h2><p>暂时没有考研的打算，我觉得实践中能学到的知识，比花三年时间读研究生来的实际，而且我已经是成年人了，我希望自己养活自己。如果以后工作和成长有需要，也许我会再去读个 MBA 什么的，但是现在我想先实践一下大学期间学到的知识。</p>
+<h2 id="过往项目-学到了什么-发挥怎么的作用">
+<a class="header-anchor" href="#%e8%bf%87%e5%be%80%e9%a1%b9%e7%9b%ae-%e5%ad%a6%e5%88%b0%e4%ba%86%e4%bb%80%e4%b9%88-%e5%8f%91%e6%8c%a5%e6%80%8e%e4%b9%88%e7%9a%84%e4%bd%9c%e7%94%a8"></a>
+过往项目？/ 学到了什么？/ 发挥怎么的作用？
+</h2><p>（略，结合自己的项目经历准备）</p>
+<h2 id="谈谈你对这个职位的理解">
+<a class="header-anchor" href="#%e8%b0%88%e8%b0%88%e4%bd%a0%e5%af%b9%e8%bf%99%e4%b8%aa%e8%81%8c%e4%bd%8d%e7%9a%84%e7%90%86%e8%a7%a3"></a>
+谈谈你对这个职位的理解
+</h2><p>.net 工程师。通过招聘软件上的职位描述，我觉得这个岗位是需要和同事合作开发 WPF 客户端软件，从对 WebAPI 和 CS 架构的要求来看，这个岗位还需要开发一些后端接口供客户端调用。从对数据库设计的要求来看，客户端需要将采集的数据、日志通过数据库持久化存储，以便后续故障分析、软件维护用。现代软件项目开发，很少有一个人完成整个项目的开发，所以应该是团队协作完成，比如有经验的工程师完成接口的规范、整个软件架构的规划，根据项目需求选择合适技术。经验少一点的工程师完成接口的实现与 Model 模型的编写，并在工作过程中不断学习软件的架构。</p>
+<h2 id="熟悉工控软件时序数据高并发处理">
+<a class="header-anchor" href="#%e7%86%9f%e6%82%89%e5%b7%a5%e6%8e%a7%e8%bd%af%e4%bb%b6%e6%97%b6%e5%ba%8f%e6%95%b0%e6%8d%ae%e9%ab%98%e5%b9%b6%e5%8f%91%e5%a4%84%e7%90%86"></a>
+熟悉工控软件？时序数据，高并发处理？
+</h2><p>时序数据：采集的数据按照时间排序，通过图表显示。</p>
+<h2 id="plcdcsscada工业控制行业了解">
+<a class="header-anchor" href="#plcdcsscada%e5%b7%a5%e4%b8%9a%e6%8e%a7%e5%88%b6%e8%a1%8c%e4%b8%9a%e4%ba%86%e8%a7%a3"></a>
+PLC，DCS，SCADA，工业控制行业了解？
+</h2><p><strong>PLC</strong>：可编程逻辑控制器，有着丰富外设的单片机，广泛应用于工业自动化的电子设备，可靠性、灵活性、模块化、易于编程。常见的有西门子、三菱、欧姆龙、施耐德、松下。</p>
+<p><strong>DCS</strong>：分布式控制系统，将控制功能分散到多个分布式的控制单元中，每个控制单元负责控制过程的一个部分，这些控制单元通过网络连接/总线连接，可以相互通信并共享数据，从而实现对整个生产过程中的协调和控制。特点包括：</p>
+<ul>
+<li>分布式：采用分散式架构，将控制功能分在独立的控制器或节点上，每个节点负责控制特定的过程和设备</li>
+<li>可靠性：由于控制功能分散，单个节点的故障不会影响整个系统的运行，因此具有很高的可靠性</li>
+<li>灵活性：可以根据生产过程的需要灵活添加或移除节点，使系统具有很好的灵活性和可拓展性</li>
+<li>模块化设计、实时性、高效性、人机界面、高级控制策略</li>
+</ul>
+<p><strong>SCADA</strong>：上位机，supervisory control and data acquisition，是工业控制系统中的一个关键组成部分，指用于监控和控制工业过程中的计算机系统或软件，通过收集来自下位机（PLC）的数据，对工业过程进行监控、分析和管理。</p>
+<blockquote>
+<p>上位机相当于工业自动化中的大脑，PLC 相当于控制感知神经，传感器相当于感知细胞，执行器相当于肌肉。</p>
+</blockquote>
+<ul>
+<li><strong>数据采集</strong>：通过从 PLC、远程控制单元、分布式控制系统收集数据</li>
+<li><strong>实时监控</strong>：提供数据显示，包括图表、趋势图、仪表盘等形式，以便操作人员可以实时监控生产过程的状态</li>
+<li><strong>报警通知</strong>：当生产过程中的参数超出预期的安全范围时，上位机会触发报警，并通过声光设备通知操作人员</li>
+<li><strong>过程控制</strong>：上位机基于 PLC，提供更高层次的指令，如调度生产流程、设置参数、启动或停止设备</li>
+<li><strong>历史数据记录</strong>：将生产过程中采集到的数据、日志、记录、设备状态记录下来，以便故障诊断、性能分析用</li>
+<li><strong>人机界面</strong>：提供友好的界面，操作人员可以通过界面与控制系统交互，输入指令或获取信息</li>
+</ul>
+<h2 id="对我们公司的了解有多少">
+<a class="header-anchor" href="#%e5%af%b9%e6%88%91%e4%bb%ac%e5%85%ac%e5%8f%b8%e7%9a%84%e4%ba%86%e8%a7%a3%e6%9c%89%e5%a4%9a%e5%b0%91"></a>
+对我们公司的了解有多少？
+</h2><p>盾构机、上位机、地下空间工程设备。专利与盾构机技术相关。机械工程相关专利，科班出身。计算机可以为其赋能增效，做好后勤软件保障。</p>
+<h2 id="大学期间有没有基于兴趣做一些技术上的研究">
+<a class="header-anchor" href="#%e5%a4%a7%e5%ad%a6%e6%9c%9f%e9%97%b4%e6%9c%89%e6%b2%a1%e6%9c%89%e5%9f%ba%e4%ba%8e%e5%85%b4%e8%b6%a3%e5%81%9a%e4%b8%80%e4%ba%9b%e6%8a%80%e6%9c%af%e4%b8%8a%e7%9a%84%e7%a0%94%e7%a9%b6"></a>
+大学期间有没有基于兴趣做一些技术上的研究？
+</h2><ul>
+<li>编、DIY 键盘、无刷电机控制 FOC、模拟旋钮手感、棘轮、阻尼</li>
+<li>IOT 气象站：esp8266、风速、温度、湿度、数据上传新大陆云平台、安卓获取</li>
+</ul>
+<h2 id="如果给我一个需求我会如何着手去实现如何搜索需求的技术如何解决技术难点">
+<a class="header-anchor" href="#%e5%a6%82%e6%9e%9c%e7%bb%99%e6%88%91%e4%b8%80%e4%b8%aa%e9%9c%80%e6%b1%82%e6%88%91%e4%bc%9a%e5%a6%82%e4%bd%95%e7%9d%80%e6%89%8b%e5%8e%bb%e5%ae%9e%e7%8e%b0%e5%a6%82%e4%bd%95%e6%90%9c%e7%b4%a2%e9%9c%80%e6%b1%82%e7%9a%84%e6%8a%80%e6%9c%af%e5%a6%82%e4%bd%95%e8%a7%a3%e5%86%b3%e6%8a%80%e6%9c%af%e9%9a%be%e7%82%b9"></a>
+如果给我一个需求，我会如何着手去实现（如何搜索需求的技术，如何解决技术难点）
+</h2><ol>
+<li><strong>明确需求</strong>：使用搜索引擎，查阅类似解决方案，寻找可以借鉴的技术点，提出解决方案。向行业前辈讨教思路，寻找有无现成技术可以解决。</li>
+<li><strong>分解问题</strong>：将复杂的问题分解为若干小问题，逐一攻克，团队协作讨论，集思广益，开发环境实践，根据实现的结果进一步优化方案。</li>
+</ol>
+<h1 id="反问阶段">
+<a class="header-anchor" href="#%e5%8f%8d%e9%97%ae%e9%98%b6%e6%ae%b5"></a>
+反问阶段
+</h1><ul>
+<li>公司技术栈</li>
+<li>面试什么时候出结果</li>
+<li>五险一金怎么交的</li>
+<li>试用期多久</li>
+<li><strong>复试可能会深挖项目</strong></li>
+<li>实习期和转正期</li>
+</ul>
+<h1 id="确定发-offer-再谈薪资">
+<a class="header-anchor" href="#%e7%a1%ae%e5%ae%9a%e5%8f%91-offer-%e5%86%8d%e8%b0%88%e8%96%aa%e8%b5%84"></a>
+确定发 offer 再谈薪资
+</h1><p>薪资结构 - 十几薪 -</p>
+<p>首先问薪资结构、涨薪范围。</p>
+<blockquote>
+<p>我想先了解贵司的<strong>薪酬结构</strong>、<strong>福利待遇</strong>和<strong>转正制度</strong>（关注点可以从以下几点中选择：薪酬里是否有绩效部分？薪酬里是否包含补贴？实习到期后一定签劳动合同吗？签订劳动合同后<strong>试用期是几个月</strong>？<strong>试用期薪酬打折</strong>吗？包吃包住吗？）</p>
+</blockquote>
+<blockquote>
+<p>我看了公司的岗位薪资是 10k～15k，而我的自身能力和岗位的匹配度很高，我希望达到公司的要求转正后能拿到 12k，试用期拿 80% 左右，也是岗位薪资范围的最低值。</p>
+</blockquote>
+<h1 id="面试时谈的项目">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e6%97%b6%e8%b0%88%e7%9a%84%e9%a1%b9%e7%9b%ae"></a>
+面试时谈的项目
+</h1><p>简历上两个，建议在自己的项目经历里写上自己拿手的关键词引导面试官去问。着重准备面试要求上的关键词，详细准备：MVVM、MVC、ORM 框架。</p>
+<hr>
+<h1 id="c">
+<a class="header-anchor" href="#c"></a>
+C#
+</h1><h2 id="什么是面向对象编程">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e7%bc%96%e7%a8%8b"></a>
+什么是面向对象编程？
+</h2><p>以对象作为代码的基本构件，通过对象的交互构建程序，对象是数据和与之关联的方法的集合，对象是现实中实体的抽象，主要特点包括：封装、继承、多态。</p>
+<h2 id="using-语法的作用">
+<a class="header-anchor" href="#using-%e8%af%ad%e6%b3%95%e7%9a%84%e4%bd%9c%e7%94%a8"></a>
+using 语法的作用
+</h2><ol>
+<li>引用类库项目</li>
+<li>实现了 IDisposable 接口的类在 using 中创建，using 结束后会自动调用 Dispose 方法释放资源。</li>
+</ol>
+<h2 id="解释封装继承多态以及在-c-中的作用">
+<a class="header-anchor" href="#%e8%a7%a3%e9%87%8a%e5%b0%81%e8%a3%85%e7%bb%a7%e6%89%bf%e5%a4%9a%e6%80%81%e4%bb%a5%e5%8f%8a%e5%9c%a8-c-%e4%b8%ad%e7%9a%84%e4%bd%9c%e7%94%a8"></a>
+解释封装继承多态，以及在 C# 中的作用
+</h2><ul>
+<li><strong>封装</strong>：对象的数据和行为被封装在一起，使得对象内部状态只能由定义好的接口进行访问和修改，提高了数据的安全性。</li>
+<li><strong>继承</strong>：允许新的对象类继承现有的对象类的属性和方法，促进了代码的复用。</li>
+<li><strong>多态</strong>：一个接口可以有不同的实现。</li>
+</ul>
+<h2 id="clsctsclr">
+<a class="header-anchor" href="#clsctsclr"></a>
+CLS、CTS、CLR？
+</h2><ul>
+<li><strong>CLS</strong>：Common Language System，通用语言系统</li>
+<li><strong>CTS</strong>：Common Type System，通用类型系统</li>
+<li><strong>CLR</strong>：Common Language Runtime，公共语言运行时，编译成 IL（中间语言），可以在 CLR 上执行</li>
+</ul>
+<h2 id="c-中-privateprotectedpublicinternal-修饰符的访问权限">
+<a class="header-anchor" href="#c-%e4%b8%ad-privateprotectedpublicinternal-%e4%bf%ae%e9%a5%b0%e7%ac%a6%e7%9a%84%e8%ae%bf%e9%97%ae%e6%9d%83%e9%99%90"></a>
+C# 中 private、protected、public、internal 修饰符的访问权限
+</h2><table>
+	<thead>
+			<tr>
+					<th>修饰符</th>
+					<th>访问权限</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>private</td>
+					<td>私有成员，只有在类的内部才可以访问</td>
+			</tr>
+			<tr>
+					<td>protected</td>
+					<td>保护成员，该类内部和继承类中可以访问</td>
+			</tr>
+			<tr>
+					<td>internal</td>
+					<td>公共成员，在同一命名空间内可以访问</td>
+			</tr>
+			<tr>
+					<td>public</td>
+					<td>完全公开，没有访问限制</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="c-中有哪几种数据类型分别都有哪些区别有哪些">
+<a class="header-anchor" href="#c-%e4%b8%ad%e6%9c%89%e5%93%aa%e5%87%a0%e7%a7%8d%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e5%88%86%e5%88%ab%e9%83%bd%e6%9c%89%e5%93%aa%e4%ba%9b%e5%8c%ba%e5%88%ab%e6%9c%89%e5%93%aa%e4%ba%9b"></a>
+C# 中有哪几种数据类型？分别都有哪些？区别有哪些？
+</h2><ul>
+<li><strong>值类型</strong>：直接包含数据，在栈上为变量分配内存，直接存储实际数值。如：int、byte、bool、short、long、uint、float、结构体</li>
+<li><strong>引用类型</strong>：存储对内存中对象的引用，而不是存储实际数据，引用类型在堆上，被引用的对象在栈上。如：类、接口、数组、委托、字符串</li>
+</ul>
+<h2 id="ref-out-什么区别作用">
+<a class="header-anchor" href="#ref-out-%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab%e4%bd%9c%e7%94%a8"></a>
+REF OUT 什么区别，作用
+</h2><p>都是用来传递变量的关键字：</p>
+<ul>
+<li>ref 按引用传递参数，out 也用于按引用传递参数，传递出去</li>
+<li>ref 需要初始化，out 不需要</li>
+</ul>
+<h2 id="重写重载的区别">
+<a class="header-anchor" href="#%e9%87%8d%e5%86%99%e9%87%8d%e8%bd%bd%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+重写重载的区别
+</h2><ul>
+<li><strong>重写方法</strong>：关键字用 override 修饰，派生类重写基类的方法，方法命名、返回类型、参数必须相同</li>
+<li><strong>重载方法</strong>：方法名必须相同，参数列表必须不相同，<strong>返回类型可以不相同</strong></li>
+</ul>
+<p>作用：重写主要是实现面向对象的多态性、重载主要是实现实例化不同的对象。当一个类需要用<strong>不同的实现来做同一件事情</strong>，此时应该用<strong>重写</strong>，而重载是用不同的输入做同一件事情。</p>
+<h2 id="stringstringbufferstringbuilder-之间区别">
+<a class="header-anchor" href="#stringstringbufferstringbuilder-%e4%b9%8b%e9%97%b4%e5%8c%ba%e5%88%ab"></a>
+String、StringBuffer、StringBuilder 之间区别
+</h2><ol>
+<li>三者在执行速度方面的比较：StringBuilder &gt; StringBuffer &gt; String</li>
+<li>String 一旦赋值或实例化后就不可更改（String 被 final 修饰，所以不可变），如果赋予新值将会重新开辟内存地址进行存储。而 StringBuffer 类使用 append 和 insert 等方法改变字符串值时只是在原有对象存储的内存地址上进行连续操作，减少了资源的开销。因此：当需要进行频繁修改字符串的操作时先建立 StringBuffer 类对象进行操作，将最后结果转化成 String 类对象返回，这样效率会高很多。</li>
+<li>StringBuffer(StringBuilder) 其实可以看做&quot;基本数据类型&quot; String 的包装类（Wrapper），就像 int 与之对应的 Integer 等关系。StringBuffer 有缓存的，如果你声明一个字符串只是接收传过来的参数，然后进行业务逻辑处理，那么假如你用很多个 StringBuffer 类型的对象，就比较浪费内存。这样用 String 就更好。</li>
+<li>在字符串拼接时，String 对象的速度并不会比 StringBuffer 对象慢。String 对象的字符串拼接其实是被 JVM 解释成了 StringBuffer 对象的拼接，所以这些时候 String 对象的速度并不会比 StringBuffer 对象慢，而特别是以下的字符串对象生成中，String 效率是远要比 StringBuffer 快。</li>
+</ol>
+<h2 id="集合-ilist-接口与-list-的区别是什么">
+<a class="header-anchor" href="#%e9%9b%86%e5%90%88-ilist-%e6%8e%a5%e5%8f%a3%e4%b8%8e-list-%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"></a>
+集合 IList 接口与 List 的区别是什么?
+</h2><p>IList 泛型接口是 ICollection 接口的子代，并且是所有非泛型列表的基接口。IList 实现有三种类别：只读、固定大小、可变大小。无法修改只读 IList。固定大小的 IList 不允许添加或移除元素，但允许修改现有元素。可变大小的 IList 允许添加、移除和修改元素。IList 是个接口，定义了一些操作方法这些方法要你自己去实现，当你只想使用接口的方法时，这种方式比较好，他不获取实现这个接口的类的其他方法和字段，有效的节省空间。List 是个类型，已经实现了 IList 定义的那些方法。</p>
+<ul>
+<li><strong>能用 ForEach 遍历的对象的要求</strong>：需要实现 IEnumerable 接口或声明 GetEnumerator 方法。</li>
+<li><strong>说出 5 个集合类</strong>：List、Dictionary、HashMap、SortedList、Stack</li>
+</ul>
+<h2 id="异常">
+<a class="header-anchor" href="#%e5%bc%82%e5%b8%b8"></a>
+异常
+</h2><p>C# 中，所有异常都继承自 System.Exception 类。可以使用 Try catch 捕获异常，可以通过捕获不同类型的异常执行不同的操作，最后执行 finally 代码块里内容释放资源。</p>
+<h2 id="泛型---主要约束次要约束">
+<a class="header-anchor" href="#%e6%b3%9b%e5%9e%8b---%e4%b8%bb%e8%a6%81%e7%ba%a6%e6%9d%9f%e6%ac%a1%e8%a6%81%e7%ba%a6%e6%9d%9f"></a>
+泛型 - 主要约束，次要约束？
+</h2><ul>
+<li><strong>主要约束</strong>可以是一个引用类型、class 或者 struct。如果指定一个引用类型（class），那么实参必须是该类型或者该类型的派生类型。相反，struct 则规定了实参必须是一个值类型</li>
+<li><strong>次要约束</strong>主要是指实参实现的接口的限定。对于一个泛型，可以有 0 到无限的次要约束，次要约束规定了实参必须实现所有的次要约束中规定的接口</li>
+</ul>
+<p>优点：</p>
+<ul>
+<li>代码的可重用性。无需从基类型继承，无需重写成员</li>
+<li>扩展性好</li>
+<li>类型安全性提高。泛型将类型安全的负担从你那里转移到编译器。没有必要编写代码来测试正确的数据类型，因为它会在编译时强制执行</li>
+<li>降低了强制类型转换的必要性和运行时错误的可能性</li>
+<li>性能提高。泛型集合类型通常能更好地存储和操作值类型，因为无需对值类型进行装箱</li>
+</ul>
+<h2 id="委托">
+<a class="header-anchor" href="#%e5%a7%94%e6%89%98"></a>
+委托
+</h2><p>委托是一种类型，声明委托就是声明一个类型（传入参数，返回参数）。委托是寻址的 .NET 版本（升级版），定义了返回类型和参数列表。像做代码填空题一样能当作参数传入方法体内，执行不同的功能。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">delegate</span> <span class="k">void</span> <span class="n">Feedback</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">);</span>
+</span></span></code></pre></div><p>默认委托类型有：</p>
+<ul>
+<li><strong>Action</strong>：void 返回值，至多 16 个参数</li>
+<li><strong>Func</strong>：带返回类型方法，带参数</li>
+</ul>
+<p>泛型委托指不关注参数和返回值的类型，Action&lt;T&gt;，提高代码灵活性，只需要关注泛型的参数列表和返回值的个数。</p>
+<h2 id="拓展方法">
+<a class="header-anchor" href="#%e6%8b%93%e5%b1%95%e6%96%b9%e6%b3%95"></a>
+拓展方法
+</h2><p>使用 This 关键字，拓展类的方法。例如拓展 Double 类的方法，可以写一个为 DoubleExtension 的类，里面写要加入的方法。静态类中的静态方法，第一个关键字用 this 修饰。</p>
+<h2 id="介绍-lambdalinq">
+<a class="header-anchor" href="#%e4%bb%8b%e7%bb%8d-lambdalinq"></a>
+介绍 LAMBDA、LINQ
+</h2><ul>
+<li>LAMBDA 表达式是一种匿名函数，可以在声明委托时用 lambda 表达式实例化</li>
+<li>LINQ：语言集成查询</li>
+<li>LINQ 可视化工具 linqpad，查询 lambda 表达式，编译的 sql</li>
+<li>LINQ2OBJ：数据源是类型提供的实现 IEnumerable</li>
+<li>LINQ2SQL：是实现 Queryable 的拓展方法</li>
+</ul>
+<h2 id="有-50-万个-int-类型的数字现在需要判断一下里面是否存在重复的数字请你简单说一下思路">
+<a class="header-anchor" href="#%e6%9c%89-50-%e4%b8%87%e4%b8%aa-int-%e7%b1%bb%e5%9e%8b%e7%9a%84%e6%95%b0%e5%ad%97%e7%8e%b0%e5%9c%a8%e9%9c%80%e8%a6%81%e5%88%a4%e6%96%ad%e4%b8%80%e4%b8%8b%e9%87%8c%e9%9d%a2%e6%98%af%e5%90%a6%e5%ad%98%e5%9c%a8%e9%87%8d%e5%a4%8d%e7%9a%84%e6%95%b0%e5%ad%97%e8%af%b7%e4%bd%a0%e7%ae%80%e5%8d%95%e8%af%b4%e4%b8%80%e4%b8%8b%e6%80%9d%e8%b7%af"></a>
+有 50 万个 int 类型的数字，现在需要判断一下里面是否存在重复的数字，请你简单说一下思路
+</h2><ul>
+<li>使用 C# 的 List 集合自带的去重方法，例如 Distinct()、GroupBy() 等</li>
+<li>利用 Dictionary 的 Key 值唯一的特性、HashSet 元素值唯一的特性进行判断</li>
+</ul>
+<h2 id="efcoreorm-框架">
+<a class="header-anchor" href="#efcoreorm-%e6%a1%86%e6%9e%b6"></a>
+EFCORE&ndash;ORM 框架
+</h2><p>以面向对象的思想来做数据库查询。</p>
+<p>ORM 框架：EFCORE、sqlsurgar、dapper、IBATIS。</p>
+<ul>
+<li>sqlsurgar 是国产开源的 orm 框架，其宣传大数据量插入效率远高于其他框架</li>
+<li>较 ado.net 提高开发效率</li>
+<li>ORM：实体关系映射</li>
+<li>sqlsurgar：db.getLastSQL 获取最后执行的 sql</li>
+</ul>
+<p>三种模式：</p>
+<ul>
+<li>Database First（先有数据库）</li>
+<li>CodeFirst（现有代码）</li>
+<li>混合模式</li>
+</ul>
+<p>跟踪查询、连接查询。</p>
+<h2 id="委托和事件">
+<a class="header-anchor" href="#%e5%a7%94%e6%89%98%e5%92%8c%e4%ba%8b%e4%bb%b6"></a>
+委托和事件
+</h2><ol>
+<li><strong>委托</strong>：将方法以变量的形式传递，并且以方法的形式执行。他是类，是引用类型。</li>
+<li><strong>事件</strong>：功能被限制的一个委托变量。它的类型是委托类型。</li>
+<li>委托的三种形式：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">3.1、delegate：四步（声明，实例化，注册方法，调用）
+</span></span><span class="line"><span class="cl">3.2、Action：添加的方法不能有返回值
+</span></span><span class="line"><span class="cl">3.3、Func：添加的方法要有返回值
+</span></span><span class="line"><span class="cl">3.4、lambda表达式：方法只使用一次，没有多次使用的话使用
+</span></span></code></pre></div><ol>
+<li>事件的声明只是在委托前面加一个 event 关键词，虽然你可以定义一个 public，但是有了 event 关键词后编译器始终会把这个委托声明为 private，然后添加 1 组 add、remove 方法。add 对应 +=，remove 对应 -=。这样就导致事件只能用 +=、-= 来绑定方法或者取消绑定方法。而委托可以用 = 来赋值，当然委托也是可以用 +=、-= 来绑定方法的。</li>
+<li>委托可以在外部被其他对象调用，而且可以有返回值（返回最后一个注册方法的返回值）。而事件不可以在外部调用，只能在声明事件的类内部被调用。我们可以使用这个特性来实现观察者模式。</li>
+</ol>
+<p><strong>声明事件</strong>：首先，在类的声明中声明一个事件。例如：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MyClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">event</span> <span class="n">Action</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">MyEvent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>订阅事件</strong>：一个类可以订阅另一个类声明的事件。订阅者提供事件处理方法的引用。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">MyClass</span> <span class="n">myClass</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">myClass</span><span class="p">.</span><span class="n">MyEvent</span> <span class="p">+=</span> <span class="n">HandleEvent</span><span class="p">;</span>
+</span></span></code></pre></div><p><strong>发布事件</strong>：当发布者想要触发事件时，它调用事件的名字并传递任何必要的参数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">myClass</span><span class="p">.</span><span class="n">MyEvent</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="s">&#34;事件内容&#34;</span><span class="p">);</span>
+</span></span></code></pre></div><p><strong>事件处理方法</strong>：在订阅者中，有一个方法与事件相关联，这个方法会在事件被触发时执行。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="k">void</span> <span class="n">HandleEvent</span><span class="p">(</span><span class="kt">string</span> <span class="n">message</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;事件被触发，内容是：{message}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="控制反转">
+<a class="header-anchor" href="#%e6%8e%a7%e5%88%b6%e5%8f%8d%e8%bd%ac"></a>
+控制反转
+</h2><p>控制反转（Inversion of Control，缩写为 IoC），是面向对象编程中的一种设计原则，可以用来减低计算机代码之间的耦合度。其中最常见的方式叫做依赖注入（Dependency Injection，简称 DI），还有一种方式叫&quot;依赖查找&quot;（Dependency Lookup）。通过控制反转，对象在被创建的时候，由一个调控系统内所有对象的外界实体将其所依赖的对象的引用传递给它。也可以说，依赖被注入到对象中。</p>
+<h2 id="多线程---背后的机制thread-task">
+<a class="header-anchor" href="#%e5%a4%9a%e7%ba%bf%e7%a8%8b---%e8%83%8c%e5%90%8e%e7%9a%84%e6%9c%ba%e5%88%b6thread-task"></a>
+多线程 - 背后的机制（Thread-Task）
+</h2><p>可以发挥多核 cpu 的优势，防止 UI 线程阻塞，出现卡顿。</p>
+<p>多线程背后的机制主要包括线程的创建、线程的状态管理、线程的同步和通信以及线程的调度等。</p>
+<ol>
+<li><strong>线程的创建</strong>：通过继承 Thread 类或实现 Runnable 接口来创建线程。当调用线程的 start() 方法时，系统会为该线程创建 PCB（进程控制块）并将其加入链表，之后系统在调度时会执行 run() 方法。</li>
+<li><strong>线程的状态管理</strong>：线程在其生命周期中会经历若干个状态，如新建（NEW）、就绪（RUNNABLE）、运行（RUNNABLE）、阻塞（BLOCKED）、等待（WAITING）、超时等待（TIMED_WAITING）和终止（TERMINATED）等。这些状态可以通过线程的状态方法进行获取和切换。</li>
+<li><strong>线程的同步</strong>：线程同步主要是通过互斥锁、synchronized 关键字、读写锁、条件变量以及事件等机制来确保多线程访问共享资源时的互斥性和有序性。</li>
+<li><strong>线程的通信和调度</strong>：线程间的通信主要是通过等待唤醒机制、局部变量、阻塞队列等方式实现的。线程的调度则依赖于操作系统的调度算法，如抢占式调度和协作式调度等。</li>
+</ol>
+<p>综上，多线程编程涉及许多复杂的概念和机制，但其核心在于正确地管理线程的创建、状态、同步和通信，以实现多线程的高效和有序运行。</p>
+<h2 id="锁---死锁">
+<a class="header-anchor" href="#%e9%94%81---%e6%ad%bb%e9%94%81"></a>
+锁 - 死锁
+</h2><p>锁是一种同步机制（锁的本质是 monitor），用于防止多个线程同时访问资源，当一个线程访问资源时，它可以对对象加锁，以防止其他线程访问该对象，直到当前线程释放锁，其他线程才能访问该对象。在 C# 中，锁使用 lock 关键字实现，锁对象必须是引用类型。如果是值类型，每次会进行装箱操作，每次装箱后的对象不一样，会导致锁无效。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Program</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="kt">object</span> <span class="n">_lockObject</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">object</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">Main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">5</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Thread</span> <span class="n">t</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Thread</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">PerformOperation</span><span class="p">());</span>
+</span></span><span class="line"><span class="cl">            <span class="n">t</span><span class="p">.</span><span class="n">Start</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="k">void</span> <span class="n">PerformOperation</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">lock</span> <span class="p">(</span><span class="n">_lockObject</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 这段代码是临界的，只有一个线程可以执行</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Thread {0} is executing critical code.&#34;</span><span class="p">,</span> <span class="n">Thread</span><span class="p">.</span><span class="n">CurrentThread</span><span class="p">.</span><span class="n">ManagedThreadId</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 注意这段代码不会造成死锁，因为 int 是值传递，如果换成引用类型会造成死锁。</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">test</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">lock</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">&gt;</span><span class="m">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">i</span><span class="p">--;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">test</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>线程和进程的区别</strong>：一个进程可以包含多个线程，进程相当于家庭，线程相当于家庭成员，共享资源。进程能访问的最大内存为 2^(处理器位数-1)。</p>
+<p>引入线程池来管理线程的创建与销毁可以节省资源，可以通过 ThreadPool 类型提供的静态方法来获取当前可用的线程数量，以及最大线程数。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">ThreadPool</span><span class="p">.</span><span class="n">SetMaxThreads</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">100</span><span class="p">);</span>
+</span></span></code></pre></div><p>线程池可以减小线程创建销毁的开销，可以复用线程，减少了线程上下文切换造成的损失，无法对一个线程有更多精细的控制，如了解其状态，不能设置线程的优先级，不能有返回值。start（开始）、abort（终止）、join（等待执行结束）、yield（歇一会）、ThreadState 线程状态、CurrentThread 当前线程。</p>
+<h2 id="客户端与设备通讯机制上位机">
+<a class="header-anchor" href="#%e5%ae%a2%e6%88%b7%e7%ab%af%e4%b8%8e%e8%ae%be%e5%a4%87%e9%80%9a%e8%ae%af%e6%9c%ba%e5%88%b6%e4%b8%8a%e4%bd%8d%e6%9c%ba"></a>
+客户端与设备通讯机制（上位机）
+</h2><p>客户端与设备通讯机制（上位机）通常涉及到<strong>硬件通信和数据交换</strong>。上位机通常指的是计算机系统，它通过一定的通信协议和接口与各种设备进行数据交互。</p>
+<ol>
+<li><strong>串行通信</strong>：通过串行端口（如 COM 端口）进行数据传输。这种通信方式速度较慢，但适用于远距离通信和简单的数据交换。</li>
+<li><strong>并行通信</strong>：通过并行端口进行数据传输，这种方式速度较快，但适用于短距离通信。</li>
+<li><strong>USB 通信</strong>：USB 接口已成为现代计算机与外部设备通信的通用接口，支持高速数据传输，适用范围广泛。</li>
+<li><strong>网络通信</strong>：通过以太网、Wi-Fi 或蓝牙等网络技术进行数据传输。这种方式可以实现较远距离的高速数据交换，适用于现代的智能设备和服务器之间的通信。</li>
+<li><strong>无线通信</strong>：包括 Wi-Fi、蓝牙、NFC、RFID 等无线技术，这些技术使得设备之间的通信更加灵活，不受物理连接的限制。</li>
+<li><strong>总线通信</strong>：在嵌入式系统中，设备可能通过总线（如 I2C、SPI、CAN 等）进行通信。这些总线协议通常用于连接微控制器与各种传感器、存储器、显示器等外设。</li>
+<li><strong>无线模块</strong>：如 GSM、CDMA、4G/5G 等无线通信模块，可以实现设备通过移动网络进行数据传输。</li>
+</ol>
+<p>在实现客户端与设备的通信时，通常需要考虑以下几个方面：</p>
+<ul>
+<li><strong>协议转换</strong>：不同设备可能支持不同的通信协议，上位机需要能够转换和适配这些协议</li>
+<li><strong>数据格式</strong>：确保上位机和设备之间传输的数据格式是一致的，以便于正确解析和处理</li>
+<li><strong>错误处理</strong>：在通信过程中可能会出现错误，上位机需要有相应的错误检测和处理机制</li>
+<li><strong>数据安全</strong>：对于敏感数据，需要加密传输以保证数据的安全性</li>
+<li><strong>实时性</strong>：对于实时性要求较高的应用，通信机制需要能够保证数据的及时传输</li>
+</ul>
+<h2 id="asyncawaittask">
+<a class="header-anchor" href="#asyncawaittask"></a>
+async，await，task
+</h2><p>都能通过创建多线程的方法执行，task 较新，可以使用 async await，还能使用线程池（默认）。使用 async 声明异步方法，await 关键字用于等待一个异步操作的完成。通过使用 async、await 可以避免回调函数的使用。</p>
+<h2 id="net-体系架构">
+<a class="header-anchor" href="#net-%e4%bd%93%e7%b3%bb%e6%9e%b6%e6%9e%84"></a>
+.NET 体系架构
+</h2><p><strong>托管代码</strong>：托管是什么意思，说白了就是让 CLR 管理着应用程序，从源代码到 MSIL，再到本机代码，再到程序执行，由 .NET 与操作系统进行交互。不在 CLR 控制之下运行的应用程序是非托管的。</p>
+<p>托管代码最重要的一个功能是无用存储单元收集（garbage collection），也称垃圾回收，确保应用程序不再使用某些内存时，这些内存会被完全释放。</p>
+<h2 id="net-常用库">
+<a class="header-anchor" href="#net-%e5%b8%b8%e7%94%a8%e5%ba%93"></a>
+.NET 常用库
+</h2><table>
+	<thead>
+			<tr>
+					<th>库</th>
+					<th>用途</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Prism</td>
+					<td>实现 MVVM 设计模式</td>
+			</tr>
+			<tr>
+					<td>Log4Net</td>
+					<td>实现日志，文本/数据库</td>
+			</tr>
+			<tr>
+					<td>Dapper / SQLSurgar</td>
+					<td>ORM 框架</td>
+			</tr>
+			<tr>
+					<td>AutoMapper</td>
+					<td>obj-obj 映射库，解决模型之间转换映射 dto-model</td>
+			</tr>
+			<tr>
+					<td>NModbus4</td>
+					<td>与 Modbus TCP 通讯</td>
+			</tr>
+			<tr>
+					<td>LiveCharts</td>
+					<td>图表库</td>
+			</tr>
+			<tr>
+					<td>SerialPort</td>
+					<td>应用于串口通讯</td>
+			</tr>
+			<tr>
+					<td>Moq</td>
+					<td>常用于单元测试，生成假数据</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="解释-c-和-net-之间的关系">
+<a class="header-anchor" href="#%e8%a7%a3%e9%87%8a-c-%e5%92%8c-net-%e4%b9%8b%e9%97%b4%e7%9a%84%e5%85%b3%e7%b3%bb"></a>
+解释 C# 和 .NET 之间的关系
+</h2><p>C# 是一门编程语言，.NET 是微软推出的一个框架。在基础设施之上，再往上有 .NET standard library（基础类库），再往上就是各种领域的框架，比如桌面端有 WPF，移动端有 MAUI，服务端有 asp.net，游戏领域有 Unity。</p>
+<h2 id="adonet">
+<a class="header-anchor" href="#adonet"></a>
+ADO.NET
+</h2><p><strong>1. Connection 对象</strong></p>
+<blockquote>
+<p>Connection 对象就像是打仗时候的通信兵，他们在打仗之前需要先接通司令部与各个作战单位之间的通信线路。之后作战命令的获取以及发布都要靠通信线路来完成。这里的司令部就类似于服务器，各作战单位就类似于各应用程序。</p>
+</blockquote>
+<p><strong>2. Command 对象</strong></p>
+<blockquote>
+<p>执行一些简单操作命令，如：增删改删，即执行 T-SQL 语句。Command 对象有几个比较重要的方法，如 ExecuteNonQuery() 方法，执行增删改命令，返回的是受影响的行数。查询方法有 2 种：一个是 ExecuteReader() 方法，返回一个 DataReader 对象。还有 ExecuteScale() 方法，返回首行首列值。</p>
+</blockquote>
+<p><strong>3. DataAdapter 对象</strong></p>
+<blockquote>
+<p>数据适配器，从数据库中检索数据，再填充到本地数据集中。同时，我们可以利用 DataAdapter，再将数据反向从 DataSet 中更新回数据库。DataAdapter 使用中主要有 4 个命令对象比较重要。它们分别是：SelectCommand、InsertCommand、UpdateCommand、DeleteCommand。SelectCommand 主要是从数据库中检索数据，InsertCommand、UpdateCommand、DeleteCommand 这 3 个命令对象主要负责把本地数据集 DataSet 中的数据上传回服务器。我们主要使用的是前者。DataAdapter 的 Fill 方法，用于使用 DataAdapter 的 SelectCommand 的执行结果集来填充 DataSet。</p>
+</blockquote>
+<p><strong>4. DataReader 对象</strong></p>
+<blockquote>
+<p>当我们只需要顺序的读取数据而不需要其它操作时，可以使用 DataReader 对象。DataReader 对象只是一次一笔向下顺序地读取数据源中的数据，不作其它的操作。因为 DataReader 在读取数据的时候限制了每次只读取一笔，而且只能只读，所以使用起来不但节省资源而且效率很好。此外，因为不用把数据全部传回，故可以降低网络的负载。但是，当我们从数据源中一条一条的读取数据的时候，一定记得要时刻打开数据库的连接。</p>
+</blockquote>
+<p><strong>5. DataSet 对象</strong></p>
+<blockquote>
+<p>DataSet 这个对象可以视为本地内存中的一个数据库，可以把从数据库中所查询到的数据保留到本地。DataSet 的能力不只是可以储存多个 Table，还可以透过 DataAdapter 对象取得一些例如主键等数据表结构，并可以记录数据表间的关联。当我们使用 DataSet 读取数据的时候，数据库的连接是否关闭已经无关紧要了。DataSet 对象可以说是 ADO.NET 中重量级的对象，通过 DataAdapter 对象这个桥梁，实现了与数据源沟通的能力。</p>
+</blockquote>
+<h2 id="笔试基础问题">
+<a class="header-anchor" href="#%e7%ac%94%e8%af%95%e5%9f%ba%e7%a1%80%e9%97%ae%e9%a2%98"></a>
+笔试基础问题！！！
+</h2><p>递归题。</p>
+<hr>
+<h1 id="wpf">
+<a class="header-anchor" href="#wpf"></a>
+WPF
+</h1><h2 id="什么是依赖项属性">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e4%be%9d%e8%b5%96%e9%a1%b9%e5%b1%9e%e6%80%a7"></a>
+什么是依赖项属性
+</h2><p>是 WPF 中的一项技术，是一种特殊的属性，允许属性值依赖于其他属性，比如数据绑定、样式、动画，或其他依赖值。</p>
+<h2 id="什么是双向绑定">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%8f%8c%e5%90%91%e7%bb%91%e5%ae%9a"></a>
+什么是双向绑定
+</h2><p>双向绑定是指 MVVM 模式中，model 与 view 的绑定：</p>
+<ul>
+<li>model 到 view 的绑定是通过继承并实现 INotifyPropertyChange 方法</li>
+<li>view 到 model 的绑定是通过绑定数据实现</li>
+</ul>
+<p>最后在 cs 文件中对 DataContext = new ViewModel()。</p>
+<h2 id="什么是响应式">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%93%8d%e5%ba%94%e5%bc%8f"></a>
+什么是响应式
+</h2><p>允许程序的界面能够根据窗口大小、分辨率等的变化自动调整布局和元素的大小：</p>
+<ul>
+<li>可以通过内置的布局面板，如 grid、stackpanel、wrappanel、dockpanel 用来创建响应式布局</li>
+<li>可以通过触发器、视觉状态，实现更复杂的响应式布局，使得可以根据控件的属性来改变控件的样式和行为</li>
+<li>使用相对尺寸，而不是绝对尺寸</li>
+<li>使用布局面板的属性来控制对齐和分布</li>
+</ul>
+<h2 id="什么是样式">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e6%a0%b7%e5%bc%8f"></a>
+什么是样式
+</h2><p>WPF 中，样式是一种用于定义控件外观和行为的控件，可以包含触发器，当其被触发时，来设置控件的样式。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;Style</span> <span class="na">x:Key=</span><span class="s">&#34;MyButtonStyle&#34;</span> <span class="na">TargetType=</span><span class="s">&#34;{x:Type Button}&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 其他Setter --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;Trigger</span> <span class="na">Property=</span><span class="s">&#34;IsMouseOver&#34;</span> <span class="na">Value=</span><span class="s">&#34;True&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;Setter</span> <span class="na">Property=</span><span class="s">&#34;Background&#34;</span> <span class="na">Value=</span><span class="s">&#34;Green&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/Trigger&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/Style&gt;</span>
+</span></span></code></pre></div><h2 id="为什么选择-c-wpf-开发">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%80%89%e6%8b%a9-c-wpf-%e5%bc%80%e5%8f%91"></a>
+为什么选择 C# wpf 开发
+</h2><p>C# 的简洁性和易用性，MVVM 支持，社区和生态支持。</p>
+<ul>
+<li>因为 C# 的官方性极强，有很多官方的学习文档，而且更新及时，可以很快的入门</li>
+<li>.net 生态经过近些年的发展优化，.net core 也能跨平台了，而且 C# 开发的代码编译后执行效率越来越高，越来越安全，.net 框架之上的多种应用领域微软都有与之对应的技术栈和框架，能极大程度的提升开发人员的效率。比如桌面开发有 WPF、WinUI，移动端开发有 MAUI，server 端开发有 asp.net core，网页应用开发有 blazor，这些技术框架只要掌握了 C#，其他的特性基本上都大同小异</li>
+<li>得益于 windows 平台的特性使得与硬件通讯如此的简单，而 wpf 在工控领域更是一枝独秀的存在</li>
+</ul>
+<h2 id="xaml">
+<a class="header-anchor" href="#xaml"></a>
+XAML
+</h2><ol>
+<li>XAML 是 eXtensible Application Markup Language 的英文缩写，相应于中文称为可扩展应用程序标记语言，它是微软公司为构建应用程序用户界面而创建的一种新的描述性语言。</li>
+<li>XAML 是 XML 语言的一个衍生物，它的语法与 XML 语言完全一致，它的功能就是专门用来设计和实现程序的 UI。</li>
+<li>XAML 一个很大的优点就是由于 WPF 支持 WEB 开发，那么 WEB 开发和桌面开发的转换是很简单，修改的地方很短，同时 UI 与逻辑完全分离，所以逻辑代码也几乎不用改动。</li>
+</ol>
+<h2 id="自定义控件回答时可延伸至三方控件库-handycontrol">
+<a class="header-anchor" href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%8e%a7%e4%bb%b6%e5%9b%9e%e7%ad%94%e6%97%b6%e5%8f%af%e5%bb%b6%e4%bc%b8%e8%87%b3%e4%b8%89%e6%96%b9%e6%8e%a7%e4%bb%b6%e5%ba%93-handycontrol"></a>
+自定义控件（回答时可延伸至三方控件库 HandyControl）
+</h2><ol>
+<li>确定控件类型</li>
+<li>创建控件类，并继承自 Control 类</li>
+<li>定义依赖属性</li>
+<li>处理布局和尺寸</li>
+<li>数据绑定</li>
+<li>创建样式和模板</li>
+<li>测试和优化</li>
+</ol>
+<p>WPF 中创建自定义图表控件是一个相对复杂的过程，因为它通常涉及到图形渲染、数据绑定、事件处理和可能的用户交互。因此使用第三方控件库而不是重复造轮子是个不错的选择。</p>
+<h2 id="cs-架构开发模式">
+<a class="header-anchor" href="#cs-%e6%9e%b6%e6%9e%84%e5%bc%80%e5%8f%91%e6%a8%a1%e5%bc%8f"></a>
+C/S 架构开发模式
+</h2><p>客户端、服务端。客户端通常是一个 WPF 应用程序，可以发送请求到服务器，也可以接受服务器的响应来更新用户界面。</p>
+<h2 id="wpf-客户端软件开发流程至打包部署">
+<a class="header-anchor" href="#wpf-%e5%ae%a2%e6%88%b7%e7%ab%af%e8%bd%af%e4%bb%b6%e5%bc%80%e5%8f%91%e6%b5%81%e7%a8%8b%e8%87%b3%e6%89%93%e5%8c%85%e9%83%a8%e7%bd%b2"></a>
+WPF 客户端软件开发流程（至打包部署）
+</h2><p>需求分析 → 概要设计 → 详细设计 → 编码 → 测试 → debug → 打包部署 → 维护</p>
+<h2 id="什么是-ddd">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-ddd"></a>
+什么是 DDD
+</h2><p>domain drive design，强调基于业务领域的复杂性来进行软件设计。把实现重点放在业务逻辑和领域知识上，而不是技术上。强调领域驱动技术，而不是技术发展驱动领域。简而言之，做开发最重要的就是做业务。</p>
+<hr>
+<h1 id="数据库">
+<a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e5%ba%93"></a>
+数据库
+</h1><h2 id="你了解的数据库优化有哪些">
+<a class="header-anchor" href="#%e4%bd%a0%e4%ba%86%e8%a7%a3%e7%9a%84%e6%95%b0%e6%8d%ae%e5%ba%93%e4%bc%98%e5%8c%96%e6%9c%89%e5%93%aa%e4%ba%9b"></a>
+你了解的数据库优化有哪些？
+</h2><p>创建索引，定期维护和创建索引，仅查询必要的字段以减少数据量，使用存储过程。</p>
+<h2 id="第一范式第二范式第三范式">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e8%8c%83%e5%bc%8f%e7%ac%ac%e4%ba%8c%e8%8c%83%e5%bc%8f%e7%ac%ac%e4%b8%89%e8%8c%83%e5%bc%8f"></a>
+第一范式，第二范式，第三范式
+</h2><ul>
+<li>第一范式：数据表中的字段不可再分</li>
+<li>第二范式：数据表中的字段都与主键有关</li>
+<li>第三范式：数据表中的字段都与主键直接相关</li>
+</ul>
+<h2 id="数据库注入攻击如何避免">
+<a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e5%ba%93%e6%b3%a8%e5%85%a5%e6%94%bb%e5%87%bb%e5%a6%82%e4%bd%95%e9%81%bf%e5%85%8d"></a>
+数据库注入攻击，如何避免
+</h2><p>通过拼接字符串的形式，向数据库植入恶意代码以获取权限。</p>
+<ul>
+<li>通过值传递，明确用于输入的只能作为 sql 查询的值</li>
+<li>使用 ORM 框架</li>
+</ul>
+<h2 id="优化索引存储过程触发器">
+<a class="header-anchor" href="#%e4%bc%98%e5%8c%96%e7%b4%a2%e5%bc%95%e5%ad%98%e5%82%a8%e8%bf%87%e7%a8%8b%e8%a7%a6%e5%8f%91%e5%99%a8"></a>
+优化，索引，存储过程，触发器
+</h2><p><strong>1. 关系型数据库</strong>：关系型数据库是一种使用关系模型来组织数据的数据库，数据以表格的形式存储，表格之间通过关系进行连接。常见的关系型数据库包括 MySQL、Oracle、SQL Server 等。</p>
+<p><strong>2. SQL（Structured Query Language 结构化查询语言）</strong>：SQL 是一种用于管理关系型数据库的标准语言，通过 SQL 可以实现对数据库的查询、更新、删除等操作。SQL 分为数据操作语言（DML）、数据定义语言（DDL）、数据控制语言（DCL）等类型。</p>
+<p><strong>3. 表（Table）</strong>：表是数据库中存储数据的基本单位，类似于电子表格中的工作表。表由行和列组成，每一行表示一个记录，每一列表示一个字段。</p>
+<p><strong>4. 字段（Column）</strong>：表中的每一列都代表一个字段，字段定义了数据的类型和约束条件，例如整数、字符串、日期等。</p>
+<p><strong>5. 记录（Row）</strong>：表中的每一行称为一条记录，记录了一组相关的数据。</p>
+<p><strong>6. 主键（Primary Key）</strong>：主键是表中的唯一标识符，用于唯一标识表中的每一条记录。主键值不能重复且不能为空。</p>
+<p><strong>7. 外键（Foreign Key）</strong>：外键是一个表中的字段，它与另一个表中的主键字段相关联，用于建立表与表之间的关联关系。</p>
+<p><strong>8. 事务（Transaction）</strong>：事务是数据库管理系统执行的一个操作序列，它被视为一个单独的工作单元，要么完全执行，要么完全不执行。事务具有 ACID 属性，即原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）和持久性（Durability）。</p>
+<p><strong>9. 索引（Index）</strong>：索引是一种数据结构，用于加速对表中数据的检索。通过索引，数据库可以快速定位到符合特定条件的记录，从而提高查询性能。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_username</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="p">(</span><span class="n">username</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><p><strong>10. 触发器（Trigger）</strong>：触发器是一种特殊的存储过程，它会在表发生特定事件（如插入、更新、删除）时自动执行。触发器常用于实现数据约束和业务逻辑。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">TRIGGER</span><span class="w"> </span><span class="n">insert_order_log</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">AFTER</span><span class="w"> </span><span class="k">INSERT</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">orders</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">FOR</span><span class="w"> </span><span class="k">EACH</span><span class="w"> </span><span class="k">ROW</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">BEGIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">DECLARE</span><span class="w"> </span><span class="n">log_msg</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">log_msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CONCAT</span><span class="p">(</span><span class="s1">&#39;New order (ID: &#39;</span><span class="p">,</span><span class="w"> </span><span class="k">NEW</span><span class="p">.</span><span class="n">order_id</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;) inserted on &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">NOW</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">order_logs</span><span class="w"> </span><span class="p">(</span><span class="n">order_id</span><span class="p">,</span><span class="w"> </span><span class="n">log_message</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="k">NEW</span><span class="p">.</span><span class="n">order_id</span><span class="p">,</span><span class="w"> </span><span class="n">log_msg</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">END</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- NEW关键字获取插入的数据元素
+</span></span></span></code></pre></div><ul>
+<li>第一范式：字段不可分</li>
+<li>第二范式：每列都与主键相关（直接相关，间接相关）</li>
+<li>第三范式：每列都与主键相关，且不存在间接相关</li>
+</ul>
+<p><strong>11. 存储过程</strong>：存储过程（Stored Procedure）是一种在数据库中预编译和存储的 SQL 语句集合，它是一种数据库脚本，可以在数据库中执行。存储过程通常包含一系列 SQL 语句，用于执行数据查询、数据更新、数据插入、数据删除等操作。</p>
+<p>存储过程的优点包括：</p>
+<ul>
+<li><strong>提高性能</strong>：由于存储过程是在数据库中预编译的，因此执行时不需要再次编译，可以减少数据库的负载，提高执行速度</li>
+<li><strong>安全性和权限控制</strong>：可以限制用户只能通过存储过程访问数据，从而减少直接执行 SQL 语句的风险</li>
+<li><strong>可重用性</strong>：存储过程可以被多次调用执行，减少了重复编写 SQL 语句的工作量</li>
+<li><strong>易于维护</strong>：当需要修改数据操作逻辑时，只需修改存储过程的代码，而不需要修改调用存储过程的客户端代码</li>
+</ul>
+<p>存储过程通常由 CREATE PROCEDURE 语句创建，并使用 EXECUTE 或 CALL 语句执行。下面是一个简单的存储过程示例，该过程用于查询某个表中的记录数：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 创建一个名为 &#39;GetRecordCount&#39; 的存储过程
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">GetRecordCount</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">AS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">BEGIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">-- 设置返回消息
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">NOCOUNT</span><span class="w"> </span><span class="k">ON</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">-- 执行SQL查询并返回结果
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">RecordCount</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">YourTableName</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">END</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><p>使用存储过程时，可以通过参数传递值，也可以返回结果集。下面是一个带有参数和返回结果集的存储过程示例：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 创建一个名为 &#39;GetEmployeesByDepartment&#39; 的存储过程
+</span></span></span><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="n">GetEmployeesByDepartment</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="o">@</span><span class="n">DepartmentID</span><span class="w"> </span><span class="nb">INT</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">AS</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">BEGIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">-- 设置返回消息
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SET</span><span class="w"> </span><span class="n">NOCOUNT</span><span class="w"> </span><span class="k">ON</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">-- 执行SQL查询并返回结果
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">SELECT</span><span class="w"> </span><span class="n">EmployeeID</span><span class="p">,</span><span class="w"> </span><span class="n">EmployeeName</span><span class="p">,</span><span class="w"> </span><span class="n">DepartmentID</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">FROM</span><span class="w"> </span><span class="n">Employees</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">WHERE</span><span class="w"> </span><span class="n">DepartmentID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">@</span><span class="n">DepartmentID</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="k">END</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><p>在客户端应用程序中，可以通过执行以下命令来调用存储过程：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="c1">-- 调用 &#39;GetRecordCount&#39; 存储过程
+</span></span></span><span class="line"><span class="cl"><span class="k">EXECUTE</span><span class="w"> </span><span class="n">GetRecordCount</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="c1">-- 调用 &#39;GetEmployeesByDepartment&#39; 存储过程，传递参数值
+</span></span></span><span class="line"><span class="cl"><span class="k">EXECUTE</span><span class="w"> </span><span class="n">GetEmployeesByDepartment</span><span class="w"> </span><span class="o">@</span><span class="n">DepartmentID</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><p>存储过程是数据库管理中一个非常重要的功能，可以大大提高数据库的性能和安全性，同时简化代码的维护工作。</p>
+<hr>
+<h1 id="mvvm">
+<a class="header-anchor" href="#mvvm"></a>
+MVVM
+</h1><h2 id="什么是-mvvm">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-mvvm"></a>
+什么是 MVVM？
+</h2><p>MVVM 是一种设计模式，Model-View-ViewModel。</p>
+<p>MVVM（Model-View-ViewModel）是一种软件设计模式，它将应用程序分为三个核心组件：模型（Model）、视图（View）和视图模型（ViewModel）。这种模式主要用于分离用户界面（UI）和业务逻辑，使得应用程序更加模块化、易于维护和测试。MVVM 在 WPF（Windows Presentation Foundation）、Silverlight、UWP（Universal Windows Platform）和其他支持数据绑定的框架中得到了广泛的应用。</p>
+<p>以下是 MVVM 中各个组件的职责：</p>
+<ol>
+<li><strong>模型（Model）</strong>：
+<ul>
+<li>模型是代表应用程序数据和业务逻辑的部分</li>
+<li>它通常包含了数据访问层（如数据库操作）和业务规则</li>
+<li>模型是视图模型的数据来源</li>
+</ul>
+</li>
+<li><strong>视图（View）</strong>：
+<ul>
+<li>视图是用户界面，负责展示数据和与用户交互</li>
+<li>它通常由 XAML 定义，可以包含控件、布局和其他 UI 元素</li>
+<li>视图与视图模型通过数据绑定进行交互，不直接与模型交互</li>
+</ul>
+</li>
+<li><strong>视图模型（ViewModel）</strong>：
+<ul>
+<li>视图模型是视图和模型之间的桥梁，负责将模型的数据转换为视图可以展示的形式</li>
+<li>它包含了视图需要的所有逻辑，如命令（Commands）、事件处理和业务逻辑</li>
+<li>视图模型不直接知道视图的存在，它通过数据绑定与视图进行交互</li>
+</ul>
+</li>
+</ol>
+<p>MVVM 的关键特性包括：</p>
+<ul>
+<li><strong>数据绑定</strong>：视图模型和视图之间的交互主要通过数据绑定实现。这包括单向绑定、双向绑定和命令绑定</li>
+<li><strong>依赖属性</strong>：WPF 中的依赖属性允许视图模型向视图公开属性，这些属性可以响应用户输入或其他事件</li>
+<li><strong>命令</strong>：命令在 MVVM 中用于处理用户操作，如按钮点击。命令通常与视图模型中的方法关联，并可以在视图模型中定义执行逻辑</li>
+<li><strong>通知属性变更</strong>：视图模型实现了 <code>INotifyPropertyChanged</code> 接口，当属性值发生变化时，它会通知视图进行更新</li>
+</ul>
+<p>MVVM 的优势在于它提供了清晰的分离关注点，使得应用程序的不同部分可以独立开发和测试。它也促进了代码的重用和维护，因为 UI 逻辑和业务逻辑是分离的。</p>
+<h2 id="mvvm-的本质是什么">
+<a class="header-anchor" href="#mvvm-%e7%9a%84%e6%9c%ac%e8%b4%a8%e6%98%af%e4%bb%80%e4%b9%88"></a>
+MVVM 的本质是什么？
+</h2><p>将模型与视图通过 viewmodel 这座桥连接。</p>
+<h2 id="实现-mvvm-的框架用过那些">
+<a class="header-anchor" href="#%e5%ae%9e%e7%8e%b0-mvvm-%e7%9a%84%e6%a1%86%e6%9e%b6%e7%94%a8%e8%bf%87%e9%82%a3%e4%ba%9b"></a>
+实现 mvvm 的框架用过那些？
+</h2><ul>
+<li>MVVMLights</li>
+<li>Prism</li>
+</ul>
+<hr>
+<h1 id="webapi接口">
+<a class="header-anchor" href="#webapi%e6%8e%a5%e5%8f%a3"></a>
+WebAPI（接口）
+</h1><h2 id="什么是-webapi谈谈你对-webapi-的理解">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-webapi%e8%b0%88%e8%b0%88%e4%bd%a0%e5%af%b9-webapi-%e7%9a%84%e7%90%86%e8%a7%a3"></a>
+什么是 WebAPI？谈谈你对 WebAPI 的理解
+</h2><p>WebAPI 是一种框架，用于创建 HTTP 服务，它允许客户端通过 HTTP 请求访问和操作数据。WebAPI 是 ASP.NET 的一部分，专门用于构建 RESTful 服务，这些服务可以由各种客户端（如浏览器、移动应用、桌面应用）使用。</p>
+<p>以下是关于 WebAPI 的几个关键点：</p>
+<ol>
+<li><strong>RESTful 原则</strong>：WebAPI 遵循 REST（Representational State Transfer）架构风格，这意味着它使用标准的 HTTP 方法（如 GET、POST、PUT、DELETE）来操作资源。每个方法都有特定的语义，例如 GET 用于检索数据，POST 用于创建数据，PUT 用于更新数据，DELETE 用于删除数据。</li>
+<li><strong>跨平台和可扩展性</strong>：WebAPI 服务的客户端可以是任何能够发送 HTTP 请求的应用程序，这使得 WebAPI 非常适合于构建面向服务的架构（SOA）和跨平台应用程序。</li>
+<li><strong>内容协商</strong>：WebAPI 支持内容协商，这意味着它可以根据客户端请求的 Accept 头返回不同格式的数据，如 JSON、XML、HTML 等。</li>
+<li><strong>路由</strong>：WebAPI 使用路由机制将 HTTP 请求映射到控制器和动作方法。路由规则定义了如何将 URL 映射到控制器和动作。</li>
+<li><strong>模型绑定和验证</strong>：WebAPI 提供了模型绑定功能，它可以将 HTTP 请求的数据自动映射到 .NET 对象。同时，WebAPI 还支持数据验证，可以在动作方法执行之前验证请求数据的有效性。</li>
+<li><strong>过滤器</strong>：WebAPI 允许使用过滤器来拦截请求处理管道，从而实现诸如身份验证、日志记录、异常处理等横切关注点。</li>
+<li><strong>依赖注入</strong>：WebAPI 支持依赖注入（DI），这使得它可以更容易地管理和测试应用程序的依赖关系。</li>
+<li><strong>异步处理</strong>：WebAPI 支持异步编程模型，允许控制器动作方法以异步方式执行，这有助于提高应用程序的性能和可伸缩性。</li>
+<li><strong>版本控制</strong>：WebAPI 支持 API 版本控制，允许在不中断现有客户端的情况下引入新的 API 版本。</li>
+</ol>
+<p>WebAPI 的理解不仅仅是关于它的技术实现，还包括它如何促进良好的 API 设计原则，如无状态、可缓存、统一接口等。通过 WebAPI，开发人员可以创建易于使用、易于维护且功能强大的 HTTP 服务。</p>
+<h2 id="什么是依赖注入">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e4%be%9d%e8%b5%96%e6%b3%a8%e5%85%a5"></a>
+什么是依赖注入？
+</h2><p>依赖注入是一种设计模式，用于实现 IOC（控制反转），以减少类之间的耦合度。</p>
+<p>依赖注入（Dependency Injection，简称 DI）是一种设计模式，用于实现控制反转（Inversion of Control，简称 IoC）。在 WPF 中，依赖注入可以帮助开发者创建更加模块化、可测试和可维护的应用程序。依赖注入的核心思想是将组件的依赖关系从组件内部转移到外部，由外部容器负责提供所需的依赖。</p>
+<p>以下是依赖注入在 WPF 中的应用：</p>
+<ol>
+<li><strong>解耦组件</strong>：通过依赖注入，WPF 应用程序中的各个组件（如视图模型、服务、仓库等）可以彼此独立开发，减少组件间的直接依赖关系。</li>
+<li><strong>提高可测试性</strong>：依赖注入使得单元测试更加容易，因为可以通过注入模拟对象（mocks）或存根对象（stubs）来隔离测试单个组件。</li>
+<li><strong>配置和管理依赖</strong>：依赖注入容器（如 Unity、Ninject、Autofac 等）可以用来管理对象的创建和生命周期，以及对象之间的依赖关系。</li>
+<li><strong>灵活性和可扩展性</strong>：当应用程序需要添加新的功能或组件时，依赖注入可以使得这个过程更加灵活和无缝，无需修改现有代码。</li>
+<li><strong>分离关注点</strong>：通过将依赖关系的管理从业务逻辑中分离出来，开发者可以更加专注于业务逻辑的实现，而不是依赖关系的创建和维护。</li>
+</ol>
+<p>在 WPF 中实现依赖注入通常涉及以下步骤：</p>
+<ol>
+<li><strong>定义接口</strong>：为应用程序中的组件定义接口，这样可以减少组件间的直接依赖，便于替换实现。</li>
+<li><strong>创建依赖注入容器</strong>：选择一个依赖注入容器，并在应用程序启动时配置好容器，定义如何创建和解析对象。</li>
+<li><strong>注入依赖</strong>：在需要的地方，通过构造函数注入、属性注入或方法注入等方式，将依赖注入到组件中。</li>
+<li><strong>使用依赖</strong>：组件可以使用注入的依赖进行操作，而无需关心依赖的创建和管理。</li>
+</ol>
+<p>依赖注入是一种强大的模式，它可以帮助 WPF 开发者构建更加灵活和可维护的应用程序。通过合理使用依赖注入，可以提高代码的质量和开发效率。</p>
+<h2 id="什么是容器有哪些容器">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af%e5%ae%b9%e5%99%a8%e6%9c%89%e5%93%aa%e4%ba%9b%e5%ae%b9%e5%99%a8"></a>
+什么是容器？有哪些容器？
+</h2><p>在软件开发中，容器通常指的是依赖注入（Dependency Injection，DI）或控制反转（Inversion of Control，IoC）框架中的核心组件，它负责管理对象的创建和生命周期，以及对象之间的依赖关系。容器负责创建、配置和组装应用程序的组件，使得开发者可以更加专注于业务逻辑的实现，而不是依赖关系的创建和维护。</p>
+<h2 id="中间件技术">
+<a class="header-anchor" href="#%e4%b8%ad%e9%97%b4%e4%bb%b6%e6%8a%80%e6%9c%af"></a>
+中间件技术
+</h2><p>中间件是组装到应用程序管道中以处理请求和响应的软件。每个组件：选择是否将请求传递给管道中的下一个组件。可以在调用管道中的下一个组件之前和之后执行工作。请求委托（Request delegates）用于构建请求管道，处理每个 HTTP 请求。请求委托使用 Run、Map 和 Use 扩展方法进行配置。单独的请求委托可以以内联匿名方法（称为内联中间件）指定，或者可以在可重用的类中定义它。这些可重用的类和内联匿名方法是中间件或中间件组件。请求流程中的每个中间件组件都负责调用流水线中的下一个组件，如果适当，则负责链接短路。</p>
+<h2 id="什么是-restful-api如何在-c-中创建一个-restful-服务">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-restful-api%e5%a6%82%e4%bd%95%e5%9c%a8-c-%e4%b8%ad%e5%88%9b%e5%bb%ba%e4%b8%80%e4%b8%aa-restful-%e6%9c%8d%e5%8a%a1"></a>
+什么是 RESTful API？如何在 C# 中创建一个 RESTful 服务？
+</h2><p>转述性状态传递（Representational State Transfer）。</p>
+<hr>
+<h1 id="net-mvc接口">
+<a class="header-anchor" href="#net-mvc%e6%8e%a5%e5%8f%a3"></a>
+.net MVC（接口）
+</h1><h2 id="什么是-mvc-架构谈谈你对-mvc-的理解">
+<a class="header-anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-mvc-%e6%9e%b6%e6%9e%84%e8%b0%88%e8%b0%88%e4%bd%a0%e5%af%b9-mvc-%e7%9a%84%e7%90%86%e8%a7%a3"></a>
+什么是 MVC 架构？谈谈你对 MVC 的理解
+</h2><p>MVC（Model-View-Controller）是一种软件设计模式，它将应用程序分为三个核心组件：模型（Model）、视图（View）和控制器（Controller）。这种模式主要用于 Web 应用程序和桌面应用程序的开发，以实现代码的分离和重用，提高应用程序的可维护性和可扩展性。</p>
+<p>以下是 MVC 中各个组件的职责：</p>
+<ol>
+<li><strong>模型（Model）</strong>：
+<ul>
+<li>模型是应用程序的核心，它代表应用程序的数据和业务逻辑</li>
+<li>模型可以包含数据访问层（如数据库操作）和业务规则</li>
+<li>模型不关心如何显示数据，它只关注数据和业务逻辑</li>
+</ul>
+</li>
+<li><strong>视图（View）</strong>：
+<ul>
+<li>视图是用户界面，负责展示数据</li>
+<li>视图通常由 HTML、CSS 和 JavaScript 等标记语言和脚本语言编写</li>
+<li>视图不包含任何业务逻辑，它只负责显示数据</li>
+</ul>
+</li>
+<li><strong>控制器（Controller）</strong>：
+<ul>
+<li>控制器是模型和视图之间的桥梁，负责接收用户输入并处理用户请求</li>
+<li>控制器包含业务逻辑，它接收用户的请求，调用模型进行数据处理，并根据处理结果选择适当的视图进行展示</li>
+<li>控制器不包含任何 UI 逻辑，它只包含业务逻辑</li>
+</ul>
+</li>
+</ol>
+<p>MVC 的优势在于它提供了清晰的分离关注点，使得应用程序的不同部分可以独立开发和测试。它也促进了代码的重用和维护，因为 UI 逻辑和业务逻辑是分离的。</p>
+<h2 id="为什么用-mvc">
+<a class="header-anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e7%94%a8-mvc"></a>
+为什么用 MVC
+</h2><p>分离前后端，减少无用代码，提高代码复用性。</p>
+<hr>
+<h1 id="通讯接口协议">
+<a class="header-anchor" href="#%e9%80%9a%e8%ae%af%e6%8e%a5%e5%8f%a3%e5%8d%8f%e8%ae%ae"></a>
+通讯接口协议
+</h1><p>串口、485-232、MQTT、IOT、IIC、SPI、蓝牙等。</p>
+<h2 id="tcpudp">
+<a class="header-anchor" href="#tcpudp"></a>
+TCP，UDP
+</h2><p>TCP（传输控制协议）和 UDP（用户数据报协议）是 TCP/IP 协议族中的两个重要协议，它们用于在网络中传输数据。它们的主要区别在于它们如何处理数据传输的可靠性和效率。</p>
+<p><strong>TCP（传输控制协议）：</strong></p>
+<ul>
+<li><strong>面向连接</strong>：在发送数据之前，TCP 需要建立一个连接。这意味着在发送数据之前，发送方和接收方必须先进行握手，以确认双方的通信能力</li>
+<li><strong>可靠传输</strong>：TCP 确保数据的可靠传输，它通过序列号、确认应答、重传机制、流量控制和拥塞控制等机制来保证数据的正确性和完整性</li>
+<li><strong>数据包大小限制</strong>：TCP 的传输单元称为段（segment），其最大大小受到 MTU（最大传输单元）的限制</li>
+<li><strong>流量控制</strong>：TCP 使用滑动窗口机制来控制发送方的数据发送速度，以避免接收方处理不过来</li>
+<li><strong>拥塞控制</strong>：TCP 通过慢启动、拥塞避免、快速重传和快速恢复等机制来适应网络拥塞，并调整数据传输速率</li>
+<li><strong>广泛应用</strong>：TCP 是互联网上最常用的协议之一，它适用于需要可靠数据传输的应用，如网页浏览、文件传输、电子邮件等</li>
+</ul>
+<p><strong>UDP（用户数据报协议）：</strong></p>
+<ul>
+<li><strong>无连接</strong>：UDP 不需要建立连接，可以直接发送数据</li>
+<li><strong>不可靠传输</strong>：UDP 不保证数据的可靠传输，它不进行序列号、确认应答、重传机制等操作</li>
+<li><strong>数据包大小限制</strong>：UDP 的传输单元称为数据报（datagram），其最大大小同样受到 MTU 的限制</li>
+<li><strong>没有流量控制</strong>：UDP 不进行流量控制，发送方可以以任何速度发送数据</li>
+<li><strong>没有拥塞控制</strong>：UDP 不进行拥塞控制，发送方不会根据网络状况调整数据传输速率</li>
+<li><strong>高效传输</strong>：UDP 适用于对速度要求较高，但对数据完整性要求不高的应用，如实时视频流、在线游戏、VoIP 等</li>
+</ul>
+<p>总结来说，TCP 和 UDP 各有优缺点，选择哪种协议取决于具体的应用需求。如果需要可靠的数据传输，TCP 是更好的选择；如果对速度要求较高，对数据完整性要求不高，UDP 则更为合适。</p>
+<h2 id="modbus">
+<a class="header-anchor" href="#modbus"></a>
+ModBUS
+</h2><p>ModBUS 是一种串行通信协议，主要用于工业自动化领域，特别是用于连接现场设备（如传感器、执行器、PLC 等）和监控系统。ModBUS 协议是一种基于主从结构的通信协议，它定义了设备之间如何通过串行通信接口交换数据。</p>
+<p>ModBUS 协议的主要特点包括：</p>
+<ol>
+<li><strong>主从结构</strong>：ModBUS 协议采用主从结构，其中有一个主设备（Master）和多个从设备（Slave）。主设备负责发起通信请求，而从设备则响应请求。</li>
+<li><strong>简单性</strong>：ModBUS 协议设计简单，易于实现和理解。它使用标准的串行通信接口，如 RS-232、RS-485 等。</li>
+<li><strong>灵活性</strong>：ModBUS 协议支持多种数据传输模式，包括 ASCII 和 RTU（远程终端单元）模式。RTU 模式通常用于数据传输速率较高的情况。</li>
+<li><strong>地址范围</strong>：ModBUS 协议使用从机地址来标识不同的从设备，地址范围通常从 0 到 247。</li>
+<li><strong>数据类型</strong>：ModBUS 协议定义了多种数据类型，如 16 位无符号整数、32 位无符号整数、16 位浮点数等，以适应不同的数据交换需求。</li>
+<li><strong>错误检测</strong>：ModBUS 协议提供错误检测功能，包括 CRC（循环冗余检查）校验，以确保数据的完整性和可靠性。</li>
+<li><strong>功能码</strong>：ModBUS 协议使用功能码来指示数据传输的目的，如读取数据、写入数据、执行控制命令等。</li>
+<li><strong>广泛应用</strong>：ModBUS 协议因其简单性和开放性，在工业自动化领域得到了广泛的应用，成为了一种事实上的标准。</li>
+</ol>
+<p>ModBUS 协议的广泛应用使得它成为连接各种现场设备和监控系统的重要桥梁，它支持多种数据传输速率，从 9600 bps 到 115200 bps 不等，并且可以适应不同的网络拓扑结构。</p>
+<hr>
+<h1 id="数据结构">
+<a class="header-anchor" href="#%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84"></a>
+数据结构
+</h1><p>（略）</p>
+<hr>
+<h1 id="算法">
+<a class="header-anchor" href="#%e7%ae%97%e6%b3%95"></a>
+算法
+</h1><h2 id="常见算法">
+<a class="header-anchor" href="#%e5%b8%b8%e8%a7%81%e7%ae%97%e6%b3%95"></a>
+常见算法
+</h2><h3 id="两个以上排序算法">
+<a class="header-anchor" href="#%e4%b8%a4%e4%b8%aa%e4%bb%a5%e4%b8%8a%e6%8e%92%e5%ba%8f%e7%ae%97%e6%b3%95"></a>
+两个以上排序算法
+</h3><p><strong>选择排序：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">xuanZhe</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">list</span><span class="p">)</span><span class="c1">//选择排序</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="n">Length</span> <span class="p">-</span> <span class="m">1</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">min</span> <span class="p">=</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="p">=</span> <span class="n">i</span> <span class="p">+</span> <span class="m">1</span><span class="p">;</span> <span class="n">j</span> <span class="p">&lt;</span> <span class="n">list</span><span class="p">.</span><span class="n">Length</span><span class="p">;</span> <span class="n">j</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">&lt;</span> <span class="n">list</span><span class="p">[</span><span class="n">min</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                <span class="n">min</span> <span class="p">=</span> <span class="n">j</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">t</span> <span class="p">=</span> <span class="n">list</span><span class="p">[</span><span class="n">min</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">list</span><span class="p">[</span><span class="n">min</span><span class="p">]</span> <span class="p">=</span> <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">t</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>冒泡排序：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">void</span> <span class="nf">bubble_sort</span><span class="p">(</span><span class="kt">int</span> <span class="n">arr</span><span class="p">[],</span> <span class="kt">int</span> <span class="n">len</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">,</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">len</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="n">temp</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="n">arr</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">                <span class="n">arr</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">arr</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">82</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">89</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">70</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">len</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">/</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">bubble_sort</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">len</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">len</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;%d &#34;</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="算法题">
+<a class="header-anchor" href="#%e7%ae%97%e6%b3%95%e9%a2%98"></a>
+算法题
+</h2><h3 id="力扣-42-接雨水">
+<a class="header-anchor" href="#%e5%8a%9b%e6%89%a3-42-%e6%8e%a5%e9%9b%a8%e6%b0%b4"></a>
+力扣 42 接雨水
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">trap</span><span class="p">(</span><span class="kt">int</span><span class="o">[]</span><span class="w"> </span><span class="n">height</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">height</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">height</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">height</span><span class="o">[</span><span class="n">left</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">continue</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 此时的柱子比left柱子高，且两柱子之间有间隙可接水</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">height</span><span class="o">[</span><span class="n">left</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">sum</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">height</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">// 减掉中间矮柱子占用空间</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="c1">// 更换left柱子</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// left下标即最高的柱子，可用来减少循环数量了</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">height</span><span class="p">.</span><span class="na">length</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">left</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">height</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">height</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">continue</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// 此时的柱子比right柱子高，且两柱子之间有间隙可接水</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="n">sum</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">height</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">1</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">right</span><span class="p">;</span><span class="w"> </span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                        </span><span class="n">sum</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="n">height</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">;</span><span class="w"> </span><span class="c1">// 减掉中间矮柱子占用空间</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span><span class="w"> </span><span class="c1">// 更换right柱子</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">sum</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="判断两棵树是否相等树类中实现-compare-方法">
+<a class="header-anchor" href="#%e5%88%a4%e6%96%ad%e4%b8%a4%e6%a3%b5%e6%a0%91%e6%98%af%e5%90%a6%e7%9b%b8%e7%ad%89%e6%a0%91%e7%b1%bb%e4%b8%ad%e5%ae%9e%e7%8e%b0-compare-%e6%96%b9%e6%b3%95"></a>
+判断两棵树是否相等（树类中实现 compare 方法）
+</h3><p>入参为一棵树，返回值为布尔值，要求能使用这个方法比较当前树与另一棵树是否相等。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isSameTree</span><span class="p">(</span><span class="n">TreeNode</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">TreeNode</span><span class="w"> </span><span class="n">q</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">q</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">val</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="na">val</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">isSameTree</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">left</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="na">left</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">isSameTree</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="na">right</span><span class="p">,</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="na">right</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><h3 id="1000-瓶水找毒药经典题">
+<a class="header-anchor" href="#1000-%e7%93%b6%e6%b0%b4%e6%89%be%e6%af%92%e8%8d%af%e7%bb%8f%e5%85%b8%e9%a2%98"></a>
+1000 瓶水找毒药（经典题）
+</h3><p>用二进制做：<code>base^n &gt; 1000</code>，n 就是只数。</p>
+<h3 id="木板切割问题动态规划">
+<a class="header-anchor" href="#%e6%9c%a8%e6%9d%bf%e5%88%87%e5%89%b2%e9%97%ae%e9%a2%98%e5%8a%a8%e6%80%81%e8%a7%84%e5%88%92"></a>
+木板切割问题（动态规划）
+</h3><p>题干：木板原材料长度 6 米，三种零件需求的木板长度各不相同，分别为 xxX，然后写一个算法，面对不同的零件数量需求，计算如何切割木板，使木板浪费最少。看起来像是要用动态规划来做。</p>
+<hr>
+<h1 id="程序设计">
+<a class="header-anchor" href="#%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1"></a>
+程序设计
+</h1><p>（略）</p>
+</div>
+    <footer class="article-footer"><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/c"
+      data-aos="zoom-in"
+      >C#</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/c"
+        rel="tag"
+        >C#</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/wpf"
+        rel="tag"
+        >WPF</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/.net"
+        rel="tag"
+        >.NET</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="/images/cover5.webp"
+              data-sizes="auto"
+              alt="WPF面试题 2"
+              class="lazyload"
+            /><a
+          href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98-2/"
+          aria-label="前一篇:WPF面试题 2"
+          title="前一篇:WPF面试题 2"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">WPF面试题 2</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="/images/cover6.webp"
+              data-sizes="auto"
+              alt="WPF面试题参考（基础篇）"
+              class="lazyload"
+            /><a
+          href="/post/wpf%E9%9D%A2%E8%AF%95%E9%A2%98%E5%8F%82%E8%80%83%E5%9F%BA%E7%A1%80%E7%AF%87/"
+          aria-label="后一篇:WPF面试题参考（基础篇）"
+          title="后一篇:WPF面试题参考（基础篇）"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">WPF面试题参考（基础篇）</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>Alone4869
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;189.1k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;06:32</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#介绍下自己时间一分半以内">介绍下自己（时间一分半以内）</a></li>
+    <li><a href="#你觉得你有什么缺点--优点">你觉得你有什么缺点 / 优点</a></li>
+    <li><a href="#有无读研动机">有无读研动机？</a></li>
+    <li><a href="#过往项目-学到了什么-发挥怎么的作用">过往项目？/ 学到了什么？/ 发挥怎么的作用？</a></li>
+    <li><a href="#谈谈你对这个职位的理解">谈谈你对这个职位的理解</a></li>
+    <li><a href="#熟悉工控软件时序数据高并发处理">熟悉工控软件？时序数据，高并发处理？</a></li>
+    <li><a href="#plcdcsscada工业控制行业了解">PLC，DCS，SCADA，工业控制行业了解？</a></li>
+    <li><a href="#对我们公司的了解有多少">对我们公司的了解有多少？</a></li>
+    <li><a href="#大学期间有没有基于兴趣做一些技术上的研究">大学期间有没有基于兴趣做一些技术上的研究？</a></li>
+    <li><a href="#如果给我一个需求我会如何着手去实现如何搜索需求的技术如何解决技术难点">如果给我一个需求，我会如何着手去实现（如何搜索需求的技术，如何解决技术难点）</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是面向对象编程">什么是面向对象编程？</a></li>
+    <li><a href="#using-语法的作用">using 语法的作用</a></li>
+    <li><a href="#解释封装继承多态以及在-c-中的作用">解释封装继承多态，以及在 C# 中的作用</a></li>
+    <li><a href="#clsctsclr">CLS、CTS、CLR？</a></li>
+    <li><a href="#c-中-privateprotectedpublicinternal-修饰符的访问权限">C# 中 private、protected、public、internal 修饰符的访问权限</a></li>
+    <li><a href="#c-中有哪几种数据类型分别都有哪些区别有哪些">C# 中有哪几种数据类型？分别都有哪些？区别有哪些？</a></li>
+    <li><a href="#ref-out-什么区别作用">REF OUT 什么区别，作用</a></li>
+    <li><a href="#重写重载的区别">重写重载的区别</a></li>
+    <li><a href="#stringstringbufferstringbuilder-之间区别">String、StringBuffer、StringBuilder 之间区别</a></li>
+    <li><a href="#集合-ilist-接口与-list-的区别是什么">集合 IList 接口与 List 的区别是什么?</a></li>
+    <li><a href="#异常">异常</a></li>
+    <li><a href="#泛型---主要约束次要约束">泛型 - 主要约束，次要约束？</a></li>
+    <li><a href="#委托">委托</a></li>
+    <li><a href="#拓展方法">拓展方法</a></li>
+    <li><a href="#介绍-lambdalinq">介绍 LAMBDA、LINQ</a></li>
+    <li><a href="#有-50-万个-int-类型的数字现在需要判断一下里面是否存在重复的数字请你简单说一下思路">有 50 万个 int 类型的数字，现在需要判断一下里面是否存在重复的数字，请你简单说一下思路</a></li>
+    <li><a href="#efcoreorm-框架">EFCORE&ndash;ORM 框架</a></li>
+    <li><a href="#委托和事件">委托和事件</a></li>
+    <li><a href="#控制反转">控制反转</a></li>
+    <li><a href="#多线程---背后的机制thread-task">多线程 - 背后的机制（Thread-Task）</a></li>
+    <li><a href="#锁---死锁">锁 - 死锁</a></li>
+    <li><a href="#客户端与设备通讯机制上位机">客户端与设备通讯机制（上位机）</a></li>
+    <li><a href="#asyncawaittask">async，await，task</a></li>
+    <li><a href="#net-体系架构">.NET 体系架构</a></li>
+    <li><a href="#net-常用库">.NET 常用库</a></li>
+    <li><a href="#解释-c-和-net-之间的关系">解释 C# 和 .NET 之间的关系</a></li>
+    <li><a href="#adonet">ADO.NET</a></li>
+    <li><a href="#笔试基础问题">笔试基础问题！！！</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是依赖项属性">什么是依赖项属性</a></li>
+    <li><a href="#什么是双向绑定">什么是双向绑定</a></li>
+    <li><a href="#什么是响应式">什么是响应式</a></li>
+    <li><a href="#什么是样式">什么是样式</a></li>
+    <li><a href="#为什么选择-c-wpf-开发">为什么选择 C# wpf 开发</a></li>
+    <li><a href="#xaml">XAML</a></li>
+    <li><a href="#自定义控件回答时可延伸至三方控件库-handycontrol">自定义控件（回答时可延伸至三方控件库 HandyControl）</a></li>
+    <li><a href="#cs-架构开发模式">C/S 架构开发模式</a></li>
+    <li><a href="#wpf-客户端软件开发流程至打包部署">WPF 客户端软件开发流程（至打包部署）</a></li>
+    <li><a href="#什么是-ddd">什么是 DDD</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#你了解的数据库优化有哪些">你了解的数据库优化有哪些？</a></li>
+    <li><a href="#第一范式第二范式第三范式">第一范式，第二范式，第三范式</a></li>
+    <li><a href="#数据库注入攻击如何避免">数据库注入攻击，如何避免</a></li>
+    <li><a href="#优化索引存储过程触发器">优化，索引，存储过程，触发器</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是-mvvm">什么是 MVVM？</a></li>
+    <li><a href="#mvvm-的本质是什么">MVVM 的本质是什么？</a></li>
+    <li><a href="#实现-mvvm-的框架用过那些">实现 mvvm 的框架用过那些？</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是-webapi谈谈你对-webapi-的理解">什么是 WebAPI？谈谈你对 WebAPI 的理解</a></li>
+    <li><a href="#什么是依赖注入">什么是依赖注入？</a></li>
+    <li><a href="#什么是容器有哪些容器">什么是容器？有哪些容器？</a></li>
+    <li><a href="#中间件技术">中间件技术</a></li>
+    <li><a href="#什么是-restful-api如何在-c-中创建一个-restful-服务">什么是 RESTful API？如何在 C# 中创建一个 RESTful 服务？</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#什么是-mvc-架构谈谈你对-mvc-的理解">什么是 MVC 架构？谈谈你对 MVC 的理解</a></li>
+    <li><a href="#为什么用-mvc">为什么用 MVC</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#tcpudp">TCP，UDP</a></li>
+    <li><a href="#modbus">ModBUS</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#常见算法">常见算法</a>
+      <ul>
+        <li><a href="#两个以上排序算法">两个以上排序算法</a></li>
+      </ul>
+    </li>
+    <li><a href="#算法题">算法题</a>
+      <ul>
+        <li><a href="#力扣-42-接雨水">力扣 42 接雨水</a></li>
+        <li><a href="#判断两棵树是否相等树类中实现-compare-方法">判断两棵树是否相等（树类中实现 compare 方法）</a></li>
+        <li><a href="#1000-瓶水找毒药经典题">1000 瓶水找毒药（经典题）</a></li>
+        <li><a href="#木板切割问题动态规划">木板切割问题（动态规划）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">29</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">17</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/live2d-widgets@0.9.0/autoload.js"
+    defer
+    
+    
+    
+    integrity="sha384-poTN7wN/SqNhQqo3jdFeX20ikddWeFGkUkDEzsKjgH/ez8aQLn81oI0Cw6q5xNyB" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "Alone4869",
+          title: "C#面试准备（转载）",
+          url: "https:\/\/alone4869.github.io\/post\/c%23%E9%9D%A2%E8%AF%95%E5%87%86%E5%A4%87%E8%BD%AC%E8%BD%BD\/",
+          description: " C# 面试 wpf .net 面试准备 原文：C# 面试 wpf .net 面试准备 - 博客园 作者：m4st\n杂项 介绍下自己（时间一分半以内） 提炼自身优点：\n优势、亮点、基本情况言简意赅、语言精炼，控制时间 和应聘岗位相关的经历（和招聘要求相关） 为什么能够胜任岗位 为什么要应聘该岗位～求职动机 不能只介绍学校和专业，注意：重点介绍满足岗位要求的三个优势和亮点、表现出对岗位的理解和自己清晰的职业规划、表示愿意长期从事这个岗位。\n",
+          cover: "https:\/\/alone4869.github.io\/images\/banner.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+        }
+        pswp()
+      </script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    
+    async
+    
+    
+    integrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>

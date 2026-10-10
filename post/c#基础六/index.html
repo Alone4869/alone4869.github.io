@@ -1,0 +1,1958 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  C#基础（六） | Alone4869
+</title>
+<meta name="description" content="无量天尊"/><script>
+  (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "true");
+</script><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://alone4869.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"en\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"English\",\"Locale\":\"\"},{\"Lang\":\"ja\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"日本語\",\"Locale\":\"\"},{\"Lang\":\"zh-cn\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"简体中文\",\"Locale\":\"zh-CN\"},{\"Lang\":\"zh-tw\",\"Title\":\"\",\"Weight\":1,\"Disabled\":false,\"Direction\":\"\",\"Label\":\"繁體中文\",\"Locale\":\"\"}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="C#基础（六） | Alone4869" />
+  <meta
+    property="og:description"
+    content="无量天尊"
+  />
+  <meta property="og:url" content="https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%85%AD/" />
+  <meta
+    property="og:site_name"
+    content="知否"
+  />
+  <meta property="og:image" content="https://alone4869.github.io/images/banner.webp" />
+  <meta property="article:author" content="Alone4869" />
+  <meta property="article:published_time" content="2026-10-10T16:12:08&#43;08:00" />
+  <meta property="article:modified_time" content="2026-10-10T16:12:08&#43;08:00" /><meta property="article:tag" content="C#" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://alone4869.github.io/images/banner.webp" />
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.18b6dbee5e1b382f80c8c0cdf5f79d28d7139a30edcf474f45fab80da506432e.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon rotate'>&#xe62b;</div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">简体中文</span>
+        </div>
+        <ul class="select-items" id="select-items" role="listbox" aria-label="Languages"><li data-value="en" role="option" aria-selected="false" >English</li><li data-value="ja" role="option" aria-selected="false" >日本語</li><li data-value="zh-cn" role="option" class="selected" aria-selected="true" >简体中文</li><li data-value="zh-tw" role="option" aria-selected="false" >繁體中文</li></ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+          var expanded = selectSelected.getAttribute("aria-expanded") === "true";
+          selectSelected.setAttribute("aria-expanded", (!expanded).toString());
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            if (item.dataset.value === 'zh-cn') {
+              return;
+            }
+            if (!langMap[item.dataset.value]) {
+              _$("#lang-tooltip").style.opacity = "1";
+              setTimeout(() => {
+                _$("#lang-tooltip").style.opacity = "0";
+              }, 1000);
+              return;
+            }
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+            selectSelected.setAttribute("aria-expanded", "false");
+          }
+        });
+      </script>
+    </nav><a href="https://github.com/alone4869/alone4869.github.io" class="triangle-badge" title="github" target="_blank" rel="noopener nofollow noreferrer">
+      <div class="icon icon-github triangle-badge-icon"></div>
+    </a></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="C#基础（六）"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">C#基础（六）</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          
+          class="sidebar-right"  ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一类和结构体的区别是什么">一、类和结构体的区别是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#二什么是分部类">二、什么是分部类</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-1">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-1">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-1">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三new关键字的作用是什么">三、new关键字的作用是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-2">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-2">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-2">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四static关键字的作用是什么">四、static关键字的作用是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-3">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-3">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-3">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#五什么是静态类">五、什么是静态类</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-4">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-4">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-4">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#六null赋值运算符null合并运算符和null条件运算符的作用是什么">六、null赋值运算符、null合并运算符和null条件运算符的作用是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-5">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-5">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-5">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#七什么是封装封装和数据隐藏是相同的概念吗封装和抽象有什么区别">七、什么是封装，封装和数据隐藏是相同的概念吗，封装和抽象有什么区别</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-6">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-6">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-6">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#八什么是linq">八、什么是LINQ</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-7">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-7">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-7">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#九什么是扩展方法">九、什么是扩展方法</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-8">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-8">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-8">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#十什么是ienumerable">十、什么是IEnumerable</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-9">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-9">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-9">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">29</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">17</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-10-10 16:12:08 &#43;0800 &#43;0800" itemprop="datePublished"
+      >2026-10-10</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-10-10</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="一类和结构体的区别是什么">
+<a class="header-anchor" href="#%e4%b8%80%e7%b1%bb%e5%92%8c%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"></a>
+一、类和结构体的区别是什么
+</h2><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><p>核心区别在于<strong>类型系统分类</strong>和<strong>内存模型</strong>：</p>
+<ol>
+<li><strong>类型本质</strong>：<code>class</code> 是<strong>引用类型</strong>，<code>struct</code> 是<strong>值类型</strong>。</li>
+<li><strong>内存分配</strong>：类实例分配在**堆（Heap）<strong>上，变量存引用；结构体通常分配在</strong>栈（Stack）**上（作为局部变量时）或内联在包含它的对象中，变量直接存数据。</li>
+<li><strong>赋值语义</strong>：类赋值是<strong>拷贝引用</strong>（浅拷贝），修改一个会影响另一个；结构体赋值是<strong>拷贝整个数据</strong>（深拷贝），互不影响。</li>
+<li><strong>继承性</strong>：类支持继承和多态；结构体<strong>不能继承</strong>其他类或结构体（但可实现接口）。</li>
+<li><strong>默认构造</strong>：类可以没有无参构造函数；结构体<strong>始终有一个隐式的无参构造函数</strong>（将所有字段初始化为零值），且在 C# 10 之前不能自定义无参构造。</li>
+</ol>
+<h3 id="深入解析">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90"></a>
+📚深入解析
+</h3><h4 id="1-详细对比表">
+<a class="header-anchor" href="#1-%e8%af%a6%e7%bb%86%e5%af%b9%e6%af%94%e8%a1%a8"></a>
+1. 详细对比表
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left">Class (类)</th>
+					<th style="text-align: left">Struct (结构体)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>类型</strong></td>
+					<td style="text-align: left">引用类型</td>
+					<td style="text-align: left">值类型</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>内存位置</strong></td>
+					<td style="text-align: left">堆 (Heap)</td>
+					<td style="text-align: left">栈 (Stack) / 内联</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>赋值行为</strong></td>
+					<td style="text-align: left">拷贝地址</td>
+					<td style="text-align: left">拷贝数据</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>继承</strong></td>
+					<td style="text-align: left">支持单继承</td>
+					<td style="text-align: left">不支持继承 (sealed)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>接口</strong></td>
+					<td style="text-align: left">可实现</td>
+					<td style="text-align: left">可实现</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>null 值</strong></td>
+					<td style="text-align: left">可以为 null</td>
+					<td style="text-align: left">不能为 null (除非 Nullable<!-- raw HTML omitted -->)</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>析构函数</strong></td>
+					<td style="text-align: left">支持 (~ClassName)</td>
+					<td style="text-align: left"><strong>不支持</strong></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>字段初始化</strong></td>
+					<td style="text-align: left">可在声明时初始化</td>
+					<td style="text-align: left">C# 10+ 支持，旧版受限</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>性能特征</strong></td>
+					<td style="text-align: left">GC 管理，有分配开销</td>
+					<td style="text-align: left">无 GC 压力，拷贝开销随大小增加</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="2-关键陷阱与注意事项">
+<a class="header-anchor" href="#2-%e5%85%b3%e9%94%ae%e9%99%b7%e9%98%b1%e4%b8%8e%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9"></a>
+2. 关键陷阱与注意事项
+</h4><ul>
+<li><strong>可变结构体是万恶之源</strong>：由于结构体是值拷贝，如果你修改了一个从属性返回的结构体字段（如 <code>myObj.Point.X = 10;</code>），你修改的只是副本，原对象不会改变。这会导致极其隐蔽的 Bug。<strong>最佳实践：结构体应设计为不可变（Immutable）。</strong></li>
+<li><strong>装箱/拆箱开销</strong>：当结构体被当作 <code>object</code>、接口类型或调用未重写的虚方法（如 <code>ToString()</code>）时，会发生装箱。频繁装箱会抵消结构体的性能优势。</li>
+<li><strong>大小限制</strong>：微软官方建议结构体大小控制在 <strong>16 字节以内</strong>。过大的结构体在赋值、传参时的拷贝成本可能超过堆分配的开销，此时应改用 class。</li>
+<li><strong>this 的安全性</strong>：在结构体方法中，<code>this</code> 是一个值而非引用。为了防止意外修改，C# 引入了 <code>readonly struct</code> 和 <code>in</code> 参数修饰符。</li>
+</ul>
+<h4 id="3-代码示例赋值差异">
+<a class="header-anchor" href="#3-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b%e8%b5%8b%e5%80%bc%e5%b7%ae%e5%bc%82"></a>
+3. 代码示例：赋值差异
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// === Class 演示 ===</span>
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">PersonClass</span> <span class="p">{</span> <span class="kd">public</span> <span class="kt">string</span> <span class="n">Name</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">p1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PersonClass</span> <span class="p">{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Alice&#34;</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">p2</span> <span class="p">=</span> <span class="n">p1</span><span class="p">;</span>      <span class="c1">// 拷贝引用</span>
+</span></span><span class="line"><span class="cl"><span class="n">p2</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Bob&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span> <span class="c1">// 输出: Bob (p1 也被修改了)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// === Struct 演示 ===</span>
+</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">PointStruct</span> <span class="p">{</span> <span class="kd">public</span> <span class="kt">int</span> <span class="n">X</span><span class="p">;</span> <span class="kd">public</span> <span class="kt">int</span> <span class="n">Y</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">s1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointStruct</span> <span class="p">{</span> <span class="n">X</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">Y</span> <span class="p">=</span> <span class="m">2</span> <span class="p">};</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">s2</span> <span class="p">=</span> <span class="n">s1</span><span class="p">;</span>      <span class="c1">// 拷贝整个数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">s2</span><span class="p">.</span><span class="n">X</span> <span class="p">=</span> <span class="m">99</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="n">X</span><span class="p">);</span> <span class="c1">// 输出: 1 (s1 不受影响)</span>
+</span></span></code></pre></div><h4 id="4-何时使用-struct">
+<a class="header-anchor" href="#4-%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8-struct"></a>
+4. 何时使用 Struct？
+</h4><ul>
+<li>✅ 表示一个<strong>单一的值</strong>（如坐标 <code>Point</code>、颜色 <code>Color</code>、金额 <code>Money</code>）。</li>
+<li>✅ 数据量小（&lt; 16 bytes）且生命周期短。</li>
+<li>✅ 需要高性能、避免 GC 压力的场景（如图形渲染、高频交易）。</li>
+<li>✅ 与外部非托管代码交互（Interop）。</li>
+<li>❌ 不要用来建模业务实体（Entity），不要用可变结构体。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>什么是 <code>readonly struct</code>？它解决了什么问题？</strong>
+<ul>
+<li><em>考点</em>：防止结构体被意外修改；允许编译器对 <code>in</code> 参数传递进行优化（避免防御性拷贝）；保证线程安全。</li>
+</ul>
+</li>
+<li><strong><code>ref struct</code> 是什么？和普通 struct 有什么区别？</strong>
+<ul>
+<li><em>考点</em>：<code>ref struct</code> 只能存在于栈上，不能被装箱、不能作为泛型参数、不能存储在堆上（如类字段、数组元素）。典型代表：<code>Span&lt;T&gt;</code>, <code>ReadOnlySpan&lt;T&gt;</code>。用于极致性能和安全内存访问。</li>
+</ul>
+</li>
+<li><strong>结构体可以实现接口吗？实现接口时有什么需要注意的？</strong>
+<ul>
+<li><em>考点</em>：可以实现。但如果将结构体赋值给接口变量，会发生<strong>装箱</strong>。为避免装箱，应在泛型约束中使用 <code>where T : IMyInterface</code>，这样 JIT 会生成针对该结构体的特化代码，直接在栈上调用接口方法。</li>
+</ul>
+</li>
+<li><strong>C# 10 对结构体做了哪些改进？</strong>
+<ul>
+<li><em>考点</em>：允许自定义无参构造函数；允许在声明时初始化字段/属性；支持 <code>record struct</code>（不可变结构体的简洁语法）。这些改进让结构体更易用、更安全。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="二什么是分部类">
+<a class="header-anchor" href="#%e4%ba%8c%e4%bb%80%e4%b9%88%e6%98%af%e5%88%86%e9%83%a8%e7%b1%bb"></a>
+二、什么是分部类
+</h2><h3 id="面试简答考场口述答案-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-1"></a>
+✅面试简答（考场口述答案）
+</h3><p>**分部类（Partial Class）**允许将一个类、结构体或接口的定义拆分到多个文件中。在编译时，C# 编译器会将这些部分合并成一个完整的类型。</p>
+<ul>
+<li><strong>关键字</strong>：<code>partial</code>。</li>
+<li><strong>核心作用</strong>：
+<ol>
+<li><strong>代码分离</strong>：将自动生成的代码（如 EF Core 实体、WPF/XAML 后台代码）与手写业务逻辑分开，避免修改生成代码导致丢失。</li>
+<li><strong>团队协作</strong>：允许多个开发者同时处理同一个大型类的不同部分（较少见，通常通过接口或继承解决）。</li>
+<li><strong>保持整洁</strong>：将庞大的类按功能模块拆分到不同文件，提高可读性。</li>
+</ol>
+</li>
+</ul>
+<h3 id="深入解析-1">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-1"></a>
+📚深入解析
+</h3><h4 id="1-语法规则与约束">
+<a class="header-anchor" href="#1-%e8%af%ad%e6%b3%95%e8%a7%84%e5%88%99%e4%b8%8e%e7%ba%a6%e6%9d%9f"></a>
+1. 语法规则与约束
+</h4><p>要成功合并为一个类，所有分部声明必须满足以下条件：</p>
+<ul>
+<li><strong>同一程序集和模块</strong>：必须在同一个 <code>.dll</code> 或 <code>.exe</code> 中。</li>
+<li><strong>相同的访问修饰符</strong>：如果一部分是 <code>public</code>，其他部分也必须是 <code>public</code>。</li>
+<li><strong>相同的基类和接口</strong>：所有部分继承的基类和实现的接口最终会合并。</li>
+<li><strong>嵌套类型</strong>：如果一个部分是嵌套类，其他部分也必须是嵌套在同一个外部类中。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// File: User.Part1.cs</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">partial</span> <span class="k">class</span> <span class="nc">User</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">int</span> <span class="n">Id</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">Name</span> <span class="p">{</span> <span class="k">get</span><span class="p">;</span> <span class="k">set</span><span class="p">;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// File: User.Part2.cs</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">partial</span> <span class="k">class</span> <span class="nc">User</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Validate</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">Name</span><span class="p">))</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">Exception</span><span class="p">(</span><span class="s">&#34;Name is required&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 编译后等同于一个包含 Id, Name 和 Validate 方法的完整 User 类</span>
+</span></span></code></pre></div><h4 id="2-典型应用场景">
+<a class="header-anchor" href="#2-%e5%85%b8%e5%9e%8b%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af"></a>
+2. 典型应用场景
+</h4><ul>
+<li><strong>ASP.NET Core / Entity Framework</strong>：
+EF Core 生成的实体类通常标记为 <code>partial</code>。你可以创建另一个同名分部类来添加自定义验证逻辑、非映射属性（Non-mapped properties）或业务方法，而不用担心重新生成数据库模型时覆盖你的代码。</li>
+<li><strong>WPF / WinForms / MAUI</strong>：
+UI 框架会自动生成 <code>.g.i.cs</code> 文件来处理 XAML 中的控件绑定和初始化。开发者手写的代码放在另一个分部文件中。这是 <code>partial</code> 最经典的应用。</li>
+<li><strong>大型类的模块化</strong>：
+如果一个类过于庞大（虽然这通常是设计不良的信号），可以将其拆分为 <code>User.Properties.cs</code>, <code>User.Methods.cs</code>, <code>User.Events.cs</code> 等。</li>
+</ul>
+<h4 id="3-分部方法partial-methods---c-9-之前限制较多c-9-增强">
+<a class="header-anchor" href="#3-%e5%88%86%e9%83%a8%e6%96%b9%e6%b3%95partial-methods---c-9-%e4%b9%8b%e5%89%8d%e9%99%90%e5%88%b6%e8%be%83%e5%a4%9ac-9-%e5%a2%9e%e5%bc%ba"></a>
+3. 分部方法（Partial Methods - C# 9 之前限制较多，C# 9+ 增强）
+</h4><ul>
+<li><strong>定义</strong>：在分部类中声明但没有实现的方法。</li>
+<li><strong>旧版行为</strong>：如果没有任何部分提供实现，编译器会在编译时直接移除该方法及其所有调用，零开销。</li>
+<li><strong>新版行为（C# 9+）</strong>：允许分部方法有返回值、<code>out</code> 参数，且必须有实现（或者像以前一样如果没有实现则被移除，取决于具体上下文和可访问性）。主要用于代码生成器（Source Generators）在编译时注入逻辑。</li>
+</ul>
+<h4 id="4-注意事项">
+<a class="header-anchor" href="#4-%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9"></a>
+4. 注意事项
+</h4><ul>
+<li><strong>特性（Attributes）</strong>：如果在多个分部上应用了相同的特性，它们会被合并。但如果特性不允许重复，可能会报错。</li>
+<li><strong>泛型约束</strong>：泛型类型的约束可以在不同的分部中指定，但最终合并后的约束必须一致且不冲突。</li>
+<li><strong>调试体验</strong>：在 Visual Studio 中调试时，IDE 能够智能地识别并跳转到正确的物理文件，开发者通常感觉不到它是拆分的。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-1"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>分部类（Partial Class）和继承（Inheritance）有什么区别？什么时候用哪个？</strong>
+<ul>
+<li><em>考点</em>：分部类是<strong>同一个类型</strong>的物理拆分，共享私有成员和状态；继承是<strong>不同类型</strong>的逻辑扩展。如果需要扩展第三方库的类且无法修改源码，应使用<strong>继承</strong>或<strong>扩展方法</strong>，而不是分部类（因为你无法控制对方的源码文件）。分部类主要用于“自己生成的代码”和“自己手写的代码”共存。</li>
+</ul>
+</li>
+<li><strong>什么是 Source Generators（源代码生成器）？它和分部类有什么关系？</strong>
+<ul>
+<li><em>考点</em>：Source Generators 是 Roslyn 编译器的一项功能，可以在编译时分析代码并生成新的 C# 文件。生成的代码通常作为分部类的一部分与原始代码合并。这是现代 .NET（如 .NET 6+ Minimal API, Dapper AOT）提高性能的重要手段。</li>
+</ul>
+</li>
+<li><strong>分部类可以跨项目吗？</strong>
+<ul>
+<li><em>考点</em>：<strong>不可以</strong>。分部类必须在同一个程序集（Assembly）内。跨项目复用代码应使用类库引用、NuGet 包或继承/组合模式。</li>
+</ul>
+</li>
+<li><strong>如果两个分部类中定义了同名的私有字段，会发生什么？</strong>
+<ul>
+<li><em>考点</em>：编译错误。因为它们在逻辑上是同一个类，不能在同一作用域内重复定义成员。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="三new关键字的作用是什么">
+<a class="header-anchor" href="#%e4%b8%89new%e5%85%b3%e9%94%ae%e5%ad%97%e7%9a%84%e4%bd%9c%e7%94%a8%e6%98%af%e4%bb%80%e4%b9%88"></a>
+三、new关键字的作用是什么
+</h2><h3 id="面试简答考场口述答案-2">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-2"></a>
+✅面试简答（考场口述答案）
+</h3><p>在 C# 中，<code>new</code> 关键字主要有三种用途：</p>
+<ol>
+<li><strong>创建对象实例</strong>：调用构造函数，在堆上分配内存并初始化对象（针对引用类型）或在栈/内联位置初始化数据（针对值类型）。</li>
+<li><strong>隐藏基类成员（Shadowing）</strong>：当子类定义了一个与基类同名的成员时，使用 <code>new</code> 修饰符显式隐藏基类成员，而不是重写（Override）它。</li>
+<li><strong>泛型约束</strong>：在泛型定义中使用 <code>where T : new()</code>，约束类型参数必须具有公共的无参构造函数。</li>
+</ol>
+<h3 id="深入解析-2">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-2"></a>
+📚深入解析
+</h3><h4 id="1-实例化对象-operator">
+<a class="header-anchor" href="#1-%e5%ae%9e%e4%be%8b%e5%8c%96%e5%af%b9%e8%b1%a1-operator"></a>
+1. 实例化对象 (Operator)
+</h4><p>这是最常见的用法。</p>
+<ul>
+<li><strong>对于引用类型 (<code>class</code>)</strong>：<code>var obj = new MyClass();</code>
+<ul>
+<li>在托管堆（Heap）上分配内存。</li>
+<li>调用构造函数初始化字段。</li>
+<li>返回指向该内存地址的引用。</li>
+</ul>
+</li>
+<li><strong>对于值类型 (<code>struct</code>)</strong>：<code>var s = new MyStruct();</code>
+<ul>
+<li>通常在栈上分配（或内联）。</li>
+<li>将所有字段初始化为默认值（0, null, false）。</li>
+<li><em>注意</em>：即使不调用 <code>new</code>，值类型也有默认值，但调用 <code>new</code> 可以确保所有字段被正确初始化，特别是当结构体有自定义构造函数时。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-隐藏基类成员-modifier">
+<a class="header-anchor" href="#2-%e9%9a%90%e8%97%8f%e5%9f%ba%e7%b1%bb%e6%88%90%e5%91%98-modifier"></a>
+2. 隐藏基类成员 (Modifier)
+</h4><p>当子类中有一个方法与基类方法签名完全相同，但你<strong>不想</strong>实现多态（即不希望通过基类引用调用到子类的方法）时，使用 <code>new</code>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Base</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Show</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Base&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Derived</span> <span class="p">:</span> <span class="n">Base</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 使用 new 隐藏基类的 Show 方法</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">new</span> <span class="k">void</span> <span class="n">Show</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Derived&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 测试</span>
+</span></span><span class="line"><span class="cl"><span class="n">Base</span> <span class="n">b</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Derived</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span><span class="p">.</span><span class="n">Show</span><span class="p">();</span> <span class="c1">// 输出: &#34;Base&#34; (因为 Show 不是虚方法，且被 new 隐藏了，编译时绑定到 Base)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">Derived</span> <span class="n">d</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Derived</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="p">.</span><span class="n">Show</span><span class="p">();</span> <span class="c1">// 输出: &#34;Derived&#34;</span>
+</span></span></code></pre></div><ul>
+<li><strong>对比 <code>override</code></strong>：
+<ul>
+<li><code>override</code> 用于虚方法（<code>virtual</code>），实现运行时多态。</li>
+<li><code>new</code> 用于非虚方法或故意切断多态链，属于编译时绑定。</li>
+<li>如果不写 <code>new</code> 也不写 <code>override</code>，编译器会报警告（CS0108），建议显式加上 <code>new</code> 以表明意图。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-泛型约束-constraint">
+<a class="header-anchor" href="#3-%e6%b3%9b%e5%9e%8b%e7%ba%a6%e6%9d%9f-constraint"></a>
+3. 泛型约束 (Constraint)
+</h4><p>用于限制泛型类型 <code>T</code> 必须能够被实例化。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Factory</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="k">new</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">T</span> <span class="n">CreateInstance</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="k">new</span> <span class="n">T</span><span class="p">();</span> <span class="c1">// 只有加了 new() 约束，这里才能编译通过</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
+<li><strong>注意</strong>：<code>new()</code> 约束要求必须是<strong>公共的无参构造函数</strong>。如果类只有带参构造或私有构造，则无法满足此约束。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-2">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-2"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong><code>new</code> 隐藏成员和 <code>override</code> 重写成员的本质区别是什么？</strong>
+<ul>
+<li><em>考点</em>：<strong>多态性</strong>。<code>override</code> 是动态绑定（Runtime Binding），根据对象的实际类型调用方法；<code>new</code> 是静态绑定（Compile-time Binding），根据变量的声明类型调用方法。面试中常考“基类引用指向子类对象”时的调用结果。</li>
+</ul>
+</li>
+<li><strong>在泛型中，<code>where T : new()</code> 有什么局限性？</strong>
+<ul>
+<li><em>考点</em>：它只能调用无参构造函数。如果需要传递参数，通常需要使用 <code>Activator.CreateInstance</code>（性能较差）或使用工厂模式、依赖注入容器来解决。</li>
+</ul>
+</li>
+<li><strong><code>new</code> 关键字在内存管理中扮演什么角色？它与 GC 有什么关系？</strong>
+<ul>
+<li><em>考点</em>：<code>new</code> 触发内存分配。对于引用类型，频繁 <code>new</code> 会产生大量短期对象，增加 Gen 0 GC 的频率。理解 <code>new</code> 的成本有助于优化高性能代码（如使用对象池 <code>ObjectPool</code> 避免频繁 <code>new</code>）。</li>
+</ul>
+</li>
+<li><strong>什么是“阴影”（Shadowing）？为什么 C# 允许这种行为？</strong>
+<ul>
+<li><em>考点</em>：阴影是指子类重新定义了基类已有的成员。C# 允许它是为了版本控制兼容性：如果基类在新版本中添加了一个方法，而子类之前已经有一个同名方法，使用 <code>new</code> 可以避免子类行为被意外改变，保证向后兼容。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="四static关键字的作用是什么">
+<a class="header-anchor" href="#%e5%9b%9bstatic%e5%85%b3%e9%94%ae%e5%ad%97%e7%9a%84%e4%bd%9c%e7%94%a8%e6%98%af%e4%bb%80%e4%b9%88"></a>
+四、static关键字的作用是什么
+</h2><h3 id="面试简答考场口述答案-3">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-3"></a>
+✅面试简答（考场口述答案）
+</h3><p><code>static</code> 关键字用于声明<strong>属于类型本身</strong>而不是属于类型特定实例的成员。</p>
+<ol>
+<li><strong>静态成员</strong>：包括字段、方法、属性、事件等。它们被所有实例共享，通过类名直接访问（如 <code>Math.PI</code>），不需要创建对象。</li>
+<li><strong>静态构造函数</strong>：用于初始化静态字段，由 CLR 在第一次访问该类时自动调用，且<strong>只执行一次</strong>。</li>
+<li><strong>静态类</strong>：只能包含静态成员，不能被实例化，也不能被继承。通常用于工具类（如 <code>Console</code>, <code>Math</code>）。</li>
+<li><strong>核心特点</strong>：生命周期伴随应用程序域（AppDomain）或进程，直到程序结束才释放。</li>
+</ol>
+<h3 id="深入解析-3">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-3"></a>
+📚深入解析
+</h3><h4 id="1-内存与生命周期">
+<a class="header-anchor" href="#1-%e5%86%85%e5%ad%98%e4%b8%8e%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f"></a>
+1. 内存与生命周期
+</h4><ul>
+<li><strong>存储位置</strong>：静态字段存储在**高频率堆（High-Frequency Heap）**或专门的静态存储区，不属于某个对象的堆内存。</li>
+<li><strong>生命周期</strong>：从类被加载（JIT 编译触发或首次访问）开始，直到应用程序域卸载或进程终止。因此，静态变量如果引用了大型对象，极易导致<strong>内存泄漏</strong>。</li>
+</ul>
+<h4 id="2-静态构造函数-static-constructor">
+<a class="header-anchor" href="#2-%e9%9d%99%e6%80%81%e6%9e%84%e9%80%a0%e5%87%bd%e6%95%b0-static-constructor"></a>
+2. 静态构造函数 (Static Constructor)
+</h4><ul>
+<li><strong>语法</strong>：<code>static ClassName() { }</code>，无参数，无访问修饰符。</li>
+<li><strong>执行时机</strong>：CLR 保证在创建第一个实例或引用任何静态成员之前执行。</li>
+<li><strong>线程安全</strong>：CLR 保证静态构造函数在多线程环境下<strong>只执行一次</strong>，是天然的线程安全初始化方式。</li>
+<li><strong>性能陷阱</strong>：如果静态构造函数逻辑复杂或耗时，会阻塞所有尝试访问该类的线程，导致启动变慢或死锁风险。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">DatabaseConfig</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">string</span> <span class="n">ConnectionString</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 静态构造函数：只运行一次</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">static</span> <span class="n">DatabaseConfig</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Loading config...&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">ConnectionString</span> <span class="p">=</span> <span class="n">LoadFromConfigFile</span><span class="p">();</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="3-静态类-static-class">
+<a class="header-anchor" href="#3-%e9%9d%99%e6%80%81%e7%b1%bb-static-class"></a>
+3. 静态类 (Static Class)
+</h4><ul>
+<li><strong>限制</strong>：
+<ul>
+<li>不能实例化 (<code>new StaticClass()</code> 报错)。</li>
+<li>不能包含实例构造函数。</li>
+<li>不能被继承（隐式 <code>sealed</code> + <code>abstract</code>）。</li>
+<li>只能包含静态成员。</li>
+</ul>
+</li>
+<li><strong>用途</strong>：存放纯函数、常量、扩展方法。例如 <code>System.Math</code>, <code>System.Console</code>。</li>
+</ul>
+<h4 id="4-静态扩展方法-extension-methods">
+<a class="header-anchor" href="#4-%e9%9d%99%e6%80%81%e6%89%a9%e5%b1%95%e6%96%b9%e6%b3%95-extension-methods"></a>
+4. 静态扩展方法 (Extension Methods)
+</h4><ul>
+<li><strong>本质</strong>：静态类中的静态方法，但第一个参数带有 <code>this</code> 修饰符。</li>
+<li><strong>作用</strong>：在不修改源码的情况下为现有类型“添加”方法。</li>
+<li><strong>注意</strong>：扩展方法优先级低于实例方法；如果实例方法存在，编译器优先调用实例方法。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">StringExtensions</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 静态方法 + this 参数 = 扩展方法</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">bool</span> <span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="k">this</span> <span class="kt">string</span> <span class="n">str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrEmpty</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 调用： &#34;hello&#34;.IsNullOrEmpty();</span>
+</span></span></code></pre></div><h4 id="5-常见陷阱与最佳实践">
+<a class="header-anchor" href="#5-%e5%b8%b8%e8%a7%81%e9%99%b7%e9%98%b1%e4%b8%8e%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5"></a>
+5. 常见陷阱与最佳实践
+</h4><ul>
+<li><strong>线程安全</strong>：静态字段被所有线程共享。如果多个线程同时修改一个静态非只读字段，必须使用锁（<code>lock</code>）或线程安全集合（<code>ConcurrentDictionary</code>）。</li>
+<li><strong>单元测试困难</strong>：依赖静态成员的代码很难进行 Mock（模拟），因为无法替换静态行为。现代开发倾向于使用**依赖注入（DI）**替代静态单例。</li>
+<li><strong>不要滥用静态状态</strong>：除了配置、日志记录器等全局唯一资源外，尽量避免使用可变的静态字段，这会破坏代码的可维护性和可测试性。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-3">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-3"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>静态构造函数和普通构造函数的执行顺序是怎样的？</strong>
+<ul>
+<li><em>考点</em>：先执行静态构造函数（仅一次），再执行实例构造函数（每次 new 都执行）。如果类中有静态字段初始化器，它们的执行顺序通常与代码书写顺序一致，且在静态构造函数之前。</li>
+</ul>
+</li>
+<li><strong>为什么扩展方法必须是静态的？</strong>
+<ul>
+<li><em>考点</em>：扩展方法本质上只是语法糖，编译器将其转换为普通的静态方法调用。它不需要对象状态，只需要操作传入的参数。</li>
+</ul>
+</li>
+<li><strong>静态类可以被垃圾回收（GC）吗？</strong>
+<ul>
+<li><em>考点</em>：不能单独回收。静态成员的生命周期绑定到 AppDomain。只有当整个 AppDomain 卸载（在 .NET Core/5+ 中通常是进程结束）时，静态占用的内存才会被释放。</li>
+</ul>
+</li>
+<li><strong><code>const</code> 和 <code>static readonly</code> 有什么区别？</strong>
+<ul>
+<li><em>考点</em>：
+<ul>
+<li><code>const</code>：编译时常量，值嵌入到调用方的 IL 中，修改后需重新编译所有引用项目。只能是基本类型或字符串。</li>
+<li><code>static readonly</code>：运行时常量，在静态构造函数或声明时赋值，值是动态获取的，修改后只需重新编译定义方。可以是任何类型。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="五什么是静态类">
+<a class="header-anchor" href="#%e4%ba%94%e4%bb%80%e4%b9%88%e6%98%af%e9%9d%99%e6%80%81%e7%b1%bb"></a>
+五、什么是静态类
+</h2><h3 id="面试简答考场口述答案-4">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-4"></a>
+✅面试简答（考场口述答案）
+</h3><p>**静态类（Static Class）**是 C# 中一种特殊的类，它不能被实例化，只能包含静态成员。</p>
+<ul>
+<li><strong>核心特征</strong>：
+<ol>
+<li><strong>不能实例化</strong>：不能使用 <code>new</code> 关键字创建对象。</li>
+<li><strong>隐式密封且抽象</strong>：编译器会自动将其标记为 <code>sealed</code>（不可继承）和 <code>abstract</code>（不可实例化）。</li>
+<li><strong>仅含静态成员</strong>：只能包含静态字段、方法、属性、事件等，不能有实例构造函数或实例成员。</li>
+<li><strong>加载时机</strong>：在程序首次引用该类时由 CLR 自动加载，生命周期伴随整个应用程序域。</li>
+</ol>
+</li>
+<li><strong>典型用途</strong>：存放工具方法（如 <code>Math</code>）、扩展方法、全局常量或配置信息。</li>
+</ul>
+<h3 id="深入解析-4">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-4"></a>
+📚深入解析
+</h3><h4 id="1-语法定义与限制">
+<a class="header-anchor" href="#1-%e8%af%ad%e6%b3%95%e5%ae%9a%e4%b9%89%e4%b8%8e%e9%99%90%e5%88%b6"></a>
+1. 语法定义与限制
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 必须使用 static 关键字修饰类</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">UtilityHelper</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// ✅ 允许：静态字段</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="k">readonly</span> <span class="kt">string</span> <span class="n">AppName</span> <span class="p">=</span> <span class="s">&#34;MyApp&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ✅ 允许：静态方法</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">Add</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ❌ 错误：静态类不能包含实例构造函数</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// public UtilityHelper() { }</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// ❌ 错误：静态类不能包含实例成员</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// public string InstanceField; </span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="2-底层原理">
+<a class="header-anchor" href="#2-%e5%ba%95%e5%b1%82%e5%8e%9f%e7%90%86"></a>
+2. 底层原理
+</h4><ul>
+<li><strong>编译器行为</strong>：当你声明 <code>static class</code> 时，C# 编译器会在生成的 IL（中间语言）中同时添加 <code>abstract</code> 和 <code>sealed</code> 标志。
+<ul>
+<li><code>abstract</code>：防止被实例化。</li>
+<li><code>sealed</code>：防止被继承。</li>
+</ul>
+</li>
+<li><strong>内存管理</strong>：静态类的静态字段存储在**高频率堆（High-Frequency Heap）**或专门的静态存储区。它们不属于任何对象实例，因此不受 GC 对普通对象的回收逻辑影响，直到进程结束或 AppDomain 卸载才会释放。</li>
+</ul>
+<h4 id="3-静态类-vs-普通类全静态成员">
+<a class="header-anchor" href="#3-%e9%9d%99%e6%80%81%e7%b1%bb-vs-%e6%99%ae%e9%80%9a%e7%b1%bb%e5%85%a8%e9%9d%99%e6%80%81%e6%88%90%e5%91%98"></a>
+3. 静态类 vs 普通类（全静态成员）
+</h4><p>虽然你可以创建一个普通类并把所有成员设为 <code>static</code>，但使用 <code>static class</code> 有以下优势：</p>
+<ol>
+<li><strong>编译时检查</strong>：编译器会强制确保你不会意外添加实例成员或构造函数。</li>
+<li><strong>语义清晰</strong>：明确告诉其他开发者“这个类只是功能的集合，没有状态”，提高代码可读性。</li>
+<li><strong>性能微优</strong>：CLR 对静态类的加载和初始化有特定的优化路径。</li>
+</ol>
+<h4 id="4-常见应用场景">
+<a class="header-anchor" href="#4-%e5%b8%b8%e8%a7%81%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af"></a>
+4. 常见应用场景
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">场景</th>
+					<th style="text-align: left">示例</th>
+					<th style="text-align: left">说明</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>工具类</strong></td>
+					<td style="text-align: left"><code>System.Math</code>, <code>System.IO.Path</code></td>
+					<td style="text-align: left">提供无状态的纯函数计算。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>扩展方法容器</strong></td>
+					<td style="text-align: left"><code>LinqExtensions</code></td>
+					<td style="text-align: left">C# 规定扩展方法必须定义在静态类中。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>全局配置/常量</strong></td>
+					<td style="text-align: left"><code>AppSettings</code></td>
+					<td style="text-align: left">存储应用启动时加载的一次性配置。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>日志记录器</strong></td>
+					<td style="text-align: left"><code>Logger</code></td>
+					<td style="text-align: left">提供全局统一的日志入口（注意线程安全）。</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="5-潜在风险与最佳实践">
+<a class="header-anchor" href="#5-%e6%bd%9c%e5%9c%a8%e9%a3%8e%e9%99%a9%e4%b8%8e%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5"></a>
+5. 潜在风险与最佳实践
+</h4><ul>
+<li><strong>线程安全</strong>：静态类中的可变静态字段（<code>static non-readonly</code>）会被所有线程共享。如果多个线程同时写入，必须使用锁（<code>lock</code>）或线程安全集合。</li>
+<li><strong>单元测试困难</strong>：依赖静态类的代码难以进行 Mock（模拟），因为无法替换其实现。在现代架构（如 ASP.NET Core）中，倾向于使用**依赖注入（DI）**的单例服务来替代静态工具类，以提高可测试性。</li>
+<li><strong>避免“上帝类”</strong>：不要把所有不相关的工具方法都塞进一个巨大的静态类中，应按功能模块拆分（如 <code>StringHelper</code>, <code>DateHelper</code>）。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-4">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-4"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>静态类可以有构造函数吗？</strong>
+<ul>
+<li><em>考点</em>：可以有<strong>静态构造函数</strong>（<code>static UtilityHelper() {}</code>），用于初始化静态字段。但不能有实例构造函数。静态构造函数由 CLR 在第一次访问该类时自动调用，且只执行一次。</li>
+</ul>
+</li>
+<li><strong>静态类和单例模式（Singleton）有什么区别？</strong>
+<ul>
+<li><em>考点</em>：
+<ul>
+<li><strong>静态类</strong>：由 CLR 管理生命周期，无法实现接口，无法懒加载（通常随首次引用加载），难以 Mock。</li>
+<li><strong>单例</strong>：是一个普通的类实例，可以实现接口，支持懒加载，可以通过 DI 容器管理，更容易进行单元测试和替换实现。现代开发更推荐单例而非静态类。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>扩展方法为什么必须放在静态类中？</strong>
+<ul>
+<li><em>考点</em>：扩展方法本质上是编译器语法糖，最终会被编译成普通的静态方法调用。编译器要求宿主类必须是静态的，以确保该方法不会依赖于任何实例状态，保证调用的纯粹性和安全性。</li>
+</ul>
+</li>
+<li><strong>如果我在静态类中定义了一个非静态方法，会发生什么？</strong>
+<ul>
+<li><em>考点</em>：编译错误（CS0708）。编译器会明确提示“静态类中不能声明实例成员”。这是静态类最严格的约束之一。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="六null赋值运算符null合并运算符和null条件运算符的作用是什么">
+<a class="header-anchor" href="#%e5%85%adnull%e8%b5%8b%e5%80%bc%e8%bf%90%e7%ae%97%e7%ac%a6null%e5%90%88%e5%b9%b6%e8%bf%90%e7%ae%97%e7%ac%a6%e5%92%8cnull%e6%9d%a1%e4%bb%b6%e8%bf%90%e7%ae%97%e7%ac%a6%e7%9a%84%e4%bd%9c%e7%94%a8%e6%98%af%e4%bb%80%e4%b9%88"></a>
+六、null赋值运算符、null合并运算符和null条件运算符的作用是什么
+</h2><h3 id="面试简答考场口述答案-5">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-5"></a>
+✅面试简答（考场口述答案）
+</h3><p>这三个运算符是 C# 处理 <code>null</code> 值的核心语法糖，旨在简化代码并提高安全性：</p>
+<ol>
+<li><strong>Null 合并运算符 (<code>??</code>)</strong>：如果左侧操作数为 <code>null</code>，则返回右侧操作数；否则返回左侧。常用于<strong>设置默认值</strong>。</li>
+<li><strong>Null 条件运算符 (<code>?.</code>)</strong>：也称为“安全导航运算符”。如果左侧对象为 <code>null</code>，则整个表达式直接返回 <code>null</code>，而不会抛出 <code>NullReferenceException</code>。常用于<strong>链式调用前的判空</strong>。</li>
+<li><strong>Null 赋值运算符 (<code>??=</code>)</strong>：C# 8.0 引入。仅当左侧变量为 <code>null</code> 时，才将右侧的值赋给它。是 <code>if (x == null) x = value;</code> 的简写。</li>
+</ol>
+<p><em>(注：通常还有一个与之配套的 <strong>Null 条件成员访问运算符 (<code>?[]</code>)</strong>，用于数组或索引器的安全访问)</em></p>
+<h3 id="深入解析-5">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-5"></a>
+📚深入解析
+</h3><h4 id="1-null-合并运算符-">
+<a class="header-anchor" href="#1-null-%e5%90%88%e5%b9%b6%e8%bf%90%e7%ae%97%e7%ac%a6-"></a>
+1. Null 合并运算符 (<code>??</code>)
+</h4><ul>
+<li><strong>语法</strong>：<code>a ?? b</code></li>
+<li><strong>逻辑</strong>：等价于 <code>a != null ? a : b</code>。</li>
+<li><strong>特点</strong>：支持<strong>链式调用</strong>，可以连续提供多个备选值，直到找到一个非 null 的值。</li>
+<li><strong>应用场景</strong>：配置读取、参数默认值、字典查找。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">input</span> <span class="p">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">result</span> <span class="p">=</span> <span class="n">input</span> <span class="p">??</span> <span class="s">&#34;Default Value&#34;</span><span class="p">;</span> <span class="c1">// result = &#34;Default Value&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 链式使用：优先取 config，其次取 env，最后取默认</span>
+</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">dbConn</span> <span class="p">=</span> <span class="n">config</span><span class="p">.</span><span class="n">ConnectionString</span> 
+</span></span><span class="line"><span class="cl">             <span class="p">??</span> <span class="n">Environment</span><span class="p">.</span><span class="n">GetEnvironmentVariable</span><span class="p">(</span><span class="s">&#34;DB_CONN&#34;</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl">             <span class="p">??</span> <span class="s">&#34;Server=localhost;&#34;</span><span class="p">;</span>
+</span></span></code></pre></div><h4 id="2-null-条件运算符--和-">
+<a class="header-anchor" href="#2-null-%e6%9d%a1%e4%bb%b6%e8%bf%90%e7%ae%97%e7%ac%a6--%e5%92%8c-"></a>
+2. Null 条件运算符 (<code>?.</code> 和 <code>?[]</code>)
+</h4><ul>
+<li><strong>语法</strong>：<code>obj?.Property</code> 或 <code>array?[index]</code></li>
+<li><strong>逻辑</strong>：
+<ul>
+<li>如果 <code>obj</code> 为 <code>null</code>，表达式结果为 <code>null</code>（即使 Property 是非 nullable 类型，结果也会提升为 <code>Nullable&lt;T&gt;</code>）。</li>
+<li>如果 <code>obj</code> 不为 <code>null</code>，则正常访问 <code>Property</code>。</li>
+</ul>
+</li>
+<li><strong>核心价值</strong>：避免冗长的 <code>if (obj != null)</code> 判断，防止空指针异常。</li>
+<li><strong>注意返回值类型</strong>：如果属性是值类型（如 <code>int</code>），<code>obj?.Count</code> 的返回类型会变成 <code>int?</code> (Nullable<!-- raw HTML omitted -->)。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">names</span> <span class="p">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 传统写法</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">count1</span> <span class="p">=</span> <span class="n">names</span> <span class="p">!=</span> <span class="kc">null</span> <span class="p">?</span> <span class="n">names</span><span class="p">.</span><span class="n">Count</span> <span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 现代写法 (注意 Count 是 int，所以结果是 int?)</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int?</span> <span class="n">count2</span> <span class="p">=</span> <span class="n">names</span><span class="p">?.</span><span class="n">Count</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 结合 ?? 使用，完美解决默认值问题</span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">finalCount</span> <span class="p">=</span> <span class="n">names</span><span class="p">?.</span><span class="n">Count</span> <span class="p">??</span> <span class="m">0</span><span class="p">;</span> <span class="c1">// 如果 names 为 null，count 为 0</span>
+</span></span></code></pre></div><h4 id="3-null-赋值运算符-">
+<a class="header-anchor" href="#3-null-%e8%b5%8b%e5%80%bc%e8%bf%90%e7%ae%97%e7%ac%a6-"></a>
+3. Null 赋值运算符 (<code>??=</code>)
+</h4><ul>
+<li><strong>语法</strong>：<code>a ??= b</code></li>
+<li><strong>逻辑</strong>：等价于 <code>a = a ?? b</code>。</li>
+<li><strong>优势</strong>：
+<ol>
+<li><strong>简洁</strong>：减少重复代码。</li>
+<li><strong>性能/副作用优化</strong>：左侧表达式 <code>a</code> <strong>只计算一次</strong>。如果 <code>a</code> 是一个复杂的属性访问器或方法调用，使用 <code>??=</code> 比 <code>a = a ?? b</code> 更安全且高效。</li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">_items</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">Items</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">get</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 懒加载模式：只有当 _items 为 null 时才创建新列表</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_items</span> <span class="p">??=</span> <span class="k">new</span> <span class="n">List</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;();</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">_items</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="4-综合对比表">
+<a class="header-anchor" href="#4-%e7%bb%bc%e5%90%88%e5%af%b9%e6%af%94%e8%a1%a8"></a>
+4. 综合对比表
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">运算符</th>
+					<th style="text-align: left">名称</th>
+					<th style="text-align: left">作用</th>
+					<th style="text-align: left">等价逻辑</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><code>??</code></td>
+					<td style="text-align: left">Null 合并</td>
+					<td style="text-align: left">取第一个非 null 值</td>
+					<td style="text-align: left"><code>a != null ? a : b</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>?.</code></td>
+					<td style="text-align: left">Null 条件</td>
+					<td style="text-align: left">安全访问成员</td>
+					<td style="text-align: left"><code>a == null ? null : a.Member</code></td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><code>??=</code></td>
+					<td style="text-align: left">Null 赋值</td>
+					<td style="text-align: left">为空时赋值</td>
+					<td style="text-align: left"><code>if (a == null) a = b</code></td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="面试延伸追问预判面试官后续提问-5">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-5"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong><code>?.</code> 运算符在处理值类型（如 <code>int</code>）时，返回类型是什么？</strong>
+<ul>
+<li><em>考点</em>：返回的是对应的<strong>可空值类型</strong>（<code>Nullable&lt;T&gt;</code> 或 <code>T?</code>）。例如 <code>DateTime? dt = obj?.CreateDate;</code>。如果需要还原为非空类型，必须配合 <code>??</code> 使用，如 <code>obj?.CreateDate ?? DateTime.MinValue</code>。</li>
+</ul>
+</li>
+<li><strong><code>??</code> 和 <code>?:</code> (三元运算符) 有什么区别？为什么推荐用 <code>??</code>？</strong>
+<ul>
+<li><em>考点</em>：<code>??</code> 语义更清晰，专门针对 null 检查；<code>?:</code> 是通用条件判断。<code>??</code> 还可以链式使用（<code>a ?? b ?? c</code>），而三元运算符嵌套起来可读性极差。此外，<code>??</code> 在左侧不为 null 时不会计算右侧表达式（短路求值）。</li>
+</ul>
+</li>
+<li><strong>在多线程环境下，<code>??=</code> 是线程安全的吗？</strong>
+<ul>
+<li><em>考点</em>：<strong>不是</strong>。虽然左侧只计算一次，但如果两个线程同时发现 <code>_items</code> 为 null，它们可能会分别创建新的 <code>List</code> 实例，导致其中一个被覆盖或资源浪费。在多线程懒加载场景下，应使用 <code>Lazy&lt;T&gt;</code> 或 <code>Interlocked.CompareExchange</code>。</li>
+</ul>
+</li>
+<li><strong>什么是 <code>!</code> (Null  Forgiving Operator / 空值忽略运算符)？它和 <code>?.</code> 有什么关系？</strong>
+<ul>
+<li><em>考点</em>：C# 8.0 引入的可空引用类型特性。<code>obj!.Property</code> 告诉编译器“我确定 obj 不为 null，请不要警告我”。它与 <code>?.</code> 相反，<code>?.</code> 是防御性的，<code>!</code> 是强制性的（仅影响编译期静态分析，不影响运行时行为）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="七什么是封装封装和数据隐藏是相同的概念吗封装和抽象有什么区别">
+<a class="header-anchor" href="#%e4%b8%83%e4%bb%80%e4%b9%88%e6%98%af%e5%b0%81%e8%a3%85%e5%b0%81%e8%a3%85%e5%92%8c%e6%95%b0%e6%8d%ae%e9%9a%90%e8%97%8f%e6%98%af%e7%9b%b8%e5%90%8c%e7%9a%84%e6%a6%82%e5%bf%b5%e5%90%97%e5%b0%81%e8%a3%85%e5%92%8c%e6%8a%bd%e8%b1%a1%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab"></a>
+七、什么是封装，封装和数据隐藏是相同的概念吗，封装和抽象有什么区别
+</h2><h3 id="面试简答考场口述答案-6">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-6"></a>
+✅面试简答（考场口述答案）
+</h3><p>**封装（Encapsulation）**是将数据（字段）和操作数据的方法（行为）捆绑在一个单元（类）中，并控制外部对内部成员的访问权限。</p>
+<ol>
+<li><strong>封装 vs 数据隐藏</strong>：
+<ul>
+<li><strong>不完全相同</strong>。<strong>数据隐藏</strong>是封装的<strong>手段/结果</strong>，而<strong>封装</strong>是一个更广泛的概念。</li>
+<li>封装不仅包含“隐藏数据”（通过 <code>private</code>），还包含“暴露接口”（通过 <code>public</code> 方法）。它的核心目的是<strong>保护内部状态的完整性</strong>，并提供统一的交互方式。</li>
+</ul>
+</li>
+<li><strong>封装 vs 抽象</strong>：
+<ul>
+<li><strong>封装</strong>关注的是**“如何隐藏实现细节”<strong>（How to hide），侧重于</strong>安全性<strong>和</strong>边界控制**（例如：用 <code>private</code> 字段配合 <code>public</code> 属性）。</li>
+<li><strong>抽象</strong>关注的是**“应该暴露什么功能”<strong>（What to expose），侧重于</strong>简化复杂性**，让用户只关心接口而不关心底层逻辑（例如：定义接口 <code>IShape</code>，用户只需调用 <code>Draw()</code>，无需知道是画圆还是画方）。</li>
+</ul>
+</li>
+</ol>
+<p><strong>一句话总结</strong>：封装是把东西包起来并加锁（保护内部），抽象是提供一个简单的遥控器（简化使用）。</p>
+<h3 id="深入解析-6">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-6"></a>
+📚深入解析
+</h3><h4 id="1-封装encapsulation的深度理解">
+<a class="header-anchor" href="#1-%e5%b0%81%e8%a3%85encapsulation%e7%9a%84%e6%b7%b1%e5%ba%a6%e7%90%86%e8%a7%a3"></a>
+1. 封装（Encapsulation）的深度理解
+</h4><p>封装不仅仅是把变量设为 <code>private</code>，它包含两个层面：</p>
+<ul>
+<li><strong>信息隐藏（Information Hiding）</strong>：防止外部代码直接修改对象的内部状态，避免对象进入无效状态。</li>
+<li><strong>接口聚合（Interface Aggregation）</strong>：将相关的数据和行为组织在一起，形成高内聚的模块。</li>
+</ul>
+<p><strong>经典示例：属性（Property）</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">BankAccount</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">decimal</span> <span class="n">_balance</span><span class="p">;</span> <span class="c1">// 数据隐藏：外部无法直接修改余额</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">decimal</span> <span class="n">Balance</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">{</span> 
+</span></span><span class="line"><span class="cl">        <span class="k">get</span> <span class="p">{</span> <span class="k">return</span> <span class="n">_balance</span><span class="p">;</span> <span class="p">}</span> 
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 封装行为：通过方法控制状态变更，确保业务规则（如余额不能为负）</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Deposit</span><span class="p">(</span><span class="kt">decimal</span> <span class="n">amount</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="p">(</span><span class="n">amount</span> <span class="p">&lt;=</span> <span class="m">0</span><span class="p">)</span> <span class="k">throw</span> <span class="k">new</span> <span class="n">ArgumentException</span><span class="p">(</span><span class="s">&#34;Amount must be positive&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">_balance</span> <span class="p">+=</span> <span class="n">amount</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>如果没有封装，外部可以直接 <code>_balance = -1000</code>，导致系统崩溃。</p>
+<h4 id="2-封装与数据隐藏的区别">
+<a class="header-anchor" href="#2-%e5%b0%81%e8%a3%85%e4%b8%8e%e6%95%b0%e6%8d%ae%e9%9a%90%e8%97%8f%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+2. 封装与数据隐藏的区别
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">维度</th>
+					<th style="text-align: left">数据隐藏 (Data Hiding)</th>
+					<th style="text-align: left">封装 (Encapsulation)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>定义</strong></td>
+					<td style="text-align: left">限制对数据的直接访问</td>
+					<td style="text-align: left">将数据和行为绑定，并控制访问</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>范围</strong></td>
+					<td style="text-align: left">仅是封装的一个子集</td>
+					<td style="text-align: left">包含数据隐藏 + 行为暴露</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>目的</strong></td>
+					<td style="text-align: left">防止数据被意外篡改</td>
+					<td style="text-align: left">提高模块化、安全性、可维护性</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>实现</strong></td>
+					<td style="text-align: left"><code>private</code>, <code>protected</code> 等修饰符</td>
+					<td style="text-align: left">类、属性、方法、访问修饰符的组合</td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>结论</strong>：你可以实现数据隐藏而不完全实现封装（例如 C 语言的结构体配合全局函数），但在 OOP 中，封装必然包含数据隐藏。</p>
+<h4 id="3-封装与抽象的区别">
+<a class="header-anchor" href="#3-%e5%b0%81%e8%a3%85%e4%b8%8e%e6%8a%bd%e8%b1%a1%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+3. 封装与抽象的区别
+</h4><p>这是面试中最容易混淆的两个概念，可以通过以下维度区分：</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">维度</th>
+					<th style="text-align: left">封装 (Encapsulation)</th>
+					<th style="text-align: left">抽象 (Abstraction)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>核心问题</strong></td>
+					<td style="text-align: left"><strong>如何</strong>保护内部实现？</td>
+					<td style="text-align: left"><strong>什么</strong>功能需要对外提供？</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>侧重点</strong></td>
+					<td style="text-align: left"><strong>内部视角</strong>：保护类的内部状态不被破坏。</td>
+					<td style="text-align: left"><strong>外部视角</strong>：简化用户的使用复杂度。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>实现手段</strong></td>
+					<td style="text-align: left">访问修饰符 (<code>private</code>, <code>public</code>)、属性。</td>
+					<td style="text-align: left">抽象类 (<code>abstract class</code>)、接口 (<code>interface</code>)。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>例子</strong></td>
+					<td style="text-align: left">汽车引擎的内部零件被外壳包裹，你摸不到活塞。</td>
+					<td style="text-align: left">汽车方向盘和油门，你只需知道踩油门车会走，无需知道发动机原理。</td>
+			</tr>
+	</tbody>
+</table>
+<p><strong>形象类比</strong>：</p>
+<ul>
+<li><strong>封装</strong>：像一个<strong>药胶囊</strong>。它把苦味的药粉（复杂数据/逻辑）包在光滑的外壳里，你吞下去就行，不会直接接触药粉，也不会被苦到。</li>
+<li><strong>抽象</strong>：像<strong>电视遥控器</strong>。你只需要按“音量+”键，不需要知道内部电路是如何调节电压来改变声音大小的。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-6">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-6"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>为什么 C# 推荐使用属性（Property）而不是公共字段（Public Field）？</strong>
+<ul>
+<li><em>考点</em>：属性是封装的典型体现。它允许你在 <code>get/set</code> 中加入验证逻辑、懒加载、通知机制（如 WPF 的 <code>INotifyPropertyChanged</code>），而公共字段无法做到这些。此外，属性在二进制兼容性上更好（可以将字段改为属性而不破坏引用它的程序集）。</li>
+</ul>
+</li>
+<li><strong>接口（Interface）体现了封装还是抽象？</strong>
+<ul>
+<li><em>考点</em>：主要体现<strong>抽象</strong>。接口定义了“做什么”，完全隐藏了“怎么做”。但接口本身也涉及封装的思想，因为它限制了实现类必须遵循的契约。</li>
+</ul>
+</li>
+<li><strong>如果我把所有字段都设为 <code>public</code>，还算面向对象吗？</strong>
+<ul>
+<li><em>考点</em>： technically 算，但是是<strong>糟糕的面向对象设计</strong>。这破坏了封装性，导致耦合度极高，任何地方都能修改对象状态，使得代码难以维护和调试。这通常被称为“贫血模型”或仅仅是“数据结构”。</li>
+</ul>
+</li>
+<li><strong>C# 9 引入的 <code>record</code> 类型是如何处理封装的？</strong>
+<ul>
+<li><em>考点</em>：<code>record</code> 默认生成不可变（Immutable）的属性。它通过编译器生成的 <code>init-only</code> 属性来实现封装，确保对象创建后状态不能被修改，从而在多线程和数据传输场景下提供更强的安全性。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="八什么是linq">
+<a class="header-anchor" href="#%e5%85%ab%e4%bb%80%e4%b9%88%e6%98%aflinq"></a>
+八、什么是LINQ
+</h2><h3 id="面试简答考场口述答案-7">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-7"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>LINQ (Language Integrated Query)</strong> 是 C# 3.0 引入的一项技术，它将查询功能直接集成到编程语言中。</p>
+<ul>
+<li><strong>核心作用</strong>：允许开发者使用统一的语法（类似 SQL）对不同的数据源（如内存集合、数据库、XML、JSON）进行查询和操作。</li>
+<li><strong>主要优势</strong>：
+<ol>
+<li><strong>统一性</strong>：无论数据源是 <code>List&lt;T&gt;</code> 还是 SQL Server，查询语法基本一致。</li>
+<li><strong>类型安全</strong>：查询在编译时检查，避免了字符串拼接 SQL 带来的运行时错误和注入风险。</li>
+<li><strong>简洁性</strong>：通过声明式编程减少了大量的 <code>foreach</code> 循环和临时变量。</li>
+</ol>
+</li>
+<li><strong>两种写法</strong>：<strong>查询语法</strong>（Query Syntax，像 SQL）和<strong>方法语法</strong>（Method Syntax，链式调用扩展方法）。</li>
+</ul>
+<h3 id="深入解析-7">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-7"></a>
+📚深入解析
+</h3><h4 id="1-linq-的架构体系">
+<a class="header-anchor" href="#1-linq-%e7%9a%84%e6%9e%b6%e6%9e%84%e4%bd%93%e7%b3%bb"></a>
+1. LINQ 的架构体系
+</h4><p>LINQ 不是一个单一的工具，而是一组技术的统称：</p>
+<table>
+	<thead>
+			<tr>
+					<th style="text-align: left">技术名称</th>
+					<th style="text-align: left">全称</th>
+					<th style="text-align: left">数据源</th>
+					<th style="text-align: left">特点</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>LINQ to Objects</strong></td>
+					<td style="text-align: left">-</td>
+					<td style="text-align: left">内存中的集合 (<code>IEnumerable&lt;T&gt;</code>)</td>
+					<td style="text-align: left">最基础，直接在 CPU 上执行过滤、排序。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>LINQ to Entities</strong></td>
+					<td style="text-align: left">EF Core / EF6</td>
+					<td style="text-align: left">关系型数据库</td>
+					<td style="text-align: left"><strong>重点</strong>。将 LINQ 表达式树转换为 SQL 语句，在数据库端执行。</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>LINQ to XML</strong></td>
+					<td style="text-align: left">XLINQ</td>
+					<td style="text-align: left">XML 文档</td>
+					<td style="text-align: left">用于解析和创建 XML。</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="2-两种语法对比">
+<a class="header-anchor" href="#2-%e4%b8%a4%e7%a7%8d%e8%af%ad%e6%b3%95%e5%af%b9%e6%af%94"></a>
+2. 两种语法对比
+</h4><p>假设我们要从用户列表中找出所有年龄大于 18 的用户姓名：</p>
+<p><strong>A. 查询语法 (Query Syntax)</strong></p>
+<ul>
+<li>看起来像 SQL，适合复杂的多表连接（Join）和分组（Group By）。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">names</span> <span class="p">=</span> <span class="k">from</span> <span class="n">u</span> <span class="k">in</span> <span class="n">users</span>
+</span></span><span class="line"><span class="cl">            <span class="k">where</span> <span class="n">u</span><span class="p">.</span><span class="n">Age</span> <span class="p">&gt;</span> <span class="m">18</span>
+</span></span><span class="line"><span class="cl">            <span class="k">select</span> <span class="n">u</span><span class="p">.</span><span class="n">Name</span><span class="p">;</span>
+</span></span></code></pre></div><p><strong>B. 方法语法 (Method Syntax)</strong></p>
+<ul>
+<li>基于 Lambda 表达式和扩展方法，更灵活，支持所有 LINQ 操作符（有些操作符如 <code>Count()</code> 没有查询语法对应物）。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">names</span> <span class="p">=</span> <span class="n">users</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">u</span> <span class="p">=&gt;</span> <span class="n">u</span><span class="p">.</span><span class="n">Age</span> <span class="p">&gt;</span> <span class="m">18</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                 <span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">u</span> <span class="p">=&gt;</span> <span class="n">u</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+</span></span></code></pre></div><ul>
+<li><strong>底层真相</strong>：编译器最终会将“查询语法”编译成“方法语法”。</li>
+</ul>
+<h4 id="3-核心考点延迟执行-deferred-execution">
+<a class="header-anchor" href="#3-%e6%a0%b8%e5%bf%83%e8%80%83%e7%82%b9%e5%bb%b6%e8%bf%9f%e6%89%a7%e8%a1%8c-deferred-execution"></a>
+3. 核心考点：延迟执行 (Deferred Execution)
+</h4><p>这是 LINQ 面试中最常问的原理。</p>
+<ul>
+<li><strong>概念</strong>：大多数 LINQ 操作符（如 <code>Where</code>, <code>Select</code>, <code>OrderBy</code>）在定义查询时<strong>不会立即执行</strong>，而是返回一个 <code>IEnumerable&lt;T&gt;</code> 对象。只有当你真正遍历结果（如使用 <code>foreach</code>）或调用<strong>即时执行方法</strong>（如 <code>ToList()</code>, <code>Count()</code>, <code>First()</code>）时，查询才会真正运行。</li>
+<li><strong>优点</strong>：可以组合多个查询条件而不产生中间集合，节省内存；支持无限序列。</li>
+<li><strong>陷阱</strong>：如果多次遍历同一个未缓存的 LINQ 查询，它会<strong>重复执行</strong>多次。如果数据源在两次遍历之间发生了变化，结果也会不同。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 此时并未执行数据库查询或内存过滤</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">query</span> <span class="p">=</span> <span class="n">users</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">u</span> <span class="p">=&gt;</span> <span class="n">u</span><span class="p">.</span><span class="n">Age</span> <span class="p">&gt;</span> <span class="m">18</span><span class="p">);</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 第一次遍历：执行查询</span>
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">user</span> <span class="k">in</span> <span class="n">query</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 第二次遍历：再次执行查询！</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">list</span> <span class="p">=</span> <span class="n">query</span><span class="p">.</span><span class="n">ToList</span><span class="p">();</span> 
+</span></span></code></pre></div><h4 id="4-linq-to-entities-ef-core-的特殊性">
+<a class="header-anchor" href="#4-linq-to-entities-ef-core-%e7%9a%84%e7%89%b9%e6%ae%8a%e6%80%a7"></a>
+4. LINQ to Entities (EF Core) 的特殊性
+</h4><p>在后端开发中，LINQ 通常与 EF Core 配合使用。</p>
+<ul>
+<li><strong>表达式树 (Expression Tree)</strong>：EF Core 接收的不是委托（Delegate），而是表达式树。它会将表达式树解析并翻译成 SQL 语句发送给数据库。</li>
+<li><strong>客户端评估 vs 服务端评估</strong>：
+<ul>
+<li><strong>服务端</strong>：<code>Where</code>, <code>Select</code>, <code>Join</code> 等能转成 SQL 的操作会在数据库执行。</li>
+<li><strong>客户端</strong>：如果使用了 C# 特有的、无法转成 SQL 的方法（如自定义 C# 方法），EF Core 可能会将整个数据集加载到内存后再处理（性能灾难），或者在较新版本中直接报错。</li>
+</ul>
+</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-7">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-7"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong><code>IEnumerable&lt;T&gt;</code> 和 <code>IQueryable&lt;T&gt;</code> 有什么区别？</strong>
+<ul>
+<li><em>考点</em>：
+<ul>
+<li><code>IEnumerable&lt;T&gt;</code>：针对内存集合，使用委托（Delegate），查询在**客户端（内存）**执行。</li>
+<li><code>IQueryable&lt;T&gt;</code>：针对远程数据源（如数据库），使用表达式树（Expression Tree），查询在**服务端（数据库）**执行。</li>
+<li><em>陷阱</em>：如果在 <code>IQueryable</code> 上误用了只能由 <code>IEnumerable</code> 处理的方法，会导致全表加载。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>什么是延迟执行？如何强制立即执行？</strong>
+<ul>
+<li><em>考点</em>：延迟执行指定义查询时不运行。调用 <code>ToList()</code>, <code>ToArray()</code>, <code>ToDictionary()</code>, <code>Count()</code>, <code>Any()</code> 等会触发立即执行。</li>
+</ul>
+</li>
+<li><strong>LINQ 中的 <code>Select</code> 和 <code>SelectMany</code> 有什么区别？</strong>
+<ul>
+<li><em>考点</em>：<code>Select</code> 是一对一映射；<code>SelectMany</code> 是一对多映射（扁平化），常用于处理嵌套集合（如获取所有订单下的所有商品明细）。</li>
+</ul>
+</li>
+<li><strong>在高性能场景下，使用 LINQ 有什么需要注意的性能问题？</strong>
+<ul>
+<li><em>考点</em>：
+<ul>
+<li>避免在循环中执行 LINQ 查询。</li>
+<li>注意闭包捕获变量导致的意外行为。</li>
+<li>在 EF Core 中，警惕“N+1”问题（虽然在 EF Core 中更多是导航属性加载问题，但 LINQ 写法不当也会导致多次查询）。</li>
+<li>大量数据时使用 <code>AsNoTracking()</code> 提高查询性能。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="九什么是扩展方法">
+<a class="header-anchor" href="#%e4%b9%9d%e4%bb%80%e4%b9%88%e6%98%af%e6%89%a9%e5%b1%95%e6%96%b9%e6%b3%95"></a>
+九、什么是扩展方法
+</h2><h3 id="面试简答考场口述答案-8">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-8"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong>扩展方法（Extension Methods）<strong>是 C# 3.0 引入的一种特性，允许开发者在</strong>不修改原始类源码、不继承该类</strong>的情况下，为现有类型“添加”新方法。</p>
+<ul>
+<li><strong>本质</strong>：它实际上是<strong>静态类中的静态方法</strong>，只是通过编译器语法糖，让调用者可以像调用实例方法一样使用它。</li>
+<li><strong>定义要求</strong>：
+<ol>
+<li>必须定义在<strong>静态类</strong>中。</li>
+<li>必须是<strong>静态方法</strong>。</li>
+<li>第一个参数必须带有 <strong><code>this</code></strong> 修饰符，且类型指定了要扩展的目标类型。</li>
+</ol>
+</li>
+<li><strong>典型应用</strong>：LINQ 的所有操作符（如 <code>Where</code>, <code>Select</code>, <code>OrderBy</code>）本质上都是对 <code>IEnumerable&lt;T&gt;</code> 的扩展方法。</li>
+</ul>
+<h3 id="深入解析-8">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-8"></a>
+📚深入解析
+</h3><h4 id="1-代码实现示例">
+<a class="header-anchor" href="#1-%e4%bb%a3%e7%a0%81%e5%ae%9e%e7%8e%b0%e7%a4%ba%e4%be%8b"></a>
+1. 代码实现示例
+</h4><p>假设我们要为 <code>string</code> 类型增加一个判断是否为空或空白的方法：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 1. 必须是一个静态类</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">StringExtensions</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 2. 必须是静态方法</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 3. 第一个参数带 this，表示扩展 string 类型</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">bool</span> <span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="k">this</span> <span class="kt">string</span> <span class="n">str</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">(</span><span class="n">str</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="c1">// 扩展其他类型，如 int</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">bool</span> <span class="n">IsEven</span><span class="p">(</span><span class="k">this</span> <span class="kt">int</span> <span class="n">number</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">number</span> <span class="p">%</span> <span class="m">2</span> <span class="p">==</span> <span class="m">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 调用方式：看起来像实例方法</span>
+</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">name</span> <span class="p">=</span> <span class="kc">null</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">result</span> <span class="p">=</span> <span class="n">name</span><span class="p">.</span><span class="n">IsNullOrWhiteSpace</span><span class="p">();</span> <span class="c1">// 输出: true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">num</span> <span class="p">=</span> <span class="m">4</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kt">bool</span> <span class="n">isEven</span> <span class="p">=</span> <span class="n">num</span><span class="p">.</span><span class="n">IsEven</span><span class="p">();</span> <span class="c1">// 输出: true</span>
+</span></span></code></pre></div><h4 id="2-编译原理底层真相">
+<a class="header-anchor" href="#2-%e7%bc%96%e8%af%91%e5%8e%9f%e7%90%86%e5%ba%95%e5%b1%82%e7%9c%9f%e7%9b%b8"></a>
+2. 编译原理（底层真相）
+</h4><p>当你写 <code>name.IsNullOrWhiteSpace()</code> 时，C# 编译器（Roslyn）会在后台将其转换为普通的静态方法调用：
+<code>StringExtensions.IsNullOrWhiteSpace(name)</code></p>
+<p>这意味着：</p>
+<ul>
+<li><strong>没有真正的多态</strong>：扩展方法是<strong>静态绑定</strong>的。如果变量声明类型是基类，即使运行时指向子类，调用的也是基类的扩展方法（如果有的话）。</li>
+<li><strong>性能无损耗</strong>：因为它就是普通的方法调用，没有反射，没有额外的对象分配。</li>
+</ul>
+<h4 id="3-优先级规则高频考点">
+<a class="header-anchor" href="#3-%e4%bc%98%e5%85%88%e7%ba%a7%e8%a7%84%e5%88%99%e9%ab%98%e9%a2%91%e8%80%83%e7%82%b9"></a>
+3. 优先级规则（高频考点）
+</h4><p>如果一个类型既有<strong>实例方法</strong>，又有同名的<strong>扩展方法</strong>，编译器会优先选择<strong>实例方法</strong>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">MyClass</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">void</span> <span class="n">Show</span><span class="p">()</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Instance Method&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">MyExtensions</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">Show</span><span class="p">(</span><span class="k">this</span> <span class="n">MyClass</span> <span class="n">obj</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;Extension Method&#34;</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 测试</span>
+</span></span><span class="line"><span class="cl"><span class="n">MyClass</span> <span class="n">obj</span> <span class="p">=</span> <span class="k">new</span> <span class="n">MyClass</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="n">obj</span><span class="p">.</span><span class="n">Show</span><span class="p">();</span> <span class="c1">// 输出: &#34;Instance Method&#34; (实例方法优先级更高)</span>
+</span></span></code></pre></div><h4 id="4-扩展接口的强大之处">
+<a class="header-anchor" href="#4-%e6%89%a9%e5%b1%95%e6%8e%a5%e5%8f%a3%e7%9a%84%e5%bc%ba%e5%a4%a7%e4%b9%8b%e5%a4%84"></a>
+4. 扩展接口的强大之处
+</h4><p>你可以为<strong>接口</strong>定义扩展方法，所有实现该接口的类都会自动获得这个方法。这是 LINQ 能够统一操作 <code>List&lt;T&gt;</code>, <code>Array</code>, <code>HashSet&lt;T&gt;</code> 的原因（因为它们都实现了 <code>IEnumerable&lt;T&gt;</code>）。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">class</span> <span class="nc">EnumerableExtensions</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 所有实现了 IEnumerable&lt;T&gt; 的集合都能用这个方法</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">PrintAll</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="k">this</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">source</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">item</span> <span class="k">in</span> <span class="n">source</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="5-注意事项与最佳实践">
+<a class="header-anchor" href="#5-%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9%e4%b8%8e%e6%9c%80%e4%bd%b3%e5%ae%9e%e8%b7%b5"></a>
+5. 注意事项与最佳实践
+</h4><ul>
+<li><strong>命名空间依赖</strong>：调用扩展方法前，必须 <code>using</code> 包含该扩展方法所在静态类的命名空间。否则编译器找不到该方法。</li>
+<li><strong>不要滥用</strong>：
+<ul>
+<li>如果你能修改源码，优先使用实例方法。</li>
+<li>如果需要多态行为（虚方法），请使用继承或接口，不要用扩展方法。</li>
+<li>扩展方法只能访问目标类型的<strong>公共成员</strong>（Public），无法访问私有或受保护成员。</li>
+</ul>
+</li>
+<li><strong>IntelliSense 标识</strong>：在 Visual Studio 中，扩展方法在智能提示列表中会有一个特殊的向下箭头图标，以示区别。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-8">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-8"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong>扩展方法可以实现多态吗？</strong>
+<ul>
+<li><em>考点</em>：<strong>不能</strong>。扩展方法是静态绑定的（编译时确定）。如果有一个基类扩展方法和一个子类扩展方法，调用哪个取决于变量的<strong>声明类型</strong>，而不是运行时对象的实际类型。</li>
+</ul>
+</li>
+<li><strong>为什么 LINQ 的方法都是扩展方法而不是直接写在 List 类里？</strong>
+<ul>
+<li><em>考点</em>：解耦与通用性。<code>List&lt;T&gt;</code> 只是众多集合的一种。通过将方法扩展在 <code>IEnumerable&lt;T&gt;</code> 接口上，LINQ 可以一次性支持数组、链表、字典、自定义集合等所有可枚举类型，无需修改任何集合类的源码。</li>
+</ul>
+</li>
+<li><strong>如果两个不同的命名空间下定义了签名完全相同的扩展方法，会发生什么？</strong>
+<ul>
+<li><em>考点</em>：编译错误（CS0121）。编译器无法确定该调用哪一个。解决方法是：只 <code>using</code> 其中一个命名空间，或者直接使用静态方法语法调用（<code>Namespace.Class.Method(obj)</code>）来明确指定。</li>
+</ul>
+</li>
+<li><strong>扩展方法可以是泛型的吗？</strong>
+<ul>
+<li><em>考点</em>：可以。例如 <code>public static T FirstOrDefault&lt;T&gt;(this IEnumerable&lt;T&gt; source)</code>。这使得扩展方法具有极强的通用性。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="十什么是ienumerable">
+<a class="header-anchor" href="#%e5%8d%81%e4%bb%80%e4%b9%88%e6%98%afienumerable"></a>
+十、什么是IEnumerable
+</h2><h3 id="面试简答考场口述答案-9">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-9"></a>
+✅面试简答（考场口述答案）
+</h3><p><strong><code>IEnumerable&lt;T&gt;</code></strong> 是 .NET 中用于表示“可枚举集合”的核心接口。</p>
+<ul>
+<li><strong>核心作用</strong>：它允许使用 <code>foreach</code> 循环遍历集合，也是 LINQ 查询的基础。</li>
+<li><strong>关键特性</strong>：
+<ol>
+<li><strong>只读性</strong>：它只提供读取数据的能力，不支持添加、删除或修改元素。</li>
+<li><strong>延迟执行（Lazy Evaluation）</strong>：这是最重要的考点。<code>IEnumerable</code> 的查询通常不会立即执行，只有在真正遍历（如调用 <code>MoveNext()</code>）时才会逐个获取数据。</li>
+<li><strong>单向遍历</strong>：只能从头到尾依次访问，不能随机访问（如通过索引 <code>list[0]</code>）。</li>
+</ol>
+</li>
+<li><strong>底层机制</strong>：它依赖于 <strong>迭代器模式</strong>，通过 <code>GetEnumerator()</code> 方法返回一个 <code>IEnumerator</code> 对象来维护遍历状态。</li>
+</ul>
+<h3 id="深入解析-9">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-9"></a>
+📚深入解析
+</h3><h4 id="1-接口定义与继承关系">
+<a class="header-anchor" href="#1-%e6%8e%a5%e5%8f%a3%e5%ae%9a%e4%b9%89%e4%b8%8e%e7%bb%a7%e6%89%bf%e5%85%b3%e7%b3%bb"></a>
+1. 接口定义与继承关系
+</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 简化版定义</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">IEnumerable</span><span class="p">&lt;</span><span class="k">out</span> <span class="n">T</span><span class="p">&gt;</span> <span class="p">:</span> <span class="n">IEnumerable</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">IEnumerator</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;</span> <span class="n">GetEnumerator</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
+<li><strong>协变性 (<code>out T</code>)</strong>：<code>IEnumerable&lt;out T&gt;</code> 支持协变。这意味着如果 <code>Dog</code> 继承自 <code>Animal</code>，那么 <code>IEnumerable&lt;Dog&gt;</code> 可以隐式转换为 <code>IEnumerable&lt;Animal&gt;</code>。这提高了代码的复用性。</li>
+</ul>
+<h4 id="2-核心工作原理迭代器模式">
+<a class="header-anchor" href="#2-%e6%a0%b8%e5%bf%83%e5%b7%a5%e4%bd%9c%e5%8e%9f%e7%90%86%e8%bf%ad%e4%bb%a3%e5%99%a8%e6%a8%a1%e5%bc%8f"></a>
+2. 核心工作原理：迭代器模式
+</h4><p>当你写 <code>foreach (var item in collection)</code> 时，编译器实际上将其转换为类似以下的逻辑：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">IEnumerator</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">enumerator</span> <span class="p">=</span> <span class="n">collection</span><span class="p">.</span><span class="n">GetEnumerator</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span> <span class="p">(</span><span class="n">enumerator</span><span class="p">.</span><span class="n">MoveNext</span><span class="p">())</span> <span class="c1">// 移动到下一个元素，返回是否有更多元素</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kt">int</span> <span class="n">item</span> <span class="p">=</span> <span class="n">enumerator</span><span class="p">.</span><span class="n">Current</span><span class="p">;</span> <span class="c1">// 获取当前元素的值</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="k">finally</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">enumerator</span><span class="p">.</span><span class="n">Dispose</span><span class="p">();</span> <span class="c1">// 确保资源释放</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
+<li><strong><code>MoveNext()</code></strong>：推动指针前进，并返回 <code>bool</code> 判断是否结束。</li>
+<li><strong><code>Current</code></strong>：获取当前位置的值。</li>
+</ul>
+<h4 id="3-延迟执行deferred-execution详解">
+<a class="header-anchor" href="#3-%e5%bb%b6%e8%bf%9f%e6%89%a7%e8%a1%8cdeferred-execution%e8%af%a6%e8%a7%a3"></a>
+3. 延迟执行（Deferred Execution）详解
+</h4><p>这是 <code>IEnumerable</code> 与 <code>List</code> 最大的区别。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 假设 db.Users 是一个 IQueryable/IEnumerable 数据源</span>
+</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">query</span> <span class="p">=</span> <span class="n">db</span><span class="p">.</span><span class="n">Users</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">u</span> <span class="p">=&gt;</span> <span class="n">u</span><span class="p">.</span><span class="n">Age</span> <span class="p">&gt;</span> <span class="m">18</span><span class="p">);</span> <span class="c1">// 此时并未查询数据库！</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 只有当这里开始遍历时，Where 里的逻辑才会真正执行</span>
+</span></span><span class="line"><span class="cl"><span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">user</span> <span class="k">in</span> <span class="n">query</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">user</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><ul>
+<li><strong>优势</strong>：节省内存。如果数据源有 100 万条数据，但你只需要前 10 条，<code>IEnumerable</code> 可以在取到第 10 条后就停止后续数据的加载和处理。</li>
+<li><strong>陷阱</strong>：如果你多次遍历同一个 <code>IEnumerable</code> 变量，它会<strong>重新执行</strong>整个查询逻辑。如果数据源在两次遍历之间发生了变化，结果会不一致。</li>
+</ul>
+<h4 id="4-ienumerable-vs-iqueryable-vs-list">
+<a class="header-anchor" href="#4-ienumerable-vs-iqueryable-vs-list"></a>
+4. <code>IEnumerable</code> vs <code>IQueryable</code> vs <code>List</code>
+</h4><table>
+	<thead>
+			<tr>
+					<th style="text-align: left">特性</th>
+					<th style="text-align: left"><code>IEnumerable&lt;T&gt;</code></th>
+					<th style="text-align: left"><code>IQueryable&lt;T&gt;</code></th>
+					<th style="text-align: left"><code>List&lt;T&gt;</code></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>执行位置</strong></td>
+					<td style="text-align: left"><strong>客户端（内存）</strong></td>
+					<td style="text-align: left"><strong>服务端（数据库）</strong></td>
+					<td style="text-align: left">内存</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>过滤时机</strong></td>
+					<td style="text-align: left">加载所有数据后在内存过滤</td>
+					<td style="text-align: left">生成 SQL，在数据库过滤</td>
+					<td style="text-align: left">加载所有数据后在内存过滤</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>适用场景</strong></td>
+					<td style="text-align: left">LINQ to Objects, 小数据集</td>
+					<td style="text-align: left">LINQ to Entities (EF Core), 大数据集</td>
+					<td style="text-align: left">需要随机访问、增删改</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>延迟执行</strong></td>
+					<td style="text-align: left">支持</td>
+					<td style="text-align: left">支持</td>
+					<td style="text-align: left">不支持（立即加载）</td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="5-常见面试题yield-return">
+<a class="header-anchor" href="#5-%e5%b8%b8%e8%a7%81%e9%9d%a2%e8%af%95%e9%a2%98yield-return"></a>
+5. 常见面试题：<code>yield return</code>
+</h4><p><code>yield return</code> 是实现 <code>IEnumerable</code> 最优雅的方式。它让编译器自动生成状态机来实现迭代器。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="n">IEnumerable</span><span class="p">&lt;</span><span class="kt">int</span><span class="p">&gt;</span> <span class="n">GetNumbers</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">10</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;Yielding {i}&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">yield</span> <span class="k">return</span> <span class="n">i</span><span class="p">;</span> <span class="c1">// 每次调用 MoveNext 时执行到这里暂停</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="面试延伸追问预判面试官后续提问-9">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-9"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><strong><code>IEnumerable</code> 和 <code>ICollection</code> / <code>IList</code> 有什么区别？</strong>
+<ul>
+<li><em>考点</em>：<code>IEnumerable</code> 是最基础的，只支持遍历；<code>ICollection</code> 增加了 <code>Count</code> 属性和同步方法；<code>IList</code> 进一步增加了索引访问（<code>this[int index]</code>）和增删改能力。性能上，<code>IList</code> 支持随机访问，效率更高。</li>
+</ul>
+</li>
+<li><strong>为什么在 EF Core 中，先调用 <code>ToList()</code> 再调用 <code>Where</code> 会导致性能问题？</strong>
+<ul>
+<li><em>考点</em>：<code>ToList()</code> 会触发<strong>立即执行</strong>，将数据库中的所有数据加载到内存中变成 <code>List</code>（即 <code>IEnumerable</code>）。随后的 <code>Where</code> 变成了 <strong>LINQ to Objects</strong>，在内存中过滤。如果表有百万级数据，这会耗尽内存并拖慢速度。正确的做法是保持 <code>IQueryable</code> 直到最后再 <code>ToList()</code>。</li>
+</ul>
+</li>
+<li><strong>如何手动实现一个自定义的 <code>IEnumerable</code>？</strong>
+<ul>
+<li><em>考点</em>：可以实现 <code>IEnumerable&lt;T&gt;</code> 接口并返回一个自定义的 <code>IEnumerator</code>，或者更简单地，使用 <code>yield return</code> 语法。</li>
+</ul>
+</li>
+<li><strong><code>IEnumerable</code> 是线程安全的吗？</strong>
+<ul>
+<li><em>考点</em>：<strong>不是</strong>。标准的 <code>IEnumerable</code> 实现（如 <code>List&lt;T&gt;</code> 的枚举器）在遍历过程中如果集合被修改（Add/Remove），会抛出 <code>InvalidOperationException</code>。如果需要线程安全，需使用 <code>ConcurrentBag</code> 等并发集合或在遍历期间加锁。</li>
+</ul>
+</li>
+</ol>
+<hr>
+</div>
+    <footer class="article-footer"><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/c"
+      data-aos="zoom-in"
+      >C#</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/c"
+        rel="tag"
+        >C#</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="/images/cover8.webp"
+              data-sizes="auto"
+              alt="C#基础（五）"
+              class="lazyload"
+            /><a
+          href="/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%94/"
+          aria-label="前一篇:C#基础（五）"
+          title="前一篇:C#基础（五）"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">C#基础（五）</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="/images/cover4.webp"
+              data-sizes="auto"
+              alt="C#基础（七）"
+              class="lazyload"
+            /><a
+          href="/post/c%23%E5%9F%BA%E7%A1%80%E4%B8%83/"
+          aria-label="后一篇:C#基础（七）"
+          title="后一篇:C#基础（七）"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">C#基础（七）</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2020-2026<span class="footer-info-sep rotate"></span>Alone4869
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;189.1k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;06:32</span>
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_value_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_value_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#一类和结构体的区别是什么">一、类和结构体的区别是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#二什么是分部类">二、什么是分部类</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-1">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-1">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-1">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#三new关键字的作用是什么">三、new关键字的作用是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-2">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-2">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-2">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#四static关键字的作用是什么">四、static关键字的作用是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-3">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-3">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-3">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#五什么是静态类">五、什么是静态类</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-4">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-4">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-4">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#六null赋值运算符null合并运算符和null条件运算符的作用是什么">六、null赋值运算符、null合并运算符和null条件运算符的作用是什么</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-5">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-5">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-5">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#七什么是封装封装和数据隐藏是相同的概念吗封装和抽象有什么区别">七、什么是封装，封装和数据隐藏是相同的概念吗，封装和抽象有什么区别</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-6">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-6">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-6">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#八什么是linq">八、什么是LINQ</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-7">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-7">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-7">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#九什么是扩展方法">九、什么是扩展方法</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-8">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-8">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-8">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+    <li><a href="#十什么是ienumerable">十、什么是IEnumerable</a>
+      <ul>
+        <li><a href="#面试简答考场口述答案-9">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-9">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-9">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/avatar2.webp"
+    data-sizes="auto"
+    alt="Alone4869"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">Alone4869</div>
+  <div class="sidebar-description">无量天尊</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">29</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      10
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">17</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon rotate'>&#xe62b;</div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><script
+    src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    integrity="sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf&#43;e" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/live2d-widgets@0.9.0/autoload.js"
+    defer
+    
+    
+    
+    integrity="sha384-poTN7wN/SqNhQqo3jdFeX20ikddWeFGkUkDEzsKjgH/ez8aQLn81oI0Cw6q5xNyB" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "Alone4869",
+          title: "C#基础（六）",
+          url: "https:\/\/alone4869.github.io\/post\/c%23%E5%9F%BA%E7%A1%80%E5%85%AD\/",
+          description: " 一、类和结构体的区别是什么 ✅面试简答（考场口述答案） 核心区别在于类型系统分类和内存模型：\n类型本质：class 是引用类型，struct 是值类型。 内存分配：类实例分配在**堆（Heap）上，变量存引用；结构体通常分配在栈（Stack）**上（作为局部变量时）或内联在包含它的对象中，变量直接存数据。 赋值语义：类赋值是拷贝引用（浅拷贝），修改一个会影响另一个；结构体赋值是拷贝整个数据（深拷贝），互不影响。 继承性：类支持继承和多态；结构体不能继承其他类或结构体（但可实现接口）。 默认构造：类可以没有无参构造函数；结构体始终有一个隐式的无参构造函数（将所有字段初始化为零值），且在 C# …",
+          cover: "https:\/\/alone4869.github.io\/images\/banner.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+        }
+        pswp()
+      </script></div>
+</div><script
+    src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js"
+    
+    async
+    
+    
+    integrity="sha384-0M75wtSkhjIInv4coYlaJU83&#43;OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id&#43;S" crossorigin="anonymous"></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>
