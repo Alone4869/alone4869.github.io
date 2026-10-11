@@ -34,6 +34,11 @@
                 />
     <xhtml:link
                 rel="alternate"
+                hreflang="en"
+                href="https://alone4869.github.io/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
                 hreflang="ja"
                 href="https://alone4869.github.io/ja/tags/"
                 />
@@ -41,11 +46,6 @@
                 rel="alternate"
                 hreflang="zh-tw"
                 href="https://alone4869.github.io/zh-tw/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://alone4869.github.io/en/tags/"
                 />
   </url><url>
     <loc>https://alone4869.github.io/categories/%E9%9D%A2%E8%AF%95/</loc>
