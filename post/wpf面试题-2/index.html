@@ -193,35 +193,122 @@
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#1是否使用过委托一般在何时使用委托">1、是否使用过委托，一般在何时使用委托</a></li>
-    <li><a href="#2是否使用过匿名委托及-lambda-表达式">2、是否使用过匿名委托及 Lambda 表达式</a></li>
-    <li><a href="#3是否使用过多线程何时使用多线程使用多线程应注意什么">3、是否使用过多线程，何时使用多线程，使用多线程应注意什么</a></li>
-    <li><a href="#4异步">4、异步</a></li>
-    <li><a href="#5是否使用过反射使用场景和目的">5、是否使用过反射，使用场景和目的</a></li>
-    <li><a href="#6是否使用过泛型及泛型约束使用场景">6、是否使用过泛型及泛型约束，使用场景</a></li>
-    <li><a href="#7是否使用-linq使用场景">7、是否使用 LINQ，使用场景</a></li>
-    <li><a href="#8单例模式">8、单例模式</a></li>
-    <li><a href="#9如何理解面向对象自己的程序设计是否坚持面向对象设计">9、如何理解面向对象，自己的程序设计是否坚持面向对象设计</a></li>
-    <li><a href="#10如何理解三层自己的设计是否基于三层">10、如何理解&quot;三层&quot;，自己的设计是否基于三层</a></li>
-    <li><a href="#11如何理解控制反转是否使用过依赖注入是否有自己的封装">11、如何理解控制反转，是否使用过依赖注入，是否有自己的封装</a></li>
-    <li><a href="#12adonet-20简单介绍-adonet-20-的常用类或对象是否使用-adonet-20-封装过自己的数据层">12、Ado.net 2.0，简单介绍 Ado.net 2.0 的常用类或对象，是否使用 Ado.net 2.0 封装过自己的数据层</a></li>
-    <li><a href="#13序列化与反序列化的数据转换如-jsonxmldatatable泛型之间的转换做过哪些需要用哪些技术手段是否做过这些转换的工具类">13、序列化与反序列化的数据转换，如 Json、Xml、DataTable、泛型之间的转换，做过哪些，需要用哪些技术手段。是否做过这些转换的工具类</a></li>
-    <li><a href="#14对内存数据库和数据仓储及持久化有多少了解">14、对内存数据库和数据仓储及持久化有多少了解</a></li>
-    <li><a href="#15托管代码和非托管代码的区别">15、托管代码和非托管代码的区别</a></li>
-    <li><a href="#16托管资源和非托管资源">16、托管资源和非托管资源</a></li>
-    <li><a href="#17wpf-和-mvvm-的理解">17、WPF 和 mvvm 的理解</a></li>
-    <li><a href="#18sql-和存储过程为什么要用存储过程">18、SQL 和存储过程，为什么要用存储过程</a></li>
-    <li><a href="#19反射">19、反射</a></li>
-    <li><a href="#20流处理">20、流处理</a></li>
-    <li><a href="#21单元测试private-能否做单元测试范围">21、单元测试，private 能否做单元测试，范围</a></li>
-    <li><a href="#22c-的修饰符">22、C# 的修饰符</a></li>
-    <li><a href="#22原文编号重复wcf-通信中的-abc-基本概念">22（原文编号重复）、WCF 通信中的 ABC 基本概念</a></li>
-    <li><a href="#23c-中常用的集合类">23、C# 中常用的集合类</a></li>
-    <li><a href="#24string-和-stringbuilder-的区别">24、string 和 stringbuilder 的区别</a></li>
-    <li><a href="#25属性变更通知inotifypropertychanged-和-observablecollectiont">25、属性变更通知（INotifyPropertyChanged 和 ObservableCollection&lt;T&gt;）</a></li>
-    <li><a href="#26什么是-xml-扩展-xaml有何优点">26、什么是 XML 扩展 XAML？有何优点？</a></li>
-    <li><a href="#27解释什么是依赖属性它和以前的属性有什么不同为什么在-wpf-会使用它">27、解释什么是依赖属性，它和以前的属性有什么不同？为什么在 WPF 会使用它？</a></li>
-    <li><a href="#28asyncawait-定义异步方法的几点要求">28、Async/Await 定义异步方法的几点要求</a></li>
+    <li><a href="#c-winform-和-wpf-中级面试题整理">C# WinForm 和 WPF 中级面试题整理</a>
+      <ul>
+        <li><a href="#1-是否使用过委托一般在何时使用委托">1. 是否使用过委托，一般在何时使用委托？</a></li>
+        <li><a href="#面试简答考场口述答案">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#2-是否使用过匿名委托及-lambda-表达式">2. 是否使用过匿名委托及 Lambda 表达式？</a></li>
+        <li><a href="#面试简答考场口述答案-1">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-1">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-1">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#3-是否使用过多线程何时使用多线程应注意什么">3. 是否使用过多线程，何时使用多线程，应注意什么？</a></li>
+        <li><a href="#面试简答考场口述答案-2">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-2">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-2">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#4-异步编程asyncawait的理解">4. 异步编程（Async/Await）的理解？</a></li>
+        <li><a href="#面试简答考场口述答案-3">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-3">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-3">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#5-是否使用过反射使用场景和目的">5. 是否使用过反射，使用场景和目的？</a></li>
+        <li><a href="#面试简答考场口述答案-4">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-4">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-4">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#6-是否使用过泛型及泛型约束使用场景">6. 是否使用过泛型及泛型约束，使用场景？</a></li>
+        <li><a href="#面试简答考场口述答案-5">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-5">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-5">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#7-是否使用-linq使用场景">7. 是否使用 LINQ，使用场景？</a></li>
+        <li><a href="#面试简答考场口述答案-6">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-6">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-6">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#8-单例模式的实现方式">8. 单例模式的实现方式？</a></li>
+        <li><a href="#面试简答考场口述答案-7">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-7">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-7">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#9-如何理解面向对象及设计原则">9. 如何理解面向对象及设计原则？</a></li>
+        <li><a href="#面试简答考场口述答案-8">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-8">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-8">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#10-如何理解三层架构">10. 如何理解三层架构？</a></li>
+        <li><a href="#面试简答考场口述答案-9">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-9">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-9">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#11-控制反转ioc与依赖注入di">11. 控制反转（IoC）与依赖注入（DI）？</a></li>
+        <li><a href="#面试简答考场口述答案-10">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-10">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-10">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#12-adonet-核心对象及使用">12. ADO.NET 核心对象及使用？</a></li>
+        <li><a href="#面试简答考场口述答案-11">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-11">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-11">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#13-序列化与反序列化技术及转换">13. 序列化与反序列化技术及转换？</a></li>
+        <li><a href="#面试简答考场口述答案-12">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-12">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-12">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#14-内存数据库数据仓储及持久化">14. 内存数据库、数据仓储及持久化？</a></li>
+        <li><a href="#面试简答考场口述答案-13">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-13">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-13">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#15-托管代码与非托管代码的区别">15. 托管代码与非托管代码的区别？</a></li>
+        <li><a href="#面试简答考场口述答案-14">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-14">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-14">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#16-托管资源与非托管资源的释放">16. 托管资源与非托管资源的释放？</a></li>
+        <li><a href="#面试简答考场口述答案-15">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-15">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-15">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#17-wpf-和-mvvm-的理解">17. WPF 和 MVVM 的理解？</a></li>
+        <li><a href="#面试简答考场口述答案-16">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-16">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-16">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#18-sql-存储过程的优缺点及使用">18. SQL 存储过程的优缺点及使用？</a></li>
+        <li><a href="#面试简答考场口述答案-17">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-17">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-17">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#19-反射的核心类型及使用">19. 反射的核心类型及使用？</a></li>
+        <li><a href="#面试简答考场口述答案-18">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-18">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-18">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#20-流处理filestreamstreamreaderbinaryreader">20. 流处理（FileStream/StreamReader/BinaryReader）？</a></li>
+        <li><a href="#面试简答考场口述答案-19">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-19">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-19">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#21-单元测试原则及-private-方法测试">21. 单元测试原则及 Private 方法测试？</a></li>
+        <li><a href="#面试简答考场口述答案-20">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-20">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-20">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#22-c-访问修饰符详解">22. C# 访问修饰符详解？</a></li>
+        <li><a href="#面试简答考场口述答案-21">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-21">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-21">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#23-wcf-通信中的-abc-概念">23. WCF 通信中的 ABC 概念？</a></li>
+        <li><a href="#面试简答考场口述答案-22">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-22">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-22">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#24-c-常用集合类对比">24. C# 常用集合类对比？</a></li>
+        <li><a href="#面试简答考场口述答案-23">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-23">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-23">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#25-string-和-stringbuilder-的区别">25. String 和 StringBuilder 的区别？</a></li>
+        <li><a href="#面试简答考场口述答案-24">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-24">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-24">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#26-inotifypropertychanged-和-observablecollection">26. INotifyPropertyChanged 和 ObservableCollection？</a></li>
+        <li><a href="#面试简答考场口述答案-25">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-25">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-25">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#27-xaml-的优点及与-xml-的关系">27. XAML 的优点及与 XML 的关系？</a></li>
+        <li><a href="#面试简答考场口述答案-26">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-26">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-26">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#28-依赖属性dependencyproperty详解">28. 依赖属性（DependencyProperty）详解？</a></li>
+        <li><a href="#面试简答考场口述答案-27">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-27">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-27">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div></div>
@@ -294,797 +381,954 @@
       >2026-10-11</time
     >
   </span></div>
-</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="c-winform-和-wpf-中级面试题整理">
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="c-winform-和-wpf-中级面试题整理">
 <a class="header-anchor" href="#c-winform-%e5%92%8c-wpf-%e4%b8%ad%e7%ba%a7%e9%9d%a2%e8%af%95%e9%a2%98%e6%95%b4%e7%90%86"></a>
 C# WinForm 和 WPF 中级面试题整理
-</h1><h2 id="1是否使用过委托一般在何时使用委托">
-<a class="header-anchor" href="#1%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%a7%94%e6%89%98%e4%b8%80%e8%88%ac%e5%9c%a8%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8%e5%a7%94%e6%89%98"></a>
-1、是否使用过委托，一般在何时使用委托
-</h2><p>委托传递的参数是一个方法，委托是给调用者使用的，在调用者不知道什么时候会使用的情况会使用委托，所以调用者需要提前订阅它然后执行自己的代码，当委托对象有了订阅者的触发消息后就会通知调用者。</p>
-<p><strong>【补充】</strong></p>
+</h2><h3 id="1-是否使用过委托一般在何时使用委托">
+<a class="header-anchor" href="#1-%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%a7%94%e6%89%98%e4%b8%80%e8%88%ac%e5%9c%a8%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8%e5%a7%94%e6%89%98"></a>
+1. 是否使用过委托，一般在何时使用委托？
+</h3><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>委托本质是对方法的抽象引用，允许将方法作为参数传递或存储。主要用于事件回调、跨线程UI更新（Dispatcher）以及通用算法策略（如Sort比较器）。现代开发中推荐使用泛型委托 <code>Action</code>/<code>Func</code> 替代自定义委托声明。</p>
+</blockquote>
+<h3 id="深入解析">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90"></a>
+📚深入解析
+</h3><ul>
+<li><strong>核心概念</strong>：委托是类型安全的函数指针，继承自 <code>System.MulticastDelegate</code>。它解耦了“调用者”与“执行逻辑”，实现观察者模式的基础。</li>
+<li><strong>典型场景</strong>：
 <ul>
-<li>委托（delegate）是引用类型，本质是对&quot;方法&quot;的抽象，可以把方法当作参数传递、当作变量保存，再在合适的时机调用（回调）。</li>
-<li>典型使用场景：
-<ul>
-<li><strong>事件与回调</strong>（如按钮点击、串口数据到达时通知 UI）；</li>
-<li><strong>跨线程更新 UI</strong>（<code>Dispatcher.Invoke</code> / <code>BeginInvoke</code> 传入委托）；</li>
-<li><strong>通用算法</strong>（如 <code>List&lt;T&gt;.Sort(Comparison&lt;T&gt;)</code>、<code>Array.FindAll(Predicate&lt;T&gt;)</code>）。</li>
+<li><strong>事件驱动</strong>：按钮点击、串口数据到达通知。</li>
+<li><strong>跨线程通信</strong>：WPF/WinForm 中子线程通过 <code>Dispatcher.Invoke(Action)</code> 更新 UI。</li>
+<li><strong>策略模式/高阶函数</strong>：<code>List&lt;T&gt;.Sort(Comparison&lt;T&gt;)</code>、LINQ 的 <code>Where(Func&lt;T, bool&gt;)</code>。</li>
 </ul>
 </li>
-<li>基础示例：</li>
+<li><strong>演进</strong>：早期需显式 <code>delegate void MyDel(string s)</code>；现在直接用 <code>Action&lt;string&gt;</code> 或 <code>Func&lt;int, string&gt;</code>，代码更简洁且框架统一。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 1. 声明委托类型</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">delegate</span> <span class="k">void</span> <span class="n">MyDelegate</span><span class="p">(</span><span class="kt">string</span> <span class="n">msg</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// 2. 实例化（指向一个方法）并调用</span>
-</span></span><span class="line"><span class="cl"><span class="n">MyDelegate</span> <span class="n">d</span> <span class="p">=</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">d</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span> <span class="c1">// 输出 hello</span>
-</span></span></code></pre></div><ul>
-<li>现代开发中，<code>Action&lt;T&gt;</code> / <code>Func&lt;T&gt;</code> 等泛型委托可以免去显式声明委托类型。</li>
-</ul>
-<h2 id="2是否使用过匿名委托及-lambda-表达式">
-<a class="header-anchor" href="#2%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%8c%bf%e5%90%8d%e5%a7%94%e6%89%98%e5%8f%8a-lambda-%e8%a1%a8%e8%be%be%e5%bc%8f"></a>
-2、是否使用过匿名委托及 Lambda 表达式
-</h2><p>采用匿名方法实例化的委托称为匿名委托。Lambda 表达式本质上是改进的匿名委托。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>匿名委托：用 <code>delegate</code> 关键字内联定义方法体，不单独命名方法：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">MyDelegate</span> <span class="n">d</span> <span class="p">=</span> <span class="k">delegate</span> <span class="p">(</span><span class="kt">string</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span> <span class="p">};</span>
-</span></span></code></pre></div><ul>
-<li>Lambda 表达式更简洁，是匿名方法的&quot;语法糖&quot;：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">MyDelegate</span> <span class="n">d</span> <span class="p">=</span> <span class="n">msg</span> <span class="p">=&gt;</span> <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 多个参数： (a, b) =&gt; a + b</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 有返回值：  (x) =&gt; x * 2</span>
-</span></span></code></pre></div><ul>
-<li>应用：配合 LINQ 的 <code>Where</code>、<code>Select</code>、<code>OrderBy</code> 等使用；在事件订阅中代替显式方法。</li>
-</ul>
-<h2 id="3是否使用过多线程何时使用多线程使用多线程应注意什么">
-<a class="header-anchor" href="#3%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%a4%9a%e7%ba%bf%e7%a8%8b%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8%e5%a4%9a%e7%ba%bf%e7%a8%8b%e4%bd%bf%e7%94%a8%e5%a4%9a%e7%ba%bf%e7%a8%8b%e5%ba%94%e6%b3%a8%e6%84%8f%e4%bb%80%e4%b9%88"></a>
-3、是否使用过多线程，何时使用多线程，使用多线程应注意什么
-</h2><p>需要注意的点：</p>
-<ol>
-<li>子线程不可直接调用主线程的 UI 对象，可以调用主线程自定义的对象；</li>
-<li>多线程同时访问一个资源时，要注意同步问题，对于同一个资源，可进行加锁操作。</li>
+<h3 id="面试延伸追问预判面试官后续提问">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>委托和接口有什么区别？什么时候用委托更好？</li>
+<li>多播委托（MulticastDelegate）的执行顺序和异常处理机制是怎样的？</li>
+<li><code>Action</code> 和 <code>Func</code> 最多支持多少个泛型参数？</li>
 </ol>
-<p>线程同步的三种方式：阻塞（sleep() 或者 join()）；加互斥锁（lock）；使用信号量控制（AutoResetEvent 和 ManualResetEvent 初始化信号量，调用 set() 或者 reset() 方法改变信号量状态，调用 waitOne() 让线程继续）。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li><strong>使用场景</strong>：耗时计算（避免 UI 卡顿）、IO 操作（文件/网络/串口读写）、并行处理大批量数据、定时任务。</li>
-<li><strong>WPF 中子线程更新 UI 的正确姿势</strong>：通过 <code>Dispatcher</code> 封送（<code>this.Dispatcher.Invoke(...)</code>），或者通过数据绑定 + <code>INotifyPropertyChanged</code> 让框架自动同步，而不是直接操作控件。</li>
-<li><strong>同步机制扩展</strong>：<code>lock</code>（本质是 Monitor）、<code>Monitor</code>、<code>Mutex</code>、<code>Semaphore/SemaphoreSlim</code>、<code>Interlocked</code>（原子操作）、<code>volatile</code>（可见性）、<code>Task</code> + <code>async/await</code>（推荐）。</li>
-<li><strong>注意事项</strong>：
-<ul>
-<li>lock 的锁对象必须是<strong>引用类型</strong>（值类型每次装箱产生新对象，锁会失效）；</li>
-<li>避免死锁：多个锁的获取顺序保持一致、避免在持锁期间调用可能阻塞的外部方法；</li>
-<li>优先使用 <code>Task</code> / <code>async-await</code> 而不是裸 <code>Thread</code>：线程池复用、支持返回值、支持取消（<code>CancellationToken</code>）。</li>
+<hr>
+<h3 id="2-是否使用过匿名委托及-lambda-表达式">
+<a class="header-anchor" href="#2-%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%8c%bf%e5%90%8d%e5%a7%94%e6%89%98%e5%8f%8a-lambda-%e8%a1%a8%e8%be%be%e5%bc%8f"></a>
+2. 是否使用过匿名委托及 Lambda 表达式？
+</h3><h3 id="面试简答考场口述答案-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-1"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>匿名委托是用 <code>delegate</code> 关键字内联定义的方法体；Lambda 是其语法糖，用 <code>=&gt;</code> 简化写法。两者本质都是编译器生成的委托实例，广泛用于 LINQ 查询和事件订阅，避免为简单逻辑单独命名方法。</p>
+</blockquote>
+<h3 id="深入解析-1">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-1"></a>
+📚深入解析
+</h3><ul>
+<li><strong>匿名委托</strong>：<code>delegate(int x) { return x * 2; }</code>，可访问外部局部变量（闭包）。</li>
+<li><strong>Lambda 表达式</strong>：<code>(x) =&gt; x * 2</code>。编译器根据上下文推断类型，支持表达式体（单行返回值）和语句块（多行）。</li>
+<li><strong>底层实现</strong>：编译器会生成一个隐藏类来捕获闭包变量，Lambda 变成该类的实例方法。若无闭包，则可能缓存为静态字段以避免重复分配。</li>
+<li><strong>注意</strong>：在循环中使用 Lambda 捕获循环变量时需注意版本差异（C# 5+ 已修复 foreach 变量捕获问题，但 for 循环仍需小心）。</li>
 </ul>
-</li>
-<li>原文中的 <code>john()</code> 应为 <code>join()</code>（等待线程结束）；<code>Thread.Sleep</code> 是让出 CPU 指定时长。</li>
-</ul>
-<h2 id="4异步">
-<a class="header-anchor" href="#4%e5%bc%82%e6%ad%a5"></a>
-4、异步
-</h2><p>在处理一些长线的调用时，经常会导致界面停止响应，这个时候我们就需要使用异步编程，不需要等待响应，尽快的返回请求。C# 中一般使用 BeginInvoke 和 EndInvoke 用来执行异步操作。Async/Await 语法糖的理解。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li><code>BeginInvoke/EndInvoke</code>（APM 异步编程模型）是 .NET 早期的异步方式，现已基本被 <strong>TAP（基于 Task 的异步模式）</strong> 取代，面试中重点掌握 <code>async/await</code> 即可。</li>
-<li><strong>async/await 的本质</strong>：编译器会把 async 方法改造成一个<strong>状态机</strong>；遇到 <code>await</code> 时方法挂起并立即返回，不阻塞调用线程，异步操作完成后从挂起点继续执行。因此 UI 线程不会被阻塞。</li>
-<li><strong>关键点</strong>：
-<ul>
-<li><code>await</code> 后默认会回到<strong>调用上下文</strong>（WPF 中即 UI 线程），所以 <code>await</code> 之后可以直接安全地更新控件；</li>
-<li>返回值：有结果用 <code>Task&lt;T&gt;</code>，无结果用 <code>Task</code>；<code>void</code> 只用于事件处理器（async void 异常无法被捕获，尽量避免）；</li>
-<li>在类库代码中常用 <code>ConfigureAwait(false)</code> 避免捕获 UI 上下文，提升性能；</li>
-<li>可用 <code>Task.Run(() =&gt; ...)</code> 把 CPU 密集操作丢到线程池。</li>
-</ul>
-</li>
-<li>简单示例：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">private</span> <span class="kd">async</span> <span class="n">Task</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">&gt;</span> <span class="n">LoadDataAsync</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 模拟耗时IO，不阻塞UI线程</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">string</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span> <span class="n">Task</span><span class="p">.</span><span class="n">Run</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="n">FetchFromDevice</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h2 id="5是否使用过反射使用场景和目的">
-<a class="header-anchor" href="#5%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%8f%8d%e5%b0%84%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af%e5%92%8c%e7%9b%ae%e7%9a%84"></a>
-5、是否使用过反射，使用场景和目的
-</h2><p>在分离式插件模式中使用反射。一般在系统搭建好后，通过在配置文件中新增插件信息，程序会自动加载插件。这样不用修改程序。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>反射（Reflection）指在<strong>运行时</strong>动态获取程序集、类型、成员的元数据，并可动态创建实例、调用方法、读写属性。</li>
-<li>核心入口：<code>Type</code> 对象（通过 <code>typeof(T)</code>、<code>obj.GetType()</code> 或 <code>Type.GetType(&quot;全名&quot;)</code> 获得）。</li>
-<li>常见场景：
-<ul>
-<li><strong>插件化架构</strong>：扫描程序集并按约定动态加载（如 <code>Activator.CreateInstance</code>）；</li>
-<li><strong>ORM / 序列化框架</strong>内部（EF Core、Json.NET 等底层都依赖反射）；</li>
-<li><strong>属性（Attribute）驱动的功能</strong>（如 MVC 路由、数据校验）；</li>
-<li>单元测试中调用私有方法。</li>
-</ul>
-</li>
-<li>注意：反射有性能开销和类型安全问题，高频路径应避免（可配合表达式树/缓存优化）。</li>
-</ul>
-<h2 id="6是否使用过泛型及泛型约束使用场景">
-<a class="header-anchor" href="#6%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e6%b3%9b%e5%9e%8b%e5%8f%8a%e6%b3%9b%e5%9e%8b%e7%ba%a6%e6%9d%9f%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af"></a>
-6、是否使用过泛型及泛型约束，使用场景
-</h2><p>当用一个方法来处理传入不同种类型参数的时候需要使用泛型。泛型约束为了解决泛型不安全的问题。在实际情况中，约束的类型 T，使 T 遵循一定规则，必须继承某个类，或者必须实现某个接口，用 where 来实现。</p>
-<p>Demo：实现一个基类约束。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">void</span> <span class="n">Show</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">T</span> <span class="n">tParameter</span><span class="p">)</span> <span class="k">where</span> <span class="n">T</span> <span class="p">:</span> <span class="n">People</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">$&#34;{tParameter.Id}_{tParameter.Name}&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">tParameter</span><span class="p">.</span><span class="n">Hi</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><p><strong>【补充】</strong></p>
-<ul>
-<li>泛型优点：<strong>类型安全</strong>（编译期检查）、<strong>代码复用</strong>（一套代码多种类型）、<strong>性能</strong>（值类型免装箱）、扩展性好。</li>
-<li>常见约束组合（用 <code>where T : ...</code> 声明）：</li>
-</ul>
-<table>
-	<thead>
-			<tr>
-					<th>约束写法</th>
-					<th>含义</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>where T : class</code></td>
-					<td>T 必须是引用类型</td>
-			</tr>
-			<tr>
-					<td><code>where T : struct</code></td>
-					<td>T 必须是值类型</td>
-			</tr>
-			<tr>
-					<td><code>where T : new()</code></td>
-					<td>T 必须有公共无参构造函数（须放在约束列表最后）</td>
-			</tr>
-			<tr>
-					<td><code>where T : 基类名</code></td>
-					<td>T 必须继承自指定基类（可为派生类）</td>
-			</tr>
-			<tr>
-					<td><code>where T : 接口名</code></td>
-					<td>T 必须实现指定接口</td>
-			</tr>
-			<tr>
-					<td><code>where T : notnull</code></td>
-					<td>T 不允许为 null（C# 8+）</td>
-			</tr>
-			<tr>
-					<td><code>where T : U</code></td>
-					<td>T 必须是 U 或 U 的派生类</td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li>一个类型参数可以有多个约束：<code>where T : People, IComparable&lt;T&gt;, new()</code>。</li>
-</ul>
-<h2 id="7是否使用-linq使用场景">
-<a class="header-anchor" href="#7%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8-linq%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af"></a>
-7、是否使用 LINQ，使用场景
-</h2><p>在查询数据库时，不用调用特殊的数据库语法，可以直接编译查询语句。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>LINQ（Language Integrated Query，语言集成查询）：把查询能力内建到 C# 语言中，可统一查询内存集合（LINQ to Objects）、数据库（LINQ to SQL / EF）、XML（LINQ to XML）等数据源。</li>
-<li>常用操作符：<code>Where</code>（过滤）、<code>Select</code>（投影）、<code>OrderBy/OrderByDescending</code>（排序）、<code>GroupBy</code>（分组）、<code>Join</code>（连接）、<code>Any/All</code>（判断）、<code>First/FirstOrDefault</code>、<code>Sum/Count/Average</code>、<code>Distinct</code>、<code>Skip/Take</code>（分页）。</li>
-<li>两种语法：方法语法 <code>list.Where(x =&gt; x.Age &gt; 18)</code>；查询语法 <code>from x in list where x.Age &gt; 18 select x</code>。</li>
-<li>关键特性：<strong>延迟执行</strong>（deferred execution）——只有遍历（或调用 <code>ToList()</code> 等）时才真正执行；链式调用中注意一次遍历只取所需列。</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">adults</span> <span class="p">=</span> <span class="n">persons</span><span class="p">.</span><span class="n">Where</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Age</span> <span class="p">&gt;=</span> <span class="m">18</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">.</span><span class="n">OrderBy</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="n">p</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">p</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="p">{</span> <span class="n">p</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span> <span class="n">p</span><span class="p">.</span><span class="n">Age</span> <span class="p">})</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">.</span><span class="n">ToList</span><span class="p">();</span>
-</span></span></code></pre></div><h2 id="8单例模式">
-<a class="header-anchor" href="#8%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f"></a>
-8、单例模式
-</h2><p>单例模式的基本样式。饿汉和懒汉的类型。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>单例模式：保证一个类在整个进程中<strong>只有一个实例</strong>，并提供全局访问点。常用于配置文件管理、日志、数据库连接池等。</li>
-<li><strong>饿汉式</strong>：类加载时即创建实例（静态字段初始化），由 CLR 保证线程安全，缺点是可能提前占用资源：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">sealed</span> <span class="k">class</span> <span class="nc">Singleton</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="k">readonly</span> <span class="n">Singleton</span> <span class="n">_instance</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">Instance</span> <span class="p">=&gt;</span> <span class="n">_instance</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Singleton</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><ul>
-<li><strong>懒汉式</strong>：首次访问时才创建。线程安全的推荐写法（<code>Lazy&lt;T&gt;</code> 默认线程安全）：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">sealed</span> <span class="k">class</span> <span class="nc">Singleton</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kd">static</span> <span class="k">readonly</span> <span class="n">Lazy</span><span class="p">&lt;</span><span class="n">Singleton</span><span class="p">&gt;</span> <span class="n">_instance</span> <span class="p">=</span>
-</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="n">Lazy</span><span class="p">&lt;</span><span class="n">Singleton</span><span class="p">&gt;(()</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="n">Singleton</span><span class="p">());</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kd">static</span> <span class="n">Singleton</span> <span class="n">Instance</span> <span class="p">=&gt;</span> <span class="n">_instance</span><span class="p">.</span><span class="n">Value</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="n">Singleton</span><span class="p">()</span> <span class="p">{</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><ul>
-<li>经典双检锁（Double-Checked Locking）写法也常考，要点：私有构造函数 + 静态字段 + <code>lock</code> + 双重 <code>if (instance == null)</code> 判断。</li>
-</ul>
-<h2 id="9如何理解面向对象自己的程序设计是否坚持面向对象设计">
-<a class="header-anchor" href="#9%e5%a6%82%e4%bd%95%e7%90%86%e8%a7%a3%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e8%87%aa%e5%b7%b1%e7%9a%84%e7%a8%8b%e5%ba%8f%e8%ae%be%e8%ae%a1%e6%98%af%e5%90%a6%e5%9d%9a%e6%8c%81%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e8%ae%be%e8%ae%a1"></a>
-9、如何理解面向对象，自己的程序设计是否坚持面向对象设计
-</h2><p>面向对象能够提供给我的是一种编程思想，在做任何软件之前会先将事务逻辑抽象化，从属性、方法、接口、继承几方面来解决问题。并不是所有的程序都需要面向对象，在一些小程序中，有些时候就没有必要面向对象，一个类能解决问题就用一个类解决，过度的封装和抽象也会造成代码可读性下降，以及运行效率的下降。如果面对的是复杂关系的需求，就应该尽可能将有关联的行为抽象成类。我的基本原则就是在能将事物抽象化的需求中使用面向对象。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>三大特征：<strong>封装</strong>（数据+行为捆绑，隐藏内部细节）、<strong>继承</strong>（代码复用、is-a 关系）、<strong>多态</strong>（同一接口不同实现，运行时行为不同）。</li>
-<li>面向对象设计原则（SOLID）：
-<ul>
-<li>单一职责（SRP）：一个类只做一件事；</li>
-<li>开闭原则（OCP）：对扩展开放、对修改关闭；</li>
-<li>里氏替换（LSP）：派生类可替换基类而不破坏程序；</li>
-<li>接口隔离（ISP）：接口尽量小而专；</li>
-<li>依赖倒置（DIP）：依赖抽象，不依赖具体实现。</li>
-</ul>
-</li>
-<li>原文观点合理：小型/一次性脚本不必强行 OOP，过度设计同样是坏味道。</li>
-</ul>
-<h2 id="10如何理解三层自己的设计是否基于三层">
-<a class="header-anchor" href="#10%e5%a6%82%e4%bd%95%e7%90%86%e8%a7%a3%e4%b8%89%e5%b1%82%e8%87%aa%e5%b7%b1%e7%9a%84%e8%ae%be%e8%ae%a1%e6%98%af%e5%90%a6%e5%9f%ba%e4%ba%8e%e4%b8%89%e5%b1%82"></a>
-10、如何理解&quot;三层&quot;，自己的设计是否基于三层
-</h2><p>三层基本划分为 UI、BLL、DAL。三层之间为单项传递，UI 负责界面与用户的交互，BLL 负责业务逻辑处理，DAL 负责与数据库的交互。三层的存在的目的是为了解耦。就是软件设计中说的&quot;高内聚，低耦合&quot;。一般在使用过程中会加入 Entity 层用于三层数据的交互。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>标准分层：
-<ul>
-<li><strong>UI（表现层）</strong>：界面展示与用户输入，不做业务逻辑；</li>
-<li><strong>BLL（业务逻辑层）</strong>：核心业务规则、流程编排；</li>
-<li><strong>DAL（数据访问层）</strong>：负责与数据库交互（增删改查）；</li>
-<li>附加：<strong>Entity/Model 层</strong>（实体模型，跨层传递数据）、<strong>Common 层</strong>（公共工具）。</li>
-</ul>
-</li>
-<li>依赖方向：UI → BLL → DAL，上层依赖下层接口，下层不反向依赖上层。</li>
-<li>优点：职责清晰、便于分工、可独立测试、替换数据库时只改 DAL。</li>
-<li>现代架构演进：三层思想仍是基础，实际工程中常与 <strong>DDD（领域驱动设计）</strong>、<strong>MVVM</strong>、依赖注入等结合。</li>
-</ul>
-<h2 id="11如何理解控制反转是否使用过依赖注入是否有自己的封装">
-<a class="header-anchor" href="#11%e5%a6%82%e4%bd%95%e7%90%86%e8%a7%a3%e6%8e%a7%e5%88%b6%e5%8f%8d%e8%bd%ac%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e4%be%9d%e8%b5%96%e6%b3%a8%e5%85%a5%e6%98%af%e5%90%a6%e6%9c%89%e8%87%aa%e5%b7%b1%e7%9a%84%e5%b0%81%e8%a3%85"></a>
-11、如何理解控制反转，是否使用过依赖注入，是否有自己的封装
-</h2><p>IOC（Inversion of Control，控制反转）；DI（Dependence Injection，依赖注入）。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li><strong>控制反转（IoC）</strong>：对象不再自己 new 依赖对象，而是把创建和注入的主动权<strong>反转</strong>给外部容器（IoC 容器），从而降低类之间的耦合。</li>
-<li>**依赖注入（DI）**是实现 IoC 的最常见方式，有三种注入形式：
-<ul>
-<li><strong>构造函数注入</strong>（最推荐，依赖清晰、便于测试）；</li>
-<li>属性注入；</li>
-<li>方法注入。</li>
-</ul>
-</li>
-<li>示例：接口 + 构造函数注入</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">interface</span> <span class="nc">ILogger</span> <span class="p">{</span> <span class="k">void</span> <span class="n">Log</span><span class="p">(</span><span class="kt">string</span> <span class="n">msg</span><span class="p">);</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">FileLogger</span> <span class="p">:</span> <span class="n">ILogger</span> <span class="p">{</span> <span class="kd">public</span> <span class="k">void</span> <span class="n">Log</span><span class="p">(</span><span class="kt">string</span> <span class="n">msg</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">OrderService</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">readonly</span> <span class="n">ILogger</span> <span class="n">_logger</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">OrderService</span><span class="p">(</span><span class="n">ILogger</span> <span class="n">logger</span><span class="p">)</span>  <span class="c1">// 依赖由外部注入，而不是自己 new</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">_logger</span> <span class="p">=</span> <span class="n">logger</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><ul>
-<li>常用容器：<code>Microsoft.Extensions.DependencyInjection</code>（.NET 内置）、Autofac、Unity。</li>
-<li>好处：解耦、可测试性（注入 mock）、灵活替换实现、便于统一管理生命周期。</li>
-</ul>
-<h2 id="12adonet-20简单介绍-adonet-20-的常用类或对象是否使用-adonet-20-封装过自己的数据层">
-<a class="header-anchor" href="#12adonet-20%e7%ae%80%e5%8d%95%e4%bb%8b%e7%bb%8d-adonet-20-%e7%9a%84%e5%b8%b8%e7%94%a8%e7%b1%bb%e6%88%96%e5%af%b9%e8%b1%a1%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8-adonet-20-%e5%b0%81%e8%a3%85%e8%bf%87%e8%87%aa%e5%b7%b1%e7%9a%84%e6%95%b0%e6%8d%ae%e5%b1%82"></a>
-12、Ado.net 2.0，简单介绍 Ado.net 2.0 的常用类或对象，是否使用 Ado.net 2.0 封装过自己的数据层
-</h2><p>Connection：打开数据库连接。</p>
-<p>Command：执行数据库命令。</p>
-<p>DataAdapter：连接数据。</p>
-<p>DataSet：获取数据的缓存。</p>
-<p>DataReader：只读数据库。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>五大核心对象及职责：</li>
-</ul>
-<table>
-	<thead>
-			<tr>
-					<th>对象</th>
-					<th>职责</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>Connection</code></td>
-					<td>建立与数据库的连接（<code>Open()</code> / <code>Close()</code>）</td>
-			</tr>
-			<tr>
-					<td><code>Command</code></td>
-					<td>执行 SQL 语句/存储过程（<code>ExecuteNonQuery</code> / <code>ExecuteReader</code> / <code>ExecuteScalar</code>）</td>
-			</tr>
-			<tr>
-					<td><code>DataReader</code></td>
-					<td>只进只读的流式读取，占用资源小、速度快，读取时需保持连接打开</td>
-			</tr>
-			<tr>
-					<td><code>DataAdapter</code></td>
-					<td>桥梁：把查询结果填充进 <code>DataSet</code>（<code>Fill</code>），也可把改动更新回数据库（<code>Update</code>）</td>
-			</tr>
-			<tr>
-					<td><code>DataSet</code></td>
-					<td>内存中的&quot;小数据库&quot;，可离线使用（断开连接后仍可操作）</td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li>配合使用 <code>using</code> 语句及时释放连接；<code>ConnectionString</code> 中的连接池（Pooling）默认开启。</li>
-<li>示例（经典 ADO.NET 查询）：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">conn</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlConnection</span><span class="p">(</span><span class="n">connStr</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">conn</span><span class="p">.</span><span class="n">Open</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl">    <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">cmd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="s">&#34;SELECT * FROM Users WHERE Id=@id&#34;</span><span class="p">,</span> <span class="n">conn</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="n">cmd</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@id&#34;</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span> <span class="c1">// 参数化，防SQL注入</span>
-</span></span><span class="line"><span class="cl">        <span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">reader</span> <span class="p">=</span> <span class="n">cmd</span><span class="p">.</span><span class="n">ExecuteReader</span><span class="p">())</span>
-</span></span><span class="line"><span class="cl">        <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="k">while</span> <span class="p">(</span><span class="n">reader</span><span class="p">.</span><span class="n">Read</span><span class="p">())</span> <span class="p">{</span> <span class="cm">/* 处理行 */</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><ul>
-<li>实际项目更常用 EF Core / Dapper 等 ORM，但 ADO.NET 作为底层基础仍是高频考点。</li>
-</ul>
-<h2 id="13序列化与反序列化的数据转换如-jsonxmldatatable泛型之间的转换做过哪些需要用哪些技术手段是否做过这些转换的工具类">
-<a class="header-anchor" href="#13%e5%ba%8f%e5%88%97%e5%8c%96%e4%b8%8e%e5%8f%8d%e5%ba%8f%e5%88%97%e5%8c%96%e7%9a%84%e6%95%b0%e6%8d%ae%e8%bd%ac%e6%8d%a2%e5%a6%82-jsonxmldatatable%e6%b3%9b%e5%9e%8b%e4%b9%8b%e9%97%b4%e7%9a%84%e8%bd%ac%e6%8d%a2%e5%81%9a%e8%bf%87%e5%93%aa%e4%ba%9b%e9%9c%80%e8%a6%81%e7%94%a8%e5%93%aa%e4%ba%9b%e6%8a%80%e6%9c%af%e6%89%8b%e6%ae%b5%e6%98%af%e5%90%a6%e5%81%9a%e8%bf%87%e8%bf%99%e4%ba%9b%e8%bd%ac%e6%8d%a2%e7%9a%84%e5%b7%a5%e5%85%b7%e7%b1%bb"></a>
-13、序列化与反序列化的数据转换，如 Json、Xml、DataTable、泛型之间的转换，做过哪些，需要用哪些技术手段。是否做过这些转换的工具类
-</h2><p>C# 中使用 Serialize 和 Deserialize 进行序列化和反序列化。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li><strong>JSON</strong>（最常用）：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// System.Text.Json（.NET Core 3.0+ 内置）</span>
-</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="n">JsonSerializer</span><span class="p">.</span><span class="n">Serialize</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">JsonSerializer</span><span class="p">.</span><span class="n">Deserialize</span><span class="p">&lt;</span><span class="n">MyClass</span><span class="p">&gt;(</span><span class="n">json</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// Newtonsoft.Json（第三方，功能更全）</span>
-</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">json</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">SerializeObject</span><span class="p">(</span><span class="n">obj</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">JsonConvert</span><span class="p">.</span><span class="n">DeserializeObject</span><span class="p">&lt;</span><span class="n">MyClass</span><span class="p">&gt;(</span><span class="n">json</span><span class="p">);</span>
-</span></span></code></pre></div><ul>
-<li><strong>XML</strong>：使用 <code>XmlSerializer</code>（要求类型有公共无参构造函数）：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">xs</span> <span class="p">=</span> <span class="k">new</span> <span class="n">XmlSerializer</span><span class="p">(</span><span class="k">typeof</span><span class="p">(</span><span class="n">MyClass</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">sw</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StringWriter</span><span class="p">())</span> <span class="p">{</span> <span class="n">xs</span><span class="p">.</span><span class="n">Serialize</span><span class="p">(</span><span class="n">sw</span><span class="p">,</span> <span class="n">obj</span><span class="p">);</span> <span class="kt">string</span> <span class="n">xml</span> <span class="p">=</span> <span class="n">sw</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span> <span class="p">}</span>
-</span></span></code></pre></div><ul>
-<li><strong>DataTable ↔ 泛型集合</strong>：<code>DataTable</code> 转 <code>List&lt;T&gt;</code> 常用反射逐行映射；<code>List&lt;T&gt;</code> 转 <code>DataTable</code> 同样反射生成列。也可借助第三方库（如 AutoMapper、FastDataTableConverter）。</li>
-<li><strong>用途</strong>：网络传输（WebAPI 报文）、配置文件、缓存存储、对象深拷贝。</li>
-<li>工程上建议把常用转换封装成泛型工具类（如 <code>JsonHelper.Serialize&lt;T&gt;</code>），统一配置（忽略循环引用、时间格式、驼峰命名等）。</li>
-</ul>
-<h2 id="14对内存数据库和数据仓储及持久化有多少了解">
-<a class="header-anchor" href="#14%e5%af%b9%e5%86%85%e5%ad%98%e6%95%b0%e6%8d%ae%e5%ba%93%e5%92%8c%e6%95%b0%e6%8d%ae%e4%bb%93%e5%82%a8%e5%8f%8a%e6%8c%81%e4%b9%85%e5%8c%96%e6%9c%89%e5%a4%9a%e5%b0%91%e4%ba%86%e8%a7%a3"></a>
-14、对内存数据库和数据仓储及持久化有多少了解
-</h2><p>内存数据库是指把数据库放在内存中，磁盘作为 log 或者 checkpoint 备份。Checkpoint 是周期性的把内存数据中的数据同步到磁盘中。Log 是每次操作内存数据库之前，都生成一个 log，记录了对数据的修改操作，然后刷出标致，如果内存数据中的事物失败，就可以通过 log 回滚。如果操作准确，就根据 log 记录同步到磁盘数据库。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>原文描述的是<strong>内存数据库的持久化机制</strong>（类似 Redis 的 RDB + AOF 思路）：
-<ul>
-<li><strong>Checkpoint（快照/RDB）</strong>：周期性把内存数据整体落盘；</li>
-<li><strong>Log（日志/AOF）</strong>：每次写操作先记日志，崩溃/失败时通过日志恢复或回滚。</li>
-</ul>
-</li>
-<li><strong>内存数据库</strong>（Redis、Memcached 等）：数据主要在内存中，读写极快，用于缓存、会话、排行榜等。</li>
-<li><strong>数据仓储（Repository）</strong>：数据访问层的一种设计模式，把数据读写封装成仓储接口（如 <code>IRepository&lt;T&gt;</code>），屏蔽底层数据库实现，便于测试和替换。</li>
-<li><strong>持久化（Persistence）</strong>：把易失内存中的数据保存到磁盘/数据库，保证程序重启后数据不丢失。</li>
-</ul>
-<h2 id="15托管代码和非托管代码的区别">
-<a class="header-anchor" href="#15%e6%89%98%e7%ae%a1%e4%bb%a3%e7%a0%81%e5%92%8c%e9%9d%9e%e6%89%98%e7%ae%a1%e4%bb%a3%e7%a0%81%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
-15、托管代码和非托管代码的区别
-</h2><p>区别：</p>
-<ol>
-<li>托管代码是一种中间语言，运行在 CLR 上；非托管代码被编译为机器码，运行在机器上。</li>
-<li>托管代码独立于平台和语言，能更好的实现不同语言平台之间的兼容；非托管代码依赖于平台和语言。</li>
-<li>托管代码可享受 CLR 提供的服务（如安全检测、垃圾回收等），不需要自己完成这些操作；非托管代码需要自己提供安全检测、垃圾回收等操作。</li>
+<h3 id="面试延伸追问预判面试官后续提问-1">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-1"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>Lambda 表达式中的闭包是如何实现的？有什么内存开销？</li>
+<li>表达式树（Expression Tree）和普通 Lambda 委托有什么区别？</li>
+<li>为什么 LINQ to Entities 必须用 Expression 而不能用普通 Func？</li>
 </ol>
-<p><strong>【补充】</strong></p>
+<hr>
+<h3 id="3-是否使用过多线程何时使用多线程应注意什么">
+<a class="header-anchor" href="#3-%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%a4%9a%e7%ba%bf%e7%a8%8b%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8%e5%a4%9a%e7%ba%bf%e7%a8%8b%e5%ba%94%e6%b3%a8%e6%84%8f%e4%bb%80%e4%b9%88"></a>
+3. 是否使用过多线程，何时使用多线程，应注意什么？
+</h3><h3 id="面试简答考场口述答案-2">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-2"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>多线程用于耗时计算、IO操作和并行处理以避免UI卡顿。注意点包括：子线程不可直接操作UI控件（需用Dispatcher）、共享资源需同步（lock/Semaphore）、优先使用Task/async-await而非裸Thread。锁对象必须是引用类型，避免死锁。</p>
+</blockquote>
+<h3 id="深入解析-2">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-2"></a>
+📚深入解析
+</h3><ul>
+<li><strong>使用场景</strong>：CPU密集型（图像处理）、IO密集型（文件/网络）、响应式UI。</li>
+<li><strong>WPF 线程模型</strong>：UI 线程拥有 Dispatcher，子线程更新 UI 必须封送：<code>Dispatcher.Invoke(() =&gt; txt.Text = &quot;ok&quot;)</code>。推荐通过 MVVM 绑定 + <code>INotifyPropertyChanged</code> 自动同步。</li>
+<li><strong>同步机制</strong>：
 <ul>
-<li>托管代码（Managed Code）：C#/VB.NET 等编译为 <strong>IL（中间语言）</strong>，由 CLR 负责 JIT 编译、GC 回收、类型安全检查和异常处理。</li>
-<li>非托管代码（Unmanaged Code）：C/C++ 等直接编译为机器码，自行管理内存，如 Win32 API、COM 组件、P/Invoke 调用的原生库。</li>
-<li>C# 中通过 <code>DllImport</code>（P/Invoke）或 C++/CLI 与原生代码互操作。</li>
+<li><code>lock</code> (Monitor)：最常用，注意锁粒度。</li>
+<li><code>SemaphoreSlim</code>：限制并发数。</li>
+<li><code>Interlocked</code>：原子操作，无锁高性能。</li>
+<li><code>Concurrent</code> 集合：线程安全容器。</li>
 </ul>
-<h2 id="16托管资源和非托管资源">
-<a class="header-anchor" href="#16%e6%89%98%e7%ae%a1%e8%b5%84%e6%ba%90%e5%92%8c%e9%9d%9e%e6%89%98%e7%ae%a1%e8%b5%84%e6%ba%90"></a>
-16、托管资源和非托管资源
-</h2><p>在 C/C++ 中，资源都是需要手动释放的，比如你 new 了一个指针，用过之后就需要 delete 掉，否则就会造成内存泄露。而在 Java 中，不必考虑资源释放的问题，Java 的垃圾回收机制（GC，Garbage Collection）会保证失效的资源被自动释放。</p>
-<p>而 C# 的机制与 Java 类似，运行于 .net 平台上的代码，分配的资源一般会自动由平台的垃圾回收器释放，这样的资源就是托管资源。</p>
-<p>但是一些例外的资源，如 System.IO.StreamReader 等各种流、各种连接所分配的资源，需要显式调用 Close() 或 Dispose() 释放，这种资源就叫做非托管资源。</p>
-<p><strong>【补充】</strong></p>
+</li>
+<li><strong>避坑指南</strong>：
 <ul>
-<li><strong>托管资源</strong>：由 GC 自动管理（普通对象、字符串、数组等），无需手动释放。</li>
-<li><strong>非托管资源</strong>：文件流、网络连接、数据库连接、GDI+ 句柄、互操作指针等，GC 无法自动回收，必须显式释放。</li>
-<li>正确释放方式：实现 <code>IDisposable</code>，用 <code>using</code> 语句确保释放：</li>
+<li>禁止 lock 值类型（装箱导致每次锁不同对象）。</li>
+<li>避免 <code>Thread.Sleep</code> 做同步，应使用信号量或 Task.Delay。</li>
+<li>优先 TAP (<code>Task</code>) 而非 APM/EAP，支持取消令牌和异常传播。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">fs</span> <span class="p">=</span> <span class="k">new</span> <span class="n">FileStream</span><span class="p">(</span><span class="s">&#34;a.txt&#34;</span><span class="p">,</span> <span class="n">FileMode</span><span class="p">.</span><span class="n">Open</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 使用后自动调用 Dispose()</span>
+</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-2">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-2"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><code>lock</code> 和 <code>Mutex</code> 的区别？</li>
+<li>什么是死锁？如何检测和预防？</li>
+<li><code>ThreadPool</code> 和手动创建 <code>Thread</code> 的性能差异？</li>
+</ol>
+<hr>
+<h3 id="4-异步编程asyncawait的理解">
+<a class="header-anchor" href="#4-%e5%bc%82%e6%ad%a5%e7%bc%96%e7%a8%8basyncawait%e7%9a%84%e7%90%86%e8%a7%a3"></a>
+4. 异步编程（Async/Await）的理解？
+</h3><h3 id="面试简答考场口述答案-3">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-3"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>async/await 是基于 Task 的异步语法糖，编译器将其转为状态机。await 挂起当前方法但不阻塞线程，完成后恢复执行。UI 线程 await 后默认回到 UI 线程。返回类型应为 Task/Task<!-- raw HTML omitted -->，避免 async void（除事件外）。库代码建议 ConfigureAwait(false)。</p>
+</blockquote>
+<h3 id="深入解析-3">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-3"></a>
+📚深入解析
+</h3><ul>
+<li><strong>状态机原理</strong>：<code>async</code> 方法被编译为实现 <code>IAsyncStateMachine</code> 的结构体，记录局部变量和执行点。<code>await</code> 注册回调，Task 完成时触发 MoveNext。</li>
+<li><strong>上下文捕获</strong>：默认捕获 <code>SynchronizationContext</code>（WPF 中为 DispatcherSynchronizationContext），确保 await 后回到 UI 线程。类库中用 <code>.ConfigureAwait(false)</code> 跳过捕获，减少开销。</li>
+<li><strong>返回值规范</strong>：
+<ul>
+<li><code>Task&lt;T&gt;</code> / <code>Task</code>：标准异步返回。</li>
+<li><code>ValueTask&lt;T&gt;</code>：高频热路径优化，避免 Task 分配。</li>
+<li><code>async void</code>：仅用于事件处理器，异常无法被 try-catch 捕获，会导致进程崩溃。</li>
+</ul>
+</li>
+<li><strong>CPU vs IO</strong>：IO 操作直接 await；CPU 密集计算用 <code>Task.Run</code> 包装后再 await。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-3">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-3"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><code>Task.Run</code> 和 <code>await</code> 的本质区别？</li>
+<li>什么是 SynchronizationContext？ASP.NET Core 中还有吗？</li>
+<li>如何处理多个异步任务的并发与超时？</li>
+</ol>
+<hr>
+<h3 id="5-是否使用过反射使用场景和目的">
+<a class="header-anchor" href="#5-%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%8f%8d%e5%b0%84%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af%e5%92%8c%e7%9b%ae%e7%9a%84"></a>
+5. 是否使用过反射，使用场景和目的？
+</h3><h3 id="面试简答考场口述答案-4">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-4"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>反射允许运行时动态获取类型元数据、创建实例和调用成员。常用于插件架构、ORM映射、序列化框架和单元测试私有方法。缺点是性能开销大且缺乏编译期检查，高频场景应缓存 MethodInfo 或使用表达式树优化。</p>
+</blockquote>
+<h3 id="深入解析-4">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-4"></a>
+📚深入解析
+</h3><ul>
+<li><strong>核心 API</strong>：<code>Type.GetType()</code>, <code>Activator.CreateInstance()</code>, <code>MethodInfo.Invoke()</code>, <code>PropertyInfo.GetValue()</code>。</li>
+<li><strong>应用场景</strong>：
+<ul>
+<li><strong>插件系统</strong>：扫描 DLL 加载实现特定接口的类。</li>
+<li><strong>框架底层</strong>：EF Core 实体映射、Json.NET 属性序列化、MVC 路由特性解析。</li>
+<li><strong>AOP/代理</strong>：动态生成代理类实现日志/事务拦截。</li>
+</ul>
+</li>
+<li><strong>性能优化</strong>：
+<ul>
+<li>缓存 <code>Type</code>/<code>MethodInfo</code> 到静态字典。</li>
+<li>使用 <code>Delegate.CreateDelegate</code> 将反射调用转为强类型委托。</li>
+<li>使用 Source Generators (C# 9+) 在编译期生成代码替代运行时反射。</li>
+</ul>
+</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-4">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-4"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li><code>typeof(T)</code> 和 <code>obj.GetType()</code> 的区别？</li>
+<li>如何通过反射访问私有成员？</li>
+<li>反射的性能瓶颈在哪里？如何量化测试？</li>
+</ol>
+<hr>
+<h3 id="6-是否使用过泛型及泛型约束使用场景">
+<a class="header-anchor" href="#6-%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e6%b3%9b%e5%9e%8b%e5%8f%8a%e6%b3%9b%e5%9e%8b%e7%ba%a6%e6%9d%9f%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af"></a>
+6. 是否使用过泛型及泛型约束，使用场景？
+</h3><h3 id="面试简答考场口述答案-5">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-5"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>泛型实现类型安全的代码复用，避免装箱拆箱。约束（where）限制 T 的能力以保证编译安全。常见约束有 class/struct/new()/基类/接口。例如 <code>where T : People, new()</code> 确保 T 是 People 子类且有无参构造。</p>
+</blockquote>
+<h3 id="深入解析-5">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-5"></a>
+📚深入解析
+</h3><ul>
+<li><strong>优势</strong>：类型安全（编译期检查）、性能（值类型免装箱）、代码复用（一套逻辑适用多类型）。</li>
+<li><strong>约束详解</strong>：
+<ul>
+<li><code>where T : class</code> / <code>struct</code>：引用/值类型。</li>
+<li><code>where T : new()</code>：必须有公共无参构造（须放最后）。</li>
+<li><code>where T : BaseClass</code> / <code>IInterface</code>：继承/实现关系。</li>
+<li><code>where T : notnull</code> (C# 8+)：非空约束。</li>
+<li><code>where T : U</code>：裸类型约束。</li>
+</ul>
+</li>
+<li><strong>JIT 行为</strong>：值类型泛型为每种类型生成专用本机代码；引用类型泛型共享同一份本机代码（指针大小相同）。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-5">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-5"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>泛型类和泛型方法的静态字段是共享的吗？</li>
+<li><code>List&lt;T&gt;</code> 和 <code>ArrayList</code> 性能差异的根本原因？</li>
+<li>协变（out）和逆变（in）是什么？</li>
+</ol>
+<hr>
+<h3 id="7-是否使用-linq使用场景">
+<a class="header-anchor" href="#7-%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8-linq%e4%bd%bf%e7%94%a8%e5%9c%ba%e6%99%af"></a>
+7. 是否使用 LINQ，使用场景？
+</h3><h3 id="面试简答考场口述答案-6">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-6"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>LINQ 提供统一的查询语法，支持内存集合、数据库、XML等数据源。核心特性是延迟执行，只有遍历或 ToList 时才真正运行。常用操作符包括 Where/Select/OrderBy/GroupBy。注意区分 IEnumerable（内存）和 IQueryable（数据库）的执行差异。</p>
+</blockquote>
+<h3 id="深入解析-6">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-6"></a>
+📚深入解析
+</h3><ul>
+<li><strong>延迟执行</strong>：查询定义时不执行，枚举时触发。优点是可组合查询条件，缺点是多次枚举会重复执行（如数据库查询）。</li>
+<li><strong>两种语法</strong>：方法语法（链式调用）vs 查询语法（SQL风格），编译器最终都转为方法调用。</li>
+<li><strong>IQueryable vs IEnumerable</strong>：
+<ul>
+<li><code>IEnumerable</code>：LINQ to Objects，客户端过滤，拉取全部数据。</li>
+<li><code>IQueryable</code>：LINQ to SQL/EF，服务端过滤，生成 SQL 语句。</li>
+</ul>
+</li>
+<li><strong>性能陷阱</strong>：避免在 IQueryable 后混用客户端方法导致全表扫描；分页用 Skip/Take；投影只选所需列。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-6">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-6"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>延迟执行有什么好处和风险？</li>
+<li><code>First()</code> 和 <code>FirstOrDefault()</code> 的区别？</li>
+<li>如何在 LINQ 中实现左连接？</li>
+</ol>
+<hr>
+<h3 id="8-单例模式的实现方式">
+<a class="header-anchor" href="#8-%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f%e7%9a%84%e5%ae%9e%e7%8e%b0%e6%96%b9%e5%bc%8f"></a>
+8. 单例模式的实现方式？
+</h3><h3 id="面试简答考场口述答案-7">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-7"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>单例保证全局唯一实例。饿汉式利用静态字段初始化，CLR保证线程安全；懒汉式推荐用 <code>Lazy&lt;T&gt;</code> 实现线程安全的延迟加载。避免手写双检锁除非极端性能需求。构造函数必须私有。</p>
+</blockquote>
+<h3 id="深入解析-7">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-7"></a>
+📚深入解析
+</h3><ul>
+<li><strong>饿汉式</strong>：<code>private static readonly Singleton _inst = new();</code> 简单安全，但启动即占用资源。</li>
+<li><strong>懒汉式（推荐）</strong>：<code>private static readonly Lazy&lt;Singleton&gt; _inst = new(() =&gt; new Singleton());</code> 默认线程安全（LazyThreadSafetyMode.ExecutionAndPublication）。</li>
+<li><strong>双检锁</strong>：<code>lock</code> + <code>volatile</code> + 双重 null 检查。易出错，仅在 .NET Framework 旧版本或特殊场景考虑。</li>
+<li><strong>DI 容器中的单例</strong>：<code>services.AddSingleton&lt;T&gt;()</code>，由容器管理生命周期，无需手写单例代码。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-7">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-7"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>单例模式有什么缺点？（测试难、隐藏依赖、多线程竞争）</li>
+<li><code>Lazy&lt;T&gt;</code> 的线程安全模式有哪些？</li>
+<li>如何在单元测试中重置单例状态？</li>
+</ol>
+<hr>
+<h3 id="9-如何理解面向对象及设计原则">
+<a class="header-anchor" href="#9-%e5%a6%82%e4%bd%95%e7%90%86%e8%a7%a3%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e5%8f%8a%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99"></a>
+9. 如何理解面向对象及设计原则？
+</h3><h3 id="面试简答考场口述答案-8">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-8"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>OOP 通过封装、继承、多态抽象现实问题。设计遵循 SOLID 原则：单一职责、开闭、里氏替换、接口隔离、依赖倒置。并非所有场景都需 OOP，简单脚本可用过程式，复杂业务才抽象建模，避免过度设计。</p>
+</blockquote>
+<h3 id="深入解析-8">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-8"></a>
+📚深入解析
+</h3><ul>
+<li><strong>三大特征</strong>：封装（隐藏细节）、继承（复用/is-a）、多态（运行时行为差异化）。</li>
+<li><strong>SOLID 原则</strong>：
+<ul>
+<li>SRP：一个类只做一件事。</li>
+<li>OCP：对扩展开放，对修改关闭。</li>
+<li>LSP：子类可替换父类而不破坏程序。</li>
+<li>ISP：接口小而专，不强迫实现无关方法。</li>
+<li>DIP：依赖抽象而非具体实现。</li>
+</ul>
+</li>
+<li><strong>务实观点</strong>：小型工具/一次性代码不必强行 OOP；领域模型复杂时再用 DDD/OOP 建模。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-8">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-8"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>组合和继承哪个更优先？为什么？</li>
+<li>举例说明违反里氏替换原则的代码？</li>
+<li>贫血模型和充血模型的区别？</li>
+</ol>
+<hr>
+<h3 id="10-如何理解三层架构">
+<a class="header-anchor" href="#10-%e5%a6%82%e4%bd%95%e7%90%86%e8%a7%a3%e4%b8%89%e5%b1%82%e6%9e%b6%e6%9e%84"></a>
+10. 如何理解三层架构？
+</h3><h3 id="面试简答考场口述答案-9">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-9"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>三层分为 UI（展示）、BLL（业务逻辑）、DAL（数据访问），单向依赖以实现高内聚低耦合。通常增加 Entity/Model 层传递数据。优点是职责清晰、可独立测试、易于替换底层实现。现代架构常结合 DI 和 DDD 演进。</p>
+</blockquote>
+<h3 id="深入解析-9">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-9"></a>
+📚深入解析
+</h3><ul>
+<li><strong>分层职责</strong>：
+<ul>
+<li>UI：交互与展示，不含业务规则。</li>
+<li>BLL：核心业务编排、校验、事务控制。</li>
+<li>DAL：CRUD、SQL/ORM 操作。</li>
+<li>Model/Entity：跨层数据载体。</li>
+</ul>
+</li>
+<li><strong>依赖方向</strong>：UI → BLL → DAL。严禁反向依赖或跨层调用。</li>
+<li><strong>演进</strong>：传统三层易导致 BLL 臃肿；现代实践引入 Repository 模式、Service 层、DDD 领域层，配合依赖注入解耦。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-9">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-9"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>三层架构和 MVC 的关系？</li>
+<li>如果 BLL 需要调用另一个 BLL，怎么处理？</li>
+<li>什么是洋葱架构/整洁架构？</li>
+</ol>
+<hr>
+<h3 id="11-控制反转ioc与依赖注入di">
+<a class="header-anchor" href="#11-%e6%8e%a7%e5%88%b6%e5%8f%8d%e8%bd%acioc%e4%b8%8e%e4%be%9d%e8%b5%96%e6%b3%a8%e5%85%a5di"></a>
+11. 控制反转（IoC）与依赖注入（DI）？
+</h3><h3 id="面试简答考场口述答案-10">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-10"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>IoC 是将对象创建权交给容器的设计思想，DI 是实现 IoC 的方式。推荐构造函数注入，依赖清晰且便于测试。好处是解耦、支持 Mock 测试、灵活替换实现。常用容器有 .NET 内置 DI、Autofac 等。</p>
+</blockquote>
+<h3 id="深入解析-10">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-10"></a>
+📚深入解析
+</h3><ul>
+<li><strong>IoC 本质</strong>：从“自己 new”变为“容器给”，控制权反转。</li>
+<li><strong>DI 三种方式</strong>：
+<ul>
+<li>构造函数注入（首选）：强制依赖，对象创建即完整。</li>
+<li>属性注入：可选依赖，但可能导致不完整状态。</li>
+<li>方法注入：特定场景。</li>
+</ul>
+</li>
+<li><strong>生命周期</strong>：Transient（瞬时）、Scoped（作用域）、Singleton（单例）。</li>
+<li><strong>容器职责</strong>：注册服务、解析依赖图、管理生命周期、释放 IDisposable。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-10">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-10"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>Singleton 注入 Scoped 服务会有什么问题？</li>
+<li>如何解决循环依赖？</li>
+<li>.NET 内置 DI 和 Autofac 的主要区别？</li>
+</ol>
+<hr>
+<h3 id="12-adonet-核心对象及使用">
+<a class="header-anchor" href="#12-adonet-%e6%a0%b8%e5%bf%83%e5%af%b9%e8%b1%a1%e5%8f%8a%e4%bd%bf%e7%94%a8"></a>
+12. ADO.NET 核心对象及使用？
+</h3><h3 id="面试简答考场口述答案-11">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-11"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>ADO.NET 五大对象：Connection（连接）、Command（命令）、DataReader（只读流）、DataAdapter（填充DataSet）、DataSet（内存缓存）。使用时务必 using 释放连接，参数化查询防注入。实际项目多用 EF Core/Dapper，但 ADO.NET 是底层基础。</p>
+</blockquote>
+<h3 id="深入解析-11">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-11"></a>
+📚深入解析
+</h3><ul>
+<li><strong>Connection</strong>：<code>Open()/Close()</code>，连接池默认开启，复用物理连接。</li>
+<li><strong>Command</strong>：<code>ExecuteNonQuery</code>（增删改）、<code>ExecuteReader</code>（查询）、<code>ExecuteScalar</code>（单值）。</li>
+<li><strong>DataReader</strong>：只进只读，性能最高，读取期间保持连接打开。</li>
+<li><strong>DataAdapter + DataSet</strong>：离线数据操作，适合 WinForm/WPF 绑定，Web 端较少用。</li>
+<li><strong>安全</strong>：始终用 <code>@param</code> 参数化，禁止字符串拼接 SQL。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-11">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-11"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>DataReader 和 DataSet 的选择依据？</li>
+<li>连接池的工作原理？</li>
+<li>如何处理数据库事务？</li>
+</ol>
+<hr>
+<h3 id="13-序列化与反序列化技术及转换">
+<a class="header-anchor" href="#13-%e5%ba%8f%e5%88%97%e5%8c%96%e4%b8%8e%e5%8f%8d%e5%ba%8f%e5%88%97%e5%8c%96%e6%8a%80%e6%9c%af%e5%8f%8a%e8%bd%ac%e6%8d%a2"></a>
+13. 序列化与反序列化技术及转换？
+</h3><h3 id="面试简答考场口述答案-12">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-12"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>JSON 主流用 System.Text.Json（内置高性能）或 Newtonsoft.Json（功能全）。XML 用 XmlSerializer。DataTable 转泛型集合可用反射或 AutoMapper。建议封装统一工具类处理配置（驼峰、忽略循环引用等）。用途包括 API 通信、配置存储、深拷贝。</p>
+</blockquote>
+<h3 id="深入解析-12">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-12"></a>
+📚深入解析
+</h3><ul>
+<li><strong>JSON</strong>：
+<ul>
+<li><code>System.Text.Json</code>：.NET Core 3.0+ 内置，UTF-8 原生支持，性能优于 Newtonsoft。</li>
+<li><code>Newtonsoft.Json</code>：生态成熟，支持更多特性（如 TypeNameHandling）。</li>
+</ul>
+</li>
+<li><strong>XML</strong>：<code>XmlSerializer</code> 要求公共无参构造；<code>DataContractSerializer</code> 更灵活。</li>
+<li><strong>DataTable ↔ List<!-- raw HTML omitted --></strong>：反射逐行映射性能差，大数据量建议用 FastMember 或 Emit 优化。</li>
+<li><strong>工程实践</strong>：封装 <code>JsonHelper</code>，统一 JsonSerializerOptions，避免各处配置不一致。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-12">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-12"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>System.Text.Json 和 Newtonsoft.Json 如何选择？</li>
+<li>如何处理序列化中的循环引用？</li>
+<li>如何实现对象的深拷贝？</li>
+</ol>
+<hr>
+<h3 id="14-内存数据库数据仓储及持久化">
+<a class="header-anchor" href="#14-%e5%86%85%e5%ad%98%e6%95%b0%e6%8d%ae%e5%ba%93%e6%95%b0%e6%8d%ae%e4%bb%93%e5%82%a8%e5%8f%8a%e6%8c%81%e4%b9%85%e5%8c%96"></a>
+14. 内存数据库、数据仓储及持久化？
+</h3><h3 id="面试简答考场口述答案-13">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-13"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>内存数据库（如Redis）数据驻留内存，通过 Checkpoint（快照）和 Log（AOF）持久化。Repository 模式封装数据访问，屏蔽底层实现，便于测试和替换。持久化保证重启后数据不丢失。现代架构中 Repository 常配合 EF Core 使用。</p>
+</blockquote>
+<h3 id="深入解析-13">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-13"></a>
+📚深入解析
+</h3><ul>
+<li><strong>内存数据库持久化</strong>：
+<ul>
+<li>RDB（Checkpoint）：定时全量快照，恢复快但可能丢数据。</li>
+<li>AOF（Log）：追加写命令，数据安全但文件大、恢复慢。</li>
+<li>Redis 4.0+ 混合持久化：AOF 重写时嵌入 RDB 格式。</li>
+</ul>
+</li>
+<li><strong>Repository 模式</strong>：定义 <code>IRepository&lt;T&gt;</code> 接口，实现 CRUD。好处是业务层不依赖具体 ORM/数据库，可 Mock 测试。</li>
+<li><strong>争议</strong>：EF Core 本身已是 Repository + UnitOfWork，再套一层 Repository 可能冗余。视团队规范和复杂度而定。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-13">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-13"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>Redis 的 RDB 和 AOF 优缺点对比？</li>
+<li>Repository 模式在 EF Core 时代是否还有必要？</li>
+<li>什么是 CQRS？和 Repository 的关系？</li>
+</ol>
+<hr>
+<h3 id="15-托管代码与非托管代码的区别">
+<a class="header-anchor" href="#15-%e6%89%98%e7%ae%a1%e4%bb%a3%e7%a0%81%e4%b8%8e%e9%9d%9e%e6%89%98%e7%ae%a1%e4%bb%a3%e7%a0%81%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+15. 托管代码与非托管代码的区别？
+</h3><h3 id="面试简答考场口述答案-14">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-14"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>托管代码（C#/VB）编译为 IL，由 CLR 管理内存、安全和异常；非托管代码（C/C++）编译为机器码，自行管理资源。C# 通过 P/Invoke 或 C++/CLI 调用非托管代码。托管代码跨平台、安全；非托管代码性能高、贴近硬件。</p>
+</blockquote>
+<h3 id="深入解析-14">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-14"></a>
+📚深入解析
+</h3><ul>
+<li><strong>托管代码</strong>：享受 GC、JIT、类型安全、CAS 等服务。独立于平台和语言。</li>
+<li><strong>非托管代码</strong>：Win32 API、COM、原生 DLL。需手动 malloc/free，易内存泄漏。</li>
+<li><strong>互操作</strong>：
+<ul>
+<li>P/Invoke (<code>DllImport</code>)：调用 C 导出函数。</li>
+<li>COM Interop：调用 COM 组件。</li>
+<li>C++/CLI：混合编程桥梁。</li>
+</ul>
+</li>
+<li><strong>性能</strong>：跨边界调用有 marshaling 开销，高频调用需批处理或固定内存。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-14">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-14"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>P/Invoke 的性能开销来自哪里？</li>
+<li>如何在 C# 中安全地传递字符串给 C++？</li>
+<li>什么是 Blittable 类型？</li>
+</ol>
+<hr>
+<h3 id="16-托管资源与非托管资源的释放">
+<a class="header-anchor" href="#16-%e6%89%98%e7%ae%a1%e8%b5%84%e6%ba%90%e4%b8%8e%e9%9d%9e%e6%89%98%e7%ae%a1%e8%b5%84%e6%ba%90%e7%9a%84%e9%87%8a%e6%94%be"></a>
+16. 托管资源与非托管资源的释放？
+</h3><h3 id="面试简答考场口述答案-15">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-15"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>托管资源由 GC 自动回收；非托管资源（文件句柄、连接等）必须显式释放。实现 IDisposable 接口并用 using 语句是标准做法。若类持有非托管资源，还需实现终结器作为兜底，并调用 GC.SuppressFinalize 避免重复回收。</p>
+</blockquote>
+<h3 id="深入解析-15">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-15"></a>
+📚深入解析
+</h3><ul>
+<li><strong>Dispose Pattern</strong>：
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">void</span> <span class="n">Dispose</span><span class="p">()</span> <span class="p">{</span> <span class="n">Dispose</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="n">GC</span><span class="p">.</span><span class="n">SuppressFinalize</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">protected</span> <span class="k">virtual</span> <span class="k">void</span> <span class="n">Dispose</span><span class="p">(</span><span class="kt">bool</span> <span class="n">disposing</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">disposing</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* 释放托管资源 */</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 释放非托管资源 */</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><ul>
-<li>若一个类持有非托管资源，应实现 <code>IDisposable</code>（并提供终结器 <code>~Class()</code> 作为兜底，配合 <code>GC.SuppressFinalize</code> 避免重复回收）。</li>
+</span></span><span class="line"><span class="cl"><span class="p">~</span><span class="n">MyClass</span><span class="p">()</span> <span class="p">{</span> <span class="n">Dispose</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="p">}</span>
+</span></span></code></pre></div></li>
+<li><strong>using 语句</strong>：编译为 try-finally 块，确保异常时也调用 Dispose。</li>
+<li><strong>SafeHandle</strong>：推荐用 SafeHandle 封装非托管句柄，比 IntPtr + 终结器更安全可靠。</li>
+<li><strong>GC.SuppressFinalize</strong>：告知 GC 无需调用终结器，提升回收性能（终结器对象需两次 GC 才能回收）。</li>
 </ul>
-<h2 id="17wpf-和-mvvm-的理解">
-<a class="header-anchor" href="#17wpf-%e5%92%8c-mvvm-%e7%9a%84%e7%90%86%e8%a7%a3"></a>
-17、WPF 和 mvvm 的理解
-</h2><p>WPF：Windows Presentation Foundation</p>
-<p>MVVM 是 Model-View-ViewModel 的简写。在技术层面，WPF 也带来了诸如 Binding、Dependency Property、Routed Events、Command、DataTemplate、ControlTemplate 等新特性。</p>
-<p>Model 里面定义方法和属性；ViewModel 里面定义 Binding 和 Command；View 里面定义 UI 控件。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li><strong>WPF</strong>：微软的桌面 UI 框架，核心特色：XAML 声明式 UI、数据绑定、依赖属性、路由事件、命令、模板（ControlTemplate/DataTemplate）、样式（Style）、动画、硬件加速渲染。非常适合工控/上位机等富客户端开发。</li>
-<li><strong>MVVM</strong> 三要素：
-<ul>
-<li><strong>Model</strong>：数据与业务规则（可含数据访问）；</li>
-<li><strong>View</strong>：XAML 界面，只负责展示与交互；</li>
-<li><strong>ViewModel</strong>：桥接层，暴露可绑定属性与命令（<code>ICommand</code>），实现 <code>INotifyPropertyChanged</code> 通知属性变更。</li>
-</ul>
-</li>
-<li><strong>MVVM 核心机制</strong>：
-<ul>
-<li>数据绑定：<code>{Binding PropertyName}</code>，双向绑定 <code>Mode=TwoWay</code>；</li>
-<li>命令绑定：<code>{Binding CommandName}</code>（<code>ICommand</code> 的 <code>CanExecute</code>/<code>Execute</code>）；</li>
-<li>View 的 <code>DataContext</code> 指向 ViewModel（常由容器注入或代码设置）。</li>
-</ul>
-</li>
-<li>好处：UI 与业务逻辑彻底分离、可单元测试（ViewModel 脱离 UI 测试）、设计师与开发并行。</li>
-<li>常用框架：<strong>Prism</strong>（模块化、导航、DI）、MVVMLight、CommunityToolkit.Mvvm。</li>
-</ul>
-<h2 id="18sql-和存储过程为什么要用存储过程">
-<a class="header-anchor" href="#18sql-%e5%92%8c%e5%ad%98%e5%82%a8%e8%bf%87%e7%a8%8b%e4%b8%ba%e4%bb%80%e4%b9%88%e8%a6%81%e7%94%a8%e5%ad%98%e5%82%a8%e8%bf%87%e7%a8%8b"></a>
-18、SQL 和存储过程，为什么要用存储过程
-</h2><p>存储过程（Stored Procedure）是在大型数据库系统中，一组为了完成特定功能的 SQL 语句集，存储在数据库中，经过第一次编译后再次调用不需要再次编译，用户通过指定存储过程的名字并给出参数（如果该存储过程带有参数）来执行它，存储过程是数据库中的一个重要对象；存储过程中可以包含逻辑控制语句和数据操纵语句，它可以接受参数、输出参数、返回单个或多个结果集以及返回值。</p>
-<p><strong>优点</strong>：</p>
-<ul>
-<li>由于应用程序随着时间推移会不断更改、增删功能，SQL 语句会变得更复杂，存储过程为封装此类代码提供了一个替换位置；</li>
-<li>由于存储过程在创建时即在数据库服务器上进行了编译并存储在数据库中，所以存储过程运行要比单个的 SQL 语句块要快；</li>
-<li>由于在调用时只需提供存储过程名和必要的参数信息，所以在一定程度上也可以减少网络流量，减轻网络负担；</li>
-<li>可维护性高，更新存储过程通常比更改、测试以及重新部署程序集需要较少的时间和精力；</li>
-<li>代码精简一致，一个存储过程可以用于应用程序代码的不同位置；</li>
-<li>增强安全性：通过向用户授予对存储过程（而不是基于表）的访问权限，它们可以提供对特定数据的访问；提高代码安全，防止 SQL 注入（但未彻底解决，例如将数据操作语言 DML 附加到输入参数）；SQLParameter 类指定存储过程参数的数据类型，作为深层次防御性策略的一部分，可以验证用户提供的值类型（但也不是万无一失，还是应该在传递至数据库前得到附加验证）。</li>
-</ul>
-<p><strong>缺点</strong>：</p>
-<ul>
-<li>如果更改范围大到需要对输入存储过程的参数进行更改，或者要更改由其返回的数据，则仍需要更新程序集中的代码以添加参数，等等；</li>
-<li>可移植性差，由于存储过程将应用程序绑定到 Server，因此使用存储过程封装业务逻辑将限制应用程序的可移植性；如果应用程序的可移植性在您的环境中非常重要，则将业务逻辑封装在不特定于 RDBMS 的中间层中可能是一个更佳的选择。</li>
-</ul>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>执行存储过程的 ADO.NET 写法：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">cmd</span> <span class="p">=</span> <span class="k">new</span> <span class="n">SqlCommand</span><span class="p">(</span><span class="s">&#34;GetEmployeesByDepartment&#34;</span><span class="p">,</span> <span class="n">conn</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cmd</span><span class="p">.</span><span class="n">CommandType</span> <span class="p">=</span> <span class="n">CommandType</span><span class="p">.</span><span class="n">StoredProcedure</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cmd</span><span class="p">.</span><span class="n">Parameters</span><span class="p">.</span><span class="n">AddWithValue</span><span class="p">(</span><span class="s">&#34;@DepartmentID&#34;</span><span class="p">,</span> <span class="m">1</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// ...</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><ul>
-<li>现代实践观点：存储过程适合<strong>复杂、稳定的数据操作逻辑</strong>（报表、批量处理、跨表事务）；但若业务逻辑变化频繁、需要跨数据库移植，则建议把逻辑放应用层，配合 ORM 管理。面试时能说出优缺点与适用场景即可。</li>
-</ul>
-<h2 id="19反射">
-<a class="header-anchor" href="#19%e5%8f%8d%e5%b0%84"></a>
-19、反射
-</h2><p>C# 中的反射常用于在程序的运行时获取类型的元数据，可获取的信息包括已加载到进程中的程序集和类型信息，它和 C++ 中的 RTTI（Runtime Type Information）的作用是差不多的。</p>
-<p>为了能够使用反射，需要在项目中引用 System.Reflection 命名空间，在使用反射的开始，你会获取一个 Type 类型的对象，从这个对象上进一步获取程序集、类型、模块等信息，可以通过反射动态的生成某个类型的实例，甚至还能动态调用这个类型上的方法。</p>
-<p>在 System.Reflection 命名空间下，定义了如下几大核心类型：Assembly、Module、Enum、MethodInfo、ConstructorInfo、MemberInfo、ParameterInfo、Type、FieldInfo、EventInfo、PropertyInfo。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>简单使用示例：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="n">Type</span> <span class="n">t</span> <span class="p">=</span> <span class="k">typeof</span><span class="p">(</span><span class="n">MyClass</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 动态创建实例</span>
-</span></span><span class="line"><span class="cl"><span class="kt">object</span> <span class="n">obj</span> <span class="p">=</span> <span class="n">Activator</span><span class="p">.</span><span class="n">CreateInstance</span><span class="p">(</span><span class="n">t</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 动态调用方法</span>
-</span></span><span class="line"><span class="cl"><span class="n">MethodInfo</span> <span class="n">mi</span> <span class="p">=</span> <span class="n">t</span><span class="p">.</span><span class="n">GetMethod</span><span class="p">(</span><span class="s">&#34;Hello&#34;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="n">mi</span><span class="p">.</span><span class="n">Invoke</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
-</span></span></code></pre></div><ul>
-<li>反射的常见应用见第 5 题补充；注意性能（可缓存 <code>MethodInfo</code>/<code>PropertyInfo</code>）与安全（<code>Type.GetType</code> 传入外部字符串需校验）。</li>
-</ul>
-<h2 id="20流处理">
-<a class="header-anchor" href="#20%e6%b5%81%e5%a4%84%e7%90%86"></a>
-20、流处理
-</h2><p>FileStream 文件流；StreamReader StreamWriter 字节流（FileStream）；BinaryReader BinaryWriter 二进制流。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>原文表述略有混淆，纠正如下：
-<ul>
-<li><strong>FileStream</strong>：文件字节流，读写文件底层字节；</li>
-<li><strong>StreamReader / StreamWriter</strong>：<strong>文本</strong>流（按字符读写文本文件），内部可包一个 FileStream；</li>
-<li><strong>BinaryReader / BinaryWriter</strong>：<strong>二进制</strong>流（按基础类型读写二进制数据）；</li>
-<li>另有：<strong>MemoryStream</strong>（内存流）、<strong>BufferedStream</strong>（缓冲流）、<strong>NetworkStream</strong>（网络流）、<strong>GZipStream</strong>（压缩流）。</li>
-</ul>
-</li>
-<li>示例（文本读写）：</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 写</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">sw</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StreamWriter</span><span class="p">(</span><span class="s">&#34;log.txt&#34;</span><span class="p">,</span> <span class="n">append</span><span class="p">:</span> <span class="kc">true</span><span class="p">))</span> <span class="p">{</span> <span class="n">sw</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="s">&#34;hello&#34;</span><span class="p">);</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="c1">// 读</span>
-</span></span><span class="line"><span class="cl"><span class="k">using</span> <span class="p">(</span><span class="kt">var</span> <span class="n">sr</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StreamReader</span><span class="p">(</span><span class="s">&#34;log.txt&#34;</span><span class="p">))</span> <span class="p">{</span> <span class="kt">string</span> <span class="n">line</span> <span class="p">=</span> <span class="n">sr</span><span class="p">.</span><span class="n">ReadLine</span><span class="p">();</span> <span class="p">}</span>
-</span></span></code></pre></div><ul>
-<li>所有流都建议用 <code>using</code> 管理释放；<code>Stream.CopyTo</code> 可方便地在流之间复制数据。</li>
-</ul>
-<h2 id="21单元测试private-能否做单元测试范围">
-<a class="header-anchor" href="#21%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95private-%e8%83%bd%e5%90%a6%e5%81%9a%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95%e8%8c%83%e5%9b%b4"></a>
-21、单元测试，private 能否做单元测试，范围
-</h2><p>Right：验证结果（主要功能和逻辑）是否正确；</p>
-<p>B：边界条件是否正确；</p>
-<p>I：是否可以检查反向关联；这里所谓反向关联，是指用反向逻辑来验证我们的结果，比如说要验证平方根是否正确时，可以求这个平方根的平方跟我们的输入是否一致。</p>
-<p>C：是否可以采用其他方法来 cross-check 结果；cross-check 是在单元测试中采用与实际模块中不同的方法来实现同样的功能作为期望结果，去与实际模块中得到的结果做对比。</p>
-<p>E：错误条件是否可以重现；</p>
-<p>P：性能方面是否满足条件。</p>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>上述是 <strong>RIGHT-BICEP</strong> 测试设计原则（出自《Pragmatic Unit Testing》）：Right（正确性）、Boundary（边界）、Inverse（反向验证）、Cross-check（交叉验证）、Error（错误路径）、Performance（性能）。</li>
-<li><strong>private 方法能否测试？</strong> 可以，常用三种手段：
-<ol>
-<li>反射调用（<code>typeof(Class).GetMethod(&quot;Method&quot;, BindingFlags.NonPublic | BindingFlags.Instance)</code>）；</li>
-<li>程序集特性 <code>[assembly: InternalsVisibleTo(&quot;测试程序集名&quot;)]</code>，把方法改为 <code>internal</code>；</li>
-<li>更推荐的做法：<strong>重构</strong>——把私有逻辑提取到独立类或 <code>internal</code> 方法，通过公共 API 间接覆盖（私有细节不应成为测试契约）。</li>
+<h3 id="面试延伸追问预判面试官后续提问-15">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-15"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>为什么终结器对象需要两次 GC？</li>
+<li>SafeHandle 相比 IntPtr 有什么优势？</li>
+<li>IAsyncDisposable 的使用场景？</li>
 </ol>
-</li>
-<li>C# 常用测试框架：NUnit、xUnit、MSTest；Mock 框架：Moq、NSubstitute、FakeItEasy。</li>
-<li>断言风格：AAA（Arrange-Act-Assert）三段式组织用例。</li>
+<hr>
+<h3 id="17-wpf-和-mvvm-的理解">
+<a class="header-anchor" href="#17-wpf-%e5%92%8c-mvvm-%e7%9a%84%e7%90%86%e8%a7%a3"></a>
+17. WPF 和 MVVM 的理解？
+</h3><h3 id="面试简答考场口述答案-16">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-16"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>MVVM 将应用分为 Model（数据）、View（界面）、ViewModel（桥接）。核心是数据绑定和命令，实现 UI 与逻辑彻底分离。ViewModel 实现 INotifyPropertyChanged 通知 UI 更新。好处是可测试、设计师开发并行。常用框架有 CommunityToolkit.Mvvm、Prism。</p>
+</blockquote>
+<h3 id="深入解析-16">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-16"></a>
+📚深入解析
+</h3><ul>
+<li><strong>三要素</strong>：
+<ul>
+<li>Model：业务实体与规则。</li>
+<li>View：XAML 界面，只负责展示。</li>
+<li>ViewModel：暴露绑定属性和 ICommand，处理用户输入。</li>
 </ul>
-<h2 id="22c-的修饰符">
-<a class="header-anchor" href="#22c-%e7%9a%84%e4%bf%ae%e9%a5%b0%e7%ac%a6"></a>
-22、C# 的修饰符
-</h2><p>类的访问修饰符主要有两个，即 internal 和 public，如果省略了访问修饰符，即为 internal。</p>
-<p>类中成员的访问修饰符有 4 个，具体用法如下：</p>
-<ol>
-<li><strong>public</strong>：成员可以被任何代码访问。</li>
-<li><strong>private</strong>：成员仅能被同一个类中的代码访问，如果在类成员前未使用任何访问修饰符，则默认为 private。</li>
-<li><strong>internal</strong>：成员仅能被同一个项目（程序集）中的代码访问。</li>
-<li><strong>protected</strong>：成员只能由类或派生类中的代码访问。</li>
+</li>
+<li><strong>核心机制</strong>：
+<ul>
+<li>Data Binding：<code>{Binding Prop}</code>，双向同步。</li>
+<li>ICommand：<code>CanExecute</code> 控制按钮可用性，<code>Execute</code> 处理逻辑。</li>
+<li>INotifyPropertyChanged：属性变更通知 UI 刷新。</li>
+</ul>
+</li>
+<li><strong>优势</strong>：单元测试只需测 ViewModel；UI 重构不影响逻辑；支持设计时数据。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-16">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-16"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>ViewModel 如何打开新窗口而不破坏解耦？</li>
+<li>ObservableCollection 和 List 在绑定时的区别？</li>
+<li>MVVM 中如何处理复杂导航？</li>
 </ol>
-<p><strong>【补充】</strong></p>
+<hr>
+<h3 id="18-sql-存储过程的优缺点及使用">
+<a class="header-anchor" href="#18-sql-%e5%ad%98%e5%82%a8%e8%bf%87%e7%a8%8b%e7%9a%84%e4%bc%98%e7%bc%ba%e7%82%b9%e5%8f%8a%e4%bd%bf%e7%94%a8"></a>
+18. SQL 存储过程的优缺点及使用？
+</h3><h3 id="面试简答考场口述答案-17">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-17"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>存储过程是预编译的 SQL 语句集，优点包括性能好（预编译）、减少网络流量、封装复杂逻辑、增强安全性。缺点是移植性差、调试难、业务逻辑耦合在 DB 中。现代开发倾向于将逻辑放应用层，存储过程仅用于报表、批量处理等场景。</p>
+</blockquote>
+<h3 id="深入解析-17">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-17"></a>
+📚深入解析
+</h3><ul>
+<li><strong>优点</strong>：
 <ul>
-<li>组合修饰符：
-<ul>
-<li><code>protected internal</code>：同一程序集内任意代码 <strong>或</strong> 派生类可访问（并集）；</li>
-<li><code>private protected</code>（C# 7.2+）：同一程序集内的派生类可访问（交集）；</li>
-<li><code>sealed</code>（类不可继承）、<code>static</code>（静态成员）、<code>abstract</code>（抽象成员/类）、<code>virtual</code>/<code>override</code>（虚方法/重写）、<code>readonly</code>、<code>const</code>。</li>
+<li>性能：执行计划缓存，减少解析开销。</li>
+<li>网络：只传参数和结果，减少带宽。</li>
+<li>安全：可授权 SP 而非表，防 SQL 注入（参数化）。</li>
+<li>维护：逻辑集中，修改无需重部署应用。</li>
 </ul>
 </li>
-<li>修饰符也可修饰方法/属性/字段/事件，访问级别取决于&quot;成员可见性 + 类型可见性&quot;的较小者。</li>
-</ul>
-<h2 id="22原文编号重复wcf-通信中的-abc-基本概念">
-<a class="header-anchor" href="#22%e5%8e%9f%e6%96%87%e7%bc%96%e5%8f%b7%e9%87%8d%e5%a4%8dwcf-%e9%80%9a%e4%bf%a1%e4%b8%ad%e7%9a%84-abc-%e5%9f%ba%e6%9c%ac%e6%a6%82%e5%bf%b5"></a>
-22（原文编号重复）、WCF 通信中的 ABC 基本概念
-</h2><p><strong>Address</strong>：每一个 WCF 的 Service 都有一个唯一的地址。这个地址给出了 Service 的地址和传输协议（Transport Protocol）。</p>
-<p><strong>Binding</strong>：通信（Communication）的方式很多，同步的 request/reply 模式，非同步的 fire-and-forget 模式。消息可以单向或者双向的发送接收，可以立即发送或者把它放入到某一个队列中再处理。所供选择的传输协议也有 Http、Tcp、P2P、IPC 等。当要考虑 Client/Server 如何进行通讯的时候，除了考虑以上提到的几点之外，还有其它很多需要考虑的因素，如安全、性能等。因此，简单来说，Binding 只不过是微软提供的一组考虑比较周全、常用的封装好的通信方式。</p>
-<p><strong>Contract</strong>：Contract 描述了 Service 能提供的各种服务。</p>
+<li><strong>缺点</strong>：
 <ul>
-<li><code>[ServiceContract]</code>：指明该接口是一个 WCF 的服务契约，可以被外部调用，不加则无法被外部调用。</li>
-<li><code>[OperationContract]</code>：指明该方法是一个 WCF 的方法契约，可以被外部调用，不加则无法被外部调用。</li>
-<li><code>[DataContract]</code>：数据契约，指明该类是可供服务端和客户端相互传递自定义数据的类型，声明后该类型就可以被序列化在服务端和客户端之间传送。</li>
-<li><code>[DataMember]</code>：数据成员，声明后的属性可以参与到客户端和服务器端的类的属性的序列化，没有声明的不参与序列化。</li>
+<li>移植性：绑定特定数据库方言。</li>
+<li>测试难：难以单元测试和 Mock。</li>
+<li>版本控制：不如代码方便。</li>
+<li>扩展性：DB 服务器资源有限，应用层更易水平扩展。</li>
 </ul>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>WCF（Windows Communication Foundation）的 ABC 即：<strong>A</strong>ddress（服务地址，含传输协议）、<strong>B</strong>inding（通信方式/协议绑定，如 basicHttpBinding、netTcpBinding）、<strong>C</strong>ontract（服务契约/数据契约/消息契约）。</li>
-<li>说明：WCF 在 .NET Core/.NET 5+ 中已不再默认提供（微软建议改用 gRPC、ASP.NET Core WebAPI），面试了解概念即可，不必深究实现。</li>
+</li>
+<li><strong>ADO.NET 调用</strong>：<code>cmd.CommandType = CommandType.StoredProcedure</code>。</li>
 </ul>
-<h2 id="23c-中常用的集合类">
-<a class="header-anchor" href="#23c-%e4%b8%ad%e5%b8%b8%e7%94%a8%e7%9a%84%e9%9b%86%e5%90%88%e7%b1%bb"></a>
-23、C# 中常用的集合类
-</h2><ul>
-<li><code>Dictionary&lt;TKey, TValue&gt;</code>：键值对集合</li>
-<li><code>LinkedList&lt;T&gt;</code>：双链表</li>
-<li><code>List&lt;T&gt;</code>：动态数组</li>
-<li><code>Queue&lt;T&gt;</code>：队列</li>
-<li><code>SortedDictionary&lt;TKey, TValue&gt;</code>：有序键值对集合</li>
-<li><code>SortedList&lt;TKey, TValue&gt;</code>：类似 SortedDictionary，数据存储结构为二分查找树（实为排序数组+查找，面试按原文理解）</li>
-<li><code>Stack&lt;T&gt;</code>：栈</li>
-</ul>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>常用集合对比：</li>
-</ul>
-<table>
-	<thead>
-			<tr>
-					<th>集合</th>
-					<th>特点</th>
-					<th>适用场景</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td><code>List&lt;T&gt;</code></td>
-					<td>动态数组，按索引访问快，中间插入/删除慢</td>
-					<td>大多数列表场景</td>
-			</tr>
-			<tr>
-					<td><code>Dictionary&lt;K,V&gt;</code></td>
-					<td>哈希表，键唯一，查找 O(1)</td>
-					<td>按键快速查找</td>
-			</tr>
-			<tr>
-					<td><code>HashSet&lt;T&gt;</code></td>
-					<td>无序集合，元素唯一，去重 O(1)</td>
-					<td>去重、集合运算</td>
-			</tr>
-			<tr>
-					<td><code>Queue&lt;T&gt;</code></td>
-					<td>先进先出（FIFO）</td>
-					<td>队列、任务调度</td>
-			</tr>
-			<tr>
-					<td><code>Stack&lt;T&gt;</code></td>
-					<td>后进先出（LIFO）</td>
-					<td>撤销操作、表达式求值</td>
-			</tr>
-			<tr>
-					<td><code>LinkedList&lt;T&gt;</code></td>
-					<td>双链表，插入/删除快，随机访问慢</td>
-					<td>频繁插入删除</td>
-			</tr>
-			<tr>
-					<td><code>SortedDictionary&lt;K,V&gt;</code></td>
-					<td>红黑树，按键有序</td>
-					<td>需要有序遍历的键值对</td>
-			</tr>
-			<tr>
-					<td><code>ObservableCollection&lt;T&gt;</code></td>
-					<td>集合增删自动通知 UI</td>
-					<td>WPF 数据绑定列表</td>
-			</tr>
-	</tbody>
-</table>
-<ul>
-<li>注意：<code>Hashtable</code>（非泛型）→ 用 <code>Dictionary&lt;K,V&gt;</code>；<code>ArrayList</code>（非泛型）→ 用 <code>List&lt;T&gt;</code>。</li>
-</ul>
-<h2 id="24string-和-stringbuilder-的区别">
-<a class="header-anchor" href="#24string-%e5%92%8c-stringbuilder-%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
-24、string 和 stringbuilder 的区别
-</h2><ol>
-<li>string 继承 object 类，stringbuilder 继承 AbstractStringBuilder；</li>
-<li>string 是不可变类，stringbuilder 是可变类；</li>
-<li>stringbuilder 运行速度比 string 快。</li>
+<h3 id="面试延伸追问预判面试官后续提问-17">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-17"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>存储过程和 ORM 如何取舍？</li>
+<li>如何防止存储过程中的 SQL 注入？</li>
+<li>存储过程的执行计划缓存失效场景？</li>
 </ol>
-<p><strong>【补充】（重要修正）</strong></p>
+<hr>
+<h3 id="19-反射的核心类型及使用">
+<a class="header-anchor" href="#19-%e5%8f%8d%e5%b0%84%e7%9a%84%e6%a0%b8%e5%bf%83%e7%b1%bb%e5%9e%8b%e5%8f%8a%e4%bd%bf%e7%94%a8"></a>
+19. 反射的核心类型及使用？
+</h3><h3 id="面试简答考场口述答案-18">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-18"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>反射核心类型包括 Type、Assembly、MethodInfo、PropertyInfo 等，位于 System.Reflection 命名空间。通过 typeof 或 GetType 获取 Type，再用 Activator.CreateInstance 创建实例，MethodInfo.Invoke 调用方法。注意性能开销，高频场景应缓存或优化。</p>
+</blockquote>
+<h3 id="深入解析-18">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-18"></a>
+📚深入解析
+</h3><ul>
+<li><strong>入口</strong>：<code>Type</code> 是反射核心，描述类型元数据。</li>
+<li><strong>动态操作</strong>：
 <ul>
-<li><strong>string 不可变</strong>：任何修改操作（<code>+</code>、<code>Substring</code>、<code>Replace</code>）都会<strong>创建新字符串对象</strong>，旧对象等待 GC。少量拼接（编译期常量）编译器会优化为 <code>string.Concat</code>，性能尚可。</li>
-<li><strong>StringBuilder 可变</strong>：内部维护字符数组，<code>Append</code> 等在原对象上修改，适合<strong>循环内大量拼接</strong>，避免频繁创建对象。</li>
-<li>正确结论：
-<ul>
-<li>少量/固定次数拼接 → 用 <code>string</code>（简洁）；</li>
-<li>循环内大量拼接 → 用 <code>StringBuilder</code>（更快、省内存）。</li>
+<li>创建：<code>Activator.CreateInstance(type)</code></li>
+<li>调用：<code>methodInfo.Invoke(obj, args)</code></li>
+<li>读写：<code>propInfo.GetValue/SetValue</code></li>
 </ul>
 </li>
-<li>补充：<code>string</code> 是引用类型但表现像值类型（相等性比较的是内容）；<code>==</code> 对 string 比较的是值。</li>
+<li><strong>性能</strong>：反射比直接调用慢数十倍。优化手段：缓存 MemberInfo、Delegate.CreateDelegate、表达式树、Source Generator。</li>
+<li><strong>安全</strong>：<code>Type.GetType(string)</code> 接受外部输入时需验证，防止加载恶意程序集。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// 大量拼接场景：StringBuilder 明显更快</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">sb</span> <span class="p">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="p">();</span>
-</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="m">10000</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> <span class="n">sb</span><span class="p">.</span><span class="n">Append</span><span class="p">(</span><span class="n">i</span><span class="p">).</span><span class="n">Append</span><span class="p">(</span><span class="sc">&#39;,&#39;</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="kt">string</span> <span class="n">result</span> <span class="p">=</span> <span class="n">sb</span><span class="p">.</span><span class="n">ToString</span><span class="p">();</span>
-</span></span></code></pre></div><h2 id="25属性变更通知inotifypropertychanged-和-observablecollectiont">
-<a class="header-anchor" href="#25%e5%b1%9e%e6%80%a7%e5%8f%98%e6%9b%b4%e9%80%9a%e7%9f%a5inotifypropertychanged-%e5%92%8c-observablecollectiont"></a>
-25、属性变更通知（INotifyPropertyChanged 和 ObservableCollection&lt;T&gt;）
-</h2><ol>
-<li><code>INotifyPropertyChanged</code> 向客户端发出某一属性值更改的通知。</li>
-<li><code>ObservableCollection&lt;T&gt;</code> 类，它是实现 <code>INotifyCollectionChanged</code> 接口的数据集合的内置实现。表示一个动态数据集合，在添加项、移除项或刷新整个列表时，此集合将提供通知。</li>
+<h3 id="面试延伸追问预判面试官后续提问-18">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-18"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>如何获取泛型类型的定义？</li>
+<li>反射能否调用私有构造函数？</li>
+<li>BindingFlags 的作用？</li>
 </ol>
-<p><strong>【补充】</strong></p>
+<hr>
+<h3 id="20-流处理filestreamstreamreaderbinaryreader">
+<a class="header-anchor" href="#20-%e6%b5%81%e5%a4%84%e7%90%86filestreamstreamreaderbinaryreader"></a>
+20. 流处理（FileStream/StreamReader/BinaryReader）？
+</h3><h3 id="面试简答考场口述答案-19">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-19"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>FileStream 是文件字节流底层；StreamReader/Writer 是文本字符流，内部包装 FileStream；BinaryReader/Writer 用于二进制数据类型读写。所有流都应使用 using 确保释放。Stream.CopyTo 可便捷复制流数据。</p>
+</blockquote>
+<h3 id="深入解析-19">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-19"></a>
+📚深入解析
+</h3><ul>
+<li><strong>层次结构</strong>：
 <ul>
-<li>二者是 WPF/MVVM 数据绑定自动刷新的基础：</li>
+<li><code>Stream</code>：抽象基类。</li>
+<li><code>FileStream</code>：文件 IO。</li>
+<li><code>StreamReader/Writer</code>：文本编码转换（UTF-8等）。</li>
+<li><code>BinaryReader/Writer</code>：基础类型二进制序列化。</li>
+<li><code>MemoryStream</code>：内存缓冲。</li>
+<li><code>BufferedStream</code>：减少系统调用。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="k">class</span> <span class="nc">Person</span> <span class="p">:</span> <span class="n">INotifyPropertyChanged</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="kt">string</span> <span class="n">_name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="kt">string</span> <span class="n">Name</span>
-</span></span><span class="line"><span class="cl">    <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">get</span> <span class="p">=&gt;</span> <span class="n">_name</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="k">set</span> <span class="p">{</span> <span class="n">_name</span> <span class="p">=</span> <span class="k">value</span><span class="p">;</span> <span class="n">OnPropertyChanged</span><span class="p">(</span><span class="n">nameof</span><span class="p">(</span><span class="n">Name</span><span class="p">));</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="k">event</span> <span class="n">PropertyChangedEventHandler</span> <span class="n">PropertyChanged</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">private</span> <span class="k">void</span> <span class="n">OnPropertyChanged</span><span class="p">(</span><span class="kt">string</span> <span class="n">propName</span><span class="p">)</span> <span class="p">=&gt;</span>
-</span></span><span class="line"><span class="cl">        <span class="n">PropertyChanged</span><span class="p">?.</span><span class="n">Invoke</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">new</span> <span class="n">PropertyChangedEventArgs</span><span class="p">(</span><span class="n">propName</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><ul>
-<li><code>ObservableCollection&lt;T&gt;</code>：绑定到 <code>ListBox</code>/<code>DataGrid</code> 等后，<code>Add/Remove/Clear</code> 会自动刷新 UI；若<strong>修改某个元素的属性</strong>，仍需该元素实现 <code>INotifyPropertyChanged</code>。</li>
-<li>注意：<code>List&lt;T&gt;</code> 没有变更通知，改集合后 UI 不会自动更新，这是两者选择的依据。</li>
-<li>现代简化：可使用 CommunityToolkit.Mvvm 的 <code>[ObservableProperty]</code> 源生成器，避免手写样板代码。</li>
+</li>
+<li><strong>最佳实践</strong>：
+<ul>
+<li>始终 <code>using</code> 或 <code>await using</code>。</li>
+<li>大文件用异步方法 <code>ReadAsync/WriteAsync</code>。</li>
+<li>文本读写指定 Encoding，避免乱码。</li>
+<li><code>Stream.CopyTo</code> 内部有缓冲区优化。</li>
 </ul>
-<h2 id="26什么是-xml-扩展-xaml有何优点">
-<a class="header-anchor" href="#26%e4%bb%80%e4%b9%88%e6%98%af-xml-%e6%89%a9%e5%b1%95-xaml%e6%9c%89%e4%bd%95%e4%bc%98%e7%82%b9"></a>
-26、什么是 XML 扩展 XAML？有何优点？
-</h2><ol>
-<li>XAML 是 eXtensible Application Markup Language 的英文缩写，相应于中文称为可扩展应用程序标记语言，它是微软公司为构建应用程序用户界面而创建的一种新的描述性语言。</li>
-<li>XAML 是 XML 语言的一个衍生物，它的语法与 XML 语言完全一致，它的功能就是专门用来设计和实现程序的 UI。</li>
-<li>XAML 一个很大的优点就是由于 WPF 支持 WEB 开发，那么 WEB 开发和桌面开发的转换是很简单，修改的地方很短，同时 UI 与逻辑完全分离，所以逻辑代码也几乎不用改动。</li>
+</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-19">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-19"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>StreamReader 的 ReadLine 和 ReadToEnd 区别？</li>
+<li>如何高效读取超大文件？</li>
+<li>MemoryStream 何时需要 Dispose？</li>
 </ol>
-<p><strong>【补充】</strong></p>
+<hr>
+<h3 id="21-单元测试原则及-private-方法测试">
+<a class="header-anchor" href="#21-%e5%8d%95%e5%85%83%e6%b5%8b%e8%af%95%e5%8e%9f%e5%88%99%e5%8f%8a-private-%e6%96%b9%e6%b3%95%e6%b5%8b%e8%af%95"></a>
+21. 单元测试原则及 Private 方法测试？
+</h3><h3 id="面试简答考场口述答案-20">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-20"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>RIGHT-BICEP 原则：正确性、边界、反向验证、交叉验证、错误路径、性能。Private 方法可通过反射或 InternalsVisibleTo 测试，但更推荐重构为 public/internal 或通过公共 API 间接覆盖。私有细节不应成为测试契约。</p>
+</blockquote>
+<h3 id="深入解析-20">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-20"></a>
+📚深入解析
+</h3><ul>
+<li><strong>RIGHT-BICEP</strong>：
 <ul>
-<li>XAML 与代码分离：<code>.xaml</code> 描述界面 + <code>.xaml.cs</code> 承载逻辑（code-behind），编译时自动生成 partial 类。</li>
-<li>主要优点：
-<ul>
-<li><strong>声明式 UI</strong>：界面即文档，易于阅读和维护；</li>
-<li><strong>UI 与逻辑分离</strong>：设计人员可独立调整界面；</li>
-<li><strong>数据绑定/模板/样式/动画</strong>等特性与 XAML 深度集成；</li>
-<li>跨技术生态（WPF / UWP / WinUI / MAUI 都基于 XAML 思想），学习一次多处复用。</li>
+<li>Right：结果正确。</li>
+<li>Boundary：边界条件（空、最大、零）。</li>
+<li>Inverse：反向运算验证。</li>
+<li>Cross-check：用另一种算法验证。</li>
+<li>Error：异常路径。</li>
+<li>Performance：性能基准。</li>
 </ul>
 </li>
+<li><strong>Private 测试策略</strong>：
+<ul>
+<li>反射：<code>GetMethod(&quot;Name&quot;, BindingFlags.NonPublic | BindingFlags.Instance)</code>。</li>
+<li>InternalsVisibleTo：将 private 改为 internal，测试程序集可见。</li>
+<li><strong>重构（推荐）</strong>：私有方法复杂说明类职责过重，应提取为新类或 public 方法。</li>
 </ul>
-<h2 id="27解释什么是依赖属性它和以前的属性有什么不同为什么在-wpf-会使用它">
-<a class="header-anchor" href="#27%e8%a7%a3%e9%87%8a%e4%bb%80%e4%b9%88%e6%98%af%e4%be%9d%e8%b5%96%e5%b1%9e%e6%80%a7%e5%ae%83%e5%92%8c%e4%bb%a5%e5%89%8d%e7%9a%84%e5%b1%9e%e6%80%a7%e6%9c%89%e4%bb%80%e4%b9%88%e4%b8%8d%e5%90%8c%e4%b8%ba%e4%bb%80%e4%b9%88%e5%9c%a8-wpf-%e4%bc%9a%e4%bd%bf%e7%94%a8%e5%ae%83"></a>
-27、解释什么是依赖属性，它和以前的属性有什么不同？为什么在 WPF 会使用它？
-</h2><ol>
-<li>
-<p>Windows Presentation Foundation (WPF) 提供了一组服务，这些服务可用于扩展公共语言运行时 (CLR) 属性的功能，这些服务通常统称为 WPF 属性系统。由 WPF 属性系统支持的属性称为依赖项属性。</p>
 </li>
-<li>
-<p>它和以往属性的不同之处：</p>
-<p>（1）依赖属性是一种特定类型的属性。这种属性的特殊之处在于，其属性值受到 Windows 运行时中专用属性系统的跟踪和影响。</p>
-<p>（2）依赖属性的用途是提供一种系统的方式，用来基于其他输入（在应用运行时其内部出现的其他属性、事件和状态）计算属性的值。</p>
-<p>（3）依赖属性代表或支持编程模型的某种特定功能，用于定义 Windows 运行时应用，这种模型使用 XAML 编写 UI，使用 C#、Microsoft Visual Basic 或 Visual C++ 组件扩展（C++/CX）编写代码。</p>
-<p>一般的属性没有这么复杂。</p>
-</li>
-<li>
-<p>WPF 使用它的优点：</p>
-<p>（1）优化了属性的存储，直接减少了不必要的内存使用；</p>
-<p>（2）有属性变化通知、限制、验证等；</p>
-<p>（3）可以储存多个值，配合 Expression 及 Animation 等，打造出更灵活的使用方法。</p>
-</li>
+<li><strong>AAA 模式</strong>：Arrange（准备）、Act（执行）、Assert（断言）。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-20">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-20"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>Mock 和 Stub 的区别？</li>
+<li>如何测试异步方法？</li>
+<li>单元测试覆盖率多少合适？</li>
 </ol>
-<p><strong>【补充】</strong></p>
+<hr>
+<h3 id="22-c-访问修饰符详解">
+<a class="header-anchor" href="#22-c-%e8%ae%bf%e9%97%ae%e4%bf%ae%e9%a5%b0%e7%ac%a6%e8%af%a6%e8%a7%a3"></a>
+22. C# 访问修饰符详解？
+</h3><h3 id="面试简答考场口述答案-21">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-21"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>类默认 internal，成员默认 private。public 全局可见；private 类内可见；internal 程序集内可见；protected 派生类可见。组合修饰符：protected internal（并集）、private protected（交集，C# 7.2+）。访问级别受限于类型和成员的较小者。</p>
+</blockquote>
+<h3 id="深入解析-21">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-21"></a>
+📚深入解析
+</h3><ul>
+<li><strong>基础修饰符</strong>：
 <ul>
-<li>依赖属性（Dependency Property）由 <strong>DependencyProperty</strong> 注册（<code>DependencyProperty.Register</code>），支持：
-<ul>
-<li><strong>属性值继承</strong>（如沿逻辑树继承 DataContext、FontSize）；</li>
-<li><strong>数据绑定/样式/模板/动画/触发器</strong>统一接入属性系统；</li>
-<li><strong>变更通知与验证回调</strong>（<code>PropertyChangedCallback</code>、<code>ValidateValueCallback</code>）；</li>
-<li><strong>内存优化</strong>：未设置的属性不占用实例字段，默认值集中存储。</li>
+<li><code>public</code>：无限制。</li>
+<li><code>private</code>：仅本类。</li>
+<li><code>internal</code>：同程序集。</li>
+<li><code>protected</code>：本类 + 派生类。</li>
 </ul>
 </li>
-<li>定义示例：</li>
+<li><strong>组合修饰符</strong>：
+<ul>
+<li><code>protected internal</code>：同程序集 OR 派生类（并集）。</li>
+<li><code>private protected</code>：同程序集 AND 派生类（交集）。</li>
 </ul>
+</li>
+<li><strong>其他修饰符</strong>：<code>static</code>, <code>sealed</code>, <code>abstract</code>, <code>virtual</code>, <code>override</code>, <code>readonly</code>, <code>const</code>。</li>
+<li><strong>规则</strong>：成员可见性不能高于所在类型的可见性。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-21">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-21"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>internal 在跨程序集测试中如何使用？</li>
+<li>sealed 类和方法的作用？</li>
+<li>const 和 readonly 的区别？</li>
+</ol>
+<hr>
+<h3 id="23-wcf-通信中的-abc-概念">
+<a class="header-anchor" href="#23-wcf-%e9%80%9a%e4%bf%a1%e4%b8%ad%e7%9a%84-abc-%e6%a6%82%e5%bf%b5"></a>
+23. WCF 通信中的 ABC 概念？
+</h3><h3 id="面试简答考场口述答案-22">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-22"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>WCF 的 ABC 指 Address（服务地址+协议）、Binding（通信方式/编码/安全）、Contract（服务/数据契约）。WCF 在 .NET Core 后已被 gRPC/WebAPI 取代，了解概念即可。Contract 通过 ServiceContract/OperationContract/DataContract 特性定义。</p>
+</blockquote>
+<h3 id="深入解析-22">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-22"></a>
+📚深入解析
+</h3><ul>
+<li><strong>Address</strong>：WHERE，服务端点 URL（http/tcp/pipe）。</li>
+<li><strong>Binding</strong>：HOW，传输协议、编码、安全、事务等配置组合（如 basicHttpBinding, netTcpBinding）。</li>
+<li><strong>Contract</strong>：WHAT，服务接口（[ServiceContract]）、操作（[OperationContract]）、数据结构（[DataContract]/[DataMember]）。</li>
+<li><strong>现状</strong>：.NET Core/.NET 5+ 不再内置 WCF Server，微软推荐 gRPC（高性能跨平台）或 ASP.NET Core WebAPI（REST）。WCF Client 仍可用于对接旧系统。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-22">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-22"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>WCF 和 WebAPI 的区别？</li>
+<li>gRPC 相比 WCF 的优势？</li>
+<li>DataContract 和 Serializable 的区别？</li>
+</ol>
+<hr>
+<h3 id="24-c-常用集合类对比">
+<a class="header-anchor" href="#24-c-%e5%b8%b8%e7%94%a8%e9%9b%86%e5%90%88%e7%b1%bb%e5%af%b9%e6%af%94"></a>
+24. C# 常用集合类对比？
+</h3><h3 id="面试简答考场口述答案-23">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-23"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>List<!-- raw HTML omitted --> 动态数组，索引快插入慢；Dictionary&lt;K,V&gt; 哈希表 O(1) 查找；HashSet<!-- raw HTML omitted --> 去重集合运算；Queue/Stack FIFO/LIFO；LinkedList 插入删除快随机访问慢；ObservableCollection 支持 WPF 绑定通知。避免使用非泛型 ArrayList/Hashtable。</p>
+</blockquote>
+<h3 id="深入解析-23">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-23"></a>
+📚深入解析
+</h3><ul>
+<li><strong>List<!-- raw HTML omitted --></strong>：底层数组，扩容翻倍。适合读多写少。</li>
+<li><strong>Dictionary&lt;K,V&gt;</strong>：哈希桶+链表，键唯一。适合按键查找。</li>
+<li><strong>HashSet<!-- raw HTML omitted --></strong>：哈希集合，Add/Remove/Contains O(1)。适合去重、交并差集。</li>
+<li><strong>SortedDictionary&lt;K,V&gt;</strong>：红黑树，键有序，O(log n)。适合有序遍历。</li>
+<li><strong>ObservableCollection<!-- raw HTML omitted --></strong>：实现 INotifyCollectionChanged，增删改通知 UI。WPF 绑定必备。</li>
+<li><strong>Concurrent 集合</strong>：线程安全版本（ConcurrentDictionary 等）。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-23">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-23"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>Dictionary 的哈希冲突如何解决？</li>
+<li>List 扩容的性能影响？如何优化？</li>
+<li>ConcurrentDictionary 的 GetOrAdd 是原子的吗？</li>
+</ol>
+<hr>
+<h3 id="25-string-和-stringbuilder-的区别">
+<a class="header-anchor" href="#25-string-%e5%92%8c-stringbuilder-%e7%9a%84%e5%8c%ba%e5%88%ab"></a>
+25. String 和 StringBuilder 的区别？
+</h3><h3 id="面试简答考场口述答案-24">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-24"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>String 不可变，修改创建新对象；StringBuilder 可变，内部字符数组原地修改。少量拼接用 string（编译器优化），循环大量拼接必须用 StringBuilder 避免 GC 压力。String 是引用类型但相等性比较值。</p>
+</blockquote>
+<h3 id="深入解析-24">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-24"></a>
+📚深入解析
+</h3><ul>
+<li><strong>String 不可变性</strong>：线程安全，可作哈希键，但拼接产生临时对象。编译器对常量拼接优化为 Concat。</li>
+<li><strong>StringBuilder</strong>：默认容量 16，不足时扩容（通常翻倍）。Append 在原缓冲区操作。</li>
+<li><strong>选择指南</strong>：
+<ul>
+<li>固定次数/少量拼接 → <code>string</code> / <code>$&quot;&quot;</code> / <code>string.Concat</code>。</li>
+<li>循环/未知次数拼接 → <code>StringBuilder</code>。</li>
+<li>.NET Core 3.0+ 可用 <code>string.Create</code> 或 <code>Span&lt;char&gt;</code> 极致优化。</li>
+</ul>
+</li>
+<li><strong>相等性</strong>：<code>==</code> 重载为值比较；<code>ReferenceEquals</code> 比较引用。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-24">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-24"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>string.Intern 的作用和风险？</li>
+<li>StringBuilder 的初始容量如何设置？</li>
+<li>Span<!-- raw HTML omitted --> 如何优化字符串处理？</li>
+</ol>
+<hr>
+<h3 id="26-inotifypropertychanged-和-observablecollection">
+<a class="header-anchor" href="#26-inotifypropertychanged-%e5%92%8c-observablecollection"></a>
+26. INotifyPropertyChanged 和 ObservableCollection？
+</h3><h3 id="面试简答考场口述答案-25">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-25"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>INotifyPropertyChanged 通知单个属性变更，用于 ViewModel 属性绑定刷新。ObservableCollection 通知集合增删改，用于列表绑定。List<!-- raw HTML omitted --> 无通知能力。修改集合元素属性仍需元素实现 INPC。可用 CommunityToolkit.Mvvm 源生成器简化代码。</p>
+</blockquote>
+<h3 id="深入解析-25">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-25"></a>
+📚深入解析
+</h3><ul>
+<li><strong>INotifyPropertyChanged</strong>：属性 setter 中触发 <code>PropertyChanged</code> 事件。WPF 绑定引擎监听此事件刷新 UI。</li>
+<li><strong>ObservableCollection<!-- raw HTML omitted --></strong>：实现 <code>INotifyCollectionChanged</code>，Add/Remove/Clear 触发 <code>CollectionChanged</code> 事件。</li>
+<li><strong>常见误区</strong>：
+<ul>
+<li>修改集合中某对象的属性，集合不会通知，需对象自身实现 INPC。</li>
+<li>批量更新时频繁触发通知影响性能，可暂停通知或整体替换集合。</li>
+</ul>
+</li>
+<li><strong>现代化</strong>：CommunityToolkit.Mvvm 的 <code>[ObservableProperty]</code> 自动生成属性和通知代码，减少样板。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-25">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-25"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>如何批量更新 ObservableCollection 而不触发多次通知？</li>
+<li>PropertyChanged 事件名写错会怎样？如何避免？</li>
+<li>BindingList<!-- raw HTML omitted --> 和 ObservableCollection 的区别？</li>
+</ol>
+<hr>
+<h3 id="27-xaml-的优点及与-xml-的关系">
+<a class="header-anchor" href="#27-xaml-%e7%9a%84%e4%bc%98%e7%82%b9%e5%8f%8a%e4%b8%8e-xml-%e7%9a%84%e5%85%b3%e7%b3%bb"></a>
+27. XAML 的优点及与 XML 的关系？
+</h3><h3 id="面试简答考场口述答案-26">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-26"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>XAML 是基于 XML 的声明式 UI 标记语言，专为 WPF/UWP/MAUI 设计。优点包括 UI 与逻辑分离、声明式可读性强、支持绑定/模板/样式/动画、设计师友好。编译时生成 partial 类与 code-behind 关联。跨技术栈复用 XAML 知识。</p>
+</blockquote>
+<h3 id="深入解析-26">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-26"></a>
+📚深入解析
+</h3><ul>
+<li><strong>本质</strong>：XML 方言，标签对应类，属性对应属性/事件。编译为 BAML（二进制 XAML）提升加载性能。</li>
+<li><strong>核心优势</strong>：
+<ul>
+<li>声明式：界面即文档，易于维护和协作。</li>
+<li>分离：.xaml 定义 UI，.xaml.cs 处理逻辑。</li>
+<li>集成：深度支持数据绑定、资源字典、模板、动画。</li>
+</ul>
+</li>
+<li><strong>跨平台</strong>：WPF、UWP、WinUI、MAUI、Avalonia 均使用 XAML，学习一次多处受益。</li>
+</ul>
+<h3 id="面试延伸追问预判面试官后续提问-26">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-26"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>XAML 编译后的 BAML 是什么？</li>
+<li>MarkupExtension 的作用？</li>
+<li>x:Name 和 Name 的区别？</li>
+</ol>
+<hr>
+<h3 id="28-依赖属性dependencyproperty详解">
+<a class="header-anchor" href="#28-%e4%be%9d%e8%b5%96%e5%b1%9e%e6%80%a7dependencyproperty%e8%af%a6%e8%a7%a3"></a>
+28. 依赖属性（DependencyProperty）详解？
+</h3><h3 id="面试简答考场口述答案-27">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-27"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>依赖属性是 WPF 属性系统的核心，支持绑定、动画、样式、值继承、变更通知和验证。相比 CLR 属性，它节省内存（未设置不占实例空间）、功能丰富。通过 DependencyProperty.Register 注册，用 GetValue/SetValue 访问。专为 WPF 绑定体系设计。</p>
+</blockquote>
+<h3 id="深入解析-27">
+<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90-27"></a>
+📚深入解析
+</h3><ul>
+<li><strong>核心特性</strong>：
+<ul>
+<li>值优先级：本地值 &gt; 样式 &gt; 模板 &gt; 继承 &gt; 默认值。</li>
+<li>变更通知：PropertyChangedCallback。</li>
+<li>值验证：ValidateValueCallback / CoerceValueCallback。</li>
+<li>内存优化：稀疏存储，仅存储非默认值。</li>
+</ul>
+</li>
+<li><strong>定义模式</strong>：
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">static</span> <span class="k">readonly</span> <span class="n">DependencyProperty</span> <span class="n">TitleProperty</span> <span class="p">=</span>
 </span></span><span class="line"><span class="cl">    <span class="n">DependencyProperty</span><span class="p">.</span><span class="n">Register</span><span class="p">(</span><span class="s">&#34;Title&#34;</span><span class="p">,</span> <span class="k">typeof</span><span class="p">(</span><span class="kt">string</span><span class="p">),</span> <span class="k">typeof</span><span class="p">(</span><span class="n">MyControl</span><span class="p">),</span>
-</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="n">PropertyMetadata</span><span class="p">(</span><span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">,</span> <span class="n">OnTitleChanged</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">string</span> <span class="n">Title</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="k">get</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">GetValue</span><span class="p">(</span><span class="n">TitleProperty</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">set</span> <span class="p">=&gt;</span> <span class="n">SetValue</span><span class="p">(</span><span class="n">TitleProperty</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><ul>
-<li>对比普通 CLR 属性：普通属性是&quot;字段的包装&quot;，无通知、无继承、无绑定能力；依赖属性专为 WPF 绑定/动画/样式体系设计。</li>
+</span></span><span class="line"><span class="cl">        <span class="k">new</span> <span class="n">PropertyMetadata</span><span class="p">(</span><span class="s">&#34;&#34;</span><span class="p">,</span> <span class="n">OnTitleChanged</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kt">string</span> <span class="n">Title</span> <span class="p">{</span> <span class="k">get</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="kt">string</span><span class="p">)</span><span class="n">GetValue</span><span class="p">(</span><span class="n">TitleProperty</span><span class="p">);</span> <span class="k">set</span> <span class="p">=&gt;</span> <span class="n">SetValue</span><span class="p">(</span><span class="n">TitleProperty</span><span class="p">,</span> <span class="k">value</span><span class="p">);</span> <span class="p">}</span>
+</span></span></code></pre></div></li>
+<li><strong>vs CLR 属性</strong>：CLR 属性是字段包装，无绑定/动画能力；依赖属性是 WPF 基础设施。</li>
 </ul>
-<h2 id="28asyncawait-定义异步方法的几点要求">
-<a class="header-anchor" href="#28asyncawait-%e5%ae%9a%e4%b9%89%e5%bc%82%e6%ad%a5%e6%96%b9%e6%b3%95%e7%9a%84%e5%87%a0%e7%82%b9%e8%a6%81%e6%b1%82"></a>
-28、Async/Await 定义异步方法的几点要求
-</h2><p>定义一个异步方法应满足以下几点：</p>
-<ol>
-<li>使用 async 关键字来修饰方法；</li>
-<li>在异步方法中使用 await 关键字（不使用编译器会给出警告但不报错），否则异步方法会以同步方式执行；</li>
-<li>尽量不使用 void 作为返回类型，若希望异步方法返回 void 类型，请使用 Task；</li>
-<li>异步方法名称以 Async 结尾；</li>
-<li>异步方法中不能声明使用 ref 或 out 关键字修饰的变量。</li>
+<h3 id="面试延伸追问预判面试官后续提问-27">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae-27"></a>
+💡面试延伸追问（预判面试官后续提问）
+</h3><ol>
+<li>依赖属性的值优先级顺序？</li>
+<li>Attached Property 的作用？</li>
+<li>如何调试依赖属性值来源？</li>
 </ol>
-<p><strong>【补充】</strong></p>
-<ul>
-<li>返回类型规则：
-<ul>
-<li><code>Task&lt;TResult&gt;</code>：有返回值；</li>
-<li><code>Task</code>：无返回值；</li>
-<li><code>void</code>：<strong>仅限事件处理器</strong>（async void 的异常无法被外部捕获，会直接崩溃进程）；</li>
-<li>C# 7+ 还可返回 <code>ValueTask&lt;T&gt;</code>（减少热路径上的分配）。</li>
-</ul>
-</li>
-<li>命名约定：以 <code>Async</code> 结尾（如 <code>LoadDataAsync</code>）。</li>
-<li>补充限制：不能对 <code>async</code> 方法使用 <code>ref</code>/<code>out</code> 参数（编译器限制，原因：异步方法返回后栈帧可能已销毁）。</li>
-<li>常见面试追问：<code>await</code> 之后代码运行在哪个线程？（默认回到调用上下文的同步上下文，WPF 中即 UI 线程）；<code>Task.Run</code> 与 <code>await</code> 的区别（<code>Task.Run</code> 主动丢到线程池，<code>await</code> 是等待不阻塞）。</li>
-</ul>
 <hr>
-<blockquote>
-<p><strong>原文</strong>：<a href="https://zhuanlan.zhihu.com/p/462042959">C# winform 和WPF 中级面试题整理 - 知乎专栏</a>
-<strong>作者</strong>：知乎用户 fCTOVp，发布于 2022-01-26，25 人赞同</p>
-<p><strong>整理说明</strong>：以下内容基于原文整理，尽量保留原文表述；对答案偏简略或有误的地方，以**【补充】**段落进行优化与扩展（补充内容为整理者所加）。</p>
-</blockquote>
 </div>
     <footer class="article-footer"><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
     <a
@@ -1115,7 +1359,7 @@ C# WinForm 和 WPF 中级面试题整理
     aria-label="Article navigation"
     data-aos="fade-up"
   ><div class="article-nav-link-wrap left"><img
-              data-src="/images/cover6.webp"
+              data-src="/images/cover1.webp"
               data-sizes="auto"
               alt="WPF面试题 1"
               class="lazyload"
@@ -1159,10 +1403,10 @@ C# WinForm 和 WPF 中级面试题整理
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;190.5k</span
+          >&nbsp;188.4k</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;06:36</span>
+        <span class="icon-coffee">&nbsp;06:32</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -1188,35 +1432,122 @@ C# WinForm 和 WPF 中级面试题整理
 <div class="sidebar-toc-wrapper toc-div-class">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#1是否使用过委托一般在何时使用委托">1、是否使用过委托，一般在何时使用委托</a></li>
-    <li><a href="#2是否使用过匿名委托及-lambda-表达式">2、是否使用过匿名委托及 Lambda 表达式</a></li>
-    <li><a href="#3是否使用过多线程何时使用多线程使用多线程应注意什么">3、是否使用过多线程，何时使用多线程，使用多线程应注意什么</a></li>
-    <li><a href="#4异步">4、异步</a></li>
-    <li><a href="#5是否使用过反射使用场景和目的">5、是否使用过反射，使用场景和目的</a></li>
-    <li><a href="#6是否使用过泛型及泛型约束使用场景">6、是否使用过泛型及泛型约束，使用场景</a></li>
-    <li><a href="#7是否使用-linq使用场景">7、是否使用 LINQ，使用场景</a></li>
-    <li><a href="#8单例模式">8、单例模式</a></li>
-    <li><a href="#9如何理解面向对象自己的程序设计是否坚持面向对象设计">9、如何理解面向对象，自己的程序设计是否坚持面向对象设计</a></li>
-    <li><a href="#10如何理解三层自己的设计是否基于三层">10、如何理解&quot;三层&quot;，自己的设计是否基于三层</a></li>
-    <li><a href="#11如何理解控制反转是否使用过依赖注入是否有自己的封装">11、如何理解控制反转，是否使用过依赖注入，是否有自己的封装</a></li>
-    <li><a href="#12adonet-20简单介绍-adonet-20-的常用类或对象是否使用-adonet-20-封装过自己的数据层">12、Ado.net 2.0，简单介绍 Ado.net 2.0 的常用类或对象，是否使用 Ado.net 2.0 封装过自己的数据层</a></li>
-    <li><a href="#13序列化与反序列化的数据转换如-jsonxmldatatable泛型之间的转换做过哪些需要用哪些技术手段是否做过这些转换的工具类">13、序列化与反序列化的数据转换，如 Json、Xml、DataTable、泛型之间的转换，做过哪些，需要用哪些技术手段。是否做过这些转换的工具类</a></li>
-    <li><a href="#14对内存数据库和数据仓储及持久化有多少了解">14、对内存数据库和数据仓储及持久化有多少了解</a></li>
-    <li><a href="#15托管代码和非托管代码的区别">15、托管代码和非托管代码的区别</a></li>
-    <li><a href="#16托管资源和非托管资源">16、托管资源和非托管资源</a></li>
-    <li><a href="#17wpf-和-mvvm-的理解">17、WPF 和 mvvm 的理解</a></li>
-    <li><a href="#18sql-和存储过程为什么要用存储过程">18、SQL 和存储过程，为什么要用存储过程</a></li>
-    <li><a href="#19反射">19、反射</a></li>
-    <li><a href="#20流处理">20、流处理</a></li>
-    <li><a href="#21单元测试private-能否做单元测试范围">21、单元测试，private 能否做单元测试，范围</a></li>
-    <li><a href="#22c-的修饰符">22、C# 的修饰符</a></li>
-    <li><a href="#22原文编号重复wcf-通信中的-abc-基本概念">22（原文编号重复）、WCF 通信中的 ABC 基本概念</a></li>
-    <li><a href="#23c-中常用的集合类">23、C# 中常用的集合类</a></li>
-    <li><a href="#24string-和-stringbuilder-的区别">24、string 和 stringbuilder 的区别</a></li>
-    <li><a href="#25属性变更通知inotifypropertychanged-和-observablecollectiont">25、属性变更通知（INotifyPropertyChanged 和 ObservableCollection&lt;T&gt;）</a></li>
-    <li><a href="#26什么是-xml-扩展-xaml有何优点">26、什么是 XML 扩展 XAML？有何优点？</a></li>
-    <li><a href="#27解释什么是依赖属性它和以前的属性有什么不同为什么在-wpf-会使用它">27、解释什么是依赖属性，它和以前的属性有什么不同？为什么在 WPF 会使用它？</a></li>
-    <li><a href="#28asyncawait-定义异步方法的几点要求">28、Async/Await 定义异步方法的几点要求</a></li>
+    <li><a href="#c-winform-和-wpf-中级面试题整理">C# WinForm 和 WPF 中级面试题整理</a>
+      <ul>
+        <li><a href="#1-是否使用过委托一般在何时使用委托">1. 是否使用过委托，一般在何时使用委托？</a></li>
+        <li><a href="#面试简答考场口述答案">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#2-是否使用过匿名委托及-lambda-表达式">2. 是否使用过匿名委托及 Lambda 表达式？</a></li>
+        <li><a href="#面试简答考场口述答案-1">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-1">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-1">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#3-是否使用过多线程何时使用多线程应注意什么">3. 是否使用过多线程，何时使用多线程，应注意什么？</a></li>
+        <li><a href="#面试简答考场口述答案-2">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-2">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-2">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#4-异步编程asyncawait的理解">4. 异步编程（Async/Await）的理解？</a></li>
+        <li><a href="#面试简答考场口述答案-3">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-3">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-3">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#5-是否使用过反射使用场景和目的">5. 是否使用过反射，使用场景和目的？</a></li>
+        <li><a href="#面试简答考场口述答案-4">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-4">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-4">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#6-是否使用过泛型及泛型约束使用场景">6. 是否使用过泛型及泛型约束，使用场景？</a></li>
+        <li><a href="#面试简答考场口述答案-5">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-5">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-5">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#7-是否使用-linq使用场景">7. 是否使用 LINQ，使用场景？</a></li>
+        <li><a href="#面试简答考场口述答案-6">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-6">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-6">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#8-单例模式的实现方式">8. 单例模式的实现方式？</a></li>
+        <li><a href="#面试简答考场口述答案-7">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-7">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-7">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#9-如何理解面向对象及设计原则">9. 如何理解面向对象及设计原则？</a></li>
+        <li><a href="#面试简答考场口述答案-8">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-8">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-8">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#10-如何理解三层架构">10. 如何理解三层架构？</a></li>
+        <li><a href="#面试简答考场口述答案-9">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-9">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-9">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#11-控制反转ioc与依赖注入di">11. 控制反转（IoC）与依赖注入（DI）？</a></li>
+        <li><a href="#面试简答考场口述答案-10">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-10">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-10">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#12-adonet-核心对象及使用">12. ADO.NET 核心对象及使用？</a></li>
+        <li><a href="#面试简答考场口述答案-11">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-11">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-11">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#13-序列化与反序列化技术及转换">13. 序列化与反序列化技术及转换？</a></li>
+        <li><a href="#面试简答考场口述答案-12">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-12">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-12">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#14-内存数据库数据仓储及持久化">14. 内存数据库、数据仓储及持久化？</a></li>
+        <li><a href="#面试简答考场口述答案-13">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-13">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-13">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#15-托管代码与非托管代码的区别">15. 托管代码与非托管代码的区别？</a></li>
+        <li><a href="#面试简答考场口述答案-14">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-14">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-14">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#16-托管资源与非托管资源的释放">16. 托管资源与非托管资源的释放？</a></li>
+        <li><a href="#面试简答考场口述答案-15">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-15">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-15">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#17-wpf-和-mvvm-的理解">17. WPF 和 MVVM 的理解？</a></li>
+        <li><a href="#面试简答考场口述答案-16">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-16">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-16">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#18-sql-存储过程的优缺点及使用">18. SQL 存储过程的优缺点及使用？</a></li>
+        <li><a href="#面试简答考场口述答案-17">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-17">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-17">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#19-反射的核心类型及使用">19. 反射的核心类型及使用？</a></li>
+        <li><a href="#面试简答考场口述答案-18">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-18">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-18">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#20-流处理filestreamstreamreaderbinaryreader">20. 流处理（FileStream/StreamReader/BinaryReader）？</a></li>
+        <li><a href="#面试简答考场口述答案-19">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-19">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-19">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#21-单元测试原则及-private-方法测试">21. 单元测试原则及 Private 方法测试？</a></li>
+        <li><a href="#面试简答考场口述答案-20">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-20">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-20">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#22-c-访问修饰符详解">22. C# 访问修饰符详解？</a></li>
+        <li><a href="#面试简答考场口述答案-21">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-21">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-21">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#23-wcf-通信中的-abc-概念">23. WCF 通信中的 ABC 概念？</a></li>
+        <li><a href="#面试简答考场口述答案-22">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-22">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-22">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#24-c-常用集合类对比">24. C# 常用集合类对比？</a></li>
+        <li><a href="#面试简答考场口述答案-23">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-23">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-23">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#25-string-和-stringbuilder-的区别">25. String 和 StringBuilder 的区别？</a></li>
+        <li><a href="#面试简答考场口述答案-24">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-24">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-24">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#26-inotifypropertychanged-和-observablecollection">26. INotifyPropertyChanged 和 ObservableCollection？</a></li>
+        <li><a href="#面试简答考场口述答案-25">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-25">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-25">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#27-xaml-的优点及与-xml-的关系">27. XAML 的优点及与 XML 的关系？</a></li>
+        <li><a href="#面试简答考场口述答案-26">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-26">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-26">💡面试延伸追问（预判面试官后续提问）</a></li>
+        <li><a href="#28-依赖属性dependencyproperty详解">28. 依赖属性（DependencyProperty）详解？</a></li>
+        <li><a href="#面试简答考场口述答案-27">✅面试简答（考场口述答案）</a></li>
+        <li><a href="#深入解析-27">📚深入解析</a></li>
+        <li><a href="#面试延伸追问预判面试官后续提问-27">💡面试延伸追问（预判面试官后续提问）</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div></div>
@@ -1324,7 +1655,7 @@ C# WinForm 和 WPF 中级面试题整理
           author: "Alone4869",
           title: "WPF面试题 2",
           url: "https:\/\/alone4869.github.io\/post\/wpf%E9%9D%A2%E8%AF%95%E9%A2%98-2\/",
-          description: " C# WinForm 和 WPF 中级面试题整理 1、是否使用过委托，一般在何时使用委托 委托传递的参数是一个方法，委托是给调用者使用的，在调用者不知道什么时候会使用的情况会使用委托，所以调用者需要提前订阅它然后执行自己的代码，当委托对象有了订阅者的触发消息后就会通知调用者。\n",
+          description: " C# WinForm 和 WPF 中级面试题整理 1. 是否使用过委托，一般在何时使用委托？ ✅面试简答（考场口述答案） 委托本质是对方法的抽象引用，允许将方法作为参数传递或存储。主要用于事件回调、跨线程UI更新（Dispatcher）以及通用算法策略（如Sort比较器）。现代开发中推荐使用泛型委托 Action\/Func 替代自定义委托声明。\n",
           cover: "https:\/\/alone4869.github.io\/images\/banner.webp",
         };
       </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {

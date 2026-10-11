@@ -115,13 +115,18 @@ C# 面试 wpf .net 面试准备
       <description>
         <![CDATA[<h1>WPF面试题 2</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
         
-          <h1 id="c-winform-和-wpf-中级面试题整理">
+          <h2 id="c-winform-和-wpf-中级面试题整理">
 <a class="header-anchor" href="#c-winform-%e5%92%8c-wpf-%e4%b8%ad%e7%ba%a7%e9%9d%a2%e8%af%95%e9%a2%98%e6%95%b4%e7%90%86"></a>
 C# WinForm 和 WPF 中级面试题整理
-</h1><h2 id="1是否使用过委托一般在何时使用委托">
-<a class="header-anchor" href="#1%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%a7%94%e6%89%98%e4%b8%80%e8%88%ac%e5%9c%a8%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8%e5%a7%94%e6%89%98"></a>
-1、是否使用过委托，一般在何时使用委托
-</h2><p>委托传递的参数是一个方法，委托是给调用者使用的，在调用者不知道什么时候会使用的情况会使用委托，所以调用者需要提前订阅它然后执行自己的代码，当委托对象有了订阅者的触发消息后就会通知调用者。</p>
+</h2><h3 id="1-是否使用过委托一般在何时使用委托">
+<a class="header-anchor" href="#1-%e6%98%af%e5%90%a6%e4%bd%bf%e7%94%a8%e8%bf%87%e5%a7%94%e6%89%98%e4%b8%80%e8%88%ac%e5%9c%a8%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8%e5%a7%94%e6%89%98"></a>
+1. 是否使用过委托，一般在何时使用委托？
+</h3><h3 id="面试简答考场口述答案">
+<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
+✅面试简答（考场口述答案）
+</h3><blockquote>
+<p>委托本质是对方法的抽象引用，允许将方法作为参数传递或存储。主要用于事件回调、跨线程UI更新（Dispatcher）以及通用算法策略（如Sort比较器）。现代开发中推荐使用泛型委托 <code>Action</code>/<code>Func</code> 替代自定义委托声明。</p>
+</blockquote>
         
         <hr><p>本文2026-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-11</p>]]>
       </description>
