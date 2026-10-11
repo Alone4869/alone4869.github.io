@@ -12,12 +12,84 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Sun, 11 Oct 2026 01:07:48 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 11 Oct 2026 14:33:25 +0800</lastBuildDate>
     
     
     <atom:link href="https://alone4869.github.io/post/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>入职前必问</title>
+      <link>https://alone4869.github.io/post/%E5%85%A5%E8%81%8C%E5%89%8D%E5%BF%85%E9%97%AE/</link>
+      <pubDate>Sun, 11 Oct 2026 14:33:25 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E5%85%A5%E8%81%8C%E5%89%8D%E5%BF%85%E9%97%AE/</guid>
+      <description>
+        <![CDATA[<h1>入职前必问</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          <h1 id="入职前必问六大问题">
+<a class="header-anchor" href="#%e5%85%a5%e8%81%8c%e5%89%8d%e5%bf%85%e9%97%ae%e5%85%ad%e5%a4%a7%e9%97%ae%e9%a2%98"></a>
+入职前必问六大问题
+</h1><h2 id="1薪资情况">
+<a class="header-anchor" href="#1%e8%96%aa%e8%b5%84%e6%83%85%e5%86%b5"></a>
+1、薪资情况
+</h2><ul>
+<li>薪资构成：底薪+绩效/提成/奖金</li>
+<li>绩效要求、提成点</li>
+<li>有责/无责底薪</li>
+<li>工资发放日期、有无年终奖</li>
+</ul>
+<h2 id="2试用期情况">
+<a class="header-anchor" href="#2%e8%af%95%e7%94%a8%e6%9c%9f%e6%83%85%e5%86%b5"></a>
+2、试用期情况
+</h2><ul>
+<li>时长（最长不超6个月）</li>
+<li>试用期薪资、转正薪资</li>
+<li>转正考核要求</li>
+<li>试用期期间是否有提成</li>
+</ul>
+<h2 id="3五险一金">
+<a class="header-anchor" href="#3%e4%ba%94%e9%99%a9%e4%b8%80%e9%87%91"></a>
+3、五险一金
+</h2><ul>
+<li>什么时候开始缴纳</li>
+<li>社保档位</li>
+<li>公积金缴纳比例</li>
+<li>其他福利</li>
+</ul>
+<blockquote>
+<p>Ps.年假、体检、班车</p>
+</blockquote>
+        
+        <hr><p>本文2026-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-11</p>]]>
+      </description>
+      
+        <category>面试</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>面试问题模板（非技术）</title>
+      <link>https://alone4869.github.io/post/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF%E9%9D%9E%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Sun, 11 Oct 2026 14:07:34 &#43;0800</pubDate>
+      <author>alone4869@protonmail.com (Alone4869)</author>
+      <guid>https://alone4869.github.io/post/%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98%E6%A8%A1%E6%9D%BF%E9%9D%9E%E6%8A%80%E6%9C%AF/</guid>
+      <description>
+        <![CDATA[<h1>面试问题模板（非技术）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
+        
+          面试高频问题（回答模板）
+        
+        <hr><p>本文2026-10-11首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-11</p>]]>
+      </description>
+      
+        <category>面试</category>
+      
+    </item>
     
     
 
@@ -329,195 +401,6 @@ WinForms 基于 GDI/GDI + 光栅绘图，现代 UI 能力薄弱。WPF 引入模�
 <a class="header-anchor" href="#2-%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b%e7%9a%84%e9%99%b7%e9%98%b1%e9%9d%99%e6%80%81%e7%bb%91%e5%ae%9a-vs-%e5%8a%a8%e6%80%81%e7%bb%91%e5%ae%9a"></a>
 2. 引用类型的陷阱：静态绑定 vs 动态绑定
 </h4><p>这是面试官最喜欢考的代码题。</p>
-        
-        <hr><p>本文2026-10-10首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-10</p>]]>
-      </description>
-      
-        <category>C#</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>C#基础（六）</title>
-      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%85%AD/</link>
-      <pubDate>Sat, 10 Oct 2026 16:12:08 &#43;0800</pubDate>
-      <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E5%85%AD/</guid>
-      <description>
-        <![CDATA[<h1>C#基础（六）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
-        
-          <h2 id="一类和结构体的区别是什么">
-<a class="header-anchor" href="#%e4%b8%80%e7%b1%bb%e5%92%8c%e7%bb%93%e6%9e%84%e4%bd%93%e7%9a%84%e5%8c%ba%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"></a>
-一、类和结构体的区别是什么
-</h2><h3 id="面试简答考场口述答案">
-<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
-✅面试简答（考场口述答案）
-</h3><p>核心区别在于<strong>类型系统分类</strong>和<strong>内存模型</strong>：</p>
-<ol>
-<li><strong>类型本质</strong>：<code>class</code> 是<strong>引用类型</strong>，<code>struct</code> 是<strong>值类型</strong>。</li>
-<li><strong>内存分配</strong>：类实例分配在**堆（Heap）<strong>上，变量存引用；结构体通常分配在</strong>栈（Stack）**上（作为局部变量时）或内联在包含它的对象中，变量直接存数据。</li>
-<li><strong>赋值语义</strong>：类赋值是<strong>拷贝引用</strong>（浅拷贝），修改一个会影响另一个；结构体赋值是<strong>拷贝整个数据</strong>（深拷贝），互不影响。</li>
-<li><strong>继承性</strong>：类支持继承和多态；结构体<strong>不能继承</strong>其他类或结构体（但可实现接口）。</li>
-<li><strong>默认构造</strong>：类可以没有无参构造函数；结构体<strong>始终有一个隐式的无参构造函数</strong>（将所有字段初始化为零值），且在 C# 10 之前不能自定义无参构造。</li>
-</ol>
-<h3 id="深入解析">
-<a class="header-anchor" href="#%e6%b7%b1%e5%85%a5%e8%a7%a3%e6%9e%90"></a>
-📚深入解析
-</h3><h4 id="1-详细对比表">
-<a class="header-anchor" href="#1-%e8%af%a6%e7%bb%86%e5%af%b9%e6%af%94%e8%a1%a8"></a>
-1. 详细对比表
-</h4><table>
-	<thead>
-			<tr>
-					<th style="text-align: left">特性</th>
-					<th style="text-align: left">Class (类)</th>
-					<th style="text-align: left">Struct (结构体)</th>
-			</tr>
-	</thead>
-	<tbody>
-			<tr>
-					<td style="text-align: left"><strong>类型</strong></td>
-					<td style="text-align: left">引用类型</td>
-					<td style="text-align: left">值类型</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>内存位置</strong></td>
-					<td style="text-align: left">堆 (Heap)</td>
-					<td style="text-align: left">栈 (Stack) / 内联</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>赋值行为</strong></td>
-					<td style="text-align: left">拷贝地址</td>
-					<td style="text-align: left">拷贝数据</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>继承</strong></td>
-					<td style="text-align: left">支持单继承</td>
-					<td style="text-align: left">不支持继承 (sealed)</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>接口</strong></td>
-					<td style="text-align: left">可实现</td>
-					<td style="text-align: left">可实现</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>null 值</strong></td>
-					<td style="text-align: left">可以为 null</td>
-					<td style="text-align: left">不能为 null (除非 Nullable<!-- raw HTML omitted -->)</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>析构函数</strong></td>
-					<td style="text-align: left">支持 (~ClassName)</td>
-					<td style="text-align: left"><strong>不支持</strong></td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>字段初始化</strong></td>
-					<td style="text-align: left">可在声明时初始化</td>
-					<td style="text-align: left">C# 10+ 支持，旧版受限</td>
-			</tr>
-			<tr>
-					<td style="text-align: left"><strong>性能特征</strong></td>
-					<td style="text-align: left">GC 管理，有分配开销</td>
-					<td style="text-align: left">无 GC 压力，拷贝开销随大小增加</td>
-			</tr>
-	</tbody>
-</table>
-<h4 id="2-关键陷阱与注意事项">
-<a class="header-anchor" href="#2-%e5%85%b3%e9%94%ae%e9%99%b7%e9%98%b1%e4%b8%8e%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9"></a>
-2. 关键陷阱与注意事项
-</h4><ul>
-<li><strong>可变结构体是万恶之源</strong>：由于结构体是值拷贝，如果你修改了一个从属性返回的结构体字段（如 <code>myObj.Point.X = 10;</code>），你修改的只是副本，原对象不会改变。这会导致极其隐蔽的 Bug。<strong>最佳实践：结构体应设计为不可变（Immutable）。</strong></li>
-<li><strong>装箱/拆箱开销</strong>：当结构体被当作 <code>object</code>、接口类型或调用未重写的虚方法（如 <code>ToString()</code>）时，会发生装箱。频繁装箱会抵消结构体的性能优势。</li>
-<li><strong>大小限制</strong>：微软官方建议结构体大小控制在 <strong>16 字节以内</strong>。过大的结构体在赋值、传参时的拷贝成本可能超过堆分配的开销，此时应改用 class。</li>
-<li><strong>this 的安全性</strong>：在结构体方法中，<code>this</code> 是一个值而非引用。为了防止意外修改，C# 引入了 <code>readonly struct</code> 和 <code>in</code> 参数修饰符。</li>
-</ul>
-<h4 id="3-代码示例赋值差异">
-<a class="header-anchor" href="#3-%e4%bb%a3%e7%a0%81%e7%a4%ba%e4%be%8b%e8%b5%8b%e5%80%bc%e5%b7%ae%e5%bc%82"></a>
-3. 代码示例：赋值差异
-</h4><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-csharp" data-lang="csharp"><span class="line"><span class="cl"><span class="c1">// === Class 演示 ===</span>
-</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">PersonClass</span> <span class="p">{</span> <span class="kd">public</span> <span class="kt">string</span> <span class="n">Name</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">p1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PersonClass</span> <span class="p">{</span> <span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Alice&#34;</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">p2</span> <span class="p">=</span> <span class="n">p1</span><span class="p">;</span>      <span class="c1">// 拷贝引用</span>
-</span></span><span class="line"><span class="cl"><span class="n">p2</span><span class="p">.</span><span class="n">Name</span> <span class="p">=</span> <span class="s">&#34;Bob&#34;</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">p1</span><span class="p">.</span><span class="n">Name</span><span class="p">);</span> <span class="c1">// 输出: Bob (p1 也被修改了)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1">// === Struct 演示 ===</span>
-</span></span><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">PointStruct</span> <span class="p">{</span> <span class="kd">public</span> <span class="kt">int</span> <span class="n">X</span><span class="p">;</span> <span class="kd">public</span> <span class="kt">int</span> <span class="n">Y</span><span class="p">;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">s1</span> <span class="p">=</span> <span class="k">new</span> <span class="n">PointStruct</span> <span class="p">{</span> <span class="n">X</span> <span class="p">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">Y</span> <span class="p">=</span> <span class="m">2</span> <span class="p">};</span>
-</span></span><span class="line"><span class="cl"><span class="kt">var</span> <span class="n">s2</span> <span class="p">=</span> <span class="n">s1</span><span class="p">;</span>      <span class="c1">// 拷贝整个数据</span>
-</span></span><span class="line"><span class="cl"><span class="n">s2</span><span class="p">.</span><span class="n">X</span> <span class="p">=</span> <span class="m">99</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">Console</span><span class="p">.</span><span class="n">WriteLine</span><span class="p">(</span><span class="n">s1</span><span class="p">.</span><span class="n">X</span><span class="p">);</span> <span class="c1">// 输出: 1 (s1 不受影响)</span>
-</span></span></code></pre></div><h4 id="4-何时使用-struct">
-<a class="header-anchor" href="#4-%e4%bd%95%e6%97%b6%e4%bd%bf%e7%94%a8-struct"></a>
-4. 何时使用 Struct？
-</h4><ul>
-<li>✅ 表示一个<strong>单一的值</strong>（如坐标 <code>Point</code>、颜色 <code>Color</code>、金额 <code>Money</code>）。</li>
-<li>✅ 数据量小（&lt; 16 bytes）且生命周期短。</li>
-<li>✅ 需要高性能、避免 GC 压力的场景（如图形渲染、高频交易）。</li>
-<li>✅ 与外部非托管代码交互（Interop）。</li>
-<li>❌ 不要用来建模业务实体（Entity），不要用可变结构体。</li>
-</ul>
-<h3 id="面试延伸追问预判面试官后续提问">
-<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e5%bb%b6%e4%bc%b8%e8%bf%bd%e9%97%ae%e9%a2%84%e5%88%a4%e9%9d%a2%e8%af%95%e5%ae%98%e5%90%8e%e7%bb%ad%e6%8f%90%e9%97%ae"></a>
-💡面试延伸追问（预判面试官后续提问）
-</h3><ol>
-<li><strong>什么是 <code>readonly struct</code>？它解决了什么问题？</strong>
-<ul>
-<li><em>考点</em>：防止结构体被意外修改；允许编译器对 <code>in</code> 参数传递进行优化（避免防御性拷贝）；保证线程安全。</li>
-</ul>
-</li>
-<li><strong><code>ref struct</code> 是什么？和普通 struct 有什么区别？</strong>
-<ul>
-<li><em>考点</em>：<code>ref struct</code> 只能存在于栈上，不能被装箱、不能作为泛型参数、不能存储在堆上（如类字段、数组元素）。典型代表：<code>Span&lt;T&gt;</code>, <code>ReadOnlySpan&lt;T&gt;</code>。用于极致性能和安全内存访问。</li>
-</ul>
-</li>
-<li><strong>结构体可以实现接口吗？实现接口时有什么需要注意的？</strong>
-<ul>
-<li><em>考点</em>：可以实现。但如果将结构体赋值给接口变量，会发生<strong>装箱</strong>。为避免装箱，应在泛型约束中使用 <code>where T : IMyInterface</code>，这样 JIT 会生成针对该结构体的特化代码，直接在栈上调用接口方法。</li>
-</ul>
-</li>
-<li><strong>C# 10 对结构体做了哪些改进？</strong>
-<ul>
-<li><em>考点</em>：允许自定义无参构造函数；允许在声明时初始化字段/属性；支持 <code>record struct</code>（不可变结构体的简洁语法）。这些改进让结构体更易用、更安全。</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="二什么是分部类">
-<a class="header-anchor" href="#%e4%ba%8c%e4%bb%80%e4%b9%88%e6%98%af%e5%88%86%e9%83%a8%e7%b1%bb"></a>
-二、什么是分部类
-</h2><h3 id="面试简答考场口述答案-1">
-<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88-1"></a>
-✅面试简答（考场口述答案）
-</h3><p>**分部类（Partial Class）**允许将一个类、结构体或接口的定义拆分到多个文件中。在编译时，C# 编译器会将这些部分合并成一个完整的类型。</p>
-        
-        <hr><p>本文2026-10-10首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-10</p>]]>
-      </description>
-      
-        <category>C#</category>
-      
-    </item>
-    
-    
-
-    <item>
-      <title>C#基础（五）</title>
-      <link>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%94/</link>
-      <pubDate>Sat, 10 Oct 2026 00:06:26 &#43;0800</pubDate>
-      <author>alone4869@protonmail.com (Alone4869)</author>
-      <guid>https://alone4869.github.io/post/c%23%E5%9F%BA%E7%A1%80%E4%BA%94/</guid>
-      <description>
-        <![CDATA[<h1>C#基础（五）</h1><p>作者：Alone4869（alone4869@protonmail.com）</p>
-        
-          <h2 id="一什么是可空引用类型">
-<a class="header-anchor" href="#%e4%b8%80%e4%bb%80%e4%b9%88%e6%98%af%e5%8f%af%e7%a9%ba%e5%bc%95%e7%94%a8%e7%b1%bb%e5%9e%8b"></a>
-一、什么是可空引用类型
-</h2><h3 id="面试简答考场口述答案">
-<a class="header-anchor" href="#%e9%9d%a2%e8%af%95%e7%ae%80%e7%ad%94%e8%80%83%e5%9c%ba%e5%8f%a3%e8%bf%b0%e7%ad%94%e6%a1%88"></a>
-✅面试简答（考场口述答案）
-</h3><p><strong>可空引用类型（Nullable Reference Types, NRT）</strong> 是 C# 8.0 引入的一项编译时特性，旨在从代码层面减少 <code>NullReferenceException</code>。</p>
         
         <hr><p>本文2026-10-10首发于<a href='https://alone4869.github.io/'>知否</a>，最后修改于2026-10-10</p>]]>
       </description>
